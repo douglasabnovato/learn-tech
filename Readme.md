@@ -1,0 +1,78 @@
+# 🚀 Learn TECH
+
+uma plataforma de Aprendizado, moderna com uma experiência de usuário impecável
+
+## 🚀 OFF
+
+Curadoria e ordenação de conteúdos da internet conforme os critérios adotados pelo Coordenador do nosso ECOSSISTEMA.
+
+## 🚀 ON
+
+Jornada profissional e conteúdos originais personalizados para a prestação de consultoria.
+  
+### 📂 Plataforma de Aprendizado
+
+- Um LMS (Learning Management System) é um Sistema de Gestão de Aprendizagem.
+- Ele serve para:
+    - Hospedar e organizar cursos online (aulas em vídeo, textos, PDFs, quizzes).
+    - Gerenciar usuários (alunos, professores, administradores).
+    - Acompanhar progresso e desempenho dos alunos.
+    - Emitir certificados após conclusão de cursos ou trilhas.
+    - Facilitar interações (fóruns, comentários, avaliações). 
+
+### 🌟 Projeto
+
+- Configuração do ambiente ReactJs & TailwindCSS para desenvolvimento eficiente (com Vite).
+- Criação de uma interface visual atraente com TailwindCSS.
+- Implementação de recursos essenciais de um LMS (Learning Management System), como estatísticas de cursos, categorias, listagem de cursos, banner, blog, além de player de vídeo, quiz e outras funcionalidades.
+- Garantia de que o site seja totalmente responsivo em todos os dispositivos.
+- Uso de imagens do Pixabay.
+- Exemplos famosos: Moodle, Udemy, Coursera, Hotmart.
+
+### 🚀 O desafio
+
+Mergulhe no mundo do desenvolvimento web e dê vida à sua criatividade! Os arquivos de configuração do projeto e os snippets de ícones/assets estão disponíveis no GitHub para fácil acesso e colaboração.
+
+#### 🔗 Baixar template inicial:
+
+- Template: https://github.com/gtech-official08/l 
+
+#### 🔗 Links oficiais:
+
+- ReactJs: https://react.dev/
+- Tailwindcss: https://tailwindcss.com/docs/installa
+- React Icons: https://react-icons.github.io/react-i
+
+#### 🔗 Orientações:
+ 
+- G-Tech Official - How to Create an Online LMS Education Website using React Js and Tailwind CSS | Like Udemy: https://www.youtube.com/watch?v=tiwu5UHCUhQ
+
+#### 🔖 Timestamps (Conteúdo do curso):
+
+- ⌨️ 00:00:00 - Introdução
+- ⌨️ 00:06:57 - Configuração do Projeto
+- ⌨️ 00:07:58 - Página inicial
+- ⌨️ 00:08:47 - Seção Hero
+- ⌨️ 00:14:36 - Seção de Estatísticas
+- ⌨️ 00:18:54 - Seção de Categorias
+- ⌨️ 00:24:10 - Seção de Programas
+- ⌨️ 00:32:14 - Seção de Acesso Rápido
+- ⌨️ 00:37:10 - Seção de Blog
+- ⌨️ 00:41:32 - Página de Programas
+- ⌨️ 00:42:42 - Componentes de Banner Superior
+- ⌨️ 00:45:01 - Componentes de Breadcrumb
+- ⌨️ 00:49:39 - Continuação da Página de Programas
+- ⌨️ 00:52:25 - Página de Detalhes
+- ⌨️ 01:01:45 - Página de Inscrição em Programas
+- ⌨️ 01:03:56 - Seção de Player de Vídeo
+- ⌨️ 01:16:08 - Seção de Descrição
+- ⌨️ 01:17:39 - Componentes de Abas
+- ⌨️ 01:22:02 - Seção de Abas de Visão Geral
+- ⌨️ 01:23:53 - Seção de Abas de Recursos
+- ⌨️ 01:25:05 - Seção de Abas de Avaliações
+- ⌨️ 01:31:40 - Seção de Progresso do Curso
+- ⌨️ 01:36:29 - Seção de Quiz
+- ⌨️ 01:49:09 - Página de Login
+- ⌨️ 01:56:37 - Página de Cadastro
+- ⌨️ 01:57:43 - Produto Final
+
