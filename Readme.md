@@ -75,4 +75,17 @@ Mergulhe no mundo do desenvolvimento web e dê vida à sua criatividade! Os arqu
 - ⌨️ 01:49:09 - Página de Login
 - ⌨️ 01:56:37 - Página de Cadastro
 - ⌨️ 01:57:43 - Produto Final
+ 
+### 🚀 Workflow
 
+- main
+- developer
+- v1-original
+- v2-conteudos
+
+#### 🚀 versões 
+
+a primeira versão será de curadoria de links e conteúdos
+desenvolver o projeto original e depois desenvolver a versão 1 com conteúdos estáticos
+
+##### 🚀 por douglasabnovato
