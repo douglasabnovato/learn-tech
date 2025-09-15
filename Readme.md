@@ -1,6 +1,7 @@
 # 🚀 Learn TECH
 
 uma plataforma de Aprendizado, moderna com uma experiência de usuário impecável
+a primeira versão será de curadoria de links e conteúdos estáticos
 
 ## 🚀 OFF
 
@@ -9,6 +10,17 @@ Curadoria e ordenação de conteúdos da internet conforme os critérios adotado
 ## 🚀 ON
 
 Jornada profissional e conteúdos originais personalizados para a prestação de consultoria.
+ 
+### 🚀 Workflow
+
+- main
+- developer
+- v1-original
+- v2-conteudos
+
+## 🚀 versão 1
+
+Desenvolvimento do projeto original
   
 ### 📂 Plataforma de Aprendizado
 
@@ -75,17 +87,5 @@ Mergulhe no mundo do desenvolvimento web e dê vida à sua criatividade! Os arqu
 - ⌨️ 01:49:09 - Página de Login
 - ⌨️ 01:56:37 - Página de Cadastro
 - ⌨️ 01:57:43 - Produto Final
- 
-### 🚀 Workflow
-
-- main
-- developer
-- v1-original
-- v2-conteudos
-
-#### 🚀 versões 
-
-a primeira versão será de curadoria de links e conteúdos
-desenvolver o projeto original e depois desenvolver a versão 1 com conteúdos estáticos
 
 ##### 🚀 por douglasabnovato
