@@ -1,6 +1,7 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import Navbar from "./components/nav/Navbar"
-import Footer from "./components/footer/Footer"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/nav/Navbar";
+import { Home } from "./pages/home/Home";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
@@ -11,16 +12,16 @@ function App() {
           <Navbar />
 
           {/* Routes */}
-          {/* <Routes>
+          <Routes>
             <Route path="/" element={<Home />} />
-          </Routes> */}
+          </Routes>
 
           {/* Footer Section */}
           <Footer />
         </main>
       </Router>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
