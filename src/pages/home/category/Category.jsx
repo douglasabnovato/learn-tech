@@ -20,10 +20,40 @@ export const Category = () => {
       <div className="w-full grid md:grid-cols-4 grid-cols-1 md:gap-10 gap-5">
         <CategoryCard
           icon={<FaReact />}
-          gradientFrom={"from-indigo-500"}
-          gradientVia={"via-sky-700 via-20%"}
-          gradientTo={"to-purple-700"}
+          gradientFrom={"from-indigo-500/20"}
+          gradientVia={"via-sky-700/20 via-20%"}
+          gradientTo={"to-purple-700/30"}
           title={"React JS"}
+          description={
+            "Explore the world of mobile app development with the best resources and courses available"
+          }
+        />
+        <CategoryCard
+          icon={<FaReact />}
+          gradientFrom={"from-pink-500/20"}
+          gradientVia={"via-purple-700/20 via-20%"}
+          gradientTo={"to-indigo-700/30"}
+          title={"Mobile Development"}
+          description={
+            "Explore the world of mobile app development with the best resources and courses available"
+          }
+        />
+        <CategoryCard
+          icon={<FaReact />}
+          gradientFrom={"from-pink-500/20"}
+          gradientVia={"via-indigo-700/20 via-20%"}
+          gradientTo={"to-purple-700/30"}
+          title={"Web Development"}
+          description={
+            "Explore the world of mobile app development with the best resources and courses available"
+          }
+        />
+        <CategoryCard
+          icon={<FaReact />}
+          gradientFrom={"from-pink-500/20"}
+          gradientVia={"via-indigo-700/20 via-20%"}
+          gradientTo={"to-purple-700/30"}
+          title={"Artificial Intelligence"}
           description={
             "Explore the world of mobile app development with the best resources and courses available"
           }
