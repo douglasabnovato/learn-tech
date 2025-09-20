@@ -17,7 +17,7 @@ export const Home = () => {
         <Stats />
       </div>
       <Category />
-      <Programs /> 
+      <Programs />
       <QuickAccess />
       <Blog />
     </div>
