@@ -47,7 +47,82 @@ export const Detail = () => {
               />
             </div>
             {/* course overview contents */}
-            <div className="space-y-10"></div>
+            <div className="space-y-10">
+              {/* Overview */}
+              <div className="space-y-3">
+                <h3 className="text-2xl font-bold text-neutral-800 border-b border-neutral-200 pb-2">
+                  Overview
+                </h3>
+                <div className="space-y-1 5">
+                  <h3 className="text-xl text-neutral-700 font-semibold">
+                    Description
+                  </h3>
+                  <p className="text-base text-neutral-600 font-normal">
+                    This comprehensive web development bootcamp takes you from
+                    absolute beginner to profissional developer. You'll learn
+                    all the tools and technologies you need to build full-stack
+                    web applications.
+                  </p>
+                </div>
+                <div className="space-y-1 5">
+                  <h3 className="text-xl text-neutral-700 font-semibold">
+                    What you'll learn
+                  </h3>
+                  <ul className="list-disc list-inside px-2">
+                    <li className="text-neutral-600 text-base font-normal">
+                      Learn to build full-stack web applications using HTML, CSS
+                      and Javascript.
+                    </li>
+                    <li className="text-neutral-600 text-base font-normal">
+                      Understand the fundamental of web development
+                    </li>
+                    <li className="text-neutral-600 text-base font-normal">
+                      Core concepts of HTML, CSS and Javascript
+                    </li>
+                    <li className="text-neutral-600 text-base font-normal">
+                      Build responsive and user-frindly interfaces, more...
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              {/* Curriculum */}
+              <div className="space-y-3">
+                <h3 className="text-2xl font-bold text-neutral-800 border-b border-neutral-200 pb-2">
+                  Curriculum
+                </h3>
+                <div className="space-y-1 5">
+                  <h3 className="text-xl text-neutral-700 font-semibold">
+                    Introduction to Web Development
+                  </h3>
+                  <p className="text-base text-neutral-600 font-normal">
+                    This comprehensive web development bootcamp takes you from
+                    absolute beginner to profissional developer. You'll learn
+                    all the tools and technologies you need to build full-stack
+                    web applications.
+                  </p>
+                </div>
+              </div>
+              {/* Course Materials */}
+              <div className="space-y-3">
+                <h3 className="text-2xl font-bold text-neutral-800 border-b border-neutral-200 pb-2">
+                  Course Materials
+                </h3>
+                <ul className="list-disc list-inside px-2">
+                  <li className="text-neutral-600 text-base font-normal">
+                    Complete Course Slides
+                  </li>
+                  <li className="text-neutral-600 text-base font-normal">
+                    Source Code Repository
+                  </li>
+                  <li className="text-neutral-600 text-base font-normal">
+                    Project Files
+                  </li>
+                  <li className="text-neutral-600 text-base font-normal">
+                    Project Guidelines & Tips
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
           {/* Right (price, features, buttons)*/}
           <div className="w-full md:col-span-2 col-span-5 border-border-neutral-300 p-6 rounded-xl space-y-4 sticky top-28">
