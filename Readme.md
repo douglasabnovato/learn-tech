@@ -22,20 +22,36 @@ a primeira versão será de curadoria de links e conteúdos estáticos
 - Uso de imagens do Pixabay.
 - Exemplos famosos: Moodle, Udemy, Coursera, Hotmart.
 
-### 🚀 OFF
+#### 🚀 OFF
 
 Curadoria e ordenação de conteúdos da internet conforme os critérios adotados pelo Coordenador do nosso ECOSSISTEMA.
 
-### 🚀 ON
+#### 🚀 ON
 
 Jornada profissional e conteúdos originais personalizados para a prestação de consultoria.
  
-### 🚀 Workflow
+#### 🚀 Workflow
 
 - main
 - developer
 - v1-original
 - v2-conteudos
+
+#### 👨‍💻 Como Executar Localmente
+
+````gitbash
+# Clone o repositório
+git clone https://github.com/seu-usuario/seu-repo.git
+
+# Acesse a pasta
+cd seu-repo
+
+# Instale as dependências
+npm install
+
+# Rode o projeto
+npm run dev
+````
 
 ## 🚀 versão 1
 
