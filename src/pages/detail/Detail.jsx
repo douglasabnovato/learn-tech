@@ -153,6 +153,7 @@ export const Detail = () => {
           </div>
         </div>
       </div>
+      {/* Page Top Banner section */}
     </div>
   );
 };

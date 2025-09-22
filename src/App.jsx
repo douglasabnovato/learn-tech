@@ -4,6 +4,7 @@ import Navbar from "./components/nav/Navbar";
 import Footer from "./components/footer/Footer";
 import { Programs } from "./pages/programs/Programs";
 import { Detail } from "./pages/detail/Detail";
+import { EnrollPrograms } from "./pages/enroll/EnrollPrograms";
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
             {/* Auth */}
             {/* Details */}
             <Route path="/program/detail" element={<Detail />} />
+            <Route
+              path="/program/enroll-programs-title" element={<EnrollPrograms />}
+            />
           </Routes>
 
           {/* Footer Section */}
