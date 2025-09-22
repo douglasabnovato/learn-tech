@@ -3,6 +3,7 @@ import { Home } from "./pages/home/Home";
 import Navbar from "./components/nav/Navbar";
 import Footer from "./components/footer/Footer";
 import { Programs } from "./pages/programs/Programs";
+import { Detail } from "./pages/detail/Detail";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="/programs" element={<Programs />} />
             {/* Auth */}
             {/* Details */}
+            <Route path="/programs/detail" element={<Detail />} />
           </Routes>
 
           {/* Footer Section */}
