@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Breadcrumb } from "../breadcrumb/Breadcrumb";
+import pageTopBg from "./../../assets/page-top-bg.png"
 
 export const PageTopBanner = ({ pageTitle }) => {
   useEffect(() => {
@@ -7,7 +8,7 @@ export const PageTopBanner = ({ pageTitle }) => {
   }, []);
 
   return (
-    <div className='w-full bg-[url("/src/assets/page-top-bg.png)] bg-no-repeat bg-cover bg-left md:aspect-[16/4] aspect-auto flex justify-center flex-col md:pt-16 pt-28 md:pb-0 md:px-16 sm:px-10 px-4 relative'>
+    <div className='w-full bg-no-repeat bg-cover bg-left md:aspect-[16/4] aspect-auto flex justify-center flex-col md:pt-16 pt-28 md:pb-0 md:px-16 sm:px-10 px-4 relative' style={{ backgroundImage: `url(${pageTopBg})` }}>
       {/** overlay */}
       <div className="absolute w-full h-full top-0 left-0 bg-gradient-to-b from-zinc-50 via-zinc-100/40 to-zinc-950/60 opacity-50 z-10"></div>
 
