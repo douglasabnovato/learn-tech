@@ -21,7 +21,7 @@ function App() {
             <Route path="/programs" element={<Programs />} />
             {/* Auth */}
             {/* Details */}
-            <Route path="/programs/detail" element={<Detail />} />
+            <Route path="/program/detail" element={<Detail />} />
           </Routes>
 
           {/* Footer Section */}
