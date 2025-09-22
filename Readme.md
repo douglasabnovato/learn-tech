@@ -2,27 +2,8 @@
 
 uma plataforma de Aprendizado, moderna com uma experiência de usuário impecável
 a primeira versão será de curadoria de links e conteúdos estáticos
-
-## 🚀 OFF
-
-Curadoria e ordenação de conteúdos da internet conforme os critérios adotados pelo Coordenador do nosso ECOSSISTEMA.
-
-## 🚀 ON
-
-Jornada profissional e conteúdos originais personalizados para a prestação de consultoria.
  
-### 🚀 Workflow
-
-- main
-- developer
-- v1-original
-- v2-conteudos
-
-## 🚀 versão 1
-
-Desenvolvimento do projeto original
-  
-### 📂 Plataforma de Aprendizado
+## 📂 Plataforma de Aprendizado
 
 - Um LMS (Learning Management System) é um Sistema de Gestão de Aprendizagem.
 - Ele serve para:
@@ -41,23 +22,94 @@ Desenvolvimento do projeto original
 - Uso de imagens do Pixabay.
 - Exemplos famosos: Moodle, Udemy, Coursera, Hotmart.
 
-### 🚀 O desafio
+### 🚀 OFF
 
-Mergulhe no mundo do desenvolvimento web e dê vida à sua criatividade! Os arquivos de configuração do projeto e os snippets de ícones/assets estão disponíveis no GitHub para fácil acesso e colaboração.
+Curadoria e ordenação de conteúdos da internet conforme os critérios adotados pelo Coordenador do nosso ECOSSISTEMA.
 
-#### 🔗 Baixar template inicial:
+### 🚀 ON
 
-- Template: https://github.com/gtech-official08/l 
+Jornada profissional e conteúdos originais personalizados para a prestação de consultoria.
+ 
+### 🚀 Workflow
 
-#### 🔗 Links oficiais:
+- main
+- developer
+- v1-original
+- v2-conteudos
 
-- ReactJs: https://react.dev/
-- Tailwindcss: https://tailwindcss.com/docs/installa
-- React Icons: https://react-icons.github.io/react-i
+## 🚀 versão 1
 
+Desenvolvimento do projeto original
+
+### 📚 LearnHub — Plataforma LMS Online Responsiva
+
+🌟 Uma plataforma de Educação Online (LMS) desenvolvida com ReactJS e TailwindCSS, moderna, responsiva e com foco em experiência do usuário.
+
+#### 🚀 Visão Geral
+
+Este projeto é inspirado em plataformas como Udemy, trazendo recursos essenciais de um Learning Management System (LMS):
+
+    - Exibição de cursos, categorias e estatísticas
+    - Páginas de programas e detalhes
+    - Player de vídeo embutido
+    - Sistema de quizzes
+    - Blog integrado
+    - Design 100% responsivo
+
+Construído passo a passo para ser acessível tanto a iniciantes quanto a desenvolvedores experientes.
+
+#### 🛠️ Tecnologias Utilizadas
+
+    - ReactJS ⚛️ https://react.dev/
+    - TailwindCSS 🎨 https://tailwindcss.com/
+    - Vite ⚡ https://vitejs.dev/
+    - React Icons 🔗 https://react-icons.github.io/react-icons/
+
+#### 📂 Estrutura do Projeto
+
+    - Home Page com seção Hero e destaques 
+    - Estatísticas de Cursos (STATS Section) 
+    - Categorias de Aprendizado 
+    - Lista de Programas 
+    - Seção de Acesso Rápido 
+    - Blog 
+    - Página de Detalhes dos Cursos 
+    - Player de Vídeo + Quizzes 
+    - Sistema de Tabs (Visão Geral, Recursos, Avaliações) 
+    - Progresso do Curso 
+    - Autenticação: Páginas de Login e Cadastro
+
+#### 📖 Conteúdo (Roadmap do Desenvolvimento)
+
+    - Configuração do projeto (React + Vite + TailwindCSS)
+    - Página inicial + Hero Section
+    - Seção de estatísticas (STATS)
+    - Categorias e programas
+    - Seção de Acesso Rápido
+    - Blog
+    - Página de programas + Banner + Breadcrumb
+    - Página de detalhes dos cursos
+    - Player de vídeo + descrição + tabs
+    - Progresso do curso + quizzes
+    - Autenticação (Login / Cadastro)
+    - Melhorias futuras: Dashboard do aluno, sistema de pagamentos, certificado digital
+
+#### 📷 Preview
+
+(adicione aqui imagens ou GIFs mostrando a interface do projeto)
+   
 #### 🔗 Orientações:
  
 - G-Tech Official - How to Create an Online LMS Education Website using React Js and Tailwind CSS | Like Udemy: https://www.youtube.com/watch?v=tiwu5UHCUhQ
+ 
+#### 🔗 Baixar template inicial:
+
+- Template: https://github.com/gtech-official08/l  
+
+#### 🔗 Recursos
+
+- 🎨 Imagens obtidas via Pixabay https://pixabay.com/
+- 📦 Assets e snippets disponíveis no repositório 
 
 #### 🔖 Timestamps (Conteúdo do curso):
 
@@ -86,6 +138,6 @@ Mergulhe no mundo do desenvolvimento web e dê vida à sua criatividade! Os arqu
 - ⌨️ 01:36:29 - Seção de Quiz
 - ⌨️ 01:49:09 - Página de Login
 - ⌨️ 01:56:37 - Página de Cadastro
-- ⌨️ 01:57:43 - Produto Final
+- ⌨️ 01:57:43 - Produto Final 
 
-##### 🚀 por douglasabnovato
+### 🚀 Por: @douglasabnovato
