@@ -125,8 +125,31 @@ export const Detail = () => {
             </div>
           </div>
           {/* Right (price, features, buttons)*/}
-          <div className="w-full md:col-span-2 col-span-5 border-border-neutral-300 p-6 rounded-xl space-y-4 sticky top-28">
-            Hello
+          <div className="w-full md:col-span-2 col-span-5 border border-neutral-300 p-6 rounded-xl space-y-4 sticky top-28">
+            <h1 className="text-4xl text-neutral-900 font-bold">$200</h1>
+            <ul className="space-y-1 w-full list-disc list-inside px-2">
+              <li className="text-neutral-700 text-base font-normal">
+                Access to 30+ Courses
+              </li>
+              <li className="text-neutral-700 text-base font-normal">
+                All resources included
+              </li>
+              <li className="text-neutral-700 text-base font-normal">
+                Certificate of completion
+              </li>
+              <li className="text-neutral-700 text-base font-normal">
+                Offline Access
+              </li>
+            </ul>
+
+            <div className="w-full flex items-center md:gap-8 gap-4 md:flex-nowrap flex-wrap !mt-6">
+              <button className="md:w-1/2 w-full bg-neutral-900 border border-neutral-800 text-neutral-50 py-3 px-8 rounded-full font-semibold cursor-pointer ease-in-out duration">
+                Enroll Now
+              </button>
+              <button className="md:w-1/2 w-full border border-neutral-800 text-neutral-800 py-3 px-8 rounded-full font-semibold cursor-pointer ease-in-out duration">
+                Buy Now
+              </button>
+            </div>
           </div>
         </div>
       </div>
