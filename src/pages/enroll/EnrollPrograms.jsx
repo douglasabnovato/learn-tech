@@ -8,7 +8,15 @@ export const EnrollPrograms = () => {
       <PageTopBanner pageTitle={"Enroll Programs"} />
       {/* Programs contents */}
       <div className="w-full space-y-16 md:px-16 sm:px-10 px-4">
-        Enroll Programs
+        <div className="w-full grid md:grid-cols-5 grid-cols-1 md:gap-12 gap-10 grid-row-dense items-start">
+          {/** Video and Description */}
+          <div className="w-full md:col-span-3 col-span-5 space-y-12">
+            {/** Video player */}
+            {/** Description */}
+          </div>
+          {/** Course Progress and quiz section */}
+          <div className="w-full md:col-span-2 col-span-5 space-y-8 sticky top-28"></div>
+        </div>
       </div>
     </div>
   );
