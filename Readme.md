@@ -1,6 +1,6 @@
 # 🚀 Learn TECH
 
-uma plataforma de Aprendizado, moderna com uma experiência de usuário impecável
+uma plataforma de Aprendizado moderna com uma experiência de usuário impecável
 a primeira versão será de curadoria de links e conteúdos estáticos
  
 ## 📂 Plataforma de Aprendizado
@@ -126,6 +126,7 @@ Construído passo a passo para ser acessível tanto a iniciantes quanto a desenv
 
 - 🎨 Imagens obtidas via Pixabay https://pixabay.com/
 - 📦 Assets e snippets disponíveis no repositório 
+- 🎨 Vídeo Demo: https://www.youtube.com/watch?v=C9Kj594dRxU
 
 #### 🔖 Timestamps (Conteúdo do curso):
 

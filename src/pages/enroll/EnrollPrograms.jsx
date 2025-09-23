@@ -1,5 +1,9 @@
 import React from "react";
 import { PageTopBanner } from "../../components/pageTop/PageTopBanner";
+import { VideoPlayer } from "../../components/player/VideoPlayer";
+
+import DemoVideo from "./../../assets/demo.mp4";
+import DemoPoster from "./../../assets/demo-poster.jpg";
 
 export const EnrollPrograms = () => {
   return (
@@ -12,6 +16,7 @@ export const EnrollPrograms = () => {
           {/** Video and Description */}
           <div className="w-full md:col-span-3 col-span-5 space-y-12">
             {/** Video player */}
+            <VideoPlayer src={DemoVideo} poster={DemoPoster} />
             {/** Description */}
           </div>
           {/** Course Progress and quiz section */}
