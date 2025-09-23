@@ -4,6 +4,7 @@ import { VideoPlayer } from "../../components/player/VideoPlayer";
 
 import DemoVideo from "./../../assets/demo.mp4";
 import DemoPoster from "./../../assets/demo-poster.jpg";
+import { Description } from "./Description";
 
 export const EnrollPrograms = () => {
   return (
@@ -18,6 +19,7 @@ export const EnrollPrograms = () => {
             {/** Video player */}
             <VideoPlayer src={DemoVideo} poster={DemoPoster} />
             {/** Description */}
+            <Description />
           </div>
           {/** Course Progress and quiz section */}
           <div className="w-full md:col-span-2 col-span-5 space-y-8 sticky top-28"></div>
