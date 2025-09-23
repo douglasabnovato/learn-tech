@@ -1,4 +1,6 @@
 import React from "react";
+import testimonials from "../../../constants/testimonialData";
+import ReviewsCard from "../../../components/reviews/ReviewsCard";
 
 export const Reviews = () => {
   return (
@@ -21,6 +23,11 @@ export const Reviews = () => {
       </div>
       <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
         {/** Make a reviewcard */}
+        {testimonials.map((review, index) => (
+          <div key={index} className="breake-inside-avoid w-full">
+            <ReviewsCard testimonial={review} />
+          </div>
+        ))}
       </div>
     </div>
   );
