@@ -12,7 +12,7 @@ export const Tabs = ({ tabs }) => {
             onClick={() => setActiveTab(tab.id)}
             className={`px-4 py-2 text-base font-semibold border-b-2 cursor-pointer focus:outline-none ${
               activeTab === tab.id
-                ? "border-sky-500 text-sky-500 bg-sky-500/10 rounded-t-lg"
+                ? "border-in-500 text-in-500 bg-in-500/10 rounded-t-lg"
                 : "text-neutral-600 border-neutral-100 hover:text-neutral-900"
             }`}
           >

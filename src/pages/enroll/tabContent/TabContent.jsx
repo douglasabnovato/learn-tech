@@ -1,26 +1,26 @@
 import React from "react";
 import { Tabs } from "../../../components/tabs/Tabs";
+import { Overview } from "./Overview";
+import { Resources } from "./Resources";
+import { Reviews } from "./Reviews";
 
 export const TabContent = () => {
   const tabs = [
     {
       id: "overviews",
       title: "Overviews",
-      content:
-        "Ipsum dolor sit amet consectetur adipisicing elit. Magni quod recusandae explicabo voluptatibus nostrum at nam.",
+      content: <Overview />,
     },
     {
       id: "resources",
       title: "Resources",
-      content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni quod recusandae explicabo voluptatibus nostrum at nam.",
+      content: <Resources />,
     },
     {
       id: "reviews",
       title: "Reviews",
-      content:
-        "Dolor sit amet consectetur adipisicing elit. Magni quod recusandae explicabo voluptatibus nostrum at nam.",
-    } 
+      content: <Reviews />,
+    },
   ];
   return (
     <div className="w-full">

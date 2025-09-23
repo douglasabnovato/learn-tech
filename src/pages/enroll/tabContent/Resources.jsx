@@ -1,11 +1,11 @@
 import React from "react";
 
-export const Overview = () => {
+export const Resources = () => {
   return (
     <div className="w-full space-y-6">
       <div className="space-y-1.5">
         <h1 className="text-xl font-semibold text-neutral-700">
-          About the course
+          Course Materials
         </h1>
         <p className="text-sm font-normal text-neutral-600">
           This comprehensive web development bootcamp takes you from absolute
@@ -17,22 +17,29 @@ export const Overview = () => {
         <h3 className="text-xl text-neutral-700 font-semibold">
           What you'll learn
         </h3>
-        <ul className="list-disc list-inside px-2">
+        <ul className="list-disc list-outside px-6">
           <li className="text-neutral-600 text-base font-normal">
-            Learn to build full-stack web applications using HTML, CSS and
-            Javascript.
+            <strong>Course Slides:</strong>
+            Downloadable slides from each lesson to help you review key points.
           </li>
           <li className="text-neutral-600 text-base font-normal">
-            Understand the fundamental of web development
+            <strong>Course Slides:</strong>
+            Downloadable slides from each lesson to help you review key points.
           </li>
           <li className="text-neutral-600 text-base font-normal">
-            Core concepts of HTML, CSS and Javascript
+            <strong>Course Slides:</strong>
+            Downloadable slides from each lesson to help you review key points.
           </li>
           <li className="text-neutral-600 text-base font-normal">
-            Build responsive and user-frindly interfaces, more...
+            <strong>Course Slides:</strong>
+            Downloadable slides from each lesson to help you review key points.
           </li>
         </ul>
       </div>
+      <p className="text-sm font-normal text-neutral-600">
+        Be Sure to make full use of resources as they will help you master the
+        course materials more effectively.
+      </p>
     </div>
   );
 };
