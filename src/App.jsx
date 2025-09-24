@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Home } from "./pages/home/Home";
 import Navbar from "./components/nav/Navbar";
 import Footer from "./components/footer/Footer";
+import { Home } from "./pages/home/Home";
 import { Programs } from "./pages/programs/Programs";
 import { Detail } from "./pages/detail/Detail";
 import { EnrollPrograms } from "./pages/enroll/EnrollPrograms";
@@ -13,7 +13,6 @@ function App() {
         <main className="w-full bg-neutral-50 flex min-h-screen flex-col text-neutral-500">
           {/* Navbar section */}
           <Navbar />
-
           {/* Routes */}
           <Routes>
             {/* Home */}
@@ -24,10 +23,10 @@ function App() {
             {/* Details */}
             <Route path="/program/detail" element={<Detail />} />
             <Route
-              path="/program/enroll-programs-title" element={<EnrollPrograms />}
+              path="/program/enroll-programs-title"
+              element={<EnrollPrograms />}
             />
           </Routes>
-
           {/* Footer Section */}
           <Footer />
         </main>

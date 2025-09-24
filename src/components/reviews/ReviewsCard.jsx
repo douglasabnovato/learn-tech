@@ -1,4 +1,4 @@
-import React from "react"; 
+import PropTypes from "prop-types";
 
 const ReviewsCard = ({ testimonial }) => {
   const { fullName, image, testimonialText } = testimonial;
@@ -18,9 +18,19 @@ const ReviewsCard = ({ testimonial }) => {
         )}
         <h3 className="ml-4 text-xl font-semibold">{fullName}</h3>
       </div>
-      <p className="text-sm text-neutral-600 font-normal">{testimonialText}</p>
+      <p className="text-sm text-neutral-600 font-normal">
+        {testimonialText || "No review available."}
+      </p>
     </div>
   );
+};
+
+ReviewsCard.propTypes = {
+  testimonial: PropTypes.shape({
+    fullName: PropTypes.string.isRequired,
+    image: PropTypes.string,
+    testimonialText: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default ReviewsCard;

@@ -1,12 +1,12 @@
-import React from "react";
 import { PageTopBanner } from "../../components/pageTop/PageTopBanner";
 import { VideoPlayer } from "../../components/player/VideoPlayer";
 
 import DemoVideo from "./../../assets/demo.mp4";
 import DemoPoster from "./../../assets/demo-poster.jpg";
 import { Description } from "./Description";
-import { FaCheck } from "react-icons/fa";
+import { FaCheck, FaPlay } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { Quiz } from "./quiz/Quiz";
 
 export const EnrollPrograms = () => {
   return (
@@ -62,11 +62,27 @@ export const EnrollPrograms = () => {
                         Introduction to Course
                       </h1>
                     </div>
+                    <p className="text-sm text-neutral-800 font-medium"></p>
+                  </Link>
+                  <Link
+                    to="/"
+                    className="w-full flex items-center justify-between gap-3 bg-transparent hover:bg-indigo-500/5 p-3 rounded-lg ease-in-out duration-300"
+                  >
+                    <div className="flex items-center gap-x-2">
+                      <div className="w-8 h-8 rounded-full flex items-center justify-center bg-indigo-500/5 border border-indigo-200">
+                        <FaPlay size={16} className="text-indigo-500" />
+                      </div>
+                      <h1 className="text-base text-neutral-800 font-semibold flex-1">
+                        Basic of Fundamental Course
+                      </h1>
+                    </div>
+                    <p className="text-sm text-neutral-800 font-medium"></p>
                   </Link>
                 </div>
               </div>
             </div>
             {/** quiz */}
+            <Quiz />
           </div>
         </div>
       </div>
