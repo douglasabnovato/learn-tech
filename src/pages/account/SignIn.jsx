@@ -96,6 +96,14 @@ export const SignIn = () => {
             </button>
           </div>
           {/** Don't have an account */}
+          <div className="w-full flex items-center justify-center gap-x-2">
+            <p className="text-sm text-neutral-600 font-medium">
+              Don't have an account?
+            </p>
+            <Link to="/signup" className="text-sm text-neutral-800 font-medium">
+              Sign Up
+            </Link>
+          </div>
         </div>
       </div>
     </div>
