@@ -84,86 +84,86 @@ Construído passo a passo para ser acessível tanto a iniciantes quanto a desenv
 
 #### 📖 Roadmap do Desenvolvimento 
 
-- 🎬 Intro 
-- Apresentação do objetivo do projeto: criação de uma plataforma LMS responsiva utilizando ReactJS + TailwindCSS.
+- 🎬 Intro <br>
+Apresentação do objetivo do projeto: criação de uma plataforma LMS responsiva utilizando ReactJS + TailwindCSS.
 
 - ⚙️ Project Setup
-- Configuração inicial do ambiente com Vite, instalação do TailwindCSS e demais dependências.
+Configuração inicial do ambiente com Vite, instalação do TailwindCSS e demais dependências.
 
 - 🏠 Home Page
-- Estrutura inicial da página principal com navegação e seções base.
+Estrutura inicial da página principal com navegação e seções base.
 
 - 🌟 Hero Section
-- Seção de destaque da Home com chamada principal e imagem/banner ilustrativo.
+Seção de destaque da Home com chamada principal e imagem/banner ilustrativo.
 
 - 📊 STATS Section
-- Exibição de estatísticas (ex.: alunos, cursos, avaliações) em cards chamativos.
+Exibição de estatísticas (ex.: alunos, cursos, avaliações) em cards chamativos.
 
 - 📂 Category Section
-- Listagem de categorias de cursos para facilitar a navegação do usuário.
+Listagem de categorias de cursos para facilitar a navegação do usuário.
 
 - 📚 Programs Section
-- Apresentação dos programas/cursos disponíveis com cards detalhados.
+Apresentação dos programas/cursos disponíveis com cards detalhados.
 
 - ⚡ Quick Access Section
-- Área para navegação rápida entre recursos importantes da plataforma.
+Área para navegação rápida entre recursos importantes da plataforma.
 
 - 📝 Blog Section
-- Sessão de artigos/posts com conteúdo educativo e informativo.
+Sessão de artigos/posts com conteúdo educativo e informativo.
 
 - 📄 Programs Page
-- Página dedicada aos programas, exibindo lista completa de cursos disponíveis.
+Página dedicada aos programas, exibindo lista completa de cursos disponíveis.
 
 - 🏞️ Page Top Banner Components
-- Componente reutilizável para exibir banners no topo das páginas internas.
+Componente reutilizável para exibir banners no topo das páginas internas.
 
 - 🧭 Breadcrumb Components
-- Componente de navegação (caminho de páginas) para melhorar a usabilidade.
+Componente de navegação (caminho de páginas) para melhorar a usabilidade.
 
 - 📄 Programs Page (Contd...)
-- Continuação da implementação da página de programas com detalhes adicionais.
+Continuação da implementação da página de programas com detalhes adicionais.
 
 - 📑 Details Page
-- Página de detalhes de cada curso, com informações aprofundadas do conteúdo.
+Página de detalhes de cada curso, com informações aprofundadas do conteúdo.
 
 - 📝 Enroll Programs Page
-- Página para inscrição do aluno no curso escolhido.
+Página para inscrição do aluno no curso escolhido.
 
 - 🎥 Video Player Section
-- Componente de player de vídeo para exibir aulas.
+Componente de player de vídeo para exibir aulas.
 
 - 🖊️ Description Section
-- Sessão dedicada à descrição completa do curso.
+Sessão dedicada à descrição completa do curso.
 
 - 🗂️ Tabs Components
-- Componente de abas (tabs) para alternar entre seções do curso.
+Componente de abas (tabs) para alternar entre seções do curso.
 
 - 📋 Overview Tabs Section
-- Aba de visão geral do curso.
+Aba de visão geral do curso.
 
 - 📦 Resources Tabs Section
-- Aba de recursos adicionais do curso (ex.: PDFs, links, materiais extras).
+Aba de recursos adicionais do curso (ex.: PDFs, links, materiais extras).
 
 - ⭐ Reviews Tabs Section
-- Aba de avaliações/comentários de alunos.
+Aba de avaliações/comentários de alunos.
 
 - 📈 Course Progress Section
-- Exibição do progresso do aluno dentro do curso.
+Exibição do progresso do aluno dentro do curso.
 
 - ❓ Quiz Section
-- Implementação de quizzes interativos para reforçar o aprendizado.
+Implementação de quizzes interativos para reforçar o aprendizado.
 
 - 🔑 Sign In Page
-- Página de login com autenticação de usuários.
+Página de login com autenticação de usuários.
 
 - 🆕 Sign Up Page
-- Página de registro para novos alunos.
+Página de registro para novos alunos.
 
 - ✅ Final Product
-- Produto final: plataforma LMS completa, responsiva e funcional.
+Produto final: plataforma LMS completa, responsiva e funcional.
 
 - 🚀Melhorias futuras
-- Dashboard do aluno, sistema de pagamentos, certificado digital
+Dashboard do aluno, sistema de pagamentos, certificado digital
 
 #### 📷 Preview
 
