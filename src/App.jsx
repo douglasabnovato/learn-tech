@@ -5,6 +5,7 @@ import { Home } from "./pages/home/Home";
 import { Programs } from "./pages/programs/Programs";
 import { Detail } from "./pages/detail/Detail";
 import { EnrollPrograms } from "./pages/enroll/EnrollPrograms";
+import { SignIn } from "./pages/account/SignIn";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             {/* Pages */}
             <Route path="/programs" element={<Programs />} />
             {/* Auth */}
+            <Route path="/signin" element={<SignIn />} />
             {/* Details */}
             <Route path="/program/detail" element={<Detail />} />
             <Route

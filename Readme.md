@@ -1,7 +1,7 @@
 # 🚀 Learn TECH
 
-uma plataforma de Aprendizado moderna com uma experiência de usuário impecável
-a primeira versão será de curadoria de links e conteúdos estáticos
+Uma plataforma de Aprendizado com uma experiência de usuário impecável
+A primeira versão será de curadoria de links e conteúdos estáticos
  
 ## 📂 Plataforma de Aprendizado
 
@@ -12,15 +12,15 @@ a primeira versão será de curadoria de links e conteúdos estáticos
     - Acompanhar progresso e desempenho dos alunos.
     - Emitir certificados após conclusão de cursos ou trilhas.
     - Facilitar interações (fóruns, comentários, avaliações). 
+- Exemplos famosos: Moodle, Udemy, Coursera, Hotmart. 
 
-### 🌟 Projeto
+### 📷 Preview da versão em produção
 
-- Configuração do ambiente ReactJs & TailwindCSS para desenvolvimento eficiente (com Vite).
-- Criação de uma interface visual atraente com TailwindCSS.
-- Implementação de recursos essenciais de um LMS (Learning Management System), como estatísticas de cursos, categorias, listagem de cursos, banner, blog, além de player de vídeo, quiz e outras funcionalidades.
-- Garantia de que o site seja totalmente responsivo em todos os dispositivos.
-- Uso de imagens do Pixabay.
-- Exemplos famosos: Moodle, Udemy, Coursera, Hotmart.
+(adicione aqui imagens ou GIFs mostrando a interface do projeto)
+
+### 📂 Estratégia do Projeto
+
+Para permitir acesso para todos que quiserem aprender tecnologia, a plataforma apresentará um conteúdo público da internet de forma organizada, ordenada e selecionada.
 
 #### 🚀 OFF
 
@@ -28,9 +28,13 @@ Curadoria e ordenação de conteúdos da internet conforme os critérios adotado
 
 #### 🚀 ON
 
-Jornada profissional e conteúdos originais personalizados para a prestação de consultoria.
+Jornada profissional e conteúdos originais personalizados para a prestação de consultoria, desenvolvimento de produtos e serviços. 
+
  
-#### 🚀 Workflow
+---
+
+
+## 🚀 Workflow
 
 - main
 - developer
@@ -53,7 +57,11 @@ npm install
 npm run dev
 ````
 
-## 🚀 versão 1
+
+---
+
+
+## 🚀 VERSÃO 1
 
 Desenvolvimento do projeto original
 
@@ -74,41 +82,88 @@ Este projeto é inspirado em plataformas como Udemy, trazendo recursos essenciai
 
 Construído passo a passo para ser acessível tanto a iniciantes quanto a desenvolvedores experientes.
 
-#### 🛠️ Tecnologias Utilizadas
+#### 📖 Roadmap do Desenvolvimento 
 
-    - ReactJS ⚛️ https://react.dev/
-    - TailwindCSS 🎨 https://tailwindcss.com/
-    - Vite ⚡ https://vitejs.dev/
-    - React Icons 🔗 https://react-icons.github.io/react-icons/
+- 🎬 Intro
+Apresentação do objetivo do projeto: criação de uma plataforma LMS responsiva utilizando ReactJS + TailwindCSS.
 
-#### 📂 Estrutura do Projeto
+- ⚙️ Project Setup
+Configuração inicial do ambiente com Vite, instalação do TailwindCSS e demais dependências.
 
-    - Home Page com seção Hero e destaques 
-    - Estatísticas de Cursos (STATS Section) 
-    - Categorias de Aprendizado 
-    - Lista de Programas 
-    - Seção de Acesso Rápido 
-    - Blog 
-    - Página de Detalhes dos Cursos 
-    - Player de Vídeo + Quizzes 
-    - Sistema de Tabs (Visão Geral, Recursos, Avaliações) 
-    - Progresso do Curso 
-    - Autenticação: Páginas de Login e Cadastro
+- 🏠 Home Page
+Estrutura inicial da página principal com navegação e seções base.
 
-#### 📖 Conteúdo (Roadmap do Desenvolvimento)
+- 🌟 Hero Section
+Seção de destaque da Home com chamada principal e imagem/banner ilustrativo.
 
-    - Configuração do projeto (React + Vite + TailwindCSS)
-    - Página inicial + Hero Section
-    - Seção de estatísticas (STATS)
-    - Categorias e programas
-    - Seção de Acesso Rápido
-    - Blog
-    - Página de programas + Banner + Breadcrumb
-    - Página de detalhes dos cursos
-    - Player de vídeo + descrição + tabs
-    - Progresso do curso + quizzes
-    - Autenticação (Login / Cadastro)
-    - Melhorias futuras: Dashboard do aluno, sistema de pagamentos, certificado digital
+- 📊 STATS Section
+Exibição de estatísticas (ex.: alunos, cursos, avaliações) em cards chamativos.
+
+- 📂 Category Section
+Listagem de categorias de cursos para facilitar a navegação do usuário.
+
+- 📚 Programs Section
+Apresentação dos programas/cursos disponíveis com cards detalhados.
+
+- ⚡ Quick Access Section
+Área para navegação rápida entre recursos importantes da plataforma.
+
+- 📝 Blog Section
+Sessão de artigos/posts com conteúdo educativo e informativo.
+
+- 📄 Programs Page
+Página dedicada aos programas, exibindo lista completa de cursos disponíveis.
+
+- 🏞️ Page Top Banner Components
+Componente reutilizável para exibir banners no topo das páginas internas.
+
+- 🧭 Breadcrumb Components
+Componente de navegação (caminho de páginas) para melhorar a usabilidade.
+
+- 📄 Programs Page (Contd...)
+Continuação da implementação da página de programas com detalhes adicionais.
+
+- 📑 Details Page
+Página de detalhes de cada curso, com informações aprofundadas do conteúdo.
+
+- 📝 Enroll Programs Page
+Página para inscrição do aluno no curso escolhido.
+
+- 🎥 Video Player Section
+Componente de player de vídeo para exibir aulas.
+
+- 🖊️ Description Section
+Sessão dedicada à descrição completa do curso.
+
+- 🗂️ Tabs Components
+Componente de abas (tabs) para alternar entre seções do curso.
+
+- 📋 Overview Tabs Section
+Aba de visão geral do curso.
+
+- 📦 Resources Tabs Section
+Aba de recursos adicionais do curso (ex.: PDFs, links, materiais extras).
+
+- ⭐ Reviews Tabs Section
+Aba de avaliações/comentários de alunos.
+
+- 📈 Course Progress Section
+Exibição do progresso do aluno dentro do curso.
+
+- ❓ Quiz Section
+Implementação de quizzes interativos para reforçar o aprendizado.
+
+- 🔑 Sign In Page
+Página de login com autenticação de usuários.
+
+- 🆕 Sign Up Page
+Página de registro para novos alunos.
+
+- ✅ Final Product
+Produto final: plataforma LMS completa, responsiva e funcional.
+
+- 🚀Melhorias futuras
+Dashboard do aluno, sistema de pagamentos, certificado digital
 
 #### 📷 Preview
 
@@ -118,43 +173,21 @@ Construído passo a passo para ser acessível tanto a iniciantes quanto a desenv
  
 - G-Tech Official - How to Create an Online LMS Education Website using React Js and Tailwind CSS | Like Udemy: https://www.youtube.com/watch?v=tiwu5UHCUhQ
  
-#### 🔗 Baixar template inicial:
+#### 🔗 Baixar template inicial 
 
 - Template: https://github.com/gtech-official08/l  
+
+#### 🛠️ Tecnologias Utilizadas
+
+    - ReactJS ⚛️ https://react.dev/
+    - TailwindCSS 🎨 https://tailwindcss.com/
+    - Vite ⚡ https://vitejs.dev/
+    - React Icons 🔗 https://react-icons.github.io/react-icons/
 
 #### 🔗 Recursos
 
 - 🎨 Imagens obtidas via Pixabay https://pixabay.com/
 - 📦 Assets e snippets disponíveis no repositório 
-- 🎨 Vídeo Demo: https://www.youtube.com/watch?v=C9Kj594dRxU
-
-#### 🔖 Timestamps (Conteúdo do curso):
-
-- ⌨️ 00:00:00 - Introdução
-- ⌨️ 00:06:57 - Configuração do Projeto
-- ⌨️ 00:07:58 - Página inicial
-- ⌨️ 00:08:47 - Seção Hero
-- ⌨️ 00:14:36 - Seção de Estatísticas
-- ⌨️ 00:18:54 - Seção de Categorias
-- ⌨️ 00:24:10 - Seção de Programas
-- ⌨️ 00:32:14 - Seção de Acesso Rápido
-- ⌨️ 00:37:10 - Seção de Blog
-- ⌨️ 00:41:32 - Página de Programas
-- ⌨️ 00:42:42 - Componentes de Banner Superior
-- ⌨️ 00:45:01 - Componentes de Breadcrumb
-- ⌨️ 00:49:39 - Continuação da Página de Programas
-- ⌨️ 00:52:25 - Página de Detalhes
-- ⌨️ 01:01:45 - Página de Inscrição em Programas
-- ⌨️ 01:03:56 - Seção de Player de Vídeo
-- ⌨️ 01:16:08 - Seção de Descrição
-- ⌨️ 01:17:39 - Componentes de Abas
-- ⌨️ 01:22:02 - Seção de Abas de Visão Geral
-- ⌨️ 01:23:53 - Seção de Abas de Recursos
-- ⌨️ 01:25:05 - Seção de Abas de Avaliações
-- ⌨️ 01:31:40 - Seção de Progresso do Curso
-- ⌨️ 01:36:29 - Seção de Quiz
-- ⌨️ 01:49:09 - Página de Login
-- ⌨️ 01:56:37 - Página de Cadastro
-- ⌨️ 01:57:43 - Produto Final 
+- 🎨 Vídeo Demo: https://www.youtube.com/watch?v=C9Kj594dRxU 
 
 ### 🚀 Por: @douglasabnovato
