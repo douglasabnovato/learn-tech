@@ -117,14 +117,16 @@ export const Quiz = () => {
           {/** actions buttons */}
           <div className="flex items-center gap-4 md:w-fit w-full">
             <button
-              className="md:w-fit w-1/2 bg-sky-500 text-neutral-50 py-2 px-4 rounded-lg shadow disabled:opacity-50 disabled: cursor-not-allowed font-semibold"
+              className="md:w-fit w-1/2 bg-sky-500 text-neutral-50 py-2 px-4 rounded-lg shadow disabled:opacity-50 disabled:cursor-not-allowed font-semibold"
+              disabled={currentQuestion === 0}
               onClick={handlePrevious}
             >
               Previous
             </button>
             <button
-              className="md:w-fit w-1/2 bg-sky-500 text-neutral-50 py-2 px-4 rounded-lg shadow disabled:opacity-50 disabled: cursor-not-allowed font-semibold"
+              className="md:w-fit w-1/2 bg-sky-500 text-neutral-50 py-2 px-4 rounded-lg shadow disabled:opacity-50 disabled:cursor-not-allowed font-semibold"
               onClick={handleNext}
+              disabled={currentQuestion === questions.length - 1}
             >
               Next
             </button>
