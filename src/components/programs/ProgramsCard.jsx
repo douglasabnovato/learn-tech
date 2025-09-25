@@ -73,7 +73,7 @@ export const ProgramsCard = ({
             {price}
           </p>
           <Link
-            to={`/programs/enroll-programs-title`}
+            to={`/program/enroll-programs-title`}
             className="w-fit text-sky-900 text-sm font-medium flex items-center justify-center gap-2 hover:text-sky-800 transition-all ease-in-out duration-300"
           >
             Enroll Now <FaAnglesRight />
