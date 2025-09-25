@@ -87,83 +87,84 @@ Construído passo a passo para ser acessível tanto a iniciantes quanto a desenv
 - 🎬 Intro <br>
 Apresentação do objetivo do projeto: criação de uma plataforma LMS responsiva utilizando ReactJS + TailwindCSS.
 
-- ⚙️ Project Setup
+- ⚙️ Project Setup <br>
 Configuração inicial do ambiente com Vite, instalação do TailwindCSS e demais dependências.
 
-- 🏠 Home Page
+- 🏠 Home Page <br>
 Estrutura inicial da página principal com navegação e seções base.
 
-- 🌟 Hero Section
+- 🌟 Hero Section <br>
 Seção de destaque da Home com chamada principal e imagem/banner ilustrativo.
 
-- 📊 STATS Section
+- 📊 STATS Section <br>
 Exibição de estatísticas (ex.: alunos, cursos, avaliações) em cards chamativos.
 
-- 📂 Category Section
+- 📂 Category Section <br>
 Listagem de categorias de cursos para facilitar a navegação do usuário.
 
-- 📚 Programs Section
+- 📚 Programs Section <br>
 Apresentação dos programas/cursos disponíveis com cards detalhados.
 
-- ⚡ Quick Access Section
+- ⚡ Quick Access Section <br>
 Área para navegação rápida entre recursos importantes da plataforma.
 
-- 📝 Blog Section
+- 📝 Blog Section <br>
 Sessão de artigos/posts com conteúdo educativo e informativo.
 
-- 📄 Programs Page
+- 📄 Programs Page <br>
 Página dedicada aos programas, exibindo lista completa de cursos disponíveis.
 
-- 🏞️ Page Top Banner Components
+- 🏞️ Page Top Banner Components <br>
 Componente reutilizável para exibir banners no topo das páginas internas.
 
-- 🧭 Breadcrumb Components
+- 🧭 Breadcrumb Components <br>
 Componente de navegação (caminho de páginas) para melhorar a usabilidade.
 
-- 📄 Programs Page (Contd...)
+- 📄 Programs Page (Contd...) <br>
 Continuação da implementação da página de programas com detalhes adicionais.
 
-- 📑 Details Page
+- 📑 Details Page <br>
 Página de detalhes de cada curso, com informações aprofundadas do conteúdo.
 
-- 📝 Enroll Programs Page
+- 📝 Enroll Programs Page <br>
 Página para inscrição do aluno no curso escolhido.
 
-- 🎥 Video Player Section
+- 🎥 Video Player Section <br>
 Componente de player de vídeo para exibir aulas.
 
-- 🖊️ Description Section
+- 🖊️ Description Section <br>
 Sessão dedicada à descrição completa do curso.
 
-- 🗂️ Tabs Components
+- 🗂️ Tabs Components <br>
 Componente de abas (tabs) para alternar entre seções do curso.
 
-- 📋 Overview Tabs Section
+- 📋 Overview Tabs Section <br>
 Aba de visão geral do curso.
 
-- 📦 Resources Tabs Section
+- 📦 Resources Tabs Section <br>
 Aba de recursos adicionais do curso (ex.: PDFs, links, materiais extras).
 
-- ⭐ Reviews Tabs Section
+- ⭐ Reviews Tabs Section <br>
 Aba de avaliações/comentários de alunos.
 
-- 📈 Course Progress Section
+- 📈 Course Progress Section <br>
 Exibição do progresso do aluno dentro do curso.
 
-- ❓ Quiz Section
+- ❓ Quiz Section <br>
 Implementação de quizzes interativos para reforçar o aprendizado.
 
-- 🔑 Sign In Page
+- 🔑 Sign In Page <br>
 Página de login com autenticação de usuários.
 
-- 🆕 Sign Up Page
+- 🆕 Sign Up Page <br>
 Página de registro para novos alunos.
 
-- ✅ Final Product
+- ✅ Final Product <br>
 Produto final: plataforma LMS completa, responsiva e funcional.
 
-- 🚀Melhorias futuras
-Dashboard do aluno, sistema de pagamentos, certificado digital
+- 🚀 Melhorias Futuras <br>
+Dashboard do aluno, sistema de pagamentos, certificado digital.
+
 
 #### 📷 Preview
 
