@@ -165,10 +165,16 @@ Produto final: plataforma LMS completa, responsiva e funcional.
 - 🚀 Melhorias Futuras <br>
 Dashboard do aluno, sistema de pagamentos, certificado digital.
 
+#### 📷 Preview da interface do projeto
 
-#### 📷 Preview
-
-(adicione aqui imagens ou GIFs mostrando a interface do projeto)
+- ![Home](./.github/1-home.jpg)
+- ![Home](./.github/2-home.jpg)
+- ![Home](./.github/3-home.jpg)
+- ![Home](./.github/4-home.jpg)
+- ![Home](./.github/5-home.jpg)
+- ![Programas](./.github/6-programas.jpg)
+- ![Programas](./.github/7-programas.jpg)
+- ![Sign In](./.github/8-signin.jpg)
    
 #### 🔗 Orientações:
  
