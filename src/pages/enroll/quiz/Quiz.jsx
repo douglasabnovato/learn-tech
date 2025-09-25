@@ -61,7 +61,7 @@ export const Quiz = () => {
       </h1>
       <div className="w-full bg-neutral-100/40 border border-neutral-200 md:p-6 p-3 rounded-lg space-y-6">
         <h1 className="text-lg text-neutral-800 font-semibold border-b pb-1 border-neutral-200">
-          {currentQuestion + 1} . {questions[currentQuestion].questions}
+          {currentQuestion + 1} . {questions[currentQuestion].question}
         </h1>
         {/** Options */}
         <div className="space-y-2">
@@ -87,7 +87,13 @@ export const Quiz = () => {
                         : "border-red-500 bg-red-500/10 text-red-500"
                       : "border-sky-600 bg-sky-500/10 text-sky-600"
                     : "border-neutral-200 text-neutral-600"
-                }`}
+                }
+                ${
+                  selectedAnswerIndex !== null && selectedAnswerIndex !== index
+                    ? "opacity-50 !cursor-not-allowed"
+                    : ""
+                }
+                `}
               >
                 {/**   */}
                 <div className="w-full flex items-center justify-between">
@@ -103,7 +109,27 @@ export const Quiz = () => {
           ))}
         </div>
         {/** Buttons and total questions */}
-        <div className="flex items-center justify-between gap-4 flex-wrap"></div>
+        <div className="flex items-center justify-between gap-4 flex-wrap">
+          {/** question counter */}
+          <p className="text-base md:text-sm text-neutral-600">
+            {currentQuestion + 1} of {questions.length} questions
+          </p>
+          {/** actions buttons */}
+          <div className="flex items-center gap-4 md:w-fit w-full">
+            <button
+              className="md:w-fit w-1/2 bg-sky-500 text-neutral-50 py-2 px-4 rounded-lg shadow disabled:opacity-50 disabled: cursor-not-allowed font-semibold"
+              onClick={handlePrevious}
+            >
+              Previous
+            </button>
+            <button
+              className="md:w-fit w-1/2 bg-sky-500 text-neutral-50 py-2 px-4 rounded-lg shadow disabled:opacity-50 disabled: cursor-not-allowed font-semibold"
+              onClick={handleNext}
+            >
+              Next
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
