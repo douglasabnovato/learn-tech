@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { FaCheck } from "react-icons/fa";
+import { FaXmark } from "react-icons/fa6";
+import questions from "./../../../constants/quizData";
+
 export const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswerIndex, setSelectedAnswerIndex] = useState(null);
@@ -56,7 +60,50 @@ export const Quiz = () => {
         Test Your Knowledge
       </h1>
       <div className="w-full bg-neutral-100/40 border border-neutral-200 md:p-6 p-3 rounded-lg space-y-6">
-        Douglas
+        <h1 className="text-lg text-neutral-800 font-semibold border-b pb-1 border-neutral-200">
+          {currentQuestion + 1} . {questions[currentQuestion].questions}
+        </h1>
+        {/** Options */}
+        <div className="space-y-2">
+          {questions[currentQuestion].options.map((option, index) => (
+            <div key={index} className="flex items-center gap-2">
+              <input
+                type="radio"
+                name="answer"
+                id={`option-${index}`}
+                className="hidden peer"
+                value={index}
+                checked={selectedAnswerIndex === index}
+                onChange={() => handleAnswerSelect(index, option.isCorrect)}
+                disabled={finalized}
+              />
+              <label
+                htmlFor={`option-${index}`}
+                className={`inline-flex items-center w-full border rounded-lg p-3 cursor-pointer ${
+                  selectedAnswerIndex === index
+                    ? finalized
+                      ? isCorrect
+                        ? "border-green-500 bg-green-500/10 text-green-500"
+                        : "border-red-500 bg-red-500/10 text-red-500"
+                      : "border-sky-600 bg-sky-500/10 text-sky-600"
+                    : "border-neutral-200 text-neutral-600"
+                }`}
+              >
+                {/**   */}
+                <div className="w-full flex items-center justify-between">
+                  <span className="text-sm font-medium">{option.text}</span>
+                  {selectedAnswerIndex === index && finalized && (
+                    <span className="text-sm">
+                      {isCorrect ? <FaCheck /> : <FaXmark />}
+                    </span>
+                  )}
+                </div>
+              </label>
+            </div>
+          ))}
+        </div>
+        {/** Buttons and total questions */}
+        <div className="flex items-center justify-between gap-4 flex-wrap"></div>
       </div>
     </div>
   );
