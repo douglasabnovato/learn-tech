@@ -1,16 +1,9 @@
 # 🚀 Learn TECH
 
-uma plataforma de Aprendizado, moderna com uma experiência de usuário impecável
-
-## 🚀 OFF
-
-Curadoria e ordenação de conteúdos da internet conforme os critérios adotados pelo Coordenador do nosso ECOSSISTEMA.
-
-## 🚀 ON
-
-Jornada profissional e conteúdos originais personalizados para a prestação de consultoria.
-  
-### 📂 Plataforma de Aprendizado
+Uma plataforma de Aprendizado com uma experiência de usuário impecável
+A primeira versão será de curadoria de links e conteúdos estáticos
+ 
+## 📂 Plataforma de Aprendizado
 
 - Um LMS (Learning Management System) é um Sistema de Gestão de Aprendizagem.
 - Ele serve para:
@@ -19,60 +12,189 @@ Jornada profissional e conteúdos originais personalizados para a prestação de
     - Acompanhar progresso e desempenho dos alunos.
     - Emitir certificados após conclusão de cursos ou trilhas.
     - Facilitar interações (fóruns, comentários, avaliações). 
+- Exemplos famosos: Moodle, Udemy, Coursera, Hotmart. 
 
-### 🌟 Projeto
+### 📷 Preview da versão em produção
 
-- Configuração do ambiente ReactJs & TailwindCSS para desenvolvimento eficiente (com Vite).
-- Criação de uma interface visual atraente com TailwindCSS.
-- Implementação de recursos essenciais de um LMS (Learning Management System), como estatísticas de cursos, categorias, listagem de cursos, banner, blog, além de player de vídeo, quiz e outras funcionalidades.
-- Garantia de que o site seja totalmente responsivo em todos os dispositivos.
-- Uso de imagens do Pixabay.
-- Exemplos famosos: Moodle, Udemy, Coursera, Hotmart.
+(adicione aqui imagens ou GIFs mostrando a interface do projeto)
 
-### 🚀 O desafio
+### 📂 Estratégia do Projeto
 
-Mergulhe no mundo do desenvolvimento web e dê vida à sua criatividade! Os arquivos de configuração do projeto e os snippets de ícones/assets estão disponíveis no GitHub para fácil acesso e colaboração.
+Para permitir acesso para todos que quiserem aprender tecnologia, a plataforma apresentará um conteúdo público da internet de forma organizada, ordenada e selecionada.
 
-#### 🔗 Baixar template inicial:
+#### 🚀 OFF
 
-- Template: https://github.com/gtech-official08/l 
+Curadoria e ordenação de conteúdos da internet conforme os critérios adotados pelo Coordenador do nosso ECOSSISTEMA.
 
-#### 🔗 Links oficiais:
+#### 🚀 ON
 
-- ReactJs: https://react.dev/
-- Tailwindcss: https://tailwindcss.com/docs/installa
-- React Icons: https://react-icons.github.io/react-i
+Jornada profissional e conteúdos originais personalizados para a prestação de consultoria, desenvolvimento de produtos e serviços. 
 
+ 
+---
+
+
+## 🚀 Workflow
+
+- main
+- developer
+- v1-original
+- v2-conteudos
+
+#### 👨‍💻 Como Executar Localmente
+
+````gitbash
+# Clone o repositório
+git clone https://github.com/seu-usuario/seu-repo.git
+
+# Acesse a pasta
+cd seu-repo
+
+# Instale as dependências
+npm install
+
+# Rode o projeto
+npm run dev
+````
+
+
+---
+
+
+## 🚀 VERSÃO 1
+
+Desenvolvimento do projeto original
+
+### 📚 LearnHub — Plataforma LMS Online Responsiva
+
+🌟 Uma plataforma de Educação Online (LMS) desenvolvida com ReactJS e TailwindCSS, moderna, responsiva e com foco em experiência do usuário.
+
+#### 🚀 Visão Geral
+
+Este projeto é inspirado em plataformas como Udemy, trazendo recursos essenciais de um Learning Management System (LMS):
+
+    - Exibição de cursos, categorias e estatísticas
+    - Páginas de programas e detalhes
+    - Player de vídeo embutido
+    - Sistema de quizzes
+    - Blog integrado
+    - Design 100% responsivo
+
+Construído passo a passo para ser acessível tanto a iniciantes quanto a desenvolvedores experientes.
+
+#### 📖 Roadmap do Desenvolvimento 
+
+- 🎬 Intro <br>
+Apresentação do objetivo do projeto: criação de uma plataforma LMS responsiva utilizando ReactJS + TailwindCSS.
+
+- ⚙️ Project Setup <br>
+Configuração inicial do ambiente com Vite, instalação do TailwindCSS e demais dependências.
+
+- 🏠 Home Page <br>
+Estrutura inicial da página principal com navegação e seções base.
+
+- 🌟 Hero Section <br>
+Seção de destaque da Home com chamada principal e imagem/banner ilustrativo.
+
+- 📊 STATS Section <br>
+Exibição de estatísticas (ex.: alunos, cursos, avaliações) em cards chamativos.
+
+- 📂 Category Section <br>
+Listagem de categorias de cursos para facilitar a navegação do usuário.
+
+- 📚 Programs Section <br>
+Apresentação dos programas/cursos disponíveis com cards detalhados.
+
+- ⚡ Quick Access Section <br>
+Área para navegação rápida entre recursos importantes da plataforma.
+
+- 📝 Blog Section <br>
+Sessão de artigos/posts com conteúdo educativo e informativo.
+
+- 📄 Programs Page <br>
+Página dedicada aos programas, exibindo lista completa de cursos disponíveis.
+
+- 🏞️ Page Top Banner Components <br>
+Componente reutilizável para exibir banners no topo das páginas internas.
+
+- 🧭 Breadcrumb Components <br>
+Componente de navegação (caminho de páginas) para melhorar a usabilidade.
+
+- 📄 Programs Page (Contd...) <br>
+Continuação da implementação da página de programas com detalhes adicionais.
+
+- 📑 Details Page <br>
+Página de detalhes de cada curso, com informações aprofundadas do conteúdo.
+
+- 📝 Enroll Programs Page <br>
+Página para inscrição do aluno no curso escolhido.
+
+- 🎥 Video Player Section <br>
+Componente de player de vídeo para exibir aulas.
+
+- 🖊️ Description Section <br>
+Sessão dedicada à descrição completa do curso.
+
+- 🗂️ Tabs Components <br>
+Componente de abas (tabs) para alternar entre seções do curso.
+
+- 📋 Overview Tabs Section <br>
+Aba de visão geral do curso.
+
+- 📦 Resources Tabs Section <br>
+Aba de recursos adicionais do curso (ex.: PDFs, links, materiais extras).
+
+- ⭐ Reviews Tabs Section <br>
+Aba de avaliações/comentários de alunos.
+
+- 📈 Course Progress Section <br>
+Exibição do progresso do aluno dentro do curso.
+
+- ❓ Quiz Section <br>
+Implementação de quizzes interativos para reforçar o aprendizado.
+
+- 🔑 Sign In Page <br>
+Página de login com autenticação de usuários.
+
+- 🆕 Sign Up Page <br>
+Página de registro para novos alunos.
+
+- ✅ Final Product <br>
+Produto final: plataforma LMS completa, responsiva e funcional.
+
+- 🚀 Melhorias Futuras <br>
+Dashboard do aluno, sistema de pagamentos, certificado digital.
+
+#### 📷 Preview da interface do projeto
+
+- ![Home](./.github/1-home.jpg)
+- ![Home](./.github/2-home.jpg)
+- ![Home](./.github/3-home.jpg)
+- ![Home](./.github/4-home.jpg)
+- ![Home](./.github/5-home.jpg)
+- ![Programas](./.github/6-programas.jpg)
+- ![Programas](./.github/7-programas.jpg)
+- ![Sign In](./.github/8-signin.jpg)
+   
 #### 🔗 Orientações:
  
 - G-Tech Official - How to Create an Online LMS Education Website using React Js and Tailwind CSS | Like Udemy: https://www.youtube.com/watch?v=tiwu5UHCUhQ
+ 
+#### 🔗 Baixar template inicial 
 
-#### 🔖 Timestamps (Conteúdo do curso):
+- Template: https://github.com/gtech-official08/l  
 
-- ⌨️ 00:00:00 - Introdução
-- ⌨️ 00:06:57 - Configuração do Projeto
-- ⌨️ 00:07:58 - Página inicial
-- ⌨️ 00:08:47 - Seção Hero
-- ⌨️ 00:14:36 - Seção de Estatísticas
-- ⌨️ 00:18:54 - Seção de Categorias
-- ⌨️ 00:24:10 - Seção de Programas
-- ⌨️ 00:32:14 - Seção de Acesso Rápido
-- ⌨️ 00:37:10 - Seção de Blog
-- ⌨️ 00:41:32 - Página de Programas
-- ⌨️ 00:42:42 - Componentes de Banner Superior
-- ⌨️ 00:45:01 - Componentes de Breadcrumb
-- ⌨️ 00:49:39 - Continuação da Página de Programas
-- ⌨️ 00:52:25 - Página de Detalhes
-- ⌨️ 01:01:45 - Página de Inscrição em Programas
-- ⌨️ 01:03:56 - Seção de Player de Vídeo
-- ⌨️ 01:16:08 - Seção de Descrição
-- ⌨️ 01:17:39 - Componentes de Abas
-- ⌨️ 01:22:02 - Seção de Abas de Visão Geral
-- ⌨️ 01:23:53 - Seção de Abas de Recursos
-- ⌨️ 01:25:05 - Seção de Abas de Avaliações
-- ⌨️ 01:31:40 - Seção de Progresso do Curso
-- ⌨️ 01:36:29 - Seção de Quiz
-- ⌨️ 01:49:09 - Página de Login
-- ⌨️ 01:56:37 - Página de Cadastro
-- ⌨️ 01:57:43 - Produto Final
+#### 🛠️ Tecnologias Utilizadas
 
+    - ReactJS ⚛️ https://react.dev/
+    - TailwindCSS 🎨 https://tailwindcss.com/
+    - Vite ⚡ https://vitejs.dev/
+    - React Icons 🔗 https://react-icons.github.io/react-icons/
+
+#### 🔗 Recursos
+
+- 🎨 Imagens obtidas via Pixabay https://pixabay.com/
+- 📦 Assets e snippets disponíveis no repositório 
+- 🎨 Vídeo Demo: https://www.youtube.com/watch?v=C9Kj594dRxU 
+
+### 🚀 Por: @douglasabnovato
