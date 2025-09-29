@@ -54,6 +54,7 @@ const Navbar = () => {
           className="text-lg font-semibold text-sky-700 flex items-center gap-x-2"
         >
           <LearnTechTitle size="text-3xl" color="text-purple-700" />
+          {/* <FiBookOpen size={16} /> LearnTECH*/}
         </Link>
       </div>
 
@@ -64,7 +65,7 @@ const Navbar = () => {
           onClick={toggleNavbar}
           className="text-neutral-600 focus:outline-none"
         >
-          <FaBars size={24} />
+           <FaBars size={24} /> 
         </button>
       </div>
 
@@ -81,8 +82,9 @@ const Navbar = () => {
             to="/"
             className="text-lg font-semibold text-sky-700 flex items-center gap-x-2"
           >
-            <FiBookOpen size={24} />
-            LearnTECH
+          <LearnTechTitle size="text-3xl" color="text-purple-700" />
+            {/* <FiBookOpen size={24} /> LearnTECH*/}
+            
           </Link>
 
           {/* Close Icon */}

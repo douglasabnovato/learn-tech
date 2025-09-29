@@ -1,21 +1,38 @@
 import React from "react";
 import PropTypes from "prop-types";
+import LogoIcon from "./assets/logo192.svg"; // importar como imagem
 
-const LearnTechTitle = ({ size = "text-2xl", color = "text-indigo-600", className = "" }) => {
+const LearnTechTitle = ({
+  size = "text-2xl",
+  className = "",
+  showIcon = true,
+  iconSize = "w-8 h-8",
+  gradient = true, // alterna entre cor sólida e gradiente
+}) => {
+  const gradientClasses =
+    "text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-sky-600 to-purple-700";
+
   return (
-    <h1
-      className={`${size} ${color} font-bold tracking-tight ${className}`}
-    >
-      Learn<span className="text-sky-600">Tech</span>
-    </h1>
+    <div className={`flex items-center gap-2 ${className}`}>
+      {showIcon && <img src={LogoIcon} className={`${iconSize}`} alt="Logo" />}
+      <h1
+        className={`${size} font-bold tracking-tight ${
+          gradient ? gradientClasses : "text-indigo-600"
+        }`}
+      >
+        Learn
+        <span className="text-sky-600"> TECH</span>
+      </h1>
+    </div>
   );
 };
 
-// 🔍 Validação das props (boa prática)
 LearnTechTitle.propTypes = {
-  size: PropTypes.string,      // Exemplo: "text-4xl"
-  color: PropTypes.string,     // Exemplo: "text-neutral-900"
-  className: PropTypes.string, // Para customizações extras
+  size: PropTypes.string,
+  className: PropTypes.string,
+  showIcon: PropTypes.bool,
+  iconSize: PropTypes.string,
+  gradient: PropTypes.bool,
 };
 
 export default LearnTechTitle;
