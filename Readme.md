@@ -74,7 +74,8 @@ Desenvolvimento do projeto original
   - Subtítulo: The Leader in Online Learning
   - Título: Join Today & Start Learning
   - Descrição: The best place to discover new learning resources, books, and courses 
-
+- 🌟 Stats: online courses, expert tutors, students enrolled, recorded videos
+- 🌟 Categories: 
 
 
 
