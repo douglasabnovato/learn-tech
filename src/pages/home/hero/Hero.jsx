@@ -3,7 +3,7 @@ import HeroImg from "../../../assets/hero-1.png";
 
 export const Hero = () => {
   return (
-    <div className="w-full md:h-screen h-auto bg-gradient-to-tr from-indigo-500/20 via-sky-700/20 via-20% to-purple-700/30 flex items-end justify-center md:px-16 sm:px-10 px-4 md:pt-0 md:pb-0 pt-[10ch] pb-8">
+    <div className="w-full md:h-screen h-auto bg-gradient-to-tr from-indigo-500/20 via-sky-700/20 via-20% to-purple-700/30 flex items-end justify-center md:px-16 sm:px-10 px-4 md:pt-0 md:pb-0 pt-[8ch] pb-4">
       <div className="w-full flex-1 flex items-center justify-between md:gap-16 gap-4 md:flex-nowrap flex-wrap md:flex-row flex-col-reverse">
         <div className="pt-[4ch] md:w-[45%] w-full h-auto md:space-y-8 space-y-6">
           <div className="space-y-2">
