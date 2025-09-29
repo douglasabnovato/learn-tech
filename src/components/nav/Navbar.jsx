@@ -4,6 +4,7 @@ import { FaBars } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 import navItems from "../../constants/navbarData";
 import { FiBookOpen } from "react-icons/fi";
+import LearnTechTitle from "../logo/LearnTechTitle";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -52,8 +53,7 @@ const Navbar = () => {
           to="/"
           className="text-lg font-semibold text-sky-700 flex items-center gap-x-2"
         >
-          <FiBookOpen size={24} />
-          LearnHub
+          <LearnTechTitle size="text-3xl" color="text-purple-700" />
         </Link>
       </div>
 
@@ -82,7 +82,7 @@ const Navbar = () => {
             className="text-lg font-semibold text-sky-700 flex items-center gap-x-2"
           >
             <FiBookOpen size={24} />
-            LearnHub
+            LearnTECH
           </Link>
 
           {/* Close Icon */}

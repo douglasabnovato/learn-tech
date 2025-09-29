@@ -61,6 +61,20 @@ npm run dev
 ---
 
 
+## 🚀 VERSÃO 2
+
+Desenvolvimento do projeto original
+
+### 📚 Learn TECH
+
+- 🌟 Index: nome, favicon
+- 🌟 criar LearnTechTitle: logo reutilizável
+- 🌟 Navbar: nome,
+
+
+---
+
+
 ## 🚀 VERSÃO 1
 
 Desenvolvimento do projeto original
