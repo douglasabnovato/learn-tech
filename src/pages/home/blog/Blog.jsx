@@ -6,7 +6,7 @@ import { BlogCard } from "../../../components/blog/BlogCard";
 
 export const Blog = () => {
   return (
-    <div>
+    <div className="w-full md:px-16 sm:px-10 px-4 space-y-8">
       {/** Top Section */}
       <div className="w-full flex items-center justify-between">
         <h2 className="text-2xl font-bold text-neutral-800">Latest Blogs</h2>
