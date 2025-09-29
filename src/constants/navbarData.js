@@ -6,22 +6,22 @@ const navItems = [
     },
     {
         id: 2,
-        name: "Programs",
+        name: "Programas",
         path: "/programs",
     },
     {
         id: 3,
-        name: "Resources",
+        name: "Recursos",
         path: "/resources",
     },
     {
         id: 4,
-        name: "About",
+        name: "Learn Tech",
         path: "/about",
     },
     {
         id: 5,
-        name: "Contact",
+        name: "Fala aê",
         path: "/contact",
     },
 

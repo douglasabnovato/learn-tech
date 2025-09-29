@@ -69,7 +69,13 @@ Desenvolvimento do projeto original
 
 - 🌟 Index: nome, favicon
 - 🌟 criar LearnTechTitle: logo reutilizável
-- 🌟 Navbar: nome,
+- 🌟 Navbar: nome, logo componentizado. Home, Programs, Resources, About, Contact, Sign In, Get Started
+- 🌟 Home: Subtítulo, Título e Descrição
+  - Subtítulo: The Leader in Online Learning
+  - Título: Join Today & Start Learning
+  - Descrição: The best place to discover new learning resources, books, and courses 
+
+
 
 
 ---
