@@ -81,6 +81,13 @@ Rever logos: Web, Frontend, UX/UI, Backend, DataBase, Produtos Digitais, Projeto
 - 🌟 Projetos: pelo menos um para cada categoria
 - 🌟 Prêmios: quatro se tornaram oito
 - 🌟 Blogs: 
+- 🌟 Footer: 
+
+- 🌟 PROGRAMS 🌟: 
+- 🌟 RECURSOS 🌟: 
+- 🌟 LEARN TECH 🌟: 
+- 🌟 FALA AÊ 🌟: 
+- 🌟 LOGIN/REGISTER 🌟:
 
 ---
 
