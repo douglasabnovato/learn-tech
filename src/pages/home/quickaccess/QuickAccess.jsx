@@ -14,17 +14,17 @@ export const QuickAccess = () => {
           <div className="space-y-8 z-20">
             <div className="space-y-3">
               <h6 className="text-lg font-normal text-neutral-300">
-                Earn a Profissional
+                Profissional
               </h6>
               <h1 className="text-3xl font-bold text-sky-600 uppercase tracking-wider">
-                Certificate
+                Soft Skills
               </h1>
             </div>
             <Link
               to="/programs"
               className="w-fit text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-sky-700 to-purple-700 text-base font-semibold flex items-center gap-x-2 group ease-in-out duration-300"
             >
-              View Programs
+              Veja agora
               <FaAnglesRight
                 className="pt-0.5 text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-sky-700 to-purple-700 group-hover:translate-x-1 ease-in-out duration-300"
                 style={{ fill: "url(#gradient)" }}
@@ -47,18 +47,16 @@ export const QuickAccess = () => {
         <div className="w-full md:p-10 p-6 rounded-3xl border border-neutral-800 bg-neutral-900/40 flex items-center justify-between">
           <div className="space-y-8 z-20">
             <div className="space-y-3">
-              <h6 className="text-lg font-normal text-neutral-300">
-                Award Winning
-              </h6>
+              <h6 className="text-lg font-normal text-neutral-300">Prêmios</h6>
               <h1 className="text-3xl font-bold text-sky-600 uppercase tracking-wider">
-                Courses
+                Cursos
               </h1>
             </div>
             <Link
               to="/programs"
               className="w-fit text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-sky-700 to-purple-700 text-base font-semibold flex items-center gap-x-2 group ease-in-out duration-300"
             >
-              Explore Programs
+              Veja agora
               <FaAnglesRight
                 className="pt-0.5 text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-sky-700 to-purple-700 group-hover:translate-x-1 ease-in-out duration-300"
                 style={{ fill: "url(#gradient)" }}

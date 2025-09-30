@@ -67,6 +67,7 @@ Desenvolvimento do projeto original
 
 ### 📚 Learn TECH
 
+- 🌟 HOME 🌟:
 - 🌟 Index: nome, favicon
 - 🌟 criar LearnTechTitle: logo reutilizável
 - 🌟 Navbar: nome, logo componentizado. Home, Programs, Resources, About, Contact, Sign In, Get Started
@@ -77,7 +78,9 @@ Desenvolvimento do projeto original
 - 🌟 Stats: online courses, expert tutors, students enrolled, recorded videos
 - 🌟 Categories: View All, Top Categories, Icons, Descriptions
 Rever logos: Web, Frontend, UX/UI, Backend, DataBase, Produtos Digitais, Projetos, English 
-- 🌟 Projetos: quatro se tornaram oito
+- 🌟 Projetos: pelo menos um para cada categoria
+- 🌟 Prêmios: quatro se tornaram oito
+- 🌟 Blogs: 
 
 ---
 
