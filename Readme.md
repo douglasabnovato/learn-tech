@@ -87,8 +87,7 @@ Rever logos: Web, Frontend, UX/UI, Backend, DataBase, Produtos Digitais, Projeto
 - Busca por texto do título no input
 - Filtro por categoria no select
 - Contador de resultados da busca e do filtro
-- Exibir apenas 4 cards
-- Fazer o botão Ver mais... funcionar
+- Exibir apenas 4 cards. Cada vez que o usuário clicar no botão “Ver mais” → carregar +6 cards. 
 
 - 🌟 Page Error 🌟: exibir enquanto não terminada
 - 🌟 RECURSOS 🌟: 

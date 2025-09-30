@@ -54,31 +54,31 @@ export const Programs = () => {
           </select>
         </div>
         {/* Programs data */}
-<div className="space-y-4">
-  {/* Cabeçalho + contador */}
-  <div className="flex items-center gap-3">
-    <h2 className="text-xl font-semibold text-neutral-900">
-      Programas
-    </h2>
-    <span className="px-3 py-1 text-sm font-medium rounded-full bg-sky-100 text-sky-700 border border-sky-300">
-      {filteredPrograms.length} {filteredPrograms.length === 1 ? "treinamento" : "treinamentos"}
-    </span>
-  </div>
+        <div className="space-y-4">
+          {/* Cabeçalho + contador */}
+          <div className="flex items-center gap-3">
+            <h2 className="text-xl font-semibold text-neutral-900">
+              Programas
+            </h2>
+            <span className="px-3 py-1 text-sm font-medium rounded-full bg-sky-100 text-sky-700 border border-sky-300">
+              {filteredPrograms.length}{" "}
+              {filteredPrograms.length === 1 ? "treinamento" : "treinamentos"}
+            </span>
+          </div>
 
-  {/* Grid de cards */}
-  <div className="w-full grid md:grid-cols-3 grid-cols-1 md:gap-x-10 md:gap-y-10 gap-x-5 gap-y-8">
-    {filteredPrograms.length > 0 ? (
-      filteredPrograms.map((program) => (
-        <ProgramsCard key={program.id} {...program} />
-      ))
-    ) : (
-      <p className="text-gray-500 text-center col-span-full">
-        Nenhum programa encontrado.
-      </p>
-    )}
-  </div>
-</div>
-
+          {/* Grid de cards */}
+          <div className="w-full grid md:grid-cols-3 grid-cols-1 md:gap-x-10 md:gap-y-10 gap-x-5 gap-y-8">
+            {filteredPrograms.length > 0 ? (
+              filteredPrograms.map((program) => (
+                <ProgramsCard key={program.id} {...program} />
+              ))
+            ) : (
+              <p className="text-gray-500 text-center col-span-full">
+                Nenhum programa encontrado.
+              </p>
+            )}
+          </div>
+        </div>
 
         {/* Load data */}
         <div className="w-full flex items-center justify-center">
