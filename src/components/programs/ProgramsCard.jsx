@@ -8,6 +8,7 @@ import { PiBookOpenTextFill } from "react-icons/pi";
 export const ProgramsCard = ({
   image,
   category,
+  categoryFilter,
   rating,
   title,
   lessions,
@@ -76,7 +77,8 @@ export const ProgramsCard = ({
             to={`/program/enroll-programs-title`}
             className="w-fit text-sky-900 text-sm font-medium flex items-center justify-center gap-2 hover:text-sky-800 transition-all ease-in-out duration-300"
           >
-            Aprenda<FaAnglesRight />
+            Aprenda
+            <FaAnglesRight />
           </Link>
         </div>
       </div>

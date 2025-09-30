@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { PageTopBanner } from "../../components/pageTop/PageTopBanner";
 import { ProgramsCard } from "../../components/programs/ProgramsCard";
-
 import programsData from "./../../constants/programsData";
 
 export const Programs = () => {
+  const [searchTerm, setSearchTerm] = useState(""); // ✅ novo estado
+
+  // ✅ lógica de filtragem
+  const filteredPrograms = programsData.filter(
+    (program) =>
+      program.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      program.category.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className="w-full min-h-screen flex-col space-y-16 pb-16">
       {/* Page Top Banner section */}
@@ -17,8 +25,11 @@ export const Programs = () => {
           <input
             type="text"
             placeholder="Search programs..."
-            className="max-w-sm w-full rounded-lg px-3 h-12 bg-transparent focus:bg-sky-500/5 border border-neutral-300 focus:border-sky-500 outliine-none ease-in-out duration-300"
+            value={searchTerm} // ✅ valor controlado
+            onChange={(e) => setSearchTerm(e.target.value)} // ✅ atualiza estado
+            className="max-w-sm w-full rounded-lg px-3 h-12 bg-transparent focus:bg-sky-500/5 border border-neutral-300 focus:border-sky-500 outline-none ease-in-out duration-300"
           />
+
           {/* Filter or sort section */}
           <select className="max-w-sm w-fit rounded-lg px-3 h-12 bg-transparent focus:bg-sky-500/5 focus:border-sky-500 outliine-none ease-in-out duration-300">
             <option value="all">Todas Categorias</option>
@@ -33,12 +44,18 @@ export const Programs = () => {
           </select>
         </div>
         {/* Programs data */}
-        <div className="w-full grid md:grid-cols-3 grid-colds-1 md:gap-x-10 md:gap-y-10 gap-x-5 gap-y-8">
-          {/** Display the data */}
-          {programsData.map((programs, index) => (
-            <ProgramsCard key={index} {...programs} />
-          ))}
+        <div className="w-full grid md:grid-cols-3 grid-cols-1 md:gap-x-10 md:gap-y-10 gap-x-5 gap-y-8">
+          {filteredPrograms.length > 0 ? (
+            filteredPrograms.map((program) => (
+              <ProgramsCard key={program.id} {...program} />
+            ))
+          ) : (
+            <p className="text-gray-500 text-center col-span-full">
+              Nenhum programa encontrado.
+            </p>
+          )}
         </div>
+
         {/* Load data */}
         <div className="w-full flex items-center justify-center">
           <button className="w-fit border border-sky-800 text-sky-800 py-3 px-8 rounded-full font-semifold cursor-pointer ease-in-out duration-300">
