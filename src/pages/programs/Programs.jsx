@@ -54,16 +54,27 @@ export const Programs = () => {
           </select>
         </div>
         {/* Programs data */}
-        <div className="w-full grid md:grid-cols-3 grid-cols-1 md:gap-x-10 md:gap-y-10 gap-x-5 gap-y-8">
-          {filteredPrograms.length > 0 ? (
-            filteredPrograms.map((program) => (
-              <ProgramsCard key={program.id} {...program} />
-            ))
-          ) : (
-            <p className="text-gray-500 text-center col-span-full">
-              Nenhum programa encontrado.
-            </p>
-          )}
+        <div className="space-y-4">
+          {/* Contador */}
+          <div className="w-full text-sm text-neutral-600">
+            {filteredPrograms.length > 0 ? (
+              <p>{filteredPrograms.length} programa(s) encontrado(s)</p>
+            ) : (
+              <p>Nenhum programa encontrado</p>
+            )}
+          </div>
+
+          <div className="w-full grid md:grid-cols-3 grid-cols-1 md:gap-x-10 md:gap-y-10 gap-x-5 gap-y-8">
+            {filteredPrograms.length > 0 ? (
+              filteredPrograms.map((program) => (
+                <ProgramsCard key={program.id} {...program} />
+              ))
+            ) : (
+              <p className="text-gray-500 text-center col-span-full">
+                Nenhum programa encontrado.
+              </p>
+            )}
+          </div>
         </div>
 
         {/* Load data */}

@@ -84,8 +84,9 @@ Rever logos: Web, Frontend, UX/UI, Backend, DataBase, Produtos Digitais, Projeto
 - 🌟 Footer: coluna 1 com a chamada do hero, Customer (faq, contact us, returns, shipping), Quick Links (about us, terms of service, privacy policy, careers), Follow Us (facebook, twitter, Instagram, Linkedin)
 
 - 🌟 PROGRAMS 🌟: 
-- Busca
-- Fazer o filtro funcionar
+- Busca por texto do título no input
+- Filtro por categoria no select
+- Contador de resultados da busca e do filtro
 - Exibir apenas 4 cards
 - Fazer o botão Ver mais... funcionar
 
