@@ -79,15 +79,16 @@ Desenvolvimento do projeto original
 - 🌟 Categories: View All, Top Categories, Icons, Descriptions
 Rever logos: Web, Frontend, UX/UI, Backend, DataBase, Produtos Digitais, Projetos, English 
 - 🌟 Projetos: pelo menos um para cada categoria
-- 🌟 Prêmios: quatro se tornaram oito
-- 🌟 Blogs: 
-- 🌟 Footer: 
+- 🌟 Prêmios: Soft skills e cursos
+- 🌟 Blogs: cinco artigos
+- 🌟 Footer: coluna 1 com a chamada do hero, Customer (faq, contact us, returns, shipping), Quick Links (about us, terms of service, privacy policy, careers), Follow Us (facebook, twitter, Instagram, Linkedin)
 
 - 🌟 PROGRAMS 🌟: 
 - 🌟 RECURSOS 🌟: 
 - 🌟 LEARN TECH 🌟: 
 - 🌟 FALA AÊ 🌟: 
 - 🌟 LOGIN/REGISTER 🌟:
+
 
 ---
 

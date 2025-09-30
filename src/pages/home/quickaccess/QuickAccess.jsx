@@ -14,7 +14,7 @@ export const QuickAccess = () => {
           <div className="space-y-8 z-20">
             <div className="space-y-3">
               <h6 className="text-lg font-normal text-neutral-300">
-                Profissional
+                Comportamentos
               </h6>
               <h1 className="text-3xl font-bold text-sky-600 uppercase tracking-wider">
                 Soft Skills
@@ -49,7 +49,7 @@ export const QuickAccess = () => {
             <div className="space-y-3">
               <h6 className="text-lg font-normal text-neutral-300">Prêmios</h6>
               <h1 className="text-3xl font-bold text-sky-600 uppercase tracking-wider">
-                Cursos
+                Mentorias
               </h1>
             </div>
             <Link

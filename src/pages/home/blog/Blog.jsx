@@ -9,13 +9,13 @@ export const Blog = () => {
     <div className="w-full md:px-16 sm:px-10 px-4 space-y-8">
       {/** Top Section */}
       <div className="w-full flex items-center justify-between">
-        <h2 className="text-2xl font-bold text-neutral-800">Latest Blogs</h2>
+        <h2 className="text-2xl font-bold text-neutral-800">Top Artigos</h2>
         <div>
           <Link
             to="/blogs"
             className="flex items-center gap-2 text-sm font-semibold text-neutral-800 hover:text-sky-800 cursor-pointer ease-in-out duration-300"
           >
-            View All <FaAnglesRight />
+            Veja Todos <FaAnglesRight />
           </Link>
         </div>
       </div>

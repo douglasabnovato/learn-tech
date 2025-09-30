@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
-import navItems from "../../constants/navbarData"; 
+import navItems from "../../constants/navbarData";
 import LearnTechTitle from "../logo/LearnTechTitle";
 
 const Navbar = () => {
@@ -53,7 +53,6 @@ const Navbar = () => {
           className="text-lg font-semibold text-sky-700 flex items-center gap-x-2"
         >
           <LearnTechTitle size="text-3xl" color="text-purple-700" />
-          {/* <FiBookOpen size={16} /> LearnTECH*/}
         </Link>
       </div>
 
@@ -64,7 +63,7 @@ const Navbar = () => {
           onClick={toggleNavbar}
           className="text-neutral-600 focus:outline-none"
         >
-           <FaBars size={24} /> 
+          <FaBars size={24} />
         </button>
       </div>
 
@@ -81,9 +80,7 @@ const Navbar = () => {
             to="/"
             className="text-lg font-semibold text-sky-700 flex items-center gap-x-2"
           >
-          <LearnTechTitle size="text-3xl" color="text-purple-700" />
-            {/* <FiBookOpen size={24} /> LearnTECH*/}
-            
+            <LearnTechTitle size="text-3xl" color="text-purple-700" />
           </Link>
 
           {/* Close Icon */}
