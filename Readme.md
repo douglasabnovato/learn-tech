@@ -76,8 +76,8 @@ Desenvolvimento do projeto original
   - Descrição: The best place to discover new learning resources, books, and courses 
 - 🌟 Stats: online courses, expert tutors, students enrolled, recorded videos
 - 🌟 Categories: View All, Top Categories, Icons, Descriptions
-Rever logos
-
+Rever logos: Web, Frontend, UX/UI, Backend, DataBase, Produtos Digitais, Projetos, English 
+- 🌟 Projetos: quatro se tornaram oito
 
 ---
 

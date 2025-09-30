@@ -21,11 +21,15 @@ export const Programs = () => {
           />
           {/* Filter or sort section */}
           <select className="max-w-sm w-fit rounded-lg px-3 h-12 bg-transparent focus:bg-sky-500/5 focus:border-sky-500 outliine-none ease-in-out duration-300">
-            <option value="all">All Categories</option>
-            <option value="web">Web Development</option>
-            <option value="data">Data Science</option>
-            <option value="mobile">Mobile Development</option>
-            <option value="design">Design</option>
+            <option value="all">Todas Categorias</option>
+            <option value="web">Web</option>
+            <option value="frontend">Frontend</option>
+            <option value="ux-ui">UX/UI</option>
+            <option value="backend">Backend</option>
+            <option value="data-base">Data Base</option>
+            <option value="produtos-digitais">Produtos Digitais</option>
+            <option value="projetos">Projetos</option>
+            <option value="english">English</option>
           </select>
         </div>
         {/* Programs data */}
@@ -38,7 +42,7 @@ export const Programs = () => {
         {/* Load data */}
         <div className="w-full flex items-center justify-center">
           <button className="w-fit border border-sky-800 text-sky-800 py-3 px-8 rounded-full font-semifold cursor-pointer ease-in-out duration-300">
-            Load More
+            Ver mais ...
           </button>
         </div>
       </div>

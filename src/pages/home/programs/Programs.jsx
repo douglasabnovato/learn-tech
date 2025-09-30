@@ -11,14 +11,14 @@ export const Programs = () => {
       {/** Top Section */}
       <div className="w-full flex items-center justify-between">
         <h2 className="text-2xl font-bold text-neutral-800">
-          Featured Programs
+          Top Projetos 
         </h2>
         <div>
           <Link
             to="/category"
             className="flex items-center gap-2 text-sm font-semibold text-neutral-800 hover:text-sky-800 cursor-pointer ease-in-out duration-300"
           >
-            View All <FaAnglesRight />
+            Veja todos <FaAnglesRight />
           </Link>
         </div>
       </div>
