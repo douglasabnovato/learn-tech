@@ -5,13 +5,19 @@ import programsData from "./../../constants/programsData";
 
 export const Programs = () => {
   const [searchTerm, setSearchTerm] = useState(""); // ✅ novo estado
+  const [selectedCategory, setSelectedCategory] = useState("all");
 
   // ✅ lógica de filtragem
-  const filteredPrograms = programsData.filter(
-    (program) =>
+  const filteredPrograms = programsData.filter((program) => {
+    const matchText =
       program.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      program.category.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+      program.category.toLowerCase().includes(searchTerm.toLowerCase());
+
+    const matchCategory =
+      selectedCategory === "all" || program.categoryFilter === selectedCategory;
+
+    return matchText && matchCategory;
+  });
 
   return (
     <div className="w-full min-h-screen flex-col space-y-16 pb-16">
@@ -31,7 +37,11 @@ export const Programs = () => {
           />
 
           {/* Filter or sort section */}
-          <select className="max-w-sm w-fit rounded-lg px-3 h-12 bg-transparent focus:bg-sky-500/5 focus:border-sky-500 outliine-none ease-in-out duration-300">
+          <select
+            value={selectedCategory}
+            onChange={(e) => setSelectedCategory(e.target.value)}
+            className="max-w-sm w-fit rounded-lg px-3 h-12 bg-transparent focus:bg-sky-500/5 focus:border-sky-500 outline-none ease-in-out duration-300"
+          >
             <option value="all">Todas Categorias</option>
             <option value="web">Web</option>
             <option value="frontend">Frontend</option>
