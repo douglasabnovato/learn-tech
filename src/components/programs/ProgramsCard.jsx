@@ -43,7 +43,10 @@ export const ProgramsCard = ({
         {/* Title section */}
         <Link
           to={`/program/detail`}
-          className="text-xl font-semibold text-neutral-950 line-clamp-2 text-ellipsis"
+          className="relative text-xl font-semibold text-neutral-950 line-clamp-2 text-ellipsis
+             cursor-pointer after:content-[''] after:block after:w-full after:h-[2px] after:bg-sky-700
+             after:scale-x-0 after:origin-left after:transition-transform after:duration-300
+             hover:after:scale-x-100"
         >
           {title}
         </Link>
