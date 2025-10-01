@@ -6,11 +6,13 @@ import { IoMdHeartEmpty } from "react-icons/io";
 import { PiBookOpenTextFill } from "react-icons/pi";
 
 export const ProgramsCard = ({
+  id,
   image,
   category,
+  categoryFilter,
   rating,
   title,
-  lessions,
+  lessons,
   students,
   duration,
   price,
@@ -41,17 +43,20 @@ export const ProgramsCard = ({
         {/* Title section */}
         <Link
           to={`/program/detail`}
-          className="text-xl font-semibold text-neutral-950 line-clamp-2 text-ellipsis"
+          className="relative text-xl font-semibold text-neutral-950 line-clamp-2 text-ellipsis
+             cursor-pointer after:content-[''] after:block after:w-full after:h-[2px] after:bg-sky-700
+             after:scale-x-0 after:origin-left after:transition-transform after:duration-300
+             hover:after:scale-x-100"
         >
           {title}
         </Link>
-        {/* lessions, students and duration */}
+        {/* lessons, students and duration */}
         <div className="w-full flex items-center justify-between flex-wrap gap-2">
-          {/* lessions and students */}
+          {/* lessons and students */}
           <div className="flex items-center gap-x-3">
             <p className="text-sm text-neutral-800 font-medium flex items-center gap-x-1.5">
               <PiBookOpenTextFill size={16} className="text-neutral-500" />
-              {lessions}
+              {lessons}
             </p>
             <div className="w-1 h-1 rounded-full bg-neutral-400"></div>
             <p className="text-sm text-neutral-800 font-medium flex items-center gap-x-1.5">
@@ -73,10 +78,11 @@ export const ProgramsCard = ({
             {price}
           </p>
           <Link
-            to={`/program/enroll-programs-title`}
+            to={`/program/${categoryFilter}/${id}`}
             className="w-fit text-sky-900 text-sm font-medium flex items-center justify-center gap-2 hover:text-sky-800 transition-all ease-in-out duration-300"
           >
-            Enroll Now <FaAnglesRight />
+            Aprenda
+            <FaAnglesRight />
           </Link>
         </div>
       </div>
