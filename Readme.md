@@ -89,6 +89,7 @@ Rever logos: Web, Frontend, UX/UI, Backend, DataBase, Produtos Digitais, Projeto
 - Contador de resultados da busca e do filtro
 - Exibir apenas 4 cards. Cada vez que o usuário clicar no botão “Ver mais” → carregar +6 cards. 
 - memorizar o resultado da busca com useMemo
+- Para cada card, uma página especialista
 
 - 🌟 Page Error 🌟: exibir enquanto não terminada
 - 🌟 RECURSOS 🌟: 

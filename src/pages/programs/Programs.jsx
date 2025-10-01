@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { PageTopBanner } from "../../components/pageTop/PageTopBanner";
 import { ProgramsCard } from "../../components/programs/ProgramsCard";
 import programsData from "./../../constants/programsData";
@@ -8,24 +8,27 @@ export const Programs = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [visibleCount, setVisibleCount] = useState(4);
 
-  // ✅ lógica de filtragem
-  const filteredPrograms = programsData.filter((program) => {
-    const matchText =
-      program.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      program.category.toLowerCase().includes(searchTerm.toLowerCase());
-
-    const matchCategory =
-      selectedCategory === "all" || program.categoryFilter === selectedCategory;
-
-    return matchText && matchCategory;
-  });
-
-  const visiblePrograms = filteredPrograms.slice(0, visibleCount);
-
   // Resetar paginação ao mudar busca/categoria
   useEffect(() => {
     setVisibleCount(4);
   }, [searchTerm, selectedCategory]);
+
+  // ✅ memorizar resultado da filtragem
+  const filteredPrograms = useMemo(() => {
+    return programsData.filter((program) => {
+      const matchText =
+        program.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        program.category.toLowerCase().includes(searchTerm.toLowerCase());
+
+      const matchCategory =
+        selectedCategory === "all" ||
+        program.categoryFilter === selectedCategory;
+
+      return matchText && matchCategory;
+    });
+  }, [programsData, searchTerm, selectedCategory]);
+
+  const visiblePrograms = filteredPrograms.slice(0, visibleCount);
 
   return (
     <div className="w-full min-h-screen flex-col space-y-16 pb-16">
@@ -64,7 +67,7 @@ export const Programs = () => {
           </select>
         </div>
         {/* Programs data */}
-        <div className="space-y-4">
+        <section className="space-y-4">
           {/* Cabeçalho + contador */}
           <div className="flex items-center gap-3">
             <h2 className="text-xl font-semibold text-neutral-900">
@@ -88,17 +91,28 @@ export const Programs = () => {
               </p>
             )}
           </div>
-        </div>
+        </section>
 
         {/* Load data */}
         {visibleCount < filteredPrograms.length && (
           <div className="w-full flex items-center justify-center">
             <button
+              disabled={visibleCount >= filteredPrograms.length}
               onClick={() => setVisibleCount((prev) => prev + 6)}
-              aria-label={`Carregar mais programas, ${filteredPrograms.length - visibleCount} restantes`} 
-              className="w-fit border border-sky-800 text-sky-800 py-3 px-8 rounded-full font-semibold cursor-pointer ease-in-out duration-300"
+              aria-label={`Carregar mais programas, ${
+                filteredPrograms.length - visibleCount
+              } restantes`}
+              className={`w-fit border py-3 px-8 rounded-full font-semibold cursor-pointer ease-in-out duration-300 ${
+                visibleCount >= filteredPrograms.length
+                  ? "border-gray-300 text-gray-400 cursor-not-allowed"
+                  : "border-sky-800 text-sky-800"
+              }`}
             >
-              Ver mais ({filteredPrograms.length - visibleCount} restantes)
+              {visibleCount >= filteredPrograms.length
+                ? "Todos carregados"
+                : `Ver mais (${
+                    filteredPrograms.length - visibleCount
+                  } restantes)`}
             </button>
           </div>
         )}
