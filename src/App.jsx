@@ -7,6 +7,8 @@ import { Detail } from "./pages/detail/Detail";
 import { EnrollPrograms } from "./pages/enroll/EnrollPrograms";
 import { SignIn } from "./pages/account/sigin/SignIn";
 import SignUp from "./pages/account/signup/SignUp";
+import { UnderConstruction } from "./pages/error/under-construction";
+import { NotFound } from "./pages/error/not-found";
 
 function App() {
   return (
@@ -21,6 +23,10 @@ function App() {
             <Route path="/" element={<Home />} />
             {/* Pages */}
             <Route path="/programs" element={<Programs />} />
+            {/* Pages UnderConstruction */}
+            <Route path="/resources" element={<UnderConstruction />} />
+            <Route path="/about" element={<UnderConstruction />} />
+            <Route path="/contact" element={<UnderConstruction />} />
             {/* Auth */}
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
@@ -30,6 +36,13 @@ function App() {
               path="/program/enroll-programs-title"
               element={<EnrollPrograms />}
             />
+            {/* Rota em construção */}
+            <Route
+              path="/program/:category/:id"
+              element={<UnderConstruction />}
+            />
+            {/* Rota de fallback */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
           {/* Footer Section */}
           <Footer />

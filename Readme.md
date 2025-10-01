@@ -90,10 +90,9 @@ Rever logos: Web, Frontend, UX/UI, Backend, DataBase, Produtos Digitais, Projeto
 - Exibir apenas 4 cards. Cada vez que o usuário clicar no botão “Ver mais” → carregar +6 cards. 
 - memorizar o resultado da busca com useMemo
 - Para cada card, uma página especialista
-- Estruturar programas por centenas: web (1 a 100), frontend (101 a 200), ux-ui (201 a 300), backend (301 a 400), data-base (401 a 500), produtos-digitais (501 a 600), projetos (601 a 700), english (701 a 800)
- 
+- Estruturar programas por centenas: web (1 a 100), frontend (101 a 200), ux-ui (201 a 300), backend (301 a 400), data-base (401 a 500), produtos-digitais (501 a 600), projetos (601 a 700), english (701 a 800) 
+- 🌟 Page Error 🌟: NotFound e UnderConstruction
 
-- 🌟 Page Error 🌟: exibir enquanto não terminada
 - 🌟 RECURSOS 🌟: 
 - 🌟 LEARN TECH 🌟: 
 - 🌟 FALA AÊ 🌟: 
