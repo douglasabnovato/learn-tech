@@ -93,16 +93,18 @@ Rever logos: Web, Frontend, UX/UI, Backend, DataBase, Produtos Digitais, Projeto
 - hover no título
 - 🌟 Page Error 🌟: NotFound e UnderConstruction
 
+#### 📚 To Do List
+
 - 🌟 Fazer para 3 programas:
   - /program/detail
   - /program/${categoryFilter}/${id}
-
 - Home: a home exibe uma breve demonstração do que cada tipo de conteúdo tem para apresentar. Cada tipo de conteúdo está no menu
 - 🌟 RECURSOS 🌟
 - 🌟 LEARN TECH 🌟
 - 🌟 FALA AÊ 🌟
 - 🌟 LOGIN 🌟
 - 🌟 REGISTER 🌟
+- Hospedar
 
 
 ---
