@@ -39,6 +39,7 @@ export const Programs = () => {
           <input
             type="text"
             placeholder="Search programs..."
+            aria-label="Buscar programas pelo título ou categoria"
             value={searchTerm} // ✅ valor controlado
             onChange={(e) => setSearchTerm(e.target.value)} // ✅ atualiza estado
             className="max-w-sm w-full rounded-lg px-3 h-12 bg-transparent focus:bg-sky-500/5 border border-neutral-300 focus:border-sky-500 outline-none ease-in-out duration-300"
@@ -48,6 +49,7 @@ export const Programs = () => {
           <select
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
+            aria-label="Filtrar programas por categoria"
             className="max-w-sm w-fit rounded-lg px-3 h-12 bg-transparent focus:bg-sky-500/5 focus:border-sky-500 outline-none ease-in-out duration-300"
           >
             <option value="all">Todas Categorias</option>
@@ -93,6 +95,7 @@ export const Programs = () => {
           <div className="w-full flex items-center justify-center">
             <button
               onClick={() => setVisibleCount((prev) => prev + 6)}
+              aria-label={`Carregar mais programas, ${filteredPrograms.length - visibleCount} restantes`} 
               className="w-fit border border-sky-800 text-sky-800 py-3 px-8 rounded-full font-semibold cursor-pointer ease-in-out duration-300"
             >
               Ver mais ({filteredPrograms.length - visibleCount} restantes)
