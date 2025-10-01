@@ -82,7 +82,6 @@ Rever logos: Web, Frontend, UX/UI, Backend, DataBase, Produtos Digitais, Projeto
 - 🌟 Prêmios: Soft skills e cursos
 - 🌟 Blogs: cinco artigos
 - 🌟 Footer: coluna 1 com a chamada do hero, Customer (faq, contact us, returns, shipping), Quick Links (about us, terms of service, privacy policy, careers), Follow Us (facebook, twitter, Instagram, Linkedin)
-
 - 🌟 PROGRAMS 🌟: 
 - Busca por texto do título no input
 - Filtro por categoria no select
@@ -96,7 +95,8 @@ Rever logos: Web, Frontend, UX/UI, Backend, DataBase, Produtos Digitais, Projeto
 - 🌟 RECURSOS 🌟: 
 - 🌟 LEARN TECH 🌟: 
 - 🌟 FALA AÊ 🌟: 
-- 🌟 LOGIN/REGISTER 🌟:
+- 🌟 LOGIN 🌟:
+- 🌟 REGISTER 🌟:
 
 
 ---

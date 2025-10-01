@@ -6,7 +6,7 @@ import { Programs } from "./pages/programs/Programs";
 import { Detail } from "./pages/detail/Detail";
 import { EnrollPrograms } from "./pages/enroll/EnrollPrograms";
 import { SignIn } from "./pages/account/sigin/SignIn";
-import SignUp from "./pages/account/signup/SignUp";
+import { SignUp } from "./pages/account/signup/SignUp";
 import { UnderConstruction } from "./pages/error/under-construction";
 import { NotFound } from "./pages/error/not-found";
 

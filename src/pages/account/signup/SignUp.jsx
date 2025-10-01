@@ -2,7 +2,7 @@ import React from "react";
 import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const SignUp = () => {
+export const SignUp = () => {
   const [showPassword, setShowPassword] = React.useState(false);
   const toggleShowPassword = () => setShowPassword(!showPassword);
   return (
@@ -86,5 +86,3 @@ const SignUp = () => {
     </div>
   );
 };
-
-export default SignUp;

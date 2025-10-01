@@ -125,9 +125,12 @@ const Navbar = () => {
             >
               Entre
             </Link>
-            <button className="w-fit bg-gradient-to-tr hover:bg-gradient-to-tl from-indigo-500 via-sky-700 via-20% to-purple-700 text-neutral-50 cursor-pointer py-2 px-6 rounded-xl text-base font-semibold ease-in-out duration-300">
+            <Link
+              to="/signup"
+              className="w-fit bg-gradient-to-tr hover:bg-gradient-to-tl from-indigo-500 via-sky-700 via-20% to-purple-700 text-neutral-50 cursor-pointer py-2 px-6 rounded-xl text-base font-semibold ease-in-out duration-300"
+            >
               Cadastre-se
-            </button>
+            </Link>
           </div>
         </div>
       </div>
