@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { PageTopBanner } from "../../components/pageTop/PageTopBanner";
 import { ProgramsCard } from "../../components/programs/ProgramsCard";
 import programsData from "./../../constants/programsData";
@@ -6,6 +6,7 @@ import programsData from "./../../constants/programsData";
 export const Programs = () => {
   const [searchTerm, setSearchTerm] = useState(""); // ✅ novo estado
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [visibleCount, setVisibleCount] = useState(4);
 
   // ✅ lógica de filtragem
   const filteredPrograms = programsData.filter((program) => {
@@ -18,6 +19,13 @@ export const Programs = () => {
 
     return matchText && matchCategory;
   });
+
+  const visiblePrograms = filteredPrograms.slice(0, visibleCount);
+
+  // Resetar paginação ao mudar busca/categoria
+  useEffect(() => {
+    setVisibleCount(4);
+  }, [searchTerm, selectedCategory]);
 
   return (
     <div className="w-full min-h-screen flex-col space-y-16 pb-16">
@@ -68,8 +76,8 @@ export const Programs = () => {
 
           {/* Grid de cards */}
           <div className="w-full grid md:grid-cols-3 grid-cols-1 md:gap-x-10 md:gap-y-10 gap-x-5 gap-y-8">
-            {filteredPrograms.length > 0 ? (
-              filteredPrograms.map((program) => (
+            {visiblePrograms.length > 0 ? (
+              visiblePrograms.map((program) => (
                 <ProgramsCard key={program.id} {...program} />
               ))
             ) : (
@@ -81,11 +89,16 @@ export const Programs = () => {
         </div>
 
         {/* Load data */}
-        <div className="w-full flex items-center justify-center">
-          <button className="w-fit border border-sky-800 text-sky-800 py-3 px-8 rounded-full font-semifold cursor-pointer ease-in-out duration-300">
-            Ver mais ...
-          </button>
-        </div>
+        {visibleCount < filteredPrograms.length && (
+          <div className="w-full flex items-center justify-center">
+            <button
+              onClick={() => setVisibleCount((prev) => prev + 6)}
+              className="w-fit border border-sky-800 text-sky-800 py-3 px-8 rounded-full font-semibold cursor-pointer ease-in-out duration-300"
+            >
+              Ver mais ({filteredPrograms.length - visibleCount} restantes)
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
