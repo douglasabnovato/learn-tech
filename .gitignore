@@ -1,0 +1,15 @@
+# Dependências de Node.js
+node_modules/
+
+# Arquivos de build e distribuição
+build/
+dist/
+
+# Arquivos de logs
+*.log
+package-lock.json
+
+# Chaves de API e segredos
+.env
+*.secret
+ 
