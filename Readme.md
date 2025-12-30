@@ -74,20 +74,27 @@ npm run dev
 ### 📚 Learn TECH
 
 - 🌟 HOME 🌟:
-- 🌟 Index: nome, favicon
-- 🌟 criar LearnTechTitle: logo reutilizável
-- 🌟 Navbar: nome, logo componentizado. Home, Programs, Resources, About, Contact, Sign In, Get Started
-- 🌟 Home: Subtítulo, Título e Descrição
+- [x] Index: nome, favicon
+- [x] criar LearnTechTitle: logo reutilizável
+- [x] Navbar: nome, logo componentizado. Home (Home), Programs (Programas), Resources (Recursos), About (Learn TECH), Contact (Fala aê), Sign In (Entre), Get Started (Cadastra-se)
+- [x] Home: Subtítulo, Título e Descrição
   - Subtítulo: The Leader in Online Learning
   - Título: Join Today & Start Learning
   - Descrição: The best place to discover new learning resources, books, and courses 
-- 🌟 Stats: online courses, expert tutors, students enrolled, recorded videos
-- 🌟 Categories: View All, Top Categories, Icons, Descriptions
-- Rever logos: Web, Frontend, UX/UI, Backend, DataBase, Produtos Digitais, Projetos, English 
-- 🌟 Projetos: pelo menos um para cada categoria
-- 🌟 Prêmios: Soft skills e cursos
-- 🌟 Blogs: cinco artigos
-- 🌟 Footer: coluna 1 com a chamada do hero, Customer (faq, contact us, returns, shipping), Quick Links (about us, terms of service, privacy policy, careers), Follow Us (facebook, twitter, Instagram, Linkedin)
+  - Botões CTA: Comece agora, Saiba mais
+- [x] Stats: online courses, expert tutors, students enrolled, recorded videos. Por: Javascript, HTML, CSS, ReactJS, Git, Github, NodeJS
+- [x] Categories: View All, Top Categories, Icons, Descriptions. Por: Web, Frontend, UX/UI, Backend, DataBase, ProdutosDigitais, Projetos, English
+- [x] Rever logos: Web, Frontend, UX/UI, Backend, DataBase, Produtos Digitais, Projetos, English 
+- [ ] Projetos: pelo menos um para cada categoria
+- [ ] Comportamentos: Soft skills em cursos
+- [ ] Prêmios: Mentorias em cursos
+- [ ] Blogs: cinco artigos
+- 🌟 Footer: 
+  - [ ] coluna 1 com a chamada do hero  
+  - [ ] coluna 2 Customer: (faq, contact us, returns, shipping)
+  - [ ] coluna 3 Quick Links: (about us, terms of service, privacy policy, careers)
+  - [ ] coluna 4 Follow Us: (Instagram, Linkedin, Youtube, Facebook, X)
+  - [ ] Copyright Real Time: mês
 
 - 🌟 PROGRAMS 🌟: 
 - Busca por texto do título no input
