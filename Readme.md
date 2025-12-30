@@ -40,10 +40,11 @@ Jornada profissional e conteúdos originais personalizados para a prestação de
 
 ## 🚀 Workflow
 
-- main
-- developer
-- v1-original
-- v2-conteudos
+- main: manter em produção
+- developer: tratar testes e merge
+- v1-original: versão inicial
+- v2-conteudos-1: última versão estável
+- v2-conteudos-2: versão em desenvolvimento
 
 #### 👨‍💻 Como Executar Localmente
 
@@ -65,9 +66,10 @@ npm run dev
 ---
 
 
-## 🚀 VERSÃO 2
+## 🚀 VERSÃO 2-2
 
-Desenvolvimento do projeto original
+- Desenvolvimento do projeto original. 
+- v2-conteudos-2: versão em desenvolvimento
 
 ### 📚 Learn TECH
 
@@ -86,6 +88,7 @@ Rever logos: Web, Frontend, UX/UI, Backend, DataBase, Produtos Digitais, Projeto
 - 🌟 Prêmios: Soft skills e cursos
 - 🌟 Blogs: cinco artigos
 - 🌟 Footer: coluna 1 com a chamada do hero, Customer (faq, contact us, returns, shipping), Quick Links (about us, terms of service, privacy policy, careers), Follow Us (facebook, twitter, Instagram, Linkedin)
+
 - 🌟 PROGRAMS 🌟: 
 - Busca por texto do título no input
 - Filtro por categoria no select
@@ -95,6 +98,7 @@ Rever logos: Web, Frontend, UX/UI, Backend, DataBase, Produtos Digitais, Projeto
 - Para cada card, uma página especialista
 - Estruturar programas por centenas: web (1 a 100), frontend (101 a 200), ux-ui (201 a 300), backend (301 a 400), data-base (401 a 500), produtos-digitais (501 a 600), projetos (601 a 700), english (701 a 800) 
 - hover no título
+
 - 🌟 Page Error 🌟: NotFound e UnderConstruction
 
 - 🌟 Fazer para 3 programas:
@@ -102,15 +106,14 @@ Rever logos: Web, Frontend, UX/UI, Backend, DataBase, Produtos Digitais, Projeto
   - /program/${categoryFilter}/${id}
 
 - Home: a home exibe uma breve demonstração do que cada tipo de conteúdo tem para apresentar. Cada tipo de conteúdo está no menu
+
 - 🌟 RECURSOS 🌟
 - 🌟 LEARN TECH 🌟
 - 🌟 FALA AÊ 🌟
 - 🌟 LOGIN 🌟
 - 🌟 REGISTER 🌟
 
-
 ---
-
 
 ## 🚀 VERSÃO 1
 
