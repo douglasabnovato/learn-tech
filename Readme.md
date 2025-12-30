@@ -43,7 +43,7 @@ Jornada profissional e conteúdos originais personalizados para a prestação de
 - main: manter em produção
 - developer: tratar testes e merge
 - v1-original: versão inicial
-- v2-conteudos-1: última versão estável
+- v2-conteudos-1: última versão estável aprovada
 - v2-conteudos-2: versão em desenvolvimento
 
 #### 👨‍💻 Como Executar Localmente
