@@ -83,7 +83,7 @@ npm run dev
   - Descrição: The best place to discover new learning resources, books, and courses 
 - 🌟 Stats: online courses, expert tutors, students enrolled, recorded videos
 - 🌟 Categories: View All, Top Categories, Icons, Descriptions
-Rever logos: Web, Frontend, UX/UI, Backend, DataBase, Produtos Digitais, Projetos, English 
+- Rever logos: Web, Frontend, UX/UI, Backend, DataBase, Produtos Digitais, Projetos, English 
 - 🌟 Projetos: pelo menos um para cada categoria
 - 🌟 Prêmios: Soft skills e cursos
 - 🌟 Blogs: cinco artigos
@@ -98,13 +98,10 @@ Rever logos: Web, Frontend, UX/UI, Backend, DataBase, Produtos Digitais, Projeto
 - Para cada card, uma página especialista
 - Estruturar programas por centenas: web (1 a 100), frontend (101 a 200), ux-ui (201 a 300), backend (301 a 400), data-base (401 a 500), produtos-digitais (501 a 600), projetos (601 a 700), english (701 a 800) 
 - hover no título
-
 - 🌟 Page Error 🌟: NotFound e UnderConstruction
-
 - 🌟 Fazer para 3 programas:
   - /program/detail
   - /program/${categoryFilter}/${id}
-
 - Home: a home exibe uma breve demonstração do que cada tipo de conteúdo tem para apresentar. Cada tipo de conteúdo está no menu
 
 - 🌟 RECURSOS 🌟
@@ -237,6 +234,7 @@ Dashboard do aluno, sistema de pagamentos, certificado digital.
 #### 🔗 Baixar template inicial 
 
 - Template: https://github.com/gtech-official08/l  
+- Modelo: https://github.com/gtech-official08/lmssys-starter-template
 
 #### 🛠️ Tecnologias Utilizadas
 
