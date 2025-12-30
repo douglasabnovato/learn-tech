@@ -1,7 +1,11 @@
 # 🚀 Learn TECH
 
-Uma plataforma de Aprendizado com uma experiência de usuário impecável
-A primeira versão será de curadoria de links e conteúdos estáticos
+O ECOSSISTEMA de Tecnologia, Ensino, Computação e Humano para treinamento de APRENDIZADO.
+
+Com uma experiência de usuário impecável, a Learn TECH tem como objetivo acelarar a jornada para aperfeiçoar os resultados. 
+
+A primeira versão será de curadoria de links e conteúdos estáticos.
+A segunda versão trará conteúdos originais e personalizados.
  
 ## 📂 Plataforma de Aprendizado
 
