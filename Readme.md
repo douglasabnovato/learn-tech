@@ -93,15 +93,11 @@ npm run dev
   - [x] exibir um card para cada categoria
   - [x] botão "ver todos" levar para a página programas
   - [x] hover no card
-- [ ] Comportamentos: Soft skills em cursos
-- [ ] Prêmios: Mentorias em cursos
-- [ ] Blogs: cinco artigos
-- 🌟 Footer: 
-  - [ ] coluna 1 com a chamada do hero  
-  - [ ] coluna 2 Customer: (faq, contact us, returns, shipping)
-  - [ ] coluna 3 Quick Links: (about us, terms of service, privacy policy, careers)
-  - [ ] coluna 4 Follow Us: (Instagram, Linkedin, Youtube, Facebook, X)
-  - [ ] Copyright Real Time: criar uma consulta do dia que o site está sendo acessado
+- [x] Comportamentos: Soft skills em cursos: uma página em construção
+- [x] Prêmios: Mentorias em cursos: uma página em construção
+- [x] Blogs: Artigos em cursos: uma página em construção
+- [x] Footer: colunas 1, 2, 3, 4 e Copyright
+  - [] Copyright Real Time: criar uma consulta do dia que o site está sendo acessado
 
 - 🌟 PROGRAMS 🌟: 
 - [x] Busca por texto do título no input
@@ -126,6 +122,16 @@ npm run dev
 - 🌟 FALA AÊ 🌟
 - 🌟 LOGIN 🌟
 - 🌟 REGISTER 🌟
+- 🌟 Comportamentos 🌟: criar uma página com uma lista de cards de artigos, criar uma página para cada artigo 
+- 🌟 Prêmios 🌟: criar uma página com uma lista de cards de artigos, criar uma página para cada artigo
+- 🌟 Blogs 🌟: criar uma página com uma lista de cards de artigos, criar uma página para cada artigo
+- 🌟 Footer: 
+  - [ ] coluna 1 com a chamada do hero  
+  - [ ] coluna 2 Customer: (faq, contact us, returns, shipping)
+  - [ ] coluna 3 Quick Links: (about us, terms of service, privacy policy, careers)
+  - [ ] coluna 4 Follow Us: (Instagram, Linkedin, Youtube, Facebook, X)
+  - [ ] Copyright Real Time: criar uma consulta do dia que o site está sendo acessado
+
 
 ---
 

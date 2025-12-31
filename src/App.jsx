@@ -19,6 +19,7 @@ function App() {
         <main className="w-full bg-neutral-50 flex min-h-screen flex-col text-neutral-500">
           {/* Navbar section */}
           <Navbar />
+          
           {/* Routes */}
           <Routes>
             {/* Home */}
