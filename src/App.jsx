@@ -10,6 +10,8 @@ import { SignUp } from "./pages/account/signup/SignUp";
 import { UnderConstruction } from "./pages/error/under-construction";
 import { NotFound } from "./pages/error/not-found";
 
+import { ScrollToTop } from "./components/common/ScrollToTop";
+
 function App() {
   return (
     <>
@@ -17,6 +19,7 @@ function App() {
         <main className="w-full bg-neutral-50 flex min-h-screen flex-col text-neutral-500">
           {/* Navbar section */}
           <Navbar />
+          
           {/* Routes */}
           <Routes>
             {/* Home */}
@@ -46,6 +49,8 @@ function App() {
           </Routes>
           {/* Footer Section */}
           <Footer />
+          {/* Button ToTop */}
+          <ScrollToTop />
         </main>
       </Router>
     </>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import DevImg1 from "./dev-4.JPG"; 
+import DevImg1 from "./dev-4.JPG";
 import DevImg2 from "./dev-5.JPG";
 import DevImg3 from "./dev-6.JPG";
 import DevImg4 from "./dev-7.JPG";
@@ -15,7 +15,7 @@ export const Hero = () => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 5000);
 
-    return () => clearInterval(interval);  
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -35,10 +35,24 @@ export const Hero = () => {
             e cursos.
           </p>
           <div className="w-full flex items-center gap-6">
-            <button className="md:w-first w-1/2 text-neutral-50 bg-gradient-to-tr from-indigo-500 via-sky-700 via-20% to-purple-700 cursor-pointer py-3 px-8 rounded-full font-semibold ease-in-out duration-300">
+            <button
+              onClick={() =>
+                document
+                  .getElementById("section-programs")
+                  .scrollIntoView({ behavior: "smooth" })
+              }
+              className="md:w-first w-1/2 text-neutral-50 bg-gradient-to-tr from-indigo-500 via-sky-700 via-20% to-purple-700 cursor-pointer py-3 px-8 rounded-full font-semibold ease-in-out duration-300"
+            >
               Comece Agora
             </button>
-            <button className="md:w-first w-1/2 border border-neutral-800 cursor-pointer py-3 px-8 text-neutral-800 rounded-full font-semibold ease-in-out duration-300">
+            <button
+              onClick={() =>
+                document
+                  .getElementById("section-stats")
+                  .scrollIntoView({ behavior: "smooth" })
+              }
+              className="md:w-first w-1/2 border border-neutral-800 cursor-pointer py-3 px-8 text-neutral-800 rounded-full font-semibold ease-in-out duration-300"
+            >
               Saiba Mais
             </button>
           </div>
