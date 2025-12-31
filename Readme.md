@@ -97,7 +97,7 @@ npm run dev
 - [x] Prêmios: Mentorias em cursos: uma página em construção
 - [x] Blogs: Artigos em cursos: uma página em construção
 - [x] Footer: colunas 1, 2, 3, 4 e Copyright
-  - [] Copyright Real Time: criar uma consulta do dia que o site está sendo acessado
+  - [x] Copyright Real Time: criar uma consulta do dia que o site está sendo acessado
 
 - 🌟 PROGRAMS 🌟: 
 - [x] Busca por texto do título no input
