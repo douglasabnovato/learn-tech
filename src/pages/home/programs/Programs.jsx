@@ -7,8 +7,7 @@ import programsData from "./../../../constants/programsData";
 
 export const Programs = () => {
   return (
-    <div className="w-full md:px-15 sm:px-10 px-4 space-y-8">
-      {/** Top Section */}
+    <div id="section-programs" className="w-full md:px-15 sm:px-10 px-4 space-y-8">
       <div className="w-full flex items-center justify-between">
         <h2 className="text-2xl font-bold text-neutral-800">
           Top Projetos 
@@ -22,9 +21,7 @@ export const Programs = () => {
           </Link>
         </div>
       </div>
-      {/** Programs section */}
       <div className="w-full grid md:grid-cols-3 grid-colds-1 md:gap-10 gap-5">
-        {/** Display the data */}
         {programsData.map((programs, index) => (
           <ProgramsCard key={index} {...programs} />
         ))}

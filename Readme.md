@@ -79,14 +79,16 @@ npm run dev
 - [x] Index: nome, favicon
 - [x] criar LearnTechTitle: logo reutilizável
 - [x] Navbar: nome, logo componentizado. Home (Home), Programs (Programas), Resources (Recursos), About (Learn TECH), Contact (Fala aê), Sign In (Entre), Get Started (Cadastra-se)
-- [x] Home: Subtítulo, Título e Descrição
-  - Subtítulo: The Leader in Online Learning
-  - Título: Join Today & Start Learning
-  - Descrição: The best place to discover new learning resources, books, and courses 
-  - Botões CTA: Comece agora, Saiba mais
+- [x] Home:
+  - [x] Subtítulo: The Leader in Online Learning
+  - [x] Título: Join Today & Start Learning
+  - [x] Descrição: The best place to discover new learning resources, books, and courses 
+  - [x] Botão CTA: Comece agora: levar para o "TOP Projetos"
+  - [x] Botão CTA: Saiba mais: levar para "Stats"
 - [x] Stats: online courses, expert tutors, students enrolled, recorded videos. Por: Javascript, HTML, CSS, ReactJS, Git, Github, NodeJS
 - [x] Categories: View All, Top Categories, Icons, Descriptions. Por: Web, Frontend, UX/UI, Backend, DataBase, ProdutosDigitais, Projetos, English
 - [x] Rever logos: Web, Frontend, UX/UI, Backend, DataBase, Produtos Digitais, Projetos, English 
+- [ ] Botão fixed ao topo
 - [ ] Projetos: pelo menos um para cada categoria
 - [ ] Comportamentos: Soft skills em cursos
 - [ ] Prêmios: Mentorias em cursos
