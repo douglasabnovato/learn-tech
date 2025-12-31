@@ -68,8 +68,8 @@ npm run dev
 
 ## 🚀 VERSÃO 2-2
 
-- Desenvolvimento do projeto original. 
-- v2-conteudos-2: versão em desenvolvimento
+- Desenvolvimento do projeto original
+- v2-conteudos-2: versão em desenvolvimento para seção home e seção programas
 
 ### 📚 Learn TECH
 
@@ -97,19 +97,22 @@ npm run dev
   - [ ] Copyright Real Time: criar uma consulta do dia que o site está sendo acessado
 
 - 🌟 PROGRAMS 🌟: 
-- Busca por texto do título no input
-- Filtro por categoria no select
-- Contador de resultados da busca e do filtro
-- Exibir apenas 4 cards. Cada vez que o usuário clicar no botão “Ver mais” → carregar +6 cards. 
-- memorizar o resultado da busca com useMemo
-- Para cada card, uma página especialista
-- Estruturar programas por centenas: web (1 a 100), frontend (101 a 200), ux-ui (201 a 300), backend (301 a 400), data-base (401 a 500), produtos-digitais (501 a 600), projetos (601 a 700), english (701 a 800) 
-- hover no título
-- 🌟 Page Error 🌟: NotFound e UnderConstruction
-- 🌟 Fazer para 3 programas:
+- [x] Busca por texto do título no input
+- [x] Filtro por categoria no select
+- [x] Contador de resultados da busca e do filtro
+- [x] Exibir apenas 4 cards. Cada vez que o usuário clicar no botão “Ver mais” → carregar +6 cards. 
+- [x] memorizar o resultado da busca com useMemo
+- [ ] Para cada card, uma página especialista
+- [x] Estruturar programas por centenas: web (1 a 100), frontend (101 a 200), ux-ui (201 a 300), backend (301 a 400), data-base (401 a 500), produtos-digitais (501 a 600), projetos (601 a 700), english (701 a 800) 
+- [ ] hover no título
+
+- 🌟 Page Error 🌟: 
+  - [ ] NotFound 
+  - [ ] UnderConstruction
+- [ ] Fazer para 3 programas:
   - /program/detail
   - /program/${categoryFilter}/${id}
-- Home: a home exibe uma breve demonstração do que cada tipo de conteúdo tem para apresentar. Cada tipo de conteúdo está no menu
+- [ ] Home: a home exibe uma breve demonstração do que cada tipo de conteúdo tem para apresentar. Cada tipo de conteúdo está no menu
 
 - 🌟 RECURSOS 🌟
 - 🌟 LEARN TECH 🌟
