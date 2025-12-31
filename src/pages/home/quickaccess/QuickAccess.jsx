@@ -21,7 +21,7 @@ export const QuickAccess = () => {
               </h1>
             </div>
             <Link
-              to="/programs"
+              to="/softskills"
               className="w-fit text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-sky-700 to-purple-700 text-base font-semibold flex items-center gap-x-2 group ease-in-out duration-300"
             >
               Veja agora
@@ -53,7 +53,7 @@ export const QuickAccess = () => {
               </h1>
             </div>
             <Link
-              to="/programs"
+              to="/mentorias"
               className="w-fit text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-sky-700 to-purple-700 text-base font-semibold flex items-center gap-x-2 group ease-in-out duration-300"
             >
               Veja agora

@@ -150,7 +150,12 @@ const Footer = () => {
       {/* Footer Bottom Section */}
       <div className="text-center text-sm mt-8 border-t border-neutral-700 pt-8">
         <p className="text-neutral-400">
-          &copy; 2025 Learn TECH. All rights reserved.
+          &copy; {new Date().getFullYear()}
+          {/* inline-block garante que o capitalize funcione e mr-1 cria o espaço após o ponto */}
+          <span className="inline-block capitalize ml-1 mr-1">
+            {new Date().toLocaleString("pt-BR", { month: "long" })}.
+          </span>
+          Learn TECH. All rights reserved.
         </p>
       </div>
     </footer>
