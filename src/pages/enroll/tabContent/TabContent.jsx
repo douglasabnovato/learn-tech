@@ -23,8 +23,7 @@ export const TabContent = () => {
     },
   ];
   return (
-    <div className="w-full">
-      {/** Make tab components */}
+    <div className="w-full"> 
       <Tabs tabs={tabs} />
     </div>
   );

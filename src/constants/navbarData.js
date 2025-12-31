@@ -16,7 +16,7 @@ const navItems = [
     },
     {
         id: 4,
-        name: "Learn Tech",
+        name: "Learn TECH",
         path: "/about",
     },
     {
