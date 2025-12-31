@@ -89,7 +89,9 @@ npm run dev
 - [x] Categories: View All, Top Categories, Icons, Descriptions. Por: Web, Frontend, UX/UI, Backend, DataBase, ProdutosDigitais, Projetos, English
 - [x] Rever logos: Web, Frontend, UX/UI, Backend, DataBase, Produtos Digitais, Projetos, English 
 - [x] Botão fixed ao topo + Cursor pointer
-- [ ] Projetos: pelo menos um para cada categoria
+- [x] Projetos: 
+  - [x] exibir um card para cada categoria
+  - [x] botão "ver todos" levar para a página programas
 - [ ] Comportamentos: Soft skills em cursos
 - [ ] Prêmios: Mentorias em cursos
 - [ ] Blogs: cinco artigos
