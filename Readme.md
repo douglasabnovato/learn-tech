@@ -68,44 +68,52 @@ npm run dev
 
 ## 🚀 VERSÃO 2-2
 
-- Desenvolvimento do projeto original. 
-- v2-conteudos-2: versão em desenvolvimento
+- Desenvolvimento do projeto com os conteúdos originais
+- v2-conteudos-2: versão de organização de tarefas
 
 ### 📚 Learn TECH
 
 - 🌟 HOME 🌟:
-- 🌟 Index: nome, favicon
-- 🌟 criar LearnTechTitle: logo reutilizável
-- 🌟 Navbar: nome, logo componentizado. Home, Programs, Resources, About, Contact, Sign In, Get Started
-- 🌟 Home: Subtítulo, Título e Descrição
+- [x] Imagem de destaque da Home em formato e em carrossel
+- [x] Index: nome, favicon
+- [x] criar LearnTechTitle: logo reutilizável
+- [x] Navbar: nome, logo componentizado. Home (Home), Programs (Programas), Resources (Recursos), About (Learn TECH), Contact (Fala aê), Sign In (Entre), Get Started (Cadastra-se)
+- [x] Home: Subtítulo, Título e Descrição
   - Subtítulo: The Leader in Online Learning
   - Título: Join Today & Start Learning
   - Descrição: The best place to discover new learning resources, books, and courses 
-- 🌟 Stats: online courses, expert tutors, students enrolled, recorded videos
-- 🌟 Categories: View All, Top Categories, Icons, Descriptions
-Rever logos: Web, Frontend, UX/UI, Backend, DataBase, Produtos Digitais, Projetos, English 
-- 🌟 Projetos: pelo menos um para cada categoria
-- 🌟 Prêmios: Soft skills e cursos
-- 🌟 Blogs: cinco artigos
-- 🌟 Footer: coluna 1 com a chamada do hero, Customer (faq, contact us, returns, shipping), Quick Links (about us, terms of service, privacy policy, careers), Follow Us (facebook, twitter, Instagram, Linkedin)
+  - Botões CTA: Comece agora, Saiba mais
+- [x] Stats: online courses, expert tutors, students enrolled, recorded videos. Por: Javascript, HTML, CSS, ReactJS, Git, Github, NodeJS
+- [x] Categories: View All, Top Categories, Icons, Descriptions. Por: Web, Frontend, UX/UI, Backend, DataBase, ProdutosDigitais, Projetos, English
+- [x] Rever logos: Web, Frontend, UX/UI, Backend, DataBase, Produtos Digitais, Projetos, English 
+- [ ] Projetos: pelo menos um para cada categoria
+- [ ] Comportamentos: Soft skills em cursos
+- [ ] Prêmios: Mentorias em cursos
+- [ ] Blogs: cinco artigos
+- 🌟 Footer: 
+  - [ ] coluna 1 com a chamada do hero  
+  - [ ] coluna 2 Customer: (faq, contact us, returns, shipping)
+  - [ ] coluna 3 Quick Links: (about us, terms of service, privacy policy, careers)
+  - [ ] coluna 4 Follow Us: (Instagram, Linkedin, Youtube, Facebook, X)
+  - [ ] Copyright Real Time: criar uma consulta do dia que o site está sendo acessado
 
 - 🌟 PROGRAMS 🌟: 
-- Busca por texto do título no input
-- Filtro por categoria no select
-- Contador de resultados da busca e do filtro
-- Exibir apenas 4 cards. Cada vez que o usuário clicar no botão “Ver mais” → carregar +6 cards. 
-- memorizar o resultado da busca com useMemo
-- Para cada card, uma página especialista
-- Estruturar programas por centenas: web (1 a 100), frontend (101 a 200), ux-ui (201 a 300), backend (301 a 400), data-base (401 a 500), produtos-digitais (501 a 600), projetos (601 a 700), english (701 a 800) 
-- hover no título
+- [x] Busca por texto do título no input
+- [x] Filtro por categoria no select
+- [x] Contador de resultados da busca e do filtro
+- [x] Exibir apenas 4 cards. Cada vez que o usuário clicar no botão “Ver mais” → carregar +6 cards. 
+- [x] memorizar o resultado da busca com useMemo
+- [ ] Para cada card, uma página especialista
+- [x] Estruturar programas por centenas: web (1 a 100), frontend (101 a 200), ux-ui (201 a 300), backend (301 a 400), data-base (401 a 500), produtos-digitais (501 a 600), projetos (601 a 700), english (701 a 800) 
+- [ ] hover no título
 
-- 🌟 Page Error 🌟: NotFound e UnderConstruction
-
-- 🌟 Fazer para 3 programas:
+- 🌟 Page Error 🌟: 
+  - [ ] NotFound 
+  - [ ] UnderConstruction
+- [ ] Fazer para 3 programas:
   - /program/detail
   - /program/${categoryFilter}/${id}
-
-- Home: a home exibe uma breve demonstração do que cada tipo de conteúdo tem para apresentar. Cada tipo de conteúdo está no menu
+- [ ] Home: a home exibe uma breve demonstração do que cada tipo de conteúdo tem para apresentar. Cada tipo de conteúdo está no menu
 
 - 🌟 RECURSOS 🌟
 - 🌟 LEARN TECH 🌟
@@ -117,7 +125,7 @@ Rever logos: Web, Frontend, UX/UI, Backend, DataBase, Produtos Digitais, Projeto
 
 ## 🚀 VERSÃO 1
 
-Desenvolvimento do projeto original
+Desenvolvimento do projeto Inicial
 
 ### 📚 LearnHub — Plataforma LMS Online Responsiva
 
@@ -237,6 +245,7 @@ Dashboard do aluno, sistema de pagamentos, certificado digital.
 #### 🔗 Baixar template inicial 
 
 - Template: https://github.com/gtech-official08/l  
+- Modelo: https://github.com/gtech-official08/lmssys-starter-template
 
 #### 🛠️ Tecnologias Utilizadas
 
