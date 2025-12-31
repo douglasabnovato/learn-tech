@@ -10,6 +10,8 @@ import { SignUp } from "./pages/account/signup/SignUp";
 import { UnderConstruction } from "./pages/error/under-construction";
 import { NotFound } from "./pages/error/not-found";
 
+import { ScrollToTop } from "./components/common/ScrollToTop";
+
 function App() {
   return (
     <>
@@ -46,6 +48,8 @@ function App() {
           </Routes>
           {/* Footer Section */}
           <Footer />
+          {/* Button ToTop */}
+          <ScrollToTop />
         </main>
       </Router>
     </>

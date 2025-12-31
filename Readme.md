@@ -88,7 +88,7 @@ npm run dev
 - [x] Stats: online courses, expert tutors, students enrolled, recorded videos. Por: Javascript, HTML, CSS, ReactJS, Git, Github, NodeJS
 - [x] Categories: View All, Top Categories, Icons, Descriptions. Por: Web, Frontend, UX/UI, Backend, DataBase, ProdutosDigitais, Projetos, English
 - [x] Rever logos: Web, Frontend, UX/UI, Backend, DataBase, Produtos Digitais, Projetos, English 
-- [ ] Botão fixed ao topo
+- [x] Botão fixed ao topo + Cursor pointer
 - [ ] Projetos: pelo menos um para cada categoria
 - [ ] Comportamentos: Soft skills em cursos
 - [ ] Prêmios: Mentorias em cursos
