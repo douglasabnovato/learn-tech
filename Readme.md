@@ -99,6 +99,10 @@ npm run dev
 - [x] Footer: colunas 1, 2, 3, 4 e Copyright
   - [x] Copyright Real Time: criar uma consulta do dia que o site está sendo acessado
 
+- 🌟 Page Error 🌟: 
+  - [x] NotFound 
+  - [x] UnderConstruction
+
 - 🌟 PROGRAMS 🌟: 
 - [x] Busca por texto do título no input
 - [x] Filtro por categoria no select
@@ -109,10 +113,6 @@ npm run dev
 - [ ] Para cada card, uma página especialista
 - [ ] hover no card
 - [ ] Home: a home exibe uma breve demonstração do que cada tipo de conteúdo tem para apresentar. Cada tipo de conteúdo está no menu
-
-- 🌟 Page Error 🌟: 
-  - [ ] NotFound 
-  - [ ] UnderConstruction
 - [ ] Fazer para 3 programas:
   - /program/detail
   - /program/${categoryFilter}/${id}
