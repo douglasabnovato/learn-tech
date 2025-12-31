@@ -92,6 +92,7 @@ npm run dev
 - [x] Projetos: 
   - [x] exibir um card para cada categoria
   - [x] botão "ver todos" levar para a página programas
+  - [x] hover no card
 - [ ] Comportamentos: Soft skills em cursos
 - [ ] Prêmios: Mentorias em cursos
 - [ ] Blogs: cinco artigos
@@ -108,9 +109,9 @@ npm run dev
 - [x] Contador de resultados da busca e do filtro
 - [x] Exibir apenas 4 cards. Cada vez que o usuário clicar no botão “Ver mais” → carregar +6 cards. 
 - [x] memorizar o resultado da busca com useMemo
-- [ ] Para cada card, uma página especialista
 - [x] Estruturar programas por centenas: web (1 a 100), frontend (101 a 200), ux-ui (201 a 300), backend (301 a 400), data-base (401 a 500), produtos-digitais (501 a 600), projetos (601 a 700), english (701 a 800) 
-- [ ] hover no título
+- [ ] Para cada card, uma página especialista
+- [ ] hover no card
 - [ ] Home: a home exibe uma breve demonstração do que cada tipo de conteúdo tem para apresentar. Cada tipo de conteúdo está no menu
 
 - 🌟 Page Error 🌟: 
