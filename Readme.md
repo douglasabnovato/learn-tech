@@ -69,7 +69,7 @@ npm run dev
 ## 🚀 VERSÃO 2-2
 
 - Desenvolvimento do projeto com os conteúdos originais
-- v2-conteudos-2: versão em desenvolvimento para seção home e seção programas
+- v2-conteudos-2: versão de organização de tarefas
 
 ### 📚 Learn TECH
 
