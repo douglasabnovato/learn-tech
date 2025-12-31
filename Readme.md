@@ -43,7 +43,7 @@ Jornada profissional e conteúdos originais personalizados para a prestação de
 - main: manter em produção
 - developer: tratar testes e merge
 - v1-original: versão inicial
-- v2-conteudos-1: última versão estável aprovada
+- v2-conteudos-1: última versão estável
 - v2-conteudos-2: versão em desenvolvimento
 
 #### 👨‍💻 Como Executar Localmente
@@ -70,6 +70,7 @@ npm run dev
 
 - Desenvolvimento do projeto com os conteúdos originais
 - v2-conteudos-2: versão de organização de tarefas
+- v2-conteudos-2-1-home: versão de desenvolvimento da seção home
 
 ### 📚 Learn TECH
 
@@ -106,6 +107,7 @@ npm run dev
 - [ ] Para cada card, uma página especialista
 - [x] Estruturar programas por centenas: web (1 a 100), frontend (101 a 200), ux-ui (201 a 300), backend (301 a 400), data-base (401 a 500), produtos-digitais (501 a 600), projetos (601 a 700), english (701 a 800) 
 - [ ] hover no título
+- [ ] Home: a home exibe uma breve demonstração do que cada tipo de conteúdo tem para apresentar. Cada tipo de conteúdo está no menu
 
 - 🌟 Page Error 🌟: 
   - [ ] NotFound 
@@ -113,7 +115,6 @@ npm run dev
 - [ ] Fazer para 3 programas:
   - /program/detail
   - /program/${categoryFilter}/${id}
-- [ ] Home: a home exibe uma breve demonstração do que cada tipo de conteúdo tem para apresentar. Cada tipo de conteúdo está no menu
 
 - 🌟 RECURSOS 🌟
 - 🌟 LEARN TECH 🌟
