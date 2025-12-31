@@ -94,7 +94,7 @@ npm run dev
   - [ ] coluna 2 Customer: (faq, contact us, returns, shipping)
   - [ ] coluna 3 Quick Links: (about us, terms of service, privacy policy, careers)
   - [ ] coluna 4 Follow Us: (Instagram, Linkedin, Youtube, Facebook, X)
-  - [ ] Copyright Real Time: mês
+  - [ ] Copyright Real Time: criar uma consulta do dia que o site está sendo acessado
 
 - 🌟 PROGRAMS 🌟: 
 - Busca por texto do título no input
