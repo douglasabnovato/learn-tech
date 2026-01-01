@@ -43,8 +43,11 @@ Jornada profissional e conteúdos originais personalizados para a prestação de
 - main: manter em produção
 - developer: tratar testes e merge
 - v1-original: versão inicial
-- v2-conteudos-1: última versão estável
-- v2-conteudos-2: versão em desenvolvimento
+- v2-conteudos-0: adição do conteúdos do projeto 
+- v2-conteudos-1: versão estável com estrutura definida
+- v2-conteudos-2: versão de organização de tarefas
+- v2-conteudos-2-1-home: versão de desenvolvimento da seção home
+- v2-conteudos-2-2-hospedar: versão de desenvolvimento da hospedagem
 
 #### 👨‍💻 Como Executar Localmente
 
@@ -67,11 +70,6 @@ npm run dev
 
 
 ## 🚀 VERSÃO 2-2
-
-- Desenvolvimento do projeto com os conteúdos originais
-- v2-conteudos-2: versão de organização de tarefas
-- v2-conteudos-2-1-home: versão de desenvolvimento da seção home
-- v2-conteudos-2-2-hospedar: versão de desenvolvimento da hospedagem
 
 ### 📚 Learn TECH
 
