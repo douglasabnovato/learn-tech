@@ -43,7 +43,7 @@ Jornada profissional e conteúdos originais personalizados para a prestação de
 - main: manter em produção
 - developer: tratar testes e merge
 - v1-original: versão inicial
-- v2-conteudos-1: última versão estável aprovada
+- v2-conteudos-1: última versão estável
 - v2-conteudos-2: versão em desenvolvimento
 
 #### 👨‍💻 Como Executar Localmente
@@ -70,6 +70,7 @@ npm run dev
 
 - Desenvolvimento do projeto com os conteúdos originais
 - v2-conteudos-2: versão de organização de tarefas
+- v2-conteudos-2-1-home: versão de desenvolvimento da seção home
 
 ### 📚 Learn TECH
 
@@ -78,24 +79,29 @@ npm run dev
 - [x] Index: nome, favicon
 - [x] criar LearnTechTitle: logo reutilizável
 - [x] Navbar: nome, logo componentizado. Home (Home), Programs (Programas), Resources (Recursos), About (Learn TECH), Contact (Fala aê), Sign In (Entre), Get Started (Cadastra-se)
-- [x] Home: Subtítulo, Título e Descrição
-  - Subtítulo: The Leader in Online Learning
-  - Título: Join Today & Start Learning
-  - Descrição: The best place to discover new learning resources, books, and courses 
-  - Botões CTA: Comece agora, Saiba mais
+- [x] Home:
+  - [x] Subtítulo: The Leader in Online Learning
+  - [x] Título: Join Today & Start Learning
+  - [x] Descrição: The best place to discover new learning resources, books, and courses 
+  - [x] Botão CTA: Comece agora: levar para o "TOP Projetos"
+  - [x] Botão CTA: Saiba mais: levar para "Stats"
 - [x] Stats: online courses, expert tutors, students enrolled, recorded videos. Por: Javascript, HTML, CSS, ReactJS, Git, Github, NodeJS
 - [x] Categories: View All, Top Categories, Icons, Descriptions. Por: Web, Frontend, UX/UI, Backend, DataBase, ProdutosDigitais, Projetos, English
 - [x] Rever logos: Web, Frontend, UX/UI, Backend, DataBase, Produtos Digitais, Projetos, English 
-- [ ] Projetos: pelo menos um para cada categoria
-- [ ] Comportamentos: Soft skills em cursos
-- [ ] Prêmios: Mentorias em cursos
-- [ ] Blogs: cinco artigos
-- 🌟 Footer: 
-  - [ ] coluna 1 com a chamada do hero  
-  - [ ] coluna 2 Customer: (faq, contact us, returns, shipping)
-  - [ ] coluna 3 Quick Links: (about us, terms of service, privacy policy, careers)
-  - [ ] coluna 4 Follow Us: (Instagram, Linkedin, Youtube, Facebook, X)
-  - [ ] Copyright Real Time: criar uma consulta do dia que o site está sendo acessado
+- [x] Botão fixed ao topo + Cursor pointer
+- [x] Projetos: 
+  - [x] exibir um card para cada categoria
+  - [x] botão "ver todos" levar para a página programas
+  - [x] hover no card
+- [x] Comportamentos: Soft skills em cursos: uma página em construção
+- [x] Prêmios: Mentorias em cursos: uma página em construção
+- [x] Blogs: Artigos em cursos: uma página em construção
+- [x] Footer: colunas 1, 2, 3, 4 e Copyright
+  - [x] Copyright Real Time: criar uma consulta do dia que o site está sendo acessado
+
+- 🌟 Page Error 🌟: 
+  - [x] NotFound 
+  - [x] UnderConstruction
 
 - 🌟 PROGRAMS 🌟: 
 - [x] Busca por texto do título no input
@@ -103,23 +109,29 @@ npm run dev
 - [x] Contador de resultados da busca e do filtro
 - [x] Exibir apenas 4 cards. Cada vez que o usuário clicar no botão “Ver mais” → carregar +6 cards. 
 - [x] memorizar o resultado da busca com useMemo
-- [ ] Para cada card, uma página especialista
 - [x] Estruturar programas por centenas: web (1 a 100), frontend (101 a 200), ux-ui (201 a 300), backend (301 a 400), data-base (401 a 500), produtos-digitais (501 a 600), projetos (601 a 700), english (701 a 800) 
-- [ ] hover no título
-
-- 🌟 Page Error 🌟: 
-  - [ ] NotFound 
-  - [ ] UnderConstruction
+- [ ] Para cada card, uma página especialista
+- [ ] hover no card
+- [ ] Home: a home exibe uma breve demonstração do que cada tipo de conteúdo tem para apresentar. Cada tipo de conteúdo está no menu
 - [ ] Fazer para 3 programas:
   - /program/detail
   - /program/${categoryFilter}/${id}
-- [ ] Home: a home exibe uma breve demonstração do que cada tipo de conteúdo tem para apresentar. Cada tipo de conteúdo está no menu
 
 - 🌟 RECURSOS 🌟
 - 🌟 LEARN TECH 🌟
 - 🌟 FALA AÊ 🌟
 - 🌟 LOGIN 🌟
 - 🌟 REGISTER 🌟
+- 🌟 Comportamentos 🌟: criar uma página com uma lista de cards de artigos, criar uma página para cada artigo 
+- 🌟 Prêmios 🌟: criar uma página com uma lista de cards de artigos, criar uma página para cada artigo
+- 🌟 Blogs 🌟: criar uma página com uma lista de cards de artigos, criar uma página para cada artigo
+- 🌟 Footer: 
+  - [ ] coluna 1 com a chamada do hero  
+  - [ ] coluna 2 Customer: (faq, contact us, returns, shipping)
+  - [ ] coluna 3 Quick Links: (about us, terms of service, privacy policy, careers)
+  - [ ] coluna 4 Follow Us: (Instagram, Linkedin, Youtube, Facebook, X)
+  - [ ] Copyright Real Time: criar uma consulta do dia que o site está sendo acessado
+
 
 ---
 
