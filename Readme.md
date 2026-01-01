@@ -71,6 +71,7 @@ npm run dev
 - Desenvolvimento do projeto com os conteúdos originais
 - v2-conteudos-2: versão de organização de tarefas
 - v2-conteudos-2-1-home: versão de desenvolvimento da seção home
+- v2-conteudos-2-2-hospedar: versão de desenvolvimento da hospedagem
 
 ### 📚 Learn TECH
 
@@ -102,6 +103,11 @@ npm run dev
 - 🌟 Page Error 🌟: 
   - [x] NotFound 
   - [x] UnderConstruction
+
+- 🌟 Hospedar 🌟:  
+  - [x] Vercel
+  - [x] Configuração com o arquivo vercel.json
+  - [x] URL: https://learn-tech-pied.vercel.app/
 
 - 🌟 PROGRAMS 🌟: 
 - [x] Busca por texto do título no input
