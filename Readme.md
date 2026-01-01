@@ -47,7 +47,8 @@ Jornada profissional e conteúdos originais personalizados para a prestação de
 - v2-conteudos-1: versão estável com estrutura definida
 - v2-conteudos-2: versão de organização de tarefas
 - v2-conteudos-2-1-home: versão de desenvolvimento da seção home
-- v2-conteudos-2-2-hospedar: versão de desenvolvimento da hospedagem
+- v2-conteudos-2-2-hospedar: versão de configuração da hospedagem
+- v2-conteudos-2-3-programs: versão de desenvolvimento da seção programs
 
 #### 👨‍💻 Como Executar Localmente
 
