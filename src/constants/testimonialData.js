@@ -1,34 +1,34 @@
 const testimonials = [
     {
-        fullName: "John Doe",
+        fullName: "João Ferreira",
         image: "https://cdn.pixabay.com/photo/2023/07/25/10/21/girl-8148749_1280.jpg",
-        testimonialText: "This course changed my life! Highly recommended. This course changed my life! Highly recommended. This course changed my life! Highly recommended.",
+        testimonialText: "Este curso mudou minha vida! Recomendo fortemente. Uma experiência transformadora que abriu portas reais no mercado.",
     },
     {
-        fullName: "Jane Smith",
+        fullName: "Giovanna Smith",
         image: "https://cdn.pixabay.com/photo/2024/03/29/17/43/ai-generated-8663299_1280.png",
-        testimonialText: "Amazing content and great instructors.",
+        testimonialText: "Conteúdo incrível e instrutores excelentes. A didática é o grande diferencial aqui.",
     },
     {
-        fullName: "Alice Johnson",
+        fullName: "Alice Cavalcante",
         image: "",
-        testimonialText: "I learned so much in such a short time.",
+        testimonialText: "Aprendi muita coisa em pouquíssimo tempo. A metodologia direto ao ponto faz toda a diferença.",
     },
     {
-        fullName: "Bob Brown",
+        fullName: "Roberto Bruno",
         image: "",
-        testimonialText: "The best online course I've ever taken. This course changed my life! Highly recommended. This course changed my life! Highly recommended.",
+        testimonialText: "O melhor curso online que já fiz. Mudou minha perspectiva sobre desenvolvimento e me deu confiança para codar.",
     },
     {
-        fullName: "Charlie Davis",
+        fullName: "Carlos Eduardo",
         image: "",
-        testimonialText: "Very well-structured and easy to follow.",
+        testimonialText: "Muito bem estruturado e fácil de seguir. Os módulos seguem uma lógica perfeita para o aprendizado.",
     },
     {
-        fullName: "Eve White",
+        fullName: "Evelyn Oliveira",
         image: "https://cdn.pixabay.com/photo/2021/04/27/04/15/girl-6210464_1280.jpg",
-        testimonialText: "I highly recommend this course to everyone.",
+        testimonialText: "Eu recomendo este curso para todos que desejam entrar de verdade no mundo da tecnologia.",
     },
-];
+]
 
 export default testimonials;
