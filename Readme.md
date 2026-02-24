@@ -74,6 +74,8 @@ npm run dev
 
 ### 📚 Learn TECH
 
+#### Páginas:
+
 - 🌟 HOME 🌟:
 - [x] Imagem de destaque da Home em formato e em carrossel
 - [x] Index: nome, favicon
@@ -182,18 +184,26 @@ npm run dev
 - 🌟 RECURSOS 🌟
 - 🌟 LEARN TECH 🌟
 - 🌟 FALA AÊ 🌟
+
+#### Funcionalidades:
+
 - 🌟 LOGIN 🌟
 - 🌟 REGISTER 🌟
-- 🌟 Comportamentos 🌟: criar uma página com uma lista de cards de artigos, criar uma página para cada artigo 
-- 🌟 Prêmios 🌟: criar uma página com uma lista de cards de artigos, criar uma página para cada artigo
-- 🌟 Blogs 🌟: criar uma página com uma lista de cards de artigos, criar uma página para cada artigo
-- 🌟 Footer: 
+
+#### Seções da HOME:
+
+- 🌟 Hero 🌟
+- 🌟 Categorias 🌟
+- 🌟 Top Categorias 🌟
+- 🌟 Top Projetos 🌟
+- 🌟 Premios 🌟
+- 🌟 Top Artigos 🌟
+- 🌟 Footer 🌟
   - [ ] coluna 1 com a chamada do hero  
   - [ ] coluna 2 Customer: (faq, contact us, returns, shipping)
   - [ ] coluna 3 Quick Links: (about us, terms of service, privacy policy, careers)
   - [ ] coluna 4 Follow Us: (Instagram, Linkedin, Youtube, Facebook, X)
-  - [ ] Copyright Real Time: criar uma consulta do dia que o site está sendo acessado
-
+  - [ ] Copyright Real Time: criar uma consulta do dia que o site está sendo acessado 
 
 ---
 

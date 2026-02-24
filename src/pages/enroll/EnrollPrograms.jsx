@@ -56,6 +56,7 @@ export const EnrollPrograms = () => {
             <VideoPlayer src={DemoVideo} poster={DemoPoster} />
             {/** Description with TabContent (modules 0-5) */}
             <Description
+              program={program}
               onCompleteModule={handleCompleteModule}
               completedModuleIndex={completedModuleIndex}
             />
