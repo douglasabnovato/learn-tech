@@ -1,14 +1,14 @@
 import { PageTopBanner } from "../../components/pageTop/PageTopBanner";
 import { VideoPlayer } from "../../components/player/VideoPlayer";
-
 import DemoVideo from "./../../assets/programs/1-demo.mp4";
 import DemoPoster from "./../../assets/programs/1-demo-poster.jpg";
 import { Description } from "./Description";
 import { FaCheck, FaPlay } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
 import { Quiz } from "./quiz/Quiz";
-import programsData from "../../constants/programsData";
 import { NotFound } from "../error/not-found";
+
+import programsData from "../../constants/programsData";
 
 export const EnrollPrograms = () => {
   const { category, id } = useParams();

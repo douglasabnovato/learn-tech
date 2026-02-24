@@ -18,10 +18,11 @@ export const ProgramsCard = ({
   price,
 }) => {
   return (
-    <div className="group w-full rounded-xl border border-neutral-200 space-y-2 overflow-hidden bg-white
+    <div
+      className="group w-full rounded-xl border border-neutral-200 space-y-2 overflow-hidden bg-white
                     hover:shadow-xl hover:shadow-sky-900/10 hover:-translate-y-2 
-                    transition-all duration-500 ease-in-out">
-      
+                    transition-all duration-500 ease-in-out"
+    >
       {/* Imagem com efeito Zoom */}
       <div className="w-full overflow-hidden">
         <img
@@ -49,17 +50,16 @@ export const ProgramsCard = ({
           </div>
         </div>
 
-        {/* Title section - O efeito do underline que você criou fica ainda melhor com o group hover */}
-        <Link
-          to={`/program/detail`}
+        {/* Title section - Removido o Link, mantido o efeito visual de underline com group-hover */}
+        <h3
           className="relative text-xl font-semibold text-neutral-950 line-clamp-2 text-ellipsis
-             cursor-pointer block
-             after:content-[''] after:block after:w-full after:h-[2px] after:bg-sky-700
-             after:scale-x-0 after:origin-left after:transition-transform after:duration-300
-             group-hover:after:scale-x-100"
+    block
+    after:content-[''] after:block after:w-full after:h-[2px] after:bg-sky-700
+    after:scale-x-0 after:origin-left after:transition-transform after:duration-300
+    group-hover:after:scale-x-100"
         >
           {title}
-        </Link>
+        </h3>
 
         {/* lessons, students and duration */}
         <div className="w-full flex items-center justify-between flex-wrap gap-2">

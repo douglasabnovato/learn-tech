@@ -115,12 +115,10 @@ npm run dev
 - [x] Exibir apenas 4 cards. Cada vez que o usuário clicar no botão “Ver mais” → carregar +6 cards. 
 - [x] memorizar o resultado da busca com useMemo
 - [x] Estruturar programas por centenas: web (1 a 100), frontend (101 a 200), ux-ui (201 a 300), backend (301 a 400), data-base (401 a 500), produtos-digitais (501 a 600), projetos (601 a 700), english (701 a 800) 
-- [ ] Para cada card, uma página especialista
 - [x] hover no card
+- [ ] Para cada card, uma página especialista
 - [ ] Home: a home exibe uma breve demonstração do que cada tipo de conteúdo tem para apresentar. Cada tipo de conteúdo está no menu
-- [ ] Fazer para 3 programas:
-  - /program/detail
-  - /program/${categoryFilter}/${id}
+- [ ] Fazer para 3 programas: apresentação e conteúdo
 
 - 🌟 RECURSOS 🌟
 - 🌟 LEARN TECH 🌟
