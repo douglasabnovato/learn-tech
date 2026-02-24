@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { FaCheck } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
 import questions from "./../../../constants/quizData";
@@ -10,6 +10,9 @@ export const Quiz = () => {
   const [finalized, setFinalized] = useState(false);
   const [answers, setAnswers] = useState(() => {
     return JSON.parse(localStorage.getItem("quizAnswers")) || {};
+  });
+  const [quizHistory, setQuizHistory] = useState(() => {
+    return JSON.parse(localStorage.getItem("quizHistory")) || [];
   });
 
   useEffect(() => {
@@ -24,6 +27,46 @@ export const Quiz = () => {
       setFinalized(false);
     }
   }, [currentQuestion, answers]);
+
+  // Calcular total de acertos
+  const calculateCorrectAnswers = () => {
+    return Object.values(answers).filter(
+      (answer) => answer.isCorrect === true
+    ).length;
+  };
+
+  const correctAnswersCount = calculateCorrectAnswers();
+  const isQuizComplete =
+    Object.keys(answers).length === questions.length &&
+    currentQuestion === questions.length - 1;
+
+  // Handler para reiniciar o quiz
+  const handleRestart = () => {
+    const now = new Date();
+    const formattedDate = now.toLocaleDateString("pt-BR") + " às " + now.toLocaleTimeString("pt-BR");
+    
+    // Registrar tentativa no histórico
+    const attempt = {
+      id: quizHistory.length + 1,
+      timestamp: formattedDate,
+      score: correctAnswersCount,
+      total: questions.length,
+    };
+
+    const updatedHistory = [...quizHistory, attempt];
+    setQuizHistory(updatedHistory);
+    localStorage.setItem("quizHistory", JSON.stringify(updatedHistory));
+
+    // Limpar respostas do quiz atual
+    localStorage.removeItem("quizAnswers");
+    setAnswers({});
+
+    // Resetar componente para início
+    setCurrentQuestion(0);
+    setSelectedAnswerIndex(null);
+    setIsCorrect(false);
+    setFinalized(false);
+  };
 
   /** Automatically detect the answer is correct or not after one select of choosing the answer of option */
   const handleAnswerSelect = (index, isCorrect) => {
@@ -57,7 +100,7 @@ export const Quiz = () => {
   return (
     <div className="w-full space-y-4">
       <h1 className="text-lg text-neutral-800 font-semibold border-b pb-1 border-neutral-200">
-        Test Your Knowledge
+        Teste o seu aprendizado
       </h1>
       <div className="w-full bg-neutral-100/40 border border-neutral-200 md:p-6 p-3 rounded-lg space-y-6">
         <h1 className="text-lg text-neutral-800 font-semibold border-b pb-1 border-neutral-200">
@@ -123,16 +166,71 @@ export const Quiz = () => {
             >
               Previous
             </button>
-            <button
-              className="md:w-fit w-1/2 bg-sky-500 text-neutral-50 py-2 px-4 rounded-lg shadow disabled:opacity-50 disabled:cursor-not-allowed font-semibold"
-              onClick={handleNext}
-              disabled={currentQuestion === questions.length - 1}
-            >
-              Next
-            </button>
+            {isQuizComplete ? (
+              <button
+                className="md:w-fit w-1/2 bg-green-500 text-white py-2 px-4 rounded-lg shadow hover:bg-green-600 font-semibold"
+                onClick={handleRestart}
+              >
+                🔄 Reiniciar Quiz
+              </button>
+            ) : (
+              <button
+                className="md:w-fit w-1/2 bg-sky-500 text-neutral-50 py-2 px-4 rounded-lg shadow disabled:opacity-50 disabled:cursor-not-allowed font-semibold"
+                onClick={handleNext}
+                disabled={currentQuestion === questions.length - 1}
+              >
+                Next
+              </button>
+            )}
           </div>
         </div>
       </div>
+
+      {/** Placar Final - Aparece quando quiz está completo */}
+      {isQuizComplete && (
+        <div className="w-full bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-200 md:p-6 p-4 rounded-lg space-y-6">
+          <div className="text-center space-y-3">
+            <h2 className="text-2xl font-bold text-neutral-800">🎉 Quiz Concluído!</h2>
+            <p className="text-lg font-semibold text-indigo-600">
+              Você acertou {correctAnswersCount} de {questions.length} questões
+            </p>
+            <div className="w-full bg-neutral-300 rounded-full h-3">
+              <div
+                className="bg-indigo-500 h-full rounded-full transition-all duration-300"
+                style={{ width: `${(correctAnswersCount / questions.length) * 100}%` }}
+              />
+            </div>
+            <p className="text-sm text-neutral-600">
+              {Math.round((correctAnswersCount / questions.length) * 100)}% de acurácia
+            </p>
+          </div>
+
+          {/** Histórico de Tentativas */}
+          <div className="space-y-3 border-t border-indigo-200 pt-6">
+            <h3 className="text-lg font-semibold text-neutral-800">📋 Histórico de Tentativas</h3>
+            <div className="space-y-2 max-h-48 overflow-y-auto">
+              {quizHistory.length === 0 ? (
+                <p className="text-sm text-neutral-500 italic">Nenhuma tentativa registrada</p>
+              ) : (
+                quizHistory.map((attempt) => (
+                  <div
+                    key={attempt.id}
+                    className="flex items-center justify-between bg-white rounded-lg p-3 border border-neutral-200 hover:border-indigo-300 transition-colors"
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="text-sm font-medium text-neutral-600">Tentativa {attempt.id}</span>
+                      <span className="text-xs text-neutral-500">{attempt.timestamp}</span>
+                    </div>
+                    <span className="text-sm font-bold text-indigo-600">
+                      {attempt.score}/{attempt.total} pontos
+                    </span>
+                  </div>
+                ))
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

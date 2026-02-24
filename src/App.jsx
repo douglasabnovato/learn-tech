@@ -33,18 +33,13 @@ function App() {
             {/* Auth */}
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
-            {/* Details */}
-            <Route path="/program/detail" element={<Detail />} />
+            {/* Dynamic Program Routes */}
             <Route
-              path="/program/enroll-programs-title"
+              path="/program/:category/:id/enroll"
               element={<EnrollPrograms />}
             />
-            {/* Rota em construção */}
-            <Route
-              path="/program/:category/:id"
-              element={<UnderConstruction />}
-            />
-            {/* Rota de fallback */}
+            <Route path="/program/:category/:id" element={<Detail />} />
+            {/* Fallback Route */}
             <Route path="*" element={<NotFound />} />
           </Routes>
           {/* Footer Section */}
