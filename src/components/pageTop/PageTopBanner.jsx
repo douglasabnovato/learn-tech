@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Breadcrumb } from "../breadcrumb/Breadcrumb";
-import pageTopBg from "./../../assets/page-top-bg.png"
+import pageTopBg from "./../../assets/originals/page-top-bg.png"
 
 export const PageTopBanner = ({ pageTitle }) => {
   useEffect(() => {

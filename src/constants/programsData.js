@@ -1,20 +1,40 @@
+import Image1 from "./../assets/programs/1-programs.png";
+
 const programsData = [
   // Web (1 a 100)
   {
     id: 1,
-    image: "https://cdn.pixabay.com/photo/2025/09/09/08/52/design-9824072_1280.jpg",
+    image: Image1,
     category: "Web",
     categoryFilter: "web",
     rating: "4.5",
-    title: "Domine Web e Frontend com projetos práticos e guiados passo a passo",
-    lessons: "12+ Lições",
-    students: "5+ Estudantes",
-    duration: "10hr 30min",
+    title: "Desenvolver uma Landing Page Moderna",
+    lessons: "12 Lições",
+    students: "11 Alunos",
+    duration: "10hr e 30min",
     price: "R$100.89",
+    level: "Iniciante",
+    description:
+      "Este bootcamp abrangente de desenvolvimento web leva você do iniciante absoluto ao desenvolvedor profissional. Você aprenderá todas as ferramentas e tecnologias necessárias para construir aplicações web full-stack.",
+    letslearn: [
+      "Aprenda a construir aplicações web full-stack usando HTML, CSS e JavaScript.",
+      "Entenda os fundamentos do desenvolvimento web",
+      "Conceitos principais de HTML, CSS e JavaScript",
+      "Construa interfaces responsivas e amigáveis para o usuário.",
+    ],
+    curriculum:"Introdução ao Desenvolvimento Web",
+    about: "Este programa abrangente de desenvolvimento web leva você do iniciante absoluto ao desenvolvedor profissional. Você aprenderá todas as ferramentas e tecnologias necessárias para construir aplicações web full-stack.",
+    materials: [
+      "Slides Completos",
+      "Repositório de Código Fonte",
+      "Arquivos do Projeto",
+      "Diretrizes e Dicas",
+    ],
   },
   {
     id: 2,
-    image: "https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406_1280.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406_1280.jpg",
     category: "Web",
     categoryFilter: "web",
     rating: "4.7",
@@ -26,11 +46,13 @@ const programsData = [
   },
   {
     id: 3,
-    image: "https://cdn.pixabay.com/photo/2015/09/05/22/33/office-925806_1280.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2015/09/05/22/33/office-925806_1280.jpg",
     category: "Web",
     categoryFilter: "web",
     rating: "4.6",
-    title: "Web Design Responsivo: Criando sites que se adaptam a qualquer tela",
+    title:
+      "Web Design Responsivo: Criando sites que se adaptam a qualquer tela",
     lessons: "10+ Lições",
     students: "30+ Estudantes",
     duration: "08hr 45min",
@@ -38,7 +60,8 @@ const programsData = [
   },
   {
     id: 4,
-    image: "https://cdn.pixabay.com/photo/2016/11/29/03/15/man-1867009_1280.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2016/11/29/03/15/man-1867009_1280.jpg",
     category: "Web",
     categoryFilter: "web",
     rating: "4.9",
@@ -52,11 +75,13 @@ const programsData = [
   // Frontend (101 a 200)
   {
     id: 101,
-    image: "https://cdn.pixabay.com/photo/2015/09/06/00/17/macbook-926558_960_720.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2015/09/06/00/17/macbook-926558_960_720.jpg",
     category: "Frontend",
     categoryFilter: "frontend",
     rating: "4.8",
-    title: "Construa interfaces dinâmicas e modernas dominando ReactJS no Frontend.",
+    title:
+      "Construa interfaces dinâmicas e modernas dominando ReactJS no Frontend.",
     lessons: "15+ Lições",
     students: "7+ Estudantes",
     duration: "12hr 45min",
@@ -64,7 +89,8 @@ const programsData = [
   },
   {
     id: 102,
-    image: "https://cdn.pixabay.com/photo/2016/11/23/14/45/coding-1853305_1280.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2016/11/23/14/45/coding-1853305_1280.jpg",
     category: "Frontend",
     categoryFilter: "frontend",
     rating: "4.9",
@@ -76,7 +102,8 @@ const programsData = [
   },
   {
     id: 103,
-    image: "https://cdn.pixabay.com/photo/2021/08/04/13/06/software-developer-6521720_1280.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2021/08/04/13/06/software-developer-6521720_1280.jpg",
     category: "Frontend",
     categoryFilter: "frontend",
     rating: "4.7",
@@ -88,7 +115,8 @@ const programsData = [
   },
   {
     id: 104,
-    image: "https://cdn.pixabay.com/photo/2014/09/24/14/29/macbook-459196_1280.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2014/09/24/14/29/macbook-459196_1280.jpg",
     category: "Frontend",
     categoryFilter: "frontend",
     rating: "4.8",
@@ -102,11 +130,13 @@ const programsData = [
   // UX/UI (201 a 300)
   {
     id: 201,
-    image: "https://cdn.pixabay.com/photo/2015/06/01/09/04/phone-793046_960_720.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2015/06/01/09/04/phone-793046_960_720.jpg",
     category: "UX/UI",
     categoryFilter: "ux-ui",
     rating: "4.8",
-    title: "Aprenda UX/UI para criar interfaces modernas, criativas e funcionais",
+    title:
+      "Aprenda UX/UI para criar interfaces modernas, criativas e funcionais",
     lessons: "15+ Lições",
     students: "7+ Estudantes",
     duration: "12hr 45min",
@@ -114,7 +144,8 @@ const programsData = [
   },
   {
     id: 202,
-    image: "https://cdn.pixabay.com/photo/2018/03/10/12/00/teamwork-3213924_1280.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2018/03/10/12/00/teamwork-3213924_1280.jpg",
     category: "UX/UI",
     categoryFilter: "ux-ui",
     rating: "4.9",
@@ -126,7 +157,8 @@ const programsData = [
   },
   {
     id: 203,
-    image: "https://cdn.pixabay.com/photo/2015/02/02/11/09/office-620822_1280.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2015/02/02/11/09/office-620822_1280.jpg",
     category: "UX/UI",
     categoryFilter: "ux-ui",
     rating: "4.7",
@@ -138,7 +170,8 @@ const programsData = [
   },
   {
     id: 204,
-    image: "https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406_1280.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406_1280.jpg",
     category: "UX/UI",
     categoryFilter: "ux-ui",
     rating: "4.6",
@@ -152,11 +185,13 @@ const programsData = [
   // Backend (301 a 400)
   {
     id: 301,
-    image: "https://cdn.pixabay.com/photo/2021/08/04/13/06/software-developer-6521720_1280.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2021/08/04/13/06/software-developer-6521720_1280.jpg",
     category: "Backend",
     categoryFilter: "backend",
     rating: "4.8",
-    title: "Back-end descomplicado: APIs, lógica de negócios e integração eficiente",
+    title:
+      "Back-end descomplicado: APIs, lógica de negócios e integração eficiente",
     lessons: "15+ Lições",
     students: "100+ Estudantes",
     duration: "12hr 45min",
@@ -164,7 +199,8 @@ const programsData = [
   },
   {
     id: 302,
-    image: "https://cdn.pixabay.com/photo/2016/11/23/14/45/coding-1853305_1280.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2016/11/23/14/45/coding-1853305_1280.jpg",
     category: "Backend",
     categoryFilter: "backend",
     rating: "4.9",
@@ -176,7 +212,8 @@ const programsData = [
   },
   {
     id: 303,
-    image: "https://cdn.pixabay.com/photo/2015/09/05/20/02/coding-924920_1280.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2015/09/05/20/02/coding-924920_1280.jpg",
     category: "Backend",
     categoryFilter: "backend",
     rating: "4.7",
@@ -188,7 +225,8 @@ const programsData = [
   },
   {
     id: 304,
-    image: "https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406_1280.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406_1280.jpg",
     category: "Backend",
     categoryFilter: "backend",
     rating: "4.8",
@@ -206,7 +244,8 @@ const programsData = [
     category: "Data Base",
     categoryFilter: "data-base",
     rating: "4.5",
-    title: "Banco de Dados na prática: SQL, NoSQL e modelagem para aplicações reais",
+    title:
+      "Banco de Dados na prática: SQL, NoSQL e modelagem para aplicações reais",
     lessons: "12+ Lições",
     students: "50+ Estudantes",
     duration: "10hr 30min",
@@ -214,7 +253,8 @@ const programsData = [
   },
   {
     id: 402,
-    image: "https://cdn.pixabay.com/photo/2014/10/05/19/02/binary-code-475664_1280.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2014/10/05/19/02/binary-code-475664_1280.jpg",
     category: "Data Base",
     categoryFilter: "data-base",
     rating: "4.8",
@@ -226,7 +266,8 @@ const programsData = [
   },
   {
     id: 403,
-    image: "https://cdn.pixabay.com/photo/2016/11/29/03/15/man-1867009_1280.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2016/11/29/03/15/man-1867009_1280.jpg",
     category: "Data Base",
     categoryFilter: "data-base",
     rating: "4.7",
@@ -238,7 +279,8 @@ const programsData = [
   },
   {
     id: 404,
-    image: "https://cdn.pixabay.com/photo/2014/09/24/14/29/macbook-459196_1280.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2014/09/24/14/29/macbook-459196_1280.jpg",
     category: "Data Base",
     categoryFilter: "data-base",
     rating: "4.9",
@@ -252,7 +294,8 @@ const programsData = [
   // Produtos Digitais (501 a 600)
   {
     id: 501,
-    image: "https://cdn.pixabay.com/photo/2014/03/22/22/17/phone-292994_1280.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2014/03/22/22/17/phone-292994_1280.jpg",
     category: "Produtos Digitais",
     categoryFilter: "produtos-digitais",
     rating: "4.8",
@@ -264,7 +307,8 @@ const programsData = [
   },
   {
     id: 502,
-    image: "https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849822_1280.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849822_1280.jpg",
     category: "Produtos Digitais",
     categoryFilter: "produtos-digitais",
     rating: "4.9",
@@ -276,7 +320,8 @@ const programsData = [
   },
   {
     id: 503,
-    image: "https://cdn.pixabay.com/photo/2015/05/31/15/14/woman-792162_1280.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2015/05/31/15/14/woman-792162_1280.jpg",
     category: "Produtos Digitais",
     categoryFilter: "produtos-digitais",
     rating: "4.7",
@@ -288,7 +333,8 @@ const programsData = [
   },
   {
     id: 504,
-    image: "https://cdn.pixabay.com/photo/2015/09/05/20/02/coding-924920_1280.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2015/09/05/20/02/coding-924920_1280.jpg",
     category: "Produtos Digitais",
     categoryFilter: "produtos-digitais",
     rating: "4.8",
@@ -302,11 +348,13 @@ const programsData = [
   // Projetos (601 a 700)
   {
     id: 601,
-    image: "https://cdn.pixabay.com/photo/2015/07/17/22/42/whiteboard-849803_960_720.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2015/07/17/22/42/whiteboard-849803_960_720.jpg",
     category: "Projetos",
     categoryFilter: "projetos",
     rating: "4.8",
-    title: "Projetos Tech: desenvolva habilidades práticas com cases reais e colaborativos.",
+    title:
+      "Projetos Tech: desenvolva habilidades práticas com cases reais e colaborativos.",
     lessons: "15+ Lições",
     students: "100+ Estudantes",
     duration: "12hr 45min",
@@ -314,7 +362,8 @@ const programsData = [
   },
   {
     id: 602,
-    image: "https://cdn.pixabay.com/photo/2015/01/09/11/08/startup-594090_1280.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2015/01/09/11/08/startup-594090_1280.jpg",
     category: "Projetos",
     categoryFilter: "projetos",
     rating: "4.9",
@@ -326,7 +375,8 @@ const programsData = [
   },
   {
     id: 603,
-    image: "https://cdn.pixabay.com/photo/2015/09/05/22/33/office-925806_1280.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2015/09/05/22/33/office-925806_1280.jpg",
     category: "Projetos",
     categoryFilter: "projetos",
     rating: "4.7",
@@ -338,7 +388,8 @@ const programsData = [
   },
   {
     id: 604,
-    image: "https://cdn.pixabay.com/photo/2018/03/10/12/00/teamwork-3213924_1280.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2018/03/10/12/00/teamwork-3213924_1280.jpg",
     category: "Projetos",
     categoryFilter: "projetos",
     rating: "4.8",
@@ -352,11 +403,13 @@ const programsData = [
   // English (701 a 800)
   {
     id: 701,
-    image: "https://cdn.pixabay.com/photo/2016/08/03/21/38/london-1567903_960_720.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2016/08/03/21/38/london-1567903_960_720.jpg",
     category: "English",
     categoryFilter: "english",
     rating: "4.8",
-    title: "English for Tech: aprimore seu inglês focado em carreira e programação",
+    title:
+      "English for Tech: aprimore seu inglês focado em carreira e programação",
     lessons: "15+ Lições",
     students: "100+ Estudantes",
     duration: "12hr 45min",
@@ -364,7 +417,8 @@ const programsData = [
   },
   {
     id: 702,
-    image: "https://cdn.pixabay.com/photo/2014/10/07/13/48/mountain-477832_1280.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2014/10/07/13/48/mountain-477832_1280.jpg",
     category: "English",
     categoryFilter: "english",
     rating: "4.7",
@@ -376,7 +430,8 @@ const programsData = [
   },
   {
     id: 703,
-    image: "https://cdn.pixabay.com/photo/2015/09/06/00/17/macbook-926558_1280.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2015/09/06/00/17/macbook-926558_1280.jpg",
     category: "English",
     categoryFilter: "english",
     rating: "4.9",
@@ -388,7 +443,8 @@ const programsData = [
   },
   {
     id: 704,
-    image: "https://cdn.pixabay.com/photo/2017/07/31/11/21/people-2557396_1280.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2017/07/31/11/21/people-2557396_1280.jpg",
     category: "English",
     categoryFilter: "english",
     rating: "4.6",

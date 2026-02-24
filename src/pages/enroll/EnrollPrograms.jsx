@@ -1,18 +1,31 @@
 import { PageTopBanner } from "../../components/pageTop/PageTopBanner";
 import { VideoPlayer } from "../../components/player/VideoPlayer";
 
-import DemoVideo from "./../../assets/demo.mp4";
-import DemoPoster from "./../../assets/demo-poster.jpg";
+import DemoVideo from "./../../assets/programs/1-demo.mp4";
+import DemoPoster from "./../../assets/programs/1-demo-poster.jpg";
 import { Description } from "./Description";
 import { FaCheck, FaPlay } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Quiz } from "./quiz/Quiz";
+import programsData from "../../constants/programsData";
+import { NotFound } from "../error/not-found";
 
 export const EnrollPrograms = () => {
+  const { category, id } = useParams();
+  const programId = Number(id);
+  const program =
+    programsData.find(
+      (p) =>
+        p.id === programId &&
+        String(p.categoryFilter).toLowerCase() === String(category).toLowerCase()
+    ) || programsData.find((p) => p.id === programId);
+
+  if (!program) return <NotFound />;
+
   return (
     <div className="w-full min-h-screen flex-col space-y-16 pb-16">
       {/* Page Top Banner section */}
-      <PageTopBanner pageTitle={"Enroll Programs"} />
+      <PageTopBanner pageTitle={program.title} />
       {/* Programs contents */}
       <div className="w-full space-y-16 md:px-16 sm:px-10 px-4">
         <div className="w-full grid md:grid-cols-5 grid-cols-1 md:gap-12 gap-10 grid-row-dense items-start">
@@ -47,7 +60,7 @@ export const EnrollPrograms = () => {
               {/** videon tab link content */}
               <div className="space-y-2">
                 <h5 className="text-base text-neutral-600 font-medium">
-                  Video Course Title
+                  {program.curriculum}
                 </h5>
                 <div className="w-full space-y-1">
                   <Link
