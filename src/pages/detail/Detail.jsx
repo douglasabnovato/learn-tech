@@ -8,6 +8,9 @@ import { useParams, Link } from "react-router-dom";
 import programsData from "./../../constants/programsData";
 import { NotFound } from "./../error/not-found";
 
+import testimonials from "./../../constants/testimonialData";
+import ReviewsCard from "./../../components/reviews/ReviewsCard";
+
 export const Detail = () => {
   const { category, id } = useParams();
   const programId = Number(id);
@@ -15,7 +18,8 @@ export const Detail = () => {
   const getLevelClasses = (level = "") => {
     const l = String(level).toLowerCase();
     if (l === "iniciante") return "bg-green-100 text-green-800";
-    if (l === "intermediário" || l === "intermediario") return "bg-yellow-100 text-yellow-800";
+    if (l === "intermediário" || l === "intermediario")
+      return "bg-yellow-100 text-yellow-800";
     if (l === "avançado" || l === "avancado") return "bg-red-100 text-red-800";
     return "bg-sky-100 text-sky-800";
   };
@@ -142,7 +146,36 @@ export const Detail = () => {
                 </ul>
               </div>
             </div>
+            {/** Depoimentos de alunos - criar componente */}
+            <div className="w-full space-y-6">
+              <div className="w-full flex items-center justify-between gap-4 py-4 border-b border-neutral-300 md:flex-nowrap flex-wrap">
+                <h1 className="text-xl font-semibold text-neutral-800">
+                  O que dizem nossos alunos
+                </h1>
+              </div>
+              <div className="space-y-1 5">
+                <h3 className="text-xl font-semibold text-neutral-700">
+                  Histórias que inspiram o seu próximo passo
+                </h3>
+                <p className="text-base text-neutral-600 font-normal">
+                  Confira os relatos de quem já transformou sua carreira através
+                  da nossa metodologia prática. Mais do que apenas depoimentos,
+                  estas são histórias reais de desenvolvedores que construíram
+                  sua base técnica conosco e hoje dominam as ferramentas mais
+                  requisitadas pelo mercado de tecnologia
+                </p>
+              </div>
+              <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
+                {/** Make a reviewcard */}
+                {testimonials.map((review, index) => (
+                  <div key={index} className="breake-inside-avoid w-full">
+                    <ReviewsCard testimonial={review} />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
+
           {/* Right (price, features, buttons)*/}
           <div className="w-full md:col-span-2 col-span-5 border border-neutral-300 p-6 rounded-xl space-y-4 sticky top-28">
             <h2 className="text-4xl text-neutral-900 font-bold">

@@ -1,16 +1,17 @@
 import React from "react";
 
-export const Overview = () => {
+export const ModuleZero = ({ onComplete }) => {
   return (
     <div className="w-full space-y-12 animate-in fade-in duration-500">
       {/* Seção 1: Introdução ao Módulo 0 */}
       <div className="space-y-4">
         <div className="space-y-1.5">
-          <h1 className="text-2xl font-bold text-neutral-800 tracking-tight">
-            Configuração do Ambiente e Validação "Hello World"
+          <h1 className="text-2xl pt-6 font-bold text-neutral-800 tracking-tight">
+            Setup e Arquitetura (O Início)
           </h1>
           <h2 className="text-lg font-medium text-neutral-500">
-            Da preparação da máquina à primeira visualização em tempo real
+            Configuração do Ambiente e Validação "Hello World": Da preparação da
+            máquina à primeira visualização em tempo real
           </h2>
         </div>
 
@@ -219,7 +220,22 @@ export const Overview = () => {
           da nossa landing page.
         </p>
       </div>
-      
+
+      <div className="bg-neutral-900 p-8 rounded-xl border border-neutral-800 text-center space-y-4 mt-12">
+  <h3 className="text-xl font-bold text-white">🛠️ Ambiente Configurado!</h3>
+  <p className="text-neutral-400 text-sm max-w-2xl mx-auto leading-relaxed">
+    Sua "oficina" está pronta. Com o VS Code e o Live Server operacionais, você eliminou as barreiras técnicas iniciais. O próximo passo é dar vida ao seu projeto começando pela estrutura.
+  </p>
+  <div className="pt-2">
+    <button
+      onClick={onComplete}
+      className="px-6 py-2 bg-white text-black font-bold rounded-lg hover:bg-neutral-200 transition-colors"
+    >
+      Ir para Módulo 1: Estrutura Semântica
+    </button>
+  </div>
+</div>
+
     </div>
   );
 };

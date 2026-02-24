@@ -1,7 +1,7 @@
 import React from "react";
 import { TabContent } from "./tabContent/TabContent";
 
-export const Description = () => {
+export const Description = ({ onCompleteModule, completedModuleIndex }) => {
   return (
     <div className="w-full space-y-16">
       {/* Title Section */}
@@ -76,7 +76,7 @@ export const Description = () => {
               {/* Módulo 1 */}
               <div className="space-y-2">
                 <h4 className="text-base font-bold text-neutral-800">
-                  Módulo 1: Setup e Arquitetura (O Início)
+                  Módulo 0: Setup e Arquitetura (O Início)
                 </h4>
                 <ul className="list-disc list-inside space-y-1 px-2 text-sm text-neutral-600">
                   <li>
@@ -99,7 +99,7 @@ export const Description = () => {
               {/* Módulo 2 */}
               <div className="space-y-2">
                 <h4 className="text-base font-bold text-neutral-800">
-                  Módulo 2: UX Design e Estrutura Semântica (HTML)
+                  Módulo 1: UX Design e Estrutura Semântica (HTML)
                 </h4>
                 <ul className="list-disc list-inside space-y-1 px-2 text-sm text-neutral-600">
                   <li>
@@ -121,7 +121,7 @@ export const Description = () => {
               {/* Módulo 3 */}
               <div className="space-y-2">
                 <h4 className="text-base font-bold text-neutral-800">
-                  Módulo 3: Estilização e Responsividade (CSS)
+                  Módulo 2: Estilização e Responsividade (CSS)
                 </h4>
                 <ul className="list-disc list-inside space-y-1 px-2 text-sm text-neutral-600">
                   <li>
@@ -148,7 +148,7 @@ export const Description = () => {
               {/* Módulo 4 */}
               <div className="space-y-2">
                 <h4 className="text-base font-bold text-neutral-800">
-                  Módulo 4: Interatividade e Comportamento (JavaScript)
+                  Módulo 3: Interatividade e Comportamento (JavaScript)
                 </h4>
                 <ul className="list-disc list-inside space-y-1 px-2 text-sm text-neutral-600">
                   <li>
@@ -169,7 +169,7 @@ export const Description = () => {
               {/* Módulo 5 */}
               <div className="space-y-2">
                 <h4 className="text-base font-bold text-neutral-800">
-                  Módulo 5: Entrega e Deploy (O Projeto Final)
+                  Módulo 4: Entrega e Deploy (O Projeto Final)
                 </h4>
                 <ul className="list-disc list-inside space-y-1 px-2 text-sm text-neutral-600">
                   <li>
@@ -184,6 +184,36 @@ export const Description = () => {
                       Publicação:
                     </span>{" "}
                     Deploy profissional via GitHub para Vercel ou Netlify.
+                  </li>
+                </ul>
+              </div>
+
+              {/* Módulo de Testes e Qualidade */}
+              <div className="space-y-2">
+                <h4 className="text-base font-bold text-neutral-800">
+                  Módulo 5: Testes e Garantia de Qualidade (QA)
+                </h4>
+                <ul className="list-disc list-inside space-y-1 px-2 text-sm text-neutral-600">
+                  <li>
+                    <span className="font-semibold text-neutral-700">
+                      Testes de Navegação:
+                    </span>{" "}
+                    Verificação de links quebrados, comportamento de formulários
+                    e fluxo do usuário (UX).
+                  </li>
+                  <li>
+                    <span className="font-semibold text-neutral-700">
+                      Cross-Browser Testing:
+                    </span>{" "}
+                    Garantir que a landing page funcione perfeitamente no
+                    Chrome, Safari, Edge e Firefox.
+                  </li>
+                  <li>
+                    <span className="font-semibold text-neutral-700">
+                      Validação de Dados:
+                    </span>{" "}
+                    Testes unitários simples em JavaScript para validar entradas
+                    de e-mail e campos obrigatórios.
                   </li>
                 </ul>
               </div>
@@ -203,9 +233,13 @@ export const Description = () => {
             sua carreira através deste conteúdo.
           </p>
         </div>
+
       </div>
       {/* Tab Section */}
-      <TabContent />
+      <TabContent
+        onCompleteModule={onCompleteModule}
+        completedModuleIndex={completedModuleIndex}
+      />
     </div>
   );
 };

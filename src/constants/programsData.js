@@ -30,6 +30,14 @@ const programsData = [
       "Arquivos do Projeto",
       "Diretrizes e Dicas",
     ],
+    modules: [
+      { id: 0, title: "Setup e Arquitetura", lessonsCount: 5, component: "ModuleZero" },
+      { id: 1, title: "Estrutura Semântica", lessonsCount: 6, component: "ModuleOne" },
+      { id: 2, title: "CSS Avançado", lessonsCount: 7, component: "ModuleTwo" },
+      { id: 3, title: "JavaScript Fundamentals", lessonsCount: 8, component: "ModuleThree" },
+      { id: 4, title: "Projeto Prático", lessonsCount: 6, component: "ModuleFour" },
+      { id: 5, title: "Deployment e Otimização", lessonsCount: 4, component: "ModuleFive" },
+    ],
   },
   {
     id: 2,
