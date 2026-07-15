@@ -4,6 +4,7 @@ import Footer from "./components/footer/Footer";
 import { Home } from "./pages/home/Home";
 import { Programs } from "./pages/programs/Programs";
 import { Detail } from "./pages/detail/Detail";
+import { CategoriesAll } from "./pages/home/category/CategoriesAll";
 import { EnrollPrograms } from "./pages/enroll/EnrollPrograms";
 import { SignIn } from "./pages/account/sigin/SignIn";
 import { SignUp } from "./pages/account/signup/SignUp";
@@ -33,6 +34,7 @@ function App() {
             {/* Auth */}
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
+            <Route path="/category" element={<CategoriesAll />} />
             {/* Dynamic Program Routes */}
             <Route
               path="/program/:category/:id/enroll"

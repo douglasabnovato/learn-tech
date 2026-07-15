@@ -192,9 +192,9 @@ npm run dev
 
 #### Seções da HOME:
 
-- 🌟 Hero 🌟
-- 🌟 Categorias 🌟
-- 🌟 Top Categorias 🌟
+- 🌟 Hero 🌟 : obs >> boa
+- 🌟 Categorias 🌟 : obs >> boa
+- 🌟 Top Categorias 🌟 : obs >> boa
 - 🌟 Top Projetos 🌟
 - 🌟 Premios 🌟
 - 🌟 Top Artigos 🌟
