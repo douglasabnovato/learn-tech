@@ -14,7 +14,7 @@ export const Category = () => {
             to="/category"
             className="flex items-center gap-2 text-sm font-semibold text-neutral-800 hover:text-sky-800 cursor-pointer ease-in-out duration-300"
           >
-            Veja todos <FaAnglesRight />
+            Veja todas <FaAnglesRight />
           </Link>
         </div>
       </div>

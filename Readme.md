@@ -195,7 +195,10 @@ npm run dev
 - 🌟 Hero 🌟 : obs >> boa
 - 🌟 Categorias 🌟 : obs >> boa
 - 🌟 Top Categorias 🌟 : obs >> boa
-- 🌟 Top Projetos 🌟
+- 🌟 Top Projetos 🌟 : obs >> boa
+  - card
+  - apresentação
+  - conteúdo
 - 🌟 Premios 🌟
 - 🌟 Top Artigos 🌟
 - 🌟 Footer 🌟

@@ -22,7 +22,7 @@ const programsData = [
       "Conceitos principais de HTML, CSS e JavaScript",
       "Construa interfaces responsivas e amigáveis para o usuário.",
     ],
-    curriculum:"Introdução ao Desenvolvimento Web",
+    curriculum: "Introdução ao Desenvolvimento Web",
     about: "Este programa abrangente de desenvolvimento web leva você do iniciante absoluto ao desenvolvedor profissional. Você aprenderá todas as ferramentas e tecnologias necessárias para construir aplicações web full-stack.",
     materials: [
       "Slides Completos",
@@ -332,6 +332,97 @@ const programsData = [
         closingText: "Sua jornada pelo Módulo 0 ao Módulo Especial foi concluída com sucesso. Agora você possui uma landing page funcional, estilizada, interativa, publicada e testada. Este é o padrão byteclass: excelência técnica com foco total na experiência real do usuário.",
         nextButtonText: "Emitir Certificado de Conclusão",
       },
+    ],
+
+    // ---- SEÇÃO 1: O QUE VOCÊ VAI CONSTRUIR ----
+    // (esclarecer, concreto — o resultado tangível)
+    whatYouBuild: {
+      title: "O que você vai construir",
+      description:
+        "[PROVISÓRIO] Ao final deste programa, você terá uma landing page profissional completa — estruturada, estilizada, interativa e publicada na internet, acessível por qualquer pessoa. Não é um exercício de gaveta: é um projeto real, do seu computador ao ar, pronto para o seu portfólio.",
+      highlights: [
+        "Uma página publicada e acessível por URL",
+        "Código versionado no GitHub",
+        "Projeto pronto para o portfólio",
+      ],
+    },
+
+    // ---- SEÇÃO 2: POR QUE ISSO IMPORTA AGORA ----
+    // (tornar necessário — o contexto de mercado)
+    whyNow: {
+      title: "Por que isso importa agora",
+      paragraphs: [
+        "[PROVISÓRIO] A presença digital deixou de ser diferencial e virou requisito. Toda empresa, produto ou profissional precisa de uma página que apresente, converta e funcione em qualquer tela. Saber construir isso do zero é uma das habilidades mais demandadas de quem entra em tecnologia.",
+        "[PROVISÓRIO] Mais do que escrever código, este programa ensina a entregar uma aplicação real — o que separa quem 'estudou' de quem 'sabe fazer'.",
+      ],
+    },
+
+    // ---- SEÇÃO 4: ONDE SE APLICA ----
+    // (aplicabilidade real — situações concretas)
+    // Obs: a seção 3 (o que aprende) já usa moduleOverviews/letslearn
+    appliedIn: {
+      title: "Onde se aplica",
+      items: [
+        {
+          label: "[PROVISÓRIO] Landing pages de produto",
+          description:
+            "Páginas de lançamento e conversão para produtos e serviços.",
+        },
+        {
+          label: "[PROVISÓRIO] Portfólios profissionais",
+          description:
+            "Sua própria presença online, para mostrar trabalho e atrair oportunidades.",
+        },
+        {
+          label: "[PROVISÓRIO] Sites institucionais",
+          description:
+            "Presença digital de empresas, negócios locais e projetos.",
+        },
+      ],
+    },
+
+    // ---- SEÇÃO 5: PARA QUEM É ----
+    // (profissionais que se beneficiam — o usuário se reconhece)
+    forWho: {
+      title: "Para quem é este programa",
+      profiles: [
+        {
+          label: "[PROVISÓRIO] Iniciantes em tecnologia",
+          description:
+            "Quem quer dar o primeiro passo concreto no desenvolvimento web.",
+        },
+        {
+          label: "[PROVISÓRIO] Quem quer o primeiro projeto real",
+          description:
+            "Já viu teoria, mas nunca entregou algo publicado de ponta a ponta.",
+        },
+        {
+          label: "[PROVISÓRIO] Profissionais em transição de carreira",
+          description:
+            "Quem vem de outra área e quer construir base sólida para migrar.",
+        },
+      ],
+    },
+
+    // ---- SEÇÃO 6: QUEM USA NO MERCADO ----
+    // (empresas/contextos que valorizam — prova de mercado)
+    marketUsage: {
+      title: "Quem usa no mercado",
+      description:
+        "[PROVISÓRIO] As tecnologias deste programa (HTML, CSS e JavaScript) são a base de praticamente toda a web moderna — usadas por empresas de todos os portes, de startups a gigantes de tecnologia.",
+      companies: [
+        "[PROVISÓRIO] Empresa A",
+        "[PROVISÓRIO] Empresa B",
+        "[PROVISÓRIO] Empresa C",
+        "[PROVISÓRIO] Empresa D",
+      ],
+    },
+
+    // ---- FONTES (Parte 3 — preenchidas na pesquisa) ----
+    sources: [
+      // { label: "[PROVISÓRIO] Fonte 1", url: "#" },
+      // { label: "[PROVISÓRIO] Fonte 2", url: "#" },
+      // { label: "[PROVISÓRIO] Fonte 3", url: "#" },
     ],
   },
   {

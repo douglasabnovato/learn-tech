@@ -7,98 +7,200 @@ import {
   FaUsers,
   FaRocket,
   FaArrowRight,
+  FaArrowLeft,
+  FaHtml5,
+  FaFigma,
+  FaDatabase,
+  FaUserGroup,
+  FaListCheck,
+  FaGaugeHigh,
 } from "react-icons/fa6";
+import { BsChatDots } from "react-icons/bs";
+import { MdOutlineTranslate } from "react-icons/md";
+import { AiFillProduct } from "react-icons/ai";
+import { HiOutlineChip } from "react-icons/hi";
 
 const sections = [
   {
-    id: "frontend",
+    id: "front",
     icon: FaReact,
-    title: "Frontend",
+    title: "Técnicas do Front",
     subtitle: "O que as pessoas veem",
     gradient: "from-indigo-500 via-sky-600 to-sky-700",
     paragraphs: [
-      "É a camada com a qual o usuário conversa. Botões, telas, animações, o formulário que responde ao clique. O frontend traduz a lógica invisível em algo que uma pessoa consegue usar sem pensar.",
-      "Dominar frontend é entender que a tela não é só estética — é a ponte entre o sistema e o ser humano. Quando ela funciona, ninguém percebe. Quando falha, todo mundo sente.",
+      "É a camada com a qual o usuário conversa. Tudo o que aparece na tela — e cada decisão sobre como aquilo aparece — vive aqui. O front é responsável por traduzir a lógica invisível do sistema em algo que uma pessoa consegue usar sem precisar entender o que acontece por baixo.",
+      "Dominar esta área é entender que a interface não é enfeite: é a ponte entre a máquina e o ser humano. Um botão no lugar errado, um formulário confuso ou uma tela que demora a responder não são problemas estéticos — são barreiras que fazem alguém desistir. Quando o front funciona, ninguém percebe o esforço. Quando falha, todo mundo sente.",
+      "O front reúne três frentes que se completam: a base da web e como ela funciona, a construção de interfaces que respondem e escalam, e o design que decide como a experiência acontece antes de uma linha de código ser escrita.",
     ],
-    items: [],
+    cards: [
+      {
+        icon: FaReact,
+        title: "Frontend",
+        description:
+          "Crie interfaces incríveis, rápidas e responsivas para usuários exigentes.",
+        color: "purple",
+      },
+      {
+        icon: FaHtml5,
+        title: "Web",
+        description:
+          "Explore o universo da web e domine as tecnologias que movem a internet.",
+        color: "sky",
+      },
+      {
+        icon: FaFigma,
+        title: "UX/UI",
+        description:
+          "Aprenda a desenhar experiências marcantes com design intuitivo e criativo.",
+        color: "pink",
+      },
+    ],
     closing: null,
   },
   {
-    id: "backend",
+    id: "back",
     icon: FaServer,
-    title: "Backend",
+    title: "Técnicas do Back",
     subtitle: "O que sustenta por trás",
     gradient: "from-purple-500 via-indigo-600 to-indigo-700",
     paragraphs: [
-      "É o motor que ninguém vê. Onde os dados são guardados, as regras são aplicadas, as decisões são tomadas. O backend é a diferença entre uma página bonita e um sistema que aguenta mil pessoas ao mesmo tempo sem cair.",
-      "Aqui mora a segurança, a performance, a integridade. É a fundação — e, como toda fundação, só recebe atenção quando racha.",
+      "É o motor que ninguém vê. Onde os dados são guardados, as regras de negócio são aplicadas e as decisões são tomadas antes de qualquer coisa chegar à tela. O back é a diferença entre uma página bonita e um sistema que aguenta mil pessoas ao mesmo tempo sem cair.",
+      "Aqui moram as perguntas que definem se um produto sobrevive ao crescimento: os dados estão seguros? A informação está íntegra? O sistema responde rápido quando o número de usuários dobra? São questões que não aparecem para quem usa — até o dia em que algo quebra e todas elas aparecem de uma vez.",
+      "Esta área junta duas competências inseparáveis: a construção da lógica que sustenta a aplicação, e a organização dos dados que essa lógica manipula. Uma não existe sem a outra.",
     ],
-    items: [],
+    cards: [
+      {
+        icon: FaServer,
+        title: "Backend",
+        description:
+          "Estruture sistemas sólidos e escaláveis para dar vida às suas aplicações.",
+        color: "indigo",
+      },
+      {
+        icon: FaDatabase,
+        title: "DataBase",
+        description:
+          "Organize e gerencie dados com segurança, eficiência e inteligência.",
+        color: "green",
+      },
+    ],
     closing: null,
   },
   {
     id: "fullstack",
     icon: FaLayerGroup,
     title: "Fullstack",
-    subtitle: "Os dois mundos",
+    subtitle: "A visão do sistema inteiro",
     gradient: "from-sky-500 via-purple-600 to-purple-700",
     paragraphs: [
-      "Fullstack não é saber tudo. É entender como os dois lados conversam.",
-      "O desenvolvedor fullstack transita entre a tela e o servidor, enxerga o caminho completo de um clique até o banco de dados e de volta. Não é sobre dominar cada detalhe dos dois lados — é sobre nunca perder de vista o sistema inteiro enquanto trabalha em uma parte dele.",
+      "Fullstack não é saber tudo. É a união madura das competências de front e back na mesma pessoa — e, mais do que isso, a capacidade de enxergar o caminho completo de uma ação: do clique do usuário até o banco de dados, e de volta até a tela.",
+      "Não é uma posição de entrada. É o território do profissional pleno a sênior, que já domina a técnica dos dois lados e passou a usá-la de forma estratégica. Não escreve apenas código: decide arquitetura, pondera trade-offs, escolhe onde a complexidade deve morar e antecipa como cada decisão vai impactar o sistema como um todo — inclusive as partes que ele não está tocando naquele momento.",
+      "É por isso que o fullstack sênior é tão valorizado. O valor dele não está em conseguir escrever qualquer parte do código, mas em nunca perder de vista o todo enquanto trabalha em uma parte dele. Ele conecta o que o negócio precisa com o que a tecnologia permite — e sabe quando dizer não a uma solução tecnicamente possível, mas estrategicamente errada.",
     ],
-    items: [],
+    cards: [],
     closing: null,
   },
   {
-    id: "soft-skills",
+    id: "comportamentais",
     icon: FaUsers,
-    title: "Soft Skills",
+    title: "Comportamentais e Método",
     subtitle: "O que o código não resolve",
     gradient: "from-pink-500 via-purple-600 to-indigo-700",
     paragraphs: [
-      "Nenhum sistema é construído por uma pessoa sozinha. E é aqui que a maioria dos problemas de verdade acontece — não no código, mas entre as pessoas que o escrevem.",
+      "Nenhum sistema relevante é construído por uma pessoa sozinha. E é aqui, não no código, que a maioria dos problemas de verdade acontece — nas conversas que não aconteceram, nos alinhamentos que ficaram para depois, nas decisões que ninguém registrou.",
+      "Um desenvolvedor tecnicamente brilhante que não consegue explicar o que fez, entender o que pediram ou trabalhar junto de outras pessoas entrega menos que um desenvolvedor mediano que domina essas habilidades. Não é opinião: é o que separa quem escreve código de quem constrói produto em equipe. E some a isso o método — a capacidade de organizar o trabalho para que uma boa ideia não morra na desorganização.",
     ],
-    items: [
+    cards: [
       {
-        label: "Comunicação",
-        text: "Explicar o que você fez, entender o que pediram, transformar uma dúvida em pergunta clara.",
+        icon: BsChatDots,
+        title: "Comunicação",
+        description:
+          "Colabore, alinhe times e conduza conversas que destravam projetos.",
+        color: "violet",
       },
       {
-        label: "Trabalho em equipe",
-        text: "Código é feito a várias mãos. Saber colaborar, revisar e ser revisado vale tanto quanto saber programar.",
+        icon: FaUserGroup,
+        title: "Trabalho em equipe",
+        description:
+          "Código é feito a várias mãos. Colaborar, revisar e ser revisado vale tanto quanto programar.",
+        color: "fuchsia",
       },
       {
-        label: "Projetos",
-        text: "Uma boa ideia sem organização morre no meio do caminho. Planejar, priorizar e entregar é o que transforma esforço em resultado.",
+        icon: HiOutlineChip,
+        title: "Gestão",
+        description:
+          "Organize tarefas, prazos e prioridades para entregar com previsibilidade.",
+        color: "blue",
+      },
+      {
+        icon: FaListCheck,
+        title: "Projetos",
+        description:
+          "Planeje, organize e execute projetos de tecnologia com sucesso garantido.",
+        color: "indigo",
       },
     ],
     closing:
-      "Habilidade técnica te faz escrever código. Habilidade comportamental te faz construir junto.",
+      "Habilidade técnica te faz escrever código. Habilidade comportamental e método te fazem construir junto e entregar no prazo.",
   },
   {
-    id: "avancados",
+    id: "diferenciais",
     icon: FaRocket,
-    title: "Avançados",
-    subtitle: "O que faz a diferença",
+    title: "Diferenciais",
+    subtitle: "O que separa o bom do excepcional",
     gradient: "from-indigo-500 via-sky-600 to-teal-600",
-    paragraphs: ["São as camadas que separam o bom do excepcional."],
-    items: [
+    paragraphs: [
+      "São as camadas que quase nunca aparecem na descrição de uma vaga, mas sempre aparecem no resultado do trabalho. Não são pré-requisito para começar — são o que faz a diferença quando dois profissionais têm a mesma base técnica.",
+      "Ler inglês abre a porta para a documentação, os cursos e as comunidades onde o conhecimento nasce primeiro. Entender de produto transforma quem executa tarefas em quem resolve problemas de negócio. E performance é o que separa 'funciona na minha máquina' de 'funciona para milhões, rápido e barato'. Junto disso, dominar as ferramentas e plataformas certas amplia o que uma pessoa consegue construir sozinha.",
+    ],
+    cards: [
       {
-        label: "English",
-        text: "A maior parte do conhecimento de tecnologia nasce em inglês. Documentação, cursos, comunidades. Ler inglês não é diferencial — é chave de acesso.",
+        icon: MdOutlineTranslate,
+        title: "English",
+        description:
+          "Melhore seu inglês para crescer na programação e se conectar com o mundo.",
+        color: "amber",
       },
       {
-        label: "Produtos",
-        text: "Entender o negócio por trás do código. Saber não só como construir, mas o que vale a pena construir e para quem.",
+        icon: AiFillProduct,
+        title: "Produtos Digitais",
+        description:
+          "Transforme ideias em soluções digitais úteis, inovadoras e escaláveis.",
+        color: "rose",
       },
       {
-        label: "Performance",
-        text: "Fazer funcionar é o mínimo. Fazer funcionar rápido, barato e em escala é o que sustenta um produto de verdade.",
+        icon: HiOutlineChip,
+        title: "Tecnologia",
+        description:
+          "Ferramentas e plataformas que ampliam o que é possível construir e entregar.",
+        color: "teal",
+      },
+      {
+        icon: FaGaugeHigh,
+        title: "Performance",
+        description:
+          "Fazer funcionar é o mínimo. Fazer funcionar rápido, barato e em escala sustenta um produto de verdade.",
+        color: "sky",
       },
     ],
     closing: null,
   },
 ];
+
+// Mapa de cores por categoria — fundo do quadrado do ícone e cor do ícone
+const colorMap = {
+  sky: "from-sky-500 to-sky-600",
+  purple: "from-purple-500 to-purple-600",
+  pink: "from-pink-500 to-pink-600",
+  indigo: "from-indigo-500 to-indigo-600",
+  green: "from-green-500 to-green-600",
+  violet: "from-violet-500 to-violet-600",
+  fuchsia: "from-fuchsia-500 to-fuchsia-600",
+  blue: "from-blue-500 to-blue-600",
+  amber: "from-amber-500 to-amber-600",
+  rose: "from-rose-500 to-rose-600",
+  teal: "from-teal-500 to-teal-600",
+};
 
 export const CategoriesAll = () => {
   useEffect(() => {
@@ -110,6 +212,14 @@ export const CategoriesAll = () => {
       {/* HERO */}
       <div className="w-full bg-gradient-to-tr from-indigo-500/20 via-sky-700/20 via-20% to-purple-700/30 md:px-16 sm:px-10 px-4 md:py-24 py-16">
         <div className="max-w-4xl space-y-6">
+          {/* Botão voltar */}
+          <Link
+            to="/"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-neutral-600 hover:text-sky-800 cursor-pointer ease-in-out duration-300"
+          >
+            <FaArrowLeft /> Voltar para a Home
+          </Link>
+
           <p className="text-lg md:text-xl font-medium text-neutral-600">
             O ecossistema da tecnologia
           </p>
@@ -123,8 +233,9 @@ export const CategoriesAll = () => {
             constrói soluções.
           </p>
           <p className="text-base font-normal text-neutral-600 max-w-3xl">
-            Este é o mapa do território. Cada área abaixo é uma peça do
-            profissional de tecnologia completo.
+            Este é o mapa do território. Cada área abaixo reúne as categorias
+            que compõem o profissional de tecnologia completo — do que o usuário
+            vê ao que sustenta tudo por trás.
           </p>
         </div>
       </div>
@@ -171,22 +282,35 @@ export const CategoriesAll = () => {
                   </p>
                 ))}
 
-                {/* Itens (soft skills / avançados) */}
-                {section.items.length > 0 && (
-                  <div className="grid md:grid-cols-3 grid-cols-1 gap-4 pt-2">
-                    {section.items.map((item) => (
-                      <div
-                        key={item.label}
-                        className="rounded-2xl border border-neutral-200 bg-neutral-50 p-5 space-y-2 hover:border-sky-300 transition-all ease-in-out duration-300"
-                      >
-                        <h3 className="text-lg font-bold text-neutral-800">
-                          {item.label}
-                        </h3>
-                        <p className="text-sm text-neutral-600 leading-relaxed">
-                          {item.text}
-                        </p>
-                      </div>
-                    ))}
+                {/* Cards compactos das categorias do bloco */}
+                {section.cards.length > 0 && (
+                  <div className="grid md:grid-cols-2 grid-cols-1 gap-4 pt-2">
+                    {section.cards.map((card) => {
+                      const CardIcon = card.icon;
+                      return (
+                        <div
+                          key={card.title}
+                          className="flex items-start gap-4 rounded-2xl border border-neutral-200 bg-neutral-50 p-4 hover:border-sky-300 hover:shadow-sm transition-all ease-in-out duration-300"
+                        >
+                          <div
+                            className={`w-12 h-12 shrink-0 flex items-center justify-center rounded-xl bg-gradient-to-tr ${colorMap[card.color] || colorMap.sky
+                              }`}
+                          >
+                            <span className="text-xl text-neutral-50">
+                              <CardIcon />
+                            </span>
+                          </div>
+                          <div className="space-y-1">
+                            <h3 className="text-base font-bold text-neutral-800">
+                              {card.title}
+                            </h3>
+                            <p className="text-sm text-neutral-600 leading-relaxed">
+                              {card.description}
+                            </p>
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
                 )}
 
