@@ -7,7 +7,12 @@ import { ModuleThree } from "./ModuleThree";
 import { ModuleFour } from "./ModuleFour";
 import { ModuleFive } from "./ModuleFive";
 
-export const TabContent = ({ program, onCompleteModule }) => {
+export const TabContent = ({
+  program,
+  onCompleteModule,
+  activeIndex,
+  onChange,
+}) => {
   const tabs = [
     {
       id: "modulo-0",
@@ -53,8 +58,16 @@ export const TabContent = ({ program, onCompleteModule }) => {
     },
   ];
   return (
-    <div className="w-full"> 
-      <Tabs tabs={tabs} />
+    <div className="w-full">
+      {/*
+        activeIndex / onChange tornam o Tabs um componente controlado:
+        o clique na lista lateral (EnrollPrograms) passa a decidir qual aba
+        aparece aqui, em vez de cada peça ter seu próprio estado isolado.
+
+        Se o seu componente Tabs ainda não aceitar essas duas props,
+        cola o arquivo dele aqui que eu ajusto exatamente.
+      */}
+      <Tabs tabs={tabs} activeIndex={activeIndex} onChange={onChange} />
     </div>
   );
 };
@@ -62,4 +75,6 @@ export const TabContent = ({ program, onCompleteModule }) => {
 TabContent.propTypes = {
   program: PropTypes.object,
   onCompleteModule: PropTypes.func,
+  activeIndex: PropTypes.number,
+  onChange: PropTypes.func,
 };

@@ -28,7 +28,7 @@ export const Detail = () => {
       (p) =>
         p.id === programId &&
         String(p.categoryFilter).toLowerCase() ===
-          String(category).toLowerCase(),
+        String(category).toLowerCase(),
     ) || programsData.find((p) => p.id === programId);
 
   if (!program) return <NotFound />;
@@ -85,7 +85,34 @@ export const Detail = () => {
               />
             </div>
             {/* course overview contents */}
+
             <div className="space-y-10">
+              {/* bloco 1 */}
+              {program.whatYouBuild && (
+                <div className="w-full space-y-4">
+                  <h2 className="text-2xl font-bold text-neutral-800">
+                    {program.whatYouBuild.title}
+                  </h2>
+                  <p className="text-base text-neutral-700 leading-relaxed">
+                    {program.whatYouBuild.description}
+                  </p>
+                  {program.whatYouBuild.highlights && (
+                    <div className="grid sm:grid-cols-3 grid-cols-1 gap-3 pt-2">
+                      {program.whatYouBuild.highlights.map((item, i) => (
+                        <div
+                          key={i}
+                          className="flex items-center gap-2 rounded-xl border border-sky-200 bg-sky-50/50 px-4 py-3"
+                        >
+                          <span className="text-sky-700 text-lg">✓</span>
+                          <span className="text-sm font-medium text-neutral-800">
+                            {item}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
               {/* Overview */}
               <div className="space-y-3">
                 <h3 className="text-2xl font-bold text-neutral-800 border-b border-neutral-200 pb-2">
@@ -114,6 +141,20 @@ export const Detail = () => {
                     ))}
                   </ul>
                 </div>
+
+                {/* Bloco 2 */}
+                {program.whyNow && (
+                  <div className="w-full space-y-4 rounded-2xl bg-gradient-to-tr from-indigo-500/10 via-sky-700/10 to-purple-700/10 p-6">
+                    <h2 className="text-2xl font-bold text-neutral-800">
+                      {program.whyNow.title}
+                    </h2>
+                    {program.whyNow.paragraphs.map((p, i) => (
+                      <p key={i} className="text-base text-neutral-700 leading-relaxed">
+                        {p}
+                      </p>
+                    ))}
+                  </div>
+                )}
               </div>
               {/* Curriculum */}
               <div className="space-y-3">
@@ -129,6 +170,110 @@ export const Detail = () => {
                   </p>
                 </div>
               </div>
+
+              {/* Bloco 3 */}
+              {program.appliedIn && (
+                <div className="w-full space-y-4">
+                  <h2 className="text-2xl font-bold text-neutral-800">
+                    {program.appliedIn.title}
+                  </h2>
+                  <div className="grid md:grid-cols-3 grid-cols-1 gap-4">
+                    {program.appliedIn.items.map((item, i) => (
+                      <div
+                        key={i}
+                        className="rounded-2xl border border-neutral-200 bg-neutral-50 p-5 space-y-2"
+                      >
+                        <h3 className="text-base font-bold text-neutral-800">
+                          {item.label}
+                        </h3>
+                        <p className="text-sm text-neutral-600 leading-relaxed">
+                          {item.description}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Bloco 4 */}
+              {program.forWho && (
+                <div className="w-full space-y-4">
+                  <h2 className="text-2xl font-bold text-neutral-800">
+                    {program.forWho.title}
+                  </h2>
+                  <div className="space-y-3">
+                    {program.forWho.profiles.map((profile, i) => (
+                      <div
+                        key={i}
+                        className="flex items-start gap-4 rounded-2xl border border-neutral-200 bg-white p-4"
+                      >
+                        <div className="w-10 h-10 shrink-0 flex items-center justify-center rounded-full bg-gradient-to-tr from-indigo-500 to-purple-600 text-white font-bold">
+                          {i + 1}
+                        </div>
+                        <div className="space-y-1">
+                          <h3 className="text-base font-bold text-neutral-800">
+                            {profile.label}
+                          </h3>
+                          <p className="text-sm text-neutral-600 leading-relaxed">
+                            {profile.description}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/*  BLOCO 5 — QUEM USA NO MERCADO     */}
+              {program.marketUsage && (
+                <div className="w-full space-y-4">
+                  <h2 className="text-2xl font-bold text-neutral-800">
+                    {program.marketUsage.title}
+                  </h2>
+                  <p className="text-base text-neutral-700 leading-relaxed">
+                    {program.marketUsage.description}
+                  </p>
+                  {program.marketUsage.companies && (
+                    <div className="flex flex-wrap gap-3 pt-2">
+                      {program.marketUsage.companies.map((company, i) => (
+                        <span
+                          key={i}
+                          className="rounded-full border border-neutral-300 bg-neutral-50 px-4 py-2 text-sm font-medium text-neutral-700"
+                        >
+                          {company}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/*  BLOCO 6 — FONTES */}
+              {program.sources && program.sources.length > 0 && (
+                <div className="w-full space-y-2 pt-4 border-t border-neutral-200">
+                  <p className="text-xs font-semibold text-neutral-500 uppercase tracking-wide">
+                    Fontes
+                  </p>
+                  <ul className="space-y-1">
+                    {program.sources.map((source, i) => (
+                      <li key={i} className="text-xs text-neutral-400">
+                        {source.url && source.url !== "#" ? (
+                          <a
+                            href={source.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-sky-700 underline"
+                          >
+                            {source.label}
+                          </a>
+                        ) : (
+                          source.label
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
               {/* Course Materials */}
               <div className="space-y-3">
                 <h3 className="text-2xl font-bold text-neutral-800 border-b border-neutral-200 pb-2">

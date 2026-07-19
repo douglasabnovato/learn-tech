@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 
-import DevImg1 from "./dev-4.JPG";
-import DevImg2 from "./dev-5.JPG";
-import DevImg3 from "./dev-6.JPG";
-import DevImg4 from "./dev-7.JPG";
+import DevImg1 from "./assets/dev-4.JPG";
+import DevImg2 from "./assets/dev-5.JPG";
+import DevImg3 from "./assets/dev-6.JPG";
+import DevImg4 from "./assets/dev-7.JPG";
 
 const images = [DevImg1, DevImg2, DevImg3, DevImg4];
 
@@ -24,7 +24,7 @@ export const Hero = () => {
         <div className="pt-[4ch] md:w-[45%] w-full h-auto md:space-y-8 space-y-6">
           <div className="space-y-2">
             <p className="text-lg md:text-2xl font-medium text-neutral-600">
-              Aprendizagem Online para Você
+              Aprendizagem para Você
             </p>
             <h1 className="md:text-[5rem] text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-sky-700 to-purple-700 leading-[1.3]">
               Comece a aprender
