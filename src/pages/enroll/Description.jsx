@@ -1,7 +1,13 @@
 import PropTypes from "prop-types";
 import { TabContent } from "./tabContent/TabContent";
 
-export const Description = ({ program, onCompleteModule, completedModuleIndex }) => {
+export const Description = ({
+  program,
+  onCompleteModule,
+  completedModuleIndex,
+  activeModuleIndex,
+  onSelectModule,
+}) => {
   const enrollDetails = program?.enrollDetails;
 
   if (!enrollDetails) {
@@ -101,6 +107,8 @@ export const Description = ({ program, onCompleteModule, completedModuleIndex })
         program={program}
         onCompleteModule={onCompleteModule}
         completedModuleIndex={completedModuleIndex}
+        activeIndex={activeModuleIndex}
+        onChange={onSelectModule}
       />
     </div>
   );
@@ -112,4 +120,6 @@ Description.propTypes = {
   }),
   onCompleteModule: PropTypes.func,
   completedModuleIndex: PropTypes.number,
+  activeModuleIndex: PropTypes.number,
+  onSelectModule: PropTypes.func,
 };

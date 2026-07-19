@@ -124,7 +124,6 @@ npm run dev
 - [x] Criar o conteúdo 
 - [x] Criar o progresso
 - [x] Criar o Quiz
-- [ ] Fazer essas informações no .json
 - 🌟 PROGRAMS 🌟 - Importantes
 - [x] 1. Sistema de Progresso Dinâmico dos Módulos
 - [x] ✅ Implementado useState para rastrear módulo completado (completedModuleIndex)
@@ -182,8 +181,16 @@ npm run dev
 - [x] ✅ Estados desabilitados impedem ações inválidas
 
 - 🌟 RECURSOS 🌟
+  - [x] Conteúdos atuais do projeto
+  - [x] Conteúdos futuros do projeto
+
 - 🌟 LEARN TECH 🌟
+  - [x] Propósito do projeto
+
 - 🌟 FALA AÊ 🌟
+ - [x] FAQ 
+ - [x] Canal de comunicação do usuário com a equipe idealizadora
+  - configurar a ferramenta 
 
 #### Funcionalidades:
 
@@ -192,21 +199,40 @@ npm run dev
 
 #### Seções da HOME:
 
-- 🌟 Hero 🌟 : obs >> boa
-- 🌟 Categorias 🌟 : obs >> boa
-- 🌟 Top Categorias 🌟 : obs >> boa
-- 🌟 Top Projetos 🌟 : obs >> boa
-  - card
-  - apresentação
-  - conteúdo
+- 🌟 Hero 🌟 
+  - design
+  - botão 1 
+  - botão 2
+
+- 🌟 Tecnologias 🌟 
+  - nome tecnologia 
+  - imagem tecnologia 
+  - quantidade de conteúdos 
+  - categoria
+
+- 🌟 Top Categorias 🌟 
+  - listagem de categorias 
+  - uma plano de formação com essas categorias 
+
+- 🌟 Top Projetos 🌟  
+  - Oito projetos de destaque
+  - Listagem com 32 projetos 
+    - card
+    - apresentação
+    - conteúdo
+
 - 🌟 Premios 🌟
+
 - 🌟 Top Artigos 🌟
+  - Cinco artigos de destaque
+  - Listagem com 11 projetos 
+
 - 🌟 Footer 🌟
-  - [ ] coluna 1 com a chamada do hero  
-  - [ ] coluna 2 Customer: (faq, contact us, returns, shipping)
-  - [ ] coluna 3 Quick Links: (about us, terms of service, privacy policy, careers)
-  - [ ] coluna 4 Follow Us: (Instagram, Linkedin, Youtube, Facebook, X)
-  - [ ] Copyright Real Time: criar uma consulta do dia que o site está sendo acessado 
+  - coluna 1 com a chamada do hero  
+  - coluna 2 Customer: (faq, contact us, returns, shipping)
+  - coluna 3 Quick Links: (about us, terms of service, privacy policy, careers)
+  - coluna 4 Follow Us: (Instagram, Linkedin, Youtube, Facebook, X)
+  - Copyright Real Time: criar uma consulta do dia que o site está sendo acessado 
 
 ---
 
