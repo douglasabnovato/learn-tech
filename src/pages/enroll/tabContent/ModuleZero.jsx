@@ -1,241 +1,222 @@
-import React from "react";
+import React, { useState } from "react";
+import {
+  FaTools,
+  FaRoute,
+  FaEye,
+  FaKeyboard,
+  FaMobileAlt,
+  FaLightbulb,
+  FaCheckCircle,
+} from "react-icons/fa";
 
 export const ModuleZero = ({ onComplete }) => {
+  const steps = [
+    {
+      number: 1,
+      title: "Organização de Diretórios (Windows Explorer)",
+      guidance:
+        "No seu Windows Explorer, crie uma pasta raiz chamada learnTECH em um local seguro. Para este teste inicial, crie uma subpasta chamada hello-world.",
+      tip: "Use sempre o padrão kebab-case (ex: meu-primeiro-projeto). Evite espaços para prevenir erros de link.",
+      code: null,
+    },
+    {
+      number: 2,
+      title: "Preparação do Editor (Visual Studio Code)",
+      guidance:
+        "Abra o VS Code e vá em \"File > Open Folder\" selecionando a pasta criada. No menu de Extensões, instale o Live Server (de Ritwick Dey) e o Prettier.",
+      tip: null,
+      code: null,
+    },
+    {
+      number: 3,
+      title: "Criação da Estrutura Base (HTML5)",
+      guidance: "Crie um arquivo index.html. Digite ! e aperte Tab para gerar o código base.",
+      tip: "Este atalho é fornecido pela extensão Emmet do VS Code.",
+      code: "! + Tab",
+    },
+    {
+      number: 4,
+      title: "Visualização e Debug (Google Chrome)",
+      guidance:
+        "Clique no botão Go Live na barra inferior do VS Code. O Chrome abrirá o endereço local. Aperte F12 para explorar o DevTools.",
+      tip: null,
+      code: null,
+    },
+    {
+      number: 5,
+      title: "Validação do Ciclo de Desenvolvimento",
+      guidance:
+        "Altere o texto no HTML e salve (Ctrl + S). A página deve atualizar automaticamente. Se isso ocorreu, seu setup está validado!",
+      tip: null,
+      code: "Ctrl + S",
+    },
+  ];
+
+  const highlights = [
+    {
+      icon: FaRoute,
+      title: "Hierarquia de Passos",
+      text: "Uma linha do tempo visual guia o olho através do processo de forma sequencial e lógica.",
+    },
+    {
+      icon: FaEye,
+      title: "Feedback Visual",
+      text: "O passo de validação recebe destaque, sinalizando a conclusão bem-sucedida do objetivo.",
+    },
+    {
+      icon: FaKeyboard,
+      title: "Acessibilidade de Atalhos",
+      text: "Atalhos de teclado aparecem estilizados de forma distinta, fáceis de identificar na leitura técnica.",
+    },
+    {
+      icon: FaMobileAlt,
+      title: "Responsividade",
+      text: "O grid e o espaçamento garantem que o conteúdo seja totalmente adaptável a qualquer dispositivo.",
+    },
+  ];
+
+  const [doneSteps, setDoneSteps] = useState([]);
+  const toggleStep = (n) =>
+    setDoneSteps((prev) => (prev.includes(n) ? prev.filter((x) => x !== n) : [...prev, n]));
+  const allDone = doneSteps.length === steps.length;
+
   return (
     <div className="w-full space-y-12 animate-in fade-in duration-500">
-      {/* Seção 1: Introdução ao Módulo 0 */}
-      <div className="space-y-4">
-        <div className="space-y-1.5">
-          <h1 className="text-2xl pt-6 font-bold text-neutral-800 tracking-tight">
+      <div className="flex md:flex-row flex-col md:items-start items-center gap-6">
+        <div className="w-16 h-16 shrink-0 flex items-center justify-center rounded-2xl bg-gradient-to-tr from-indigo-500 via-sky-600 to-purple-600">
+          <FaTools className="text-white text-2xl" />
+        </div>
+        <div className="space-y-1">
+          <span className="text-sm font-semibold text-neutral-400">Módulo 00</span>
+          <h1 className="text-2xl font-bold text-neutral-800 tracking-tight">
             Setup e Arquitetura (O Início)
           </h1>
-          <h2 className="text-lg font-medium text-neutral-500">
-            Configuração do Ambiente e Validação "Hello World": Da preparação da
-            máquina à primeira visualização em tempo real
+          <h2 className="text-base font-medium text-neutral-500">
+            Configuração do Ambiente e Validação "Hello World"
           </h2>
         </div>
-
-        <p className="text-base font-normal text-neutral-600 leading-relaxed text-justify max-w-4xl">
-          Ter um setup bem configurado não é apenas uma questão de estética, mas
-          de eficiência técnica. Ao alinhar o editor de código (
-          <span className="font-semibold text-neutral-800">VS Code</span>), o
-          navegador (
-          <span className="font-semibold text-neutral-800">Chrome</span>) e a
-          organização de arquivos, você reduz o atrito entre a ideia e a
-          execução. O objetivo deste módulo é garantir que sua "oficina" esteja
-          funcionando perfeitamente, permitindo que você visualize suas criações
-          instantaneamente através da extensão{" "}
-          <span className="font-semibold text-neutral-800">Live Server</span>.
-        </p>
       </div>
 
-      {/* Seção 2: Passo a Passo do Setup Profissional */}
+      <p className="text-base font-normal text-neutral-600 leading-relaxed max-w-4xl">
+        Ter um setup bem configurado não é apenas uma questão de estética, mas de
+        eficiência técnica. Ao alinhar o editor de código (VS Code), o navegador
+        (Chrome) e a organização de arquivos, você reduz o atrito entre a ideia e a
+        execução — permitindo visualizar suas criações instantaneamente através da
+        extensão Live Server.
+      </p>
+
       <div className="space-y-6">
-        <h3 className="text-xl text-neutral-800 font-bold flex items-center gap-2">
-          🚀 Passo a Passo do Setup Profissional
-        </h3>
-
-        <div className="grid gap-8">
-          {/* Passo 1 */}
-          <div className="space-y-2 border-l-2 border-neutral-200 pl-4">
-            <h4 className="text-base font-bold text-neutral-800">
-              1. Organização de Diretórios (Windows Explorer)
-            </h4>
-            <div className="space-y-1">
-              <p className="text-sm text-neutral-600">
-                <span className="font-semibold text-neutral-700 underline">
-                  Orientação:
-                </span>{" "}
-                No seu Windows Explorer, crie uma pasta raiz chamada{" "}
-                <code className="bg-neutral-100 px-1 rounded text-neutral-800 font-mono">
-                  learnTECH
-                </code>{" "}
-                em um local seguro. Para este teste inicial, crie uma subpasta
-                chamada{" "}
-                <code className="bg-neutral-100 px-1 rounded text-neutral-800 font-mono">
-                  hello-world
-                </code>
-                .
-              </p>
-              <p className="text-xs text-neutral-500 italic">
-                💡 Dica de Ouro: Use sempre o padrão kebab-case (ex:
-                meu-primeiro-projeto). Evite espaços para prevenir erros de
-                link.
-              </p>
+        <div className="flex items-center justify-between flex-wrap gap-3">
+          <h3 className="text-xl text-neutral-800 font-bold flex items-center gap-2">
+            🚀 Passo a Passo do Setup Profissional
+          </h3>
+          <div className="flex items-center gap-3">
+            <div className="w-32 h-2 bg-neutral-200 rounded-full overflow-hidden">
+              <div
+                className="h-full bg-gradient-to-r from-indigo-500 to-purple-500 transition-all duration-300"
+                style={{ width: `${(doneSteps.length / steps.length) * 100}%` }}
+              />
             </div>
+            <span className="text-sm font-medium text-neutral-500">
+              {doneSteps.length} de {steps.length} passos
+            </span>
           </div>
+        </div>
 
-          {/* Passo 2 */}
-          <div className="space-y-2 border-l-2 border-neutral-200 pl-4">
-            <h4 className="text-base font-bold text-neutral-800">
-              2. Preparação do Editor (Visual Studio Code)
-            </h4>
-            <p className="text-sm text-neutral-600">
-              <span className="font-semibold text-neutral-700 underline">
-                Orientação:
-              </span>{" "}
-              Abra o VS Code e vá em "File {">"} Open Folder" selecionando a
-              pasta criada. No menu de Extensões, instale o{" "}
-              <span className="font-bold text-neutral-800">Live Server</span>{" "}
-              (de Ritwick Dey) e o{" "}
-              <span className="font-bold text-neutral-800">Prettier</span>.
+        <div className="grid gap-4">
+          {steps.map((step) => {
+            const isDone = doneSteps.includes(step.number);
+            return (
+              <div
+                key={step.number}
+                className={`flex items-start gap-4 rounded-2xl border p-5 transition-all duration-300 ${
+                  isDone ? "border-purple-300 bg-purple-50/50" : "border-neutral-200 bg-white"
+                }`}
+              >
+                <button
+                  onClick={() => toggleStep(step.number)}
+                  aria-label={isDone ? "Marcar como pendente" : "Marcar como concluído"}
+                  className={`w-9 h-9 shrink-0 rounded-full flex items-center justify-center border-2 font-bold text-sm transition-colors duration-200 ${
+                    isDone
+                      ? "bg-purple-500 border-purple-500 text-white"
+                      : "border-neutral-300 text-neutral-500 hover:border-indigo-400"
+                  }`}
+                >
+                  {isDone ? <FaCheckCircle size={16} /> : step.number}
+                </button>
+                <div className="space-y-1.5 flex-1">
+                  <h4 className={`text-base font-bold ${isDone ? "text-purple-800" : "text-neutral-800"}`}>
+                    {step.title}
+                  </h4>
+                  <p className="text-sm text-neutral-600 leading-relaxed">
+                    <span className="font-semibold text-neutral-700 underline">Orientação:</span>{" "}
+                    {step.guidance}
+                  </p>
+                  {step.code && (
+                    <code className="inline-block bg-neutral-900 text-purple-300 text-sm font-mono px-3 py-1 rounded-lg mt-2">
+                      {step.code}
+                    </code>
+                  )}
+                  {step.tip && (
+                    <p className="text-xs text-neutral-500 italic pt-1">💡 {step.tip}</p>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {allDone && (
+          <div className="flex items-center gap-3 rounded-xl bg-gradient-to-r from-indigo-50 to-purple-50 border border-purple-200 px-4 py-3">
+            <span className="text-2xl">🏅</span>
+            <p className="text-sm font-semibold text-purple-800">
+              Ambiente validado! Todos os passos do setup foram concluídos.
             </p>
           </div>
+        )}
+      </div>
 
-          {/* Passo 3 */}
-          <div className="space-y-2 border-l-2 border-neutral-200 pl-4">
-            <h4 className="text-base font-bold text-neutral-800">
-              3. Criação da Estrutura Base (HTML5)
-            </h4>
-            <p className="text-sm text-neutral-600">
-              <span className="font-semibold text-neutral-700 underline">
-                Orientação:
-              </span>{" "}
-              Crie um arquivo{" "}
-              <code className="bg-neutral-100 px-1 rounded text-neutral-800 font-mono">
-                index.html
-              </code>
-              . Digite{" "}
-              <kbd className="bg-neutral-200 px-1.5 py-0.5 rounded shadow-sm text-xs">
-                !
-              </kbd>{" "}
-              e aperte{" "}
-              <kbd className="bg-neutral-200 px-1.5 py-0.5 rounded shadow-sm text-xs">
-                Tab
-              </kbd>{" "}
-              para gerar o código base. Entre as tags body, adicione seu H1.
-            </p>
-          </div>
-
-          {/* Passo 4 */}
-          <div className="space-y-2 border-l-2 border-neutral-200 pl-4">
-            <h4 className="text-base font-bold text-neutral-800">
-              4. Visualização e Debug (Google Chrome)
-            </h4>
-            <p className="text-sm text-neutral-600">
-              <span className="font-semibold text-neutral-700 underline">
-                Orientação:
-              </span>{" "}
-              Clique no botão{" "}
-              <span className="font-bold text-blue-600 italic">Go Live</span> na
-              barra inferior do VS Code. O Chrome abrirá o endereço local.
-              Aperte{" "}
-              <kbd className="bg-neutral-200 px-1.5 py-0.5 rounded shadow-sm text-xs">
-                F12
-              </kbd>{" "}
-              para explorar o DevTools.
-            </p>
-          </div>
-
-          {/* Passo 5 */}
-          <div className="space-y-2 border-l-2 border-blue-500 bg-blue-50/30 p-4 rounded-r-lg">
-            <h4 className="text-base font-bold text-blue-900">
-              5. Validação do Ciclo de Desenvolvimento
-            </h4>
-            <p className="text-sm text-blue-800">
-              <span className="font-semibold underline">Orientação:</span>{" "}
-              Altere o texto no HTML e salve (
-              <kbd className="bg-blue-100 px-1.5 py-0.5 rounded shadow-sm text-xs border border-blue-200">
-                Ctrl + S
-              </kbd>
-              ). A página deve atualizar automaticamente. Se isso ocorreu, seu
-              setup está validado!
-            </p>
-          </div>
+      <div className="pt-6 border-t border-neutral-200 space-y-6">
+        <h3 className="text-xl font-bold text-neutral-800">🔍 Destaques da Implementação de UX</h3>
+        <div className="grid md:grid-cols-2 grid-cols-1 gap-5">
+          {highlights.map((item) => {
+            const Icon = item.icon;
+            return (
+              <div key={item.title} className="space-y-2 rounded-xl bg-neutral-50 border border-neutral-200 p-4">
+                <div className="w-9 h-9 flex items-center justify-center rounded-lg bg-indigo-100 text-indigo-600">
+                  <Icon size={16} />
+                </div>
+                <h4 className="text-sm font-bold text-neutral-800">{item.title}</h4>
+                <p className="text-xs text-neutral-600 leading-relaxed">{item.text}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
 
-      {/* Seção de Destaques de UX - Estruturada em Títulos e Subtítulos */}
-      <div className="pt-10 border-t border-neutral-200 space-y-8">
-        <h3 className="text-xl font-bold text-neutral-800">
-          🔍 Destaques da Implementação de UX
-        </h3>
+      <p className="text-base text-neutral-600 font-normal leading-relaxed">
+        Com o seu ambiente validado e o primeiro sinal de vida da sua aplicação no
+        navegador, você acaba de cruzar a fronteira entre um entusiasta e um
+        desenvolvedor em formação. Agora que a fundação está sólida, estamos
+        prontos para subir o nível: no próximo módulo, daremos início à arquitetura
+        real da nossa landing page.
+      </p>
 
-        <div className="space-y-6">
-          {/* Item 1 */}
-          <div className="space-y-1">
-            <h4 className="text-base font-bold text-neutral-700">
-              Hierarquia de Passos
-            </h4>
-            <p className="text-sm text-neutral-600 leading-relaxed">
-              Utilizamos uma borda lateral (border-l-2) para criar uma linha do
-              tempo visual, guiando o olho do usuário através do processo de
-              forma sequencial e lógica.
-            </p>
-          </div>
-
-          {/* Item 2 */}
-          <div className="space-y-1">
-            <h4 className="text-base font-bold text-neutral-700">
-              Feedback Visual
-            </h4>
-            <p className="text-sm text-neutral-600 leading-relaxed">
-              O Passo 5 (Validação) recebeu um destaque sutil em azul,
-              sinalizando a conclusão bem-sucedida do objetivo ("Hello World") e
-              reforçando a sensação de progresso.
-            </p>
-          </div>
-
-          {/* Item 3 */}
-          <div className="space-y-1">
-            <h4 className="text-base font-bold text-neutral-700">
-              Acessibilidade de Atalhos
-            </h4>
-            <p className="text-sm text-neutral-600 leading-relaxed">
-              Implementamos a tag <code className="text-xs">&lt;kbd&gt;</code>{" "}
-              para estilizar atalhos de teclado, tornando-os visualmente
-              distintos e fáceis de identificar durante a leitura técnica.
-            </p>
-          </div>
-
-          {/* Item 4 */}
-          <div className="space-y-1">
-            <h4 className="text-base font-bold text-neutral-700">
-              Responsividade
-            </h4>
-            <p className="text-sm text-neutral-600 leading-relaxed">
-              O grid e o espaçamento (space-y-x) garantem que o conteúdo seja
-              totalmente adaptável, evitando que o texto se torne ilegível ou
-              amontoado em dispositivos móveis.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Parágrafo de Fechamento do Módulo 0 */}
-      <div className="pt-6">
-        <p className="text-base text-neutral-600 font-normal leading-relaxed">
-          Com o seu ambiente validado e o primeiro sinal de vida da sua
-          aplicação no navegador, você acaba de cruzar a fronteira entre um
-          entusiasta e um{" "}
-          <span className="font-bold text-neutral-800">
-            desenvolvedor em formação
-          </span>
-          . Este setup será o seu porto seguro durante todo o bootcamp,
-          garantindo que cada linha de código escrita seja visualizada e
-          refinada em tempo real. Agora que a fundação está sólida, estamos
-          prontos para subir o nível: no próximo módulo, deixaremos o "Hello
-          World" para trás para darmos início à{" "}
-          <span className="font-bold text-neutral-800">arquitetura real</span>{" "}
-          da nossa landing page.
+      <div className="bg-gradient-to-tr from-indigo-600 via-sky-600 to-purple-600 p-8 rounded-2xl text-center space-y-4 mt-4">
+        <h3 className="text-xl font-bold text-white">🛠️ Ambiente Configurado!</h3>
+        <p className="text-indigo-50 text-sm max-w-2xl mx-auto leading-relaxed">
+          Sua "oficina" está pronta. O próximo passo é dar vida ao seu projeto
+          começando pela estrutura.
         </p>
+        <div className="pt-2">
+          <button
+            onClick={onComplete}
+            className="px-6 py-2.5 bg-white text-indigo-700 font-bold rounded-lg hover:bg-indigo-50 transition-colors"
+          >
+            Ir para Módulo 1: Estrutura Semântica
+          </button>
+        </div>
       </div>
-
-      <div className="bg-neutral-900 p-8 rounded-xl border border-neutral-800 text-center space-y-4 mt-12">
-  <h3 className="text-xl font-bold text-white">🛠️ Ambiente Configurado!</h3>
-  <p className="text-neutral-400 text-sm max-w-2xl mx-auto leading-relaxed">
-    Sua "oficina" está pronta. Com o VS Code e o Live Server operacionais, você eliminou as barreiras técnicas iniciais. O próximo passo é dar vida ao seu projeto começando pela estrutura.
-  </p>
-  <div className="pt-2">
-    <button
-      onClick={onComplete}
-      className="px-6 py-2 bg-white text-black font-bold rounded-lg hover:bg-neutral-200 transition-colors"
-    >
-      Ir para Módulo 1: Estrutura Semântica
-    </button>
-  </div>
-</div>
-
     </div>
   );
 };

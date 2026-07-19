@@ -1,134 +1,190 @@
-import React from "react";
+import React, { useState } from "react";
+import { FaSitemap, FaListOl, FaTags, FaCheckCircle } from "react-icons/fa";
 
 export const ModuleOne = ({ onComplete }) => {
+  const steps = [
+    {
+      number: 1,
+      title: "Semântica HTML5",
+      guidance:
+        "Perceba que <div> é genérico, mas <header>, <nav>, <main>, <section>, <article>, <footer> comunicam significado. Use semântica para estruturar sua página de forma lógica.",
+      tip: "Google e acessibilidade dependem dessa estrutura semântica.",
+      code: "<header> <nav> <main> <footer>",
+    },
+    {
+      number: 2,
+      title: "Headings e Hierarquia (h1-h6)",
+      guidance:
+        "Use um único <h1> por página (seu título principal). Use h2, h3 etc. para subtítulos em ordem hierárquica. Nunca pule níveis.",
+      tip: "Bots de SEO lêem seus headings para entender o tópico.",
+      code: null,
+    },
+    {
+      number: 3,
+      title: "Meta Tags Essenciais",
+      guidance:
+        "No <head>, inclua a tag meta viewport para garantir responsividade, e uma meta description descrevendo a página — é o texto que aparece no resultado de busca do Google.",
+      tip: "Sem a meta viewport, seu site pode aparecer minúsculo em celulares, mesmo com CSS responsivo pronto.",
+      code: '<meta name="viewport">',
+    },
+  ];
+
+  const highlights = [
+    {
+      icon: FaSitemap,
+      title: "Hierarquia de Conteúdo",
+      text: "Tags semânticas dão significado à estrutura, além de organizar visualmente o documento.",
+    },
+    {
+      icon: FaTags,
+      title: "Acessibilidade",
+      text: "Atributos ARIA e boas práticas de semanticidade tornam o site acessível a mais pessoas.",
+    },
+    {
+      icon: FaListOl,
+      title: "SEO Estrutural",
+      text: "A hierarquia de headings ajuda buscadores a entender do que a página trata.",
+    },
+  ];
+
+  const [doneSteps, setDoneSteps] = useState([]);
+  const toggleStep = (n) =>
+    setDoneSteps((prev) => (prev.includes(n) ? prev.filter((x) => x !== n) : [...prev, n]));
+  const allDone = doneSteps.length === steps.length;
+
   return (
     <div className="w-full space-y-12 animate-in fade-in duration-500">
-      {/* Seção 1: Introdução ao Módulo 1 */}
-      <div className="space-y-4">
-        <div className="space-y-1.5">
+      <div className="flex md:flex-row flex-col md:items-start items-center gap-6">
+        <div className="w-16 h-16 shrink-0 flex items-center justify-center rounded-2xl bg-gradient-to-tr from-sky-500 via-blue-600 to-indigo-600">
+          <FaSitemap className="text-white text-2xl" />
+        </div>
+        <div className="space-y-1">
+          <span className="text-sm font-semibold text-neutral-400">Módulo 01</span>
           <h1 className="text-2xl font-bold text-neutral-800 tracking-tight">
-            UX Design e Estrutura Semântica (HTML)
+            Estrutura Semântica
           </h1>
-          <h2 className="text-lg font-medium text-neutral-500">
-            Planejando a jornada do usuário e construindo a base do HTML5
+          <h2 className="text-base font-medium text-neutral-500">
+            Fundações HTML5: da semântica à acessibilidade
           </h2>
         </div>
-
-        <p className="text-base font-normal text-neutral-600 leading-relaxed text-justify max-w-4xl">
-          Antes de colorir ou animar, precisamos projetar. Uma landing page de alta conversão 
-          não nasce por acaso; ela é fruto de um estudo de <span className="font-semibold text-neutral-800">hierarquia visual</span> e 
-          <span className="font-semibold text-neutral-800"> UX (User Experience)</span>. Neste módulo, você aprenderá a desenhar o esqueleto da aplicação (Wireframing) e a traduzi-lo para o código usando 
-          <span className="font-semibold text-neutral-800"> HTML5 Semântico</span>. O objetivo é garantir que seu site seja acessível, otimizado para SEO e profissional.
-        </p>
       </div>
 
-      {/* Seção 2: Passo a Passo do Planejamento ao Código */}
+      <p className="text-base font-normal text-neutral-600 leading-relaxed max-w-4xl">
+        Agora que seu ambiente está configurado, é hora de aprender a linguagem que
+        os navegadores entendem: HTML5. Não é apenas sobre tags e elementos, mas
+        sobre contar uma história estruturada. Cada tag tem um propósito semântico
+        que melhora o SEO e também torna seu site acessível a um público muito mais
+        amplo, incluindo pessoas com deficiências visuais ou auditivas.
+      </p>
+
       <div className="space-y-6">
-        <h3 className="text-xl text-neutral-800 font-bold flex items-center gap-2">
-          🚀 Passo a Passo: Da Estratégia ao Código
-        </h3>
-
-        <div className="grid gap-8">
-          {/* Passo 1 */}
-          <div className="space-y-2 border-l-2 border-neutral-200 pl-4">
-            <h4 className="text-base font-bold text-neutral-800">1. Wireframing e Hierarquia Visual</h4>
-            <div className="space-y-1">
-              <p className="text-sm text-neutral-600">
-                <span className="font-semibold text-neutral-700 underline">Orientação:</span> Identifique as seções principais: Cabeçalho, Hero (Destaque), Serviços e Rodapé. Defina onde ficarão os <span className="italic font-medium">Call to Actions</span> (CTAs).
-              </p>
-              <p className="text-xs text-neutral-500 italic">
-                💡 Foco: No contexto learnTECH/Logística, a distinção entre "tenho caminhão" e "tenho carga" deve ser visualmente imediata.
-              </p>
+        <div className="flex items-center justify-between flex-wrap gap-3">
+          <h3 className="text-xl text-neutral-800 font-bold flex items-center gap-2">
+            📐 Hierarquia de Conteúdo
+          </h3>
+          <div className="flex items-center gap-3">
+            <div className="w-32 h-2 bg-neutral-200 rounded-full overflow-hidden">
+              <div
+                className="h-full bg-gradient-to-r from-sky-500 to-indigo-500 transition-all duration-300"
+                style={{ width: `${(doneSteps.length / steps.length) * 100}%` }}
+              />
             </div>
+            <span className="text-sm font-medium text-neutral-500">
+              {doneSteps.length} de {steps.length} passos
+            </span>
           </div>
+        </div>
 
-          {/* Passo 2 */}
-          <div className="space-y-2 border-l-2 border-neutral-200 pl-4">
-            <h4 className="text-base font-bold text-neutral-800">2. Planejamento de UX (User Experience)</h4>
-            <p className="text-sm text-neutral-600">
-              <span className="font-semibold text-neutral-700 underline">Orientação:</span> Projete a jornada. O usuário deve entender o valor do produto em menos de 5 segundos. Use o padrão de leitura em "Z" para guiar os olhos até o botão de conversão.
+        <div className="grid gap-4">
+          {steps.map((step) => {
+            const isDone = doneSteps.includes(step.number);
+            return (
+              <div
+                key={step.number}
+                className={`flex items-start gap-4 rounded-2xl border p-5 transition-all duration-300 ${
+                  isDone ? "border-indigo-300 bg-indigo-50/50" : "border-neutral-200 bg-white"
+                }`}
+              >
+                <button
+                  onClick={() => toggleStep(step.number)}
+                  aria-label={isDone ? "Marcar como pendente" : "Marcar como concluído"}
+                  className={`w-9 h-9 shrink-0 rounded-full flex items-center justify-center border-2 font-bold text-sm transition-colors duration-200 ${
+                    isDone
+                      ? "bg-indigo-500 border-indigo-500 text-white"
+                      : "border-neutral-300 text-neutral-500 hover:border-sky-400"
+                  }`}
+                >
+                  {isDone ? <FaCheckCircle size={16} /> : step.number}
+                </button>
+                <div className="space-y-1.5 flex-1">
+                  <h4 className={`text-base font-bold ${isDone ? "text-indigo-800" : "text-neutral-800"}`}>
+                    {step.title}
+                  </h4>
+                  <p className="text-sm text-neutral-600 leading-relaxed">
+                    <span className="font-semibold text-neutral-700 underline">Orientação:</span>{" "}
+                    {step.guidance}
+                  </p>
+                  {step.code && (
+                    <code className="inline-block bg-neutral-900 text-sky-300 text-sm font-mono px-3 py-1 rounded-lg mt-2">
+                      {step.code}
+                    </code>
+                  )}
+                  {step.tip && <p className="text-xs text-neutral-500 italic pt-1">💡 {step.tip}</p>}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {allDone && (
+          <div className="flex items-center gap-3 rounded-xl bg-gradient-to-r from-sky-50 to-indigo-50 border border-indigo-200 px-4 py-3">
+            <span className="text-2xl">🏅</span>
+            <p className="text-sm font-semibold text-indigo-800">
+              Estrutura semântica dominada! Seu HTML agora tem significado.
             </p>
           </div>
+        )}
+      </div>
 
-          {/* Passo 3 */}
-          <div className="space-y-2 border-l-2 border-neutral-200 pl-4">
-            <h4 className="text-base font-bold text-neutral-800">3. Implementação de HTML5 Semântico</h4>
-            <p className="text-sm text-neutral-600">
-              <span className="font-semibold text-neutral-700 underline">Orientação:</span> No VS Code, substitua as divs genéricas por tags como <code className="bg-neutral-100 px-1 rounded">&lt;header&gt;</code>, <code className="bg-neutral-100 px-1 rounded">&lt;main&gt;</code> e <code className="bg-neutral-100 px-1 rounded">&lt;section&gt;</code>.
-            </p>
-          </div>
-
-          {/* Passo 4 */}
-          <div className="space-y-2 border-l-2 border-blue-500 bg-blue-50/30 p-4 rounded-r-lg">
-            <h4 className="text-base font-bold text-blue-900">4. Otimização para SEO e Acessibilidade</h4>
-            <p className="text-sm text-blue-800">
-              <span className="font-semibold underline">Orientação:</span> Garanta que exista apenas um <kbd className="bg-blue-100 px-1 text-xs border border-blue-200">h1</kbd> por página e que todas as imagens possuam o atributo <code className="font-mono text-xs">alt</code> descritivo.
-            </p>
-          </div>
+      <div className="pt-6 border-t border-neutral-200 space-y-6">
+        <h3 className="text-xl font-bold text-neutral-800">🔍 Por que isso importa</h3>
+        <div className="grid md:grid-cols-3 grid-cols-1 gap-5">
+          {highlights.map((item) => {
+            const Icon = item.icon;
+            return (
+              <div key={item.title} className="space-y-2 rounded-xl bg-neutral-50 border border-neutral-200 p-4">
+                <div className="w-9 h-9 flex items-center justify-center rounded-lg bg-sky-100 text-sky-600">
+                  <Icon size={16} />
+                </div>
+                <h4 className="text-sm font-bold text-neutral-800">{item.title}</h4>
+                <p className="text-xs text-neutral-600 leading-relaxed">{item.text}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
 
-      {/* Seção de Destaques de UX */}
-      <div className="pt-10 border-t border-neutral-200 space-y-8">
-        <h3 className="text-xl font-bold text-neutral-800">
-          🔍 Destaques da Implementação de UX
-        </h3>
+      <p className="text-base text-neutral-600 font-normal leading-relaxed">
+        Com a estrutura semântica finalizada, sua landing page agora tem "corpo" e
+        significado. Você deixou de apenas escrever tags para arquitetar uma
+        solução. O próximo grande passo será dar vida e estilo a esse esqueleto.
+      </p>
 
-        <div className="space-y-6">
-          <div className="space-y-1">
-            <h4 className="text-base font-bold text-neutral-700">Planejamento Estratégico</h4>
-            <p className="text-sm text-neutral-600 leading-relaxed">
-              O uso de wireframes evita o retrabalho. Quando você sabe exatamente onde cada elemento deve estar, o processo de codificação torna-se muito mais focado.
-            </p>
-          </div>
-
-          <div className="space-y-1">
-            <h4 className="text-base font-bold text-neutral-700">Semântica para o Mercado</h4>
-            <p className="text-sm text-neutral-600 leading-relaxed">
-              Empresas buscam profissionais que entregam sites que aparecem no topo das buscas e são inclusivos para todos os usuários.
-            </p>
-          </div>
-
-          <div className="space-y-1">
-            <h4 className="text-base font-bold text-neutral-700">Arquitetura de Conversão</h4>
-            <p className="text-sm text-neutral-600 leading-relaxed">
-              A disposição dos elementos foi pensada para guiar o usuário até a conversão final, garantindo que a landing page cumpra seu papel comercial.
-            </p>
-          </div>
-
-          <div className="space-y-1">
-            <h4 className="text-base font-bold text-neutral-700">Responsividade Nativa</h4>
-            <p className="text-sm text-neutral-600 leading-relaxed">
-              Ao planejar o conteúdo de forma modular com seções bem definidas, facilitamos a aplicação futura do CSS em qualquer dispositivo.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Parágrafo de Fechamento */}
-      <div className="pt-6">
-        <p className="text-base text-neutral-600 font-normal leading-relaxed">
-          Com a estrutura semântica finalizada, sua landing page agora tem "corpo" e significado. 
-          Você deixou de apenas "escrever tags" para <span className="font-bold text-neutral-800">arquitetar uma solução</span>. 
-          O próximo grande passo será dar vida e estilo a esse esqueleto: no <span className="font-bold text-neutral-800">Módulo 2</span>, 
-          mergulharemos no CSS para transformar essa estrutura em uma interface visualmente impactante.
+      <div className="bg-gradient-to-tr from-sky-600 via-blue-600 to-indigo-600 p-8 rounded-2xl text-center space-y-4 mt-4">
+        <h3 className="text-xl font-bold text-white">📐 Estrutura Pronta!</h3>
+        <p className="text-sky-50 text-sm max-w-2xl mx-auto leading-relaxed">
+          Seu esqueleto está de pé. No Módulo 2, mergulharemos no CSS para
+          transformar essa estrutura em uma interface visualmente impactante.
         </p>
+        <div className="pt-2">
+          <button
+            onClick={onComplete}
+            className="px-6 py-2.5 bg-white text-indigo-700 font-bold rounded-lg hover:bg-indigo-50 transition-colors"
+          >
+            Ir para Módulo 2: Estilização com CSS
+          </button>
+        </div>
       </div>
-
-      <div className="bg-neutral-900 p-8 rounded-xl border border-neutral-800 text-center space-y-4 mt-12">
-  <h3 className="text-xl font-bold text-white">🏗️ Estrutura Finalizada!</h3>
-  <p className="text-neutral-400 text-sm max-w-2xl mx-auto leading-relaxed">
-    Você transformou um wireframe em código semântico. Sua landing page já tem significado para o Google e acessibilidade para os usuários. Agora, vamos tirar o visual do "padrão navegador" e aplicar estilo.
-  </p>
-  <div className="pt-2">
-    <button
-      onClick={onComplete}
-      className="px-6 py-2 bg-white text-black font-bold rounded-lg hover:bg-neutral-200 transition-colors"
-    >
-      Próximo: Estilização com CSS
-    </button>
-  </div>
-</div>
     </div>
   );
 };

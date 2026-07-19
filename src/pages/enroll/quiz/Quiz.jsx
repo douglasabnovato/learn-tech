@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { FaCheck } from "react-icons/fa";
+import { FaCheck, FaLightbulb } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
 import questions from "./../../../constants/quizData";
 
@@ -43,8 +43,9 @@ export const Quiz = () => {
   // Handler para reiniciar o quiz
   const handleRestart = () => {
     const now = new Date();
-    const formattedDate = now.toLocaleDateString("pt-BR") + " às " + now.toLocaleTimeString("pt-BR");
-    
+    const formattedDate =
+      now.toLocaleDateString("pt-BR") + " às " + now.toLocaleTimeString("pt-BR");
+
     // Registrar tentativa no histórico
     const attempt = {
       id: quizHistory.length + 1,
@@ -68,7 +69,7 @@ export const Quiz = () => {
     setFinalized(false);
   };
 
-  /** Automatically detect the answer is correct or not after one select of choosing the answer of option */
+  /** Detecta automaticamente se a resposta está correta após a escolha */
   const handleAnswerSelect = (index, isCorrect) => {
     if (selectedAnswerIndex !== null) return;
     setSelectedAnswerIndex(index);
@@ -97,18 +98,29 @@ export const Quiz = () => {
     }
   };
 
+  const currentQ = questions[currentQuestion];
+
   return (
     <div className="w-full space-y-4">
       <h1 className="text-lg text-neutral-800 font-semibold border-b pb-1 border-neutral-200">
         Teste o seu aprendizado
       </h1>
       <div className="w-full bg-neutral-100/40 border border-neutral-200 md:p-6 p-3 rounded-lg space-y-6">
-        <h1 className="text-lg text-neutral-800 font-semibold border-b pb-1 border-neutral-200">
-          {currentQuestion + 1} . {questions[currentQuestion].question}
-        </h1>
-        {/** Options */}
+        <div className="space-y-1.5 border-b pb-3 border-neutral-200">
+          {/* Badge do módulo — só aparece se a questão tiver moduleId associado */}
+          {currentQ.moduleId !== undefined && (
+            <span className="inline-block text-xs font-semibold text-indigo-600 bg-indigo-50 border border-indigo-200 rounded-full px-2.5 py-0.5">
+              Módulo {currentQ.moduleId}
+            </span>
+          )}
+          <h1 className="text-lg text-neutral-800 font-semibold">
+            {currentQuestion + 1} . {currentQ.question}
+          </h1>
+        </div>
+
+        {/** Opções */}
         <div className="space-y-2">
-          {questions[currentQuestion].options.map((option, index) => (
+          {currentQ.options.map((option, index) => (
             <div key={index} className="flex items-center gap-2">
               <input
                 type="radio"
@@ -138,7 +150,6 @@ export const Quiz = () => {
                 }
                 `}
               >
-                {/**   */}
                 <div className="w-full flex items-center justify-between">
                   <span className="text-sm font-medium">{option.text}</span>
                   {selectedAnswerIndex === index && finalized && (
@@ -151,20 +162,34 @@ export const Quiz = () => {
             </div>
           ))}
         </div>
-        {/** Buttons and total questions */}
+
+        {/** Explicação pedagógica — aparece depois de responder, acerto ou erro */}
+        {finalized && currentQ.explanation && (
+          <div className="flex items-start gap-3 rounded-lg bg-amber-50 border border-amber-200 px-4 py-3 animate-in fade-in duration-300">
+            <FaLightbulb className="text-amber-500 mt-0.5 shrink-0" />
+            <div className="space-y-1">
+              <p className="text-xs font-bold text-amber-800 uppercase tracking-wide">
+                Por que isso importa
+              </p>
+              <p className="text-sm text-amber-900 leading-relaxed">
+                {currentQ.explanation}
+              </p>
+            </div>
+          </div>
+        )}
+
+        {/** Botões e contador de questões */}
         <div className="flex items-center justify-between gap-4 flex-wrap">
-          {/** question counter */}
           <p className="text-base md:text-sm text-neutral-600">
-            {currentQuestion + 1} of {questions.length} questions
+            Questão {currentQuestion + 1} de {questions.length}
           </p>
-          {/** actions buttons */}
           <div className="flex items-center gap-4 md:w-fit w-full">
             <button
               className="md:w-fit w-1/2 bg-sky-500 text-neutral-50 py-2 px-4 rounded-lg shadow disabled:opacity-50 disabled:cursor-not-allowed font-semibold"
               disabled={currentQuestion === 0}
               onClick={handlePrevious}
             >
-              Previous
+              Anterior
             </button>
             {isQuizComplete ? (
               <button
@@ -179,7 +204,7 @@ export const Quiz = () => {
                 onClick={handleNext}
                 disabled={currentQuestion === questions.length - 1}
               >
-                Next
+                Próxima
               </button>
             )}
           </div>
@@ -218,7 +243,9 @@ export const Quiz = () => {
                     className="flex items-center justify-between bg-white rounded-lg p-3 border border-neutral-200 hover:border-indigo-300 transition-colors"
                   >
                     <div className="flex items-center gap-3">
-                      <span className="text-sm font-medium text-neutral-600">Tentativa {attempt.id}</span>
+                      <span className="text-sm font-medium text-neutral-600">
+                        Tentativa {attempt.id}
+                      </span>
                       <span className="text-xs text-neutral-500">{attempt.timestamp}</span>
                     </div>
                     <span className="text-sm font-bold text-indigo-600">

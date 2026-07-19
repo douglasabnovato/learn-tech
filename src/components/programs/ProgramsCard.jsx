@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaAnglesRight, FaStar, FaTag, FaUserTie } from "react-icons/fa6";
+import { FaAnglesRight, FaStar, FaTag, FaUserTie, FaLock, FaLockOpen } from "react-icons/fa6";
 import { FiClock } from "react-icons/fi";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { PiBookOpenTextFill } from "react-icons/pi";
@@ -15,8 +15,11 @@ export const ProgramsCard = ({
   lessons,
   students,
   duration,
-  price,
+  access,
+  accessType,
 }) => {
+  const isMembers = accessType === "membros";
+
   return (
     <div
       className="group w-full rounded-xl border border-neutral-200 space-y-2 overflow-hidden bg-white
@@ -50,7 +53,6 @@ export const ProgramsCard = ({
           </div>
         </div>
 
-        {/* Title section - Removido o Link, mantido o efeito visual de underline com group-hover */}
         <h3
           className="relative text-xl font-semibold text-neutral-950 line-clamp-2 text-ellipsis
     block
@@ -61,7 +63,6 @@ export const ProgramsCard = ({
           {title}
         </h3>
 
-        {/* lessons, students and duration */}
         <div className="w-full flex items-center justify-between flex-wrap gap-2">
           <div className="flex items-center gap-x-3">
             <p className="text-sm text-neutral-800 font-medium flex items-center gap-x-1.5">
@@ -80,13 +81,19 @@ export const ProgramsCard = ({
           </p>
         </div>
 
-        {/* separator */}
         <div className="w-full h-px bg-neutral-200"></div>
 
-        {/* price and button */}
+        {/* access badge and button */}
         <div className="w-full flex items-center justify-between">
-          <p className="text-xl font-bold text-neutral-900 flex items-center gap-x-1.5">
-            {price}
+          <p
+            className={`text-sm font-semibold rounded-full px-3 py-1.5 flex items-center gap-x-1.5 ${
+              isMembers
+                ? "text-indigo-700 bg-indigo-50 border border-indigo-200"
+                : "text-emerald-700 bg-emerald-50 border border-emerald-200"
+            }`}
+          >
+            {isMembers ? <FaLock size={12} /> : <FaLockOpen size={12} />}
+            {access}
           </p>
           <Link
             to={`/program/${categoryFilter}/${id}`}

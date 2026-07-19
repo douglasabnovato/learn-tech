@@ -22,7 +22,7 @@ const navItems = [
     {
         id: 5,
         name: "Fala aê",
-        path: "/contact",
+        path: "/falaae",
     },
 
 ];
