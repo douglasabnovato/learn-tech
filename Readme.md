@@ -16,9 +16,23 @@ Teremos um modo off com curadoria de links e conteúdos ordenados e comentados. 
     - Facilitar interações (fóruns, comentários, avaliações). 
 - Exemplos famosos: Moodle, Udemy, Coursera, Hotmart. 
 
-### 📷 Preview da versão em produção
+### 📷 Preview da versão em produção 
 
-(adicione aqui imagens ou GIFs mostrando a interface do projeto)
+- ![Home](./.github/versao-2/1-home-1.jpg)
+- ![Home](./.github/versao-2/1-home-2.jpg)
+- ![Home](./.github/versao-2/1-home-3.jpg)
+- ![Home](./.github/versao-2/1-home-4.jpg)
+- ![Home](./.github/versao-2/1-home-5.jpg)
+- ![Home](./.github/versao-2/1-home-6.jpg)
+- ![Home](./.github/versao-2/1-home-7.jpg)
+- ![Programas](./.github/versao-2/2-programas-1.jpg)
+- ![Programas](./.github/versao-2/2-programas-2.jpg)
+- ![Programas](./.github/versao-2/2-programas-3.jpg)
+- ![Programas](./.github/versao-2/2-programas-4.jpg)
+- ![Recursos](./.github/versao-2/3-recursos-1.jpg)
+- ![Recursos](./.github/versao-2/3-recursos-2.jpg)
+- ![Sobre](./.github/versao-2/4-sobre-1.jpg)
+- ![Contato](./.github/versao-2/5-contato-1.jpg)
 
 ### 📂 Estratégia do Projeto
 
@@ -323,16 +337,16 @@ Produto final: plataforma LMS completa, responsiva e funcional.
 - 🚀 Melhorias Futuras <br>
 Dashboard do aluno, sistema de pagamentos, certificado digital.
 
-#### 📷 Preview da interface do projeto
+#### 📷 Preview da interface do projeto da versão 1
 
-- ![Home](./.github/1-home.jpg)
-- ![Home](./.github/2-home.jpg)
-- ![Home](./.github/3-home.jpg)
-- ![Home](./.github/4-home.jpg)
-- ![Home](./.github/5-home.jpg)
-- ![Programas](./.github/6-programas.jpg)
-- ![Programas](./.github/7-programas.jpg)
-- ![Sign In](./.github/8-signin.jpg)
+- ![Home](./.github/original/1-home.jpg)
+- ![Home](./.github/original/2-home.jpg)
+- ![Home](./.github/original/3-home.jpg)
+- ![Home](./.github/original/4-home.jpg)
+- ![Home](./.github/original/5-home.jpg)
+- ![Programas](./.github/original/6-programas.jpg)
+- ![Programas](./.github/original/7-programas.jpg)
+- ![Sign In](./.github/original/8-signin.jpg)
    
 #### 🔗 Orientações:
  
