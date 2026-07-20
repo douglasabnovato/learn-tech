@@ -2,7 +2,7 @@ import React from "react";
 import { VideoGrid } from "../../../../components/videoGrid/VideoGrid";
 import { softSkillsData } from "../../../../constants/premiosData";
 
-export const SoftSkills = () => {
+export const Softskills = () => {
   return (
     <VideoGrid
       eyebrow="Além do código"

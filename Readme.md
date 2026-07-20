@@ -1,11 +1,9 @@
 # 🚀 Learn TECH
 
-O ECOSSISTEMA de Tecnologia, Ensino, Computação e Humano para treinamento de APRENDIZADO.
+A Learn TECH tem como objetivo acelarar a jornada para aperfeiçoar os resultados. 
+Com uma experiência de usuário impecável, vamos construir um ECOSSISTEMA de (T)ecnologia, (E)nsino, (C)omputação e (H)umano para treinamento de APRENDIZADO.
 
-Com uma experiência de usuário impecável, a Learn TECH tem como objetivo acelarar a jornada para aperfeiçoar os resultados. 
-
-A primeira versão será de curadoria de links e conteúdos estáticos.
-A segunda versão trará conteúdos originais e personalizados.
+Teremos um modo off com curadoria de links e conteúdos ordenados e comentados. E o outro modo com conteúdos originais e personalizados.
  
 ## 📂 Plataforma de Aprendizado
 
@@ -38,7 +36,7 @@ Jornada profissional e conteúdos originais personalizados para a prestação de
 ---
 
 
-## 🚀 Workflow
+## 👨‍💻 Workflow
 
 - main: manter em produção
 - developer: tratar testes e merge
@@ -49,22 +47,6 @@ Jornada profissional e conteúdos originais personalizados para a prestação de
 - v2-conteudos-2-1-home: versão de desenvolvimento da seção home
 - v2-conteudos-2-2-hospedar: versão de configuração da hospedagem
 - v2-conteudos-2-3-programs: versão de desenvolvimento da seção programs
-
-#### 👨‍💻 Como Executar Localmente
-
-````gitbash
-# Clone o repositório
-git clone https://github.com/seu-usuario/seu-repo.git
-
-# Acesse a pasta
-cd seu-repo
-
-# Instale as dependências
-npm install
-
-# Rode o projeto
-npm run dev
-````
 
 
 ---
@@ -124,6 +106,7 @@ npm run dev
 - [x] Criar o conteúdo 
 - [x] Criar o progresso
 - [x] Criar o Quiz
+
 - 🌟 PROGRAMS 🌟 - Importantes
 - [x] 1. Sistema de Progresso Dinâmico dos Módulos
 - [x] ✅ Implementado useState para rastrear módulo completado (completedModuleIndex)
