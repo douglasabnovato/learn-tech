@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/nav/Navbar";
 import Footer from "./components/footer/Footer";
 import { Home } from "./pages/home/Home";
-import { SoftSkills } from "./pages/home/quickaccess/softskills/SoftSkills";
+import { Softskills } from "./pages/home/quickaccess/softskills/Softskills";
 import { Mentorias } from "./pages/home/quickaccess/mentorias/Mentorias";
 import { Programs } from "./pages/programs/Programs";
 import { Detail } from "./pages/detail/Detail";
@@ -43,7 +43,7 @@ function App() {
             <Route path="/careers" element={<Carreiras />} />
             <Route path="/aprender" element={<Aprender />} />
             <Route path="/blog/:id" element={<BlogOne />} />
-            <Route path="/softskills" element={<SoftSkills />} />
+            <Route path="/softskills" element={<Softskills />} />
             <Route path="/mentorias" element={<Mentorias />} />
             <Route path="/resources" element={<Recursos />} />
             <Route path="/about" element={<About />} />

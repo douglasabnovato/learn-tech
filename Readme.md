@@ -1,11 +1,9 @@
 # 🚀 Learn TECH
 
-O ECOSSISTEMA de (T)ecnologia, (E)nsino, (C)omputação e (H)umano para treinamento de APRENDIZADO.
+A Learn TECH tem como objetivo acelarar a jornada para aperfeiçoar os resultados. 
+Com uma experiência de usuário impecável, vamos construir um ECOSSISTEMA de (T)ecnologia, (E)nsino, (C)omputação e (H)umano para treinamento de APRENDIZADO.
 
-Com uma experiência de usuário impecável, a Learn TECH tem como objetivo acelarar a jornada para aperfeiçoar os resultados. 
-
-A primeira versão será de curadoria de links e conteúdos estáticos.
-A segunda versão trará conteúdos originais e personalizados.
+Teremos um modo off com curadoria de links e conteúdos ordenados e comentados. E o outro modo com conteúdos originais e personalizados.
  
 ## 📂 Plataforma de Aprendizado
 
@@ -18,9 +16,23 @@ A segunda versão trará conteúdos originais e personalizados.
     - Facilitar interações (fóruns, comentários, avaliações). 
 - Exemplos famosos: Moodle, Udemy, Coursera, Hotmart. 
 
-### 📷 Preview da versão em produção
+### 📷 Preview da versão em produção 
 
-(adicione aqui imagens ou GIFs mostrando a interface do projeto)
+- ![Home](./.github/versao-2/1-home-1.jpg)
+- ![Home](./.github/versao-2/1-home-2.jpg)
+- ![Home](./.github/versao-2/1-home-3.jpg)
+- ![Home](./.github/versao-2/1-home-4.jpg)
+- ![Home](./.github/versao-2/1-home-5.jpg)
+- ![Home](./.github/versao-2/1-home-6.jpg)
+- ![Home](./.github/versao-2/1-home-7.jpg)
+- ![Programas](./.github/versao-2/2-programas-1.jpg)
+- ![Programas](./.github/versao-2/2-programas-2.jpg)
+- ![Programas](./.github/versao-2/2-programas-3.jpg)
+- ![Programas](./.github/versao-2/2-programas-4.jpg)
+- ![Recursos](./.github/versao-2/3-recursos-1.jpg)
+- ![Recursos](./.github/versao-2/3-recursos-2.jpg)
+- ![Sobre](./.github/versao-2/4-sobre-1.jpg)
+- ![Contato](./.github/versao-2/5-contato-1.jpg)
 
 ### 📂 Estratégia do Projeto
 
@@ -38,7 +50,7 @@ Jornada profissional e conteúdos originais personalizados para a prestação de
 ---
 
 
-## 🚀 Workflow
+## 👨‍💻 Workflow
 
 - main: manter em produção
 - developer: tratar testes e merge
@@ -49,22 +61,6 @@ Jornada profissional e conteúdos originais personalizados para a prestação de
 - v2-conteudos-2-1-home: versão de desenvolvimento da seção home
 - v2-conteudos-2-2-hospedar: versão de configuração da hospedagem
 - v2-conteudos-2-3-programs: versão de desenvolvimento da seção programs
-
-#### 👨‍💻 Como Executar Localmente
-
-````gitbash
-# Clone o repositório
-git clone https://github.com/seu-usuario/seu-repo.git
-
-# Acesse a pasta
-cd seu-repo
-
-# Instale as dependências
-npm install
-
-# Rode o projeto
-npm run dev
-````
 
 
 ---
@@ -124,6 +120,7 @@ npm run dev
 - [x] Criar o conteúdo 
 - [x] Criar o progresso
 - [x] Criar o Quiz
+
 - 🌟 PROGRAMS 🌟 - Importantes
 - [x] 1. Sistema de Progresso Dinâmico dos Módulos
 - [x] ✅ Implementado useState para rastrear módulo completado (completedModuleIndex)
@@ -340,16 +337,16 @@ Produto final: plataforma LMS completa, responsiva e funcional.
 - 🚀 Melhorias Futuras <br>
 Dashboard do aluno, sistema de pagamentos, certificado digital.
 
-#### 📷 Preview da interface do projeto
+#### 📷 Preview da interface do projeto da versão 1
 
-- ![Home](./.github/1-home.jpg)
-- ![Home](./.github/2-home.jpg)
-- ![Home](./.github/3-home.jpg)
-- ![Home](./.github/4-home.jpg)
-- ![Home](./.github/5-home.jpg)
-- ![Programas](./.github/6-programas.jpg)
-- ![Programas](./.github/7-programas.jpg)
-- ![Sign In](./.github/8-signin.jpg)
+- ![Home](./.github/original/1-home.jpg)
+- ![Home](./.github/original/2-home.jpg)
+- ![Home](./.github/original/3-home.jpg)
+- ![Home](./.github/original/4-home.jpg)
+- ![Home](./.github/original/5-home.jpg)
+- ![Programas](./.github/original/6-programas.jpg)
+- ![Programas](./.github/original/7-programas.jpg)
+- ![Sign In](./.github/original/8-signin.jpg)
    
 #### 🔗 Orientações:
  
