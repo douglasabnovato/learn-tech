@@ -104,8 +104,31 @@ export const Carreiras = () => {
                         );
                     })}
                 </div>
-            </div>
+            </div> 
 
+            {/* DESTAQUE — CONVITE AO CAREER */}
+            <div className="w-full md:px-16 sm:px-10 px-4 md:pb-20 pb-14">
+                <div className="max-w-4xl mx-auto rounded-3xl overflow-hidden bg-gradient-to-r from-indigo-600 via-purple-600 to-orange-500 p-10 md:p-14 text-center space-y-6">
+                    <p className="text-white/80 text-sm font-medium uppercase tracking-wide">
+                        Isso foi só uma introdução
+                    </p>
+                    <h2 className="text-2xl md:text-3xl font-bold text-white leading-snug">
+                        15 empresas · 16 oportunidades · 12 mentores
+                    </h2>
+                    <p className="text-white/90 text-base max-w-xl mx-auto">
+                        Catalogados e atualizados, em um espaço feito só para isso.
+                    </p>
+                    <a
+                        href="https://douglasabnovato.github.io/career/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 bg-white text-orange-600 font-semibold py-3 px-8 rounded-full hover:bg-orange-50 transition-colors duration-300"
+                    >
+                        Explorar o Career
+                        <FaArrowRight />
+                    </a>
+                </div>
+            </div>
             {/* FECHO */}
             <div className="w-full md:px-16 sm:px-10 px-4 md:py-20 py-14">
                 <div className="max-w-2xl mx-auto text-center space-y-6">
