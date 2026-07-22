@@ -207,6 +207,30 @@ export const Recursos = () => {
                     </Link>
                 </div>
             </div>
+
+            {/* DESTAQUE — CONVITE AO TOOLS */}
+            <div className="w-full md:px-16 sm:px-10 px-4 md:pb-20 pb-14">
+                <div className="max-w-4xl mx-auto rounded-3xl overflow-hidden bg-gradient-to-r from-indigo-600 via-purple-600 to-[#0ad2ff] p-10 md:p-14 text-center space-y-6">
+                    <p className="text-white/80 text-sm font-medium uppercase tracking-wide">
+                        Curadoria pra otimizar seu workflow
+                    </p>
+                    <h2 className="text-2xl md:text-3xl font-bold text-white leading-snug">
+                        42 ferramentas · 9 hospedagens
+                    </h2>
+                    <p className="text-white/90 text-base max-w-xl mx-auto">
+                        Selecionadas e testadas, organizadas por categoria, num só lugar.
+                    </p>
+                    <a
+                        href="https://douglasabnovato.github.io/tools/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 bg-white text-[#0ad2ff] font-semibold py-3 px-8 rounded-full hover:bg-cyan-50 transition-colors duration-300"
+                    >
+                        Explorar o Tools
+                        <FaArrowRight />
+                    </a>
+                </div>
+            </div>
         </div>
     );
 };
