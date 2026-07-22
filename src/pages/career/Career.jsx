@@ -104,7 +104,22 @@ export const Carreiras = () => {
                         );
                     })}
                 </div>
-            </div> 
+            </div>
+
+            {/* FECHO */}
+            < div className="w-full md:px-16 sm:px-10 px-4 md:py-20 py-14">
+                <div className="max-w-2xl mx-auto text-center space-y-6">
+                    <p className="text-xl md:text-2xl font-semibold text-neutral-800 leading-snug">
+                        {closingText}
+                    </p>
+                    <Link
+                        to="/programs"
+                        className="inline-flex items-center gap-2 text-neutral-50 bg-gradient-to-tr from-indigo-500 via-sky-700 via-20% to-purple-700 cursor-pointer py-3 px-8 rounded-full font-semibold ease-in-out duration-300 hover:opacity-90"
+                    >
+                        Construir a base técnica <FaArrowRight />
+                    </Link>
+                </div>
+            </div>
 
             {/* DESTAQUE — CONVITE AO CAREER */}
             <div className="w-full md:px-16 sm:px-10 px-4 md:pb-20 pb-14">
@@ -129,20 +144,6 @@ export const Carreiras = () => {
                     </a>
                 </div>
             </div>
-            {/* FECHO */}
-            <div className="w-full md:px-16 sm:px-10 px-4 md:py-20 py-14">
-                <div className="max-w-2xl mx-auto text-center space-y-6">
-                    <p className="text-xl md:text-2xl font-semibold text-neutral-800 leading-snug">
-                        {closingText}
-                    </p>
-                    <Link
-                        to="/programs"
-                        className="inline-flex items-center gap-2 text-neutral-50 bg-gradient-to-tr from-indigo-500 via-sky-700 via-20% to-purple-700 cursor-pointer py-3 px-8 rounded-full font-semibold ease-in-out duration-300 hover:opacity-90"
-                    >
-                        Construir a base técnica <FaArrowRight />
-                    </Link>
-                </div>
-            </div>
-        </div>
+        </div >
     );
 };

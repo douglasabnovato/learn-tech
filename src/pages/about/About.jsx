@@ -119,6 +119,31 @@ export const About = () => {
           </Link>
         </div>
       </div>
+
+      {/* DESTAQUE — CONVITE AOS BOOTCAMPS */}
+      <div className="w-full md:px-16 sm:px-10 px-4 md:pb-20 pb-14">
+        <div className="max-w-4xl mx-auto rounded-3xl overflow-hidden bg-gradient-to-r from-indigo-600 via-purple-600 to-[#00C853] p-10 md:p-14 text-center space-y-6">
+          <p className="text-white/80 text-sm font-medium uppercase tracking-wide">
+            Retrospectiva e o que vem a seguir
+          </p>
+          <h2 className="text-2xl md:text-3xl font-bold text-white leading-snug">
+            13 experiências catalogadas
+          </h2>
+          <p className="text-white/90 text-base max-w-xl mx-auto">
+            Bootcamps, formações e comunidades — o que já concluí e o que ainda tenho na mira.
+          </p>
+          <a
+            href="https://bootcamps-dun.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-white text-[#00C853] font-semibold py-3 px-8 rounded-full hover:bg-green-50 transition-colors duration-300"
+          >
+            Explorar os Bootcamps
+            <FaArrowRight />
+          </a>
+        </div>
+      </div>
+      
     </div>
   );
 };

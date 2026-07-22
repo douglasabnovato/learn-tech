@@ -61,6 +61,7 @@ Jornada profissional e conteúdos originais personalizados para a prestação de
 - v2-conteudos-2-1-home: versão de desenvolvimento da seção home
 - v2-conteudos-2-2-hospedar: versão de configuração da hospedagem
 - v2-conteudos-2-3-programs: versão de desenvolvimento da seção programs
+- v2-conteudos-3-mvp: versão de desenvolvimento de detalhes importantes
 
 
 ---
