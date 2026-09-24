@@ -1,10 +1,10 @@
 # 🚀 Learn TECH
 
-A Learn TECH tem como objetivo acelarar a jornada para aperfeiçoar os resultados. 
+A Learn TECH tem como objetivo acelerar a jornada para aperfeiçoar os resultados.
 Com uma experiência de usuário impecável, vamos construir um ECOSSISTEMA de (T)ecnologia, (E)nsino, (C)omputação e (H)umano para treinamento de APRENDIZADO.
 
-Teremos um modo off com curadoria de links e conteúdos ordenados e comentados. E o outro modo com conteúdos originais e personalizados.
- 
+🔗 **Em produção:** https://learn-tech-pied.vercel.app/
+
 ## 📂 Plataforma de Aprendizado
 
 - Um LMS (Learning Management System) é um Sistema de Gestão de Aprendizagem.
@@ -13,230 +13,269 @@ Teremos um modo off com curadoria de links e conteúdos ordenados e comentados. 
     - Gerenciar usuários (alunos, professores, administradores).
     - Acompanhar progresso e desempenho dos alunos.
     - Emitir certificados após conclusão de cursos ou trilhas.
-    - Facilitar interações (fóruns, comentários, avaliações). 
-- Exemplos famosos: Moodle, Udemy, Coursera, Hotmart. 
-
-### 📷 Preview da versão em produção 
-
-- ![Home](./.github/versao-2/1-home-1.jpg)
-- ![Home](./.github/versao-2/1-home-2.jpg)
-- ![Home](./.github/versao-2/1-home-3.jpg)
-- ![Home](./.github/versao-2/1-home-4.jpg)
-- ![Home](./.github/versao-2/1-home-5.jpg)
-- ![Home](./.github/versao-2/1-home-6.jpg)
-- ![Home](./.github/versao-2/1-home-7.jpg)
-- ![Programas](./.github/versao-2/2-programas-1.jpg)
-- ![Programas](./.github/versao-2/2-programas-2.jpg)
-- ![Programas](./.github/versao-2/2-programas-3.jpg)
-- ![Programas](./.github/versao-2/2-programas-4.jpg)
-- ![Recursos](./.github/versao-2/3-recursos-1.jpg)
-- ![Recursos](./.github/versao-2/3-recursos-2.jpg)
-- ![Sobre](./.github/versao-2/4-sobre-1.jpg)
-- ![Contato](./.github/versao-2/5-contato-1.jpg)
+    - Facilitar interações (fóruns, comentários, avaliações).
+- Exemplos famosos: Moodle, Udemy, Coursera, Hotmart.
 
 ### 📂 Estratégia do Projeto
 
-Para permitir acesso para todos que quiserem aprender tecnologia, a plataforma apresentará um conteúdo público da internet de forma organizada, ordenada e selecionada.
+Para permitir acesso para todos que quiserem aprender tecnologia, a plataforma apresenta um conteúdo público da internet de forma organizada, ordenada e selecionada.
 
-#### 🚀 OFF
+#### 🚀 OFF — o que está sendo construído hoje
 
 Curadoria e ordenação de conteúdos da internet conforme os critérios adotados pelo Coordenador do nosso ECOSSISTEMA.
 
-#### 🚀 ON
+**Decisão de set/2026: a plataforma é OFF-only.** Não há autenticação, sessão, login, cadastro ou conta de usuário. Todo o conteúdo é aberto. O progresso de módulos e o histórico de quiz ficam no `localStorage` do navegador do próprio visitante.
 
-Jornada profissional e conteúdos originais personalizados para a prestação de consultoria, desenvolvimento de produtos e serviços. 
+#### 🚀 ON — planejado, ainda não iniciado
 
- 
+Jornada profissional e conteúdos originais personalizados para a prestação de consultoria, desenvolvimento de produtos e serviços. Exigirá conta de usuário, e por isso está fora do escopo atual.
+
+### 📚 Fontes de conteúdo
+
+Os treinamentos são produzidos a partir de duas fontes:
+
+1. **`src/constants/programsData.js`** — o catálogo e o conteúdo dos programas já publicados no projeto.
+2. **Arquivos originais de cursos, treinamentos e anotações** — material próprio, que vira texto, depois roteiro de aula, depois programa.
+
 ---
 
+## ▶️ Como rodar
+
+```bash
+# instalar dependências
+npm install
+
+# ambiente de desenvolvimento
+npm run dev
+
+# build de produção
+npm run build
+
+# pré-visualizar o build
+npm run preview
+
+# checar o padrão de código
+npm run lint
+
+# rodar os testes do contrato de dados
+npm test
+```
+
+O projeto sobe em `http://localhost:3000`.
+
+### 🛠️ Stack
+
+| Tecnologia | Versão | Uso |
+| --- | --- | --- |
+| [React](https://react.dev/) | 19 | interface |
+| [Vite](https://vitejs.dev/) | 6 | build e dev server |
+| [Tailwind CSS](https://tailwindcss.com/) | 4 | estilo |
+| [React Router](https://reactrouter.com/) | 7 | rotas |
+| [Vitest](https://vitest.dev/) | 4 | testes |
+| [lucide-react](https://lucide.dev/) · [react-icons](https://react-icons.github.io/react-icons/) | — | ícones |
+
+---
+
+## 🧱 Arquitetura de conteúdo
+
+O conteúdo é **dado, não componente**. Nenhum programa tem arquivo `.jsx` próprio: um único renderizador lê o objeto do programa e monta a página.
+
+```
+src/constants/programsData.js     ← a fonte única do catálogo e do conteúdo
+        │
+        ├── Detail.jsx            ← página de apresentação do programa
+        └── EnrollPrograms.jsx    ← página do treinamento
+                └── Description.jsx
+                        └── TabContent.jsx       ← uma aba por módulo
+                                └── ModuleRenderer.jsx   ← renderiza qualquer módulo
+```
+
+### O que cada programa carrega
+
+| Campo | O que é |
+| --- | --- |
+| `id`, `title`, `category`, `categoryFilter` | identificação e filtro no catálogo |
+| `modules[]` | a lista de módulos: `id`, `title`, `lessonsCount` |
+| `moduleContents[]` | o conteúdo de cada módulo: seções, passos, código, dicas, destaques, CTA |
+| `enrollDetails.moduleOverviews[]` | a ementa exibida antes de entrar |
+| `quiz[]` | as questões, cada uma apontando para um `moduleId` |
+| `video`, `videoPoster` | opcionais |
+
+### Regras que o renderizador assume
+
+- O **título do módulo é o mesmo** em `modules[]`, em `moduleContents[]` e na ementa.
+- `lessonsCount` é **igual ao número real de passos** do módulo — não é um número digitado à mão.
+- Os passos são numerados de 1 em diante, sem pular e sem repetir.
+- Os ícones são **nomes simbólicos** (`bolt`, `github`, `rocket`…) resolvidos por um mapa dentro do `ModuleRenderer.jsx`. A camada de dados não importa React.
+- O progresso é calculado a partir de `modules.length`. Um programa pode ter 4 módulos, outro 6 — não há número fixo.
+- Cada quiz grava em `localStorage` sob a chave do próprio programa: `quiz:<id>:respostas` e `quiz:<id>:historico`.
+
+### 🧪 Testes
+
+`src/constants/dados.test.js` é o contrato de dados. Ele quebra o build quando um programa fica inconsistente:
+
+- id repetido no catálogo
+- módulo listado sem conteúdo correspondente, ou conteúdo órfão sem módulo
+- título divergente entre `modules[]`, `moduleContents[]` e a ementa
+- `lessonsCount` diferente da contagem real de passos
+- ícone que não existe no renderizador
+- questão apontando para módulo inexistente, sem alternativa correta ou sem explicação
+- presença de `rating` ou `students` — números que a plataforma não consegue medir
+
+```bash
+npm test
+```
+
+---
+
+## 📚 Catálogo
+
+**9 categorias, organizadas por faixa de id:**
+
+| Categoria | Faixa | Filtro |
+| --- | --- | --- |
+| Web | 1 – 100 | `web` |
+| Frontend | 101 – 200 | `frontend` |
+| UX/UI | 201 – 300 | `ux-ui` |
+| Backend | 301 – 400 | `backend` |
+| Data Base | 401 – 500 | `data-base` |
+| Produtos Digitais | 501 – 600 | `produtos-digitais` |
+| Projetos | 601 – 700 | `projetos` |
+| English | 701 – 800 | `english` |
+| IA | 801 – 900 | `ia` |
+
+### 🗺️ Estado atual
+
+**33 programas no catálogo. 3 com conteúdo publicado.**
+
+| # | Programa | Categoria | Módulos | Passos | Questões |
+| --- | --- | --- | --- | --- | --- |
+| 1 | Desenvolver uma Landing Page Moderna | Web | 6 | 21 | 18 |
+| 101 | React: Componentes, Estado e a Primeira Aplicação | Frontend | 4 | 13 | 12 |
+| 801 | Programar com IA sem Perder o Aprendizado | IA | 4 | 13 | 12 |
+
+Os outros 30 são cards de catálogo sem módulos. **Meta: um programa novo por categoria, por dia.**
+
+### 📌 Pendências conhecidas
+
+- [ ] Os 30 programas sem conteúdo precisam de um estado "em breve" — hoje a página de treinamento fica sem módulos publicados.
+- [ ] `lessons` e `duration` ainda são valores escritos à mão. Devem derivar da soma dos passos, como o `lessonsCount` já deriva.
+- [ ] `categoriesData.js` (seção Categorias da Home) lista 11 categorias — sem IA, e com Comunicação, Gestão e Tecnologia, que não têm nenhum programa. A lista de Programas tem 9, com IA. As duas precisam concordar.
+- [ ] Arquivos órfãos a remover: `src/pages/account/sigin/SignIn.jsx`, `src/pages/account/signup/SignUp.jsx`, `src/components/reviews/ReviewsCard.jsx`, `src/constants/testimonialData.js`.
+- [ ] O vídeo de demonstração do programa 1 tem 47 MB — pesado para carregamento no navegador.
+
+---
 
 ## 👨‍💻 Workflow
 
-- main: manter em produção
-- developer: tratar testes e merge
-- v1-original: versão inicial
-- v2-conteudos-0: adição do conteúdos do projeto 
-- v2-conteudos-1: versão estável com estrutura definida
-- v2-conteudos-2: versão de organização de tarefas
-- v2-conteudos-2-1-home: versão de desenvolvimento da seção home
-- v2-conteudos-2-2-hospedar: versão de configuração da hospedagem
-- v2-conteudos-2-3-programs: versão de desenvolvimento da seção programs
-- v2-conteudos-3-mvp: versão de desenvolvimento de detalhes importantes
-
-
----
-
-
-## 🚀 VERSÃO 2-2
-
-### 📚 Learn TECH
-
-#### Páginas:
-
-- 🌟 HOME 🌟:
-- [x] Imagem de destaque da Home em formato e em carrossel
-- [x] Index: nome, favicon
-- [x] criar LearnTechTitle: logo reutilizável
-- [x] Navbar: nome, logo componentizado. Home (Home), Programs (Programas), Resources (Recursos), About (Learn TECH), Contact (Fala aê), Sign In (Entre), Get Started (Cadastra-se)
-- [x] Home:
-  - [x] Subtítulo: The Leader in Online Learning
-  - [x] Título: Join Today & Start Learning
-  - [x] Descrição: The best place to discover new learning resources, books, and courses 
-  - [x] Botão CTA: Comece agora: levar para o "TOP Projetos"
-  - [x] Botão CTA: Saiba mais: levar para "Stats"
-- [x] Stats: online courses, expert tutors, students enrolled, recorded videos. Por: Javascript, HTML, CSS, ReactJS, Git, Github, NodeJS
-- [x] Categories: View All, Top Categories, Icons, Descriptions. Por: Web, Frontend, UX/UI, Backend, DataBase, ProdutosDigitais, Projetos, English
-- [x] Rever logos: Web, Frontend, UX/UI, Backend, DataBase, Produtos Digitais, Projetos, English 
-- [x] Botão fixed ao topo + Cursor pointer
-- [x] Projetos: 
-  - [x] exibir um card para cada categoria
-  - [x] botão "ver todos" levar para a página programas
-  - [x] hover no card
-- [x] Comportamentos: Soft skills em cursos: uma página em construção
-- [x] Prêmios: Mentorias em cursos: uma página em construção
-- [x] Blogs: Artigos em cursos: uma página em construção
-- [x] Footer: colunas 1, 2, 3, 4 e Copyright
-  - [x] Copyright Real Time: criar uma consulta do dia que o site está sendo acessado
-
-- 🌟 Page Error 🌟: 
-  - [x] NotFound 
-  - [x] UnderConstruction
-
-- 🌟 Hospedar 🌟:  
-  - [x] Vercel
-  - [x] Configuração com o arquivo vercel.json
-  - [x] URL: https://learn-tech-pied.vercel.app/
-
-- 🌟 PROGRAMS 🌟: 
-- [x] Busca por texto do título no input
-- [x] Filtro por categoria no select
-- [x] Contador de resultados da busca e do filtro
-- [x] Exibir apenas 4 cards. Cada vez que o usuário clicar no botão “Ver mais” → carregar +6 cards. 
-- [x] memorizar o resultado da busca com useMemo
-- [x] Estruturar programas por centenas: web (1 a 100), frontend (101 a 200), ux-ui (201 a 300), backend (301 a 400), data-base (401 a 500), produtos-digitais (501 a 600), projetos (601 a 700), english (701 a 800) 
-- [x] hover no card
-- [x] Para cada card, uma página especialista
-- [x] Home: a home exibe uma breve demonstração do que cada tipo de conteúdo tem para apresentar. Cada tipo de conteúdo está no 
-- [x] Fazer para 3 programas: apresentação e conteúdo
-- [x] Criar o conteúdo 
-- [x] Criar o progresso
-- [x] Criar o Quiz
-
-- 🌟 PROGRAMS 🌟 - Importantes
-- [x] 1. Sistema de Progresso Dinâmico dos Módulos
-- [x] ✅ Implementado useState para rastrear módulo completado (completedModuleIndex)
-- [x] ✅ Cálculo automático de progresso: (módulos completados / 6) × 100
-- [x] ✅ Barra de progresso visual atualiza em tempo real
-- [x] ✅ Cada módulo = 16,67% de progresso (100% ÷ 6 módulos)
-- [x] 2. Renderização Dinâmica de Módulos
-- [x] ✅ Lista de 6 módulos renderizada dinamicamente de programsData.modules
-- [x] ✅ Status automático para cada módulo: ✅ Completo | ▶️ Atual | — Pendente
-- [x] ✅ Indicadores visuais (ícones + cores) baseados no status
-- [x] ✅ Opacidade reduzida para módulos não iniciados
-- [x] 3. Sistema de Callbacks para Avançar Módulos
-- [x] ✅ Props onCompleteModule e completedModuleIndex passadas através da cadeia
-- [x] ✅ EnrollPrograms → Description → TabContent → Módulos (0-5)
-- [x] ✅ Função handleCompleteModule() verifica se módulo pode avançar
-- [x] ✅ Apenas incrementa se o novo módulo for >= atual
-- [x] 4. Botões Funcionais nos Módulos
-- [x] ✅ Cada módulo (ModuleZero até ModuleFive) aceita prop onComplete
-- [x] ✅ Botão ao final de cada módulo chamado com onClick={onComplete}
-- [x] ✅ Clique no botão = avança progresso + atualiza sidebar
-- [x] ✅ Navegação por abas permanece livre (sem afetar progresso)
-- [x] 5. Análise Completa do Quiz
-- [x] ✅ Documentado comportamento de 18 questões (3 por módulo)
-- [x] ✅ Mapeado fluxo de resposta: seleção → delay 1s → resultado → localStorage
-- [x] ✅ Entendimento de estados: pending | respondida | correta | incorreta
-- [x] ✅ Explicado sistema de persistência com localStorage
-- [x] 6. Reinicialização do Quiz
-- [x] ✅ Função handleRestart() implementada
-- [x] ✅ Botão "🔄 Reiniciar Quiz" aparece na questão 18 (quando todas respondidas)
-- [x] ✅ Botão substitui "Next" automaticamente quando quiz está 100% completo
-- [x] ✅ Estilo visual destacado (cor verde)
-- [x] 7. Card com Placar Final
-- [x] ✅ Card exibe apenas quando as 18 questões estão respondidas
-- [x] ✅ Mostra título "🎉 Quiz Concluído!"
-- [x] ✅ Calcula e exibe: X de 18 questões acertadas
-- [x] ✅ Barra de progresso visual do percentual de acertos
-- [x] ✅ Percentual de acurácia em tempo real
-- [x] 8. Histórico de Tentativas com Registro
-- [x] ✅ Cada tentativa registrada com: ID sequencial, timestamp, score (0-18)
-- [x] ✅ Data formatada em português: "24/02/2026 às 14:30:45"
-- [x] ✅ 1 ponto = 1 questão correta (máximo 18 pontos)
-- [x] ✅ Listagem scrollável de todas as tentativas
-- [x] ✅ Exibe "Tentativa X | Data e Hora | Pontos/18"
-- [x] 9. Persistência com localStorage
-- [x] ✅ Respostas do quiz salvas em quizAnswers
-- [x] ✅ Histórico de tentativas salvo em quizHistory
-- [x] ✅ Dados recuperados automaticamente ao voltar para página
-- [x] ✅ Limpeza automática de resposta atual ao reiniciar
-- [x] ✅ Histórico permanece mesmo após reiniciar (acumulativo)
-- [x] 10. Melhorias de UX
-- [x] ✅ Progressão visual clara (barra + percentual + lista de módulos)
-- [x] ✅ Feedback imediato ao responder questões (ícone ✅/❌)
-- [x] ✅ Navegação intuitiva (Previous/Next + Reiniciar)
-- [x] ✅ Dados persistem entre sessions (localStorage)
-- [x] ✅ Estados desabilitados impedem ações inválidas
-
-- 🌟 RECURSOS 🌟
-  - [x] Conteúdos atuais do projeto
-  - [x] Conteúdos futuros do projeto
-
-- 🌟 LEARN TECH 🌟
-  - [x] Propósito do projeto
-
-- 🌟 FALA AÊ 🌟
- - [x] FAQ 
- - [x] Canal de comunicação do usuário com a equipe idealizadora
-  - configurar a ferramenta 
-
-#### Funcionalidades:
-
-- 🌟 LOGIN 🌟
-- 🌟 REGISTER 🌟
-
-#### Seções da HOME:
-
-- 🌟 Hero 🌟 
-  - design
-  - botão 1 
-  - botão 2
-
-- 🌟 Tecnologias 🌟 
-  - nome tecnologia 
-  - imagem tecnologia 
-  - quantidade de conteúdos 
-  - categoria
-
-- 🌟 Top Categorias 🌟 
-  - listagem de categorias 
-  - uma plano de formação com essas categorias 
-
-- 🌟 Top Projetos 🌟  
-  - Oito projetos de destaque
-  - Listagem com 32 projetos 
-    - card
-    - apresentação
-    - conteúdo
-
-- 🌟 Premios 🌟
-
-- 🌟 Top Artigos 🌟
-  - Cinco artigos de destaque
-  - Listagem com 11 projetos 
-
-- 🌟 Footer 🌟
-  - coluna 1 com a chamada do hero  
-  - coluna 2 Customer: (faq, contact us, returns, shipping)
-  - coluna 3 Quick Links: (about us, terms of service, privacy policy, careers)
-  - coluna 4 Follow Us: (Instagram, Linkedin, Youtube, Facebook, X)
-  - Copyright Real Time: criar uma consulta do dia que o site está sendo acessado 
+- `main`: manter em produção
+- `developer`: tratar testes e merge
+- `v1-original`: versão inicial
+- `v2-conteudos-0`: adição dos conteúdos do projeto
+- `v2-conteudos-1`: versão estável com estrutura definida
+- `v2-conteudos-2`: versão de organização de tarefas
+- `v2-conteudos-2-1-home`: versão de desenvolvimento da seção home
+- `v2-conteudos-2-2-hospedar`: versão de configuração da hospedagem
+- `v2-conteudos-2-3-programs`: versão de desenvolvimento da seção programs
+- `v2-conteudos-3-mvp`: versão de desenvolvimento de detalhes importantes
 
 ---
 
-## 🚀 VERSÃO 1
+## 🚀 VERSÃO 2
 
-Desenvolvimento do projeto Inicial
+### 📷 Preview da versão em produção
+
+<details>
+<summary>Ver as telas</summary>
+
+![Home](./.github/versao-2/1-home-1.jpg)
+![Home](./.github/versao-2/1-home-2.jpg)
+![Home](./.github/versao-2/1-home-3.jpg)
+![Home](./.github/versao-2/1-home-4.jpg)
+![Home](./.github/versao-2/1-home-5.jpg)
+![Home](./.github/versao-2/1-home-6.jpg)
+![Home](./.github/versao-2/1-home-7.jpg)
+![Programas](./.github/versao-2/2-programas-1.jpg)
+![Programas](./.github/versao-2/2-programas-2.jpg)
+![Programas](./.github/versao-2/2-programas-3.jpg)
+![Programas](./.github/versao-2/2-programas-4.jpg)
+![Recursos](./.github/versao-2/3-recursos-1.jpg)
+![Recursos](./.github/versao-2/3-recursos-2.jpg)
+![Sobre](./.github/versao-2/4-sobre-1.jpg)
+![Contato](./.github/versao-2/5-contato-1.jpg)
+
+</details>
+
+### 🗺️ Rotas
+
+| Rota | Página |
+| --- | --- |
+| `/` | Home |
+| `/programs` | Programas — busca, filtro e catálogo |
+| `/program/:category/:id` | Apresentação do programa |
+| `/program/:category/:id/enroll` | O treinamento |
+| `/category` | Todas as categorias |
+| `/resources` | Recursos |
+| `/about` | Learn TECH |
+| `/falaae` | Fala aê |
+| `/aprender` | Aprender |
+| `/careers` | Carreiras |
+| `/blog/:id` | Artigo |
+| `/softskills` · `/mentorias` | Em construção |
+| `/terms` · `/privacy` | Termos e Privacidade |
+| `*` | Não encontrado |
+
+### 🌟 HOME
+
+- [x] Imagem de destaque em carrossel
+- [x] Index: nome e favicon
+- [x] `LearnTechTitle`: logo reutilizável
+- [x] Navbar: Home, Programas, Recursos, Learn TECH, Fala aê
+- [x] Hero: subtítulo, título, descrição e dois botões CTA
+- [x] Stats: contagem de conteúdos por tecnologia — Javascript, HTML, CSS, ReactJS, Git, GitHub, NodeJS
+- [x] Categorias: listagem com ícone e descrição
+- [x] Projetos: um card por categoria, com hover e botão "ver todos"
+- [x] Comportamentos, Prêmios e Blogs
+- [x] Footer com 4 colunas e copyright com o ano corrente
+- [x] Botão fixo de voltar ao topo
+
+### 🌟 PROGRAMAS
+
+- [x] Busca por texto no título
+- [x] Filtro por categoria
+- [x] Contador de resultados
+- [x] Paginação incremental: 4 cards, "Ver mais" carrega +6
+- [x] Resultado memorizado com `useMemo`
+- [x] Organização por faixa de id (ver tabela de categorias)
+- [x] Uma página de apresentação para cada card
+
+### 🌟 O TREINAMENTO
+
+Como funciona a página de um programa inscrito:
+
+- **Uma aba por módulo**, montada a partir de `modules[]`.
+- Dentro do módulo, **os passos são uma checklist interativa**: o visitante marca o que concluiu e a barra de progresso do módulo acompanha.
+- Ao concluir o módulo, o botão do final avança o progresso geral do programa. A navegação entre abas continua livre — visitar uma aba não marca nada.
+- **O progresso geral** é a razão entre módulos concluídos e o total de módulos do programa, seja ele de 4 ou de 6.
+- **O quiz** é do programa, não do módulo: cada questão aponta para o módulo que responde. Ao responder, o resultado aparece com a explicação.
+- **O placar final** aparece quando todas as questões foram respondidas, com percentual de acerto.
+- **O histórico de tentativas** registra cada rodada com data, hora e pontuação, e permanece depois de reiniciar.
+- **Tudo é gravado no `localStorage`** sob a chave do programa, e recuperado ao voltar. Como não há conta de usuário, o progresso é do navegador.
+- **Vídeo e pôster** são opcionais: só aparecem no programa que os define.
+
+### 🌟 DEMAIS PÁGINAS
+
+- [x] **Recursos**: conteúdos atuais e futuros do projeto
+- [x] **Learn TECH**: propósito do projeto
+- [x] **Fala aê**: FAQ e canal de comunicação com a equipe idealizadora
+- [x] **Erro**: Não encontrado e Em construção
+- [x] **Hospedagem**: Vercel, com `vercel.json` para o roteamento de SPA
+
+---
+
+## 🚀 VERSÃO 1 — histórico
+
+Desenvolvimento do projeto inicial, mantido aqui como registro da origem. A arquitetura descrita nesta seção foi substituída pela Versão 2.
 
 ### 📚 LearnHub — Plataforma LMS Online Responsiva
 
@@ -244,131 +283,67 @@ Desenvolvimento do projeto Inicial
 
 #### 🚀 Visão Geral
 
-Este projeto é inspirado em plataformas como Udemy, trazendo recursos essenciais de um Learning Management System (LMS):
+Projeto inspirado em plataformas como Udemy, trazendo recursos essenciais de um Learning Management System:
 
-    - Exibição de cursos, categorias e estatísticas
-    - Páginas de programas e detalhes
-    - Player de vídeo embutido
-    - Sistema de quizzes
-    - Blog integrado
-    - Design 100% responsivo
+- Exibição de cursos, categorias e estatísticas
+- Páginas de programas e detalhes
+- Player de vídeo embutido
+- Sistema de quizzes
+- Blog integrado
+- Design 100% responsivo
 
 Construído passo a passo para ser acessível tanto a iniciantes quanto a desenvolvedores experientes.
 
-#### 📖 Roadmap do Desenvolvimento 
+#### 📖 Roadmap do Desenvolvimento
 
-- 🎬 Intro <br>
-Apresentação do objetivo do projeto: criação de uma plataforma LMS responsiva utilizando ReactJS + TailwindCSS.
+- 🎬 **Intro** — apresentação do objetivo do projeto: criação de uma plataforma LMS responsiva com ReactJS + TailwindCSS.
+- ⚙️ **Project Setup** — configuração inicial com Vite, TailwindCSS e demais dependências.
+- 🏠 **Home Page** — estrutura inicial da página principal com navegação e seções base.
+- 🌟 **Hero Section** — seção de destaque com chamada principal e banner ilustrativo.
+- 📊 **Stats Section** — exibição de estatísticas em cards.
+- 📂 **Category Section** — listagem de categorias de cursos.
+- 📚 **Programs Section** — apresentação dos programas disponíveis em cards.
+- ⚡ **Quick Access Section** — navegação rápida entre recursos importantes.
+- 📝 **Blog Section** — seção de artigos com conteúdo educativo.
+- 📄 **Programs Page** — página dedicada aos programas.
+- 🏞️ **Page Top Banner** — componente reutilizável de banner no topo das páginas internas.
+- 🧭 **Breadcrumb** — componente de navegação por caminho de páginas.
+- 📑 **Details Page** — página de detalhes de cada curso.
+- 📝 **Enroll Programs Page** — página de inscrição no curso.
+- 🎥 **Video Player Section** — componente de player de vídeo.
+- 🖊️ **Description Section** — descrição completa do curso.
+- 🗂️ **Tabs Components** — abas para alternar entre seções do curso.
+- 📋 **Overview Tabs** — aba de visão geral.
+- 📦 **Resources Tabs** — aba de recursos adicionais.
+- ⭐ **Reviews Tabs** — aba de avaliações. *Removida na Versão 2: a plataforma não exibe avaliação que não consegue medir.*
+- 📈 **Course Progress** — progresso do aluno dentro do curso.
+- ❓ **Quiz Section** — quizzes interativos.
+- 🔑 **Sign In Page** e 🆕 **Sign Up Page** — login e registro. *Removidas na Versão 2: a plataforma é OFF-only.*
+- ✅ **Final Product** — plataforma LMS completa, responsiva e funcional.
 
-- ⚙️ Project Setup <br>
-Configuração inicial do ambiente com Vite, instalação do TailwindCSS e demais dependências.
+#### 📷 Preview da versão 1
 
-- 🏠 Home Page <br>
-Estrutura inicial da página principal com navegação e seções base.
+<details>
+<summary>Ver as telas</summary>
 
-- 🌟 Hero Section <br>
-Seção de destaque da Home com chamada principal e imagem/banner ilustrativo.
+![Home](./.github/original/1-home.jpg)
+![Home](./.github/original/2-home.jpg)
+![Home](./.github/original/3-home.jpg)
+![Home](./.github/original/4-home.jpg)
+![Home](./.github/original/5-home.jpg)
+![Programas](./.github/original/6-programas.jpg)
+![Programas](./.github/original/7-programas.jpg)
+![Sign In](./.github/original/8-signin.jpg)
 
-- 📊 STATS Section <br>
-Exibição de estatísticas (ex.: alunos, cursos, avaliações) em cards chamativos.
+</details>
 
-- 📂 Category Section <br>
-Listagem de categorias de cursos para facilitar a navegação do usuário.
+#### 🔗 Referências da versão 1
 
-- 📚 Programs Section <br>
-Apresentação dos programas/cursos disponíveis com cards detalhados.
+- G-Tech Official — *How to Create an Online LMS Education Website using React Js and Tailwind CSS*: https://www.youtube.com/watch?v=tiwu5UHCUhQ
+- Template inicial: https://github.com/gtech-official08/lmssys-starter-template
+- Vídeo demo: https://www.youtube.com/watch?v=C9Kj594dRxU
+- Imagens: [Pixabay](https://pixabay.com/)
 
-- ⚡ Quick Access Section <br>
-Área para navegação rápida entre recursos importantes da plataforma.
+---
 
-- 📝 Blog Section <br>
-Sessão de artigos/posts com conteúdo educativo e informativo.
-
-- 📄 Programs Page <br>
-Página dedicada aos programas, exibindo lista completa de cursos disponíveis.
-
-- 🏞️ Page Top Banner Components <br>
-Componente reutilizável para exibir banners no topo das páginas internas.
-
-- 🧭 Breadcrumb Components <br>
-Componente de navegação (caminho de páginas) para melhorar a usabilidade.
-
-- 📄 Programs Page (Contd...) <br>
-Continuação da implementação da página de programas com detalhes adicionais.
-
-- 📑 Details Page <br>
-Página de detalhes de cada curso, com informações aprofundadas do conteúdo.
-
-- 📝 Enroll Programs Page <br>
-Página para inscrição do aluno no curso escolhido.
-
-- 🎥 Video Player Section <br>
-Componente de player de vídeo para exibir aulas.
-
-- 🖊️ Description Section <br>
-Sessão dedicada à descrição completa do curso.
-
-- 🗂️ Tabs Components <br>
-Componente de abas (tabs) para alternar entre seções do curso.
-
-- 📋 Overview Tabs Section <br>
-Aba de visão geral do curso.
-
-- 📦 Resources Tabs Section <br>
-Aba de recursos adicionais do curso (ex.: PDFs, links, materiais extras).
-
-- ⭐ Reviews Tabs Section <br>
-Aba de avaliações/comentários de alunos.
-
-- 📈 Course Progress Section <br>
-Exibição do progresso do aluno dentro do curso.
-
-- ❓ Quiz Section <br>
-Implementação de quizzes interativos para reforçar o aprendizado.
-
-- 🔑 Sign In Page <br>
-Página de login com autenticação de usuários.
-
-- 🆕 Sign Up Page <br>
-Página de registro para novos alunos.
-
-- ✅ Final Product <br>
-Produto final: plataforma LMS completa, responsiva e funcional.
-
-- 🚀 Melhorias Futuras <br>
-Dashboard do aluno, sistema de pagamentos, certificado digital.
-
-#### 📷 Preview da interface do projeto da versão 1
-
-- ![Home](./.github/original/1-home.jpg)
-- ![Home](./.github/original/2-home.jpg)
-- ![Home](./.github/original/3-home.jpg)
-- ![Home](./.github/original/4-home.jpg)
-- ![Home](./.github/original/5-home.jpg)
-- ![Programas](./.github/original/6-programas.jpg)
-- ![Programas](./.github/original/7-programas.jpg)
-- ![Sign In](./.github/original/8-signin.jpg)
-   
-#### 🔗 Orientações:
- 
-- G-Tech Official - How to Create an Online LMS Education Website using React Js and Tailwind CSS | Like Udemy: https://www.youtube.com/watch?v=tiwu5UHCUhQ
- 
-#### 🔗 Baixar template inicial 
-
-- Template: https://github.com/gtech-official08/l  
-- Modelo: https://github.com/gtech-official08/lmssys-starter-template
-
-#### 🛠️ Tecnologias Utilizadas
-
-    - ReactJS ⚛️ https://react.dev/
-    - TailwindCSS 🎨 https://tailwindcss.com/
-    - Vite ⚡ https://vitejs.dev/
-    - React Icons 🔗 https://react-icons.github.io/react-icons/
-
-#### 🔗 Recursos
-
-- 🎨 Imagens obtidas via Pixabay https://pixabay.com/
-- 📦 Assets e snippets disponíveis no repositório 
-- 🎨 Vídeo Demo: https://www.youtube.com/watch?v=C9Kj594dRxU 
-
-### 🚀 Por: @douglasabnovato
+### 🚀 Por: [@douglasabnovato](https://github.com/douglasabnovato)
