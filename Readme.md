@@ -76,19 +76,208 @@ O projeto sobe em `http://localhost:3000`.
 
 ---
 
-## 🧱 Arquitetura de conteúdo
+# 📁 Estrutura de Pastas — Learn TECH
 
-O conteúdo é **dado, não componente**. Nenhum programa tem arquivo `.jsx` próprio: um único renderizador lê o objeto do programa e monta a página.
+> Levantada em 24/09/2026 a partir de `C:\ambiente-projeto\learn-tech`.
+> `.git`, `node_modules` e `dist` estão omitidos por serem gerados.
 
+## 🌳 Árvore
+
+```text
+learn-tech/
+│
+├── .github/                          # imagens de preview usadas no Readme
+│   ├── original/                     # 8 telas da Versão 1
+│   │   ├── 1-home.jpg
+│   │   ├── 2-home.jpg
+│   │   ├── 3-home.jpg
+│   │   ├── 4-home.jpg
+│   │   ├── 5-home.jpg
+│   │   ├── 6-programas.jpg
+│   │   ├── 7-programas.jpg
+│   │   └── 8-signin.jpg
+│   └── versao-2/                     # 15 telas da Versão 2
+│       ├── 1-home-1.jpg  →  1-home-7.jpg
+│       ├── 2-programas-1.jpg  →  2-programas-4.jpg
+│       ├── 3-recursos-1.jpg  →  3-recursos-2.jpg
+│       ├── 4-sobre-1.jpg
+│       └── 5-contato-1.jpg
+│
+├── public/                           # servido na raiz, sem passar pelo build
+│   ├── android-chrome-192x192.png
+│   ├── android-chrome-512x512.png
+│   ├── apple-touch-icon.png
+│   ├── favicon-16x16.png
+│   ├── favicon-32x32.png
+│   ├── favicon.ico
+│   └── site.webmanifest
+│
+├── src/
+│   │
+│   ├── assets/                       # imagens importadas pelo código
+│   │   ├── devs/                     # dev-4.jpg … dev-7.jpg
+│   │   ├── imgs/                     # 1-programs.png
+│   │   ├── logo/                     # logo192.png
+│   │   ├── originals/                # heros, logos SVG, page-top-bg, react.svg
+│   │   ├── programs/                 # 1-demo.mp4 (47 MB), 1-demo-poster.jpg, 1-programs.png
+│   │   └── setups/                   # dev-1 … dev-10 .avif
+│   │
+│   ├── components/                   # 15 componentes reutilizáveis
+│   │   ├── blog/BlogCard.jsx
+│   │   ├── breadcrumb/Breadcrumb.jsx
+│   │   ├── category/CategoryCard.jsx
+│   │   ├── common/ScrollToTop.jsx
+│   │   ├── footer/Footer.jsx
+│   │   ├── logo/
+│   │   │   ├── assets/               # logo192.png, logo192.svg
+│   │   │   └── LearnTechTitle.jsx
+│   │   ├── nav/Navbar.jsx
+│   │   ├── pageTop/PageTopBanner.jsx
+│   │   ├── player/VideoPlayer.jsx
+│   │   ├── programs/ProgramsCard.jsx
+│   │   ├── reviews/ReviewsCard.jsx           ⚠️ órfão
+│   │   ├── stats/StatsCard.jsx
+│   │   ├── tabs/Tabs.jsx
+│   │   └── videoGrid/
+│   │       ├── VideoGrid.jsx
+│   │       └── VideoModal.jsx
+│   │
+│   ├── constants/                    # a camada de dados — 14 arquivos + 1 teste
+│   │   ├── aboutData.js
+│   │   ├── aprenderData.js
+│   │   ├── blogData.js
+│   │   ├── careerData.js
+│   │   ├── categoriesData.js
+│   │   ├── falaaeData.js
+│   │   ├── navbarData.js
+│   │   ├── premiosData.js
+│   │   ├── privacyData.js
+│   │   ├── programsData.js           ⭐ fonte única do catálogo (120 KB)
+│   │   ├── quizData.js               # quiz do programa 1
+│   │   ├── statsData.js
+│   │   ├── termsData.js
+│   │   ├── testimonialData.js                ⚠️ órfão
+│   │   └── dados.test.js             🧪 contrato de dados
+│   │
+│   ├── pages/                        # 29 páginas e seções
+│   │   ├── about/About.jsx                       → /about
+│   │   ├── account/                              ⚠️ órfão inteiro
+│   │   │   ├── sigin/SignIn.jsx
+│   │   │   └── signup/SignUp.jsx
+│   │   ├── aprender/Aprender.jsx                 → /aprender
+│   │   ├── career/Career.jsx                     → /careers
+│   │   ├── detail/Detail.jsx                     → /program/:category/:id
+│   │   ├── docs/
+│   │   │   ├── Privacidade.jsx                   → /privacy
+│   │   │   └── Termos.jsx                        → /terms
+│   │   ├── enroll/                               → /program/:category/:id/enroll
+│   │   │   ├── EnrollPrograms.jsx
+│   │   │   ├── Description.jsx
+│   │   │   ├── quiz/Quiz.jsx
+│   │   │   └── tabContent/
+│   │   │       ├── TabContent.jsx                # uma aba por módulo
+│   │   │       └── ModuleRenderer.jsx            # renderiza qualquer módulo
+│   │   ├── error/
+│   │   │   ├── imgs/                             # 404 e em construção
+│   │   │   ├── not-found.jsx                     → *
+│   │   │   └── under-construction.jsx
+│   │   ├── falaae/FalaAe.jsx                     → /falaae
+│   │   ├── home/
+│   │   │   ├── Home.jsx                          → /
+│   │   │   ├── hero/
+│   │   │   │   ├── assets/                       # dev-4 … dev-7 .JPG
+│   │   │   │   └── Hero.jsx
+│   │   │   ├── stats/Stats.jsx
+│   │   │   ├── category/
+│   │   │   │   ├── Category.jsx
+│   │   │   │   └── CategoriesAll.jsx             → /category
+│   │   │   ├── programs/Programs.jsx             # seção da Home
+│   │   │   ├── quickaccess/
+│   │   │   │   ├── QuickAccess.jsx
+│   │   │   │   ├── mentorias/Mentorias.jsx       → /mentorias
+│   │   │   │   └── softskills/Softskills.jsx     → /softskills
+│   │   │   └── blog/
+│   │   │       ├── Blog.jsx
+│   │   │       └── BlogOne.jsx                   → /blog/:id
+│   │   ├── programs/Programs.jsx                 → /programs
+│   │   └── recursos/Recursos.jsx                 → /resources
+│   │
+│   ├── App.jsx                       # todas as rotas
+│   ├── main.jsx                      # ponto de entrada
+│   └── index.css                     # import do Tailwind
+│
+├── .gitignore
+├── eslint.config.js
+├── index.html                        # lang="pt-BR", meta description, favicons
+├── package.json
+├── package-lock.json
+├── Readme.md
+├── vercel.json                       # rewrite de SPA para a Vercel
+└── vite.config.js                    # porta 3000, svgr, tailwind
 ```
-src/constants/programsData.js     ← a fonte única do catálogo e do conteúdo
+
+## 📊 Em números
+
+| Camada | Quantidade |
+| --- | --- |
+| Componentes (`components/`) | 15 |
+| Arquivos de dados (`constants/`) | 14 + 1 teste |
+| Páginas e seções (`pages/`) | 29 |
+| Rotas registradas no `App.jsx` | 18 |
+| Imagens em `assets/` | 24 |
+| Imagens de preview em `.github/` | 23 |
+
+## 🧭 Como a estrutura funciona
+
+O projeto é **plano e orientado a dados**. Não há camada de domínio, serviço ou store: `constants/` é a fonte, `pages/` consome e `components/` desenha.
+
+```text
+constants/programsData.js
         │
-        ├── Detail.jsx            ← página de apresentação do programa
-        └── EnrollPrograms.jsx    ← página do treinamento
-                └── Description.jsx
-                        └── TabContent.jsx       ← uma aba por módulo
-                                └── ModuleRenderer.jsx   ← renderiza qualquer módulo
+        ├──→ pages/programs/Programs.jsx      (catálogo, busca e filtro)
+        ├──→ pages/detail/Detail.jsx          (apresentação do programa)
+        └──→ pages/enroll/EnrollPrograms.jsx  (o treinamento)
+                    │
+                    ├──→ Description.jsx
+                    │         └──→ tabContent/TabContent.jsx
+                    │                   └──→ tabContent/ModuleRenderer.jsx
+                    ├──→ quiz/Quiz.jsx
+                    └──→ components/player/VideoPlayer.jsx
 ```
+
+Um programa novo **não cria arquivo nenhum**: é um objeto a mais em `programsData.js`.
+
+## ⚠️ Pontos de atenção na estrutura
+
+**1. Quatro arquivos órfãos** — existem no disco, ninguém importa:
+
+```text
+src/pages/account/sigin/SignIn.jsx
+src/pages/account/signup/SignUp.jsx
+src/components/reviews/ReviewsCard.jsx
+src/constants/testimonialData.js
+```
+
+Os dois primeiros são resíduo da decisão OFF-only. Os dois últimos, da remoção dos depoimentos. Apagando `SignIn` e `SignUp`, a pasta `src/pages/account/` inteira sai junto.
+
+**2. Imagens duplicadas em três pares:**
+
+| Arquivo | Cópia | Tamanho |
+| --- | --- | --- |
+| `src/assets/logo/logo192.png` | `src/components/logo/assets/logo192.png` | 12 KB cada |
+| `src/assets/devs/dev-4…7.jpg` | `src/pages/home/hero/assets/dev-4…7.JPG` | ~890 KB no total |
+| `src/assets/imgs/1-programs.png` | `src/assets/programs/1-programs.png` | 1,7 MB cada — bytes diferentes, mesmo nome |
+
+O par de `1-programs.png` é o mais arriscado: mesmo nome, conteúdo diferente, pastas diferentes. Vale conferir qual está em uso antes de mexer.
+
+**3. Duas pastas `assets` para a mesma finalidade** — `src/assets/` e as `assets/` locais dentro de `components/logo/` e `pages/home/hero/`. Não é erro, mas é a origem da duplicação acima.
+
+**4. Dois arquivos chamados `Programs.jsx`** — `pages/programs/Programs.jsx` (a página) e `pages/home/programs/Programs.jsx` (a seção da Home). Funciona, mas confunde na busca do editor.
+
+**5. `src/assets/programs/1-demo.mp4` tem 47 MB** — está versionado no Git e é baixado pelo navegador de quem abre o programa 1.
+
+---
+
 
 ### O que cada programa carrega
 
