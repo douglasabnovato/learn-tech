@@ -169,15 +169,8 @@ Os outros 30 são cards de catálogo sem módulos. **Meta: um programa novo por 
 ## 👨‍💻 Workflow
 
 - `main`: manter em produção
-- `developer`: tratar testes e merge
-- `v1-original`: versão inicial
-- `v2-conteudos-0`: adição dos conteúdos do projeto
-- `v2-conteudos-1`: versão estável com estrutura definida
-- `v2-conteudos-2`: versão de organização de tarefas
-- `v2-conteudos-2-1-home`: versão de desenvolvimento da seção home
-- `v2-conteudos-2-2-hospedar`: versão de configuração da hospedagem
-- `v2-conteudos-2-3-programs`: versão de desenvolvimento da seção programs
-- `v2-conteudos-3-mvp`: versão de desenvolvimento de detalhes importantes
+- `developer-mvp`: tratar testes e merge
+- `feature/dev-content`: implementar funcionalidades
 
 ---
 
