@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaAnglesRight, FaStar, FaTag, FaUserTie, FaLock, FaLockOpen } from "react-icons/fa6";
+import { FaAnglesRight, FaTag, FaLock, FaLockOpen } from "react-icons/fa6";
 import { FiClock } from "react-icons/fi";
-import { IoMdHeartEmpty } from "react-icons/io";
 import { PiBookOpenTextFill } from "react-icons/pi";
 
 export const ProgramsCard = ({
@@ -10,10 +9,8 @@ export const ProgramsCard = ({
   image,
   category,
   categoryFilter,
-  rating,
   title,
   lessons,
-  students,
   duration,
   access,
   accessType,
@@ -42,15 +39,6 @@ export const ProgramsCard = ({
             <FaTag size={14} className="text-sky-700" />
             {category}
           </p>
-          <div className="flex items-center gap-x-3">
-            <p className="text-sm text-yellow-500 border border-yellow-200 rounded-full px-3 py-1 flex items-center gap-x-1">
-              <FaStar />
-              {rating}
-            </p>
-            <button className="w-8 h-8 flex items-center justify-center cursor-pointer text-neutral-400 hover:text-red-500 transition-colors">
-              <IoMdHeartEmpty size={24} />
-            </button>
-          </div>
         </div>
 
         <h3
@@ -68,11 +56,6 @@ export const ProgramsCard = ({
             <p className="text-sm text-neutral-800 font-medium flex items-center gap-x-1.5">
               <PiBookOpenTextFill size={16} className="text-neutral-500" />
               {lessons}
-            </p>
-            <div className="w-1 h-1 rounded-full bg-neutral-400"></div>
-            <p className="text-sm text-neutral-800 font-medium flex items-center gap-x-1.5">
-              <FaUserTie size={16} className="text-neutral-500" />
-              {students}
             </p>
           </div>
           <p className="text-sm text-neutral-800 font-medium flex items-center gap-x-1.5">

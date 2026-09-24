@@ -63,6 +63,7 @@ export const Programs = () => {
             <option value="data-base">Data Base</option>
             <option value="produtos-digitais">Produtos Digitais</option>
             <option value="projetos">Projetos</option>
+            <option value="ia">IA</option>
             <option value="english">English</option>
           </select>
         </div>

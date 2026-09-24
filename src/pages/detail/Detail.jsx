@@ -2,14 +2,11 @@ import React from "react";
 import { PageTopBanner } from "./../../components/pageTop/PageTopBanner";
 import { PiBookOpenTextFill } from "react-icons/pi";
 import { FiClock } from "react-icons/fi";
-import { FaUserTie } from "react-icons/fa6";
 
 import { useParams, Link } from "react-router-dom";
 import programsData from "./../../constants/programsData";
 import { NotFound } from "./../error/not-found";
 
-import testimonials from "./../../constants/testimonialData";
-import ReviewsCard from "./../../components/reviews/ReviewsCard";
 
 export const Detail = () => {
   const { category, id } = useParams();
@@ -51,11 +48,6 @@ export const Detail = () => {
                   <p className="text-sm text-neutral-800 font-medium flex items-center gap-x-1.5">
                     <FiClock size={16} className="text-neutral-500" />
                     {program.duration}
-                  </p>
-                  <div className="w-1 h-1 rounded-full bg-neutral-400"></div>
-                  <p className="text-sm text-neutral-800 font-medium flex items-center gap-x-1.5">
-                    <FaUserTie size={16} className="text-neutral-500" />
-                    {program.students}
                   </p>
                   <div className="w-1 h-1 rounded-full bg-neutral-400"></div>
                   <p className="text-sm text-neutral-800 font-medium flex items-center gap-x-1.5">
@@ -291,54 +283,25 @@ export const Detail = () => {
                 </ul>
               </div>
             </div>
-            {/** Depoimentos de alunos - criar componente */}
-            <div className="w-full space-y-6">
-              <div className="w-full flex items-center justify-between gap-4 py-4 border-b border-neutral-300 md:flex-nowrap flex-wrap">
-                <h1 className="text-xl font-semibold text-neutral-800">
-                  O que dizem nossos alunos
-                </h1>
-              </div>
-              <div className="space-y-1 5">
-                <h3 className="text-xl font-semibold text-neutral-700">
-                  Histórias que inspiram o seu próximo passo
-                </h3>
-                <p className="text-base text-neutral-600 font-normal">
-                  Confira os relatos de quem já transformou sua carreira através
-                  da nossa metodologia prática. Mais do que apenas depoimentos,
-                  estas são histórias reais de desenvolvedores que construíram
-                  sua base técnica conosco e hoje dominam as ferramentas mais
-                  requisitadas pelo mercado de tecnologia
-                </p>
-              </div>
-              <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
-                {/** Make a reviewcard */}
-                {testimonials.map((review, index) => (
-                  <div key={index} className="breake-inside-avoid w-full">
-                    <ReviewsCard testimonial={review} />
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
 
           {/* Right (price, features, buttons)*/}
           <div className="w-full md:col-span-2 col-span-5 border border-neutral-300 p-6 rounded-xl space-y-4 sticky top-28">
-            <h2 className="text-4xl text-neutral-900 font-bold">
-              Na Learn Tech você tem
+            <h2 className="text-3xl text-neutral-900 font-bold">
+              Este programa é aberto
             </h2>
             <ul className="space-y-1 w-full list-disc list-inside px-2">
               <li className="text-neutral-700 text-base font-normal">
-                Acesso a mais de 30 programas
+                Sem cadastro e sem login: é só acessar
               </li>
               <li className="text-neutral-700 text-base font-normal">
-                Níveis Iniciante, Intermediário e Avançado
+                Conteúdo em ordem, do primeiro arquivo até a publicação
               </li>
               <li className="text-neutral-700 text-base font-normal">
-                Orientações de Soft Skill
+                Quiz ao final, com explicação de cada resposta
               </li>
               <li className="text-neutral-700 text-base font-normal">
-                Tudo isso passou por uma curadoria rigorosa para garantir a
-                melhor experiência de aprendizado possível.
+                Seu progresso fica salvo neste navegador
               </li>
             </ul>
 

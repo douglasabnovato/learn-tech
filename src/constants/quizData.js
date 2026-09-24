@@ -1,5 +1,5 @@
 const questions = [
-  // MÓDULO 0: Configuração de Ambiente
+  // MÓDULO 0: Ambiente de Desenvolvimento
   // [M0 - Básico]
   {
     id: 1,
@@ -55,7 +55,7 @@ const questions = [
     ],
   },
 
-  // MÓDULO 1: UX Design e Estrutura (HTML)
+  // MÓDULO 1: Estrutura Semântica
   // [M1 - Básico]
   {
     id: 4,
@@ -125,7 +125,7 @@ const questions = [
     ],
   },
 
-  // MÓDULO 2: Estilização e Responsividade (CSS)
+  // MÓDULO 2: Layout e Responsividade
   // [M2 - Básico]
   {
     id: 7,
@@ -184,7 +184,7 @@ const questions = [
     ],
   },
 
-  // MÓDULO 3: Interatividade e Comportamento (JS)
+  // MÓDULO 3: Interatividade com JavaScript
   // [M3 - Básico]
   {
     id: 10,
@@ -248,7 +248,7 @@ const questions = [
     ],
   },
 
-  // MÓDULO 4: Entrega e Deploy
+  // MÓDULO 4: Versionamento e Publicação
   // [M4 - Básico]
   {
     id: 13,
@@ -303,7 +303,7 @@ const questions = [
     ],
   },
 
-  // MÓDULO ESPECIAL: QA e Testes
+  // MÓDULO 5: Testes e Qualidade
   // [M5 - Básico]
   {
     id: 16,

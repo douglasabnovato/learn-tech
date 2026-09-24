@@ -1,18 +1,49 @@
 import { useState, useEffect } from "react";
 import { FaCheck, FaLightbulb } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
-import questions from "./../../../constants/quizData";
+import PropTypes from "prop-types";
 
-export const Quiz = () => {
+// Leitura tolerante do armazenamento local: em navegação anônima ou com a
+// cota cheia o acesso lança, e o quiz precisa continuar funcionando sem ele.
+const ler = (chave, padrao) => {
+  try {
+    const bruto = localStorage.getItem(chave);
+    return bruto ? JSON.parse(bruto) : padrao;
+  } catch {
+    return padrao;
+  }
+};
+
+// Gravação tolerante: se o armazenamento falhar, a sessão segue sem persistir.
+const gravar = (chave, valor) => {
+  try {
+    localStorage.setItem(chave, JSON.stringify(valor));
+  } catch {
+    return;
+  }
+};
+
+// Remoção tolerante, pelo mesmo motivo.
+const remover = (chave) => {
+  try {
+    localStorage.removeItem(chave);
+  } catch {
+    return;
+  }
+};
+
+export const Quiz = ({ questions = [], storageKey = "quiz" }) => {
+  const chaveRespostas = `${storageKey}:respostas`;
+  const chaveHistorico = `${storageKey}:historico`;
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswerIndex, setSelectedAnswerIndex] = useState(null);
   const [isCorrect, setIsCorrect] = useState(false);
   const [finalized, setFinalized] = useState(false);
   const [answers, setAnswers] = useState(() => {
-    return JSON.parse(localStorage.getItem("quizAnswers")) || {};
+    return ler(chaveRespostas, {});
   });
   const [quizHistory, setQuizHistory] = useState(() => {
-    return JSON.parse(localStorage.getItem("quizHistory")) || [];
+    return ler(chaveHistorico, []);
   });
 
   useEffect(() => {
@@ -56,10 +87,10 @@ export const Quiz = () => {
 
     const updatedHistory = [...quizHistory, attempt];
     setQuizHistory(updatedHistory);
-    localStorage.setItem("quizHistory", JSON.stringify(updatedHistory));
+    gravar(chaveHistorico, updatedHistory);
 
     // Limpar respostas do quiz atual
-    localStorage.removeItem("quizAnswers");
+    remover(chaveRespostas);
     setAnswers({});
 
     // Resetar componente para início
@@ -82,7 +113,7 @@ export const Quiz = () => {
         [currentQuestion]: { index, isCorrect },
       };
       setAnswers(updatedAnswers);
-      localStorage.setItem("quizAnswers", JSON.stringify(updatedAnswers));
+      gravar(chaveRespostas, updatedAnswers);
     }, 1000);
   };
 
@@ -99,6 +130,10 @@ export const Quiz = () => {
   };
 
   const currentQ = questions[currentQuestion];
+
+  if (!currentQ) {
+    return null;
+  }
 
   return (
     <div className="w-full space-y-4">
@@ -260,4 +295,9 @@ export const Quiz = () => {
       )}
     </div>
   );
+};
+
+Quiz.propTypes = {
+  questions: PropTypes.array,
+  storageKey: PropTypes.string,
 };

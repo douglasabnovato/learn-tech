@@ -5,8 +5,6 @@ import { useParams } from "react-router-dom";
 import { PageTopBanner } from "../../components/pageTop/PageTopBanner";
 
 import { VideoPlayer } from "../../components/player/VideoPlayer";
-import DemoVideo from "./../../assets/programs/1-demo.mp4";
-import DemoPoster from "./../../assets/programs/1-demo-poster.jpg";
 
 import { Description } from "./Description";
 
@@ -62,7 +60,9 @@ export const EnrollPrograms = () => {
           {/** Video and Description */}
           <div className="w-full md:col-span-3 col-span-5 space-y-12">
             {/** Video player */}
-            <VideoPlayer src={DemoVideo} poster={DemoPoster} />
+            {program.video && (
+              <VideoPlayer src={program.video} poster={program.videoPoster} />
+            )}
             {/** Description with TabContent (modules 0-N) */}
             <Description
               program={program}
@@ -163,7 +163,10 @@ export const EnrollPrograms = () => {
               </div>
             </div>
             {/** quiz */}
-            <Quiz />
+            <Quiz
+              questions={program.quiz}
+              storageKey={`quiz:${program.id}`}
+            />
           </div>
         </div>
       </div>

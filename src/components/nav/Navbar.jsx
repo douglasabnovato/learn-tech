@@ -117,21 +117,6 @@ const Navbar = () => {
             ))}
           </ul>
 
-          {/* Buttons */}
-          <div className="flex flex-col md:flex-row items-center gap-4">
-            <Link
-              to="/signin"
-              className="w-fit px-6 py-2 rounded-full md:text-base text-xl text-neutral-800 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-indigo-500 via-sky-700 to-purple-700 font-medium bg-transparent transition-colors duration-200 cursor-pointer"
-            >
-              Entre
-            </Link>
-            <Link
-              to="/signup"
-              className="w-fit bg-gradient-to-tr hover:bg-gradient-to-tl from-indigo-500 via-sky-700 via-20% to-purple-700 text-neutral-50 cursor-pointer py-2 px-6 rounded-xl text-base font-semibold ease-in-out duration-300"
-            >
-              Cadastre-se
-            </Link>
-          </div>
         </div>
       </div>
     </div>

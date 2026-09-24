@@ -8,8 +8,6 @@ import { Programs } from "./pages/programs/Programs";
 import { Detail } from "./pages/detail/Detail";
 import { CategoriesAll } from "./pages/home/category/CategoriesAll";
 import { EnrollPrograms } from "./pages/enroll/EnrollPrograms";
-import { SignIn } from "./pages/account/sigin/SignIn";
-import { SignUp } from "./pages/account/signup/SignUp";
 import { UnderConstruction } from "./pages/error/under-construction";
 import { NotFound } from "./pages/error/not-found";
 import { Recursos } from "./pages/recursos/Recursos";
@@ -48,9 +46,6 @@ function App() {
             <Route path="/resources" element={<Recursos />} />
             <Route path="/about" element={<About />} />
             <Route path="/falaae" element={<FalaAe />} />
-            {/* Auth */}
-            <Route path="/signin" element={<SignIn />} />
-            <Route path="/signup" element={<SignUp />} />
             <Route path="/category" element={<CategoriesAll />} />
             {/* Dynamic Program Routes */}
             <Route
