@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import { FaTriangleExclamation } from "react-icons/fa6";
-import { lastUpdated, sections } from "../../constants/termsData";
+import * as termosLocal from "../../constants/termsData";
+import { usePagina } from "../../services/conteudo";
 
 export const Termos = () => {
+    const { lastUpdated, sections } = usePagina("termos", termosLocal);
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);

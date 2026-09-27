@@ -1,14 +1,11 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa6";
-import {
-  heroContent,
-  processSteps,
-  philosophyQuote,
-  differentiators,
-} from "../../constants/aboutData";
+import * as sobreLocal from "../../constants/aboutData";
+import { usePagina } from "../../services/conteudo";
 
 export const About = () => {
+  const { heroContent, processSteps, philosophyQuote, differentiators } = usePagina("sobre", sobreLocal);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

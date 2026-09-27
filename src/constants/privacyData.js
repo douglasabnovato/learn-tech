@@ -1,19 +1,22 @@
-export const lastUpdated = "19 de julho de 2026";
+/* privacyData.js — política de privacidade do ecossistema LearnTECH. Espelho local de /v1/learn-tech/paginas/privacidade.json (API). */
+
+export const lastUpdated = "27 de setembro de 2026";
 
 export const sections = [
     {
         id: "sobre",
         title: "1. Sobre esta política",
         content: [
-            "Esta página explica quais dados a learnTECH coleta, por que coleta, e quais direitos você tem sobre eles, em conformidade com a Lei Geral de Proteção de Dados (LGPD, Lei nº 13.709/2018).",
-            "Escrevemos esta política refletindo o que a plataforma realmente faz hoje — não um modelo genérico copiado de outro produto. Conforme novas funcionalidades forem lançadas (como a área de Membros), esta página será atualizada.",
+            "Esta página explica quais dados o ecossistema LearnTECH coleta, por que coleta e quais direitos você tem sobre eles, em conformidade com a Lei Geral de Proteção de Dados (LGPD, Lei nº 13.709/2018). Ela vale para os quatro sites: learn-tech, bootcamps, career e tools.",
+            "Escrevemos esta política refletindo o que a plataforma realmente faz hoje, não um modelo genérico copiado de outro produto. O LearnTECH é gratuito, sem fins comerciais e sem cadastro.",
         ],
     },
     {
         id: "dados-coletados",
         title: "2. Quais dados coletamos hoje",
         content: [
-            "Ao navegar pelo conteúdo em Acesso Livre, não coletamos nome, e-mail ou qualquer dado pessoal — o acesso é aberto, sem cadastro.",
+            "Identificação de acesso: na primeira visita, pedimos seu nome completo e e-mail. Não é cadastro nem login: não há senha e nenhum conteúdo fica bloqueado para quem já se identificou. A cada sessão registramos junto o site, a página e o horário do acesso. A finalidade é saber quantas pessoas usam o LearnTECH e quem são, porque essa identificação nos ajuda a aperfeiçoar o conteúdo.",
+            "Esses registros ficam guardados por até 12 meses e depois são apagados automaticamente. Não coletamos IP, localização, senha nem dados do seu navegador.",
             "Ao usar o formulário de contato ('Fala aê'), coletamos o nome, e-mail e a mensagem que você escreve, com a única finalidade de responder ao seu contato.",
             "As respostas que você dá no quiz de cada trilha ficam armazenadas apenas no seu próprio navegador (armazenamento local), para lembrar seu progresso. Esses dados não são enviados para nenhum servidor nem são acessados pela nossa equipe.",
         ],
@@ -23,7 +26,7 @@ export const sections = [
         title: "3. Princípios que seguimos",
         content: [
             "Seguimos os princípios do artigo 6º da LGPD no tratamento de qualquer dado pessoal: finalidade específica, coleta apenas do necessário, transparência sobre o que é feito com o dado, e segurança na forma como ele é armazenado.",
-            "Não coletamos dado além do que é preciso para a finalidade declarada, e não usamos o que você escreve no formulário de contato para qualquer propósito além de responder você.",
+            "Não coletamos dado além do que é preciso para a finalidade declarada. Nome e e-mail não são vendidos, não são compartilhados com terceiros e não são usados para enviar propaganda.",
         ],
     },
     {
@@ -31,7 +34,7 @@ export const sections = [
         title: "4. Seus direitos como titular dos dados",
         content: [
             "De acordo com o artigo 18 da LGPD, você tem direito a confirmar se tratamos algum dado seu, acessar esse dado, corrigi-lo caso esteja incompleto ou desatualizado, solicitar sua eliminação, e ser informado com quem eventualmente compartilhamos essa informação.",
-            "Como hoje só coletamos dado através do formulário de contato, exercer esses direitos é simples: basta enviar uma nova mensagem pelo próprio formulário 'Fala aê' explicando o que você precisa.",
+            "Para exercer esses direitos, inclusive pedir que todos os registros do seu e-mail sejam apagados, envie uma mensagem pelo formulário 'Fala aê' informando o e-mail usado. A exclusão apaga todos os acessos registrados com esse e-mail nos quatro sites.",
         ],
     },
     {
@@ -39,22 +42,23 @@ export const sections = [
         title: "5. Crianças e adolescentes",
         content: [
             "A learnTECH é uma plataforma de conteúdo educacional que pode ser acessada por pessoas de diferentes idades, incluindo adolescentes interessados em tecnologia.",
-            "Em conformidade com o artigo 14 da LGPD, caso uma criança venha a fornecer dado pessoal através do formulário de contato, o tratamento desse dado deve contar com o consentimento específico de um dos pais ou responsável legal. Recomendamos que menores de idade só utilizem o formulário de contato com a orientação de um responsável.",
+            "Em conformidade com o artigo 14 da LGPD, caso uma criança venha a fornecer dado pessoal na identificação de acesso ou no formulário de contato, o tratamento desse dado deve contar com o consentimento específico de um dos pais ou responsável legal. Recomendamos que menores de idade se identifiquem e usem o formulário de contato com a orientação de um responsável.",
         ],
     },
     {
         id: "membros",
-        title: "6. Quando a área de Membros existir",
+        title: "6. Sem login e sem cadastro",
         content: [
-            "A área de Membros, hoje em desenvolvimento, exigirá cadastro com dados adicionais (como e-mail e senha). Quando essa funcionalidade for lançada, esta política será atualizada para descrever exatamente quais dados passam a ser coletados, por quanto tempo são armazenados, e como são protegidos.",
+            "O LearnTECH não tem e não terá área de membros, login ou cadastro com senha. Todo o conteúdo é gratuito. Se algo nessa decisão mudar, esta política será atualizada antes da mudança entrar no ar.",
         ],
     },
     {
         id: "cookies",
         title: "7. Cookies e armazenamento local",
         content: [
-            "Hoje, a learnTECH não utiliza cookies de rastreamento ou ferramenta de analytics de terceiros. O único armazenamento feito no seu navegador é o progresso do quiz, guardado localmente, como descrito na seção 2.",
-            "Se isso mudar no futuro — por exemplo, com a adição de uma ferramenta de análise de audiência — esta seção será atualizada antes da mudança entrar em vigor.",
+            "O LearnTECH não utiliza cookies de rastreamento nem ferramenta de analytics de terceiros que identifique você.",
+            "No seu navegador ficam guardados localmente: seu nome e e-mail (para não perguntar de novo a cada visita), a marcação de que o acesso da sessão já foi registrado e o progresso do quiz. Você pode apagar tudo limpando os dados do site no navegador.",
+            "Se isso mudar no futuro, esta política será atualizada antes da mudança entrar no ar.",
         ],
     },
     {
@@ -65,3 +69,5 @@ export const sections = [
         ],
     },
 ];
+
+/* Fim de privacyData.js */

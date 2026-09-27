@@ -1,9 +1,14 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { PageTopBanner } from "../../components/pageTop/PageTopBanner";
 import { ProgramsCard } from "../../components/programs/ProgramsCard";
-import programsData from "./../../constants/programsData";
+import { useProgramas } from "../../services/conteudo";
 
 export const Programs = () => {
+  const programsData = useProgramas();
+  const categorias = useMemo(
+    () => [...new Map(programsData.map((p) => [p.categoryFilter, p.category])).entries()],
+    [programsData],
+  );
   const [searchTerm, setSearchTerm] = useState(""); // ✅ novo estado
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [visibleCount, setVisibleCount] = useState(4);
@@ -56,16 +61,12 @@ export const Programs = () => {
             className="max-w-sm w-fit rounded-lg px-3 h-12 bg-transparent focus:bg-sky-500/5 focus:border-sky-500 outline-none ease-in-out duration-300"
           >
             <option value="all">Todas Categorias</option>
-            <option value="web">Web</option>
-            <option value="frontend">Frontend</option>
-            <option value="ux-ui">UX/UI</option>
-            <option value="backend">Backend</option>
-            <option value="data-base">Data Base</option>
-            <option value="produtos-digitais">Produtos Digitais</option>
-            <option value="projetos">Projetos</option>
-            <option value="ia">IA</option>
-            <option value="english">English</option>
-          </select>
+            {categorias.map(([valor, nome]) => (
+              <option key={valor} value={valor}>
+                {nome}
+              </option>
+            ))}
+</select>
         </div>
         {/* Programs data */}
         <section className="space-y-4">

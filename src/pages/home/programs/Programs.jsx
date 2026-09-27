@@ -3,9 +3,10 @@ import { FaAnglesRight } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { ProgramsCard } from "../../../components/programs/ProgramsCard";
 
-import programsData from "./../../../constants/programsData";
+import { useProgramas } from "../../../services/conteudo";
 
 export const Programs = () => {
+  const programsData = useProgramas();
  
   const featuredPrograms = programsData.reduce((acc, current) => { 
     const x = acc.find(item => item.categoryFilter === current.categoryFilter);

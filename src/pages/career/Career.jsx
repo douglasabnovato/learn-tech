@@ -1,14 +1,11 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa6";
-import {
-    heroContent,
-    planningPoints,
-    platforms,
-    closingText,
-} from "../../constants/careerData";
+import * as carreiraLocal from "../../constants/careerData";
+import { usePagina } from "../../services/conteudo";
 
 export const Carreiras = () => {
+    const { heroContent, planningPoints, platforms, closingText } = usePagina("carreira", carreiraLocal);
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);

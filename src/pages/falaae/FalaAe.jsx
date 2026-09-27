@@ -11,7 +11,8 @@ import {
     FaArrowLeft,
     FaPaperPlane,
 } from "react-icons/fa6";
-import faqData from "../../constants/falaaeData";
+import faqLocal from "../../constants/falaaeData";
+import { usePagina } from "../../services/conteudo";
 
 const motivos = [
     {
@@ -49,6 +50,7 @@ const motivos = [
 const TOTAL_STEPS = 4;
 
 export const FalaAe = () => {
+    const { itens: faqData } = usePagina("faq", { itens: faqLocal });
     // ---- FAQ (acordeão) ----
     const [openFaq, setOpenFaq] = useState(null);
     const toggleFaq = (id) => setOpenFaq(openFaq === id ? null : id);

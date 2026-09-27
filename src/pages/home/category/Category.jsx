@@ -2,9 +2,11 @@ import React from "react";
 import { FaAnglesRight } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { CategoryCard } from "../../../components/category/CategoryCard";
-import categoriesData from "../../../constants/categoriesData";
+import categoriasLocal from "../../../constants/categoriesData";
+import { usePagina } from "../../../services/conteudo";
 
 export const Category = () => {
+  const { itens: categoriesData } = usePagina("categorias", { itens: categoriasLocal });
   return (
     <div className="w-full md:px-16 sm:px-10 px-4 space-y-8">
       <div className="w-full flex items-center justify-between">

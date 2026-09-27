@@ -1,14 +1,11 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa6";
-import {
-    heroContent,
-    techniques,
-    closingQuote,
-    sources,
-} from "../../constants/aprenderData";
+import * as aprenderLocal from "../../constants/aprenderData";
+import { usePagina } from "../../services/conteudo";
 
 export const Aprender = () => {
+    const { heroContent, techniques, closingQuote, sources } = usePagina("aprender", aprenderLocal);
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);

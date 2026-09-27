@@ -4,12 +4,12 @@ import { PiBookOpenTextFill } from "react-icons/pi";
 import { FiClock } from "react-icons/fi";
 
 import { useParams, Link } from "react-router-dom";
-import programsData from "./../../constants/programsData";
+import { usePrograma } from "../../services/conteudo";
 import { NotFound } from "./../error/not-found";
 
 
 export const Detail = () => {
-  const { category, id } = useParams();
+  const { id } = useParams();
   const programId = Number(id);
 
   const getLevelClasses = (level = "") => {
@@ -20,15 +20,17 @@ export const Detail = () => {
     if (l === "avançado" || l === "avancado") return "bg-red-100 text-red-800";
     return "bg-sky-100 text-sky-800";
   };
-  const program =
-    programsData.find(
-      (p) =>
-        p.id === programId &&
-        String(p.categoryFilter).toLowerCase() ===
-        String(category).toLowerCase(),
-    ) || programsData.find((p) => p.id === programId);
+  const { programa: program, carregando } = usePrograma(programId);
 
-  if (!program) return <NotFound />;
+  if (!program) {
+    return carregando ? (
+      <div className="w-full min-h-[60vh] flex items-center justify-center text-neutral-500" role="status">
+        Carregando programa…
+      </div>
+    ) : (
+      <NotFound />
+    );
+  }
 
   return (
     <div className="w-full min-h-screen flex-col space-y-16 pb-16">

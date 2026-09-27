@@ -12,10 +12,10 @@ import { NotFound } from "../error/not-found";
 
 import { Quiz } from "./quiz/Quiz";
 
-import programsData from "../../constants/programsData";
+import { usePrograma } from "../../services/conteudo";
 
 export const EnrollPrograms = () => {
-  const { category, id } = useParams();
+  const { id } = useParams();
   const programId = Number(id);
 
   // Estado para rastrear qual módulo foi completo (-1 = nenhum completo yet)
@@ -33,15 +33,17 @@ export const EnrollPrograms = () => {
     setActiveModuleIndex(moduleIndex + 1);
   };
 
-  const program =
-    programsData.find(
-      (p) =>
-        p.id === programId &&
-        String(p.categoryFilter).toLowerCase() ===
-          String(category).toLowerCase(),
-    ) || programsData.find((p) => p.id === programId);
+  const { programa: program, carregando } = usePrograma(programId);
 
-  if (!program) return <NotFound />;
+  if (!program) {
+    return carregando ? (
+      <div className="w-full min-h-[60vh] flex items-center justify-center text-neutral-500" role="status">
+        Carregando programa…
+      </div>
+    ) : (
+      <NotFound />
+    );
+  }
 
   // Cálculo de progresso agora usa a quantidade real de módulos deste programa,
   // não o número 6 cravado — funciona para qualquer curso, com qualquer contagem.

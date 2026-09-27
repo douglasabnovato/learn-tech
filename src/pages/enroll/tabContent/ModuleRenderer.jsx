@@ -160,7 +160,7 @@ export const ModuleRenderer = ({ modulo, ordem, onComplete }) => {
                       {passo.guidance}
                     </p>
                     {passo.code && (
-                      <code className="inline-block bg-neutral-900 text-purple-300 text-sm font-mono px-3 py-1 rounded-lg mt-2">
+                      <code className="inline-block max-w-full overflow-x-auto whitespace-pre-wrap break-words bg-neutral-900 text-purple-300 text-sm font-mono px-3 py-1 rounded-lg mt-2">
                         {passo.code}
                       </code>
                     )}

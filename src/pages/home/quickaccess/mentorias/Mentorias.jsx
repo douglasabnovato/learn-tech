@@ -1,8 +1,10 @@
 import React from "react";
 import { VideoGrid } from "../../../../components/videoGrid/VideoGrid";
-import { mentoriasData } from "../../../../constants/premiosData";
+import * as premiosLocal from "../../../../constants/premiosData";
+import { usePagina } from "../../../../services/conteudo";
 
 export const Mentorias = () => {
+  const { mentoriasData } = usePagina("mentorias", premiosLocal);
   return (
     <VideoGrid
       eyebrow="Como estruturar seu crescimento"

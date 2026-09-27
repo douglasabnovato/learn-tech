@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { FaArrowLeft, FaAnglesRight, FaClock, FaUser } from "react-icons/fa6";
-import blogData from "../../../constants/blogData";
+import blogLocal from "../../../constants/blogData";
+import { usePagina } from "../../../services/conteudo";
 import { NotFound } from "../../error/not-found";
 
 export const BlogOne = () => {
+    const { itens: blogData } = usePagina("blog", { itens: blogLocal });
     const { id } = useParams();
 
     useEffect(() => {

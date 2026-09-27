@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaAnglesRight } from "react-icons/fa6";
-import blogData from "./../../../constants/blogData";
+import blogLocal from "./../../../constants/blogData";
+import { usePagina } from "../../../services/conteudo";
 import { BlogCard } from "../../../components/blog/BlogCard";
 
 export const Blog = () => {
+  const { itens: blogData } = usePagina("blog", { itens: blogLocal });
   return (
     <div className="w-full md:px-16 sm:px-10 px-4 space-y-8">
       {/** Top Section */}

@@ -1,8 +1,10 @@
 import React from "react";
 import { VideoGrid } from "../../../../components/videoGrid/VideoGrid";
-import { softSkillsData } from "../../../../constants/premiosData";
+import * as premiosLocal from "../../../../constants/premiosData";
+import { usePagina } from "../../../../services/conteudo";
 
 export const Softskills = () => {
+  const { softSkillsData } = usePagina("mentorias", premiosLocal);
   return (
     <VideoGrid
       eyebrow="Além do código"

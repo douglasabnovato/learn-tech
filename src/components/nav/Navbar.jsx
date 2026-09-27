@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
-import navItems from "../../constants/navbarData";
+import navLocal from "../../constants/navbarData";
+import { usePagina } from "../../services/conteudo";
 import LearnTechTitle from "../logo/LearnTechTitle";
 
 const Navbar = () => {
+  const { itens: navItems } = usePagina("navegacao", { itens: navLocal });
   const [isOpen, setIsOpen] = useState(false);
 
   const [isScrolled, setIsScrolled] = useState(false);
