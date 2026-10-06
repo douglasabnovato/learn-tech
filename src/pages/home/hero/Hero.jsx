@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 
-import DevImg1 from "./assets/dev-4.JPG";
-import DevImg2 from "./assets/dev-5.JPG";
-import DevImg3 from "./assets/dev-6.JPG";
-import DevImg4 from "./assets/dev-7.JPG";
+import DevImg1 from "../../../assets/devs/dev-4.webp";
+import DevImg2 from "../../../assets/devs/dev-5.webp";
+import DevImg3 from "../../../assets/devs/dev-6.webp";
+import DevImg4 from "../../../assets/devs/dev-7.webp";
 
 const images = [DevImg1, DevImg2, DevImg3, DevImg4];
 

@@ -86,16 +86,7 @@ O projeto sobe em `http://localhost:3000`.
 ```text
 learn-tech/
 │
-├── .github/                          # imagens de preview usadas no Readme
-│   ├── original/                     # 8 telas da Versão 1
-│   │   ├── 1-home.jpg
-│   │   ├── 2-home.jpg
-│   │   ├── 3-home.jpg
-│   │   ├── 4-home.jpg
-│   │   ├── 5-home.jpg
-│   │   ├── 6-programas.jpg
-│   │   ├── 7-programas.jpg
-│   │   └── 8-signin.jpg
+├── .github/ 
 │   └── versao-2/                     # 15 telas da Versão 2
 │       ├── 1-home-1.jpg  →  1-home-7.jpg
 │       ├── 2-programas-1.jpg  →  2-programas-4.jpg
@@ -117,8 +108,7 @@ learn-tech/
 │   ├── assets/                       # imagens importadas pelo código
 │   │   ├── devs/                     # dev-4.jpg … dev-7.jpg
 │   │   ├── imgs/                     # 1-programs.png
-│   │   ├── logo/                     # logo192.png
-│   │   ├── originals/                # heros, logos SVG, page-top-bg, react.svg
+│   │   ├── logo/                     # logo192.png 
 │   │   ├── programs/                 # 1-demo.mp4 (47 MB), 1-demo-poster.jpg, 1-programs.png
 │   │   └── setups/                   # dev-1 … dev-10 .avif
 │   │
@@ -370,21 +360,21 @@ Os outros 30 são cards de catálogo sem módulos. **Meta: um programa novo por 
 <details>
 <summary>Ver as telas</summary>
 
-![Home](./.github/versao-2/1-home-1.jpg)
-![Home](./.github/versao-2/1-home-2.jpg)
-![Home](./.github/versao-2/1-home-3.jpg)
-![Home](./.github/versao-2/1-home-4.jpg)
-![Home](./.github/versao-2/1-home-5.jpg)
-![Home](./.github/versao-2/1-home-6.jpg)
-![Home](./.github/versao-2/1-home-7.jpg)
-![Programas](./.github/versao-2/2-programas-1.jpg)
-![Programas](./.github/versao-2/2-programas-2.jpg)
-![Programas](./.github/versao-2/2-programas-3.jpg)
-![Programas](./.github/versao-2/2-programas-4.jpg)
-![Recursos](./.github/versao-2/3-recursos-1.jpg)
-![Recursos](./.github/versao-2/3-recursos-2.jpg)
-![Sobre](./.github/versao-2/4-sobre-1.jpg)
-![Contato](./.github/versao-2/5-contato-1.jpg)
+![Home](./.github/versao-2/1-home-1.webp)
+![Home](./.github/versao-2/1-home-2.webp)
+![Home](./.github/versao-2/1-home-3.webp)
+![Home](./.github/versao-2/1-home-4.webp)
+![Home](./.github/versao-2/1-home-5.webp)
+![Home](./.github/versao-2/1-home-6.webp)
+![Home](./.github/versao-2/1-home-7.webp)
+![Programas](./.github/versao-2/2-programas-1.webp)
+![Programas](./.github/versao-2/2-programas-2.webp)
+![Programas](./.github/versao-2/2-programas-3.webp)
+![Programas](./.github/versao-2/2-programas-4.webp)
+![Recursos](./.github/versao-2/3-recursos-1.webp)
+![Recursos](./.github/versao-2/3-recursos-2.webp)
+![Sobre](./.github/versao-2/4-sobre-1.webp)
+![Contato](./.github/versao-2/5-contato-1.webp)
 
 </details>
 
@@ -502,22 +492,6 @@ Construído passo a passo para ser acessível tanto a iniciantes quanto a desenv
 - ❓ **Quiz Section** — quizzes interativos.
 - 🔑 **Sign In Page** e 🆕 **Sign Up Page** — login e registro. *Removidas na Versão 2: a plataforma é OFF-only.*
 - ✅ **Final Product** — plataforma LMS completa, responsiva e funcional.
-
-#### 📷 Preview da versão 1
-
-<details>
-<summary>Ver as telas</summary>
-
-![Home](./.github/original/1-home.jpg)
-![Home](./.github/original/2-home.jpg)
-![Home](./.github/original/3-home.jpg)
-![Home](./.github/original/4-home.jpg)
-![Home](./.github/original/5-home.jpg)
-![Programas](./.github/original/6-programas.jpg)
-![Programas](./.github/original/7-programas.jpg)
-![Sign In](./.github/original/8-signin.jpg)
-
-</details>
 
 #### 🔗 Referências da versão 1
 

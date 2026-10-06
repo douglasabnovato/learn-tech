@@ -1,12 +1,14 @@
-import Image1 from "./../assets/programs/1-programs.png";
-import Video1 from "./../assets/programs/1-demo.mp4";
-import Poster1 from "./../assets/programs/1-demo-poster.jpg";
+import Image1 from "./../assets/programs/1-programs.webp";
+import Poster1 from "./../assets/programs/1-demo-poster.webp";
 import quiz1 from "./quizData";
+
+const Video1 = "https://www.youtube.com/embed/pWDF8csG9Qo";
 
 const programsData = [
   // Web (1 a 100)
   {
     id: 1,
+    status: "lancado",
     image: Image1,
     video: Video1,
     videoPoster: Poster1,
@@ -37,12 +39,42 @@ const programsData = [
       "Diretrizes e Dicas",
     ],
     modules: [
-      { id: 0, title: "Ambiente de Desenvolvimento", lessonsCount: 5, component: "ModuleZero" },
-      { id: 1, title: "Estrutura Semântica", lessonsCount: 3, component: "ModuleOne" },
-      { id: 2, title: "Layout e Responsividade", lessonsCount: 3, component: "ModuleTwo" },
-      { id: 3, title: "Interatividade com JavaScript", lessonsCount: 3, component: "ModuleThree" },
-      { id: 4, title: "Versionamento e Publicação", lessonsCount: 3, component: "ModuleFour" },
-      { id: 5, title: "Testes e Qualidade", lessonsCount: 4, component: "ModuleFive" },
+      {
+        id: 0,
+        title: "Ambiente de Desenvolvimento",
+        lessonsCount: 5,
+        component: "ModuleZero",
+      },
+      {
+        id: 1,
+        title: "Estrutura Semântica",
+        lessonsCount: 3,
+        component: "ModuleOne",
+      },
+      {
+        id: 2,
+        title: "Layout e Responsividade",
+        lessonsCount: 3,
+        component: "ModuleTwo",
+      },
+      {
+        id: 3,
+        title: "Interatividade com JavaScript",
+        lessonsCount: 3,
+        component: "ModuleThree",
+      },
+      {
+        id: 4,
+        title: "Versionamento e Publicação",
+        lessonsCount: 3,
+        component: "ModuleFour",
+      },
+      {
+        id: 5,
+        title: "Testes e Qualidade",
+        lessonsCount: 4,
+        component: "ModuleFive",
+      },
     ],
     enrollDetails: {
       categoryBadge: "Desenvolvimento Web",
@@ -72,15 +104,18 @@ const programsData = [
           items: [
             {
               label: "Setup de Produtividade",
-              description: "Configuração do VS Code, extensões essenciais e estrutura de pastas profissional.",
+              description:
+                "Configuração do VS Code, extensões essenciais e estrutura de pastas profissional.",
             },
             {
               label: "Análise de Requisitos",
-              description: "Entender o objetivo da conversão (ex: landing pages de conversão).",
+              description:
+                "Entender o objetivo da conversão (ex: landing pages de conversão).",
             },
             {
               label: "Validação do Ambiente",
-              description: "Confirmar que o Live Server responde em tempo real antes de seguir para o conteúdo.",
+              description:
+                "Confirmar que o Live Server responde em tempo real antes de seguir para o conteúdo.",
             },
           ],
         },
@@ -90,15 +125,18 @@ const programsData = [
           items: [
             {
               label: "Hierarquia de Conteúdo",
-              description: "Tags semânticas (<header>, <nav>, <main>, <footer>).",
+              description:
+                "Tags semânticas (<header>, <nav>, <main>, <footer>).",
             },
             {
               label: "Acessibilidade",
-              description: "Atributos ARIA e boas práticas de semanticidade para usuários com deficiências.",
+              description:
+                "Atributos ARIA e boas práticas de semanticidade para usuários com deficiências.",
             },
             {
               label: "SEO Estrutural",
-              description: "Como a hierarquia de headings e tags semânticas ajuda buscadores a entender a página.",
+              description:
+                "Como a hierarquia de headings e tags semânticas ajuda buscadores a entender a página.",
             },
           ],
         },
@@ -108,15 +146,18 @@ const programsData = [
           items: [
             {
               label: "Flexbox e Grid",
-              description: "Dominar layouts flexíveis e responsivos com CSS moderno.",
+              description:
+                "Dominar layouts flexíveis e responsivos com CSS moderno.",
             },
             {
               label: "Design System",
-              description: "Tokens de design, variáveis CSS e componentes reutilizáveis.",
+              description:
+                "Tokens de design, variáveis CSS e componentes reutilizáveis.",
             },
             {
               label: "Media Queries",
-              description: "Adaptar o layout para diferentes tamanhos de tela, do celular ao desktop.",
+              description:
+                "Adaptar o layout para diferentes tamanhos de tela, do celular ao desktop.",
             },
           ],
         },
@@ -126,7 +167,8 @@ const programsData = [
           items: [
             {
               label: "DOM e Eventos",
-              description: "Manipulação do DOM e tratamento de eventos de usuário.",
+              description:
+                "Manipulação do DOM e tratamento de eventos de usuário.",
             },
             {
               label: "Validação de Formulários",
@@ -134,7 +176,8 @@ const programsData = [
             },
             {
               label: "Efeitos de Scroll",
-              description: "Animações e comportamentos acionados conforme o usuário navega pela página.",
+              description:
+                "Animações e comportamentos acionados conforme o usuário navega pela página.",
             },
           ],
         },
@@ -148,11 +191,13 @@ const programsData = [
             },
             {
               label: "Deploy em Produção",
-              description: "Publicar projeto em plataformas como Vercel ou Netlify.",
+              description:
+                "Publicar projeto em plataformas como Vercel ou Netlify.",
             },
             {
               label: "Domínio e URL Final",
-              description: "Entender como o projeto passa a ter um endereço público e acessível.",
+              description:
+                "Entender como o projeto passa a ter um endereço público e acessível.",
             },
           ],
         },
@@ -170,7 +215,8 @@ const programsData = [
             },
             {
               label: "Checklist Final",
-              description: "Uma revisão de encerramento antes de considerar o projeto pronto para o portfólio.",
+              description:
+                "Uma revisão de encerramento antes de considerar o projeto pronto para o portfólio.",
             },
           ],
         },
@@ -206,7 +252,9 @@ const programsData = [
                 title: "Preparação do Editor (Visual Studio Code)",
                 guidance:
                   "Abra o VS Code e vá em 'File > Open Folder' selecionando a pasta criada. No menu de Extensões, instale o Live Server (de Ritwick Dey) e o Prettier.",
-                tips: ["O Prettier formata seu código automaticamente ao salvar — configure isso agora e não precisará se preocupar com indentação depois."],
+                tips: [
+                  "O Prettier formata seu código automaticamente ao salvar — configure isso agora e não precisará se preocupar com indentação depois.",
+                ],
               },
               {
                 number: 3,
@@ -214,14 +262,18 @@ const programsData = [
                 code: "! + Tab",
                 guidance:
                   "Crie um arquivo index.html. Digite ! e pressione Tab para gerar o boilerplate HTML5 automaticamente.",
-                tips: ["Este atalho é fornecido pela extensão Emmet do VS Code."],
+                tips: [
+                  "Este atalho é fornecido pela extensão Emmet do VS Code.",
+                ],
               },
               {
                 number: 4,
                 title: "Inicializando o Live Server",
                 guidance:
                   "Clique com botão direito no arquivo index.html e selecione 'Open with Live Server'. Seu navegador abrirá automaticamente em http://localhost:5500.",
-                tips: ["Se a porta 5500 estiver em uso, Live Server usará 5501 ou superior automaticamente."],
+                tips: [
+                  "Se a porta 5500 estiver em uso, Live Server usará 5501 ou superior automaticamente.",
+                ],
               },
               {
                 number: 5,
@@ -229,7 +281,9 @@ const programsData = [
                 code: "Ctrl + S",
                 guidance:
                   "No arquivo index.html, adicione <h1>Hello World</h1> entre as tags <body>. Salve (Ctrl + S). Observe que o navegador atualiza automaticamente sem refresh manual.",
-                tips: ["Este é o primeiro sinal de que seu ambiente está funcionando corretamente."],
+                tips: [
+                  "Este é o primeiro sinal de que seu ambiente está funcionando corretamente.",
+                ],
               },
             ],
           },
@@ -263,7 +317,8 @@ const programsData = [
         id: 1,
         icon: "sitemap",
         title: "Estrutura Semântica",
-        shortDescription: "HTML5 com significado: hierarquia, acessibilidade e SEO",
+        shortDescription:
+          "HTML5 com significado: hierarquia, acessibilidade e SEO",
         introductionText:
           "Agora que seu ambiente está configurado, é hora de aprender a linguagem que os navegadores entendem: HTML5. Não é apenas sobre tags e elementos, mas sobre contar uma história estruturada. Cada tag tem um propósito semântico que não só melhora o SEO, mas também torna seu site acessível a um público muito mais amplo, incluindo pessoas com deficiências visuais ou auditivas. Um HTML bem estruturado é a diferença entre um site que qualquer pessoa e qualquer buscador consegue interpretar, e um site que só faz sentido visualmente.",
         sections: [
@@ -276,21 +331,27 @@ const programsData = [
                 code: "<header> <nav> <main> <footer>",
                 guidance:
                   "Realize que <div> é genérico, mas <header>, <nav>, <main>, <section>, <article>, <footer> comunicam significado. Use semântica para estruturar sua página de forma lógica.",
-                tips: ["Google e acessibilidade dependem dessa estrutura semântica."],
+                tips: [
+                  "Google e acessibilidade dependem dessa estrutura semântica.",
+                ],
               },
               {
                 number: 2,
                 title: "Headings e Hierarquia (h1-h6)",
                 guidance:
                   "Use um único <h1> por página (seu título principal). Use h2, h3 etc. para subtítulos em ordem hierárquica. Nunca pule níveis (não vá de h1 para h3).",
-                tips: ["Bots de SEO lêem seus headings para entender o tópico."],
+                tips: [
+                  "Bots de SEO lêem seus headings para entender o tópico.",
+                ],
               },
               {
                 number: 3,
                 title: "Meta Tags Essenciais",
                 guidance:
                   "No <head>, inclua a tag <meta name='viewport'> para garantir responsividade, e uma <meta name='description'> descrevendo a página — é o texto que aparece no resultado de busca do Google.",
-                tips: ["Sem a meta viewport, seu site pode aparecer minúsculo em celulares, mesmo com CSS responsivo pronto."],
+                tips: [
+                  "Sem a meta viewport, seu site pode aparecer minúsculo em celulares, mesmo com CSS responsivo pronto.",
+                ],
               },
             ],
           },
@@ -324,7 +385,8 @@ const programsData = [
         id: 2,
         icon: "palette",
         title: "Layout e Responsividade",
-        shortDescription: "Flexbox, Grid e media queries: o mesmo site em qualquer tela",
+        shortDescription:
+          "Flexbox, Grid e media queries: o mesmo site em qualquer tela",
         introductionText:
           "CSS não é apenas 'deixar bonito'. É sobre comunicação visual, hierarquia de informação e adaptar seu design para qualquer tela. Neste módulo, você dominará Flexbox e CSS Grid, as duas ferramentas mais poderosas do CSS moderno, permitindo criar layouts que se adaptam perfeitamente de um iPhone até uma TV. A diferença entre um site amador e um profissional geralmente está aqui: no domínio de layout e consistência visual, não na quantidade de código escrito.",
         sections: [
@@ -337,7 +399,9 @@ const programsData = [
                 code: "display: flex;",
                 guidance:
                   "Flexbox simplifica alinhamento e distribuição de espaço. Aprenda display: flex, justify-content, align-items, flex-direction.",
-                tips: ["Flexbox é ideal para componentes e layouts unidimensionais."],
+                tips: [
+                  "Flexbox é ideal para componentes e layouts unidimensionais.",
+                ],
               },
               {
                 number: 2,
@@ -353,7 +417,9 @@ const programsData = [
                 code: "@media (max-width: 768px)",
                 guidance:
                   "Use @media (max-width: 768px) para redefinir o layout em telas menores. Teste sempre do menor breakpoint para o maior (mobile-first).",
-                tips: ["Projetar mobile-first evita retrabalho: é mais fácil expandir um layout simples do que simplificar um complexo."],
+                tips: [
+                  "Projetar mobile-first evita retrabalho: é mais fácil expandir um layout simples do que simplificar um complexo.",
+                ],
               },
             ],
           },
@@ -387,7 +453,8 @@ const programsData = [
         id: 3,
         icon: "bolt",
         title: "Interatividade com JavaScript",
-        shortDescription: "DOM, eventos e validação: a página que responde ao usuário",
+        shortDescription:
+          "DOM, eventos e validação: a página que responde ao usuário",
         introductionText:
           "HTML estrutura, CSS estiliza, mas JavaScript traz a magia: interatividade, validação, e reatividade em tempo real. Neste módulo, você aprenderá não apenas sintaxe, mas padrões que os profissionais usam diariamente para criar experiências de usuário incríveis. Se o HTML é o esqueleto e o CSS é a pele, o JavaScript é o sistema nervoso da sua aplicação — é ele que faz a página perceber e reagir ao que o usuário faz.",
         sections: [
@@ -400,14 +467,18 @@ const programsData = [
                 code: "document.querySelector()",
                 guidance:
                   "O Document Object Model permite acessar e modificar elementos HTML. Aprenda document.querySelector, addEventListener, classList.",
-                tips: ["Eventos como 'click', 'input', 'submit' são seus aliados."],
+                tips: [
+                  "Eventos como 'click', 'input', 'submit' são seus aliados.",
+                ],
               },
               {
                 number: 2,
                 title: "Validação de Formulários",
                 guidance:
                   "Valide inputs do usuário client-side antes de enviar. Verifique campos vazios, formatos de email, senhas fortes. Forneça feedback visual imediato para o usuário caso um campo esteja incorreto.",
-                tips: ["Validação client-side melhora UX; nunca confie apenas nela para segurança."],
+                tips: [
+                  "Validação client-side melhora UX; nunca confie apenas nela para segurança.",
+                ],
               },
               {
                 number: 3,
@@ -415,7 +486,9 @@ const programsData = [
                 code: "IntersectionObserver()",
                 guidance:
                   "Use a API de Intersection Observer para disparar animações apenas quando o elemento estiver visível na tela, otimizando a performance em vez de escutar o evento de scroll diretamente.",
-                tips: ["Animações disparadas por scroll direto (sem Intersection Observer) tendem a travar em celulares mais fracos."],
+                tips: [
+                  "Animações disparadas por scroll direto (sem Intersection Observer) tendem a travar em celulares mais fracos.",
+                ],
               },
             ],
           },
@@ -449,7 +522,8 @@ const programsData = [
         id: 4,
         icon: "rocket",
         title: "Versionamento e Publicação",
-        shortDescription: "Git, GitHub e deploy: do seu computador a um endereço público",
+        shortDescription:
+          "Git, GitHub e deploy: do seu computador a um endereço público",
         introductionText:
           "Um projeto perfeito localmente não vale nada se ninguém pode acessá-lo. Neste módulo, você aprenderá a versioná-lo com Git/GitHub e publicá-lo em plataformas como Vercel, tornando sua landing page acessível para qualquer pessoa em qualquer lugar. É também o momento em que o projeto deixa de ser 'exercício de curso' e passa a ser, de fato, um item de portfólio.",
         sections: [
@@ -462,21 +536,27 @@ const programsData = [
                 code: "git push origin main",
                 guidance:
                   "Crie um repositório GitHub. Use git init, git add, git commit, git push para versionar seu código. Isto não é opcional: é como profissionais trabalham.",
-                tips: ["GitHub é seu portfólio. Commits bem feitos mostram sua história de desenvolvimento."],
+                tips: [
+                  "GitHub é seu portfólio. Commits bem feitos mostram sua história de desenvolvimento.",
+                ],
               },
               {
                 number: 2,
                 title: "Deploy em Produção",
                 guidance:
                   "Conecte seu repositório GitHub a uma plataforma como Vercel ou Netlify. Cada push automaticamente publica a versão mais recente ao vivo.",
-                tips: ["Vercel oferece hospedagem gratuita com deploy em segundos."],
+                tips: [
+                  "Vercel oferece hospedagem gratuita com deploy em segundos.",
+                ],
               },
               {
                 number: 3,
                 title: "Compartilhando a URL",
                 guidance:
                   "Depois do deploy, você recebe um endereço público (algo como seu-projeto.vercel.app). Esse link é o que você coloca no currículo, no LinkedIn e no portfólio.",
-                tips: ["Um projeto só conta como portfólio quando alguém de fora consegue abrir o link — não quando só roda na sua máquina."],
+                tips: [
+                  "Um projeto só conta como portfólio quando alguém de fora consegue abrir o link — não quando só roda na sua máquina.",
+                ],
               },
             ],
           },
@@ -510,7 +590,8 @@ const programsData = [
         id: 5,
         icon: "clipboard",
         title: "Testes e Qualidade",
-        shortDescription: "Verificação, compatibilidade e a checklist antes de publicar",
+        shortDescription:
+          "Verificação, compatibilidade e a checklist antes de publicar",
         introductionText:
           "Um desenvolvedor não é apenas quem escreve código, mas quem garante que funcione perfeitamente em qualquer situação. Neste módulo especial, você aprenderá técnicas de QA (Quality Assurance) que separam quem só termina o projeto de quem entrega o projeto pronto de verdade.",
         sections: [
@@ -522,28 +603,36 @@ const programsData = [
                 title: "Testes Manuais",
                 guidance:
                   "Não confie em 'parecia funcionar'. Teste cada interação: clique em botões, envie formulários com dados válidos e inválidos, teste em conexões lentas.",
-                tips: ["Testes manuais encontram bugs que automação não consegue."],
+                tips: [
+                  "Testes manuais encontram bugs que automação não consegue.",
+                ],
               },
               {
                 number: 2,
                 title: "Cross-Browser Testing",
                 guidance:
                   "Garanta que sua landing page funcione perfeitamente em Chrome, Safari, Edge e Firefox. Use BrowserStack se necessário para testar em dispositivos reais.",
-                tips: ["Usuários iOS, Android e Windows precisam da mesma experiência."],
+                tips: [
+                  "Usuários iOS, Android e Windows precisam da mesma experiência.",
+                ],
               },
               {
                 number: 3,
                 title: "Validação de Dados",
                 guidance:
                   "Testes unitários simples em JavaScript para validar entradas de e-mail, campos obrigatórios, senhas fortes.",
-                tips: ["Validação é a primeira linha de defesa contra dados ruins."],
+                tips: [
+                  "Validação é a primeira linha de defesa contra dados ruins.",
+                ],
               },
               {
                 number: 4,
                 title: "Checklist Final de Publicação",
                 guidance:
                   "Antes de considerar o projeto pronto, revise: todos os links funcionam? O formulário valida corretamente? O site carrega bem em celular? Existe algum texto de placeholder esquecido?",
-                tips: ["Esta checklist final é o que separa um projeto 'terminado' de um projeto realmente pronto para mostrar a alguém."],
+                tips: [
+                  "Esta checklist final é o que separa um projeto 'terminado' de um projeto realmente pronto para mostrar a alguém.",
+                ],
               },
             ],
           },
@@ -599,15 +688,18 @@ const programsData = [
       items: [
         {
           label: "Landing pages de produto",
-          description: "Páginas de lançamento e conversão para produtos e serviços.",
+          description:
+            "Páginas de lançamento e conversão para produtos e serviços.",
         },
         {
           label: "Portfólios profissionais",
-          description: "Sua própria presença online, para mostrar trabalho e atrair oportunidades.",
+          description:
+            "Sua própria presença online, para mostrar trabalho e atrair oportunidades.",
         },
         {
           label: "Sites institucionais",
-          description: "Presença digital de empresas, negócios locais e projetos.",
+          description:
+            "Presença digital de empresas, negócios locais e projetos.",
         },
       ],
     },
@@ -617,15 +709,18 @@ const programsData = [
       profiles: [
         {
           label: "Iniciantes em tecnologia",
-          description: "Quem quer dar o primeiro passo concreto no desenvolvimento web.",
+          description:
+            "Quem quer dar o primeiro passo concreto no desenvolvimento web.",
         },
         {
           label: "Quem quer o primeiro projeto real",
-          description: "Já viu teoria, mas nunca entregou algo publicado de ponta a ponta.",
+          description:
+            "Já viu teoria, mas nunca entregou algo publicado de ponta a ponta.",
         },
         {
           label: "Profissionais em transição de carreira",
-          description: "Quem vem de outra área e quer construir base sólida para migrar.",
+          description:
+            "Quem vem de outra área e quer construir base sólida para migrar.",
         },
       ],
     },
@@ -639,17 +734,20 @@ const programsData = [
 
     sources: [
       {
-        label: "Gitnux — JavaScript Statistics (2026), agregando dados de W3Techs, Stack Overflow Developer Survey e GitHub Octoverse",
+        label:
+          "Gitnux — JavaScript Statistics (2026), agregando dados de W3Techs, Stack Overflow Developer Survey e GitHub Octoverse",
         url: "https://gitnux.org/javascript-statistics/",
       },
       {
-        label: "Alura — Desenvolvedor Front-end em 2026: o guia para a carreira",
+        label:
+          "Alura — Desenvolvedor Front-end em 2026: o guia para a carreira",
         url: "https://www.alura.com.br/artigos/desenvolvedor-frontend",
       },
     ],
   },
   {
     id: 2,
+    status: "novidade",
     image:
       "https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406_1280.jpg",
     category: "Web",
@@ -661,6 +759,7 @@ const programsData = [
   },
   {
     id: 3,
+    status: "novidade",
     image:
       "https://cdn.pixabay.com/photo/2015/09/05/22/33/office-925806_1280.jpg",
     category: "Web",
@@ -673,6 +772,7 @@ const programsData = [
   },
   {
     id: 4,
+    status: "novidade",
     image:
       "https://cdn.pixabay.com/photo/2016/11/29/03/15/man-1867009_1280.jpg",
     category: "Web",
@@ -684,8 +784,9 @@ const programsData = [
   },
 
   // Frontend (101 a 200)
-    {
+  {
     id: 101,
+    status: "lancado",
     image:
       "https://cdn.pixabay.com/photo/2015/09/06/00/17/macbook-926558_960_720.jpg",
     category: "Frontend",
@@ -713,10 +814,30 @@ const programsData = [
       "Lista de erros comuns e como identificá-los",
     ],
     modules: [
-      { id: 0, title: "Do HTML ao Componente", lessonsCount: 3, component: "ModuleRenderer" },
-      { id: 1, title: "Estado e Eventos", lessonsCount: 3, component: "ModuleRenderer" },
-      { id: 2, title: "Listas, Formulários e Efeitos", lessonsCount: 4, component: "ModuleRenderer" },
-      { id: 3, title: "Organizando a Aplicação", lessonsCount: 3, component: "ModuleRenderer" },
+      {
+        id: 0,
+        title: "Do HTML ao Componente",
+        lessonsCount: 3,
+        component: "ModuleRenderer",
+      },
+      {
+        id: 1,
+        title: "Estado e Eventos",
+        lessonsCount: 3,
+        component: "ModuleRenderer",
+      },
+      {
+        id: 2,
+        title: "Listas, Formulários e Efeitos",
+        lessonsCount: 4,
+        component: "ModuleRenderer",
+      },
+      {
+        id: 3,
+        title: "Organizando a Aplicação",
+        lessonsCount: 3,
+        component: "ModuleRenderer",
+      },
     ],
     enrollDetails: {
       categoryBadge: "Frontend",
@@ -744,36 +865,82 @@ const programsData = [
           moduleId: 0,
           title: "Módulo 0: Do HTML ao Componente",
           items: [
-            { label: "JSX sem mistério", description: "O que o JSX vira depois de compilado e por que ele não é HTML." },
-            { label: "Props", description: "Como um componente recebe dados de quem o usa." },
-            { label: "Composição", description: "Montar telas combinando componentes pequenos em vez de um grande." },
+            {
+              label: "JSX sem mistério",
+              description:
+                "O que o JSX vira depois de compilado e por que ele não é HTML.",
+            },
+            {
+              label: "Props",
+              description: "Como um componente recebe dados de quem o usa.",
+            },
+            {
+              label: "Composição",
+              description:
+                "Montar telas combinando componentes pequenos em vez de um grande.",
+            },
           ],
         },
         {
           moduleId: 1,
           title: "Módulo 1: Estado e Eventos",
           items: [
-            { label: "useState", description: "O que é estado, e por que variável comum não serve." },
-            { label: "Re-renderização", description: "Quando o React redesenha e o que isso custa." },
-            { label: "Estado onde ele pertence", description: "Onde declarar o estado para não ter que sincronizar duas cópias." },
+            {
+              label: "useState",
+              description:
+                "O que é estado, e por que variável comum não serve.",
+            },
+            {
+              label: "Re-renderização",
+              description: "Quando o React redesenha e o que isso custa.",
+            },
+            {
+              label: "Estado onde ele pertence",
+              description:
+                "Onde declarar o estado para não ter que sincronizar duas cópias.",
+            },
           ],
         },
         {
           moduleId: 2,
           title: "Módulo 2: Listas, Formulários e Efeitos",
           items: [
-            { label: "Listas e a prop key", description: "Renderizar coleções e por que o índice do array é uma escolha ruim." },
-            { label: "Formulário controlado", description: "O input cujo valor vive no estado, e a validação que vem de graça." },
-            { label: "useEffect com critério", description: "Quando existe efeito colateral de verdade — e quando você não precisa dele." },
+            {
+              label: "Listas e a prop key",
+              description:
+                "Renderizar coleções e por que o índice do array é uma escolha ruim.",
+            },
+            {
+              label: "Formulário controlado",
+              description:
+                "O input cujo valor vive no estado, e a validação que vem de graça.",
+            },
+            {
+              label: "useEffect com critério",
+              description:
+                "Quando existe efeito colateral de verdade — e quando você não precisa dele.",
+            },
           ],
         },
         {
           moduleId: 3,
           title: "Módulo 3: Organizando a Aplicação",
           items: [
-            { label: "Estrutura de pastas", description: "Uma organização que sobrevive ao crescimento do projeto." },
-            { label: "Hook próprio", description: "Extrair lógica repetida para uma função reutilizável." },
-            { label: "Quando parar", description: "Reconhecer o ponto em que o projeto pede biblioteca de estado — e o ponto em que não pede." },
+            {
+              label: "Estrutura de pastas",
+              description:
+                "Uma organização que sobrevive ao crescimento do projeto.",
+            },
+            {
+              label: "Hook próprio",
+              description:
+                "Extrair lógica repetida para uma função reutilizável.",
+            },
+            {
+              label: "Quando parar",
+              description:
+                "Reconhecer o ponto em que o projeto pede biblioteca de estado — e o ponto em que não pede.",
+            },
           ],
         },
       ],
@@ -785,7 +952,8 @@ const programsData = [
         id: 0,
         icon: "laptop",
         title: "Do HTML ao Componente",
-        shortDescription: "JSX, props e composição: a menor unidade de interface",
+        shortDescription:
+          "JSX, props e composição: a menor unidade de interface",
         introductionText:
           "Antes de escrever qualquer coisa em React, vale entender o que ele é: uma biblioteca que transforma uma descrição de interface em atualizações no DOM. Você escreve como a tela deve ser, e o React calcula o que precisa mudar. Neste módulo você constrói os primeiros componentes e descobre que JSX não é HTML — é JavaScript disfarçado, e entender isso evita metade dos erros de iniciante.",
         sections: [
@@ -997,7 +1165,8 @@ const programsData = [
         id: 3,
         icon: "sitemap",
         title: "Organizando a Aplicação",
-        shortDescription: "Estrutura, hooks próprios e o momento de parar de adicionar",
+        shortDescription:
+          "Estrutura, hooks próprios e o momento de parar de adicionar",
         introductionText:
           "Projeto pequeno funciona com qualquer organização. O problema aparece no terceiro mês, quando ninguém lembra onde está o quê. Este módulo trata da parte que nenhum tutorial mostra porque só dói depois: como agrupar arquivos, como extrair lógica repetida e — o mais importante — como reconhecer quando o projeto realmente precisa de mais ferramenta, em vez de instalar por hábito.",
         sections: [
@@ -1069,10 +1238,19 @@ const programsData = [
         explanation:
           "JSX é transformado em chamadas de função JavaScript, e class é palavra reservada da linguagem. Por isso o atributo recebe o nome className, o mesmo usado pela API do DOM. Não tem relação com CSS, nem com React estar depreciando algo, nem com desempenho.",
         options: [
-          { text: "Porque class é palavra reservada do JavaScript", isCorrect: true },
-          { text: "Porque o CSS do React funciona de forma diferente", isCorrect: false },
+          {
+            text: "Porque class é palavra reservada do JavaScript",
+            isCorrect: true,
+          },
+          {
+            text: "Porque o CSS do React funciona de forma diferente",
+            isCorrect: false,
+          },
           { text: "Porque class foi descontinuado no HTML5", isCorrect: false },
-          { text: "Porque className é mais rápido de processar", isCorrect: false },
+          {
+            text: "Porque className é mais rápido de processar",
+            isCorrect: false,
+          },
         ],
       },
       {
@@ -1082,75 +1260,146 @@ const programsData = [
         explanation:
           "Props são os dados que um componente recebe de quem o utiliza, e são somente leitura: o componente que recebe nunca as altera. Estado é outra coisa — é o dado interno que muda. Props não são um arquivo de configuração nem têm relação com estilo.",
         options: [
-          { text: "Dados que o componente recebe de fora, somente leitura", isCorrect: true },
-          { text: "Variáveis internas que o componente pode alterar livremente", isCorrect: false },
-          { text: "Um arquivo de configuração do projeto React", isCorrect: false },
+          {
+            text: "Dados que o componente recebe de fora, somente leitura",
+            isCorrect: true,
+          },
+          {
+            text: "Variáveis internas que o componente pode alterar livremente",
+            isCorrect: false,
+          },
+          {
+            text: "Um arquivo de configuração do projeto React",
+            isCorrect: false,
+          },
           { text: "As classes CSS aplicadas ao componente", isCorrect: false },
         ],
       },
       {
         id: 3,
         moduleId: 0,
-        question: "Um componente precisa exibir dois elementos lado a lado na raiz. Qual é a saída correta?",
+        question:
+          "Um componente precisa exibir dois elementos lado a lado na raiz. Qual é a saída correta?",
         explanation:
           "Um componente devolve um único elemento raiz. Quando você precisa de irmãos sem acrescentar marcação, usa um fragmento — o par de tags vazias. Envolver em div funciona, mas polui o HTML final; devolver dois elementos soltos é erro de sintaxe; e array exigiria chave em cada item.",
         options: [
           { text: "Envolver os dois em um fragmento vazio", isCorrect: true },
-          { text: "Devolver os dois elementos soltos, um após o outro", isCorrect: false },
-          { text: "Criar dois componentes separados obrigatoriamente", isCorrect: false },
-          { text: "Não é possível: React aceita apenas um elemento por tela", isCorrect: false },
+          {
+            text: "Devolver os dois elementos soltos, um após o outro",
+            isCorrect: false,
+          },
+          {
+            text: "Criar dois componentes separados obrigatoriamente",
+            isCorrect: false,
+          },
+          {
+            text: "Não é possível: React aceita apenas um elemento por tela",
+            isCorrect: false,
+          },
         ],
       },
       {
         id: 4,
         moduleId: 1,
-        question: "Por que uma variável comum não serve para guardar dado que muda na tela?",
+        question:
+          "Por que uma variável comum não serve para guardar dado que muda na tela?",
         explanation:
           "Alterar uma variável comum não avisa o React de nada, então a tela continua mostrando o valor antigo. O useState guarda o valor e, ao ser atualizado, sinaliza que aquele componente precisa ser renderizado de novo. Não é questão de velocidade nem de tipo de dado.",
         options: [
-          { text: "Porque alterá-la não sinaliza ao React que a tela deve ser atualizada", isCorrect: true },
-          { text: "Porque variáveis comuns são mais lentas que useState", isCorrect: false },
-          { text: "Porque o React proíbe declarar variáveis dentro de componentes", isCorrect: false },
-          { text: "Porque variáveis comuns não aceitam objetos", isCorrect: false },
+          {
+            text: "Porque alterá-la não sinaliza ao React que a tela deve ser atualizada",
+            isCorrect: true,
+          },
+          {
+            text: "Porque variáveis comuns são mais lentas que useState",
+            isCorrect: false,
+          },
+          {
+            text: "Porque o React proíbe declarar variáveis dentro de componentes",
+            isCorrect: false,
+          },
+          {
+            text: "Porque variáveis comuns não aceitam objetos",
+            isCorrect: false,
+          },
         ],
       },
       {
         id: 5,
         moduleId: 1,
-        question: "Quando o novo valor do estado depende do valor anterior, qual é a forma segura de atualizar?",
+        question:
+          "Quando o novo valor do estado depende do valor anterior, qual é a forma segura de atualizar?",
         explanation:
           "Passar uma função ao atualizador garante que ela receba o valor mais recente, mesmo que várias atualizações aconteçam em sequência. Usar o valor direto pode trabalhar sobre uma leitura antiga. Atribuir direto à variável não funciona, e não existe necessidade de recarregar a página.",
         options: [
-          { text: "Passar uma função ao atualizador, que recebe o valor anterior", isCorrect: true },
-          { text: "Ler a variável de estado e passar o resultado já calculado", isCorrect: false },
-          { text: "Atribuir o novo valor diretamente à variável de estado", isCorrect: false },
-          { text: "Recarregar o componente manualmente após a mudança", isCorrect: false },
+          {
+            text: "Passar uma função ao atualizador, que recebe o valor anterior",
+            isCorrect: true,
+          },
+          {
+            text: "Ler a variável de estado e passar o resultado já calculado",
+            isCorrect: false,
+          },
+          {
+            text: "Atribuir o novo valor diretamente à variável de estado",
+            isCorrect: false,
+          },
+          {
+            text: "Recarregar o componente manualmente após a mudança",
+            isCorrect: false,
+          },
         ],
       },
       {
         id: 6,
         moduleId: 1,
-        question: "Dois componentes irmãos precisam ler e alterar o mesmo dado. Qual é a solução mais simples?",
+        question:
+          "Dois componentes irmãos precisam ler e alterar o mesmo dado. Qual é a solução mais simples?",
         explanation:
           "Mover o estado para o pai comum e passá-lo como prop resolve o caso sem nenhuma biblioteca — é o padrão conhecido como elevar o estado. Duplicar em cada irmão cria duas verdades que vão divergir. Biblioteca global e armazenamento do navegador são soluções desproporcionais para o problema.",
         options: [
-          { text: "Mover o estado para o componente pai comum aos dois", isCorrect: true },
-          { text: "Declarar o mesmo estado nos dois componentes", isCorrect: false },
-          { text: "Instalar uma biblioteca de estado global", isCorrect: false },
-          { text: "Guardar o valor no armazenamento local do navegador", isCorrect: false },
+          {
+            text: "Mover o estado para o componente pai comum aos dois",
+            isCorrect: true,
+          },
+          {
+            text: "Declarar o mesmo estado nos dois componentes",
+            isCorrect: false,
+          },
+          {
+            text: "Instalar uma biblioteca de estado global",
+            isCorrect: false,
+          },
+          {
+            text: "Guardar o valor no armazenamento local do navegador",
+            isCorrect: false,
+          },
         ],
       },
       {
         id: 7,
         moduleId: 2,
-        question: "Por que usar o índice do array como prop key é problemático?",
+        question:
+          "Por que usar o índice do array como prop key é problemático?",
         explanation:
           "A key identifica cada item entre uma renderização e outra. Se a lista reordena ou perde um item do meio, o índice passa a apontar para outro dado, e o React reaproveita o elemento errado — levando junto o estado interno dele. Com lista imutável o índice até funciona, mas é hábito que cobra caro depois.",
         options: [
-          { text: "Porque ao reordenar ou remover itens o índice passa a apontar para outro dado", isCorrect: true },
-          { text: "Porque o React não aceita número como key", isCorrect: false },
-          { text: "Porque deixa a renderização mais lenta em qualquer caso", isCorrect: false },
-          { text: "Porque impede o uso de map para renderizar listas", isCorrect: false },
+          {
+            text: "Porque ao reordenar ou remover itens o índice passa a apontar para outro dado",
+            isCorrect: true,
+          },
+          {
+            text: "Porque o React não aceita número como key",
+            isCorrect: false,
+          },
+          {
+            text: "Porque deixa a renderização mais lenta em qualquer caso",
+            isCorrect: false,
+          },
+          {
+            text: "Porque impede o uso de map para renderizar listas",
+            isCorrect: false,
+          },
         ],
       },
       {
@@ -1160,36 +1409,65 @@ const programsData = [
         explanation:
           "Em um formulário controlado o valor do campo vem do estado e toda digitação passa pelo atualizador. Isso torna o estado a única fonte da verdade e simplifica validação e limpeza. Não tem relação com envio ao servidor, com biblioteca externa nem com o atributo required.",
         options: [
-          { text: "O valor do campo vem do estado e toda alteração passa pelo atualizador", isCorrect: true },
-          { text: "O formulário envia os dados automaticamente ao servidor", isCorrect: false },
-          { text: "O formulário usa uma biblioteca externa de validação", isCorrect: false },
+          {
+            text: "O valor do campo vem do estado e toda alteração passa pelo atualizador",
+            isCorrect: true,
+          },
+          {
+            text: "O formulário envia os dados automaticamente ao servidor",
+            isCorrect: false,
+          },
+          {
+            text: "O formulário usa uma biblioteca externa de validação",
+            isCorrect: false,
+          },
           { text: "Todos os campos têm o atributo required", isCorrect: false },
         ],
       },
       {
         id: 9,
         moduleId: 2,
-        question: "Um valor pode ser calculado a partir do estado que já existe. Onde ele deve ficar?",
+        question:
+          "Um valor pode ser calculado a partir do estado que já existe. Onde ele deve ficar?",
         explanation:
           "Se o valor deriva de algo que já está no estado, ele deve ser calculado durante a renderização. Criar um estado extra sincronizado por efeito gera renderização dupla e abre espaço para os dois valores discordarem. Efeito existe para conversar com o mundo fora do React, não para derivar dados.",
         options: [
-          { text: "Calculado direto na renderização, sem estado nem efeito", isCorrect: true },
-          { text: "Em um estado próprio, atualizado por um efeito", isCorrect: false },
-          { text: "Em uma variável global fora do componente", isCorrect: false },
+          {
+            text: "Calculado direto na renderização, sem estado nem efeito",
+            isCorrect: true,
+          },
+          {
+            text: "Em um estado próprio, atualizado por um efeito",
+            isCorrect: false,
+          },
+          {
+            text: "Em uma variável global fora do componente",
+            isCorrect: false,
+          },
           { text: "No armazenamento local do navegador", isCorrect: false },
         ],
       },
       {
         id: 10,
         moduleId: 3,
-        question: "Qual é a vantagem de agrupar arquivos por assunto do produto em vez de por tipo?",
+        question:
+          "Qual é a vantagem de agrupar arquivos por assunto do produto em vez de por tipo?",
         explanation:
           "Agrupando por assunto, tudo que diz respeito a uma funcionalidade fica na mesma pasta, e mexer nela exige abrir um lugar só. Agrupando por tipo, uma única mudança espalha o trabalho por várias pastas. Não muda desempenho, não é exigência do React e não altera o tamanho do pacote final.",
         options: [
-          { text: "Mexer em uma funcionalidade passa a exigir abrir uma pasta só", isCorrect: true },
-          { text: "A aplicação carrega mais rápido no navegador", isCorrect: false },
+          {
+            text: "Mexer em uma funcionalidade passa a exigir abrir uma pasta só",
+            isCorrect: true,
+          },
+          {
+            text: "A aplicação carrega mais rápido no navegador",
+            isCorrect: false,
+          },
           { text: "É exigência da própria biblioteca React", isCorrect: false },
-          { text: "Reduz automaticamente o tamanho do pacote final", isCorrect: false },
+          {
+            text: "Reduz automaticamente o tamanho do pacote final",
+            isCorrect: false,
+          },
         ],
       },
       {
@@ -1199,16 +1477,29 @@ const programsData = [
         explanation:
           "Hook próprio é uma função comum, por convenção iniciada com use, que pode chamar outros hooks e existe para reunir lógica repetida fora dos componentes. Não é recurso especial da biblioteca, não substitui componente e não tem relação com desempenho por si só.",
         options: [
-          { text: "Uma função que reúne lógica reutilizável e pode chamar outros hooks", isCorrect: true },
-          { text: "Um componente que não renderiza nada na tela", isCorrect: false },
-          { text: "Um recurso exclusivo de bibliotecas de estado global", isCorrect: false },
-          { text: "Uma técnica para acelerar a renderização", isCorrect: false },
+          {
+            text: "Uma função que reúne lógica reutilizável e pode chamar outros hooks",
+            isCorrect: true,
+          },
+          {
+            text: "Um componente que não renderiza nada na tela",
+            isCorrect: false,
+          },
+          {
+            text: "Um recurso exclusivo de bibliotecas de estado global",
+            isCorrect: false,
+          },
+          {
+            text: "Uma técnica para acelerar a renderização",
+            isCorrect: false,
+          },
         ],
       },
       {
         id: 12,
         moduleId: 3,
-        question: "Segundo a pesquisa State of React 2025, qual proporção dos respondentes não usa nenhuma biblioteca de estado?",
+        question:
+          "Segundo a pesquisa State of React 2025, qual proporção dos respondentes não usa nenhuma biblioteca de estado?",
         explanation:
           "34% dos respondentes não usam biblioteca de estado alguma, o que mostra que os recursos nativos do React resolvem boa parte dos casos. Isso não significa que bibliotecas sejam desnecessárias — significa que instalar antes de ter o problema é decisão precipitada.",
         options: [
@@ -1239,17 +1530,40 @@ const programsData = [
     appliedIn: {
       title: "Onde se aplica",
       items: [
-        { label: "Painéis e sistemas internos", description: "Telas com muitos dados que mudam e precisam refletir o estado na hora." },
-        { label: "Produtos web", description: "Aplicações que o usuário abre e usa por um tempo, em vez de só ler." },
-        { label: "Base para frameworks", description: "Next.js e Remix são construídos sobre React — este é o pré-requisito." },
+        {
+          label: "Painéis e sistemas internos",
+          description:
+            "Telas com muitos dados que mudam e precisam refletir o estado na hora.",
+        },
+        {
+          label: "Produtos web",
+          description:
+            "Aplicações que o usuário abre e usa por um tempo, em vez de só ler.",
+        },
+        {
+          label: "Base para frameworks",
+          description:
+            "Next.js e Remix são construídos sobre React — este é o pré-requisito.",
+        },
       ],
     },
     forWho: {
       title: "Para quem é este programa",
       profiles: [
-        { label: "Quem já entregou uma página", description: "Conhece HTML, CSS e JavaScript e quer dar o passo para aplicação." },
-        { label: "Quem tentou React e travou", description: "Já viu tutorial mas não entendeu quando o componente renderiza de novo." },
-        { label: "Quem vai entrar numa equipe", description: "Precisa ler e entender código React de outras pessoas." },
+        {
+          label: "Quem já entregou uma página",
+          description:
+            "Conhece HTML, CSS e JavaScript e quer dar o passo para aplicação.",
+        },
+        {
+          label: "Quem tentou React e travou",
+          description:
+            "Já viu tutorial mas não entendeu quando o componente renderiza de novo.",
+        },
+        {
+          label: "Quem vai entrar numa equipe",
+          description: "Precisa ler e entender código React de outras pessoas.",
+        },
       ],
     },
     marketUsage: {
@@ -1260,17 +1574,20 @@ const programsData = [
     },
     sources: [
       {
-        label: "SVAR — React, Vue or Svelte in 2026: comparativo com downloads npm e dados do State of JavaScript 2025",
+        label:
+          "SVAR — React, Vue or Svelte in 2026: comparativo com downloads npm e dados do State of JavaScript 2025",
         url: "https://svar.dev/blog/react-vs-vue-vs-svelte-for-modern-web-apps/",
       },
       {
-        label: "React State Management in 2026: A Data-Driven Comparison — dados do State of React 2025",
+        label:
+          "React State Management in 2026: A Data-Driven Comparison — dados do State of React 2025",
         url: "https://saschb2b.com/blog/react-state-management-2026",
       },
     ],
   },
   {
     id: 102,
+    status: "novidade",
     image:
       "https://cdn.pixabay.com/photo/2016/11/23/14/45/coding-1853305_1280.jpg",
     category: "Frontend",
@@ -1282,6 +1599,7 @@ const programsData = [
   },
   {
     id: 103,
+    status: "novidade",
     image:
       "https://cdn.pixabay.com/photo/2021/08/04/13/06/software-developer-6521720_1280.jpg",
     category: "Frontend",
@@ -1293,6 +1611,7 @@ const programsData = [
   },
   {
     id: 104,
+    status: "novidade",
     image:
       "https://cdn.pixabay.com/photo/2014/09/24/14/29/macbook-459196_1280.jpg",
     category: "Frontend",
@@ -1306,6 +1625,7 @@ const programsData = [
   // UX/UI (201 a 300)
   {
     id: 201,
+    status: "novidade",
     image:
       "https://cdn.pixabay.com/photo/2015/06/01/09/04/phone-793046_960_720.jpg",
     category: "UX/UI",
@@ -1318,6 +1638,7 @@ const programsData = [
   },
   {
     id: 202,
+    status: "novidade",
     image:
       "https://cdn.pixabay.com/photo/2018/03/10/12/00/teamwork-3213924_1280.jpg",
     category: "UX/UI",
@@ -1329,6 +1650,7 @@ const programsData = [
   },
   {
     id: 203,
+    status: "novidade",
     image:
       "https://cdn.pixabay.com/photo/2015/02/02/11/09/office-620822_1280.jpg",
     category: "UX/UI",
@@ -1340,6 +1662,7 @@ const programsData = [
   },
   {
     id: 204,
+    status: "novidade",
     image:
       "https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406_1280.jpg",
     category: "UX/UI",
@@ -1353,6 +1676,7 @@ const programsData = [
   // Backend (301 a 400)
   {
     id: 301,
+    status: "novidade",
     image:
       "https://cdn.pixabay.com/photo/2021/08/04/13/06/software-developer-6521720_1280.jpg",
     category: "Backend",
@@ -1365,6 +1689,7 @@ const programsData = [
   },
   {
     id: 302,
+    status: "novidade",
     image:
       "https://cdn.pixabay.com/photo/2016/11/23/14/45/coding-1853305_1280.jpg",
     category: "Backend",
@@ -1376,6 +1701,7 @@ const programsData = [
   },
   {
     id: 303,
+    status: "novidade",
     image:
       "https://cdn.pixabay.com/photo/2015/09/05/20/02/coding-924920_1280.jpg",
     category: "Backend",
@@ -1387,6 +1713,7 @@ const programsData = [
   },
   {
     id: 304,
+    status: "novidade",
     image:
       "https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406_1280.jpg",
     category: "Backend",
@@ -1400,6 +1727,7 @@ const programsData = [
   // Data Base (401 a 500)
   {
     id: 401,
+    status: "novidade",
     image: "https://cdn.pixabay.com/photo/2016/02/18/19/25/pc-1207886_640.jpg",
     category: "Data Base",
     categoryFilter: "data-base",
@@ -1411,6 +1739,7 @@ const programsData = [
   },
   {
     id: 402,
+    status: "novidade",
     image:
       "https://cdn.pixabay.com/photo/2014/10/05/19/02/binary-code-475664_1280.jpg",
     category: "Data Base",
@@ -1422,6 +1751,7 @@ const programsData = [
   },
   {
     id: 403,
+    status: "novidade",
     image:
       "https://cdn.pixabay.com/photo/2016/11/29/03/15/man-1867009_1280.jpg",
     category: "Data Base",
@@ -1433,6 +1763,7 @@ const programsData = [
   },
   {
     id: 404,
+    status: "novidade",
     image:
       "https://cdn.pixabay.com/photo/2014/09/24/14/29/macbook-459196_1280.jpg",
     category: "Data Base",
@@ -1446,6 +1777,7 @@ const programsData = [
   // Produtos Digitais (501 a 600)
   {
     id: 501,
+    status: "novidade",
     image:
       "https://cdn.pixabay.com/photo/2014/03/22/22/17/phone-292994_1280.jpg",
     category: "Produtos Digitais",
@@ -1457,6 +1789,7 @@ const programsData = [
   },
   {
     id: 502,
+    status: "novidade",
     image:
       "https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849822_1280.jpg",
     category: "Produtos Digitais",
@@ -1468,6 +1801,7 @@ const programsData = [
   },
   {
     id: 503,
+    status: "novidade",
     image:
       "https://cdn.pixabay.com/photo/2015/05/31/15/14/woman-792162_1280.jpg",
     category: "Produtos Digitais",
@@ -1479,6 +1813,7 @@ const programsData = [
   },
   {
     id: 504,
+    status: "novidade",
     image:
       "https://cdn.pixabay.com/photo/2015/09/05/20/02/coding-924920_1280.jpg",
     category: "Produtos Digitais",
@@ -1492,6 +1827,7 @@ const programsData = [
   // Projetos (601 a 700)
   {
     id: 601,
+    status: "novidade",
     image:
       "https://cdn.pixabay.com/photo/2015/07/17/22/42/whiteboard-849803_960_720.jpg",
     category: "Projetos",
@@ -1504,6 +1840,7 @@ const programsData = [
   },
   {
     id: 602,
+    status: "novidade",
     image:
       "https://cdn.pixabay.com/photo/2015/01/09/11/08/startup-594090_1280.jpg",
     category: "Projetos",
@@ -1515,6 +1852,7 @@ const programsData = [
   },
   {
     id: 603,
+    status: "novidade",
     image:
       "https://cdn.pixabay.com/photo/2015/09/05/22/33/office-925806_1280.jpg",
     category: "Projetos",
@@ -1526,6 +1864,7 @@ const programsData = [
   },
   {
     id: 604,
+    status: "novidade",
     image:
       "https://cdn.pixabay.com/photo/2018/03/10/12/00/teamwork-3213924_1280.jpg",
     category: "Projetos",
@@ -1539,6 +1878,7 @@ const programsData = [
   // English (701 a 800)
   {
     id: 701,
+    status: "novidade",
     image:
       "https://cdn.pixabay.com/photo/2016/08/03/21/38/london-1567903_960_720.jpg",
     category: "English",
@@ -1551,6 +1891,7 @@ const programsData = [
   },
   {
     id: 702,
+    status: "novidade",
     image:
       "https://cdn.pixabay.com/photo/2014/10/07/13/48/mountain-477832_1280.jpg",
     category: "English",
@@ -1562,6 +1903,7 @@ const programsData = [
   },
   {
     id: 703,
+    status: "novidade",
     image:
       "https://cdn.pixabay.com/photo/2015/09/06/00/17/macbook-926558_1280.jpg",
     category: "English",
@@ -1573,6 +1915,7 @@ const programsData = [
   },
   {
     id: 704,
+    status: "novidade",
     image:
       "https://cdn.pixabay.com/photo/2017/07/31/11/21/people-2557396_1280.jpg",
     category: "English",
@@ -1582,9 +1925,10 @@ const programsData = [
     duration: "05hr 30min",
     access: "Acesso Livre",
   },
-    // IA (801 a 900)
+  // IA (801 a 900)
   {
     id: 801,
+    status: "lancado",
     image:
       "https://cdn.pixabay.com/photo/2015/09/05/20/02/coding-924920_1280.jpg",
     category: "IA",
@@ -1612,10 +1956,30 @@ const programsData = [
       "Modelo de registro de estudo semanal",
     ],
     modules: [
-      { id: 0, title: "O Que a Pesquisa Mostra", lessonsCount: 3, component: "ModuleRenderer" },
-      { id: 1, title: "Os Três Modos de Perguntar", lessonsCount: 3, component: "ModuleRenderer" },
-      { id: 2, title: "Revisar o Que a IA Escreveu", lessonsCount: 4, component: "ModuleRenderer" },
-      { id: 3, title: "Uma Rotina que Ensina", lessonsCount: 3, component: "ModuleRenderer" },
+      {
+        id: 0,
+        title: "O Que a Pesquisa Mostra",
+        lessonsCount: 3,
+        component: "ModuleRenderer",
+      },
+      {
+        id: 1,
+        title: "Os Três Modos de Perguntar",
+        lessonsCount: 3,
+        component: "ModuleRenderer",
+      },
+      {
+        id: 2,
+        title: "Revisar o Que a IA Escreveu",
+        lessonsCount: 4,
+        component: "ModuleRenderer",
+      },
+      {
+        id: 3,
+        title: "Uma Rotina que Ensina",
+        lessonsCount: 3,
+        component: "ModuleRenderer",
+      },
     ],
     enrollDetails: {
       categoryBadge: "Inteligência Artificial",
@@ -1643,36 +2007,79 @@ const programsData = [
           moduleId: 0,
           title: "Módulo 0: O Que a Pesquisa Mostra",
           items: [
-            { label: "O experimento", description: "Como foi montado o ensaio com 52 júniores e o que ele mede de fato." },
-            { label: "Os números", description: "50% contra 67%, e o que essa diferença significa na prática." },
-            { label: "O limite do estudo", description: "O que o experimento não mediu, e por que isso importa na leitura." },
+            {
+              label: "O experimento",
+              description:
+                "Como foi montado o ensaio com 52 júniores e o que ele mede de fato.",
+            },
+            {
+              label: "Os números",
+              description:
+                "50% contra 67%, e o que essa diferença significa na prática.",
+            },
+            {
+              label: "O limite do estudo",
+              description:
+                "O que o experimento não mediu, e por que isso importa na leitura.",
+            },
           ],
         },
         {
           moduleId: 1,
           title: "Módulo 1: Os Três Modos de Perguntar",
           items: [
-            { label: "Gerar e depois investigar", description: "Pedir o código e, na sequência, perguntar por que ele é assim." },
-            { label: "Pedir código com explicação", description: "Solicitar os dois juntos na mesma resposta." },
-            { label: "Só conceito", description: "Perguntar a ideia e escrever o código você mesmo." },
+            {
+              label: "Gerar e depois investigar",
+              description:
+                "Pedir o código e, na sequência, perguntar por que ele é assim.",
+            },
+            {
+              label: "Pedir código com explicação",
+              description: "Solicitar os dois juntos na mesma resposta.",
+            },
+            {
+              label: "Só conceito",
+              description: "Perguntar a ideia e escrever o código você mesmo.",
+            },
           ],
         },
         {
           moduleId: 2,
           title: "Módulo 2: Revisar o Que a IA Escreveu",
           items: [
-            { label: "Ler antes de rodar", description: "O hábito que separa revisão de aposta." },
-            { label: "Checklist de revisão", description: "Cinco perguntas objetivas para qualquer trecho gerado." },
-            { label: "Quebrar de propósito", description: "Testar o entendimento alterando o código e prevendo o resultado." },
+            {
+              label: "Ler antes de rodar",
+              description: "O hábito que separa revisão de aposta.",
+            },
+            {
+              label: "Checklist de revisão",
+              description:
+                "Cinco perguntas objetivas para qualquer trecho gerado.",
+            },
+            {
+              label: "Quebrar de propósito",
+              description:
+                "Testar o entendimento alterando o código e prevendo o resultado.",
+            },
           ],
         },
         {
           moduleId: 3,
           title: "Módulo 3: Uma Rotina que Ensina",
           items: [
-            { label: "Sessão sem assistente", description: "Reservar tempo para trabalhar travado, de propósito." },
-            { label: "Registro do que não sabia", description: "Anotar a lacuna no momento em que ela aparece." },
-            { label: "Revisão semanal", description: "Voltar ao que foi gerado e reescrever sem ajuda." },
+            {
+              label: "Sessão sem assistente",
+              description:
+                "Reservar tempo para trabalhar travado, de propósito.",
+            },
+            {
+              label: "Registro do que não sabia",
+              description: "Anotar a lacuna no momento em que ela aparece.",
+            },
+            {
+              label: "Revisão semanal",
+              description: "Voltar ao que foi gerado e reescrever sem ajuda.",
+            },
           ],
         },
       ],
@@ -1684,7 +2091,8 @@ const programsData = [
         id: 0,
         icon: "search",
         title: "O Que a Pesquisa Mostra",
-        shortDescription: "O ensaio com 52 júniores, os números e o que eles não dizem",
+        shortDescription:
+          "O ensaio com 52 júniores, os números e o que eles não dizem",
         introductionText:
           "Quase tudo que se lê sobre IA e programação é opinião. Este módulo começa por um dado: um ensaio controlado randomizado, com grupo de comparação, publicado com método aberto. Entender como o estudo foi feito importa tanto quanto o resultado, porque é o que permite saber até onde a conclusão vale — e onde ela para.",
         sections: [
@@ -1818,7 +2226,8 @@ const programsData = [
         id: 2,
         icon: "shield",
         title: "Revisar o Que a IA Escreveu",
-        shortDescription: "Ler antes de rodar, e um checklist que cabe em qualquer trecho",
+        shortDescription:
+          "Ler antes de rodar, e um checklist que cabe em qualquer trecho",
         introductionText:
           "Código gerado por IA tem uma característica perigosa: ele parece certo. A formatação é boa, os nomes fazem sentido, a estrutura é plausível. Essa aparência de qualidade desarma a desconfiança que você teria com código de origem desconhecida. Este módulo constrói o hábito oposto — tratar o que voltou como um pull request de alguém que você não conhece.",
         sections: [
@@ -1893,7 +2302,8 @@ const programsData = [
         id: 3,
         icon: "tasks",
         title: "Uma Rotina que Ensina",
-        shortDescription: "Travar de propósito, registrar a lacuna e revisar o que foi gerado",
+        shortDescription:
+          "Travar de propósito, registrar a lacuna e revisar o que foi gerado",
         introductionText:
           "Os pesquisadores concluíram que o esforço cognitivo — inclusive o desconforto de ficar travado — é provavelmente importante para a formação de domínio. Isso não acontece por acaso: precisa estar na agenda. Este módulo monta três hábitos pequenos que cabem em qualquer semana de trabalho e garantem que a habilidade continue crescendo enquanto a entrega continua saindo.",
         sections: [
@@ -1960,33 +2370,48 @@ const programsData = [
       {
         id: 1,
         moduleId: 0,
-        question: "No ensaio controlado com 52 desenvolvedores júnior, qual foi a diferença de desempenho no teste de compreensão?",
+        question:
+          "No ensaio controlado com 52 desenvolvedores júnior, qual foi a diferença de desempenho no teste de compreensão?",
         explanation:
           "O grupo que usou assistente de IA acertou em média 50%, contra 67% do grupo que programou sem assistente — quase dois conceitos de diferença, com significância estatística. Os grupos não empataram, e o grupo com IA não foi melhor.",
         options: [
           { text: "50% com IA contra 67% sem IA", isCorrect: true },
           { text: "Os dois grupos empataram", isCorrect: false },
           { text: "67% com IA contra 50% sem IA", isCorrect: false },
-          { text: "O estudo não aplicou teste de compreensão", isCorrect: false },
+          {
+            text: "O estudo não aplicou teste de compreensão",
+            isCorrect: false,
+          },
         ],
       },
       {
         id: 2,
         moduleId: 0,
-        question: "Sobre o tempo de execução da tarefa, o que o estudo encontrou?",
+        question:
+          "Sobre o tempo de execução da tarefa, o que o estudo encontrou?",
         explanation:
           "O grupo com IA terminou cerca de dois minutos mais rápido, mas essa diferença não foi estatisticamente significativa. Ou seja, o ganho de velocidade que normalmente justifica a troca não se confirmou de forma confiável naquele experimento.",
         options: [
-          { text: "Cerca de dois minutos mais rápido, sem significância estatística", isCorrect: true },
-          { text: "Redução de metade do tempo, com significância estatística", isCorrect: false },
-          { text: "O grupo com IA demorou significativamente mais", isCorrect: false },
+          {
+            text: "Cerca de dois minutos mais rápido, sem significância estatística",
+            isCorrect: true,
+          },
+          {
+            text: "Redução de metade do tempo, com significância estatística",
+            isCorrect: false,
+          },
+          {
+            text: "O grupo com IA demorou significativamente mais",
+            isCorrect: false,
+          },
           { text: "O tempo não foi medido", isCorrect: false },
         ],
       },
       {
         id: 3,
         moduleId: 0,
-        question: "Em qual tipo de questão apareceu a maior diferença entre os dois grupos?",
+        question:
+          "Em qual tipo de questão apareceu a maior diferença entre os dois grupos?",
         explanation:
           "A maior diferença apareceu nas questões de depuração. Encontrar erro exige um modelo mental de como o código funciona, e é esse modelo que não se forma quando o código chega pronto. As demais categorias também foram avaliadas, mas com diferença menor.",
         options: [
@@ -1999,25 +2424,39 @@ const programsData = [
       {
         id: 4,
         moduleId: 1,
-        question: "O que caracterizava os participantes que usaram IA e mesmo assim pontuaram acima de 65%?",
+        question:
+          "O que caracterizava os participantes que usaram IA e mesmo assim pontuaram acima de 65%?",
         explanation:
           "Eles usaram o assistente de forma estratégica, buscando explicação em vez de delegar a tarefa. O fator não foi usar menos a ferramenta nem ter mais experiência — foi o tipo de interação estabelecida com ela.",
         options: [
-          { text: "Usaram o assistente para obter explicação, não para delegar", isCorrect: true },
+          {
+            text: "Usaram o assistente para obter explicação, não para delegar",
+            isCorrect: true,
+          },
           { text: "Usaram o assistente pouquíssimas vezes", isCorrect: false },
-          { text: "Eram os participantes com mais anos de experiência", isCorrect: false },
+          {
+            text: "Eram os participantes com mais anos de experiência",
+            isCorrect: false,
+          },
           { text: "Trabalharam mais devagar que os demais", isCorrect: false },
         ],
       },
       {
         id: 5,
         moduleId: 1,
-        question: "Qual dos três modos de interação forma mais habilidade, e por isso é o mais lento?",
+        question:
+          "Qual dos três modos de interação forma mais habilidade, e por isso é o mais lento?",
         explanation:
           "Perguntar apenas o conceito e escrever o código você mesmo é o modo que mais exige esforço cognitivo e, por isso, o que mais forma habilidade. Gerar e investigar depois, ou pedir código com explicação, são intermediários. Aceitar o código sem nenhuma pergunta é o padrão que o estudo associa à perda de compreensão.",
         options: [
-          { text: "Perguntar só o conceito e escrever o código por conta própria", isCorrect: true },
-          { text: "Pedir o código pronto e aceitar sem perguntas", isCorrect: false },
+          {
+            text: "Perguntar só o conceito e escrever o código por conta própria",
+            isCorrect: true,
+          },
+          {
+            text: "Pedir o código pronto e aceitar sem perguntas",
+            isCorrect: false,
+          },
           { text: "Pedir o código junto com a explicação", isCorrect: false },
           { text: "Pedir o código e investigar depois", isCorrect: false },
         ],
@@ -2029,21 +2468,40 @@ const programsData = [
         explanation:
           "O modo de só conceito custa tempo, e nem tudo compensa esse custo — configuração usada uma vez por ano, por exemplo, pode vir pronta. A escolha deliberada é reservá-lo para aquilo que você quer dominar. Não se trata de o modo ser ineficaz nem de uma recomendação do estudo contra ele.",
         options: [
-          { text: "Porque nem todo assunto compensa o tempo; reserve-o para o que é do seu ofício", isCorrect: true },
-          { text: "Porque o modo conceitual produz código de pior qualidade", isCorrect: false },
-          { text: "Porque o estudo desaconselha escrever código à mão", isCorrect: false },
-          { text: "Porque assistentes modernos não respondem só conceito", isCorrect: false },
+          {
+            text: "Porque nem todo assunto compensa o tempo; reserve-o para o que é do seu ofício",
+            isCorrect: true,
+          },
+          {
+            text: "Porque o modo conceitual produz código de pior qualidade",
+            isCorrect: false,
+          },
+          {
+            text: "Porque o estudo desaconselha escrever código à mão",
+            isCorrect: false,
+          },
+          {
+            text: "Porque assistentes modernos não respondem só conceito",
+            isCorrect: false,
+          },
         ],
       },
       {
         id: 7,
         moduleId: 2,
-        question: "Por que código gerado por IA exige atenção especial na revisão?",
+        question:
+          "Por que código gerado por IA exige atenção especial na revisão?",
         explanation:
           "Ele chega bem formatado, com nomes plausíveis e estrutura convincente — e essa aparência de qualidade desarma a desconfiança que você teria com código de origem desconhecida. O problema não é a linguagem usada nem a quantidade de comentários.",
         options: [
-          { text: "Porque parece correto, e essa aparência desarma a desconfiança", isCorrect: true },
-          { text: "Porque costuma vir mal formatado e difícil de ler", isCorrect: false },
+          {
+            text: "Porque parece correto, e essa aparência desarma a desconfiança",
+            isCorrect: true,
+          },
+          {
+            text: "Porque costuma vir mal formatado e difícil de ler",
+            isCorrect: false,
+          },
           { text: "Porque sempre usa bibliotecas obsoletas", isCorrect: false },
           { text: "Porque nunca inclui tratamento de erro", isCorrect: false },
         ],
@@ -2051,27 +2509,44 @@ const programsData = [
       {
         id: 8,
         moduleId: 2,
-        question: "Qual das cinco perguntas do checklist revela melhor uma lacuna de estudo sua?",
+        question:
+          "Qual das cinco perguntas do checklist revela melhor uma lacuna de estudo sua?",
         explanation:
           "Eu saberia reescrever isso sem ajuda? é a pergunta que mede o seu entendimento, e não a qualidade do código. Responder não transforma aquele trecho num item de estudo identificado. As outras quatro avaliam o código; esta avalia você.",
         options: [
           { text: "Eu saberia reescrever isso sem ajuda?", isCorrect: true },
-          { text: "Alguma dependência nova foi introduzida?", isCorrect: false },
-          { text: "Há valor fixo que deveria ser configurável?", isCorrect: false },
+          {
+            text: "Alguma dependência nova foi introduzida?",
+            isCorrect: false,
+          },
+          {
+            text: "Há valor fixo que deveria ser configurável?",
+            isCorrect: false,
+          },
           { text: "O que acontece se a entrada vier vazia?", isCorrect: false },
         ],
       },
       {
         id: 9,
         moduleId: 2,
-        question: "Qual é a verificação de entendimento que não dá para enganar a si mesmo?",
+        question:
+          "Qual é a verificação de entendimento que não dá para enganar a si mesmo?",
         explanation:
           "Alterar uma linha e prever o resultado antes de rodar expõe o modelo mental: acertar a previsão comprova entendimento, errar aponta exatamente onde ele está furado. Reler, rodar os testes ou pedir confirmação ao assistente não exigem que você tenha construído esse modelo.",
         options: [
-          { text: "Alterar o código e prever o resultado antes de executar", isCorrect: true },
-          { text: "Ler o trecho uma segunda vez com atenção", isCorrect: false },
+          {
+            text: "Alterar o código e prever o resultado antes de executar",
+            isCorrect: true,
+          },
+          {
+            text: "Ler o trecho uma segunda vez com atenção",
+            isCorrect: false,
+          },
           { text: "Rodar e ver se os testes passam", isCorrect: false },
-          { text: "Pedir ao assistente que confirme se você entendeu", isCorrect: false },
+          {
+            text: "Pedir ao assistente que confirme se você entendeu",
+            isCorrect: false,
+          },
         ],
       },
       {
@@ -2081,8 +2556,14 @@ const programsData = [
         explanation:
           "O objetivo é passar pelo processo completo de ficar travado e sair sozinho — os pesquisadores apontam o esforço cognitivo, inclusive o desconforto de travar, como provavelmente importante para formar domínio. Não é medir velocidade, nem provar independência, nem economizar uso da ferramenta.",
         options: [
-          { text: "Passar pelo esforço de travar e destravar sozinho", isCorrect: true },
-          { text: "Medir quanto tempo você perde sem a ferramenta", isCorrect: false },
+          {
+            text: "Passar pelo esforço de travar e destravar sozinho",
+            isCorrect: true,
+          },
+          {
+            text: "Medir quanto tempo você perde sem a ferramenta",
+            isCorrect: false,
+          },
           { text: "Reduzir o custo de uso do assistente", isCorrect: false },
           { text: "Provar que você não depende de IA", isCorrect: false },
         ],
@@ -2090,27 +2571,53 @@ const programsData = [
       {
         id: 11,
         moduleId: 3,
-        question: "Por que anotar a lacuna no momento em que ela aparece, em vez de estudar na hora?",
+        question:
+          "Por que anotar a lacuna no momento em que ela aparece, em vez de estudar na hora?",
         explanation:
           "Registrar no instante produz uma lista específica, tirada do trabalho real, sem interromper a entrega. Estudar na hora quebra o fluxo, e lembrar depois transforma a lacuna numa sensação vaga de que falta estudar. A lista não serve para provar nada a ninguém.",
         options: [
-          { text: "Porque preserva o fluxo e gera uma lista específica e sua", isCorrect: true },
-          { text: "Porque estudar no mesmo dia não funciona", isCorrect: false },
-          { text: "Porque a lista serve como comprovação para o gestor", isCorrect: false },
-          { text: "Porque lacunas somem sozinhas com o tempo", isCorrect: false },
+          {
+            text: "Porque preserva o fluxo e gera uma lista específica e sua",
+            isCorrect: true,
+          },
+          {
+            text: "Porque estudar no mesmo dia não funciona",
+            isCorrect: false,
+          },
+          {
+            text: "Porque a lista serve como comprovação para o gestor",
+            isCorrect: false,
+          },
+          {
+            text: "Porque lacunas somem sozinhas com o tempo",
+            isCorrect: false,
+          },
         ],
       },
       {
         id: 12,
         moduleId: 3,
-        question: "Ao reescrever do zero um trecho que a IA gerou, o que indica sucesso?",
+        question:
+          "Ao reescrever do zero um trecho que a IA gerou, o que indica sucesso?",
         explanation:
           "O sucesso é a sua versão existir e funcionar — é a prova de que o conhecimento ficou com você. Ela não precisa ser melhor, nem idêntica, nem mais curta. A comparação entre as duas mostra o que foi absorvido e o que passou direto.",
         options: [
-          { text: "Sua versão existir e funcionar, mesmo sem ser melhor", isCorrect: true },
-          { text: "Sua versão ficar idêntica à gerada pela IA", isCorrect: false },
-          { text: "Sua versão ter menos linhas que a original", isCorrect: false },
-          { text: "Você conseguir reescrever sem consultar nem a documentação", isCorrect: false },
+          {
+            text: "Sua versão existir e funcionar, mesmo sem ser melhor",
+            isCorrect: true,
+          },
+          {
+            text: "Sua versão ficar idêntica à gerada pela IA",
+            isCorrect: false,
+          },
+          {
+            text: "Sua versão ter menos linhas que a original",
+            isCorrect: false,
+          },
+          {
+            text: "Você conseguir reescrever sem consultar nem a documentação",
+            isCorrect: false,
+          },
         ],
       },
     ],
@@ -2134,17 +2641,41 @@ const programsData = [
     appliedIn: {
       title: "Onde se aplica",
       items: [
-        { label: "Quem está aprendendo a programar", description: "Fase em que o risco de atrofia é maior, porque a base ainda está se formando." },
-        { label: "Primeiro emprego em tecnologia", description: "Entregar com ajuda e ainda assim construir repertório próprio." },
-        { label: "Quem ensina ou coordena", description: "Definir como a turma ou a equipe usa assistente sem perder formação." },
+        {
+          label: "Quem está aprendendo a programar",
+          description:
+            "Fase em que o risco de atrofia é maior, porque a base ainda está se formando.",
+        },
+        {
+          label: "Primeiro emprego em tecnologia",
+          description:
+            "Entregar com ajuda e ainda assim construir repertório próprio.",
+        },
+        {
+          label: "Quem ensina ou coordena",
+          description:
+            "Definir como a turma ou a equipe usa assistente sem perder formação.",
+        },
       ],
     },
     forWho: {
       title: "Para quem é este programa",
       profiles: [
-        { label: "Iniciantes que já usam IA", description: "Usam todo dia e desconfiam que estão aprendendo menos do que deveriam." },
-        { label: "Quem evita a ferramenta por receio", description: "Prefere não usar por medo de não aprender, e perde produtividade por isso." },
-        { label: "Instrutores e líderes técnicos", description: "Precisam de uma política de uso baseada em evidência, não em opinião." },
+        {
+          label: "Iniciantes que já usam IA",
+          description:
+            "Usam todo dia e desconfiam que estão aprendendo menos do que deveriam.",
+        },
+        {
+          label: "Quem evita a ferramenta por receio",
+          description:
+            "Prefere não usar por medo de não aprender, e perde produtividade por isso.",
+        },
+        {
+          label: "Instrutores e líderes técnicos",
+          description:
+            "Precisam de uma política de uso baseada em evidência, não em opinião.",
+        },
       ],
     },
     marketUsage: {
@@ -2155,11 +2686,13 @@ const programsData = [
     },
     sources: [
       {
-        label: "Anthropic — How AI assistance impacts the formation of coding skills (ensaio controlado randomizado com 52 desenvolvedores júnior)",
+        label:
+          "Anthropic — How AI assistance impacts the formation of coding skills (ensaio controlado randomizado com 52 desenvolvedores júnior)",
         url: "https://www.anthropic.com/research/AI-assistance-coding-skills",
       },
       {
-        label: "Alura — Mercado de programação 2026: programação assistida por IA como tendência e competição maior em vagas júnior",
+        label:
+          "Alura — Mercado de programação 2026: programação assistida por IA como tendência e competição maior em vagas júnior",
         url: "https://www.alura.com.br/artigos/mercado-de-programacao-2025",
       },
     ],

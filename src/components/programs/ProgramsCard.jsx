@@ -1,8 +1,8 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { FaAnglesRight, FaTag, FaLock, FaLockOpen } from "react-icons/fa6";
 import { FiClock } from "react-icons/fi";
 import { PiBookOpenTextFill } from "react-icons/pi";
+import PropTypes from "prop-types";
 
 export const ProgramsCard = ({
   id,
@@ -14,8 +14,10 @@ export const ProgramsCard = ({
   duration,
   access,
   accessType,
+  status,
 }) => {
   const isMembers = accessType === "membros";
+  const isNovidade = status === "novidade";
 
   return (
     <div
@@ -28,8 +30,9 @@ export const ProgramsCard = ({
         <img
           src={image}
           alt={title}
-          className="w-full aspect-[16/10] object-cover object-center 
-                     group-hover:scale-110 transition-transform duration-500 ease-in-out"
+          className={`w-full aspect-[16/10] object-cover object-center
+           transition-transform duration-500 ease-in-out
+           ${isNovidade ? "grayscale" : "group-hover:scale-110"}`}
         />
       </div>
 
@@ -78,17 +81,39 @@ export const ProgramsCard = ({
             {isMembers ? <FaLock size={12} /> : <FaLockOpen size={12} />}
             {access}
           </p>
-          <Link
-            to={`/program/${categoryFilter}/${id}`}
-            className="w-fit bg-sky-800 text-white px-4 py-2 rounded-lg text-sm font-medium 
-                       flex items-center justify-center gap-2 
-                       group-hover:bg-sky-700 transition-all ease-in-out duration-300"
-          >
-            Aprenda
-            <FaAnglesRight />
-          </Link>
+          {isNovidade ? (
+            <span
+              className="w-fit bg-neutral-800 text-white px-4 py-2 rounded-lg
+               text-sm font-medium flex items-center justify-center"
+            >
+              Em breve
+            </span>
+          ) : (
+            <Link
+              to={`/program/${categoryFilter}/${id}`}
+              className="w-fit bg-sky-800 text-white px-4 py-2 rounded-lg text-sm font-medium
+               flex items-center justify-center gap-2
+               group-hover:bg-sky-700 transition-all ease-in-out duration-300"
+            >
+              Aprenda
+              <FaAnglesRight />
+            </Link>
+          )}
         </div>
       </div>
     </div>
   );
+};
+
+ProgramsCard.propTypes = {
+  id: PropTypes.number.isRequired,
+  image: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
+  categoryFilter: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  lessons: PropTypes.string.isRequired,
+  duration: PropTypes.string.isRequired,
+  access: PropTypes.string.isRequired,
+  accessType: PropTypes.string,
+  status: PropTypes.string.isRequired,
 };

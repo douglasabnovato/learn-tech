@@ -1,3 +1,4 @@
+/** aboutData.js */
 import { FaMagnifyingGlass, FaListCheck, FaHammer, FaHandshake } from "react-icons/fa6";
 
 export const heroContent = {

@@ -53,19 +53,14 @@ export const EnrollPrograms = () => {
   );
 
   return (
-    <div className="w-full min-h-screen flex-col space-y-16 pb-16">
-      {/* Page Top Banner section */}
+    <div className="w-full min-h-screen flex-col space-y-16 pb-16"> 
       <PageTopBanner pageTitle={program.title} />
-      {/* Programs contents */}
       <div className="w-full space-y-16 md:px-16 sm:px-10 px-4">
         <div className="w-full grid md:grid-cols-5 grid-cols-1 md:gap-12 gap-10 grid-row-dense items-start">
-          {/** Video and Description */}
           <div className="w-full md:col-span-3 col-span-5 space-y-12">
-            {/** Video player */}
             {program.video && (
               <VideoPlayer src={program.video} poster={program.videoPoster} />
             )}
-            {/** Description with TabContent (modules 0-N) */}
             <Description
               program={program}
               onCompleteModule={handleCompleteModule}
@@ -74,12 +69,8 @@ export const EnrollPrograms = () => {
               onSelectModule={setActiveModuleIndex}
             />
           </div>
-
-          {/** Course Progress section */}
           <div className="w-full md:col-span-2 col-span-5 space-y-8 sticky top-28">
-            {/** progress */}
             <div className="w-full border border-neutral-300 md:p-4 p-3 rounded-xl space-y-8">
-              {/** title progress */}
               <div className="space-y-2">
                 <h5 className="text-base text-neutral-600 font-medium">
                   Seu progresso no curso
@@ -101,8 +92,6 @@ export const EnrollPrograms = () => {
                   </div>
                 </div>
               </div>
-
-              {/** módulos: agora clicáveis de verdade, trocam a aba ativa */}
               <div className="space-y-4">
                 <h5 className="text-base text-neutral-600 font-medium">
                   {program.curriculum || "Conteúdo do Treinamento"}
@@ -110,7 +99,6 @@ export const EnrollPrograms = () => {
                 <div className="w-full space-y-2">
                   {program.modules &&
                     program.modules.map((mod, index) => {
-                      // Determinar status do módulo baseado no completedModuleIndex
                       let status = "pending";
                       if (index <= completedModuleIndex) {
                         status = "completed";
@@ -163,8 +151,7 @@ export const EnrollPrograms = () => {
                     })}
                 </div>
               </div>
-            </div>
-            {/** quiz */}
+            </div> 
             <Quiz
               questions={program.quiz}
               storageKey={`quiz:${program.id}`}
