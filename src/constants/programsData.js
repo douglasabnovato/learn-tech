@@ -1,4 +1,4 @@
-import Image1 from "./../assets/programs/1-programs.webp";
+import Image1 from "./../assets/programs/1-program-curso.webp";
 import Poster1 from "./../assets/programs/1-demo-poster.webp";
 import quiz1 from "./quizData";
 
