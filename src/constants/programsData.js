@@ -1,5 +1,5 @@
-import Image1 from "./../assets/programs/1-program-curso.webp";
-import Poster1 from "./../assets/programs/1-demo-poster.webp";
+import Image1 from "./../assets/programs/1-program-curso-em-video.webp";
+import Poster1 from "./../assets/programs/1-poster-demo.webp";
 import quiz1 from "./quizData";
 
 const Video1 = "https://www.youtube.com/embed/pWDF8csG9Qo";
