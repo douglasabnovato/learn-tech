@@ -1,9 +1,11 @@
 # 🚀 Learn TECH
 
 A Learn TECH tem como objetivo acelerar a jornada para aperfeiçoar os resultados.
-Com uma experiência de usuário impecável, vamos construir um ECOSSISTEMA de (T)ecnologia, (E)nsino, (C)omputação e (H)umano para treinamento de APRENDIZADO.
+Com uma experiência de usuário, vamos construir um ECOSSISTEMA de (T)ecnologia, (E)nsino, (C)omputação e (H)umano para treinamento de APRENDIZADO.
 
 🔗 **Em produção:** https://learn-tech-pied.vercel.app/
+
+E a partir dela, temos career, tools, bootcamps. São projetos com temas específicos que complementam o ecossistema.
 
 ## 📂 Plataforma de Aprendizado
 
