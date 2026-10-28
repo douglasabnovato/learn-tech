@@ -1,0 +1,39 @@
+# CI do learn-tech — roda só scripts que já existem no package.json.
+# Observação: package-lock.json está no .gitignore, por isso a instalação usa
+# `npm install` (e não `npm ci`). O .npmrc (legacy-peer-deps) é respeitado.
+name: CI
+
+on:
+  push:
+    branches: [main, developer-mvp-2026, "feature/**"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    env:
+      CI: "true"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Instalar dependências
+        run: npm install --no-audit --no-fund
+
+      - name: Testes (contrato de dados)
+        run: npm test
+
+      - name: Build de produção
+        run: npm run build
+
+      # Lint ainda não foi verificado localmente (ver docs/claudeia/04-testes-automatizados.md).
+      # Fica informativo até o dono confirmar que `npm run lint` passa; depois, remover continue-on-error.
+      - name: Lint (informativo)
+        run: npm run lint
+        continue-on-error: true
