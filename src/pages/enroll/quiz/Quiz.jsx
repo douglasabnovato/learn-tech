@@ -8,7 +8,11 @@ import PropTypes from "prop-types";
 const ler = (chave, padrao) => {
   try {
     const bruto = localStorage.getItem(chave);
-    return bruto ? JSON.parse(bruto) : padrao;
+    if (!bruto) return padrao;
+    const valor = JSON.parse(bruto);
+    // Dado de outra versão ou editado à mão: só aceita o mesmo formato do padrão.
+    if (Array.isArray(padrao)) return Array.isArray(valor) ? valor : padrao;
+    return valor && typeof valor === "object" && !Array.isArray(valor) ? valor : padrao;
   } catch {
     return padrao;
   }

@@ -1,7 +1,26 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-export const Tabs = ({ tabs }) => {
-  const [activeTab, setActiveTab] = React.useState(tabs[0].id);
+// Funciona controlado (activeIndex + onChange, como o TabContent usa para
+// sincronizar a aba com a lista de módulos ao lado) ou sozinho, com estado
+// interno, quando o pai não passa essas props.
+export const Tabs = ({ tabs = [], activeIndex, onChange }) => {
+  const [indiceInterno, setIndiceInterno] = React.useState(0);
+  const controlado = typeof activeIndex === "number";
+  const bruto = controlado ? activeIndex : indiceInterno;
+  // Mantém o índice dentro da lista (ex.: "avançar" depois do último módulo).
+  const indice = Math.min(Math.max(bruto, 0), Math.max(tabs.length - 1, 0));
+  const activeTab = tabs[indice]?.id;
+
+  const setActiveTab = (id) => {
+    const novo = tabs.findIndex((t) => t.id === id);
+    if (novo < 0) return;
+    if (!controlado) setIndiceInterno(novo);
+    if (onChange) onChange(novo);
+  };
+
+  if (tabs.length === 0) return null;
+
   return (
     <div className="w-full">
       {/** tab headers */}
@@ -33,4 +52,16 @@ export const Tabs = ({ tabs }) => {
       </div>
     </div>
   );
+};
+
+Tabs.propTypes = {
+  tabs: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      title: PropTypes.node,
+      content: PropTypes.node,
+    })
+  ),
+  activeIndex: PropTypes.number,
+  onChange: PropTypes.func,
 };

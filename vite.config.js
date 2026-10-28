@@ -11,7 +11,8 @@ export default defineConfig({
     svgr(),
     visualizer({
       filename: "dist/stats.html",
-      open: true,
+      // Abre o relatório só na máquina local; em CI (CI=true) não há navegador.
+      open: !globalThis.process?.env?.CI,
       gzipSize: true,
       brotliSize: true,
     }),
