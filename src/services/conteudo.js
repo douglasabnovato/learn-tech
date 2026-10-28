@@ -80,11 +80,29 @@ export function usePagina(nome, local) {
   return useApi(`learn-tech/paginas/${nome}.json`, local).dados;
 }
 
-/* Mantém o vídeo local (47 MB, fica no site) quando a API não publica vídeo. */
+/*
+ * Status do card ("lancado" mostra "Aprenda"; "novidade" mostra "Em breve").
+ * A API não publica status: programa com módulos tem conteúdo e é lançado;
+ * sem módulos, vale o status local (capa em breve).
+ */
+export function statusDoPrograma(p, local) {
+  if (p?.status) return p.status;
+  const modulos = p?.modulesCount ?? p?.moduleContents?.length ?? p?.modules?.length ?? 0;
+  if (modulos > 0) return "lancado";
+  return local?.status ?? "novidade";
+}
+
+/* Mantém o vídeo local quando a API não publica vídeo e completa o status que a API não tem. */
 function comMidiaLocal(programa) {
   const p = hidratar(programa);
   const local = programsData.find((x) => x.id === p.id);
-  return { ...p, video: p.video || local?.video, videoPoster: p.videoPoster || local?.videoPoster, image: p.image || local?.image };
+  return {
+    ...p,
+    video: p.video || local?.video,
+    videoPoster: p.videoPoster || local?.videoPoster,
+    image: p.image || local?.image,
+    status: statusDoPrograma(p, local),
+  };
 }
 
 /* Catálogo de programas para listas e cards. */
