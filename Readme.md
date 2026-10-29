@@ -1,7 +1,8 @@
 # 🚀 Learn TECH
 
-A Learn TECH tem como objetivo acelerar a jornada para aperfeiçoar os resultados.
+A Learn TECH  como objetivo acelerar a jornada para aperfeiçoar os resultados.
 Com uma experiência de usuário, vamos construir um ECOSSISTEMA de (T)ecnologia, (E)nsino, (C)omputação e (H)umano para treinamento de APRENDIZADO.
+Hoje temos uma API com quatro projetos com temas específicos: bootcamps, tools, career, lerntech.
 
 🔗 **Em produção:** https://learn-tech-pied.vercel.app/
 
