@@ -24,7 +24,8 @@ export const Blog = () => {
       {/** Programs section */}
       <div className="w-full grid md:grid-cols-3 grid-colds-1 md:gap-x-10 md:gap-y-10 gap-x-5 gap-y-8">
         {/** Display the data */}
-        {blogData.map((blog, index) => (
+        {/* A home mostra os 6 primeiros; a lista completa fica em /blogs ("Veja Todos"). */}
+        {blogData.slice(0, 6).map((blog, index) => (
           <BlogCard key={index} {...blog} />
         ))}
       </div>

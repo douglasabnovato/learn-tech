@@ -294,7 +294,7 @@ export const Detail = () => {
             </h2>
             <ul className="space-y-1 w-full list-disc list-inside px-2">
               <li className="text-neutral-700 text-base font-normal">
-                Sem cadastro e sem login: é só acessar
+                Sem conta e sem senha: na primeira visita pedimos só nome e e-mail
               </li>
               <li className="text-neutral-700 text-base font-normal">
                 Conteúdo em ordem, do primeiro arquivo até a publicação

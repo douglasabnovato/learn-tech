@@ -66,6 +66,12 @@ const About = lazy(() =>
   })),
 );
 
+const Blogs = lazy(() =>
+  import("./pages/home/blog/Blogs").then((module) => ({
+    default: module.Blogs,
+  })),
+);
+
 const BlogOne = lazy(() =>
   import("./pages/home/blog/BlogOne").then((module) => ({
     default: module.BlogOne,
@@ -130,6 +136,7 @@ function App() {
               <Route path="/terms" element={<Termos />} />
               <Route path="/careers" element={<Carreiras />} />
               <Route path="/aprender" element={<Aprender />} />
+              <Route path="/blogs" element={<Blogs />} />
               <Route path="/blog/:id" element={<BlogOne />} />
               <Route path="/softskills" element={<Softskills />} />
               <Route path="/mentorias" element={<Mentorias />} />

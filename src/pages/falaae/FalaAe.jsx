@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
     FaChevronDown,
     FaCircleQuestion,
     FaLightbulb,
     FaBug,
-    FaUserGroup,
+    FaShieldHalved,
     FaEllipsis,
     FaCheck,
     FaArrowRight,
@@ -12,7 +12,8 @@ import {
     FaPaperPlane,
 } from "react-icons/fa6";
 import faqLocal from "../../constants/falaaeData";
-import { usePagina } from "../../services/conteudo";
+import { usePagina, API_URL } from "../../services/conteudo";
+import { enviarMensagem } from "../../services/mensagens";
 
 const motivos = [
     {
@@ -34,10 +35,10 @@ const motivos = [
         placeholder: "O que aconteceu? Em qual página ou funcionalidade?",
     },
     {
-        id: "area-membros",
-        label: "Quero saber sobre a área de membros",
-        icon: FaUserGroup,
-        placeholder: "O que você gostaria de saber sobre a área de membros?",
+        id: "privacidade",
+        label: "Quero exercer meus direitos de dados (LGPD)",
+        icon: FaShieldHalved,
+        placeholder: "Ex.: apagar meus dados ou saber o que foi guardado",
     },
     {
         id: "outro",
@@ -48,6 +49,23 @@ const motivos = [
 ];
 
 const TOTAL_STEPS = 4;
+const LIMITE_MENSAGEM = 4000;
+
+const NOMES_CAMPOS = { nome: "nome", email: "e-mail", motivo: "motivo", mensagem: "mensagem" };
+
+/* Texto honesto para cada tipo de falha no envio. */
+function textoDoErro(erro) {
+    if (!erro || erro.tipo === "indisponivel") {
+        return "O envio de mensagens está indisponível no momento. Sua mensagem não foi enviada; tente novamente mais tarde.";
+    }
+    if (erro.tipo === "invalido") {
+        const campos = [...new Set((erro.campos || []).map((c) => NOMES_CAMPOS[c.campo]).filter(Boolean))];
+        return campos.length
+            ? `Confira ${campos.join(", ")}: ${erro.campos.map((c) => c.mensagem).join("; ")}.`
+            : "Alguns dados não passaram na validação. Confira e tente de novo.";
+    }
+    return "Não conseguimos enviar sua mensagem agora (sem conexão ou falha no servidor). Seus dados continuam aqui: tente de novo.";
+}
 
 export const FalaAe = () => {
     const { itens: faqData } = usePagina("faq", { itens: faqLocal });
@@ -63,7 +81,10 @@ export const FalaAe = () => {
         nome: "",
         email: "",
     });
-    const [submitted, setSubmitted] = useState(false);
+    // "pronto" | "enviando" | "sucesso" | "erro"
+    const [status, setStatus] = useState("pronto");
+    const [erro, setErro] = useState(null);
+    const envioIndisponivel = !API_URL || erro?.tipo === "indisponivel";
 
     const selectedMotivo = motivos.find((m) => m.id === formData.motivo);
 
@@ -73,14 +94,33 @@ export const FalaAe = () => {
     const canAdvanceStep1 = Boolean(formData.motivo);
     const canAdvanceStep2 = formData.mensagem.trim().length > 0;
     const canAdvanceStep3 =
-        formData.nome.trim().length > 0 && formData.email.trim().length > 0;
+        formData.nome.trim().split(/\s+/).length >= 2 &&
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim());
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Sem backend próprio ainda — este form precisa de um destino
-        // (ex: Formspree) no atributo action, como fizemos na landing page
-        // do Golada. Por ora, simula o envio no front.
-        setSubmitted(true);
+        if (status === "enviando") return;
+        if (!API_URL) {
+            setStatus("erro");
+            setErro({ tipo: "indisponivel" });
+            return;
+        }
+        setStatus("enviando");
+        setErro(null);
+        try {
+            await enviarMensagem({
+                nome: formData.nome.trim(),
+                email: formData.email.trim(),
+                motivo: formData.motivo,
+                mensagem: formData.mensagem.trim(),
+                projeto: "learn-tech",
+                pagina: window.location.pathname,
+            });
+            setStatus("sucesso");
+        } catch (falha) {
+            setStatus("erro");
+            setErro({ tipo: falha.tipo || "falha", campos: falha.campos || [] });
+        }
     };
 
     return (
@@ -170,7 +210,7 @@ export const FalaAe = () => {
                         </p>
                     </div>
 
-                    {submitted ? (
+                    {status === "sucesso" ? (
                         <div className="rounded-2xl bg-gradient-to-tr from-indigo-600 via-sky-600 to-purple-600 p-8 text-center space-y-3">
                             <FaCheck className="text-white text-3xl mx-auto" />
                             <h3 className="text-xl font-bold text-white">
@@ -245,6 +285,7 @@ export const FalaAe = () => {
                                         </h3>
                                         <textarea
                                             rows={5}
+                                            maxLength={LIMITE_MENSAGEM}
                                             value={formData.mensagem}
                                             onChange={(e) =>
                                                 setFormData({ ...formData, mensagem: e.target.value })
@@ -275,7 +316,7 @@ export const FalaAe = () => {
                                                     onChange={(e) =>
                                                         setFormData({ ...formData, nome: e.target.value })
                                                     }
-                                                    placeholder="Seu nome"
+                                                    placeholder="Seu nome completo"
                                                     className="w-full rounded-xl border border-neutral-300 p-3 text-sm text-neutral-800 focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:border-indigo-400"
                                                 />
                                             </div>
@@ -337,6 +378,16 @@ export const FalaAe = () => {
                                     </div>
                                 )}
 
+                                {/* Aviso de envio indisponível ou com falha */}
+                                {step === TOTAL_STEPS && (status === "erro" || envioIndisponivel) && (
+                                    <div
+                                        role="alert"
+                                        className="rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-700"
+                                    >
+                                        {textoDoErro(envioIndisponivel ? { tipo: "indisponivel" } : erro)}
+                                    </div>
+                                )}
+
                                 {/* Navegação entre etapas */}
                                 <div className="flex items-center justify-between pt-2">
                                     <button
@@ -364,9 +415,16 @@ export const FalaAe = () => {
                                     ) : (
                                         <button
                                             type="submit"
-                                            className="flex items-center gap-2 bg-gradient-to-tr from-indigo-500 via-sky-700 to-purple-700 text-white font-semibold text-sm py-2.5 px-6 rounded-lg hover:opacity-90 transition-opacity"
+                                            disabled={status === "enviando" || envioIndisponivel}
+                                            aria-busy={status === "enviando"}
+                                            className="flex items-center gap-2 bg-gradient-to-tr from-indigo-500 via-sky-700 to-purple-700 text-white font-semibold text-sm py-2.5 px-6 rounded-lg disabled:opacity-40 disabled:cursor-not-allowed hover:opacity-90 transition-opacity"
                                         >
-                                            Enviar mensagem <FaPaperPlane size={12} />
+                                            {status === "enviando"
+                                                ? "Enviando…"
+                                                : status === "erro"
+                                                    ? "Tentar de novo"
+                                                    : "Enviar mensagem"}{" "}
+                                            <FaPaperPlane size={12} />
                                         </button>
                                     )}
                                 </div>

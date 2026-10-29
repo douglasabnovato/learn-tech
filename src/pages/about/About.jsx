@@ -2,10 +2,11 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa6";
 import * as sobreLocal from "../../constants/aboutData";
-import { usePagina } from "../../services/conteudo";
+import { usePagina, useContagens } from "../../services/conteudo";
 
 export const About = () => {
   const { heroContent, processSteps, philosophyQuote, differentiators } = usePagina("sobre", sobreLocal);
+  const experiencias = useContagens()["bootcamps/eventos"];
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -124,7 +125,7 @@ export const About = () => {
             Retrospectiva e o que vem a seguir
           </p>
           <h2 className="text-2xl md:text-3xl font-bold text-white leading-snug">
-            13 experiências catalogadas
+            {experiencias ? `${experiencias} experiências catalogadas` : "Experiências catalogadas"}
           </h2>
           <p className="text-white/90 text-base max-w-xl mx-auto">
             Bootcamps, formações e comunidades — o que já concluí e o que ainda tenho na mira.

@@ -1,210 +1,851 @@
+/* GERADO por learntech-content/scripts/exportar-copias.mjs a partir de content/learn-tech/paginas/blog.json.
+   Não edite à mão: mude o conteúdo na API e rode o script de novo. */
+
 const blogData = [
   {
-    id: "javascript-fundamentos",
-    blogURL: "/blog/javascript-fundamentos",
-    img: "https://cdn.pixabay.com/photo/2020/01/26/20/14/computer-4795762_1280.jpg",
-    illustrationImg:
-      "https://cdn.pixabay.com/photo/2016/11/23/15/48/code-1853305_1280.jpg",
-    title:
-      "Domine o JavaScript e aprenda os fundamentos para criar projetos web incríveis.",
-    tag: "Javascript",
-    author: "Equipe learnTECH",
-    publishedAt: "2026-07-10",
-    readingTime: "6 min",
-    lead:
-      "JavaScript é a única linguagem que roda nativamente em praticamente todo navegador do planeta — e é ela que transforma uma página estática em algo que responde ao que você faz. Antes de qualquer framework, existe um punhado de conceitos que decide se você vai entender o que está acontecendo, ou só copiar código sem saber por quê.",
-    highlights: [
+    "id": "eventos-de-comunidade-tech",
+    "blogURL": "/blog/eventos-de-comunidade-tech",
+    "img": "https://learntech-content.douglasabnovato.workers.dev/media/bootcamps/eventos/codexperience-2023/7.webp",
+    "illustrationImg": "https://learntech-content.douglasabnovato.workers.dev/media/bootcamps/eventos/codexperience-2023/14.webp",
+    "title": "O que um evento de comunidade tech ensina que nenhum curso ensina",
+    "tag": "Carreira",
+    "author": "Equipe learnTECH",
+    "publishedAt": "2026-10-27",
+    "readingTime": "5 min",
+    "lead": "Um evento de comunidade não substitui o estudo, mas mostra o que o estudo sozinho não mostra: como as pessoas da área pensam, trabalham e se ajudam. Em outubro de 2023, a primeira edição do CodeXperience Zona da Mata reuniu estudantes e profissionais na UniAcademia, em Juiz de Fora, e serve de exemplo concreto do que dá para levar de um dia assim.",
+    "highlights": [
       {
-        label: "Variáveis e tipos",
-        description:
-          "Como o JavaScript guarda e diferencia informação — texto, número, verdadeiro/falso.",
+        "label": "Palestras",
+        "description": "Contato com problemas reais de back-end, front-end, IA, segurança e carreira, contados por quem resolve esses problemas no dia a dia."
       },
       {
-        label: "Funções",
-        description:
-          "O bloco reutilizável que recebe entrada, processa, e devolve resultado.",
+        "label": "Workshops",
+        "description": "Prática guiada no laboratório: sair do slide e ver o código rodando na própria máquina."
       },
       {
-        label: "DOM e eventos",
-        description:
-          "Como o código enxerga a página e reage ao clique, ao digitar, ao rolar.",
-      },
+        "label": "Networking",
+        "description": "Coffee break, perguntas ao microfone e rodas de conversa: onde nascem indicações, parcerias e mentorias."
+      }
     ],
-    body: [
+    "body": [
+      "A primeira edição do CodeXperience teve 14 palestras e 4 workshops em um único fim de semana, com temas que iam de back-end e React a inteligência artificial, segurança da informação, agilidade, startups e representatividade feminina na tecnologia. Para quem está começando, essa variedade funciona como um mapa: em poucas horas dá para perceber quais áreas despertam interesse e quais termos aparecem em todas as conversas.",
+      "O ganho mais subestimado é a pergunta. Levantar a mão e perguntar ao microfone obriga a formular o problema com clareza, a mesma habilidade usada numa daily, numa issue bem escrita ou numa entrevista técnica. E a resposta costuma vir com um contexto que nenhuma documentação traz: o porquê de uma escolha, o erro que custou caro, o atalho que funcionou."
+    ],
+    "quote": "Você não volta de um evento sabendo tudo. Volta sabendo o que estudar a seguir e a quem perguntar quando travar.",
+    "bodyContinued": [
+      "Os workshops fecham o ciclo. Ver um conceito na palestra e, logo depois, aplicá-lo no laboratório transforma informação em habilidade. É o mesmo princípio dos programas do LearnTECH: objetivo claro, prática curta e verificação do que foi aprendido.",
+      "Já o intervalo é onde a comunidade acontece. Nos registros do CodeXperience, o hall cheio no coffee break e as rodas de conversa no fim da tarde mostram o que um evento gratuito e regional oferece: acesso direto a pessoas que estão alguns passos à frente e dispostas a ajudar.",
+      "Para aproveitar o próximo evento: escolha duas ou três palestras pelo tema que você quer aprender, leve uma pergunta preparada, anote quem falou algo útil e, na semana seguinte, transforme uma ideia em um pequeno projeto. A cobertura completa da edição de 2023, com a galeria de fotos, está no Bootcamps."
+    ],
+    "sources": [
+      {
+        "label": "Cobertura do CodeXperience no Bootcamps",
+        "url": "https://bootcamps-dun.vercel.app/event/codexperience"
+      },
+      {
+        "label": "CodeXperience Zona da Mata 2023 (Sympla)",
+        "url": "https://www.sympla.com.br/evento/codexperience-zona-da-mata-2023/2056505"
+      },
+      {
+        "label": "Site oficial do CodeXperience",
+        "url": "https://codexperience.com.br/"
+      }
+    ]
+  },
+  {
+    "id": "como-organizar-evento-de-comunidade-tech",
+    "blogURL": "/blog/como-organizar-evento-de-comunidade-tech",
+    "img": "https://learntech-content.douglasabnovato.workers.dev/media/bootcamps/eventos/codexperience-2023/13.webp",
+    "illustrationImg": "https://learntech-content.douglasabnovato.workers.dev/media/bootcamps/eventos/codexperience-2023/1.webp",
+    "title": "Como organizar um evento de comunidade tech, do propósito ao pós-evento",
+    "tag": "Carreira",
+    "author": "Equipe learnTECH",
+    "publishedAt": "2026-10-28",
+    "readingTime": "5 min",
+    "lead": "Organizar um evento de comunidade é um projeto como outro qualquer: tem objetivo, público, escopo, prazo e uma equipe que precisa saber quem faz o quê. Este guia reúne um passo a passo em oito etapas, as lições de quem integrou a organização do CodeXperience Zona da Mata em 2024, em Juiz de Fora, e modelos de convite para palestrantes, apoiadores e parceiros que você pode adaptar ao seu encontro.",
+    "highlights": [
+      {
+        "label": "Planejamento",
+        "description": "Propósito, público, formato e local definidos antes de convidar qualquer pessoa."
+      },
+      {
+        "label": "Pessoas",
+        "description": "Palestrantes, apoiadores e parceiros convidados com uma proposta de valor clara para cada um."
+      },
+      {
+        "label": "Experiência",
+        "description": "Código de conduta, acessibilidade, roteiro do dia e avaliação para que a próxima edição seja melhor."
+      }
+    ],
+    "body": [
+      "Passo 1, propósito e público. Comece por uma frase: para quem é o evento e o que essa pessoa leva para casa. O CodeXperience Zona da Mata nasceu como uma experiência sem fins lucrativos para conectar estudantes e profissionais de tecnologia de Juiz de Fora e região; um encontro de café e tecnologia pode ter outro foco, como aproximar autônomos e pequenos negócios das soluções digitais. Essa frase decide o resto: temas, horário, ingresso, tamanho do local e quem convidar. Com ela pronta, monte a equipe e divida as frentes (conteúdo, apoio, divulgação, local e credenciamento, comunicação no dia), cada uma com uma pessoa responsável.",
+      "Passo 2, formato e local. O formato segue o objetivo. Um encontro mensal pode ter duas palestras curtas e bastante tempo de conversa; uma edição anual comporta trilhas em salas diferentes, workshops, ignite talks, rodas de conversa e open spaces, como na edição de 2024 do CodeXperience. No local, confira capacidade, projetor, som, microfone sem fio para as perguntas, internet, tomadas, acesso por transporte público e rota acessível entre as salas. Visite o espaço no mesmo dia da semana e no mesmo horário do evento e confirme a reserva uma semana antes e na véspera.",
+      "Passo 3, curadoria e chamada de palestrantes. Abra uma chamada com prazo, temas desejados, formatos, duração e o que o evento oferece em troca. Peça título, resumo, público-alvo e nível; avalie com critérios definidos antes (relevância para o público, clareza, variedade de temas e de vozes) e responda a todas as propostas, inclusive às recusadas. Convide também quem já participou: no CodeXperience, parte do público de uma edição voltou como palestrante na seguinte, um bom sinal de comunidade viva. Envie aos palestrantes orientações de acessibilidade para os slides: pouco texto, letra grande, alto contraste e descrição em voz alta do que aparece na tela."
+    ],
+    "quote": "Um evento de comunidade não é uma sequência de palestras. É uma promessa feita ao público, e cada decisão da organização é um jeito de cumpri-la.",
+    "bodyContinued": [
+      "Passo 4, apoio e parceria. Liste os custos (coffee break, crachás, materiais, audiovisual, brindes) e transforme-os em cotas de apoio: níveis com contrapartidas crescentes, como logo no site e nos materiais, menções nas redes, ingressos, stand e um momento no palco. Uma proposta curta que explique o que é o evento, o objetivo, o público esperado, a programação e as cotas facilita a conversa. Separe apoiador (quem contribui com recursos em troca de visibilidade) de parceiro (quem constrói junto, com espaço, cobertura em vídeo, coffee break ou divulgação na própria comunidade). Passo 5, divulgação e inscrição. Publique a página do evento com data, local, programação e código de conduta de duas a quatro semanas antes, peça a quem já confirmou que compartilhe e use um formulário que colete só o necessário. Se pedir nome, e-mail ou telefone, informe para que os dados serão usados, por quanto tempo ficam guardados e com quem serão compartilhados, como pede a LGPD, e pergunte se a pessoa precisa de algum recurso de acessibilidade.",
+      "Modelos de convite para adaptar. Para palestrante: “Olá, [nome]. O [nome do evento] reúne [público] em [cidade] para [propósito]. Pela sua experiência com [tema], gostaríamos de convidar você para uma palestra de [duração] na edição de [data]. Você fala para um público interessado no assunto e se conecta com outras pessoas que trabalham com isso. Topa conversar sobre a proposta?” Para apoiador: “Olá, [nome]. O [nome do evento] é um encontro [gratuito ou sem fins lucrativos] para [público] em [cidade]. Convidamos a [empresa] a apoiar a próxima edição: a marca fica associada à comunidade local e próxima de profissionais e estudantes da área. Segue a proposta com as cotas e as contrapartidas. Podemos marcar 15 minutos para conversar?” Para parceiro: “Olá, [nome]. O trabalho de [organização] tem tudo a ver com o público do [nome do evento]. Queremos construir a próxima edição com vocês, com [espaço, cobertura, divulgação ou conteúdo], e dar o devido destaque à parceria. Topa fazer parte do time de parceiros?”",
+      "Passo 6, código de conduta e acessibilidade. Publique o código de conduta antes de abrir as inscrições, com o que não é aceito, como denunciar, quem da equipe recebe a denúncia e o que acontece depois; ele vale para participantes, palestrantes, apoiadores e voluntários, inclusive no happy hour. Deixe a equipe fácil de identificar com crachá ou camiseta. Na acessibilidade, preveja rota sem degraus, lugares reservados, microfone para as perguntas (repetidas antes da resposta), intervalos com tempo para trocar de sala e materiais enviados com antecedência. Passo 7, roteiro do dia. Escreva o roteiro da abertura dizendo quem fala cada parte. Na abertura do CodeXperience 2024, conduzida em dupla, a sequência foi: boas-vindas e agradecimento ao anfitrião e à organização, visão geral da programação, explicação das trilhas e das salas, história do evento e crescimento desde a edição anterior, agradecimento aos apoiadores, convite para o canal da comunidade, aviso do happy hour e votos de um bom evento. Marque os intervalos, tenha alguém controlando o tempo em cada sala e guarde o encerramento para agradecer, lembrar o formulário e tirar a foto oficial.",
+      "Passo 8, avaliação e pós-evento. Peça a avaliação enquanto o público ainda está no local: no CodeXperience, o slide com o formulário apareceu durante a abertura e de novo no encerramento. Pergunte pouco e de forma direta: nota geral, palestras de que mais gostou, o que melhorar e se a pessoa voltaria. Em até uma semana, agradeça a participantes, palestrantes, apoiadores e voluntários, publique fotos e materiais com o consentimento de quem aparece e faça uma retrospectiva com a equipe: o que manter, o que mudar e o que deixar de fazer. Manter a conversa viva entre uma edição e outra é o que transforma um evento em comunidade. A cobertura da primeira edição do CodeXperience, com galeria de fotos, está no Bootcamps."
+    ],
+    "sources": [
+      {
+        "label": "Guide to a Successful Meetup Group & Meetup Events (OWASP)",
+        "url": "https://wiki.owasp.org/images/c/c8/Guide_to_a_Successful_Meetup.pdf"
+      },
+      {
+        "label": "Google Developer Groups: dicas para manter a comunidade engajada",
+        "url": "https://support.google.com/developergroups/answer/2947317?hl=en"
+      },
+      {
+        "label": "Conference Code of Conduct (modelo de código de conduta para eventos)",
+        "url": "https://confcodeofconduct.com/"
+      },
+      {
+        "label": "W3C WAI: Making Events Accessible",
+        "url": "https://www.w3.org/WAI/training/accessible"
+      },
+      {
+        "label": "Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018)",
+        "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm"
+      },
+      {
+        "label": "CodeXperience Zona da Mata 2024 (Sympla)",
+        "url": "https://www.sympla.com.br/evento/codexperience-zona-da-mata-2024/2600648"
+      },
+      {
+        "label": "Cobertura do CodeXperience no Bootcamps",
+        "url": "https://bootcamps-dun.vercel.app/event/codexperience"
+      }
+    ]
+  },
+  {
+    "id": "processo-seletivo-como-se-preparar",
+    "blogURL": "/blog/processo-seletivo-como-se-preparar",
+    "img": "https://learntech-content.douglasabnovato.workers.dev/media/learn-tech/blog/processo-seletivo-como-se-preparar.webp",
+    "title": "Como é um processo seletivo em tecnologia e como se preparar em cada etapa",
+    "tag": "Carreira",
+    "author": "Equipe learnTECH",
+    "publishedAt": "2026-10-28",
+    "readingTime": "6 min",
+    "lead": "Processo seletivo parece uma caixa-preta, mas a maioria das empresas segue um roteiro parecido. O guia público de candidatos de um banco digital, por exemplo, descreve seis etapas até a oferta: teste de alinhamento cultural, triagem, conversa com recrutador, entrevista com a liderança, entrevista com stakeholder e desafio técnico. Saber em que etapa você está muda tudo na hora de se preparar.",
+    "highlights": [
+      {
+        "label": "Triagem",
+        "description": "Teste cultural e análise de requisitos: o que a empresa avalia antes mesmo de conversar com você."
+      },
+      {
+        "label": "Entrevistas",
+        "description": "Recrutador, liderança e pares: cada conversa responde a uma pergunta diferente sobre o seu perfil."
+      },
+      {
+        "label": "Desafio técnico",
+        "description": "Teste online ou case com prazo, às vezes com apresentação da solução para o time."
+      }
+    ],
+    "body": [
+      "O roteiro mais completo costuma ter estas etapas: candidatura com um questionário de alinhamento cultural, triagem do currículo frente aos requisitos (feita pelo RH, sem a sua participação), bate-papo com o recrutador por vídeo ou telefone, entrevista com a futura liderança, entrevista com pares ou stakeholders e, em algumas vagas de tecnologia, um desafio técnico. Depois vêm a carta-oferta e a integração. Empresas menores comprimem o caminho: uma vaga júnior de uma agência de CRM lista apenas cadastro, conversa com a equipe de talentos, conversa com as lideranças e proposta.",
+      "Nas primeiras etapas, o que conta é consistência. O teste cultural não tem resposta certa, mas respostas contraditórias chamam atenção. Os dados da candidatura precisam estar corretos, porque o próprio guia do banco avisa que pode haver uma ligação para confirmar informações. Na conversa com o recrutador, o foco é comunicação, motivação e aderência à vaga: tenha pronta uma apresentação de dois minutos, um motivo concreto para querer aquela empresa e clareza sobre modelo de trabalho e disponibilidade."
+    ],
+    "quote": "Cada etapa de um processo seletivo faz uma pergunta diferente. Quem descobre qual é a pergunta prepara a resposta certa.",
+    "bodyContinued": [
+      "Com a liderança, o objetivo é comprovar experiência. O guia recomenda compartilhar exemplos que tornem a trajetória concreta, e a estrutura situação, tarefa, ação e resultado ajuda a não se perder. Leve três histórias prontas: um problema técnico que você resolveu, um prazo apertado ou conflito que você contornou e algo que aprendeu sozinho. Com os pares, a pergunta implícita é como seria trabalhar com você, então aproveite para perguntar sobre a rotina do time.",
+      "No desafio técnico, leia o enunciado duas vezes, confirme o prazo e entregue um README que explique as decisões e o que você faria com mais tempo. Se houver apresentação, ensaie em dez minutos. O mesmo raciocínio vale para seleções internas: um comunicado de promoção em um contact center previa inscrição validada pelo gestor, provas de qualidade, Excel e redação, apresentação de 15 minutos seguida de 15 minutos de entrevista com banca e feedback para todos. Quando a empresa publica o conteúdo cobrado, isso é um roteiro de estudo pronto.",
+      "Para não se perder com várias candidaturas, mantenha uma planilha com empresa, requisitos, vaga, etapa atual e próxima ação. Peça feedback mesmo quando não avançar e, se conhece alguém na empresa, peça uma indicação: o próprio guia do banco incentiva isso."
+    ],
+    "sources": [
+      {
+        "label": "The STAR Method — SuccessWorks, University of Wisconsin–Madison",
+        "url": "https://successworks.wisc.edu/the-basics/preparing-for-your-interview-2/the-star-method/"
+      }
+    ]
+  },
+  {
+    "id": "como-ler-uma-vaga",
+    "blogURL": "/blog/como-ler-uma-vaga",
+    "img": "https://learntech-content.douglasabnovato.workers.dev/media/learn-tech/blog/como-ler-uma-vaga.webp",
+    "title": "Como ler uma vaga e reconhecer uma boa empresa",
+    "tag": "Carreira",
+    "author": "Equipe learnTECH",
+    "publishedAt": "2026-10-28",
+    "readingTime": "6 min",
+    "lead": "Uma vaga tem camadas: o que a empresa precisa, o que ela gostaria de encontrar e o que oferece em troca. Quem lê tudo como exigência deixa de se candidatar a oportunidades em que teria chance. Para mostrar como separar essas camadas, usamos um anúncio público de CRM Developer Jr de uma agência de CRM, publicado em 2026.",
+    "highlights": [
+      {
+        "label": "Requisitos",
+        "description": "Separar o obrigatório do desejável e do que você vai aprender no cargo."
+      },
+      {
+        "label": "Condições",
+        "description": "Modelo de trabalho, tipo de contrato e benefícios dizem muito sobre a rotina real."
+      },
+      {
+        "label": "Sinais",
+        "description": "Etapas descritas, prazo de inscrição e linguagem de aprendizado indicam uma empresa organizada."
+      }
+    ],
+    "body": [
+      "Comece separando responsabilidades de requisitos. No exemplo, a lista de responsabilidades é longa: landing pages e cloud pages no Marketing Cloud, automações com SQL e SSJS, aplicações em Node.js, integrações entre plataformas e documentação técnica. Já os requisitos são curtos: boa comunicação, organização, proatividade, noções de lógica de programação e noções em pelo menos uma destas linguagens: JavaScript, AMPscript ou SQL. As responsabilidades descrevem o que você vai aprender a fazer; os requisitos dizem o que precisa trazer no primeiro dia.",
+      "Depois, procure as palavras que suavizam a exigência: noções, desejável, diferencial, pelo menos uma. Uma regra prática: se você atende a maior parte dos itens obrigatórios e consegue mostrar evidência, como um projeto ou um repositório, candidate-se. No caso da vaga de CRM, um projeto em JavaScript com algumas consultas SQL já cobre o essencial. Como AMPscript é uma linguagem específica da plataforma, ler a documentação oficial antes da entrevista mostra interesse e reduz o susto com os termos."
+    ],
+    "quote": "Vaga boa não é a que pede tudo. É a que diz com clareza o que espera de você e o que oferece em troca.",
+    "bodyContinued": [
+      "As condições merecem a mesma atenção. O cabeçalho do anúncio dizia híbrido, três dias presenciais e dois remotos, em uma cidade; o texto falava em atuação remota ou híbrida em duas sedes. Inconsistências assim são comuns: anote e pergunte na primeira conversa. O tipo de contrato também muda a conta, porque CLT e PJ tratam de forma diferente férias, 13º e benefícios. No exemplo, a lista incluía vale-refeição, auxílio home office, planos de saúde e odontológico, PLR, seguro de vida, auxílio-creche, licença parental estendida e programa de bem-estar. Benefícios revelam cultura: auxílio home office indica que o remoto é levado a sério.",
+      "Alguns sinais de empresa saudável: período de inscrição explícito, etapas descritas do cadastro à proposta, linguagem de desenvolvimento, como estrutura para aprender, e um banco de talentos para quem não encontrou a vaga certa. Sinais de alerta: uma lista de quinze tecnologias para um cargo júnior, etapas vagas, ambiente dinâmico sem nenhum detalhe e exigência de disponibilidade ilimitada. Complete a leitura pesquisando a empresa: perfis de pessoas do time, avaliações de ex-funcionários e conteúdos técnicos publicados.",
+      "Por fim, registre cada vaga numa planilha de candidaturas com colunas como empresa, requisitos, oportunidade, quem pode indicar, data, etapas e próxima ação. Depois de dez vagas lidas, os requisitos que se repetem aparecem sozinhos e viram o seu plano de estudos."
+    ],
+    "sources": [
+      {
+        "label": "AMPscript Guide — Salesforce Developers",
+        "url": "https://developer.salesforce.com/docs/marketing/marketing-cloud-ampscript/guide"
+      }
+    ]
+  },
+  {
+    "id": "testes-tecnicos-online",
+    "blogURL": "/blog/testes-tecnicos-online",
+    "img": "https://learntech-content.douglasabnovato.workers.dev/media/learn-tech/blog/testes-tecnicos-online.webp",
+    "title": "Testes técnicos online: o que esperar e como treinar",
+    "tag": "Carreira",
+    "author": "Equipe learnTECH",
+    "publishedAt": "2026-10-28",
+    "readingTime": "6 min",
+    "lead": "Muitas empresas aplicam uma bateria de testes online antes de qualquer entrevista. Eles são cronometrados, não permitem voltar atrás e costumam misturar lógica, linguagem, framework e perfil comportamental. A partir da bateria real de uma consultoria de software internacional e de uma lista de exercícios universitária, mostramos o que esperar e como treinar.",
+    "highlights": [
+      {
+        "label": "Formato",
+        "description": "Tempo visível, sem volta à questão anterior e com a pontuação calculada no que foi respondido."
+      },
+      {
+        "label": "Conteúdo",
+        "description": "Raciocínio lógico, fundamentos da linguagem, framework e questões situacionais."
+      },
+      {
+        "label": "Treino",
+        "description": "Simulados com cronômetro e revisão dos erros valem mais que horas de leitura."
+      }
+    ],
+    "body": [
+      "Na bateria analisada, a plataforma da empresa apresentava primeiro testes básicos, ordenados por importância: resolução de problemas em nível avançado (cerca de 23 minutos, com sequências numéricas e raciocínio lógico), questões situacionais sem resposta certa ou errada, habilidades práticas, uma avaliação de trabalho remoto com ferramentas online e um questionário comportamental curto. Depois vinham testes ligados às competências declaradas no perfil: JavaScript em cerca de 7 minutos, React em 15, Node.js em 10 e um desafio prático de React em site externo, que no caso pedia um CRUD de livros.",
+      "As regras se repetem entre plataformas: você vê o tempo e o número de questões restantes, não pode voltar depois de confirmar uma resposta, e sair no meio faz a nota considerar só o que foi enviado. Problemas de conexão precisam ser reportados por e-mail, com o usuário e o nome do teste. Na prática, isso significa fazer a prova em horário tranquilo, com internet estável, notebook na tomada e abas fechadas. Outro detalhe: os anos de experiência que você declara por tecnologia definem quais testes aparecem, então declare com honestidade."
+    ],
+    "quote": "Teste cronometrado não mede só o que você sabe. Mede o que você consegue lembrar, decidir e escrever sob pressão, e isso se treina.",
+    "bodyContinued": [
+      "Em JavaScript, o que mais cai são funções, escopo, tipos, métodos de array, promessas e sintaxe moderna. Em React, componentes, estado, props, efeitos, eventos e renderização de listas. Em níveis mais avançados, a lista de exercícios universitária sobre React Native cobrava criptografia simétrica com AES (chave e vetor de inicialização), leitura de testes em Jest com matchers como toBeGreaterThan, o padrão DAO e o papel da Store no Redux. O padrão é sempre o mesmo: conceito combinado com a leitura de um trecho curto de código. Listas com gabarito comentado valem mais pela explicação do que pela nota.",
+      "Um plano de quatro semanas funciona bem. Na primeira, 20 minutos por dia de lógica com cronômetro. Na segunda, fundamentos de JavaScript em exercícios curtos. Na terceira, um CRUD simples em React do zero, em até 90 minutos e sem tutorial. Na quarta, simulados completos com tempo, anotando cada erro num caderno e refazendo no dia seguinte.",
+      "Registre cada teste feito: plataforma, data, tópicos e o que deu errado. Um teste de raciocínio de 20 questões com nota de corte não atingida deixa de ser derrota e vira diagnóstico do que treinar antes da próxima candidatura."
+    ],
+    "sources": [
+      {
+        "label": "Trilha de JavaScript — Exercism",
+        "url": "https://exercism.org/tracks/javascript"
+      },
+      {
+        "label": "Guia JavaScript — MDN Web Docs",
+        "url": "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Introduction"
+      }
+    ]
+  },
+  {
+    "id": "perfil-encontravel-linkedin",
+    "blogURL": "/blog/perfil-encontravel-linkedin",
+    "img": "https://learntech-content.douglasabnovato.workers.dev/media/learn-tech/blog/perfil-encontravel-linkedin.webp",
+    "title": "Perfil encontrável: palavras-chave que levam recrutadores até você",
+    "tag": "Carreira",
+    "author": "Equipe learnTECH",
+    "publishedAt": "2026-10-28",
+    "readingTime": "5 min",
+    "lead": "Quem recruta usa o LinkedIn como um buscador: digita um cargo e algumas tecnologias e olha os primeiros resultados. Se essas palavras não estão no seu perfil, você simplesmente não aparece, por melhor que seja. Um guia curto que circula na comunidade de dados resume a técnica em quatro áreas do perfil; aqui adaptamos a ideia para quem desenvolve software.",
+    "highlights": [
+      {
+        "label": "Título",
+        "description": "Cargo que você busca mais as ferramentas que usa de verdade, sem frases vagas."
+      },
+      {
+        "label": "Sobre e experiências",
+        "description": "Palavras-chave em contexto: o que você fez, com quais tecnologias e para quê."
+      },
+      {
+        "label": "Competências",
+        "description": "A seção que ajuda a plataforma a categorizar o seu perfil nas buscas."
+      }
+    ],
+    "body": [
+      "O guia parte de buscas como analista de dados ou desenvolvedor de Power BI. Para quem é dev, as buscas típicas são desenvolvedor front-end, React developer, Node.js ou desenvolvedor júnior. A lógica é a mesma: quatro áreas têm mais peso na busca, que são o título, o campo Sobre, as experiências e as competências. Quando os mesmos termos aparecem nas quatro, o perfil sobe nos resultados.",
+      "O título é o campo mais importante, porque é lido primeiro pela busca e por quem recruta. Troque frases como apaixonado por tecnologia ou em busca de novos desafios por algo como Desenvolvedor Front-end | React | JavaScript | TypeScript | Node.js: o cargo que você quer seguido de três a cinco tecnologias que você domina. No Sobre, escreva três ou quatro frases que digam o que você faz, com quais ferramentas e que tipo de oportunidade procura."
+    ],
+    "quote": "Perfil bonito que ninguém encontra não trabalha por você. Escreva primeiro para a busca, depois para a leitura.",
+    "bodyContinued": [
+      "Nas experiências, troque o genérico responsável pelo desenvolvimento do site por itens objetivos: interfaces em React com TypeScript, consumo de APIs REST, testes automatizados com Jest, deploy contínuo. Projetos pessoais, freelas e trabalhos voluntários também entram, desde que tenham tecnologia e resultado. Em competências, use os termos que aparecem nas vagas (React, JavaScript, HTML, CSS, Git, SQL, Node.js, APIs REST, testes) e destaque as principais.",
+      "Para escolher as palavras, comece pelo objetivo. Cursos de empregabilidade costumam seguir esta ordem: definir o objetivo profissional, encontrar as palavras-chave, reescrever o currículo e só então ajustar o LinkedIn. Sem objetivo, palavra-chave vira lista aleatória. Uma forma prática é reunir cinco vagas do cargo desejado e pedir a uma IA que liste os termos repetidos, mas revise o resultado: só entra no perfil o que você consegue defender numa entrevista.",
+      "Os erros que mais derrubam a visibilidade são títulos vagos, experiências curtas demais, ferramentas omitidas e competências em branco. Os sinais de que funcionou são mais visualizações, visitas de recrutadores e convites para conversar. A promessa de resultado em 48 horas é otimista, porque depende do mercado, mas revisar o perfil todo mês com base nas vagas-alvo costuma dar retorno."
+    ],
+    "sources": [
+      {
+        "label": "Skill endorsements — LinkedIn Help",
+        "url": "https://www.linkedin.com/help/linkedin/answer/31888"
+      },
+      {
+        "label": "Building a Strong LinkedIn Profile — UConn Center for Career Development",
+        "url": "https://career.uconn.edu/building-a-strong-linkedin-profile/"
+      }
+    ]
+  },
+  {
+    "id": "networking-pitch-60-segundos",
+    "blogURL": "/blog/networking-pitch-60-segundos",
+    "img": "https://learntech-content.douglasabnovato.workers.dev/media/bootcamps/eventos/codexperience-2023/12.webp",
+    "illustrationImg": "https://learntech-content.douglasabnovato.workers.dev/media/bootcamps/eventos/codexperience-2023/16.webp",
+    "title": "Networking com propósito e o pitch de 60 segundos",
+    "tag": "Carreira",
+    "author": "Equipe learnTECH",
+    "publishedAt": "2026-10-28",
+    "readingTime": "5 min",
+    "lead": "Networking não é colecionar contatos. É deixar claro o que você faz para que as pessoas saibam quando lembrar de você e para quem te indicar. Seja num grupo de negócios, seja no coffee break de um evento de comunidade, a ferramenta é a mesma: uma apresentação curta, ensaiada e com um pedido concreto no final.",
+    "highlights": [
+      {
+        "label": "Propósito",
+        "description": "Contribuir antes de pedir: indicar, ajudar e só então colher indicações."
+      },
+      {
+        "label": "Pitch",
+        "description": "Quem você é, que problema resolve, para quem e qual é o próximo passo."
+      },
+      {
+        "label": "Acompanhamento",
+        "description": "Registrar com quem falou, retomar o contato e contar a história do que aprendeu."
+      }
+    ],
+    "body": [
+      "Um bom exemplo é a reunião virtual de um grupo regional de networking empresarial, com cerca de vinte participantes. A dinâmica é simples: cada pessoa se apresenta numa rodada curta e o lema do grupo é contribuir para ganhar. Você ajuda os outros indicando negócios e, com o tempo, recebe indicações de volta. A metodologia combina reuniões frequentes, treinamentos e trabalho de posicionamento. Para um dev que atende pequenos negócios, a lição é direta: o grupo precisa entender, numa frase, que tipo de cliente indicar.",
+      "O pitch usado ali tinha três partes: a situação atual, o próximo passo e um segundo passo. Reescrito, ficaria assim: sou desenvolvedor web e hoje trabalho com produto digital numa startup. Meu próximo passo é atender pequenos e micro empreendedores que querem usar tecnologia para melhorar os resultados, com site, formulário de contato e automações simples. Também ensino programação para quem quer começar na área. Se você conhece alguém que ainda recebe pedidos só por mensagem, me apresenta?"
+    ],
+    "quote": "Um bom pitch não lista tudo o que você sabe fazer. Diz a quem você ajuda e facilita que alguém se lembre de você na hora certa.",
+    "bodyContinued": [
+      "Para montar o seu, pense em quatro blocos de uns 15 segundos: quem você é; que problema resolve e para quem; uma prova, como um projeto ou resultado; e um pedido concreto. Corte jargão, ensaie em voz alta com cronômetro e grave para ouvir. Adapte ao público: num grupo de negócios, o pedido é um cliente; num evento de comunidade, pode ser uma conversa sobre a área, uma indicação de vaga ou uma mentoria.",
+      "Eventos como o CodeXperience Zona da Mata, em Juiz de Fora, são ótimos para praticar. No coffee break e nas rodas de conversa do fim da tarde, todo mundo está disposto a se apresentar, e uma pergunta preparada abre conversas com palestrantes e com pessoas alguns passos à frente.",
+      "O contato só vira relação com acompanhamento. Anote com quem falou e o que combinou, mande uma mensagem em até dois dias e transforme o evento em registro: o que aprendeu, quem conheceu e qual é a próxima ação. Contar essa história no LinkedIn mostra o que você resolve melhor do que qualquer lista de habilidades. Antes de entrar num grupo pago, avalie o custo, a frequência das reuniões e se os participantes são, de fato, clientes em potencial."
+    ],
+    "sources": [
+      {
+        "label": "CodeXperience Zona da Mata 2023 (Sympla)",
+        "url": "https://www.sympla.com.br/evento/codexperience-zona-da-mata-2023/2056505"
+      }
+    ]
+  },
+  {
+    "id": "proposta-freelancer-escopo-prazo-preco",
+    "blogURL": "/blog/proposta-freelancer-escopo-prazo-preco",
+    "img": "https://learntech-content.douglasabnovato.workers.dev/media/learn-tech/blog/proposta-freelancer-escopo-prazo-preco.webp",
+    "title": "Proposta de freelancer: escopo, prazo e preço para um pequeno cliente",
+    "tag": "Carreira",
+    "author": "Equipe learnTECH",
+    "publishedAt": "2026-10-28",
+    "readingTime": "6 min",
+    "lead": "O primeiro cliente freelancer costuma ser pequeno: uma escola, uma clínica, uma loja do bairro. O projeto raramente desanda por causa do código; desanda porque ninguém escreveu o que estava incluído. Para mostrar como evitar isso, usamos um caso real anonimizado: o site institucional de uma escola técnica da área da saúde, aqui chamada de Instituto Aurora de Educação em Saúde.",
+    "highlights": [
+      {
+        "label": "Escopo",
+        "description": "Seções, funcionalidades e, principalmente, o que fica fora do projeto."
+      },
+      {
+        "label": "Prazo",
+        "description": "Reuniões com pauta, marcos de validação e próximos passos definidos."
+      },
+      {
+        "label": "Preço",
+        "description": "Horas estimadas vezes valor-hora, com condições de pagamento por escrito."
+      }
+    ],
+    "body": [
+      "A escola oferece cinco cursos técnicos e oito profissionalizantes, nas modalidades presencial, semipresencial e a distância, com um ambiente virtual de aprendizagem para os alunos. O trabalho aconteceu em três reuniões ao longo de cerca de três semanas: na primeira, levantamento de requisitos; na segunda, apresentação de uma primeira versão e ajustes, como FAQ, botão de WhatsApp, formulário enviado por e-mail e acesso ao ambiente virtual dentro do site; na terceira, apresentação formal aos sócios, com orçamento e cronograma.",
+      "A proposta seguia uma estrutura que vale como modelo. Abre retomando o que foi alinhado e descreve cada seção com objetivo, conteúdo sugerido e funcionalidades: cabeçalho, sobre (história, missão, visão e valores), cursos técnicos e profissionalizantes em cards com carga horária, modalidade e botão saiba mais, formulário de inscrição com campos obrigatórios e opcionais, validação em tempo real, link para a política de privacidade por causa da LGPD e mensagem de sucesso, além do rodapé. Fecha com requisitos não funcionais (responsividade, desempenho, SEO e navegação) e com os próximos passos: feedback, envio de conteúdo, protótipo, desenvolvimento, testes e publicação."
+    ],
+    "quote": "Proposta clara protege os dois lados: o cliente sabe o que vai receber, e você sabe quando terminou.",
+    "bodyContinued": [
+      "O escopo cresce, e isso é normal. Na segunda reunião surgiram pedidos como unir páginas, renomear seções, botão de login no ambiente virtual e lista de interesse com limite de alunos por turma. Depois, o briefing passou a incluir seção de pagamentos, identidade visual, produção dos textos, configuração de hospedagem e domínio e criação de redes sociais. Cada item novo custa horas: registre por escrito, separe o que é MVP do que fica para uma segunda fase e deixe explícito o que está fora do escopo, como produção de fotos, gestão de redes e manutenção mensal.",
+      "O preço partiu de uma estimativa simples: valor da hora técnica multiplicado pelas horas previstas por seção. No caso, o total foi calculado assim, com o pagamento parcelado ao longo do projeto e o período de desenvolvimento incluído no valor. Para não sair no prejuízo, acrescente uma margem para ajustes, limite o número de rodadas de revisão, divida o pagamento entre entrada e entrega, coloque validade na proposta e considere custos como hospedagem, domínio e impostos.",
+      "Depois da apresentação, a proposta ficou em avaliação pelos sócios, o que é comum com pequenos clientes: combine uma data para o retorno e faça o follow-up. O programa 503 do LearnTECH, MVP na Prática, aprofunda este caso passo a passo, da entrevista com o stakeholder ao mockup, ao recorte do MVP e à proposta de escopo."
+    ],
+    "sources": [
+      {
+        "label": "Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018)",
+        "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm"
+      },
+      {
+        "label": "Preço de venda: como calcular — Comunidade Sebrae",
+        "url": "https://sebraepr.com.br/comunidade/artigo/preco-de-venda-como-calcular"
+      }
+    ]
+  },
+  {
+    "id": "bolsas-universidade-como-ler-edital",
+    "blogURL": "/blog/bolsas-universidade-como-ler-edital",
+    "img": "https://learntech-content.douglasabnovato.workers.dev/media/learn-tech/blog/bolsas-universidade-como-ler-edital.webp",
+    "title": "Bolsas e projetos na universidade: como ler um edital",
+    "tag": "Carreira",
+    "author": "Equipe learnTECH",
+    "publishedAt": "2026-10-28",
+    "readingTime": "7 min",
+    "lead": "Universidades públicas abrem todo semestre editais para bolsistas e voluntários em projetos internos. Para quem estuda computação, costuma ser a primeira chance de trabalhar num sistema real antes do estágio. Mesmo assim, muita gente perde a vaga por ler só o título. Usando como exemplo editais públicos do Programa de Treinamento Profissional da UFJF, publicados entre 2017 e 2019, este guia mostra o que procurar em cada parte do documento.",
+    "highlights": [
+      {
+        "label": "Requisitos",
+        "description": "Curso, disciplinas já aprovadas e horas disponíveis por semana. São eliminatórios: falta um, a inscrição não vale."
+      },
+      {
+        "label": "Seleção",
+        "description": "Histórico escolar, currículo e entrevista, com desempate pelo índice de rendimento acadêmico."
+      },
+      {
+        "label": "Cronograma",
+        "description": "Inscrição de poucos dias, seleção logo em seguida e resultado em até três dias. Quem deixa para depois perde o prazo."
+      }
+    ],
+    "body": [
+      "Comece pelo bloco de inscrição. Nos editais analisados, os critérios se repetem: estar matriculado em cursos específicos (Ciência da Computação, Sistemas de Informação, Engenharia Computacional, Ciências Exatas e, em alguns casos, Engenharia Elétrica), ter 12 horas semanais disponíveis e ter sido aprovado em disciplinas ligadas ao projeto, como Estruturas de Dados ou um laboratório de programação. Esses itens são obrigatórios. Já o que aparece como desejável, por exemplo experiência com desenvolvimento web, conta pontos, mas não impede a inscrição.",
+      "Depois, leia a descrição das atividades. Ela diz o que você vai fazer de verdade e é a melhor fonte para preparar a entrevista. Um edital sobre entrega contínua listava estudar ferramentas de integração contínua de código aberto, propor uma nova forma de trabalho ao setor, implantá-la, documentá-la e testar software. Outros projetos do mesmo período tratavam de maratona de programação, controle de frequência por cartão de proximidade, governança de TI e sistemas de gestão acadêmica. Se a lista tem algo que você nunca viu, estude o básico antes da seleção e conte isso na conversa.",
+      "Por fim, leia as normas do programa, que quase ninguém lê. Nos exemplos, a participação durava um ano, com uma recondução possível; havia vagas separadas para bolsista e voluntário; o pagamento era proporcional à frequência informada pelo orientador, sem pagamento retroativo; e a lista de classificação precisava ser seguida. Ou seja: ficar em segundo lugar pode render a vaga se o primeiro desistir."
+    ],
+    "quote": "Edital não é burocracia: é a descrição da vaga, do jeito de avaliar e do prazo, tudo na mesma folha.",
+    "bodyContinued": [
+      "Os critérios de seleção mudam de projeto para projeto: alguns só entrevistam, outros combinam análise do histórico, do currículo e da experiência. O desempate quase sempre é o índice de rendimento acadêmico. Na prática, isso significa que o histórico conta desde o primeiro período e que vale levar uma versão atualizada, com as disciplinas que você está cursando.",
+      "Documentos e prazos merecem atenção dobrada. Alguns editais pediam, no ato da inscrição, cópia do histórico e uma declaração com e-mail de contato e horários livres. A inscrição podia ser presencial, na secretaria do departamento, ou por formulário online. A janela era curta, de cinco a sete dias, a seleção acontecia logo depois e o resultado saía no quadro de avisos. Deixe pronta, antes do início do semestre, uma pasta com histórico, currículo de uma página e sua grade de horários.",
+      "Antes de enviar, passe por cinco perguntas: sou elegível pelo curso e pelas disciplinas? Tenho as horas semanais livres de verdade? Entendi as atividades? Sei quando e como é a seleção? Sei onde sai o resultado? E confira sempre a página oficial do programa e a resolução que o regulamenta, porque regras, valores e datas mudam de um ano para outro."
+    ],
+    "sources": [
+      {
+        "label": "UFJF: Programa de Treinamento Profissional (informações gerais)",
+        "url": "https://www2.ufjf.br/coordprograd/treinamento-profissional/informacoes-gerais/"
+      }
+    ]
+  },
+  {
+    "id": "financas-primeiro-salario-tech",
+    "blogURL": "/blog/financas-primeiro-salario-tech",
+    "img": "https://learntech-content.douglasabnovato.workers.dev/media/learn-tech/blog/financas-primeiro-salario-tech.webp",
+    "title": "Finanças pessoais para o primeiro salário em tecnologia",
+    "tag": "Carreira",
+    "author": "Equipe learnTECH",
+    "publishedAt": "2026-10-28",
+    "readingTime": "6 min",
+    "lead": "O primeiro salário em tecnologia costuma chegar junto com uma lista de desejos: notebook melhor, cadeira, curso, viagem. Organizar esse dinheiro desde o começo evita que o aumento de renda vire só aumento de gasto. Este texto resume ideias de três livros conhecidos de finanças pessoais e as adapta para quem está começando na área, sem indicar nenhum produto financeiro específico.",
+    "highlights": [
+      {
+        "label": "Orçamento",
+        "description": "Saber para onde vai cada real antes de decidir o que cortar ou guardar."
+      },
+      {
+        "label": "Reserva",
+        "description": "Dinheiro de fácil acesso para atravessar meses sem renda sem entrar em dívida."
+      },
+      {
+        "label": "Ativo ou passivo",
+        "description": "Uma pergunta simples antes de cada compra grande: isso põe ou tira dinheiro do meu bolso?"
+      }
+    ],
+    "body": [
+      "Comece pelo orçamento. Em \"Como Organizar Sua Vida Financeira\", Gustavo Cerbasi propõe acompanhar as contas todo mês, separando receitas, despesas fixas, despesas eventuais e o que sobra para aplicar. Na prática: anote a renda líquida (o que cai na conta, não o valor bruto da proposta), as despesas fixas (moradia, transporte, internet, celular), as variáveis (mercado, lazer) e as eventuais (impostos anuais, presentes, manutenção), dividindo estas últimas por doze. Se o contrato for como pessoa jurídica, separe primeiro impostos e contador e só depois considere o restante como renda.",
+      "Para dividir o que sobra, uma regra popular sugere cerca de 50% para necessidades, 30% para escolhas pessoais e 20% para metas e reserva. Use como ponto de partida, não como lei: com salário de início de carreira e aluguel sozinho, a parte das necessidades costuma passar disso. O importante é definir uma fatia para o futuro e separá-la assim que o salário entra, ideia que Robert Kiyosaki, em \"Pai Rico, Pai Pobre\", chama de pagar a si mesmo primeiro."
+    ],
+    "quote": "Salário novo não é licença para um padrão de vida novo. É a chance de comprar tempo para as próximas escolhas.",
+    "bodyContinued": [
+      "A prioridade seguinte é a reserva de emergência. Cerbasi chama de Patrimônio Mínimo de Sobrevivência o dinheiro que permite atravessar desemprego, doença ou um plano que deu errado, e recomenda \"uma reserva financeira igual a seis vezes seu consumo mensal\". No mesmo livro, ele sugere metas maiores para mais segurança, especialmente para autônomos e quem trabalha como pessoa jurídica. Em tecnologia, onde contratos PJ e cortes de equipe acontecem, trate seis meses de gastos como objetivo e chegue lá por etapas: um mês, três meses, seis meses. O que importa na reserva é poder resgatar rápido e com baixo risco; escolha onde guardar a partir de fontes oficiais e do seu perfil.",
+      "Kiyosaki resume a diferença entre ativo e passivo assim: \"Um ativo é algo que põe dinheiro no meu bolso. Um passivo é algo que tira dinheiro do meu bolso.\" Aplicado a quem programa, um notebook que permite trabalhar e estudar pode se pagar; uma assinatura esquecida ou o terceiro monitor, não. Um curso só funciona como ativo se você terminar e usar o que aprendeu. Antes de parcelar, pergunte o que a compra vai gerar ou custar todo mês.",
+      "Se você divide a casa, o dinheiro também é conversa. Em \"Casais Inteligentes Enriquecem Juntos\", Cerbasi mostra como perfis diferentes diante do dinheiro geram atrito quando ninguém fala de metas. Vale para casal, família ou amigos: combinem quem paga o quê e revisem a cada poucos meses. E evite o erro clássico do primeiro emprego: assumir parcelas longas com base num salário que ainda está no período de experiência."
+    ],
+    "sources": [
+      {
+        "label": "Banco Central do Brasil: programa de educação financeira e Caderno de Educação Financeira",
+        "url": "https://www.bcb.gov.br/pre/surel/reladmbc/2013/o-banco-central-do-brasil-e-a-sociedade/cidadania-e-sistema-financeiro/educacao-financeira.html"
+      }
+    ]
+  },
+  {
+    "id": "comunicacao-nao-verbal-entrevistas",
+    "blogURL": "/blog/comunicacao-nao-verbal-entrevistas",
+    "img": "https://learntech-content.douglasabnovato.workers.dev/media/learn-tech/blog/comunicacao-nao-verbal-entrevistas.webp",
+    "title": "Comunicação não verbal em entrevistas e reuniões",
+    "tag": "Carreira",
+    "author": "Equipe learnTECH",
+    "publishedAt": "2026-10-28",
+    "readingTime": "6 min",
+    "lead": "Numa entrevista técnica ou numa daily, a resposta certa conta, mas a forma como ela chega também. Postura, olhar, tom de voz e até o silêncio mostram segurança ou desconforto antes da primeira linha de código. Dois clássicos ajudam a pensar nisso: \"O Corpo Fala\", de Pierre Weil e Roland Tompakow, e \"Como Fazer Amigos e Influenciar Pessoas\", de Dale Carnegie.",
+    "highlights": [
+      {
+        "label": "Perceber",
+        "description": "Ler o conjunto e o contexto, não um gesto isolado, nem no outro nem em você."
+      },
+      {
+        "label": "Escutar",
+        "description": "Deixar a pessoa terminar, confirmar o que entendeu e só então responder."
+      },
+      {
+        "label": "Ajustar ao remoto",
+        "description": "Câmera, luz, áudio e enquadramento fazem o papel que a postura faz na sala."
+      }
+    ],
+    "body": [
+      "Weil e Tompakow tratam o corpo como uma linguagem, com vocabulário e gramática próprios, e insistem que um sinal sozinho diz pouco. A imagem que usam é direta: \"se braço, nariz ou mão é letra, o conjunto forma palavra\". A lição para entrevistas vale nos dois sentidos. Não tire conclusões porque o entrevistador cruzou os braços (a sala pode estar fria) e não se cobre por cada gesto seu. Observe o conjunto: postura, expressão, ritmo da fala e a situação.",
+      "Na entrevista técnica, sente-se de forma estável, mantenha as mãos visíveis e olhe para quem fala enquanto ouve. Pensar em voz alta também é comunicação: um silêncio longo de cabeça baixa parece travamento, enquanto dizer \"vou tratar primeiro o caso da lista vazia\" mostra raciocínio. Quando não souber algo, admitir com calma e explicar como descobriria passa mais segurança do que improvisar uma resposta."
+    ],
+    "quote": "Ninguém contrata uma postura perfeita. Contrata alguém que parece presente na conversa.",
+    "bodyContinued": [
+      "Carnegie chega ao mesmo ponto pelo lado do relacionamento. Um dos princípios do livro é \"Seja um bom ouvinte. Incentive os outros a falar sobre eles mesmos.\" Na entrevista, isso significa ouvir a pergunta inteira, repetir com suas palavras o que entendeu e reservar o fim para perguntar sobre o time e o produto. Na daily, quando alguém relata um bloqueio, olhe para a câmera ou para a pessoa, não abra outra aba, e ofereça ajuda logo depois da reunião.",
+      "No remoto, o corpo aparece em um retângulo pequeno, então os detalhes pesam mais. Deixe a câmera na altura dos olhos, a luz de frente para o rosto e um fundo simples. Use fone para evitar eco, olhe para a câmera ao dizer algo importante e reaja com acenos visíveis quando o microfone estiver desligado. Em apresentações, compartilhe só a janela necessária, aumente a fonte do editor e faça pausas curtas para perguntas.",
+      "Cuidado com o exagero. Linguagem corporal usada como truque soa artificial, e diferenças culturais ou de neurodivergência mudam muito o contato visual e os gestos de cada pessoa. O objetivo é tirar ruído da conversa, não interpretar um papel. Um treino simples: grave uma simulação de entrevista de dez minutos, assista primeiro sem som e depois só ouça. Você vai notar o que comunica sem perceber."
+    ],
+    "sources": [
+      {
+        "label": "Dale Carnegie: página oficial do livro How to Win Friends and Influence People",
+        "url": "https://dalecarnegie.com/en/books/how-to-win-friends-influence-people"
+      }
+    ]
+  },
+  {
+    "id": "cultura-de-empresa-tech",
+    "blogURL": "/blog/cultura-de-empresa-tech",
+    "img": "https://learntech-content.douglasabnovato.workers.dev/media/learn-tech/blog/cultura-de-empresa-tech.webp",
+    "title": "O que a história do Google ensina sobre cultura de empresa tech",
+    "tag": "Carreira",
+    "author": "Equipe learnTECH",
+    "publishedAt": "2026-10-28",
+    "readingTime": "6 min",
+    "lead": "Toda vaga diz que a empresa tem uma cultura forte. Para entender o que isso significa na prática, ajuda olhar um caso bem documentado. Em \"Google: a biografia\", o jornalista Steven Levy acompanhou a empresa por dentro durante anos; em \"Por que fazemos o que fazemos?\", Mario Sergio Cortella discute propósito no trabalho. Juntos, os dois livros ajudam a montar perguntas para avaliar uma empresa antes de aceitar uma proposta.",
+    "highlights": [
+      {
+        "label": "Decisão por dados",
+        "description": "Discussões resolvidas com experimento e métrica, não pelo cargo de quem fala mais alto."
+      },
+      {
+        "label": "Autonomia",
+        "description": "Espaço para projetos próprios e melhoria interna, desde que exista na rotina e não só no discurso."
+      },
+      {
+        "label": "Propósito",
+        "description": "Saber por que o seu trabalho existe e para quem ele faz diferença."
+      }
+    ],
+    "body": [
+      "Levy descreve uma cultura nascida da pesquisa acadêmica: fundadores vindos da ciência da computação, contratação muito seletiva, engenheiros com voz nas decisões de produto e encontros semanais em que a liderança respondia perguntas de qualquer funcionário. Ele resume os valores da empresa como \"velocidade, flexibilidade e profundo respeito pelos dados\". Na prática, uma ideia ganhava quando havia teste e número para sustentá-la.",
+      "Outro símbolo famoso é a regra dos 20%: um dia por semana, ou o equivalente, para um projeto escolhido pela própria pessoa. Levy registra também o outro lado: muitas vezes esse tempo vinha depois de uma semana cheia de tarefas. A lição é que política escrita é diferente de prática, e vale perguntar como cada benefício funciona no dia a dia.",
+      "O livro não é só elogio. Mostra as tensões do crescimento rápido, a aversão à burocracia e, nas palavras do autor, um ponto cego sobre privacidade, mesmo com o lema informal \"Don't be evil\". Cultura de engenharia forte não garante boas decisões sobre o impacto do que se constrói."
+    ],
+    "quote": "Cultura é o que acontece quando ninguém está olhando para o slide de valores.",
+    "bodyContinued": [
+      "Cortella lembra que propósito vem do latim e significa algo como aquilo que se coloca adiante. Para ele, \"uma vida com propósito é aquela em que eu entenda as razões pelas quais faço o que faço\". Aplicado à escolha de emprego: além do salário, procure entender o que o seu trabalho muda para alguém e se a empresa reconhece esse esforço.",
+      "Alguns sinais para observar em entrevistas: como as decisões técnicas são registradas e revisadas (documentos de decisão, revisão de código obrigatória); quanto tempo o time dedica a refatoração, testes e ferramentas internas; como os erros são tratados (análise sem caça a culpados ou busca de responsáveis); se a liderança responde perguntas difíceis em canais abertos; e se os valores publicados aparecem nos exemplos que o entrevistador conta.",
+      "Leve perguntas prontas: qual foi a última decisão técnica que o time mudou por causa de dados? O que aconteceu da última vez que algo quebrou em produção? Quanto do tempo da equipe vai para melhoria interna? Resposta vaga também é informação. Depois, compare com os princípios que a empresa publica, como a página do Google com as dez coisas que diz saber ser verdade, e veja se o discurso combina com a rotina descrita."
+    ],
+    "sources": [
+      {
+        "label": "Steven Levy: site do autor",
+        "url": "https://www.stevenlevy.com/about"
+      },
+      {
+        "label": "Google: dez coisas que sabemos ser verdade (filosofia da empresa)",
+        "url": "https://about.google/philosophy"
+      }
+    ]
+  },
+  {
+    "id": "escolher-formacao-dev",
+    "blogURL": "/blog/escolher-formacao-dev",
+    "img": "https://learntech-content.douglasabnovato.workers.dev/media/learn-tech/blog/escolher-formacao-dev.webp",
+    "title": "Como escolher uma formação para começar em desenvolvimento",
+    "tag": "Carreira",
+    "author": "Equipe learnTECH",
+    "publishedAt": "2026-10-28",
+    "readingTime": "6 min",
+    "lead": "Graduação, curso técnico, bootcamp, curso gratuito ou estudo por conta própria: todos podem levar a uma vaga em desenvolvimento, mas cobram preços diferentes em tempo, dinheiro e disciplina. Comparar pelo nome ou pela propaganda não funciona. Este texto propõe quatro critérios, conteúdo, carga, custo e prática, e usa como exemplo programas públicos de escolas e comunidades.",
+    "highlights": [
+      {
+        "label": "Conteúdo",
+        "description": "A ementa diz mais que a página de vendas: procure lógica, Git, banco de dados, testes e projeto final."
+      },
+      {
+        "label": "Carga e custo",
+        "description": "Horas reais por semana, duração total e quanto você pode pagar sem entrar em dívida."
+      },
+      {
+        "label": "Prática",
+        "description": "Projetos de verdade, código revisado por alguém experiente e contato com trabalho em equipe."
+      }
+    ],
+    "body": [
+      "A graduação (Ciência da Computação, Sistemas de Informação, Engenharia de Software ou um tecnólogo em Análise e Desenvolvimento de Sistemas) leva de dois anos e meio a cinco anos. Entrega a base teórica mais completa, com algoritmos, estruturas de dados, redes, banco de dados e engenharia de software, além de diploma, exigido em concursos e em parte das empresas, e acesso a bolsas, iniciação científica e empresa júnior. Antes de se matricular, confira no sistema e-MEC se a instituição é credenciada e se o curso é autorizado e reconhecido.",
+      "O curso técnico de nível médio, como técnico em informática ou em desenvolvimento de sistemas, dura de um a dois anos, é mais aplicado e muitas vezes gratuito em institutos federais e escolas técnicas públicas. É uma boa porta para quem ainda está no ensino médio.",
+      "Os bootcamps variam muito. A Digital House, por exemplo, divulgava um curso de desenvolvimento web full stack de cinco meses, remoto e ao vivo, com 52 aulas, teoria assíncrona na plataforma e duas aulas ao vivo por semana, e também uma formação longa, de 24 a 33 meses conforme o período, com especialização em front-end ou back-end. Comunidades ligadas a plataformas de código aberto, como a do Netuno, organizam formações remotas full stack com Linux, HTML, CSS, banco de dados, JavaScript, React e prática em projetos publicados no GitHub."
+    ],
+    "quote": "A melhor formação é a que você consegue terminar e que obriga você a construir algo que outra pessoa possa ver.",
+    "bodyContinued": [
+      "Os cursos gratuitos servem bem para testar se você gosta da área antes de investir. O Programming for Everybody, da Le Wagon, é um exemplo: online, com oito semanas de HTML, CSS, terminal e GitHub, Ruby e JavaScript. O risco desse formato é a falta de prazo e de cobrança, que derruba a taxa de conclusão.",
+      "Para quem estuda por conta própria, um guia de 2022 da escola online ITuring propõe a ideia de mínimo conhecimento viável: escolher um projeto, como um painel que consome uma API de cotações ou uma API REST com cadastro e autenticação, listar as habilidades necessárias, estudar até entregá-lo e começar a se candidatar assim que estiver pronto. O critério funciona em qualquer formato: a formação termina quando o projeto fica de pé, não quando acabam os vídeos.",
+      "Na hora de decidir, responda: quantas horas por semana consigo manter por um ano? Preciso de diploma para concurso, mestrado ou trabalho fora do país? Quanto posso pagar sem dívida? Alguém vai revisar meu código? Combinações são comuns, como graduação com um curso curto e prático ou um curso gratuito para testar antes de um bootcamp. E desconfie de emprego garantido e de números de mercado sem fonte, frequentes nas páginas de venda."
+    ],
+    "sources": [
+      {
+        "label": "Agência Gov: como consultar cursos e instituições de educação superior no e-MEC",
+        "url": "https://agenciagov.ebc.com.br/noticias/202608/saiba-como-consultar-cursos-e-instituicoes-de-educacao-superior"
+      }
+    ]
+  },
+  {
+    "id": "lgpd-seus-dados-ao-se-candidatar",
+    "blogURL": "/blog/lgpd-seus-dados-ao-se-candidatar",
+    "img": "https://learntech-content.douglasabnovato.workers.dev/media/learn-tech/blog/lgpd-seus-dados-ao-se-candidatar.webp",
+    "title": "Seus dados quando você se candidata: LGPD para quem procura emprego",
+    "tag": "Carreira",
+    "author": "Equipe learnTECH",
+    "publishedAt": "2026-10-28",
+    "readingTime": "7 min",
+    "lead": "Ao se candidatar, você entrega currículo, contatos, histórico profissional, às vezes resultados de testes e até dados sensíveis para programas de diversidade. A Lei Geral de Proteção de Dados Pessoais (Lei 13.709/2018) define o que a empresa pode fazer com isso e quais direitos você tem. Usando como exemplo o aviso de privacidade de recrutamento de uma consultoria global, este texto mostra como ler esse tipo de documento.",
+    "highlights": [
+      {
+        "label": "Finalidade",
+        "description": "Os dados só podem ser usados para o que foi informado, e o aviso precisa dizer qual é esse uso."
+      },
+      {
+        "label": "Base legal",
+        "description": "Consentimento, interesse legítimo ou contrato: cada uso precisa de uma justificativa prevista na lei."
+      },
+      {
+        "label": "Direitos",
+        "description": "Acesso, correção, eliminação, portabilidade e revogação do consentimento, entre outros."
+      }
+    ],
+    "body": [
+      "O artigo 6º da LGPD lista, além da boa-fé, dez princípios: finalidade, adequação, necessidade, livre acesso, qualidade dos dados, transparência, segurança, prevenção, não discriminação e responsabilização e prestação de contas. No recrutamento, dois pesam muito. Necessidade: por que pedir documento pessoal já na triagem? Não discriminação: dado sensível, como origem racial ou saúde, não pode virar filtro de seleção.",
+      "O aviso analisado descreve um sistema de acompanhamento de candidatos usado para buscar, selecionar e contratar. Informa que, ao se candidatar, você cria uma conta e passa a integrar uma comunidade de talentos; que são coletados nome, contato, currículo, experiência, idiomas, preferências de local, registros de acesso e endereço IP; e que parte dos dados vem de terceiros, como referências, empresas de verificação de antecedentes e plataformas de avaliação. Os dados ficam em servidores fora do Brasil, com transferência internacional amparada em cláusulas contratuais.",
+      "Um ponto chama atenção: uma ferramenta de inteligência artificial compara o currículo com a descrição da vaga e gera uma pontuação de compatibilidade. O aviso informa o direito de se opor à criação de perfil e afirma que a ferramenta não toma decisões automatizadas. Vale saber que o artigo 20 da LGPD garante o direito de pedir revisão de decisões tomadas unicamente com base em tratamento automatizado, inclusive as que definem seu perfil profissional."
+    ],
+    "quote": "Currículo é dado pessoal. Quem pede precisa dizer para quê, por quanto tempo e com quem vai compartilhar.",
+    "bodyContinued": [
+      "O mesmo aviso separa o consentimento para a comunidade de talentos do consentimento para receber e-mails sobre vagas, chama as duas escolhas de \"decisões separadas e individuais\" e diz que recusar os e-mails não afeta o processo seletivo. É um bom sinal: consentimento específico e que pode ser revogado. Sobre prazo, o texto diz que os dados são mantidos enquanto necessários, que o período conta a partir da última atividade e que depois eles são excluídos. Desconfie de avisos que não dizem nada sobre retenção.",
+      "O artigo 18 lista seus direitos: confirmar se há tratamento, acessar os dados, corrigi-los, pedir anonimização, bloqueio ou eliminação do que for desnecessário, portabilidade, eliminação do que foi tratado com consentimento, saber com quem os dados foram compartilhados, ser informado sobre a opção de não consentir e revogar o consentimento. Para exercê-los, procure no aviso o canal do encarregado de dados, envie o pedido por escrito indicando o processo seletivo e o direito que quer exercer, e guarde o protocolo. Sem resposta, é possível reclamar à Autoridade Nacional de Proteção de Dados (ANPD).",
+      "Antes de enviar uma candidatura, confira: o aviso existe e é fácil de achar? Diz finalidade, dados coletados, compartilhamento, local de armazenamento, prazo e canal de contato? Pede só o necessário para aquela etapa? Documentos pessoais, como RG, CPF e comprovante de endereço, normalmente só fazem sentido na contratação. E se você desenvolve sistemas, o programa 404 do LearnTECH, sobre segurança de dados, aprofunda a LGPD do lado de quem constrói: os mesmos princípios viram requisitos de software."
+    ],
+    "sources": [
+      {
+        "label": "Lei nº 13.709/2018 (LGPD), texto oficial no Planalto",
+        "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm"
+      },
+      {
+        "label": "Autoridade Nacional de Proteção de Dados (ANPD)",
+        "url": "https://www.gov.br/anpd/pt-br"
+      }
+    ]
+  },
+  {
+    "id": "javascript-fundamentos",
+    "blogURL": "/blog/javascript-fundamentos",
+    "img": "https://cdn.pixabay.com/photo/2020/01/26/20/14/computer-4795762_1280.jpg",
+    "illustrationImg": "https://cdn.pixabay.com/photo/2016/11/23/15/48/code-1853305_1280.jpg",
+    "title": "Domine o JavaScript e aprenda os fundamentos para criar projetos web incríveis.",
+    "tag": "Javascript",
+    "author": "Equipe learnTECH",
+    "publishedAt": "2026-07-10",
+    "readingTime": "6 min",
+    "lead": "JavaScript é a única linguagem que roda nativamente em praticamente todo navegador do planeta — e é ela que transforma uma página estática em algo que responde ao que você faz. Antes de qualquer framework, existe um punhado de conceitos que decide se você vai entender o que está acontecendo, ou só copiar código sem saber por quê.",
+    "highlights": [
+      {
+        "label": "Variáveis e tipos",
+        "description": "Como o JavaScript guarda e diferencia informação — texto, número, verdadeiro/falso."
+      },
+      {
+        "label": "Funções",
+        "description": "O bloco reutilizável que recebe entrada, processa, e devolve resultado."
+      },
+      {
+        "label": "DOM e eventos",
+        "description": "Como o código enxerga a página e reage ao clique, ao digitar, ao rolar."
+      }
+    ],
+    "body": [
       "Todo iniciante em JavaScript passa pelo mesmo momento de confusão: a sintaxe parece simples, mas o raciocínio por trás dela não é intuitivo até que alguns conceitos se encaixem. O primeiro deles é entender que JavaScript é uma linguagem que executa instrução por instrução, de cima para baixo — e que cada variável é uma caixa com nome, guardando um valor que pode mudar ao longo do tempo.",
-      "O segundo salto de entendimento vem com funções. Uma função é, na prática, uma receita: você define os ingredientes que ela espera receber (os parâmetros), o que ela faz com eles, e o que ela devolve no final. Uma vez que isso fica claro, código deixa de ser uma sequência solta de comandos e passa a ser um conjunto de blocos organizados, cada um com uma responsabilidade.",
+      "O segundo salto de entendimento vem com funções. Uma função é, na prática, uma receita: você define os ingredientes que ela espera receber (os parâmetros), o que ela faz com eles, e o que ela devolve no final. Uma vez que isso fica claro, código deixa de ser uma sequência solta de comandos e passa a ser um conjunto de blocos organizados, cada um com uma responsabilidade."
     ],
-    quote:
-      "Você não aprende JavaScript decorando sintaxe. Aprende quando entende o que cada linha está pedindo para o navegador fazer.",
-    bodyContinued: [
+    "quote": "Você não aprende JavaScript decorando sintaxe. Aprende quando entende o que cada linha está pedindo para o navegador fazer.",
+    "bodyContinued": [
       "É só depois desses dois fundamentos que a manipulação do DOM (Document Object Model) faz sentido de verdade. O DOM é a representação da sua página que o JavaScript consegue enxergar e alterar — é por isso que um clique num botão consegue mudar o texto de um parágrafo, sem a página inteira recarregar. Sem entender variável e função antes, o DOM parece mágica. Com esses dois fundamentos, ele é só mais uma ferramenta com um propósito claro.",
-      "O caminho mais eficiente não é tentar aprender tudo de uma vez — é praticar cada conceito isoladamente, num arquivo pequeno, antes de juntar tudo num projeto real. É exatamente essa progressão que o nosso módulo de JavaScript segue: primeiro a lógica, depois o DOM, só então a interatividade completa.",
+      "O caminho mais eficiente não é tentar aprender tudo de uma vez — é praticar cada conceito isoladamente, num arquivo pequeno, antes de juntar tudo num projeto real. É exatamente essa progressão que o nosso módulo de JavaScript segue: primeiro a lógica, depois o DOM, só então a interatividade completa."
     ],
-    sources: [
+    "sources": [
       {
-        label: "MDN Web Docs — JavaScript",
-        url: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript",
-      },
-    ],
+        "label": "MDN Web Docs — JavaScript",
+        "url": "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript"
+      }
+    ]
   },
-
   {
-    id: "react-interfaces-modernas",
-    blogURL: "/blog/react-interfaces-modernas",
-    img: "https://cdn.pixabay.com/photo/2020/03/05/16/44/engineer-4904884_1280.jpg",
-    illustrationImg:
-      "https://cdn.pixabay.com/photo/2016/09/15/16/28/tree-1671079_1280.jpg",
-    title:
-      "Construa interfaces modernas e escaláveis dominando os conceitos do React JS",
-    tag: "React JS",
-    author: "Equipe learnTECH",
-    publishedAt: "2026-07-15",
-    readingTime: "6 min",
-    lead:
-      "React é a biblioteca JavaScript mais usada do mundo para construir interfaces — mantida pela Meta e adotada por empresas de todos os portes. Mas o que faz ela valer a pena não é popularidade: é uma forma diferente de pensar a tela, dividida em pedaços pequenos e reutilizáveis, em vez de um documento único e monolítico.",
-    highlights: [
+    "id": "react-interfaces-modernas",
+    "blogURL": "/blog/react-interfaces-modernas",
+    "img": "https://cdn.pixabay.com/photo/2020/03/05/16/44/engineer-4904884_1280.jpg",
+    "illustrationImg": "https://cdn.pixabay.com/photo/2016/09/15/16/28/tree-1671079_1280.jpg",
+    "title": "Construa interfaces modernas e escaláveis dominando os conceitos do React JS",
+    "tag": "React JS",
+    "author": "Equipe learnTECH",
+    "publishedAt": "2026-07-15",
+    "readingTime": "6 min",
+    "lead": "React é a biblioteca JavaScript mais usada do mundo para construir interfaces — mantida pela Meta e adotada por empresas de todos os portes. Mas o que faz ela valer a pena não é popularidade: é uma forma diferente de pensar a tela, dividida em pedaços pequenos e reutilizáveis, em vez de um documento único e monolítico.",
+    "highlights": [
       {
-        label: "Componentes",
-        description:
-          "Cada pedaço da interface — um botão, um card, um formulário — vira uma peça independente e reutilizável.",
+        "label": "Componentes",
+        "description": "Cada pedaço da interface — um botão, um card, um formulário — vira uma peça independente e reutilizável."
       },
       {
-        label: "Estado (state)",
-        description:
-          "A memória de um componente. Quando o estado muda, o React redesenha a tela sozinho.",
+        "label": "Estado (state)",
+        "description": "A memória de um componente. Quando o estado muda, o React redesenha a tela sozinho."
       },
       {
-        label: "Props",
-        description:
-          "Como um componente recebe dado de fora, sem decidir por conta própria o que exibir.",
-      },
+        "label": "Props",
+        "description": "Como um componente recebe dado de fora, sem decidir por conta própria o que exibir."
+      }
     ],
-    body: [
+    "body": [
       "A ideia central do React é simples de enunciar e difícil de internalizar de primeira: em vez de escrever uma página inteira como um bloco só, você a divide em componentes — pequenas peças de interface, cada uma responsável por uma parte específica da tela. Um botão de curtir, um card de produto, um menu de navegação — cada um vira uma função que retorna o que deve aparecer.",
-      "O que torna essa divisão poderosa é a reutilização: o mesmo componente `Button` pode aparecer dez vezes na mesma página, cada instância com seu próprio texto e comportamento, sem você reescrever a lógica do botão dez vezes. Isso é o oposto de HTML puro, onde cada botão é código solto, repetido manualmente sempre que precisa de outro.",
+      "O que torna essa divisão poderosa é a reutilização: o mesmo componente `Button` pode aparecer dez vezes na mesma página, cada instância com seu próprio texto e comportamento, sem você reescrever a lógica do botão dez vezes. Isso é o oposto de HTML puro, onde cada botão é código solto, repetido manualmente sempre que precisa de outro."
     ],
-    quote:
-      "Pensar em componentes é a virada de chave: você para de perguntar 'como faço essa página' e passa a perguntar 'quais peças essa página é feita'.",
-    bodyContinued: [
+    "quote": "Pensar em componentes é a virada de chave: você para de perguntar 'como faço essa página' e passa a perguntar 'quais peças essa página é feita'.",
+    "bodyContinued": [
       "A segunda peça central é o estado — a memória que cada componente carrega. Um contador de curtidas, um campo de formulário sendo digitado, um menu aberto ou fechado: tudo isso é estado. A regra de ouro do React é que, quando o estado muda, a tela se atualiza sozinha — você nunca escreve 'atualize esse número na tela', você só muda o valor guardado, e o React cuida do resto.",
-      "Por fim, componentes conversam entre si através de props — dados que um componente pai passa para um componente filho. Isso cria uma direção clara de informação (de cima para baixo), o que torna mais fácil entender de onde vem cada dado exibido, mesmo em telas com dezenas de componentes encaixados uns nos outros.",
+      "Por fim, componentes conversam entre si através de props — dados que um componente pai passa para um componente filho. Isso cria uma direção clara de informação (de cima para baixo), o que torna mais fácil entender de onde vem cada dado exibido, mesmo em telas com dezenas de componentes encaixados uns nos outros."
     ],
-    sources: [
+    "sources": [
       {
-        label: "React — Documentação oficial (react.dev)",
-        url: "https://react.dev/",
-      },
-    ],
+        "label": "React — Documentação oficial (react.dev)",
+        "url": "https://react.dev/"
+      }
+    ]
   },
-
   {
-    id: "nodejs-backend-rapido",
-    blogURL: "/blog/nodejs-backend-rapido",
-    img: "https://cdn.pixabay.com/photo/2020/12/03/23/35/work-5801876_1280.jpg",
-    illustrationImg:
-      "https://cdn.pixabay.com/photo/2018/05/08/08/44/artificial-intelligence-3382507_1280.jpg",
-    title:
-      "Aprenda Node JS e desenvolva aplicações rápidas e poderosas para o backend web",
-    tag: "Node JS",
-    author: "Equipe learnTECH",
-    publishedAt: "2026-07-16",
-    readingTime: "6 min",
-    lead:
-      "JavaScript nasceu para rodar dentro do navegador. O Node.js quebrou essa regra: é um ambiente que executa JavaScript fora do navegador, no servidor — o que permite usar a mesma linguagem do frontend para construir o backend inteiro de uma aplicação.",
-    highlights: [
+    "id": "nodejs-backend-rapido",
+    "blogURL": "/blog/nodejs-backend-rapido",
+    "img": "https://cdn.pixabay.com/photo/2020/12/03/23/35/work-5801876_1280.jpg",
+    "illustrationImg": "https://cdn.pixabay.com/photo/2018/05/08/08/44/artificial-intelligence-3382507_1280.jpg",
+    "title": "Aprenda Node JS e desenvolva aplicações rápidas e poderosas para o backend web",
+    "tag": "Node JS",
+    "author": "Equipe learnTECH",
+    "publishedAt": "2026-07-16",
+    "readingTime": "6 min",
+    "lead": "JavaScript nasceu para rodar dentro do navegador. O Node.js quebrou essa regra: é um ambiente que executa JavaScript fora do navegador, no servidor — o que permite usar a mesma linguagem do frontend para construir o backend inteiro de uma aplicação.",
+    "highlights": [
       {
-        label: "Event loop",
-        description:
-          "O mecanismo que permite ao Node lidar com muitas conexões ao mesmo tempo, sem travar esperando uma terminar.",
+        "label": "Event loop",
+        "description": "O mecanismo que permite ao Node lidar com muitas conexões ao mesmo tempo, sem travar esperando uma terminar."
       },
       {
-        label: "NPM",
-        description:
-          "O maior repositório de pacotes de código do mundo, prontos para instalar e usar no seu projeto.",
+        "label": "NPM",
+        "description": "O maior repositório de pacotes de código do mundo, prontos para instalar e usar no seu projeto."
       },
       {
-        label: "APIs",
-        description:
-          "O uso mais comum do Node: construir o servidor que recebe pedido do frontend e devolve dado.",
-      },
+        "label": "APIs",
+        "description": "O uso mais comum do Node: construir o servidor que recebe pedido do frontend e devolve dado."
+      }
     ],
-    body: [
+    "body": [
       "O que diferencia o Node.js de outros ambientes de backend é o modelo de execução: em vez de abrir uma nova linha de processamento para cada pedido que chega (o que consome muita memória), o Node usa um único processo, organizado em torno de um event loop — uma fila que vai tratando cada tarefa assim que ela fica pronta, sem ficar parado esperando uma operação lenta (como uma consulta ao banco de dados) terminar antes de atender o próximo pedido.",
-      "Isso torna o Node especialmente eficiente para aplicações que lidam com muitas conexões simultâneas fazendo operações de entrada e saída — ler arquivo, consultar banco, chamar outra API — mais do que para tarefas de cálculo pesado, que bloqueiam essa fila única.",
+      "Isso torna o Node especialmente eficiente para aplicações que lidam com muitas conexões simultâneas fazendo operações de entrada e saída — ler arquivo, consultar banco, chamar outra API — mais do que para tarefas de cálculo pesado, que bloqueiam essa fila única."
     ],
-    quote:
-      "Node não é rápido porque faz uma coisa de cada vez rapidamente. É rápido porque nunca fica parado esperando.",
-    bodyContinued: [
+    "quote": "Node não é rápido porque faz uma coisa de cada vez rapidamente. É rápido porque nunca fica parado esperando.",
+    "bodyContinued": [
       "Na prática, o uso mais comum de Node.js é construir APIs — o servidor que recebe uma requisição do frontend (\"me dá a lista de produtos\"), busca a informação (geralmente num banco de dados), e devolve a resposta em um formato que o frontend consegue exibir. Frameworks como o Express simplificam esse trabalho, cuidando de rotas e requisições para você focar na lógica do negócio.",
-      "Outra vantagem prática, além da performance: como o Node roda JavaScript, o mesmo desenvolvedor que escreve a interface pode escrever o backend, sem trocar de linguagem — o que reduz a curva de aprendizado de quem já vem do frontend e quer entender o outro lado da aplicação.",
+      "Outra vantagem prática, além da performance: como o Node roda JavaScript, o mesmo desenvolvedor que escreve a interface pode escrever o backend, sem trocar de linguagem — o que reduz a curva de aprendizado de quem já vem do frontend e quer entender o outro lado da aplicação."
     ],
-    sources: [
+    "sources": [
       {
-        label: "Node.js — Documentação oficial",
-        url: "https://nodejs.org/en/docs",
-      },
-    ],
+        "label": "Node.js — Documentação oficial",
+        "url": "https://nodejs.org/en/docs"
+      }
+    ]
   },
-
   {
-    id: "scrum-projetos-ageis",
-    blogURL: "/blog/scrum-projetos-ageis",
-    img: "https://cdn.pixabay.com/photo/2019/09/23/12/02/rugby-4498375_1280.jpg",
-    illustrationImg:
-      "https://cdn.pixabay.com/photo/2016/02/19/10/00/office-1207746_1280.jpg",
-    title:
-      "Descubra como aplicar Scrum para organizar projetos ágeis com eficiência e foco",
-    tag: "Scrum",
-    author: "Equipe learnTECH",
-    publishedAt: "2026-07-17",
-    readingTime: "5 min",
-    lead:
-      "Scrum não é sobre reunião diária nem sobre post-it colorido — isso é só a superfície. Na essência, é um framework para lidar com trabalho complexo dividindo-o em ciclos curtos, entregando algo utilizável no fim de cada um, e ajustando o rumo com base no que foi aprendido, em vez de tentar planejar tudo perfeitamente antes de começar.",
-    highlights: [
+    "id": "scrum-projetos-ageis",
+    "blogURL": "/blog/scrum-projetos-ageis",
+    "img": "https://cdn.pixabay.com/photo/2019/09/23/12/02/rugby-4498375_1280.jpg",
+    "illustrationImg": "https://cdn.pixabay.com/photo/2016/02/19/10/00/office-1207746_1280.jpg",
+    "title": "Descubra como aplicar Scrum para organizar projetos ágeis com eficiência e foco",
+    "tag": "Scrum",
+    "author": "Equipe learnTECH",
+    "publishedAt": "2026-07-17",
+    "readingTime": "5 min",
+    "lead": "Scrum não é sobre reunião diária nem sobre post-it colorido — isso é só a superfície. Na essência, é um framework para lidar com trabalho complexo dividindo-o em ciclos curtos, entregando algo utilizável no fim de cada um, e ajustando o rumo com base no que foi aprendido, em vez de tentar planejar tudo perfeitamente antes de começar.",
+    "highlights": [
       {
-        label: "Sprints",
-        description:
-          "Ciclos curtos e fixos (geralmente 1 a 4 semanas) que terminam com algo pronto para usar ou avaliar.",
+        "label": "Sprints",
+        "description": "Ciclos curtos e fixos (geralmente 1 a 4 semanas) que terminam com algo pronto para usar ou avaliar."
       },
       {
-        label: "Papéis",
-        description:
-          "Product Owner (prioriza o quê fazer), Scrum Master (remove obstáculo), Time de Desenvolvimento (faz o trabalho).",
+        "label": "Papéis",
+        "description": "Product Owner (prioriza o quê fazer), Scrum Master (remove obstáculo), Time de Desenvolvimento (faz o trabalho)."
       },
       {
-        label: "Cerimônias",
-        description:
-          "Reuniões com propósito específico: planejar o sprint, alinhar diariamente, revisar o resultado, e refletir sobre o processo.",
-      },
+        "label": "Cerimônias",
+        "description": "Reuniões com propósito específico: planejar o sprint, alinhar diariamente, revisar o resultado, e refletir sobre o processo."
+      }
     ],
-    body: [
+    "body": [
       "O coração do Scrum é o sprint: um período curto e de duração fixa em que o time se compromete a entregar um conjunto definido de trabalho. Ao final de cada sprint, existe algo concreto — não uma promessa de progresso, mas um incremento realmente utilizável. Isso resolve um problema clássico de projetos longos: descobrir, só no final, que o que foi construído não é o que era necessário.",
-      "Para isso funcionar, o Scrum define três papéis com responsabilidades distintas. O Product Owner decide o que é prioridade — qual problema resolver primeiro. O Scrum Master não gerencia pessoas, cuida do processo: remove obstáculo, protege o time de interrupção, garante que o framework seja seguido. E o Time de Desenvolvimento é quem efetivamente constrói, decidindo como fazer o que foi priorizado.",
+      "Para isso funcionar, o Scrum define três papéis com responsabilidades distintas. O Product Owner decide o que é prioridade — qual problema resolver primeiro. O Scrum Master não gerencia pessoas, cuida do processo: remove obstáculo, protege o time de interrupção, garante que o framework seja seguido. E o Time de Desenvolvimento é quem efetivamente constrói, decidindo como fazer o que foi priorizado."
     ],
-    quote:
-      "Scrum não elimina a incerteza de um projeto. Ele cria ciclos curtos o suficiente para você errar rápido, perceber, e corrigir — antes que o erro custe caro.",
-    bodyContinued: [
+    "quote": "Scrum não elimina a incerteza de um projeto. Ele cria ciclos curtos o suficiente para você errar rápido, perceber, e corrigir — antes que o erro custe caro.",
+    "bodyContinued": [
       "As cerimônias do Scrum existem para sustentar esse ciclo: o Sprint Planning define o que entra no próximo ciclo; a Daily Scrum (reunião diária, curta) alinha o time sobre o progresso e os obstáculos; a Sprint Review mostra o que foi entregue para quem importa; e a Retrospectiva — talvez a mais subestimada — pergunta ao time o que funcionou e o que precisa mudar no próprio processo de trabalho.",
-      "O framework foi desenhado originalmente para desenvolvimento de software, mas hoje é usado em times de marketing, produto e operações — sempre que o trabalho é complexo demais para planejar com precisão total do início ao fim, e se beneficia de ciclos curtos de entrega e ajuste.",
+      "O framework foi desenhado originalmente para desenvolvimento de software, mas hoje é usado em times de marketing, produto e operações — sempre que o trabalho é complexo demais para planejar com precisão total do início ao fim, e se beneficia de ciclos curtos de entrega e ajuste."
     ],
-    sources: [
+    "sources": [
       {
-        label: "The Scrum Guide — Ken Schwaber e Jeff Sutherland",
-        url: "https://scrumguides.org/",
-      },
-    ],
+        "label": "The Scrum Guide — Ken Schwaber e Jeff Sutherland",
+        "url": "https://scrumguides.org/"
+      }
+    ]
   },
-
-  // Deixado propositalmente sem "lead"/"body" — mantém a tela de
-  // "conteúdo em preparação" ativa no blog, por decisão do usuário.
   {
-    id: "rotina-desenvolvedor",
-    blogURL: "/blog/rotina-desenvolvedor",
-    img: "https://cdn.pixabay.com/photo/2019/10/03/12/12/hacker-4523097_1280.jpg",
-    title:
-      "Rotina de um Desenvolvedor: foco, desafios e práticas para evoluir no código",
-    tag: "Hack",
-  },
+    "id": "rotina-desenvolvedor",
+    "blogURL": "/blog/rotina-desenvolvedor",
+    "img": "https://cdn.pixabay.com/photo/2019/10/03/12/12/hacker-4523097_1280.jpg",
+    "title": "Rotina de um Desenvolvedor: foco, desafios e práticas para evoluir no código",
+    "tag": "Hack",
+    "author": "Equipe learnTECH",
+    "publishedAt": "2026-10-28",
+    "readingTime": "6 min",
+    "lead": "A rotina de quem desenvolve raramente é só código: tem estudo, reuniões, projetos paralelos, inglês e vida fora da tela. Sem estrutura, o dia vira uma sequência de trocas de contexto e a sensação no fim é de muito esforço e pouca entrega. O método a seguir vem de uma grade semanal real e de conversas de mentoria usando IA para organizar várias frentes ao mesmo tempo.",
+    "highlights": [
+      {
+        "label": "Blocos de tempo",
+        "description": "Cada período do dia tem um único contexto, e cada projeto tem dias fixos."
+      },
+      {
+        "label": "Revisão semanal",
+        "description": "Escolher prioridades, limpar o que acumulou e mandar ideias para o backlog."
+      },
+      {
+        "label": "Hábitos pequenos",
+        "description": "Rituais de abertura e fechamento que reduzem a ansiedade e mantêm o ritmo."
+      }
+    ],
+    "body": [
+      "A grade de dias úteis é simples: uma hora de inglês às 7h, uma manhã de quatro horas para estudo e para o projeto principal, almoço com intervalo, uma tarde de três horas dedicada a outro projeto, com dias fixos (por exemplo, segunda e sexta para o projeto A, terça a quinta para o projeto B), descanso no fim da tarde e a noite reservada para aulas ou reuniões. No fim de semana entram só reuniões agendadas e o encerramento da semana. O princípio é um bloco, um contexto: abriu o bloco do projeto B, as abas do projeto A ficam fechadas.",
+      "Dentro de cada dia, ajuda separar modos de trabalho. No modo gerente, a primeira hora e meia, você delega, cobra e responde. No modo arquiteto, planeja, escreve roteiros e usa a IA para vencer a página em branco. No modo desenvolvedor, faz de duas a três horas de trabalho profundo, em blocos de 50 minutos, com o celular no não perturbe. Para as interrupções, duas regras: e-mail que se responde em dois minutos se responde na hora; mensagem com demanda vira card no board e é respondida no bloco de relacionamento."
+    ],
+    "quote": "Rotina boa não é a que enche o dia. É a que deixa claro, a cada hora, qual é o único trabalho que importa agora.",
+    "bodyContinued": [
+      "Hábitos sustentam a grade. Em O Poder do Hábito, Charles Duhigg descreve o ciclo de deixa, rotina e recompensa e lembra que “os hábitos não são inevitáveis”: dá para trocar a rotina mantendo a deixa. Um exemplo é usar os últimos dez minutos de cada bloco para anotar no board exatamente onde você parou; a recompensa é começar o dia seguinte sem precisar lembrar de tudo. Em Arrume a sua cama, William H. McRaven resume a força da primeira tarefa concluída: “Se você quer mudar o mundo, comece arrumando a sua cama.” No código, isso vira quebrar um card difícil em micro-cards e fechar o primeiro logo cedo.",
+      "A revisão semanal fecha o ciclo. No início da semana, liste as frentes, escolha a prioridade de cada uma, revise abas e favoritos (o que não virou tarefa em sete dias sai) e mova ideias soltas para uma coluna Ideias à esquerda do To Do, sem prazo nem descrição técnica. Greg McKeown, em Essencialismo, dá o motivo: “Se não estabelecermos prioridades, alguém fará isso por nós.” Em reunião com a liderança, pergunte qual demanda tem mais impacto na semana e coloque-a no topo.",
+      "A IA funciona bem como mentora quando você descreve o contexto e pede um plano, mas a decisão continua sendo sua. Nos dias de muitas frentes, lembre que não é preciso terminar tudo hoje, e conte a história da semana: o que avançou, o que travou e por quê. O programa 602 do LearnTECH, Scrum e Kanban, transforma esse método em prática com quadro kanban, ciclos curtos e planejamento em blocos de tempo."
+    ],
+    "sources": [
+      {
+        "label": "The Kanban Guide",
+        "url": "https://kanbanguides.org/"
+      },
+      {
+        "label": "The Scrum Guide — Ken Schwaber e Jeff Sutherland",
+        "url": "https://scrumguides.org/"
+      }
+    ]
+  }
 ];
 
 export default blogData;

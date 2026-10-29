@@ -33,7 +33,7 @@ export const Hero = () => {
           <p className="text-lg font-normal text-neutral-800 md:pr-16 pr-0">
             A internet já tem o conteúdo técnico que você precisa — espalhado,
             sem ordem, sem prática. Aqui ele vem organizado, comentado e em
-            sequência. Acesso livre, sem cadastro.
+            sequência. Acesso livre e gratuito, sem conta e sem senha.
           </p>
           <div className="w-full flex items-center gap-6">
             <button

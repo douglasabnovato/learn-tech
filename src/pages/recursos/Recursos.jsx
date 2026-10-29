@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useContagens } from "../../services/conteudo";
 import {
     FaRoute,
     FaTrophy,
@@ -9,7 +10,6 @@ import {
     FaBookOpen,
     FaUserGroup,
     FaCertificate,
-    FaLayerGroup,
     FaComments,
     FaArrowRight,
 } from "react-icons/fa6";
@@ -61,12 +61,6 @@ const liveFeatures = [
 
 const roadmapFeatures = [
     {
-        icon: FaLayerGroup,
-        title: "Área de membros",
-        description:
-            "Conteúdo autoral, produzido por nós, para quem quer ir além da curadoria aberta.",
-    },
-    {
         icon: FaCertificate,
         title: "Certificado de conclusão",
         description:
@@ -87,6 +81,9 @@ const roadmapFeatures = [
 ];
 
 export const Recursos = () => {
+    const contagens = useContagens();
+    const ferramentas = contagens["tools/ferramentas"];
+    const hospedagens = contagens["tools/hospedagens"];
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -215,7 +212,7 @@ export const Recursos = () => {
                         Curadoria pra otimizar seu workflow
                     </p>
                     <h2 className="text-2xl md:text-3xl font-bold text-white leading-snug">
-                        42 ferramentas · 9 hospedagens
+                        {ferramentas && hospedagens ? `${ferramentas} ferramentas · ${hospedagens} hospedagens` : "Ferramentas e hospedagens"}
                     </h2>
                     <p className="text-white/90 text-base max-w-xl mx-auto">
                         Selecionadas e testadas, organizadas por categoria, num só lugar.

@@ -75,6 +75,20 @@ export function useApi(caminho, local, adaptar = hidratar) {
   return atual;
 }
 
+/*
+ * Quantidade de itens publicados por recurso, lida do índice da API (/v1/index.json).
+ * Chaves sem /v1/ e sem .json (ex.: "tools/ferramentas", "bootcamps/eventos"). Sem API, devolve {}.
+ */
+export function useContagens() {
+  return useApi("index.json", {}, (indice) =>
+    Object.fromEntries(
+      (indice?.recursos ?? [])
+        .filter((r) => typeof r.itens === "number")
+        .map((r) => [r.caminho.replace(/^\/v1\//, "").replace(/\.json$/, ""), r.itens])
+    )
+  ).dados;
+}
+
 /* Conteúdo de página (sobre, aprender, termos...). Listas locais em default export entram como { itens }. */
 export function usePagina(nome, local) {
   return useApi(`learn-tech/paginas/${nome}.json`, local).dados;
