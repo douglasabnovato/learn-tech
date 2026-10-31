@@ -16,6 +16,7 @@ const GRADIENTES = {
   fullstack: "from-sky-500 via-purple-600 to-purple-700",
   comportamentais: "from-pink-500 via-purple-600 to-indigo-700",
   diferenciais: "from-indigo-500 via-sky-600 to-teal-600",
+  "marketing-tech": "from-fuchsia-500 via-purple-600 to-indigo-700",
 };
 
 /* Desenha o ícone só quando o nome foi resolvido para componente. */
