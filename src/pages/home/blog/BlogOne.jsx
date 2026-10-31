@@ -18,7 +18,12 @@ export const BlogOne = () => {
 
     const hasFullContent = Boolean(post.lead && post.body);
 
-    const relatedPosts = blogData.filter((p) => p.id !== post.id).slice(0, 3);
+    /* Continue lendo: primeiro os artigos do mesmo tema (tag), depois os demais, até 3. */
+    const outros = blogData.filter((p) => p.id !== post.id);
+    const relatedPosts = [
+        ...outros.filter((p) => p.tag === post.tag),
+        ...outros.filter((p) => p.tag !== post.tag),
+    ].slice(0, 3);
 
     const formattedDate = post.publishedAt
         ? new Date(post.publishedAt).toLocaleDateString("pt-BR", {
