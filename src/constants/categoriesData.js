@@ -1,128 +1,133 @@
-import {
-    FaReact,
-    FaFigma,
-    FaNode,
-    FaDatabase,
-    FaHtml5,
-} from "react-icons/fa6";
-import { AiFillProduct } from "react-icons/ai";
-import { FaProjectDiagram } from "react-icons/fa";
-import { MdOutlineTranslate } from "react-icons/md";
-import { BsChatDots } from "react-icons/bs";
-import { LuKanban } from "react-icons/lu";
-import { HiOutlineChip } from "react-icons/hi";
+/* GERADO por learntech-content/scripts/exportar-copias.mjs a partir de content/learn-tech/paginas/categorias.json.
+   Não edite à mão: mude o conteúdo na API e rode o script de novo. */
 
 const categoriesData = [
-    {
-        icon: FaHtml5,
-        gradientFrom: "from-indigo-500/20",
-        gradientVia: "via-sky-700/20 via-20%",
-        gradientTo: "to-purple-700/30",
-        title: "Web",
-        slug: "web",
-        description:
-            "Explore o universo da web e domine as tecnologias que movem a internet.",
-    },
-    {
-        icon: FaReact,
-        gradientFrom: "from-pink-500/20",
-        gradientVia: "via-purple-700/20 via-20%",
-        gradientTo: "to-indigo-700/30",
-        title: "Frontend",
-        slug: "frontend",
-        description:
-            "Crie interfaces incríveis, rápidas e responsivas para usuários exigentes.",
-    },
-    {
-        icon: FaFigma,
-        gradientFrom: "from-pink-500/20",
-        gradientVia: "via-indigo-700/20 via-20%",
-        gradientTo: "to-purple-700/30",
-        title: "UX/UI",
-        slug: "ux-ui",
-        description:
-            "Aprenda a desenhar experiências marcantes com design intuitivo e criativo.",
-    },
-    {
-        icon: FaNode,
-        gradientFrom: "from-pink-500/20",
-        gradientVia: "via-indigo-700/20 via-20%",
-        gradientTo: "to-purple-700/30",
-        title: "Backend",
-        slug: "backend",
-        description:
-            "Estruture sistemas sólidos e escaláveis para dar vida às suas aplicações.",
-    },
-    {
-        icon: FaDatabase,
-        gradientFrom: "from-pink-500/20",
-        gradientVia: "via-indigo-700/20 via-20%",
-        gradientTo: "to-purple-700/30",
-        title: "DataBase",
-        slug: "database",
-        description:
-            "Organize e gerencie dados com segurança, eficiência e inteligência.",
-    },
-    {
-        icon: AiFillProduct,
-        gradientFrom: "from-pink-500/20",
-        gradientVia: "via-indigo-700/20 via-20%",
-        gradientTo: "to-purple-700/30",
-        title: "Produtos Digitais",
-        slug: "produtos-digitais",
-        description:
-            "Transforme ideias em soluções digitais úteis, inovadoras e escaláveis.",
-    },
-    {
-        icon: FaProjectDiagram,
-        gradientFrom: "from-pink-500/20",
-        gradientVia: "via-indigo-700/20 via-20%",
-        gradientTo: "to-purple-700/30",
-        title: "Projetos",
-        slug: "projetos",
-        description:
-            "Planeje, organize e execute projetos de tecnologia com sucesso garantido.",
-    },
-    {
-        icon: MdOutlineTranslate,
-        gradientFrom: "from-pink-500/20",
-        gradientVia: "via-indigo-700/20 via-20%",
-        gradientTo: "to-purple-700/30",
-        title: "English",
-        slug: "english",
-        description:
-            "Melhore seu inglês para crescer na programação e se conectar com o mundo.",
-    },
-    {
-        icon: BsChatDots,
-        gradientFrom: "from-violet-500/20",
-        gradientVia: "via-purple-700/20 via-20%",
-        gradientTo: "to-fuchsia-700/30",
-        title: "Comunicação",
-        slug: "comunicacao",
-        description:
-            "Colabore, alinhe times e conduza conversas que destravam projetos.",
-    },
-    {
-        icon: LuKanban,
-        gradientFrom: "from-blue-500/20",
-        gradientVia: "via-sky-700/20 via-20%",
-        gradientTo: "to-cyan-700/30",
-        title: "Gestão",
-        slug: "gestao",
-        description:
-            "Organize tarefas, prazos e prioridades para entregar com previsibilidade.",
-    },
-    {
-        icon: HiOutlineChip,
-        gradientFrom: "from-teal-500/20",
-        gradientVia: "via-emerald-700/20 via-20%",
-        gradientTo: "to-green-700/30",
-        title: "Tecnologia",
-        slug: "tecnologia",
-        description:
-            "Ferramentas e plataformas que ampliam o que é possível construir e entregar.",
-    },
+  {
+    "icon": "FaCode",
+    "gradientFrom": "from-sky-500/20",
+    "gradientVia": "via-indigo-700/20 via-20%",
+    "gradientTo": "to-purple-700/30",
+    "title": "Fundamentos",
+    "slug": "fundamentos",
+    "description": "Lógica, algoritmos e estruturas de dados: a base de qualquer linguagem."
+  },
+  {
+    "icon": "FaHtml5",
+    "gradientFrom": "from-indigo-500/20",
+    "gradientVia": "via-sky-700/20 via-20%",
+    "gradientTo": "to-purple-700/30",
+    "title": "Web",
+    "slug": "web",
+    "description": "Explore o universo da web e domine as tecnologias que movem a internet."
+  },
+  {
+    "icon": "FaReact",
+    "gradientFrom": "from-pink-500/20",
+    "gradientVia": "via-purple-700/20 via-20%",
+    "gradientTo": "to-indigo-700/30",
+    "title": "Frontend",
+    "slug": "frontend",
+    "description": "Crie interfaces incríveis, rápidas e responsivas para usuários exigentes."
+  },
+  {
+    "icon": "FaFigma",
+    "gradientFrom": "from-pink-500/20",
+    "gradientVia": "via-indigo-700/20 via-20%",
+    "gradientTo": "to-purple-700/30",
+    "title": "UX/UI",
+    "slug": "ux-ui",
+    "description": "Aprenda a desenhar experiências marcantes com design intuitivo e criativo."
+  },
+  {
+    "icon": "FaNode",
+    "gradientFrom": "from-pink-500/20",
+    "gradientVia": "via-indigo-700/20 via-20%",
+    "gradientTo": "to-purple-700/30",
+    "title": "Backend",
+    "slug": "backend",
+    "description": "Estruture sistemas sólidos e escaláveis para dar vida às suas aplicações."
+  },
+  {
+    "icon": "FaDatabase",
+    "gradientFrom": "from-pink-500/20",
+    "gradientVia": "via-indigo-700/20 via-20%",
+    "gradientTo": "to-purple-700/30",
+    "title": "DataBase",
+    "slug": "database",
+    "description": "Organize e gerencie dados com segurança, eficiência e inteligência."
+  },
+  {
+    "icon": "AiFillProduct",
+    "gradientFrom": "from-pink-500/20",
+    "gradientVia": "via-indigo-700/20 via-20%",
+    "gradientTo": "to-purple-700/30",
+    "title": "Produtos Digitais",
+    "slug": "produtos-digitais",
+    "description": "Transforme ideias em soluções digitais úteis, inovadoras e escaláveis."
+  },
+  {
+    "icon": "FaProjectDiagram",
+    "gradientFrom": "from-pink-500/20",
+    "gradientVia": "via-indigo-700/20 via-20%",
+    "gradientTo": "to-purple-700/30",
+    "title": "Projetos",
+    "slug": "projetos",
+    "description": "Planeje, organize e execute projetos de tecnologia com sucesso garantido."
+  },
+  {
+    "icon": "MdOutlineTranslate",
+    "gradientFrom": "from-pink-500/20",
+    "gradientVia": "via-indigo-700/20 via-20%",
+    "gradientTo": "to-purple-700/30",
+    "title": "English",
+    "slug": "english",
+    "description": "Melhore seu inglês para crescer na programação e se conectar com o mundo."
+  },
+  {
+    "icon": "BsChatDots",
+    "gradientFrom": "from-violet-500/20",
+    "gradientVia": "via-purple-700/20 via-20%",
+    "gradientTo": "to-fuchsia-700/30",
+    "title": "Comunicação",
+    "slug": "comunicacao",
+    "description": "Colabore, alinhe times e conduza conversas que destravam projetos."
+  },
+  {
+    "icon": "LuKanban",
+    "gradientFrom": "from-blue-500/20",
+    "gradientVia": "via-sky-700/20 via-20%",
+    "gradientTo": "to-cyan-700/30",
+    "title": "Gestão",
+    "slug": "gestao",
+    "description": "Organize tarefas, prazos e prioridades para entregar com previsibilidade."
+  },
+  {
+    "icon": "HiOutlineChip",
+    "gradientFrom": "from-teal-500/20",
+    "gradientVia": "via-emerald-700/20 via-20%",
+    "gradientTo": "to-green-700/30",
+    "title": "Tecnologia",
+    "slug": "tecnologia",
+    "description": "Ferramentas e plataformas que ampliam o que é possível construir e entregar."
+  },
+  {
+    "icon": "FaUserTie",
+    "gradientFrom": "from-amber-500/20",
+    "gradientVia": "via-orange-700/20 via-20%",
+    "gradientTo": "to-rose-700/30",
+    "title": "Carreira e Soft Skills",
+    "slug": "carreira-soft-skills",
+    "description": "Autoconhecimento, decisão de carreira, processos seletivos e produtividade para crescer com intenção."
+  },
+  {
+    "icon": "FaHandshake",
+    "gradientFrom": "from-fuchsia-500/20",
+    "gradientVia": "via-purple-700/20 via-20%",
+    "gradientTo": "to-indigo-700/30",
+    "title": "Marketing e CRM",
+    "slug": "marketing-crm",
+    "description": "Jornadas, réguas de relacionamento, e-mail e landing pages que conectam a empresa ao cliente."
+  }
 ];
 
 export default categoriesData;
