@@ -1,6 +1,7 @@
 /* conteudo.js — camada de dados do learn-tech: busca na API learntech-content e cai para os dados locais se a API falhar. */
 import { useEffect, useState } from "react";
 import programsData from "../constants/programsData";
+import programasCatalogo from "../constants/programasCatalogo";
 import { ICONES } from "../constants/icones";
 
 export const API_URL = (import.meta.env.VITE_API_URL || "").replace(/\/$/, "");
@@ -119,9 +120,14 @@ function comMidiaLocal(programa) {
   };
 }
 
+/* Reserva das listas: a cópia manual (com capa, vídeo e quiz locais) mais os programas que só existem
+   no catálogo gerado pela API (programasCatalogo.js). Sem API, todos os cards continuam aparecendo. */
+const idsLocais = new Set(programsData.map((p) => p.id));
+export const CATALOGO_LOCAL = [...programsData, ...programasCatalogo.filter((p) => !idsLocais.has(p.id)).map(comMidiaLocal)];
+
 /* Catálogo de programas para listas e cards. */
 export function useProgramas() {
-  return useApi("learn-tech/programas.json", programsData, (lista) => lista.map(comMidiaLocal)).dados;
+  return useApi("learn-tech/programas.json", CATALOGO_LOCAL, (lista) => lista.map(comMidiaLocal)).dados;
 }
 
 /* Programa completo por id; `carregando` evita mostrar "não encontrado" antes da resposta da API. */

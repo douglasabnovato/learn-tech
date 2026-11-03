@@ -3,10 +3,13 @@ import { FaAnglesRight } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { CategoryCard } from "../../../components/category/CategoryCard";
 import categoriasLocal from "../../../constants/categoriesData";
-import { usePagina } from "../../../services/conteudo";
+import { usePagina, hidratar } from "../../../services/conteudo";
+
+/* Cópia gerada pela API, com ícones por nome: hidratada uma vez para virar componente. */
+const CATEGORIAS_LOCAIS = hidratar(categoriasLocal);
 
 export const Category = () => {
-  const { itens: categoriesData } = usePagina("categorias", { itens: categoriasLocal });
+  const { itens: categoriesData } = usePagina("categorias", { itens: CATEGORIAS_LOCAIS });
   return (
     <div className="w-full md:px-16 sm:px-10 px-4 space-y-8">
       <div className="w-full flex items-center justify-between">
