@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { LiaCertificateSolid } from "react-icons/lia";
 import { FaAnglesRight } from "react-icons/fa6";

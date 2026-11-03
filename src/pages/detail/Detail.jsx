@@ -1,4 +1,3 @@
-import React from "react";
 import { PageTopBanner } from "./../../components/pageTop/PageTopBanner";
 import { PiBookOpenTextFill } from "react-icons/pi";
 import { FiClock } from "react-icons/fi";
@@ -12,14 +11,6 @@ export const Detail = () => {
   const { id } = useParams();
   const programId = Number(id);
 
-  const getLevelClasses = (level = "") => {
-    const l = String(level).toLowerCase();
-    if (l === "iniciante") return "bg-green-100 text-green-800";
-    if (l === "intermediário" || l === "intermediario")
-      return "bg-yellow-100 text-yellow-800";
-    if (l === "avançado" || l === "avancado") return "bg-red-100 text-red-800";
-    return "bg-sky-100 text-sky-800";
-  };
   const { programa: program, carregando } = usePrograma(programId);
 
   if (!program) {

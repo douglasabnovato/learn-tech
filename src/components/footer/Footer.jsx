@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { FiBookOpen } from "react-icons/fi";
 import LearnTechTitle from "../logo/LearnTechTitle";
 
 const Footer = () => {

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa6";
 import * as sobreLocal from "../../constants/aboutData";
@@ -73,7 +73,7 @@ export const About = () => {
       <div className="w-full bg-neutral-900 md:px-16 sm:px-10 px-4 md:py-20 py-14">
         <blockquote className="max-w-3xl mx-auto text-center space-y-4">
           <span className="text-6xl text-neutral-700 font-serif select-none leading-none">
-            "
+            “
           </span>
           <p className="text-2xl md:text-3xl font-semibold text-white leading-snug -mt-8">
             {philosophyQuote}

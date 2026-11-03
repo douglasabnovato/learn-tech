@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { FaTriangleExclamation } from "react-icons/fa6";
 import * as termosLocal from "../../constants/termsData";
 import { usePagina } from "../../services/conteudo";

@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import { FaVolumeMute, FaVolumeUp, FaCompress } from "react-icons/fa";
 import { FaExpand, FaPlay, FaPause } from "react-icons/fa6";
 

@@ -1,4 +1,3 @@
-import React from "react";
 import PropTypes from "prop-types";
 import LogoIcon from "./assets/logo192.svg"; // importar como imagem
 

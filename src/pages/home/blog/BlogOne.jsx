@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { FaArrowLeft, FaAnglesRight, FaClock, FaUser } from "react-icons/fa6";
 import blogLocal from "../../../constants/blogData";
@@ -139,7 +139,7 @@ export const BlogOne = () => {
                         <div className="max-w-2xl mx-auto">
                             <blockquote className="relative border-l-4 border-sky-600 pl-6 py-2">
                                 <span className="absolute -left-2 -top-4 text-6xl text-sky-200 font-serif select-none">
-                                    "
+                                    “
                                 </span>
                                 <p className="text-xl md:text-2xl font-semibold text-neutral-800 leading-snug italic">
                                     {post.quote}

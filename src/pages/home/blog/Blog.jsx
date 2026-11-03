@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { FaAnglesRight } from "react-icons/fa6";
 import blogLocal from "./../../../constants/blogData";

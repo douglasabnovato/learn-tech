@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { PageTopBanner } from "../../components/pageTop/PageTopBanner";
 import { ProgramsCard } from "../../components/programs/ProgramsCard";
 import { useProgramas } from "../../services/conteudo";

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Breadcrumb } from "../breadcrumb/Breadcrumb";
 import pageTopBg from "./../../assets/originals/page-top-bg.webp";
 

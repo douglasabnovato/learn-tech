@@ -1,4 +1,3 @@
-import React from "react";
 import { VideoGrid } from "../../../../components/videoGrid/VideoGrid";
 import * as premiosLocal from "../../../../constants/premiosData";
 import { usePagina } from "../../../../services/conteudo";

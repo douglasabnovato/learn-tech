@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import DevImg1 from "../../../assets/devs/dev-4.webp";
 import DevImg2 from "../../../assets/devs/dev-5.webp";

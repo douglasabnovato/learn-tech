@@ -1,4 +1,3 @@
-import React from "react";
 import { StatsCard } from "../../../components/stats/StatsCard";
 import statsLocal from "../../../constants/statsData";
 import { usePagina } from "../../../services/conteudo";
