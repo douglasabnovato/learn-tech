@@ -37,7 +37,7 @@ Jornada profissional e conteúdos originais personalizados para a prestação de
 
 Os treinamentos são produzidos a partir de duas fontes:
 
-1. **`src/constants/programsData.js`** — o catálogo e o conteúdo dos programas já publicados no projeto.
+1. **A API learntech-content** — o catálogo e o conteúdo dos programas e artigos. Este site guarda uma cópia de reserva em `src/constants/` (`programasCatalogo.js` e `blogData.js` são gerados pela API; `programsData.js` tem o conteúdo completo de 3 programas).
 2. **Arquivos originais de cursos, treinamentos e anotações** — material próprio, que vira texto, depois roteiro de aula, depois programa.
 
 ---
@@ -75,157 +75,103 @@ O projeto sobe em `http://localhost:3000`.
 | [Tailwind CSS](https://tailwindcss.com/) | 4 | estilo |
 | [React Router](https://reactrouter.com/) | 7 | rotas |
 | [Vitest](https://vitest.dev/) | 4 | testes |
-| [lucide-react](https://lucide.dev/) · [react-icons](https://react-icons.github.io/react-icons/) | — | ícones |
+| [react-icons](https://react-icons.github.io/react-icons/) | 5 | ícones |
 
 ---
 
 # 📁 Estrutura de Pastas — Learn TECH
 
-> Levantada em 24/09/2026 a partir de `C:\ambiente-projeto\learn-tech`.
-> `.git`, `node_modules` e `dist` estão omitidos por serem gerados.
+> Atualizada em 03/11/2026. `.git`, `node_modules` e `dist` estão omitidos por serem gerados.
+> A documentação de engenharia (camada de dados, SEO, deploy) fica em `docs/README.md`.
 
 ## 🌳 Árvore
 
 ```text
 learn-tech/
 │
-├── .github/ 
-│   └── versao-2/                     # 15 telas da Versão 2
-│       ├── 1-home-1.jpg  →  1-home-7.jpg
-│       ├── 2-programas-1.jpg  →  2-programas-4.jpg
-│       ├── 3-recursos-1.jpg  →  3-recursos-2.jpg
-│       ├── 4-sobre-1.jpg
-│       └── 5-contato-1.jpg
+├── .github/
+│   ├── workflows/ci.yml              # teste, build e lint
+│   └── versao-2/                     # telas da Versão 2
 │
-├── public/                           # servido na raiz, sem passar pelo build
-│   ├── android-chrome-192x192.png
-│   ├── android-chrome-512x512.png
-│   ├── apple-touch-icon.png
-│   ├── favicon-16x16.png
-│   ├── favicon-32x32.png
-│   ├── favicon.ico
-│   └── site.webmanifest
+├── public/                           # servido na raiz: favicons, site.webmanifest, robots.txt, sitemap.xml, og-image.png
 │
 ├── src/
+│   ├── assets/                       # imagens importadas pelo código (devs/, setups/, originals/, programs/)
 │   │
-│   ├── assets/                       # imagens importadas pelo código
-│   │   ├── devs/                     # dev-4.jpg … dev-7.jpg
-│   │   ├── imgs/                     # 1-programs.png
-│   │   ├── logo/                     # logo192.png 
-│   │   ├── programs/                 # 1-demo.mp4 (47 MB), 1-demo-poster.jpg, 1-programs.png
-│   │   └── setups/                   # dev-1 … dev-10 .avif
-│   │
-│   ├── components/                   # 15 componentes reutilizáveis
+│   ├── components/
 │   │   ├── blog/BlogCard.jsx
 │   │   ├── breadcrumb/Breadcrumb.jsx
 │   │   ├── category/CategoryCard.jsx
-│   │   ├── common/ScrollToTop.jsx
+│   │   ├── common/
+│   │   │   ├── ConteudoIndisponivel.jsx  # aviso "Conteúdo indisponível agora" + "Tentar de novo"
+│   │   │   ├── ScrollToTop.jsx
+│   │   │   └── Seo.jsx                   # título, descrição e canonical por rota
 │   │   ├── footer/Footer.jsx
-│   │   ├── logo/
-│   │   │   ├── assets/               # logo192.png, logo192.svg
-│   │   │   └── LearnTechTitle.jsx
+│   │   ├── logo/LearnTechTitle.jsx
 │   │   ├── nav/Navbar.jsx
 │   │   ├── pageTop/PageTopBanner.jsx
 │   │   ├── player/VideoPlayer.jsx
 │   │   ├── programs/ProgramsCard.jsx
-│   │   ├── reviews/ReviewsCard.jsx           ⚠️ órfão
 │   │   ├── stats/StatsCard.jsx
-│   │   ├── tabs/Tabs.jsx
-│   │   └── videoGrid/
-│   │       ├── VideoGrid.jsx
-│   │       └── VideoModal.jsx
+│   │   ├── tabs/Tabs.jsx                 # abas acessíveis (tablist, setas)
+│   │   └── videoGrid/VideoGrid.jsx, VideoModal.jsx
 │   │
-│   ├── constants/                    # a camada de dados — 14 arquivos + 1 teste
-│   │   ├── aboutData.js
-│   │   ├── aprenderData.js
-│   │   ├── blogData.js
-│   │   ├── careerData.js
-│   │   ├── categoriesData.js
-│   │   ├── falaaeData.js
-│   │   ├── navbarData.js
-│   │   ├── premiosData.js
-│   │   ├── privacyData.js
-│   │   ├── programsData.js           ⭐ fonte única do catálogo (120 KB)
+│   ├── constants/                    # cópias de reserva e dados fixos de interface
+│   │   ├── blogData.js, areasData.js, categoriesData.js, programasCatalogo.js   # GERADOS pela API (não editar)
+│   │   ├── programsData.js           # cópia manual com conteúdo completo dos programas 1, 101 e 801
 │   │   ├── quizData.js               # quiz do programa 1
-│   │   ├── statsData.js
-│   │   ├── termsData.js
-│   │   ├── testimonialData.js                ⚠️ órfão
-│   │   └── dados.test.js             🧪 contrato de dados
+│   │   ├── icones.js                 # registro dos ícones citados por nome no conteúdo
+│   │   ├── aboutData.js, aprenderData.js, careerData.js, falaaeData.js, navbarData.js,
+│   │   │   premiosData.js, privacyData.js, statsData.js, termsData.js
+│   │   └── dados.test.js, categorias.test.js, programasCatalogo.test.js   🧪
 │   │
-│   ├── pages/                        # 29 páginas e seções
+│   ├── services/
+│   │   ├── api.js                    # rede: busca na API, tempo limite, cache, reserva
+│   │   ├── hidratar.js               # adaptador com ícones
+│   │   ├── conteudo.js               # programas (catálogo, programa completo, status)
+│   │   ├── conteudo.test.js          🧪
+│   │   ├── identificacao.js          # script de identificação sem login
+│   │   └── mensagens.js              # envio do Fala aê
+│   │
+│   ├── pages/
 │   │   ├── about/About.jsx                       → /about
-│   │   ├── account/                              ⚠️ órfão inteiro
-│   │   │   ├── sigin/SignIn.jsx
-│   │   │   └── signup/SignUp.jsx
 │   │   ├── aprender/Aprender.jsx                 → /aprender
 │   │   ├── career/Career.jsx                     → /careers
 │   │   ├── detail/Detail.jsx                     → /program/:category/:id
-│   │   ├── docs/
-│   │   │   ├── Privacidade.jsx                   → /privacy
-│   │   │   └── Termos.jsx                        → /terms
+│   │   ├── docs/Privacidade.jsx, Termos.jsx      → /privacy, /terms
 │   │   ├── enroll/                               → /program/:category/:id/enroll
-│   │   │   ├── EnrollPrograms.jsx
-│   │   │   ├── Description.jsx
+│   │   │   ├── EnrollPrograms.jsx, Description.jsx
 │   │   │   ├── quiz/Quiz.jsx
-│   │   │   └── tabContent/
-│   │   │       ├── TabContent.jsx                # uma aba por módulo
-│   │   │       └── ModuleRenderer.jsx            # renderiza qualquer módulo
-│   │   ├── error/
-│   │   │   ├── imgs/                             # 404 e em construção
-│   │   │   ├── not-found.jsx                     → *
-│   │   │   └── under-construction.jsx
+│   │   │   └── tabContent/TabContent.jsx, ModuleRenderer.jsx
+│   │   ├── error/not-found.jsx                   → *
 │   │   ├── falaae/FalaAe.jsx                     → /falaae
 │   │   ├── home/
 │   │   │   ├── Home.jsx                          → /
-│   │   │   ├── hero/
-│   │   │   │   ├── assets/                       # dev-4 … dev-7 .JPG
-│   │   │   │   └── Hero.jsx
-│   │   │   ├── stats/Stats.jsx
-│   │   │   ├── category/
-│   │   │   │   ├── Category.jsx
-│   │   │   │   └── CategoriesAll.jsx             → /category
-│   │   │   ├── programs/Programs.jsx             # seção da Home
-│   │   │   ├── quickaccess/
-│   │   │   │   ├── QuickAccess.jsx
-│   │   │   │   ├── mentorias/Mentorias.jsx       → /mentorias
-│   │   │   │   └── softskills/Softskills.jsx     → /softskills
-│   │   │   └── blog/
-│   │   │       ├── Blog.jsx
-│   │   │       └── BlogOne.jsx                   → /blog/:id
+│   │   │   ├── hero/Hero.jsx, stats/Stats.jsx, programs/Programs.jsx (seção da Home)
+│   │   │   ├── category/Category.jsx, CategoriesAll.jsx (→ /category)
+│   │   │   ├── quickaccess/QuickAccess.jsx, mentorias/ (→ /mentorias), softskills/ (→ /softskills)
+│   │   │   └── blog/Blog.jsx, Blogs.jsx (→ /blogs), BlogOne.jsx (→ /blog/:id)
 │   │   ├── programs/Programs.jsx                 → /programs
 │   │   └── recursos/Recursos.jsx                 → /resources
 │   │
-│   ├── App.jsx                       # todas as rotas
+│   ├── App.jsx                       # rotas (todas com lazy)
 │   ├── main.jsx                      # ponto de entrada
 │   └── index.css                     # import do Tailwind
 │
-├── .gitignore
+├── docs/                             # README de engenharia e histórico em docs/claudeia/
 ├── eslint.config.js
-├── index.html                        # lang="pt-BR", meta description, favicons
+├── index.html                        # lang="pt-BR", Open Graph, fonte Inter por <link>
 ├── package.json
-├── package-lock.json
-├── Readme.md
-├── vercel.json                       # rewrite de SPA para a Vercel
-└── vite.config.js                    # porta 3000, svgr, tailwind
+├── vercel.json                       # reescrita de SPA e cabeçalhos de segurança
+└── vite.config.js                    # porta 3000, svgr, tailwind, visualizer (dist/stats.html)
 ```
-
-## 📊 Em números
-
-| Camada | Quantidade |
-| --- | --- |
-| Componentes (`components/`) | 15 |
-| Arquivos de dados (`constants/`) | 14 + 1 teste |
-| Páginas e seções (`pages/`) | 29 |
-| Rotas registradas no `App.jsx` | 18 |
-| Imagens em `assets/` | 24 |
-| Imagens de preview em `.github/` | 23 |
 
 ## 🧭 Como a estrutura funciona
 
-O projeto é **plano e orientado a dados**. Não há camada de domínio, serviço ou store: `constants/` é a fonte, `pages/` consome e `components/` desenha.
+Os dados vêm da API **learntech-content**, com reserva local em `constants/`. `services/api.js` busca e cai para a reserva se a API falhar; `pages/` consome e `components/` desenha. O Navbar e as páginas institucionais importam só `api.js`, para o catálogo de programas não entrar na carga inicial.
 
 ```text
-constants/programsData.js
+API learntech-content  ──→  services/conteudo.js  (reserva: programsData.js + programasCatalogo.js)
         │
         ├──→ pages/programs/Programs.jsx      (catálogo, busca e filtro)
         ├──→ pages/detail/Detail.jsx          (apresentação do programa)
@@ -238,36 +184,21 @@ constants/programsData.js
                     └──→ components/player/VideoPlayer.jsx
 ```
 
-Um programa novo **não cria arquivo nenhum**: é um objeto a mais em `programsData.js`.
+Um programa novo é publicado na API (`learntech-content/content/learn-tech/programas/<id>.json`); o `npm run copias` da API regenera `programasCatalogo.js`.
 
 ## ⚠️ Pontos de atenção na estrutura
 
-**1. Quatro arquivos órfãos** — existem no disco, ninguém importa:
+**1. Imagens sem uso** (nenhum import; podem ser apagadas):
 
 ```text
-src/pages/account/sigin/SignIn.jsx
-src/pages/account/signup/SignUp.jsx
-src/components/reviews/ReviewsCard.jsx
-src/constants/testimonialData.js
+src/assets/logo/logo192.png
+src/components/logo/assets/logo192.png
+src/pages/error/imgs/Erro-404-not-found.jpg
+src/pages/error/imgs/Erro-404-under-construction.jpg
+src/pages/home/hero/assets/dev-4.JPG … dev-7.JPG   (~880 KB; o Hero usa src/assets/devs/*.webp)
 ```
 
-Os dois primeiros são resíduo da decisão OFF-only. Os dois últimos, da remoção dos depoimentos. Apagando `SignIn` e `SignUp`, a pasta `src/pages/account/` inteira sai junto.
-
-**2. Imagens duplicadas em três pares:**
-
-| Arquivo | Cópia | Tamanho |
-| --- | --- | --- |
-| `src/assets/logo/logo192.png` | `src/components/logo/assets/logo192.png` | 12 KB cada |
-| `src/assets/devs/dev-4…7.jpg` | `src/pages/home/hero/assets/dev-4…7.JPG` | ~890 KB no total |
-| `src/assets/imgs/1-programs.png` | `src/assets/programs/1-programs.png` | 1,7 MB cada — bytes diferentes, mesmo nome |
-
-O par de `1-programs.png` é o mais arriscado: mesmo nome, conteúdo diferente, pastas diferentes. Vale conferir qual está em uso antes de mexer.
-
-**3. Duas pastas `assets` para a mesma finalidade** — `src/assets/` e as `assets/` locais dentro de `components/logo/` e `pages/home/hero/`. Não é erro, mas é a origem da duplicação acima.
-
-**4. Dois arquivos chamados `Programs.jsx`** — `pages/programs/Programs.jsx` (a página) e `pages/home/programs/Programs.jsx` (a seção da Home). Funciona, mas confunde na busca do editor.
-
-**5. `src/assets/programs/1-demo.mp4` tem 47 MB** — está versionado no Git e é baixado pelo navegador de quem abre o programa 1.
+**2. Dois arquivos chamados `Programs.jsx`** — `pages/programs/Programs.jsx` (a página) e `pages/home/programs/Programs.jsx` (a seção da Home). Funciona, mas confunde na busca do editor.
 
 ---
 
@@ -328,7 +259,7 @@ npm test
 
 ### 🗺️ Estado atual
 
-**33 programas no catálogo. 3 com conteúdo publicado.**
+**A API publica 49 programas, todos com módulos (4 a 6) e quiz (8 a 18 questões).** A reserva local tem os cards dos 49 (`programasCatalogo.js`, gerado pela API) e o conteúdo completo de 3:
 
 | # | Programa | Categoria | Módulos | Passos | Questões |
 | --- | --- | --- | --- | --- | --- |
@@ -336,15 +267,13 @@ npm test
 | 101 | React: Componentes, Estado e a Primeira Aplicação | Frontend | 4 | 13 | 12 |
 | 801 | Programar com IA sem Perder o Aprendizado | IA | 4 | 13 | 12 |
 
-Os outros 30 são cards de catálogo sem módulos. **Meta: um programa novo por categoria, por dia.**
+Sem a API, os outros programas aparecem como "Em breve" e a página do programa mostra "Conteúdo indisponível agora", com "Tentar de novo".
 
 ### 📌 Pendências conhecidas
 
-- [ ] Os 30 programas sem conteúdo precisam de um estado "em breve" — hoje a página de treinamento fica sem módulos publicados.
 - [ ] `lessons` e `duration` ainda são valores escritos à mão. Devem derivar da soma dos passos, como o `lessonsCount` já deriva.
-- [ ] `categoriesData.js` (seção Categorias da Home) lista 11 categorias — sem IA, e com Comunicação, Gestão e Tecnologia, que não têm nenhum programa. A lista de Programas tem 9, com IA. As duas precisam concordar.
-- [ ] Arquivos órfãos a remover: `src/pages/account/sigin/SignIn.jsx`, `src/pages/account/signup/SignUp.jsx`, `src/components/reviews/ReviewsCard.jsx`, `src/constants/testimonialData.js`.
-- [ ] O vídeo de demonstração do programa 1 tem 47 MB — pesado para carregamento no navegador.
+- [ ] O progresso dos módulos e os passos marcados somem ao recarregar; só o quiz persiste no `localStorage`.
+- [ ] Testes de componente (Testing Library) e lockfile versionado: ver `docs/README.md`.
 
 ---
 
