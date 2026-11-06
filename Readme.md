@@ -10,6 +10,14 @@ Hoje temos uma API com quatro projetos com temas específicos: bootcamps, tools,
 
 E a partir dela, temos career, tools, bootcamps. São projetos com temas específicos que complementam o ecossistema.
 
+## 📍 Estado do projeto (06/11/2026)
+
+- **Onde está:** Em produção na Vercel. CI verde com lint zerado, 30 testes e chunk inicial de 284 kB (era 496 kB).
+- **O que fizemos na rodada de MVP (03 a 05/11):** Camada de rede separada dos dados, reserva honesta quando a API falha, um `<h1>` por página, abas por teclado, SEO por rota e imagens leves.
+- **O que queremos fazer:** [#127](https://github.com/douglasabnovato/learn-tech/issues/127), [#130](https://github.com/douglasabnovato/learn-tech/issues/130), [#133](https://github.com/douglasabnovato/learn-tech/issues/133), [#128](https://github.com/douglasabnovato/learn-tech/issues/128), [#131](https://github.com/douglasabnovato/learn-tech/issues/131), [#134](https://github.com/douglasabnovato/learn-tech/issues/134) (lockfile, acessibilidade, limpeza de imagens, testes de componente, JSON-LD e busca sem acento). Todas com o label `proximos-passos` e critérios de entrega.
+
+A linha do tempo completa, os números e a ordem sugerida estão em [`docs/ESTADO-DO-PROJETO.md`](docs/ESTADO-DO-PROJETO.md).
+
 ## 📂 Plataforma de Aprendizado
 
 - Um LMS (Learning Management System) é um Sistema de Gestão de Aprendizagem.
@@ -273,9 +281,20 @@ Sem a API, os outros programas aparecem como "Em breve" e a página do programa 
 
 ### 📌 Pendências conhecidas
 
-- [ ] `lessons` e `duration` ainda são valores escritos à mão. Devem derivar da soma dos passos, como o `lessonsCount` já deriva.
-- [ ] O progresso dos módulos e os passos marcados somem ao recarregar; só o quiz persiste no `localStorage`.
-- [ ] Testes de componente (Testing Library) e lockfile versionado: ver `docs/README.md`.
+O que falta virou issue com o label `proximos-passos` e critérios de entrega, na ordem sugerida. O detalhe está em [`docs/ESTADO-DO-PROJETO.md`](docs/ESTADO-DO-PROJETO.md).
+
+| Issue | Item |
+| --- | --- |
+| [#127](https://github.com/douglasabnovato/learn-tech/issues/127) | Versionar o `package-lock.json` e usar `npm ci` na CI |
+| [#130](https://github.com/douglasabnovato/learn-tech/issues/130) | Acessibilidade: carrossel, modal de vídeo e axe sem violações graves |
+| [#133](https://github.com/douglasabnovato/learn-tech/issues/133) | Remover as 8 imagens sem referência em `src/` |
+| [#128](https://github.com/douglasabnovato/learn-tech/issues/128) | Testes de componente com Testing Library |
+| [#131](https://github.com/douglasabnovato/learn-tech/issues/131) | JSON-LD de artigos e programas e 404 de verdade |
+| [#134](https://github.com/douglasabnovato/learn-tech/issues/134) | Busca sem acento e recorte de `/programs` na URL |
+| [#129](https://github.com/douglasabnovato/learn-tech/issues/129) | Progresso do estudo persistente (hoje só o quiz persiste) e "Continue estudando" |
+| [#132](https://github.com/douglasabnovato/learn-tech/issues/132) | Página "Trilhas por objetivo" |
+
+Ainda sem issue: `lessons` e `duration` são escritos à mão e devem derivar da soma dos passos, como o `lessonsCount` já deriva.
 
 ---
 

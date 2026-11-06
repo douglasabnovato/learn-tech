@@ -50,4 +50,5 @@ Guia curto para mudar o site com segurança. O conteúdo novo (programas, artigo
 ## 7. Documentos
 - `Readme.md`: visão geral. `docs/README.md`: engenharia.
 - `docs/claudeia/`: histórico datado, com o diagnóstico de MVP e o relatório de 03/11/2026 (`diagnostico-mvp-2026-11-03.md` e `06-mvp-2026-11-03.md`).
+- `docs/ESTADO-DO-PROJETO.md`: o que fizemos, como está hoje e o que queremos fazer, com as issues em ordem.
 - Próximos passos: issues com a label `proximos-passos`.
