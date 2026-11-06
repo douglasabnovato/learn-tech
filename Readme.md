@@ -1,5 +1,7 @@
 # 🚀 Learn TECH
 
+> **Vai evoluir o projeto ou trouxe arquivos novos?** Comece por [`docs/COMO-EVOLUIR.md`](docs/COMO-EVOLUIR.md): onde fica cada coisa, o que é gerado pela API, comandos e a checklist de estabilidade.
+
 A Learn TECH  como objetivo acelerar a jornada para aperfeiçoar os resultados.
 Com uma experiência de usuário, vamos construir um ECOSSISTEMA de (T)ecnologia, (E)nsino, (C)omputação e (H)umano para treinamento de APRENDIZADO.
 Hoje temos uma API com quatro projetos com temas específicos: bootcamps, tools, career, lerntech.
