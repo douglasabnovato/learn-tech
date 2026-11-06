@@ -12,6 +12,15 @@ const categoriesData = [
     "description": "Lógica, algoritmos e estruturas de dados: a base de qualquer linguagem."
   },
   {
+    "icon": "FaBrain",
+    "gradientFrom": "from-teal-500/20",
+    "gradientVia": "via-indigo-700/20 via-20%",
+    "gradientTo": "to-purple-700/30",
+    "title": "Inteligência Artificial",
+    "slug": "ia",
+    "description": "Use IA para programar e estudar sem perder o raciocínio nem o aprendizado."
+  },
+  {
     "icon": "FaHtml5",
     "gradientFrom": "from-indigo-500/20",
     "gradientVia": "via-sky-700/20 via-20%",
@@ -52,7 +61,7 @@ const categoriesData = [
     "gradientFrom": "from-pink-500/20",
     "gradientVia": "via-indigo-700/20 via-20%",
     "gradientTo": "to-purple-700/30",
-    "title": "DataBase",
+    "title": "Banco de Dados",
     "slug": "database",
     "description": "Organize e gerencie dados com segurança, eficiência e inteligência."
   },
