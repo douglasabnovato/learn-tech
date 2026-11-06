@@ -28,6 +28,8 @@ export const ProgramsCard = ({
       {/* Imagem com efeito Zoom */}
       <div className="w-full overflow-hidden">
         <img
+          loading="lazy"
+          decoding="async"
           src={image}
           alt={title}
           className={`w-full aspect-[16/10] object-cover object-center

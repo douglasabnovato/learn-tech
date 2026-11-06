@@ -2,8 +2,9 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa6";
 import blogLocal from "../../../constants/blogData";
-import { usePagina } from "../../../services/conteudo";
+import { usePagina } from "../../../services/api";
 import { BlogCard } from "../../../components/blog/BlogCard";
+import { Seo } from "../../../components/common/Seo";
 
 /* Blogs.jsx — lista completa de artigos (rota /blogs, aberta pelo "Veja Todos" da home). Os artigos vêm da API. */
 export const Blogs = () => {
@@ -15,6 +16,7 @@ export const Blogs = () => {
 
   return (
     <div className="w-full min-h-screen md:px-16 sm:px-10 px-4 md:py-20 py-12 space-y-8">
+      <Seo titulo="Artigos" descricao="Artigos da learnTECH sobre programação, carreira, produto, CRM e marketing de tecnologia, com leitura em ordem e fontes." />
       <Link
         to="/"
         className="inline-flex items-center gap-2 text-sm font-semibold text-neutral-600 hover:text-sky-800 ease-in-out duration-300"

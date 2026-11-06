@@ -1,5 +1,5 @@
 /* identificacao.js — injeta o script único de identificação do ecossistema (servido pela API learntech-content). */
-import { API_URL } from "./conteudo";
+import { API_URL } from "./api";
 
 /* Adiciona a tag <script> uma única vez; sem VITE_API_URL, não faz nada (desenvolvimento offline). */
 export function carregarIdentificacao() {

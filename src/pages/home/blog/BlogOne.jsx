@@ -2,8 +2,9 @@ import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { FaArrowLeft, FaAnglesRight, FaClock, FaUser } from "react-icons/fa6";
 import blogLocal from "../../../constants/blogData";
-import { usePagina } from "../../../services/conteudo";
+import { usePagina } from "../../../services/api";
 import { NotFound } from "../../error/not-found";
+import { Seo } from "../../../components/common/Seo";
 
 export const BlogOne = () => {
     const { itens: blogData } = usePagina("blog", { itens: blogLocal });
@@ -35,6 +36,7 @@ export const BlogOne = () => {
 
     return (
         <div className="w-full min-h-screen">
+            <Seo titulo={post.title} descricao={post.lead || post.excerpt} caminho={`/blog/${post.id}`} />
             {/* HERO — 1 coluna, capa em largura total */}
             <div className="relative w-full aspect-[16/7] overflow-hidden">
                 <img
@@ -166,6 +168,8 @@ export const BlogOne = () => {
                     {post.illustrationImg && (
                         <div className="max-w-3xl mx-auto space-y-2">
                             <img
+                                loading="lazy"
+                                decoding="async"
                                 src={post.illustrationImg}
                                 alt={`Ilustração — ${post.title}`}
                                 className="w-full rounded-2xl object-cover"
@@ -212,6 +216,8 @@ export const BlogOne = () => {
                         >
                             <div className="w-full aspect-video overflow-hidden">
                                 <img
+                                    loading="lazy"
+                                    decoding="async"
                                     src={related.img}
                                     alt={related.title}
                                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"

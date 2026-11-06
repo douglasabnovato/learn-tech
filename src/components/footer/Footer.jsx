@@ -81,7 +81,7 @@ const Footer = () => {
                 to="/terms"
                 className="text-sm text-neutral-400 hover:text-white"
               >
-                Termos de Serviços
+                Termos de uso
               </Link>
             </li>
             <li>
@@ -151,7 +151,7 @@ const Footer = () => {
           <span className="inline-block capitalize ml-1 mr-1">
             {new Date().toLocaleString("pt-BR", { month: "long" })}.
           </span>
-          Learn TECH. All rights reserved.
+          Learn TECH. Todos os direitos reservados.
         </p>
       </div>
     </footer>

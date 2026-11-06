@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaCheck, FaPlay } from "react-icons/fa";
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 
 import { PageTopBanner } from "../../components/pageTop/PageTopBanner";
 
@@ -9,13 +9,15 @@ import { VideoPlayer } from "../../components/player/VideoPlayer";
 import { Description } from "./Description";
 
 import { NotFound } from "../error/not-found";
+import { ConteudoIndisponivel } from "../../components/common/ConteudoIndisponivel";
+import { Seo } from "../../components/common/Seo";
 
 import { Quiz } from "./quiz/Quiz";
 
 import { usePrograma } from "../../services/conteudo";
 
 export const EnrollPrograms = () => {
-  const { id } = useParams();
+  const { category, id } = useParams();
   const programId = Number(id);
 
   // Estado para rastrear qual módulo foi completo (-1 = nenhum completo yet)
@@ -33,16 +35,25 @@ export const EnrollPrograms = () => {
     setActiveModuleIndex(moduleIndex + 1);
   };
 
-  const { programa: program, carregando } = usePrograma(programId);
+  const { programa: program, carregando, indisponivel, tentarDeNovo } = usePrograma(programId);
 
-  if (!program) {
-    return carregando ? (
+  if (carregando && !program?.moduleContents) {
+    return (
       <div className="w-full min-h-[60vh] flex items-center justify-center text-neutral-500" role="status">
         Carregando programa…
       </div>
-    ) : (
-      <NotFound />
     );
+  }
+
+  // API fora do ar e aulas fora da cópia local: aviso com "Tentar de novo" em vez de "não encontrada".
+  if (indisponivel) return <ConteudoIndisponivel onTentarDeNovo={tentarDeNovo} />;
+
+  if (!program) return <NotFound />;
+
+  // Mesma URL canônica do Detail: categoria errada vai para a certa.
+  const caminho = `/program/${program.categoryFilter}/${program.id}/enroll`;
+  if (program.categoryFilter && category !== program.categoryFilter) {
+    return <Navigate to={caminho} replace />;
   }
 
   // Cálculo de progresso agora usa a quantidade real de módulos deste programa,
@@ -53,7 +64,8 @@ export const EnrollPrograms = () => {
   );
 
   return (
-    <div className="w-full min-h-screen flex-col space-y-16 pb-16"> 
+    <div className="w-full min-h-screen flex-col space-y-16 pb-16">
+      <Seo titulo={`Estudar: ${program.title}`} descricao={program.description} caminho={caminho} />
       <PageTopBanner pageTitle={program.title} />
       <div className="w-full space-y-16 md:px-16 sm:px-10 px-4">
         <div className="w-full grid md:grid-cols-5 grid-cols-1 md:gap-12 gap-10 grid-row-dense items-start">
@@ -136,7 +148,7 @@ export const EnrollPrograms = () => {
                                 <FaPlay size={10} />
                               )}
                             </div>
-                            <h1
+                            <span
                               className={`text-sm font-semibold flex-1 ${
                                 status === "pending"
                                   ? "text-neutral-400"
@@ -144,7 +156,7 @@ export const EnrollPrograms = () => {
                               }`}
                             >
                               {`Módulo ${mod.id}: ${mod.title}`}
-                            </h1>
+                            </span>
                           </div>
                         </button>
                       );

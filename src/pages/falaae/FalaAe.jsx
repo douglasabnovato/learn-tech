@@ -12,8 +12,9 @@ import {
     FaPaperPlane,
 } from "react-icons/fa6";
 import faqLocal from "../../constants/falaaeData";
-import { usePagina, API_URL } from "../../services/conteudo";
+import { usePagina, API_URL } from "../../services/api";
 import { enviarMensagem } from "../../services/mensagens";
+import { Seo } from "../../components/common/Seo";
 
 const motivos = [
     {
@@ -125,6 +126,7 @@ export const FalaAe = () => {
 
     return (
         <div className="w-full min-h-screen">
+            <Seo titulo="Fala aê" descricao="Fale com a equipe da learnTECH: dúvidas, sugestões, parcerias e problemas no site." />
             {/* HERO */}
             <div className="w-full bg-gradient-to-tr from-indigo-500/20 via-sky-700/20 via-20% to-purple-700/30 md:px-16 sm:px-10 px-4 md:py-24 py-16">
                 <div className="max-w-3xl space-y-6">
@@ -280,10 +282,11 @@ export const FalaAe = () => {
                                 {/* ETAPA 2 — detalhe */}
                                 {step === 2 && (
                                     <div className="space-y-4 animate-in fade-in duration-300">
-                                        <h3 className="text-lg font-bold text-neutral-800">
+                                        <h3 id="falaae-detalhe" className="text-lg font-bold text-neutral-800">
                                             Conte com mais detalhe
                                         </h3>
                                         <textarea
+                                            aria-labelledby="falaae-detalhe"
                                             rows={5}
                                             maxLength={LIMITE_MENSAGEM}
                                             value={formData.mensagem}
@@ -307,11 +310,14 @@ export const FalaAe = () => {
                                         </h3>
                                         <div className="space-y-3">
                                             <div className="space-y-1">
-                                                <label className="text-xs font-semibold uppercase tracking-wide text-neutral-500">
+                                                <label htmlFor="falaae-nome" className="text-xs font-semibold uppercase tracking-wide text-neutral-500">
                                                     Nome
                                                 </label>
                                                 <input
+                                                    id="falaae-nome"
                                                     type="text"
+                                                    name="nome"
+                                                    autoComplete="name"
                                                     value={formData.nome}
                                                     onChange={(e) =>
                                                         setFormData({ ...formData, nome: e.target.value })
@@ -321,11 +327,14 @@ export const FalaAe = () => {
                                                 />
                                             </div>
                                             <div className="space-y-1">
-                                                <label className="text-xs font-semibold uppercase tracking-wide text-neutral-500">
+                                                <label htmlFor="falaae-email" className="text-xs font-semibold uppercase tracking-wide text-neutral-500">
                                                     E-mail
                                                 </label>
                                                 <input
+                                                    id="falaae-email"
                                                     type="email"
+                                                    name="email"
+                                                    autoComplete="email"
                                                     value={formData.email}
                                                     onChange={(e) =>
                                                         setFormData({ ...formData, email: e.target.value })

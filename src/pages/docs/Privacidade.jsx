@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { FaTriangleExclamation } from "react-icons/fa6";
 import * as privacidadeLocal from "../../constants/privacyData";
-import { usePagina } from "../../services/conteudo";
+import { usePagina } from "../../services/api";
+import { Seo } from "../../components/common/Seo";
 
 export const Privacy = () => {
     const { lastUpdated, sections } = usePagina("privacidade", privacidadeLocal);
@@ -11,6 +12,7 @@ export const Privacy = () => {
 
     return (
         <div className="w-full min-h-screen">
+            <Seo titulo="Privacidade" descricao="Política de privacidade da learnTECH: quais dados coletamos, para quê e como pedir a exclusão." />
             {/* CABEÇALHO DE DOCUMENTO */}
             <div className="w-full border-b border-neutral-200 md:px-16 sm:px-10 px-4 md:py-16 py-10">
                 <div className="max-w-3xl space-y-3">

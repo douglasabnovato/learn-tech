@@ -1,5 +1,5 @@
 /* mensagens.js — envio do formulário "Fala aê" para POST /v1/mensagens da API learntech-content. */
-import { API_URL } from "./conteudo";
+import { API_URL } from "./api";
 
 const TEMPO_LIMITE_MS = 10000;
 

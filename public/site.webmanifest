@@ -1,6 +1,9 @@
 {
-    "name": "Learn Tech Ecosystem",
-    "short_name": "Learn Tech",
+    "name": "learnTECH",
+    "short_name": "learnTECH",
+    "description": "Trilhas de tecnologia em ordem, comentadas, com prática e acesso livre.",
+    "lang": "pt-BR",
+    "start_url": "/",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -13,7 +16,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
+    "theme_color": "#075985",
     "background_color": "#ffffff",
     "display": "standalone"
 }

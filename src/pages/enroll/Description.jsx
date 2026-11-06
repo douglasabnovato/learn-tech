@@ -31,9 +31,9 @@ export const Description = ({
         <p className="text-sm text-neutral-600 font-normal bg-neutral-200/60 border border-neutral-100 rounded-full w-fit px-3 py-1">
           {categoryBadge}
         </p>
-        <h1 className="text-2xl text-neutral-800 font-semibold">
+        <h2 className="text-2xl text-neutral-800 font-semibold">
           {mainTitle}
-        </h1>
+        </h2>
 
         {/* Parágrafos Introdutórios Dinâmicos */}
         {introductionParagraphs?.map((paragraph, idx) => (

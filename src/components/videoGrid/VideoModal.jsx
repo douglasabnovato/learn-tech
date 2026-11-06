@@ -20,7 +20,8 @@ export const VideoModal = ({ video, onClose }) => {
     if (!video) return null;
 
     // Monta a URL de embed, incluindo o tempo de início quando informado no dado
-    const embedUrl = `https://www.youtube.com/embed/${video.youtubeId}?autoplay=1${video.start ? `&start=${video.start}` : ""
+    // youtube-nocookie: o YouTube só grava cookie quando a pessoa dá play (coerente com a página de privacidade).
+    const embedUrl = `https://www.youtube-nocookie.com/embed/${video.youtubeId}?autoplay=1${video.start ? `&start=${video.start}` : ""
         }`;
 
     return (

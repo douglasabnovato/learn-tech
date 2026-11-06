@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { FaTriangleExclamation } from "react-icons/fa6";
 import * as termosLocal from "../../constants/termsData";
-import { usePagina } from "../../services/conteudo";
+import { usePagina } from "../../services/api";
+import { Seo } from "../../components/common/Seo";
 
 export const Termos = () => {
     const { lastUpdated, sections } = usePagina("termos", termosLocal);
@@ -11,6 +12,7 @@ export const Termos = () => {
 
     return (
         <div className="w-full min-h-screen">
+            <Seo titulo="Termos de uso" descricao="Termos de uso da learnTECH." />
             {/* CABEÇALHO DE DOCUMENTO — mais sóbrio que as páginas de marketing */}
             <div className="w-full border-b border-neutral-200 md:px-16 sm:px-10 px-4 md:py-16 py-10">
                 <div className="max-w-3xl space-y-3">

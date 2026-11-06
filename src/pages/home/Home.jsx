@@ -5,6 +5,7 @@ import { Category } from "./category/Category";
 import { Programs } from "./programs/Programs";
 import { QuickAccess } from "./quickaccess/QuickAccess";
 import { Blog } from "./blog/Blog";
+import { Seo } from "../../components/common/Seo";
 
 export const Home = () => {
   useEffect(() => {
@@ -12,6 +13,7 @@ export const Home = () => {
   }, []);
   return (
     <div className="space-y-16 w-full min-h-screen flex flex-col pb-16">
+      <Seo caminho="/" />
       <Hero />
       <div className="!-mt-16">
         <Stats />

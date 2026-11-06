@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { FaBars } from "react-icons/fa";
-import { IoMdClose } from "react-icons/io";
+import { IoMdClose, IoMdMenu } from "react-icons/io";
 import navLocal from "../../constants/navbarData";
-import { usePagina } from "../../services/conteudo";
+import { usePagina } from "../../services/api";
 import LearnTechTitle from "../logo/LearnTechTitle";
 
 const Navbar = () => {
@@ -12,7 +11,7 @@ const Navbar = () => {
 
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const location = useLocation(); // Get the current location
+  const location = useLocation(); // Rota atual, para destacar o item ativo
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
@@ -62,15 +61,20 @@ const Navbar = () => {
 
       <div className="md:hidden">
         <button
+          type="button"
           onClick={toggleNavbar}
-          className="text-neutral-600 focus:outline-none"
+          aria-label="Abrir menu"
+          aria-expanded={isOpen}
+          aria-controls="menu-principal"
+          className="text-neutral-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 rounded"
         >
-          <FaBars size={24} />
+          <IoMdMenu size={28} />
         </button>
       </div>
 
       {/* Navbar items and buttons */}
       <div
+        id="menu-principal"
         className={`fixed md:static top-0 right-0 h-screen md:h-auto w-full md:w-auto bg-sky-50 border-l md:border-none border-neutral-300 md:bg-transparent shadow-lg md:shadow-none transition-transform duration-300 ease-in-out transform flex-1 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         } md:translate-x-0 z-60`}
@@ -88,8 +92,11 @@ const Navbar = () => {
           {/* Close Icon */}
           <div className="md:hidden flex justify-end py-6">
             <button
-              onClick={toggleNavbar}
-              className="text-red-600 focus:outline-none"
+              type="button"
+              onClick={closeNavbar}
+              aria-label="Fechar menu"
+              aria-controls="menu-principal"
+              className="text-red-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 rounded"
             >
               <IoMdClose size={28} />
             </button>

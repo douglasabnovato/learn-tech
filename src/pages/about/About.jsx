@@ -2,10 +2,12 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa6";
 import * as sobreLocal from "../../constants/aboutData";
-import { usePagina, useContagens } from "../../services/conteudo";
+import { usePagina, useContagens } from "../../services/api";
+import { hidratar } from "../../services/hidratar";
+import { Seo } from "../../components/common/Seo";
 
 export const About = () => {
-  const { heroContent, processSteps, philosophyQuote, differentiators } = usePagina("sobre", sobreLocal);
+  const { heroContent, processSteps, philosophyQuote, differentiators } = usePagina("sobre", sobreLocal, hidratar);
   const experiencias = useContagens()["bootcamps/eventos"];
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -13,6 +15,7 @@ export const About = () => {
 
   return (
     <div className="w-full min-h-screen">
+      <Seo titulo="Sobre a learnTECH" descricao="Como a learnTECH organiza o conteúdo técnico gratuito da internet em trilhas com ordem, comentário, prática e quiz." />
       {/* HERO */}
       <div className="w-full bg-gradient-to-tr from-indigo-500/20 via-sky-700/20 via-20% to-purple-700/30 md:px-16 sm:px-10 px-4 md:py-24 py-16">
         <div className="max-w-3xl space-y-6">

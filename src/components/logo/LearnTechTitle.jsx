@@ -13,15 +13,15 @@ const LearnTechTitle = ({
 
   return (
     <div className={`flex items-center gap-2 ${className}`}>
-      {showIcon && <img src={LogoIcon} className={`${iconSize}`} alt="Logo" />}
-      <h1
+      {showIcon && <img src={LogoIcon} className={`${iconSize}`} alt="" />}
+      <span
         className={`${size} font-bold tracking-tight ${
           gradient ? gradientClasses : "text-indigo-600"
         }`}
       >
         Learn
         <span className="text-sky-600"> TECH</span>
-      </h1>
+      </span>
     </div>
   );
 };

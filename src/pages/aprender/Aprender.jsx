@@ -2,16 +2,19 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa6";
 import * as aprenderLocal from "../../constants/aprenderData";
-import { usePagina } from "../../services/conteudo";
+import { usePagina } from "../../services/api";
+import { hidratar } from "../../services/hidratar";
+import { Seo } from "../../components/common/Seo";
 
 export const Aprender = () => {
-    const { heroContent, techniques, closingQuote, sources } = usePagina("aprender", aprenderLocal);
+    const { heroContent, techniques, closingQuote, sources } = usePagina("aprender", aprenderLocal, hidratar);
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
 
     return (
         <div className="w-full min-h-screen">
+            <Seo titulo="Como aprender" descricao="Técnicas de estudo para aprender tecnologia com método e as fontes que sustentam cada uma." />
             {/* HERO */}
             <div className="w-full bg-gradient-to-tr from-indigo-500/20 via-sky-700/20 via-20% to-purple-700/30 md:px-16 sm:px-10 px-4 md:py-24 py-16">
                 <div className="max-w-3xl space-y-6">

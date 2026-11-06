@@ -46,6 +46,8 @@ export const VideoGrid = ({ eyebrow, pageTitle, subtitle, items, accentGradient 
             >
               <div className="relative w-full aspect-video overflow-hidden bg-neutral-800">
                 <img
+                  loading="lazy"
+                  decoding="async"
                   src={`https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`}
                   alt={video.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"

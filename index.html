@@ -7,13 +7,14 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
+    <!-- Fonte Inter por <link> (antes era @import no index.css, que bloqueava a renderização). -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="A learnTECH organiza o conteúdo técnico que já existe na internet: trilhas em ordem, comentadas, com prática e acesso livre — sem cadastro."
-    />
-    <title>Learn TECH</title>
-    <link rel="canonical" href="https://learn-tech-pied.vercel.app/" />
+    <!-- Título de reserva (sem JS). Título, descrição e canonical por rota vêm de src/components/common/Seo.jsx (React 19 eleva para o head). -->
+    <title>learnTECH</title>
     <meta name="theme-color" content="#075985" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="learnTECH" />

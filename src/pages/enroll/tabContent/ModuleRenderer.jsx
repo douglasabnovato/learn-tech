@@ -84,12 +84,12 @@ export const ModuleRenderer = ({ modulo, ordem, onComplete }) => {
           <span className="text-sm font-semibold text-neutral-400">
             Módulo {ordem}
           </span>
-          <h1 className="text-2xl font-bold text-neutral-800 tracking-tight">
+          <h3 className="text-2xl font-bold text-neutral-800 tracking-tight">
             {modulo.title}
-          </h1>
-          <h2 className="text-base font-medium text-neutral-500">
+          </h3>
+          <p className="text-base font-medium text-neutral-500">
             {modulo.shortDescription}
-          </h2>
+          </p>
         </div>
       </div>
 

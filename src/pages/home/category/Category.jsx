@@ -2,17 +2,18 @@ import { FaAnglesRight } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { CategoryCard } from "../../../components/category/CategoryCard";
 import categoriasLocal from "../../../constants/categoriesData";
-import { usePagina, hidratar } from "../../../services/conteudo";
+import { usePagina } from "../../../services/api";
+import { hidratar } from "../../../services/hidratar";
 
 /* Cópia gerada pela API, com ícones por nome: hidratada uma vez para virar componente. */
 const CATEGORIAS_LOCAIS = hidratar(categoriasLocal);
 
 export const Category = () => {
-  const { itens: categoriesData } = usePagina("categorias", { itens: CATEGORIAS_LOCAIS });
+  const { itens: categoriesData } = usePagina("categorias", { itens: CATEGORIAS_LOCAIS }, hidratar);
   return (
     <div className="w-full md:px-16 sm:px-10 px-4 space-y-8">
       <div className="w-full flex items-center justify-between">
-        <h2 className="text-2xl font-bold text-neutral-800">Top Categorias</h2>
+        <h2 className="text-2xl font-bold text-neutral-800">Categorias em destaque</h2>
         <div className="flex items-center gap-4">
           <Link
             to="/category"

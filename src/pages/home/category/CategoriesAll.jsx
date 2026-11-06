@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa6";
 import areasLocal from "../../../constants/areasData";
-import { useApi, hidratar } from "../../../services/conteudo";
+import { useApi } from "../../../services/api";
+import { hidratar } from "../../../services/hidratar";
+import { Seo } from "../../../components/common/Seo";
 
 /* As áreas vêm da API (learn-tech/areas.json); areasData.js é a cópia local gerada por
    learntech-content/scripts/exportar-copias.mjs. Ícones chegam por nome e viram componente em hidratar. */
@@ -38,7 +40,7 @@ const colorMap = {
 };
 
 export const CategoriesAll = () => {
-  const { dados: sections } = useApi("learn-tech/areas.json", AREAS_LOCAIS);
+  const { dados: sections } = useApi("learn-tech/areas.json", AREAS_LOCAIS, hidratar);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -46,6 +48,7 @@ export const CategoriesAll = () => {
 
   return (
     <div className="w-full min-h-screen flex flex-col">
+      <Seo titulo="Categorias" descricao="Áreas de estudo da learnTECH: front-end, back-end, full stack, habilidades comportamentais, diferenciais e marketing tech." />
       {/* HERO */}
       <div className="w-full bg-gradient-to-tr from-indigo-500/20 via-sky-700/20 via-20% to-purple-700/30 md:px-16 sm:px-10 px-4 md:py-24 py-16">
         <div className="max-w-4xl space-y-6">

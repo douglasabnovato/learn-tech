@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { FaAnglesRight } from "react-icons/fa6";
 import blogLocal from "./../../../constants/blogData";
-import { usePagina } from "../../../services/conteudo";
+import { usePagina } from "../../../services/api";
 import { BlogCard } from "../../../components/blog/BlogCard";
 
 export const Blog = () => {
@@ -10,7 +10,7 @@ export const Blog = () => {
     <div className="w-full md:px-16 sm:px-10 px-4 space-y-8">
       {/** Top Section */}
       <div className="w-full flex items-center justify-between">
-        <h2 className="text-2xl font-bold text-neutral-800">Top Artigos</h2>
+        <h2 className="text-2xl font-bold text-neutral-800">Artigos em destaque</h2>
         <div>
           <Link
             to="/blogs"

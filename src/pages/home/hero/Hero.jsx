@@ -42,7 +42,7 @@ export const Hero = () => {
                   .getElementById("section-programs")
                   .scrollIntoView({ behavior: "smooth" })
               }
-              className="md:w-first w-1/2 text-neutral-50 bg-gradient-to-tr from-indigo-500 via-sky-700 via-20% to-purple-700 cursor-pointer py-3 px-8 rounded-full font-semibold ease-in-out duration-300"
+              className="md:w-fit w-1/2 text-neutral-50 bg-gradient-to-tr from-indigo-500 via-sky-700 via-20% to-purple-700 cursor-pointer py-3 px-8 rounded-full font-semibold ease-in-out duration-300"
             >
               Comece Agora
             </button>
@@ -52,7 +52,7 @@ export const Hero = () => {
                   .getElementById("section-stats")
                   .scrollIntoView({ behavior: "smooth" })
               }
-              className="md:w-first w-1/2 border border-neutral-800 cursor-pointer py-3 px-8 text-neutral-800 rounded-full font-semibold ease-in-out duration-300"
+              className="md:w-fit w-1/2 border border-neutral-800 cursor-pointer py-3 px-8 text-neutral-800 rounded-full font-semibold ease-in-out duration-300"
             >
               Saiba Mais
             </button>
@@ -62,8 +62,10 @@ export const Hero = () => {
         <div className="md:w-[50%] w-full aspect-square flex items-center justify-center p-4 relative">
           <div className="absolute w-64 h-64 bg-indigo-500/10 blur-[100px] rounded-full"></div>
           <img
+            fetchPriority={currentIndex === 0 ? "high" : "auto"}
+            decoding="async"
             src={images[currentIndex]}
-            alt={`Desenvolvedora new TECH - Slide ${currentIndex + 1}`}
+            alt={`Pessoa desenvolvedora estudando, imagem ${currentIndex + 1} de ${images.length}`}
             className="w-full h-full object-cover shadow-2xl
                        rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] 
                        border-2 border-indigo-500/30 

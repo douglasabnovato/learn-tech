@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { ChevronUp } from "lucide-react";
+// Ícone do mesmo conjunto (react-icons/io) usado no Navbar, para não puxar outro conjunto para a carga inicial.
+import { IoIosArrowUp } from "react-icons/io";
 
 export const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -43,7 +44,7 @@ export const ScrollToTop = () => {
                  border border-white/10
                  cursor-pointer"
     >
-      <ChevronUp className="w-5 h-5 md:w-6 md:h-6" />
+      <IoIosArrowUp className="w-5 h-5 md:w-6 md:h-6" aria-hidden="true" />
     </button>
   );
 };

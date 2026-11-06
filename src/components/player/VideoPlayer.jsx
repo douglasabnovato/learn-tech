@@ -13,6 +13,7 @@ export const VideoPlayer = ({ src, poster }) => {
   const [isMuted, setIsMuted] = useState(false);
   const [isFullScreen, setIsFullScreen] = useState(false);
 
+  // No iframe, o embed vira youtube-nocookie (sem cookie até o play), coerente com a página de privacidade.
   const isYouTube = src?.includes("youtube.com") || src?.includes("youtu.be");
 
   useEffect(() => {
@@ -100,6 +101,18 @@ export const VideoPlayer = ({ src, poster }) => {
     videoRef.current.currentTime = pos * videoRef.current.duration;
   };
 
+  // Teclado na barra de progresso: setas avançam/voltam 5 s; Home e End vão ao início e ao fim.
+  const handleProgressKey = (e) => {
+    const video = videoRef.current;
+    if (!video || !video.duration) return;
+    const passos = { ArrowRight: 5, ArrowUp: 5, ArrowLeft: -5, ArrowDown: -5 };
+    if (e.key in passos) video.currentTime = Math.min(Math.max(video.currentTime + passos[e.key], 0), video.duration);
+    else if (e.key === "Home") video.currentTime = 0;
+    else if (e.key === "End") video.currentTime = video.duration;
+    else return;
+    e.preventDefault();
+  };
+
   const toggleFullScreen = () => {
     if (!document.fullscreenElement) {
       containerRef.current?.requestFullscreen();
@@ -127,7 +140,7 @@ export const VideoPlayer = ({ src, poster }) => {
       >
         <iframe
           className="w-full aspect-video"
-          src={src}
+          src={src.replace(/^https:\/\/(www\.)?youtube\.com\/embed\//, "https://www.youtube-nocookie.com/embed/")}
           title="Vídeo do treinamento"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
@@ -150,10 +163,18 @@ export const VideoPlayer = ({ src, poster }) => {
         <source src={src} type="video/mp4" />
       </video>
 
-      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-neutral-950/90 via-neutral-900/60 to-neutral-900/5 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-neutral-950/90 via-neutral-900/60 to-neutral-900/5 p-4 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300 ease-in-out">
         <div
-          className="relative h-2 bg-neutral-300 w-full mb-4 cursor-pointer rounded-full"
+          className="relative h-2 bg-neutral-300 w-full mb-4 cursor-pointer rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
           onClick={handleProgressClick}
+          onKeyDown={handleProgressKey}
+          role="slider"
+          tabIndex={0}
+          aria-label="Posição do vídeo"
+          aria-valuemin={0}
+          aria-valuemax={Math.round(duration || 0)}
+          aria-valuenow={Math.round(currentTime || 0)}
+          aria-valuetext={`${formatTime(currentTime)} de ${formatTime(duration)}`}
         >
           <div
             className="absolute h-full bg-indigo-600 rounded-full"
@@ -165,7 +186,12 @@ export const VideoPlayer = ({ src, poster }) => {
 
         <div className="flex items-center justify-between space-x-4 text-neutral-50">
           <div className="flex items-center space-x-4">
-            <button onClick={togglePlayPause} className="cursor-pointer">
+            <button
+              type="button"
+              onClick={togglePlayPause}
+              aria-label={isPlaying ? "Pausar vídeo" : "Reproduzir vídeo"}
+              className="cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded"
+            >
               {isPlaying ? (
                 <FaPause className="w-6 h-6" />
               ) : (
@@ -174,7 +200,12 @@ export const VideoPlayer = ({ src, poster }) => {
             </button>
 
             <div className="flex items-center space-x-2">
-              <button onClick={toggleMute} className="cursor-pointer">
+              <button
+                type="button"
+                onClick={toggleMute}
+                aria-label={isMuted ? "Ativar som" : "Desativar som"}
+                className="cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded"
+              >
                 {isMuted ? (
                   <FaVolumeMute className="w-5 h-5" />
                 ) : (
@@ -189,6 +220,7 @@ export const VideoPlayer = ({ src, poster }) => {
                 min="0"
                 max="1"
                 step="0.1"
+                aria-label="Volume"
                 className="w-24 h-2 rounded-full bg-neutral-300 cursor-pointer"
               />
             </div>
@@ -199,7 +231,12 @@ export const VideoPlayer = ({ src, poster }) => {
               {formatTime(currentTime)} / {formatTime(duration)}
             </span>
 
-            <button onClick={toggleFullScreen} className="cursor-pointer">
+            <button
+              type="button"
+              onClick={toggleFullScreen}
+              aria-label={isFullScreen ? "Sair da tela cheia" : "Tela cheia"}
+              className="cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded"
+            >
               {isFullScreen ? (
                 <FaCompress className="w-5 h-5" />
               ) : (

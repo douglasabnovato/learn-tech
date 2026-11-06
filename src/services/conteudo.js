@@ -1,99 +1,12 @@
-/* conteudo.js — camada de dados do learn-tech: busca na API learntech-content e cai para os dados locais se a API falhar. */
-import { useEffect, useState } from "react";
+/* conteudo.js — dados de programas do learn-tech: catálogo e programa completo, vindos da API learntech-content,
+   com a cópia local (programsData + programasCatalogo) como reserva. A camada de rede fica em api.js. */
 import programsData from "../constants/programsData";
 import programasCatalogo from "../constants/programasCatalogo";
-import { ICONES } from "../constants/icones";
+import { useApi } from "./api";
+import { hidratar } from "./hidratar";
 
-export const API_URL = (import.meta.env.VITE_API_URL || "").replace(/\/$/, "");
-const TEMPO_LIMITE_MS = 5000;
-const cache = new Map();
-const pendentes = new Map();
-
-/* Busca um recurso /v1 com tempo limite; a mesma requisição é compartilhada entre componentes. */
-export function buscarRecurso(caminho) {
-  if (!API_URL) return Promise.reject(new Error("VITE_API_URL não configurada"));
-  if (cache.has(caminho)) return Promise.resolve(cache.get(caminho));
-  if (!pendentes.has(caminho)) {
-    const controle = new AbortController();
-    const timer = setTimeout(() => controle.abort(), TEMPO_LIMITE_MS);
-    const p = fetch(`${API_URL}/v1/${caminho}`, { signal: controle.signal })
-      .then((r) => {
-        if (!r.ok) throw new Error(`${r.status} em ${caminho}`);
-        return r.json();
-      })
-      .then((dados) => {
-        cache.set(caminho, dados);
-        return dados;
-      })
-      .finally(() => {
-        clearTimeout(timer);
-        pendentes.delete(caminho);
-      });
-    pendentes.set(caminho, p);
-  }
-  return pendentes.get(caminho);
-}
-
-/* Troca caminhos /media/... pela URL completa da API. */
-export function resolverMidia(valor) {
-  return typeof valor === "string" && valor.startsWith("/media/") ? `${API_URL}${valor}` : valor;
-}
-
-/* Percorre o dado da API: ícone por nome vira componente e /media/ vira URL absoluta. */
-export function hidratar(valor, chave) {
-  if (Array.isArray(valor)) return valor.map((v) => hidratar(v));
-  if (valor && typeof valor === "object") {
-    return Object.fromEntries(Object.entries(valor).map(([k, v]) => [k, hidratar(v, k)]));
-  }
-  if (chave === "icon" && typeof valor === "string" && ICONES[valor]) return ICONES[valor];
-  return resolverMidia(valor);
-}
-
-/* Hook genérico: começa com o dado local e troca pelo da API quando ele chega. */
-export function useApi(caminho, local, adaptar = hidratar) {
-  const inicial = () => ({
-    caminho,
-    dados: cache.has(caminho) ? adaptar(cache.get(caminho)) : local,
-    carregando: Boolean(API_URL) && !cache.has(caminho),
-  });
-  const [estado, setEstado] = useState(inicial);
-  const atual = estado.caminho === caminho ? estado : inicial();
-
-  useEffect(() => {
-    let ativo = true;
-    buscarRecurso(caminho)
-      .then((d) => ativo && setEstado({ caminho, dados: adaptar(d), carregando: false }))
-      .catch((e) => {
-        if (API_URL) console.warn(`[learntech-content] usando dados locais para ${caminho}:`, e.message);
-        if (ativo) setEstado({ caminho, dados: local, carregando: false });
-      });
-    return () => {
-      ativo = false;
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [caminho]);
-
-  return atual;
-}
-
-/*
- * Quantidade de itens publicados por recurso, lida do índice da API (/v1/index.json).
- * Chaves sem /v1/ e sem .json (ex.: "tools/ferramentas", "bootcamps/eventos"). Sem API, devolve {}.
- */
-export function useContagens() {
-  return useApi("index.json", {}, (indice) =>
-    Object.fromEntries(
-      (indice?.recursos ?? [])
-        .filter((r) => typeof r.itens === "number")
-        .map((r) => [r.caminho.replace(/^\/v1\//, "").replace(/\.json$/, ""), r.itens])
-    )
-  ).dados;
-}
-
-/* Conteúdo de página (sobre, aprender, termos...). Listas locais em default export entram como { itens }. */
-export function usePagina(nome, local) {
-  return useApi(`learn-tech/paginas/${nome}.json`, local).dados;
-}
+export { API_URL, buscarRecurso, resolverMidia, useApi, usePagina, useContagens } from "./api";
+export { hidratar };
 
 /*
  * Status do card ("lancado" mostra "Aprenda"; "novidade" mostra "Em breve").
@@ -105,6 +18,15 @@ export function statusDoPrograma(p, local) {
   const modulos = p?.modulesCount ?? p?.moduleContents?.length ?? p?.modules?.length ?? 0;
   if (modulos > 0) return "lancado";
   return local?.status ?? "novidade";
+}
+
+/*
+ * Status na reserva (API fora do ar): só é "lancado" o programa cujo conteúdo completo
+ * (moduleContents) está na cópia local. `modulesCount` do catálogo gerado não basta,
+ * porque o Enroll não teria o que mostrar.
+ */
+export function statusDaReserva(p) {
+  return p?.moduleContents?.length > 0 ? "lancado" : "novidade";
 }
 
 /* Mantém o vídeo local quando a API não publica vídeo e completa o status que a API não tem. */
@@ -120,21 +42,38 @@ function comMidiaLocal(programa) {
   };
 }
 
+/* Card do catálogo gerado como reserva: mesma mídia local, mas status pela regra da reserva. */
+function naReserva(programa) {
+  return { ...comMidiaLocal(programa), status: statusDaReserva(programa) };
+}
+
 /* Reserva das listas: a cópia manual (com capa, vídeo e quiz locais) mais os programas que só existem
-   no catálogo gerado pela API (programasCatalogo.js). Sem API, todos os cards continuam aparecendo. */
+   no catálogo gerado pela API (programasCatalogo.js). Sem API, todos os cards continuam aparecendo,
+   mas só os que têm conteúdo local mostram "Aprenda". */
 const idsLocais = new Set(programsData.map((p) => p.id));
-export const CATALOGO_LOCAL = [...programsData, ...programasCatalogo.filter((p) => !idsLocais.has(p.id)).map(comMidiaLocal)];
+export const CATALOGO_LOCAL = [
+  ...programsData.map((p) => ({ ...p, status: statusDaReserva(p) })),
+  ...programasCatalogo.filter((p) => !idsLocais.has(p.id)).map(naReserva),
+];
 
 /* Catálogo de programas para listas e cards. */
 export function useProgramas() {
   return useApi("learn-tech/programas.json", CATALOGO_LOCAL, (lista) => lista.map(comMidiaLocal)).dados;
 }
 
-/* Programa completo por id; `carregando` evita mostrar "não encontrado" antes da resposta da API. */
+/*
+ * Programa completo por id. A reserva é a cópia manual (programsData) ou, sem ela, o card do catálogo
+ * gerado, para o Detail mostrar ao menos título e descrição.
+ * - `carregando` evita mostrar "não encontrado" antes da resposta da API;
+ * - `indisponivel` diz que a API falhou e o conteúdo completo (moduleContents) não está na reserva;
+ * - `tentarDeNovo` repete a busca.
+ */
 export function usePrograma(id) {
-  const local = programsData.find((p) => p.id === id);
-  const { dados, carregando } = useApi(`learn-tech/programas/${id}.json`, local, comMidiaLocal);
-  return { programa: dados, carregando };
+  const local = CATALOGO_LOCAL.find((p) => p.id === id);
+  const { dados, carregando, erro, tentarDeNovo } = useApi(`learn-tech/programas/${id}.json`, local, comMidiaLocal);
+  const naoExiste = erro?.status === 404;
+  const indisponivel = Boolean(erro) && !naoExiste && !carregando && !(dados?.moduleContents?.length > 0);
+  return { programa: naoExiste ? undefined : dados, carregando, indisponivel, tentarDeNovo };
 }
 
 /* Fim de conteudo.js */

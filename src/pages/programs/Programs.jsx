@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from "react";
 import { PageTopBanner } from "../../components/pageTop/PageTopBanner";
 import { ProgramsCard } from "../../components/programs/ProgramsCard";
 import { useProgramas } from "../../services/conteudo";
+import { Seo } from "../../components/common/Seo";
 
 export const Programs = () => {
   const programsData = useProgramas();
@@ -37,8 +38,9 @@ export const Programs = () => {
 
   return (
     <div className="w-full min-h-screen flex-col space-y-16 pb-16">
+      <Seo titulo="Programas" descricao="Programas gratuitos de tecnologia em ordem, com prática e quiz: web, back-end, carreira, CRM e mais. Busque pelo título ou filtre por categoria." />
       {/* Page Top Banner section */}
-      <PageTopBanner pageTitle={"Programs"} />
+      <PageTopBanner pageTitle={"Programas"} />
       {/* Programs contends */}
       <div className="space-y-8 w-full md:px-16 sm:px-10 px-4">
         {/* Programs search and filter section */}
@@ -46,7 +48,7 @@ export const Programs = () => {
           {/* Search section */}
           <input
             type="text"
-            placeholder="Search programs..."
+            placeholder="Buscar programas..."
             aria-label="Buscar programas pelo título ou categoria"
             value={searchTerm} // ✅ valor controlado
             onChange={(e) => setSearchTerm(e.target.value)} // ✅ atualiza estado

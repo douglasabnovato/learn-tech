@@ -20,7 +20,7 @@ export const Programs = () => {
     <div id="section-programs" className="w-full md:px-15 sm:px-10 px-4 space-y-8">
       <div className="w-full flex items-center justify-between">
         <h2 className="text-2xl font-bold text-neutral-800">
-          Top Projetos 
+          Programas em destaque 
         </h2>
         <div>
           <Link

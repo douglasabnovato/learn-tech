@@ -7,15 +7,17 @@ export const BlogCard = ({ blogURL, img, title, tag }) => {
       className="w-full aspect-[16/10] rounded-xl overflow-hidden relative group ease-in-out duration-300"
     >
       <img
+        loading="lazy"
+        decoding="async"
         src={img}
         alt={title}
         className="w-full h-full object-cover object-center group-hover:scale-110 group-hover:rotate-4 ease-in-out duration-300"
       />
       <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-neutral-900/40 to-transparent flex items-end justify-start p-4">
         <div className="space-y-2">
-          <h1 className="text-lg text-neutral-50 font-semibold line-clamp-2">
+          <h3 className="text-lg text-neutral-50 font-semibold line-clamp-2">
             {title}
-          </h1>
+          </h3>
         </div>
       </div>
       <div className="absolute top-0 left-0 w-full p-4">

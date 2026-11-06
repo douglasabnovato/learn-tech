@@ -141,9 +141,9 @@ export const Quiz = ({ questions = [], storageKey = "quiz" }) => {
 
   return (
     <div className="w-full space-y-4">
-      <h1 className="text-lg text-neutral-800 font-semibold border-b pb-1 border-neutral-200">
+      <h2 className="text-lg text-neutral-800 font-semibold border-b pb-1 border-neutral-200">
         Teste o seu aprendizado
-      </h1>
+      </h2>
       <div className="w-full bg-neutral-100/40 border border-neutral-200 md:p-6 p-3 rounded-lg space-y-6">
         <div className="space-y-1.5 border-b pb-3 border-neutral-200">
           {/* Badge do módulo — só aparece se a questão tiver moduleId associado */}
@@ -152,9 +152,9 @@ export const Quiz = ({ questions = [], storageKey = "quiz" }) => {
               Módulo {currentQ.moduleId}
             </span>
           )}
-          <h1 className="text-lg text-neutral-800 font-semibold">
+          <h3 className="text-lg text-neutral-800 font-semibold">
             {currentQuestion + 1} . {currentQ.question}
-          </h1>
+          </h3>
         </div>
 
         {/** Opções */}

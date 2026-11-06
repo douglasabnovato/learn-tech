@@ -2,29 +2,40 @@ import { PageTopBanner } from "./../../components/pageTop/PageTopBanner";
 import { PiBookOpenTextFill } from "react-icons/pi";
 import { FiClock } from "react-icons/fi";
 
-import { useParams, Link } from "react-router-dom";
-import { usePrograma } from "../../services/conteudo";
+import { useParams, Link, Navigate } from "react-router-dom";
+import { usePrograma, API_URL } from "../../services/conteudo";
 import { NotFound } from "./../error/not-found";
+import { ConteudoIndisponivel } from "../../components/common/ConteudoIndisponivel";
+import { Seo } from "../../components/common/Seo";
 
 
 export const Detail = () => {
-  const { id } = useParams();
+  const { category, id } = useParams();
   const programId = Number(id);
 
-  const { programa: program, carregando } = usePrograma(programId);
+  const { programa: program, carregando, indisponivel, tentarDeNovo } = usePrograma(programId);
 
   if (!program) {
-    return carregando ? (
-      <div className="w-full min-h-[60vh] flex items-center justify-center text-neutral-500" role="status">
-        Carregando programa…
-      </div>
-    ) : (
-      <NotFound />
-    );
+    if (carregando) {
+      return (
+        <div className="w-full min-h-[60vh] flex items-center justify-center text-neutral-500" role="status">
+          Carregando programa…
+        </div>
+      );
+    }
+    // API fora do ar e programa fora da cópia local: não dá para afirmar que ele não existe.
+    return indisponivel && API_URL ? <ConteudoIndisponivel onTentarDeNovo={tentarDeNovo} /> : <NotFound />;
+  }
+
+  // Uma URL por programa: categoria errada (ex.: /program/qualquer/1) vai para a canônica.
+  const caminho = `/program/${program.categoryFilter}/${program.id}`;
+  if (program.categoryFilter && category !== program.categoryFilter) {
+    return <Navigate to={caminho} replace />;
   }
 
   return (
     <div className="w-full min-h-screen flex-col space-y-16 pb-16">
+      <Seo titulo={program.title} descricao={program.description} caminho={caminho} />
       {/* Page Top Banner section */}
       <PageTopBanner pageTitle={program.title} />
       <div className="w-full space-y-16 md:px-16 sm:px-10 px-4">
@@ -34,7 +45,7 @@ export const Detail = () => {
             {/* title, image */}
             <div className="space-y-8">
               <div className="space-y-3 md:space-y-2">
-                <h2 className="text-txl md:text-2xl font-bold text-neutral-800">
+                <h2 className="text-xl md:text-2xl font-bold text-neutral-800">
                   {program.title}
                 </h2>
                 <div className="w-full flex items-center gap-x-5 gap-y-2 px-1 flex-wrap">
@@ -298,14 +309,19 @@ export const Detail = () => {
               </li>
             </ul>
 
+            {/* Reserva honesta: sem as aulas na cópia local, "Acessar" levaria a uma página vazia. */}
+            {indisponivel && <ConteudoIndisponivel compacto onTentarDeNovo={tentarDeNovo} />}
+
             <div className="w-full flex flex-col md:flex-row items-center md:gap-4 gap-3 mt-6">
-              <Link
-                to={`/program/${program.categoryFilter}/${program.id}/enroll`}
-                aria-label="Acessar este programa"
-                className="md:w-1/2 w-full h-10 bg-sky-800 text-white text-sm font-medium rounded-lg flex items-center justify-center gap-2 hover:bg-sky-700 transition focus:outline-none focus:ring-2 focus:ring-sky-300"
-              >
-                Acessar
-              </Link>
+              {!indisponivel && (
+                <Link
+                  to={`/program/${program.categoryFilter}/${program.id}/enroll`}
+                  aria-label="Acessar este programa"
+                  className="md:w-1/2 w-full h-10 bg-sky-800 text-white text-sm font-medium rounded-lg flex items-center justify-center gap-2 hover:bg-sky-700 transition focus:outline-none focus:ring-2 focus:ring-sky-300"
+                >
+                  Acessar
+                </Link>
+              )}
               <Link
                 to="/programs"
                 aria-label="Ver outros programas"
