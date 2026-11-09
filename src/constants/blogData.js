@@ -658,6 +658,12 @@ const blogData = [
     "id": "hack-dev-rotina-e-trilha-para-a-primeira-vaga",
     "blogURL": "/blog/hack-dev-rotina-e-trilha-para-a-primeira-vaga",
     "img": "https://learntech-content.douglasabnovato.workers.dev/media/learn-tech/blog/hack-dev-rotina-e-trilha-para-a-primeira-vaga.webp",
+    "galeria": [
+      {
+        "url": "https://learntech-content.douglasabnovato.workers.dev/media/learn-tech/blog/hack-dev-rotina-e-trilha-para-a-primeira-vaga-galeria-1.webp",
+        "alt": "Pastas da trilha de formação, do planejamento ao desafio de projeto"
+      }
+    ],
     "title": "Hack Dev: uma rotina diária e uma trilha para chegar à primeira vaga de dev",
     "tag": "Carreira",
     "author": "Equipe learnTECH",

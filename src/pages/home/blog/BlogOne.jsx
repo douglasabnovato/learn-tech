@@ -5,6 +5,7 @@ import blogLocal from "../../../constants/blogData";
 import { usePagina } from "../../../services/api";
 import { NotFound } from "../../error/not-found";
 import { Seo } from "../../../components/common/Seo";
+import { GaleriaFotos } from "../../../components/common/GaleriaFotos";
 
 export const BlogOne = () => {
     const { itens: blogData } = usePagina("blog", { itens: blogLocal });
@@ -161,6 +162,13 @@ export const BlogOne = () => {
                                     {paragraph}
                                 </p>
                             ))}
+                        </div>
+                    )}
+
+                    {/* GALERIA — fotos do artigo (campo galeria da API) */}
+                    {post.galeria?.length > 0 && (
+                        <div className="max-w-3xl mx-auto">
+                            <GaleriaFotos fotos={post.galeria} titulo="Galeria do artigo" />
                         </div>
                     )}
 
