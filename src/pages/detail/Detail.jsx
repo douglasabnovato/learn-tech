@@ -2,7 +2,7 @@ import { PageTopBanner } from "./../../components/pageTop/PageTopBanner";
 import { PiBookOpenTextFill } from "react-icons/pi";
 import { FiClock } from "react-icons/fi";
 
-import { useParams, Link, Navigate } from "react-router-dom";
+import { useParams, useLocation, Link, Navigate } from "react-router-dom";
 import { usePrograma, API_URL } from "../../services/conteudo";
 import { NotFound } from "./../error/not-found";
 import { ConteudoIndisponivel } from "../../components/common/ConteudoIndisponivel";
@@ -12,6 +12,9 @@ import { GaleriaFotos } from "../../components/common/GaleriaFotos";
 
 export const Detail = () => {
   const { category, id } = useParams();
+  const { state } = useLocation();
+  // Veio de /programs com busca ou filtro: o link "Programas" devolve o mesmo recorte.
+  const voltarPara = typeof state?.voltarPara === "string" && state.voltarPara.startsWith("/programs") ? state.voltarPara : "/programs";
   const programId = Number(id);
 
   const { programa: program, carregando, indisponivel, tentarDeNovo } = usePrograma(programId);
@@ -31,7 +34,7 @@ export const Detail = () => {
   // Uma URL por programa: categoria errada (ex.: /program/qualquer/1) vai para a canônica.
   const caminho = `/program/${program.categoryFilter}/${program.id}`;
   if (program.categoryFilter && category !== program.categoryFilter) {
-    return <Navigate to={caminho} replace />;
+    return <Navigate to={caminho} replace state={state} />;
   }
 
   return (
@@ -325,7 +328,7 @@ export const Detail = () => {
                 </Link>
               )}
               <Link
-                to="/programs"
+                to={voltarPara}
                 aria-label="Ver outros programas"
                 className="md:w-1/2 w-full h-10 border border-neutral-300 text-neutral-800 text-sm font-medium rounded-lg flex items-center justify-center gap-2 hover:bg-neutral-50 transition focus:outline-none focus:ring-2 focus:ring-sky-100"
               >

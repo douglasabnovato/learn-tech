@@ -15,6 +15,7 @@ export const ProgramsCard = ({
   access,
   accessType,
   status,
+  voltarPara,
 }) => {
   const isMembers = accessType === "membros";
   const isNovidade = status === "novidade";
@@ -93,6 +94,7 @@ export const ProgramsCard = ({
           ) : (
             <Link
               to={`/program/${categoryFilter}/${id}`}
+              state={voltarPara ? { voltarPara } : undefined}
               className="w-fit bg-sky-800 text-white px-4 py-2 rounded-lg text-sm font-medium
                flex items-center justify-center gap-2
                group-hover:bg-sky-700 transition-all ease-in-out duration-300"
@@ -118,4 +120,6 @@ ProgramsCard.propTypes = {
   access: PropTypes.string.isRequired,
   accessType: PropTypes.string,
   status: PropTypes.string.isRequired,
+  // Caminho de volta com o recorte de /programs (ex.: "/programs?categoria=web&q=react").
+  voltarPara: PropTypes.string,
 };
