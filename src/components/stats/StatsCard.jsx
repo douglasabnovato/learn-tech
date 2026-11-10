@@ -10,11 +10,11 @@ export const StatsCard = ({
 }) => {
   return (
     <div
-      className={`w-full md:px-6 md:py-6 px-3 py-4 border rounded-xl ${bgColor} ${borderColor}`}
+      className={`w-full min-w-0 md:px-6 md:py-6 px-3 py-4 border rounded-xl ${bgColor} ${borderColor}`}
     >
-      <div className="flex items-start justify-between gap-2">
+      <div className="flex flex-wrap items-start justify-between gap-2">
         {/* Bloco esquerdo: ícone + count + description */}
-        <div className="flex items-center md:justify-start justify-center gap-4 md:flex-nowrap flex-wrap">
+        <div className="min-w-0 flex items-center md:justify-start justify-center gap-4 md:flex-nowrap flex-wrap">
           <div
             className={`w-14 h-14 ${bgColor} border ${borderColor} rounded-xl flex items-center justify-center`}
           >
@@ -33,7 +33,7 @@ export const StatsCard = ({
         {/* Canto direito: categoria */}
         {category && (
           <span
-            className={`text-xs font-medium capitalize px-2 py-0.5 rounded-full border ${borderColor} ${iconColor} bg-white/50 whitespace-nowrap`}
+            className={`text-xs font-medium capitalize px-2 py-0.5 rounded-full border ${borderColor} ${iconColor} bg-white/50 min-w-0 max-w-full break-words`}
           >
             {category}
           </span>
