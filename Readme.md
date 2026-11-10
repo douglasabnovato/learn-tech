@@ -12,7 +12,7 @@ E a partir dela, temos career, tools, bootcamps. São projetos com temas especí
 
 ## 📍 Estado do projeto (06/11/2026)
 
-- **Onde está:** Em produção na Vercel. CI verde com lint zerado, 30 testes e chunk inicial de 284 kB (era 496 kB).
+- **Onde está:** Em produção na Vercel. CI verde com lint zerado, 41 testes e chunk inicial de 284 kB (era 496 kB).
 - **O que fizemos na rodada de MVP (03 a 05/11):** Camada de rede separada dos dados, reserva honesta quando a API falha, um `<h1>` por página, abas por teclado, SEO por rota e imagens leves.
 - **O que queremos fazer:** [#127](https://github.com/douglasabnovato/learn-tech/issues/127), [#130](https://github.com/douglasabnovato/learn-tech/issues/130), [#133](https://github.com/douglasabnovato/learn-tech/issues/133), [#128](https://github.com/douglasabnovato/learn-tech/issues/128), [#131](https://github.com/douglasabnovato/learn-tech/issues/131), [#134](https://github.com/douglasabnovato/learn-tech/issues/134) (lockfile, acessibilidade, limpeza de imagens, testes de componente, JSON-LD e busca sem acento). Todas com o label `proximos-passos` e critérios de entrega.
 

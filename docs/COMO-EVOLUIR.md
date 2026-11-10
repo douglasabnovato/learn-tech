@@ -36,7 +36,7 @@ Guia curto para mudar o site com segurança. O conteúdo novo (programas, artigo
 |---|---|
 | `npm run dev` | Servidor local (sem `.env.local`, testa a reserva) |
 | `npm run lint` | ESLint (obrigatório na CI) |
-| `npm test` | Vitest (30 testes em 05/11/2026) |
+| `npm test` | Vitest (41 testes em 10/11/2026) |
 | `npm run build` | Build. Confira o tamanho de `dist/assets/index-*.js` (284 kB em 05/11/2026; meta ≤ 300 kB) |
 | `npm run preview` | Serve o build para conferir no navegador |
 
