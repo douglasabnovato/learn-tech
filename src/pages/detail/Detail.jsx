@@ -257,7 +257,7 @@ export const Detail = () => {
                   </p>
                   <ul className="space-y-1">
                     {program.sources.map((source, i) => (
-                      <li key={i} className="text-xs text-neutral-400">
+                      <li key={i} className="text-xs text-neutral-600">
                         {source.url && source.url !== "#" ? (
                           <a
                             href={source.url}
