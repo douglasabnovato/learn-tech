@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { IoMdPause, IoMdPlay } from "react-icons/io";
 
 import DevImg1 from "../../../assets/devs/dev-4.webp";
 import DevImg2 from "../../../assets/devs/dev-5.webp";
@@ -7,16 +8,38 @@ import DevImg4 from "../../../assets/devs/dev-7.webp";
 
 const images = [DevImg1, DevImg2, DevImg3, DevImg4];
 
+const CONSULTA_MENOS_MOVIMENTO = "(prefers-reduced-motion: reduce)";
+
+// Acompanha a preferência do sistema por menos movimento (WCAG 2.2.2 e 2.3.3).
+const usePrefereMenosMovimento = () => {
+  const [prefere, setPrefere] = useState(
+    () => typeof window !== "undefined" && window.matchMedia?.(CONSULTA_MENOS_MOVIMENTO).matches === true,
+  );
+  useEffect(() => {
+    const consulta = window.matchMedia?.(CONSULTA_MENOS_MOVIMENTO);
+    if (!consulta) return undefined;
+    const aoMudar = (e) => setPrefere(e.matches);
+    consulta.addEventListener("change", aoMudar);
+    return () => consulta.removeEventListener("change", aoMudar);
+  }, []);
+  return prefere;
+};
+
 export const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const prefereMenosMovimento = usePrefereMenosMovimento();
+  // null: segue a preferência do sistema; true/false: a pessoa escolheu pelo botão.
+  const [pausadoPelaPessoa, setPausadoPelaPessoa] = useState(null);
+  const rodando = pausadoPelaPessoa === null ? !prefereMenosMovimento : !pausadoPelaPessoa;
 
   useEffect(() => {
+    if (!rodando) return undefined;
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [rodando]);
 
   return (
     <div className="w-full md:h-screen h-auto bg-gradient-to-tr from-indigo-500/20 via-sky-700/20 via-20% to-purple-700/30 flex items-end justify-center md:px-16 sm:px-10 px-4 md:pt-0 md:pb-0 pt-[8ch] pb-4">
@@ -72,7 +95,15 @@ export const Hero = () => {
                        transition-opacity duration-1000 ease-in-out"
             key={currentIndex}
           />
-          <div className="absolute bottom-8 flex gap-2">
+          <button
+            type="button"
+            onClick={() => setPausadoPelaPessoa(rodando)}
+            aria-label={rodando ? "Pausar a troca de imagens" : "Retomar a troca de imagens"}
+            className="absolute bottom-6 right-6 w-10 h-10 flex items-center justify-center rounded-full bg-white/90 text-indigo-800 shadow-md cursor-pointer hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-700"
+          >
+            {rodando ? <IoMdPause size={18} aria-hidden="true" /> : <IoMdPlay size={18} aria-hidden="true" />}
+          </button>
+          <div className="absolute bottom-8 flex gap-2" aria-hidden="true">
             {images.map((_, index) => (
               <div
                 key={index}

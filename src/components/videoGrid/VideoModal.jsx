@@ -1,21 +1,65 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { FaXmark } from "react-icons/fa6";
 
+const FOCAVEIS = 'button, [href], iframe, input, select, textarea, [tabindex]:not([tabindex="-1"])';
+
 export const VideoModal = ({ video, onClose }) => {
+    const caixaRef = useRef(null);
+    const fecharRef = useRef(null);
+    // onClose muda a cada render do pai; o ref evita refazer o efeito (e roubar o foco) a cada render.
+    const onCloseRef = useRef(onClose);
+    useEffect(() => {
+        onCloseRef.current = onClose;
+    }, [onClose]);
+
     useEffect(() => {
         if (!video) return; // sem vídeo aberto, não mexe no scroll da página
 
-        const handleEsc = (e) => {
-            if (e.key === "Escape") onClose();
+        // Guarda quem abriu (o card do vídeo) para devolver o foco ao fechar.
+        const quemAbriu = document.activeElement;
+        fecharRef.current?.focus();
+
+        const focaveis = () => [...(caixaRef.current?.querySelectorAll(FOCAVEIS) ?? [])];
+
+        const handleKey = (e) => {
+            if (e.key === "Escape") {
+                onCloseRef.current();
+                return;
+            }
+            if (e.key !== "Tab") return;
+            const lista = focaveis();
+            if (lista.length === 0) return;
+            const primeiro = lista[0];
+            const ultimo = lista[lista.length - 1];
+            if (e.shiftKey && document.activeElement === primeiro) {
+                e.preventDefault();
+                ultimo.focus();
+            } else if (!e.shiftKey && document.activeElement === ultimo) {
+                e.preventDefault();
+                primeiro.focus();
+            }
         };
-        document.addEventListener("keydown", handleEsc);
+
+        // Rede de segurança: o Tab de dentro do iframe não passa pelo keydown desta página.
+        const handleFocusIn = (e) => {
+            if (caixaRef.current && !caixaRef.current.contains(e.target)) {
+                fecharRef.current?.focus();
+            }
+        };
+
+        document.addEventListener("keydown", handleKey);
+        document.addEventListener("focusin", handleFocusIn);
         document.body.style.overflow = "hidden";
 
         return () => {
-            document.removeEventListener("keydown", handleEsc);
+            document.removeEventListener("keydown", handleKey);
+            document.removeEventListener("focusin", handleFocusIn);
             document.body.style.overflow = "auto";
+            if (quemAbriu instanceof HTMLElement && document.contains(quemAbriu)) {
+                quemAbriu.focus();
+            }
         };
-    }, [video, onClose]); // "video" entra na lista de dependências
+    }, [video]); // "video" entra na lista de dependências
 
     if (!video) return null;
 
@@ -33,6 +77,7 @@ export const VideoModal = ({ video, onClose }) => {
             aria-label={video.title}
         >
             <div
+                ref={caixaRef}
                 className="w-full max-w-3xl space-y-3"
                 onClick={(e) => e.stopPropagation()}
             >
@@ -41,6 +86,7 @@ export const VideoModal = ({ video, onClose }) => {
                         {video.title}
                     </h3>
                     <button
+                        ref={fecharRef}
                         onClick={onClose}
                         aria-label="Fechar vídeo"
                         className="shrink-0 w-9 h-9 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"

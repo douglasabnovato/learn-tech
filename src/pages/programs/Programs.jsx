@@ -1,8 +1,10 @@
 import { useState, useEffect, useMemo } from "react";
+import { useSearchParams } from "react-router-dom";
 import { PageTopBanner } from "../../components/pageTop/PageTopBanner";
 import { ProgramsCard } from "../../components/programs/ProgramsCard";
 import { useProgramas } from "../../services/conteudo";
 import { Seo } from "../../components/common/Seo";
+import { filtrarProgramas, recorteParaQuery } from "../../services/busca";
 
 export const Programs = () => {
   const programsData = useProgramas();
@@ -10,8 +12,15 @@ export const Programs = () => {
     () => [...new Map(programsData.map((p) => [p.categoryFilter, p.category])).entries()],
     [programsData],
   );
-  const [searchTerm, setSearchTerm] = useState(""); // ✅ novo estado
-  const [selectedCategory, setSelectedCategory] = useState("all");
+  // O recorte (categoria e termo) mora na URL: ?categoria=web&q=react. Dá para compartilhar e o "voltar" o mantém.
+  const [searchParams, setSearchParams] = useSearchParams();
+  const searchTerm = searchParams.get("q") ?? "";
+  const selectedCategory = searchParams.get("categoria") || "all";
+  const atualizarRecorte = (categoria, termo) => {
+    setSearchParams(new URLSearchParams(recorteParaQuery(categoria, termo)), { replace: true });
+  };
+  const setSearchTerm = (termo) => atualizarRecorte(selectedCategory, termo);
+  const setSelectedCategory = (categoria) => atualizarRecorte(categoria, searchTerm);
   const [visibleCount, setVisibleCount] = useState(4);
 
   // Resetar paginação ao mudar busca/categoria
@@ -19,20 +28,11 @@ export const Programs = () => {
     setVisibleCount(4);
   }, [searchTerm, selectedCategory]);
 
-  // ✅ memorizar resultado da filtragem
-  const filteredPrograms = useMemo(() => {
-    return programsData.filter((program) => {
-      const matchText =
-        program.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        program.category.toLowerCase().includes(searchTerm.toLowerCase());
-
-      const matchCategory =
-        selectedCategory === "all" ||
-        program.categoryFilter === selectedCategory;
-
-      return matchText && matchCategory;
-    });
-  }, [programsData, searchTerm, selectedCategory]);
+  // Busca sem acento e sem diferença de maiúsculas ("logica" acha "Lógica").
+  const filteredPrograms = useMemo(
+    () => filtrarProgramas(programsData, searchTerm, selectedCategory),
+    [programsData, searchTerm, selectedCategory],
+  );
 
   const visiblePrograms = filteredPrograms.slice(0, visibleCount);
 
@@ -87,7 +87,7 @@ export const Programs = () => {
           <div className="w-full grid md:grid-cols-3 grid-cols-1 md:gap-x-10 md:gap-y-10 gap-x-5 gap-y-8">
             {visiblePrograms.length > 0 ? (
               visiblePrograms.map((program) => (
-                <ProgramsCard key={program.id} {...program} />
+                <ProgramsCard key={program.id} {...program} voltarPara={`/programs${recorteParaQuery(selectedCategory, searchTerm)}`} />
               ))
             ) : (
               <p className="text-gray-500 text-center col-span-full">
@@ -103,9 +103,6 @@ export const Programs = () => {
             <button
               disabled={visibleCount >= filteredPrograms.length}
               onClick={() => setVisibleCount((prev) => prev + 6)}
-              aria-label={`Carregar mais programas, ${
-                filteredPrograms.length - visibleCount
-              } restantes`}
               className={`w-fit border py-3 px-8 rounded-full font-semibold cursor-pointer ease-in-out duration-300 ${
                 visibleCount >= filteredPrograms.length
                   ? "border-gray-300 text-gray-400 cursor-not-allowed"

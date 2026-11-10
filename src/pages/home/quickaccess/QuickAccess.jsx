@@ -6,7 +6,7 @@ import { GiTrophyCup } from "react-icons/gi";
 export const QuickAccess = () => {
   return (
     <div className="w-full bg-zinc-950 flex items-center justify-center p-4">
-      <div className="w-full grid md:grid-cols-2 grid-cols-1 md:gap-20 gap-8 md:py-20 py-10 md:px-16 sm:px-10 px-4">
+      <div className="w-full grid lg:grid-cols-2 grid-cols-1 lg:gap-20 gap-8 md:py-20 py-10 md:px-16 sm:px-10 px-4">
         {/** First Card */}
         <div className="w-full md:p-10 p-6 rounded-3xl border border-neutral-800 bg-neutral-900/40 flex items-center justify-between">
           {/** - */}

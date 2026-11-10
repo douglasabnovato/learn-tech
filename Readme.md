@@ -12,7 +12,7 @@ E a partir dela, temos career, tools, bootcamps. São projetos com temas especí
 
 ## 📍 Estado do projeto (06/11/2026)
 
-- **Onde está:** Em produção na Vercel. CI verde com lint zerado, 30 testes e chunk inicial de 284 kB (era 496 kB).
+- **Onde está:** Em produção na Vercel. CI verde com lint zerado, 41 testes e chunk inicial de 284 kB (era 496 kB).
 - **O que fizemos na rodada de MVP (03 a 05/11):** Camada de rede separada dos dados, reserva honesta quando a API falha, um `<h1>` por página, abas por teclado, SEO por rota e imagens leves.
 - **O que queremos fazer:** [#127](https://github.com/douglasabnovato/learn-tech/issues/127), [#130](https://github.com/douglasabnovato/learn-tech/issues/130), [#133](https://github.com/douglasabnovato/learn-tech/issues/133), [#128](https://github.com/douglasabnovato/learn-tech/issues/128), [#131](https://github.com/douglasabnovato/learn-tech/issues/131), [#134](https://github.com/douglasabnovato/learn-tech/issues/134) (lockfile, acessibilidade, limpeza de imagens, testes de componente, JSON-LD e busca sem acento). Todas com o label `proximos-passos` e critérios de entrega.
 
@@ -117,7 +117,7 @@ learn-tech/
 │   │   │   ├── ScrollToTop.jsx
 │   │   │   └── Seo.jsx                   # título, descrição e canonical por rota
 │   │   ├── footer/Footer.jsx
-│   │   ├── logo/LearnTechTitle.jsx
+│   │   ├── logo/LearnTechTitle.jsx, assets/logo192.svg
 │   │   ├── nav/Navbar.jsx
 │   │   ├── pageTop/PageTopBanner.jsx
 │   │   ├── player/VideoPlayer.jsx
@@ -198,17 +198,7 @@ Um programa novo é publicado na API (`learntech-content/content/learn-tech/prog
 
 ## ⚠️ Pontos de atenção na estrutura
 
-**1. Imagens sem uso** (nenhum import; podem ser apagadas):
-
-```text
-src/assets/logo/logo192.png
-src/components/logo/assets/logo192.png
-src/pages/error/imgs/Erro-404-not-found.jpg
-src/pages/error/imgs/Erro-404-under-construction.jpg
-src/pages/home/hero/assets/dev-4.JPG … dev-7.JPG   (~880 KB; o Hero usa src/assets/devs/*.webp)
-```
-
-**2. Dois arquivos chamados `Programs.jsx`** — `pages/programs/Programs.jsx` (a página) e `pages/home/programs/Programs.jsx` (a seção da Home). Funciona, mas confunde na busca do editor.
+**1. Dois arquivos chamados `Programs.jsx`** — `pages/programs/Programs.jsx` (a página) e `pages/home/programs/Programs.jsx` (a seção da Home). Funciona, mas confunde na busca do editor.
 
 ---
 

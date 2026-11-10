@@ -1,6 +1,6 @@
 # Estado do projeto: learn-tech
 
-**Atualizado em 06/11/2026.** Este arquivo responde a três perguntas: onde o projeto está, o que já fizemos e o que queremos fazer. Para trazer conteúdo novo ou mudar o site, siga [`COMO-EVOLUIR.md`](COMO-EVOLUIR.md).
+**Atualizado em 10/11/2026.** A régua dos 12 critérios está em [`MVP.md`](MVP.md). Este arquivo responde a três perguntas: onde o projeto está, o que já fizemos e o que queremos fazer. Para trazer conteúdo novo ou mudar o site, siga [`COMO-EVOLUIR.md`](COMO-EVOLUIR.md).
 
 ## Onde está
 
@@ -8,10 +8,10 @@
 |---|---|
 | Produção | `https://learn-tech-pied.vercel.app/` (Vercel, deploy a cada push na `main`) |
 | Repositório | `main` protegida (check `verificar` obrigatório, sem force push). Fluxo: `feature/tasks-DD-MM-AAAA` → `developer-mvp-2026` → `main`, só fast-forward |
-| CI | Lint (0 problemas), 30 testes (Vitest) e build |
-| Conteúdo | 49 programas na API, todos com módulos e quiz; 45 artigos; reserva local gerada pela API (`npm run copias` no learntech-content) |
+| CI | Lint (0 problemas), 41 testes (Vitest) e build |
+| Conteúdo | 49 programas na API, todos com módulos e quiz; 46 artigos; reserva local gerada pela API (`npm run copias` no learntech-content) |
 | Desempenho | Chunk inicial de 284 kB (era 496 kB); o catálogo vai num chunk só das páginas de programas |
-| Acessibilidade | Sem violação crítica no axe. Restam contraste de cor (38 na home, 5 no programa) e `svg-img-alt` (3), cobertos pela #130 |
+| Acessibilidade | Produção (axe, 10/11): contraste e `svg-img-alt` na home e no programa. Na integração, axe local com 0 violações serious em `/`, `/programs`, `/program/web/1/enroll` e `/falaae` (#130, relatório em `docs/claudeia/07-acessibilidade-2026-11-10.md`) |
 
 ## O que fizemos
 
@@ -24,6 +24,8 @@
 | 05/11, MVP | Camada de rede separada dos dados; reserva honesta ("Conteúdo indisponível agora" com "Tentar de novo"); textos em português e um `<h1>` por página; abas acessíveis por teclado; SEO por rota com o React 19; imagens com `lazy`, `youtube-nocookie`; card de IA |
 | 05/11, estabilidade | e2e contra a produção passando; `COMO-EVOLUIR.md`; README com os números reais |
 | 06/11 | Este documento, README com o estado e issues novas (#133 e #134) |
+| 09/11 | Galeria de fotos no programa e no artigo, com ampliação acessível |
+| 10/11 | Página `/conheca` com prévia própria do link (#137, na `main`). Na integração: carrossel com pausa e modal de vídeo com foco preso (#130), 8 imagens sem uso removidas (#133), busca sem acento e recorte na URL (#134), home sem rolagem horizontal (#139); `MVP.md` |
 
 Detalhes: `docs/claudeia/diagnostico-mvp-2026-11-03.md` e `docs/claudeia/06-mvp-2026-11-03.md`.
 

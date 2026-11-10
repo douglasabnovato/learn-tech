@@ -171,7 +171,7 @@ export const FalaAe = () => {
                                             <span
                                                 className={`w-8 h-8 shrink-0 rounded-full flex items-center justify-center text-sm font-bold ${isOpen
                                                         ? "bg-gradient-to-tr from-indigo-500 to-purple-600 text-white"
-                                                        : "bg-neutral-100 text-neutral-500"
+                                                        : "bg-neutral-100 text-neutral-600"
                                                     }`}
                                             >
                                                 {item.id}
