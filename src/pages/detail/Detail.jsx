@@ -7,6 +7,7 @@ import { usePrograma, API_URL } from "../../services/conteudo";
 import { NotFound } from "./../error/not-found";
 import { ConteudoIndisponivel } from "../../components/common/ConteudoIndisponivel";
 import { Seo } from "../../components/common/Seo";
+import { GaleriaFotos } from "../../components/common/GaleriaFotos";
 
 
 export const Detail = () => {
@@ -80,6 +81,7 @@ export const Detail = () => {
                 className="w-full object-cover aspect-[16/10] rounded-xl"
               />
             </div>
+            <GaleriaFotos fotos={program.galeria} titulo="Bastidores do programa" />
             {/* course overview contents */}
 
             <div className="space-y-10">

@@ -60,6 +60,12 @@ const Recursos = lazy(() =>
   })),
 );
 
+const Conheca = lazy(() =>
+  import("./pages/conheca/Conheca").then((module) => ({
+    default: module.Conheca,
+  })),
+);
+
 const About = lazy(() =>
   import("./pages/about/About").then((module) => ({
     default: module.About,
@@ -141,6 +147,7 @@ function App() {
               <Route path="/softskills" element={<Softskills />} />
               <Route path="/mentorias" element={<Mentorias />} />
               <Route path="/resources" element={<Recursos />} />
+              <Route path="/conheca" element={<Conheca />} />
               <Route path="/about" element={<About />} />
               <Route path="/falaae" element={<FalaAe />} />
               <Route path="/category" element={<CategoriesAll />} />

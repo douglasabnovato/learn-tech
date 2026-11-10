@@ -70,6 +70,14 @@ const Footer = () => {
           <ul className="space-y-2">
             <li>
               <Link
+                to="/conheca"
+                className="text-sm text-neutral-400 hover:text-white"
+              >
+                Conheça o learnTECH
+              </Link>
+            </li>
+            <li>
+              <Link
                 to="/about"
                 className="text-sm text-neutral-400 hover:text-white"
               >

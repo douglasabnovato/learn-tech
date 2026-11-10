@@ -15,7 +15,8 @@ SPA em React 19, Vite e Tailwind 4, publicada na Vercel (`learn-tech-pied.vercel
 - **Privacidade:** nenhum dado pessoal de terceiro, nome de cliente ou link interno de ex-empregador. O Claude não lê nem cadastra segredos.
 
 ## Git
-- Branch do dia `feature/tasks-DD-MM-AAAA`, criada da `main`. Depois: push, CI verde, `developer-mvp-2026` e `main` por `--ff-only`.
+- Branch do dia `feature/tasks-DD-MM-AAAA`, criada da `main`. Depois: push, CI verde e `developer-mvp-2026` por `--ff-only`.
+- **O Claude para na `developer-mvp-2026`.** A `main` é produção: quem leva a `developer-mvp-2026` para a `main` é o autor (09/11/2026).
 - A `main` é protegida: check `verificar` obrigatório e sem force push. Nunca commit direto na `main`.
 - Comentários e issues no GitHub terminam com `<sub>por douglas ciborgue</sub>`.
 
