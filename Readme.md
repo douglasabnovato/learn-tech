@@ -117,7 +117,7 @@ learn-tech/
 │   │   │   ├── ScrollToTop.jsx
 │   │   │   └── Seo.jsx                   # título, descrição e canonical por rota
 │   │   ├── footer/Footer.jsx
-│   │   ├── logo/LearnTechTitle.jsx
+│   │   ├── logo/LearnTechTitle.jsx, assets/logo192.svg
 │   │   ├── nav/Navbar.jsx
 │   │   ├── pageTop/PageTopBanner.jsx
 │   │   ├── player/VideoPlayer.jsx
@@ -198,17 +198,7 @@ Um programa novo é publicado na API (`learntech-content/content/learn-tech/prog
 
 ## ⚠️ Pontos de atenção na estrutura
 
-**1. Imagens sem uso** (nenhum import; podem ser apagadas):
-
-```text
-src/assets/logo/logo192.png
-src/components/logo/assets/logo192.png
-src/pages/error/imgs/Erro-404-not-found.jpg
-src/pages/error/imgs/Erro-404-under-construction.jpg
-src/pages/home/hero/assets/dev-4.JPG … dev-7.JPG   (~880 KB; o Hero usa src/assets/devs/*.webp)
-```
-
-**2. Dois arquivos chamados `Programs.jsx`** — `pages/programs/Programs.jsx` (a página) e `pages/home/programs/Programs.jsx` (a seção da Home). Funciona, mas confunde na busca do editor.
+**1. Dois arquivos chamados `Programs.jsx`** — `pages/programs/Programs.jsx` (a página) e `pages/home/programs/Programs.jsx` (a seção da Home). Funciona, mas confunde na busca do editor.
 
 ---
 
