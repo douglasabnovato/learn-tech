@@ -81,7 +81,7 @@ export const ModuleRenderer = ({ modulo, ordem, onComplete }) => {
           <IconeCabecalho className="text-white text-2xl" />
         </div>
         <div className="space-y-1">
-          <span className="text-sm font-semibold text-neutral-400">
+          <span className="text-sm font-semibold text-neutral-600">
             Módulo {ordem}
           </span>
           <h3 className="text-2xl font-bold text-neutral-800 tracking-tight">
@@ -135,7 +135,8 @@ export const ModuleRenderer = ({ modulo, ordem, onComplete }) => {
                   <button
                     onClick={() => alternarPasso(passo.number)}
                     aria-label={
-                      feito ? "Marcar como pendente" : "Marcar como concluído"
+                      // O número visível entra no nome acessível (WCAG 2.5.3).
+                      `Passo ${passo.number}: ${feito ? "marcar como pendente" : "marcar como concluído"}`
                     }
                     className={`w-9 h-9 shrink-0 rounded-full flex items-center justify-center border-2 font-bold text-sm transition-colors duration-200 ${
                       feito

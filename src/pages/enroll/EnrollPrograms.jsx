@@ -151,7 +151,7 @@ export const EnrollPrograms = () => {
                             <span
                               className={`text-sm font-semibold flex-1 ${
                                 status === "pending"
-                                  ? "text-neutral-400"
+                                  ? "text-neutral-600"
                                   : "text-neutral-800"
                               }`}
                             >

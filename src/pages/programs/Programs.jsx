@@ -103,9 +103,6 @@ export const Programs = () => {
             <button
               disabled={visibleCount >= filteredPrograms.length}
               onClick={() => setVisibleCount((prev) => prev + 6)}
-              aria-label={`Carregar mais programas, ${
-                filteredPrograms.length - visibleCount
-              } restantes`}
               className={`w-fit border py-3 px-8 rounded-full font-semibold cursor-pointer ease-in-out duration-300 ${
                 visibleCount >= filteredPrograms.length
                   ? "border-gray-300 text-gray-400 cursor-not-allowed"
