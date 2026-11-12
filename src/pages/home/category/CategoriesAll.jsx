@@ -39,6 +39,47 @@ const colorMap = {
   teal: "from-teal-500 to-teal-600",
 };
 
+/* "No dia a dia" e "Competências" de uma área, lado a lado no desktop. Cada lista tem o título
+   como rótulo (aria-labelledby). Lista vazia ou ausente não desenha o bloco. */
+const LISTAS = [
+  { campo: "diaADia", titulo: "No dia a dia", marcador: "bg-sky-600" },
+  { campo: "competencias", titulo: "Competências", marcador: "bg-purple-600" },
+];
+
+export const ListasDaArea = ({ area }) => {
+  const listas = LISTAS.filter((l) => Array.isArray(area[l.campo]) && area[l.campo].length > 0);
+  if (!listas.length) return null;
+  return (
+    <div className="grid md:grid-cols-2 grid-cols-1 gap-4 pt-2">
+      {listas.map(({ campo, titulo, marcador }) => {
+        const idTitulo = `${area.id}-${campo}`;
+        return (
+          <section key={campo} aria-labelledby={idTitulo} className="rounded-2xl border border-neutral-200 bg-white p-5 space-y-3">
+            <h3 id={idTitulo} className="text-base font-bold text-neutral-800">
+              {titulo}
+            </h3>
+            <ul aria-labelledby={idTitulo} className="space-y-2">
+              {area[campo].map((item) => (
+                <li key={item} className="flex gap-3 text-neutral-700 leading-relaxed">
+                  <span aria-hidden="true" className={`mt-2 h-2 w-2 shrink-0 rounded-full ${marcador}`} />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        );
+      })}
+    </div>
+  );
+};
+ListasDaArea.propTypes = {
+  area: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    diaADia: PropTypes.arrayOf(PropTypes.string),
+    competencias: PropTypes.arrayOf(PropTypes.string),
+  }).isRequired,
+};
+
 export const CategoriesAll = () => {
   const { dados: sections } = useApi("learn-tech/areas.json", AREAS_LOCAIS, hidratar);
 
@@ -151,6 +192,9 @@ export const CategoriesAll = () => {
                     })}
                   </div>
                 )}
+
+                {/* Dia a dia e competências da área (conteúdo da API, #135) */}
+                <ListasDaArea area={section} />
 
                 {section.closing && (
                   <p className="text-lg font-medium text-neutral-800 pt-2">
