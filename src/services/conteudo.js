@@ -51,8 +51,17 @@ function naReserva(programa) {
    no catálogo gerado pela API (programasCatalogo.js). Sem API, todos os cards continuam aparecendo,
    mas só os que têm conteúdo local mostram "Aprenda". */
 const idsLocais = new Set(programsData.map((p) => p.id));
+/* Campos de card que vêm do catálogo gerado pela API, e não da cópia manual (desatualizada, #144).
+   A cópia manual continua dando a mídia local (capa e vídeo), o quiz e o conteúdo dos módulos. */
+export const CAMPOS_DO_CATALOGO = ["title", "duration", "lessons", "level", "category", "categoryFilter", "description", "access", "accessType"];
+const catalogoPorId = new Map(programasCatalogo.map((p) => [p.id, p]));
+function comCamposDoCatalogo(p) {
+  const c = catalogoPorId.get(p.id);
+  if (!c) return p;
+  return { ...p, ...Object.fromEntries(CAMPOS_DO_CATALOGO.filter((k) => c[k] !== undefined).map((k) => [k, c[k]])) };
+}
 export const CATALOGO_LOCAL = [
-  ...programsData.map((p) => ({ ...p, status: statusDaReserva(p) })),
+  ...programsData.map((p) => ({ ...comCamposDoCatalogo(p), status: statusDaReserva(p) })),
   ...programasCatalogo.filter((p) => !idsLocais.has(p.id)).map(naReserva),
 ];
 
