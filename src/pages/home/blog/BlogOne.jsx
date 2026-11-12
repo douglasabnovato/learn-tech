@@ -5,6 +5,8 @@ import blogLocal from "../../../constants/blogData";
 import { usePagina } from "../../../services/api";
 import { NotFound } from "../../error/not-found";
 import { Seo } from "../../../components/common/Seo";
+import { JsonLd } from "../../../components/common/JsonLd";
+import { artigoJsonLd } from "../../../services/dadosEstruturados";
 import { GaleriaFotos } from "../../../components/common/GaleriaFotos";
 
 export const BlogOne = () => {
@@ -38,6 +40,7 @@ export const BlogOne = () => {
     return (
         <div className="w-full min-h-screen">
             <Seo titulo={post.title} descricao={post.lead || post.excerpt} caminho={`/blog/${post.id}`} />
+            <JsonLd dados={artigoJsonLd(post)} />
             {/* HERO — 1 coluna, capa em largura total */}
             <div className="relative w-full aspect-[16/7] overflow-hidden">
                 <img

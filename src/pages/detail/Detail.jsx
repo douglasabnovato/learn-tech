@@ -7,6 +7,8 @@ import { usePrograma, API_URL } from "../../services/conteudo";
 import { NotFound } from "./../error/not-found";
 import { ConteudoIndisponivel } from "../../components/common/ConteudoIndisponivel";
 import { Seo } from "../../components/common/Seo";
+import { JsonLd } from "../../components/common/JsonLd";
+import { programaJsonLd } from "../../services/dadosEstruturados";
 import { GaleriaFotos } from "../../components/common/GaleriaFotos";
 
 
@@ -40,6 +42,7 @@ export const Detail = () => {
   return (
     <div className="w-full min-h-screen flex-col space-y-16 pb-16">
       <Seo titulo={program.title} descricao={program.description} caminho={caminho} />
+      <JsonLd dados={programaJsonLd(program)} />
       {/* Page Top Banner section */}
       <PageTopBanner pageTitle={program.title} />
       <div className="w-full space-y-16 md:px-16 sm:px-10 px-4">
