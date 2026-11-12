@@ -30,7 +30,8 @@ Programas de estudo em ordem, com comentário, prática e quiz, além de artigos
 - Domínio próprio e qualquer serviço pago: o ambiente fica gratuito (decisão do autor, 10/11/2026).
 - Identificação opcional: a identificação obrigatória continua ([learntech-content#5](https://github.com/douglasabnovato/learntech-content/issues/5), não autorizada pelo autor em 10/11/2026).
 - Votação de temas nos cards de programa ([learntech-content#4](https://github.com/douglasabnovato/learntech-content/issues/4), aguardando o autor).
-- Progresso do estudo persistente ([#129](https://github.com/douglasabnovato/learn-tech/issues/129)) e trilhas por objetivo ([#132](https://github.com/douglasabnovato/learn-tech/issues/132)): depois do MVP.
+- Trilhas por objetivo ([#132](https://github.com/douglasabnovato/learn-tech/issues/132)) e JSON-LD de artigos e programas ([#131](https://github.com/douglasabnovato/learn-tech/issues/131)): entregues na `developer-mvp-2026` em 12/11/2026 (bd1bd02 e 4366c94). Valem depois do deploy. O 404 real e o Search Console da #131 dependem do autor.
+- Progresso do estudo persistente ([#129](https://github.com/douglasabnovato/learn-tech/issues/129)): depois do MVP.
 
 ## Histórico
 - 10/11/2026: primeira tabela, depois do ciclo de acessibilidade e busca nos quatro sites.
