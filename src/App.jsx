@@ -24,6 +24,12 @@ const Mentorias = lazy(() =>
   })),
 );
 
+const Trilhas = lazy(() =>
+  import("./pages/trilhas/Trilhas").then((module) => ({
+    default: module.Trilhas,
+  })),
+);
+
 const Programs = lazy(() =>
   import("./pages/programs/Programs").then((module) => ({
     default: module.Programs,
@@ -136,6 +142,7 @@ function App() {
 
               {/* Pages */}
               <Route path="/programs" element={<Programs />} />
+              <Route path="/trilhas" element={<Trilhas />} />
 
               {/* Institutional Pages */}
               <Route path="/privacy" element={<Privacy />} />

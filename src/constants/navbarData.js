@@ -10,6 +10,11 @@ const navItems = [
         path: "/programs",
     },
     {
+        id: 6,
+        name: "Trilhas",
+        path: "/trilhas",
+    },
+    {
         id: 3,
         name: "Recursos",
         path: "/resources",
