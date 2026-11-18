@@ -1,7 +1,13 @@
 {
   "rewrites": [
     { "source": "/conheca", "destination": "/conheca/index.html" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/(programs|trilhas|privacy|terms|careers|aprender|blogs|softskills|mentorias|resources|about|falaae|category)",
+      "destination": "/index.html"
+    },
+    { "source": "/blog/:id", "destination": "/index.html" },
+    { "source": "/program/:category/:id", "destination": "/index.html" },
+    { "source": "/program/:category/:id/enroll", "destination": "/index.html" }
   ],
   "headers": [
     {
