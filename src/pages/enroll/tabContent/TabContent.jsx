@@ -5,12 +5,7 @@ import PropTypes from "prop-types";
 import { Tabs } from "../../../components/tabs/Tabs";
 import { ModuleRenderer } from "./ModuleRenderer";
 
-export const TabContent = ({
-  program,
-  onCompleteModule,
-  activeIndex,
-  onChange,
-}) => {
+export const TabContent = ({ program, onCompleteModule, activeIndex, onChange }) => {
   const modulos = program?.modules || [];
   const conteudos = program?.moduleContents || [];
 
@@ -27,11 +22,7 @@ export const TabContent = ({
   }));
 
   if (tabs.length === 0) {
-    return (
-      <div className="w-full py-12 text-center text-neutral-500">
-        Este programa ainda não tem módulos publicados.
-      </div>
-    );
+    return <div className="w-full py-12 text-center text-neutral-500">Este programa ainda não tem módulos publicados.</div>;
   }
 
   return (

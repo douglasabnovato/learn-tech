@@ -9,29 +9,16 @@ export const VideoGrid = ({ eyebrow, pageTitle, subtitle, items, accentGradient 
   return (
     <div className="w-full bg-zinc-950 pb-20">
       {/* Cabeçalho */}
-      <div
-        className={`w-full bg-gradient-to-tr ${accentGradient} md:px-16 sm:px-10 px-4 md:py-20 py-14`}
-      >
+      <div className={`w-full bg-gradient-to-tr ${accentGradient} md:px-16 sm:px-10 px-4 md:py-20 py-14`}>
         <div className="max-w-3xl space-y-4">
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-neutral-200 hover:text-white transition-colors"
-          >
+          <Link to="/" className="inline-flex items-center gap-2 text-sm font-semibold text-neutral-200 hover:text-white transition-colors">
             <FaArrowLeft /> Voltar para a Home
           </Link>
 
-          {eyebrow && (
-            <p className="text-sm font-semibold tracking-wide uppercase text-white/70">
-              {eyebrow}
-            </p>
-          )}
+          {eyebrow && <p className="text-sm font-semibold tracking-wide uppercase text-white/70">{eyebrow}</p>}
 
-          <h1 className="text-3xl md:text-5xl font-bold text-white tracking-tight">
-            {pageTitle}
-          </h1>
-          <p className="text-base text-neutral-200 max-w-xl leading-relaxed">
-            {subtitle}
-          </p>
+          <h1 className="text-3xl md:text-5xl font-bold text-white tracking-tight">{pageTitle}</h1>
+          <p className="text-base text-neutral-200 max-w-xl leading-relaxed">{subtitle}</p>
         </div>
       </div>
 
@@ -59,12 +46,8 @@ export const VideoGrid = ({ eyebrow, pageTitle, subtitle, items, accentGradient 
                 </div>
               </div>
               <div className="p-5 space-y-2">
-                <h3 className="text-white font-bold text-base leading-snug">
-                  {video.title}
-                </h3>
-                <p className="text-neutral-400 text-sm leading-relaxed">
-                  {video.description}
-                </p>
+                <h3 className="text-white font-bold text-base leading-snug">{video.title}</h3>
+                <p className="text-neutral-400 text-sm leading-relaxed">{video.description}</p>
               </div>
             </button>
           ))}

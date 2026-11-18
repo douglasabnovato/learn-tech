@@ -8,10 +8,7 @@ import { filtrarProgramas, recorteParaQuery } from "../../services/busca";
 
 export const Programs = () => {
   const programsData = useProgramas();
-  const categorias = useMemo(
-    () => [...new Map(programsData.map((p) => [p.categoryFilter, p.category])).entries()],
-    [programsData],
-  );
+  const categorias = useMemo(() => [...new Map(programsData.map((p) => [p.categoryFilter, p.category])).entries()], [programsData]);
   // O recorte (categoria e termo) mora na URL: ?categoria=web&q=react. Dá para compartilhar e o "voltar" o mantém.
   const [searchParams, setSearchParams] = useSearchParams();
   const searchTerm = searchParams.get("q") ?? "";
@@ -38,7 +35,10 @@ export const Programs = () => {
 
   return (
     <div className="w-full min-h-screen flex-col space-y-16 pb-16">
-      <Seo titulo="Programas" descricao="Programas gratuitos de tecnologia em ordem, com prática e quiz: web, back-end, carreira, CRM e mais. Busque pelo título ou filtre por categoria." />
+      <Seo
+        titulo="Programas"
+        descricao="Programas gratuitos de tecnologia em ordem, com prática e quiz: web, back-end, carreira, CRM e mais. Busque pelo título ou filtre por categoria."
+      />
       {/* Page Top Banner section */}
       <PageTopBanner pageTitle={"Programas"} />
       {/* Programs contends */}
@@ -68,18 +68,15 @@ export const Programs = () => {
                 {nome}
               </option>
             ))}
-</select>
+          </select>
         </div>
         {/* Programs data */}
         <section className="space-y-4">
           {/* Cabeçalho + contador */}
           <div className="flex items-center gap-3">
-            <h2 className="text-xl font-semibold text-neutral-900">
-              Programas
-            </h2>
+            <h2 className="text-xl font-semibold text-neutral-900">Programas</h2>
             <span className="px-3 py-1 text-sm font-medium rounded-full bg-sky-100 text-sky-700 border border-sky-300">
-              {filteredPrograms.length}{" "}
-              {filteredPrograms.length === 1 ? "treinamento" : "treinamentos"}
+              {filteredPrograms.length} {filteredPrograms.length === 1 ? "treinamento" : "treinamentos"}
             </span>
           </div>
 
@@ -90,9 +87,7 @@ export const Programs = () => {
                 <ProgramsCard key={program.id} {...program} voltarPara={`/programs${recorteParaQuery(selectedCategory, searchTerm)}`} />
               ))
             ) : (
-              <p className="text-gray-500 text-center col-span-full">
-                Nenhum programa encontrado.
-              </p>
+              <p className="text-gray-500 text-center col-span-full">Nenhum programa encontrado.</p>
             )}
           </div>
         </section>
@@ -104,16 +99,12 @@ export const Programs = () => {
               disabled={visibleCount >= filteredPrograms.length}
               onClick={() => setVisibleCount((prev) => prev + 6)}
               className={`w-fit border py-3 px-8 rounded-full font-semibold cursor-pointer ease-in-out duration-300 ${
-                visibleCount >= filteredPrograms.length
-                  ? "border-gray-300 text-gray-400 cursor-not-allowed"
-                  : "border-sky-800 text-sky-800"
+                visibleCount >= filteredPrograms.length ? "border-gray-300 text-gray-400 cursor-not-allowed" : "border-sky-800 text-sky-800"
               }`}
             >
               {visibleCount >= filteredPrograms.length
                 ? "Todos carregados"
-                : `Ver mais (${
-                    filteredPrograms.length - visibleCount
-                  } restantes)`}
+                : `Ver mais (${filteredPrograms.length - visibleCount} restantes)`}
             </button>
           </div>
         )}

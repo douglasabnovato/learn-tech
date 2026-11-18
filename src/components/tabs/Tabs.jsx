@@ -80,13 +80,7 @@ export const Tabs = ({ tabs = [], activeIndex, onChange }) => {
       {/** tab content */}
       <div className="mt-4">
         {tabs.map((tab, i) => (
-          <div
-            key={tab.id}
-            role="tabpanel"
-            id={idPainel(tab)}
-            aria-labelledby={idAba(tab)}
-            hidden={i !== indice}
-          >
+          <div key={tab.id} role="tabpanel" id={idPainel(tab)} aria-labelledby={idAba(tab)} hidden={i !== indice}>
             {tab.content}
           </div>
         ))}
@@ -101,7 +95,7 @@ Tabs.propTypes = {
       id: PropTypes.string.isRequired,
       title: PropTypes.node,
       content: PropTypes.node,
-    })
+    }),
   ),
   activeIndex: PropTypes.number,
   onChange: PropTypes.func,

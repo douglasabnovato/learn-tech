@@ -4,9 +4,9 @@ import { IoIosArrowUp } from "react-icons/io";
 
 export const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
- 
+
   useEffect(() => {
-    const toggleVisibility = () => { 
+    const toggleVisibility = () => {
       const threshold = window.innerWidth < 768 ? 500 : 300;
       if (window.pageYOffset > threshold) {
         setIsVisible(true);

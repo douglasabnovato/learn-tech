@@ -100,8 +100,8 @@ export function useContagens() {
     Object.fromEntries(
       (indice?.recursos ?? [])
         .filter((r) => typeof r.itens === "number")
-        .map((r) => [r.caminho.replace(/^\/v1\//, "").replace(/\.json$/, ""), r.itens])
-    )
+        .map((r) => [r.caminho.replace(/^\/v1\//, "").replace(/\.json$/, ""), r.itens]),
+    ),
   ).dados;
 }
 

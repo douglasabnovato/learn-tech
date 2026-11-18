@@ -14,7 +14,13 @@ const html = renderToStaticMarkup(
 );
 
 /* Texto do HTML sem as entidades que o React escapa. */
-const texto = (s) => s.replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#x27;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
+const texto = (s) =>
+  s
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&#x27;/g, "'")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">");
 
 describe("página de áreas", () => {
   it("as 6 áreas da cópia local têm dia a dia e competências", () => {

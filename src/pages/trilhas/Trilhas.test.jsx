@@ -43,7 +43,16 @@ describe("trilhas da cópia local", () => {
   });
 
   it("passo inexistente fica de fora em vez de quebrar a página", () => {
-    const t = montarTrilha({ passos: [{ tipo: "programa", id: 99999, porque: "x" }, { tipo: "artigo", id: "nao-existe", porque: "x" }] }, CATALOGO_LOCAL, blog);
+    const t = montarTrilha(
+      {
+        passos: [
+          { tipo: "programa", id: 99999, porque: "x" },
+          { tipo: "artigo", id: "nao-existe", porque: "x" },
+        ],
+      },
+      CATALOGO_LOCAL,
+      blog,
+    );
     expect(t.passos).toEqual([]);
     expect(t.total).toBe(0);
   });

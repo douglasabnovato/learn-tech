@@ -20,7 +20,11 @@ function useTrilhas() {
 
 /* Uma trilha: objetivo, para quem, tempo total e os passos em ordem. */
 export const Trilha = ({ trilha }) => (
-  <section id={trilha.id} aria-labelledby={`${trilha.id}-titulo`} className="scroll-mt-28 rounded-3xl border border-neutral-200 bg-white p-6 md:p-10 space-y-6">
+  <section
+    id={trilha.id}
+    aria-labelledby={`${trilha.id}-titulo`}
+    className="scroll-mt-28 rounded-3xl border border-neutral-200 bg-white p-6 md:p-10 space-y-6"
+  >
     <div className="space-y-3">
       <h2 id={`${trilha.id}-titulo`} className="text-2xl md:text-3xl font-bold text-neutral-800">
         {trilha.titulo}
@@ -34,7 +38,10 @@ export const Trilha = ({ trilha }) => (
     <ol className="space-y-4">
       {trilha.passos.map((passo, i) => (
         <li key={`${passo.tipo}-${passo.id}`} className="flex gap-4">
-          <span aria-hidden="true" className="w-9 h-9 shrink-0 flex items-center justify-center rounded-full bg-gradient-to-tr from-indigo-500 via-sky-700 to-purple-700 text-neutral-50 font-bold">
+          <span
+            aria-hidden="true"
+            className="w-9 h-9 shrink-0 flex items-center justify-center rounded-full bg-gradient-to-tr from-indigo-500 via-sky-700 to-purple-700 text-neutral-50 font-bold"
+          >
             {i + 1}
           </span>
           <div className="space-y-1">
@@ -85,7 +92,11 @@ export const Trilhas = () => {
           <p className="text-lg font-normal text-neutral-800">{introducao}</p>
           <nav aria-label="Trilhas" className="flex flex-wrap gap-3 pt-2">
             {itens.map((t) => (
-              <a key={t.id} href={`#${t.id}`} className="text-sm font-semibold text-neutral-800 bg-white/80 border border-neutral-200 rounded-full px-4 py-2 hover:border-sky-300 hover:text-sky-800">
+              <a
+                key={t.id}
+                href={`#${t.id}`}
+                className="text-sm font-semibold text-neutral-800 bg-white/80 border border-neutral-200 rounded-full px-4 py-2 hover:border-sky-300 hover:text-sky-800"
+              >
                 {t.titulo}
               </a>
             ))}

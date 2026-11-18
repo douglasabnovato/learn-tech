@@ -131,13 +131,7 @@ function App() {
           {/* Routes */}
           {/* O fallback ocupa a tela inteira: com 60vh, o rodapé aparecia no meio da tela enquanto a página
               carregava e era empurrado para baixo quando ela chegava (CLS 0,40 no celular, #142). */}
-          <Suspense
-            fallback={
-              <div className="flex min-h-screen items-center justify-center">
-                Carregando...
-              </div>
-            }
-          >
+          <Suspense fallback={<div className="flex min-h-screen items-center justify-center">Carregando...</div>}>
             <Routes>
               {/* Home */}
               <Route path="/" element={<Home />} />
@@ -162,10 +156,7 @@ function App() {
               <Route path="/category" element={<CategoriesAll />} />
 
               {/* Dynamic Program Routes */}
-              <Route
-                path="/program/:category/:id/enroll"
-                element={<EnrollPrograms />}
-              />
+              <Route path="/program/:category/:id/enroll" element={<EnrollPrograms />} />
 
               <Route path="/program/:category/:id" element={<Detail />} />
 

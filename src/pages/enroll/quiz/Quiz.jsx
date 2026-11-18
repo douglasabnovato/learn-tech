@@ -65,21 +65,16 @@ export const Quiz = ({ questions = [], storageKey = "quiz" }) => {
 
   // Calcular total de acertos
   const calculateCorrectAnswers = () => {
-    return Object.values(answers).filter(
-      (answer) => answer.isCorrect === true
-    ).length;
+    return Object.values(answers).filter((answer) => answer.isCorrect === true).length;
   };
 
   const correctAnswersCount = calculateCorrectAnswers();
-  const isQuizComplete =
-    Object.keys(answers).length === questions.length &&
-    currentQuestion === questions.length - 1;
+  const isQuizComplete = Object.keys(answers).length === questions.length && currentQuestion === questions.length - 1;
 
   // Handler para reiniciar o quiz
   const handleRestart = () => {
     const now = new Date();
-    const formattedDate =
-      now.toLocaleDateString("pt-BR") + " às " + now.toLocaleTimeString("pt-BR");
+    const formattedDate = now.toLocaleDateString("pt-BR") + " às " + now.toLocaleTimeString("pt-BR");
 
     // Registrar tentativa no histórico
     const attempt = {
@@ -141,9 +136,7 @@ export const Quiz = ({ questions = [], storageKey = "quiz" }) => {
 
   return (
     <div className="w-full space-y-4">
-      <h2 className="text-lg text-neutral-800 font-semibold border-b pb-1 border-neutral-200">
-        Teste o seu aprendizado
-      </h2>
+      <h2 className="text-lg text-neutral-800 font-semibold border-b pb-1 border-neutral-200">Teste o seu aprendizado</h2>
       <div className="w-full bg-neutral-100/40 border border-neutral-200 md:p-6 p-3 rounded-lg space-y-6">
         <div className="space-y-1.5 border-b pb-3 border-neutral-200">
           {/* Badge do módulo — só aparece se a questão tiver moduleId associado */}
@@ -182,20 +175,12 @@ export const Quiz = ({ questions = [], storageKey = "quiz" }) => {
                       : "border-sky-600 bg-sky-500/10 text-sky-600"
                     : "border-neutral-200 text-neutral-600"
                 }
-                ${
-                  selectedAnswerIndex !== null && selectedAnswerIndex !== index
-                    ? "opacity-50 !cursor-not-allowed"
-                    : ""
-                }
+                ${selectedAnswerIndex !== null && selectedAnswerIndex !== index ? "opacity-50 !cursor-not-allowed" : ""}
                 `}
               >
                 <div className="w-full flex items-center justify-between">
                   <span className="text-sm font-medium">{option.text}</span>
-                  {selectedAnswerIndex === index && finalized && (
-                    <span className="text-sm">
-                      {isCorrect ? <FaCheck /> : <FaXmark />}
-                    </span>
-                  )}
+                  {selectedAnswerIndex === index && finalized && <span className="text-sm">{isCorrect ? <FaCheck /> : <FaXmark />}</span>}
                 </div>
               </label>
             </div>
@@ -207,12 +192,8 @@ export const Quiz = ({ questions = [], storageKey = "quiz" }) => {
           <div className="flex items-start gap-3 rounded-lg bg-amber-50 border border-amber-200 px-4 py-3 animate-in fade-in duration-300">
             <FaLightbulb className="text-amber-500 mt-0.5 shrink-0" />
             <div className="space-y-1">
-              <p className="text-xs font-bold text-amber-800 uppercase tracking-wide">
-                Por que isso importa
-              </p>
-              <p className="text-sm text-amber-900 leading-relaxed">
-                {currentQ.explanation}
-              </p>
+              <p className="text-xs font-bold text-amber-800 uppercase tracking-wide">Por que isso importa</p>
+              <p className="text-sm text-amber-900 leading-relaxed">{currentQ.explanation}</p>
             </div>
           </div>
         )}
@@ -264,9 +245,7 @@ export const Quiz = ({ questions = [], storageKey = "quiz" }) => {
                 style={{ width: `${(correctAnswersCount / questions.length) * 100}%` }}
               />
             </div>
-            <p className="text-sm text-neutral-600">
-              {Math.round((correctAnswersCount / questions.length) * 100)}% de acurácia
-            </p>
+            <p className="text-sm text-neutral-600">{Math.round((correctAnswersCount / questions.length) * 100)}% de acurácia</p>
           </div>
 
           {/** Histórico de Tentativas */}
@@ -282,9 +261,7 @@ export const Quiz = ({ questions = [], storageKey = "quiz" }) => {
                     className="flex items-center justify-between bg-white rounded-lg p-3 border border-neutral-200 hover:border-indigo-300 transition-colors"
                   >
                     <div className="flex items-center gap-3">
-                      <span className="text-sm font-medium text-neutral-600">
-                        Tentativa {attempt.id}
-                      </span>
+                      <span className="text-sm font-medium text-neutral-600">Tentativa {attempt.id}</span>
                       <span className="text-xs text-neutral-500">{attempt.timestamp}</span>
                     </div>
                     <span className="text-sm font-bold text-indigo-600">

@@ -8,17 +8,12 @@ const LearnTechTitle = ({
   iconSize = "w-8 h-8",
   gradient = true, // alterna entre cor sólida e gradiente
 }) => {
-  const gradientClasses =
-    "text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-sky-600 to-purple-700";
+  const gradientClasses = "text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-sky-600 to-purple-700";
 
   return (
     <div className={`flex items-center gap-2 ${className}`}>
       {showIcon && <img src={LogoIcon} className={`${iconSize}`} alt="" />}
-      <span
-        className={`${size} font-bold tracking-tight ${
-          gradient ? gradientClasses : "text-indigo-600"
-        }`}
-      >
+      <span className={`${size} font-bold tracking-tight ${gradient ? gradientClasses : "text-indigo-600"}`}>
         Learn
         <span className="text-sky-600"> TECH</span>
       </span>

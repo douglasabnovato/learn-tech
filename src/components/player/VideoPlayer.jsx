@@ -134,10 +134,7 @@ export const VideoPlayer = ({ src, poster }) => {
 
   if (isYouTube) {
     return (
-      <div
-        ref={containerRef}
-        className="relative w-full mx-auto border border-neutral-600 bg-black rounded-xl overflow-hidden"
-      >
+      <div ref={containerRef} className="relative w-full mx-auto border border-neutral-600 bg-black rounded-xl overflow-hidden">
         <iframe
           className="w-full aspect-video"
           src={src.replace(/^https:\/\/(www\.)?youtube\.com\/embed\//, "https://www.youtube-nocookie.com/embed/")}
@@ -154,12 +151,7 @@ export const VideoPlayer = ({ src, poster }) => {
       ref={containerRef}
       className="relative w-full mx-auto border border-neutral-600 bg-black group rounded-xl cursor-pointer overflow-hidden"
     >
-      <video
-        ref={videoRef}
-        className="w-full aspect-video"
-        onClick={togglePlayPause}
-        poster={poster}
-      >
+      <video ref={videoRef} className="w-full aspect-video" onClick={togglePlayPause} poster={poster}>
         <source src={src} type="video/mp4" />
       </video>
 
@@ -192,11 +184,7 @@ export const VideoPlayer = ({ src, poster }) => {
               aria-label={isPlaying ? "Pausar vídeo" : "Reproduzir vídeo"}
               className="cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded"
             >
-              {isPlaying ? (
-                <FaPause className="w-6 h-6" />
-              ) : (
-                <FaPlay className="w-6 h-6" />
-              )}
+              {isPlaying ? <FaPause className="w-6 h-6" /> : <FaPlay className="w-6 h-6" />}
             </button>
 
             <div className="flex items-center space-x-2">
@@ -206,11 +194,7 @@ export const VideoPlayer = ({ src, poster }) => {
                 aria-label={isMuted ? "Ativar som" : "Desativar som"}
                 className="cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded"
               >
-                {isMuted ? (
-                  <FaVolumeMute className="w-5 h-5" />
-                ) : (
-                  <FaVolumeUp className="w-5 h-5" />
-                )}
+                {isMuted ? <FaVolumeMute className="w-5 h-5" /> : <FaVolumeUp className="w-5 h-5" />}
               </button>
 
               <input
@@ -237,11 +221,7 @@ export const VideoPlayer = ({ src, poster }) => {
               aria-label={isFullScreen ? "Sair da tela cheia" : "Tela cheia"}
               className="cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded"
             >
-              {isFullScreen ? (
-                <FaCompress className="w-5 h-5" />
-              ) : (
-                <FaExpand className="w-5 h-5" />
-              )}
+              {isFullScreen ? <FaCompress className="w-5 h-5" /> : <FaExpand className="w-5 h-5" />}
             </button>
           </div>
         </div>

@@ -4,8 +4,7 @@ const questions = [
   {
     id: 1,
     moduleId: 0,
-    question:
-      "Qual extensão do VS Code é utilizada para visualizar alterações no código em tempo real?",
+    question: "Qual extensão do VS Code é utilizada para visualizar alterações no código em tempo real?",
     explanation:
       "O Live Server monitora seus arquivos e recarrega o navegador automaticamente a cada vez que você salva, eliminando a necessidade de atualizar a página manualmente. O Prettier formata código, o ESLint verifica padrões de qualidade, e o Docker serve para containers — nenhum dos três mostra o resultado em tempo real no navegador.",
     options: [
@@ -19,8 +18,7 @@ const questions = [
   {
     id: 2,
     moduleId: 0,
-    question:
-      "No VS Code, qual atalho de teclado é comumente usado para abrir o terminal integrado?",
+    question: "No VS Code, qual atalho de teclado é comumente usado para abrir o terminal integrado?",
     explanation:
       "Ctrl + ` (a crase, geralmente ao lado do número 1 no teclado) é o atalho padrão do VS Code para abrir e fechar o terminal integrado. Ctrl+Shift+P abre a paleta de comandos, Alt+F4 fecha janelas no nível do sistema operacional, e Ctrl+Space aciona sugestões de autocompletar — nenhum deles abre o terminal.",
     options: [
@@ -34,8 +32,7 @@ const questions = [
   {
     id: 3,
     moduleId: 0,
-    question:
-      "Para que serve o arquivo .gitignore em um projeto versionado com Git?",
+    question: "Para que serve o arquivo .gitignore em um projeto versionado com Git?",
     explanation:
       "O .gitignore lista padrões de arquivos e pastas que o Git deve ignorar — como node_modules, arquivos de configuração local ou dados sensíveis — impedindo que sejam versionados e enviados ao repositório por engano. Ele não apaga arquivo nenhum, não guarda senha, e não tem relação com a aparência do editor.",
     options: [
@@ -60,8 +57,7 @@ const questions = [
   {
     id: 4,
     moduleId: 1,
-    question:
-      "Qual tag HTML5 é a mais adequada para definir o conteúdo principal de uma página?",
+    question: "Qual tag HTML5 é a mais adequada para definir o conteúdo principal de uma página?",
     explanation:
       "A tag <main> existe especificamente para marcar o conteúdo central e único da página — aquilo que não se repete em outras páginas do site, ao contrário de cabeçalho, rodapé e menu. <section> agrupa conteúdo temático, <article> marca conteúdo autocontido (como um post de blog), e <div> não carrega significado semântico nenhum.",
     options: [
@@ -101,8 +97,7 @@ const questions = [
   {
     id: 6,
     moduleId: 1,
-    question:
-      "Qual a importância da semântica HTML para o SEO (Search Engine Optimization)?",
+    question: "Qual a importância da semântica HTML para o SEO (Search Engine Optimization)?",
     explanation:
       "Tags semânticas (<header>, <nav>, <article>, <h1> a <h6>) dizem aos buscadores qual parte do conteúdo é título, qual é navegação e qual é o corpo principal — isso ajuda o Google a entender a hierarquia e a relevância de cada trecho para indexar a página corretamente. Não tem relação com tempo de carregamento de imagem nem com resolução de foto — isso é otimização de performance, um tema diferente.",
     options: [
@@ -130,8 +125,7 @@ const questions = [
   {
     id: 7,
     moduleId: 2,
-    question:
-      "Qual propriedade CSS é usada para criar um layout flexível unidimensional?",
+    question: "Qual propriedade CSS é usada para criar um layout flexível unidimensional?",
     explanation:
       "display: flex organiza os elementos ao longo de um único eixo — linha ou coluna — e facilita alinhamento e distribuição de espaço entre eles. display: grid cuida de layouts bidimensionais (linhas e colunas ao mesmo tempo), display: block é o comportamento padrão sem nenhuma flexibilidade, e position: relative só afeta posicionamento, não organização de múltiplos elementos.",
     options: [
@@ -145,8 +139,7 @@ const questions = [
   {
     id: 8,
     moduleId: 2,
-    question:
-      "No conceito Mobile-First, como devemos aplicar as Media Queries?",
+    question: "No conceito Mobile-First, como devemos aplicar as Media Queries?",
     explanation:
       "No mobile-first, o CSS base (sem media query nenhuma) já é pensado para a tela pequena — e usamos @media (min-width: ...) para adicionar ou ajustar estilos conforme a tela cresce. É o oposto do desktop-first (que parte do grande e reduz), e costuma gerar CSS mais enxuto, porque a maioria dos usuários acessa primeiro pelo celular.",
     options: [
@@ -172,8 +165,7 @@ const questions = [
   {
     id: 9,
     moduleId: 2,
-    question:
-      "No CSS Grid, qual unidade de medida é ideal para criar colunas que ocupam o espaço disponível proporcionalmente?",
+    question: "No CSS Grid, qual unidade de medida é ideal para criar colunas que ocupam o espaço disponível proporcionalmente?",
     explanation:
       "A unidade fr (fractional unit) divide o espaço restante do grid proporcionalmente entre as colunas ou linhas — por exemplo, 1fr 2fr faz a segunda coluna ocupar o dobro do espaço da primeira, sempre se adaptando ao tamanho da tela. px é uma medida fixa que não se adapta, e em/vh medem em relação a fonte ou altura da tela, não ao espaço disponível no grid.",
     options: [
@@ -189,8 +181,7 @@ const questions = [
   {
     id: 10,
     moduleId: 3,
-    question:
-      "Qual método é usado no JavaScript para selecionar um elemento pelo seu ID?",
+    question: "Qual método é usado no JavaScript para selecionar um elemento pelo seu ID?",
     explanation:
       "document.getElementById() busca diretamente o elemento cujo atributo id corresponde ao valor informado — é o método mais direto e eficiente para esse caso específico. As outras opções não existem como métodos nativos do JavaScript para essa finalidade.",
     options: [
@@ -224,8 +215,7 @@ const questions = [
   {
     id: 12,
     moduleId: 3,
-    question:
-      "Para que serve a API 'Intersection Observer' no desenvolvimento de Landing Pages?",
+    question: "Para que serve a API 'Intersection Observer' no desenvolvimento de Landing Pages?",
     explanation:
       "Intersection Observer detecta, de forma assíncrona e eficiente, quando um elemento entra ou sai da área visível da tela (viewport) — é assim que se disparam animações de scroll ou carregamento tardio de imagem, sem precisar escutar o evento de scroll diretamente, o que sobrecarregaria a performance da página.",
     options: [
@@ -253,8 +243,7 @@ const questions = [
   {
     id: 13,
     moduleId: 4,
-    question:
-      "Qual plataforma é amplamente utilizada para hospedar e versionar repositórios de código?",
+    question: "Qual plataforma é amplamente utilizada para hospedar e versionar repositórios de código?",
     explanation:
       "O GitHub é a plataforma padrão do mercado para hospedar repositórios Git, permitindo versionamento, colaboração e histórico de mudanças do código. As outras opções são ferramentas de edição de imagem, planilha e streaming de música — sem relação com versionamento de código.",
     options: [
@@ -288,8 +277,7 @@ const questions = [
   {
     id: 15,
     moduleId: 4,
-    question:
-      "O que é CI/CD no contexto de deploy em plataformas como Vercel ou Netlify?",
+    question: "O que é CI/CD no contexto de deploy em plataformas como Vercel ou Netlify?",
     explanation:
       "CI/CD significa Integração Contínua e Entrega Contínua — a automação que testa e publica seu código automaticamente a cada push no repositório, sem que você precise fazer deploy manual. É exatamente o que acontece quando você conecta um repositório GitHub à Vercel: cada push já vira uma nova versão no ar.",
     options: [
@@ -308,8 +296,7 @@ const questions = [
   {
     id: 16,
     moduleId: 5,
-    question:
-      "Em QA, qual o objetivo principal de realizar testes em uma Landing Page?",
+    question: "Em QA, qual o objetivo principal de realizar testes em uma Landing Page?",
     explanation:
       "O objetivo do QA (Quality Assurance) é garantir que a página funcione corretamente, sem bugs, do ponto de vista de quem usa — antes que um erro chegue ao usuário real. Não é uma etapa de design, não é sobre redes sociais, e não é sobre velocidade de escrever código — é sobre confiabilidade do resultado final.",
     options: [
@@ -355,8 +342,7 @@ const questions = [
   {
     id: 18,
     moduleId: 5,
-    question:
-      "Durante o debug, qual ferramenta do navegador permite simular uma conexão 3G lenta?",
+    question: "Durante o debug, qual ferramenta do navegador permite simular uma conexão 3G lenta?",
     explanation:
       "A aba Network (Rede) do DevTools do Chrome tem uma opção de throttling que simula conexões lentas, como 3G, para você testar como o site se comporta para um usuário com internet ruim — uma das técnicas centrais de teste de performance. As outras opções (Elements, Configurações do Windows, Favoritos) não têm relação com simulação de rede.",
     options: [

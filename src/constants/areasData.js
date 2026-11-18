@@ -3,32 +3,32 @@
 
 const areasData = [
   {
-    "id": "front",
-    "title": "Técnicas do Front",
-    "subtitle": "O que as pessoas veem",
-    "icon": "FaReact",
-    "paragraphs": [
+    id: "front",
+    title: "Técnicas do Front",
+    subtitle: "O que as pessoas veem",
+    icon: "FaReact",
+    paragraphs: [
       "É a camada com a qual o usuário conversa. Tudo o que aparece na tela — e cada decisão sobre como aquilo aparece — vive aqui. O front é responsável por traduzir a lógica invisível do sistema em algo que uma pessoa consegue usar sem precisar entender o que acontece por baixo.",
       "Dominar esta área é entender que a interface não é enfeite: é a ponte entre a máquina e o ser humano. Um botão no lugar errado, um formulário confuso ou uma tela que demora a responder não são problemas estéticos — são barreiras que fazem alguém desistir. Quando o front funciona, ninguém percebe o esforço. Quando falha, todo mundo sente.",
-      "O front reúne três frentes que se completam: a base da web e como ela funciona, a construção de interfaces que respondem e escalam, e o design que decide como a experiência acontece antes de uma linha de código ser escrita."
+      "O front reúne três frentes que se completam: a base da web e como ela funciona, a construção de interfaces que respondem e escalam, e o design que decide como a experiência acontece antes de uma linha de código ser escrita.",
     ],
-    "diaADia": [
+    diaADia: [
       "Transformar telas desenhadas (por exemplo, no Figma) em HTML, CSS e JavaScript que funcionam em navegadores e tamanhos de tela diferentes.",
       "Consumir APIs do back-end e mostrar dados, estados de carregamento e mensagens de erro de forma clara.",
       "Garantir acessibilidade: navegação por teclado, contraste adequado, textos alternativos e marcação semântica para leitores de tela.",
       "Medir e melhorar o tempo de carregamento e a rapidez com que a interface responde.",
-      "Escrever testes, revisar o código de colegas e corrigir defeitos relatados por usuários."
+      "Escrever testes, revisar o código de colegas e corrigir defeitos relatados por usuários.",
     ],
-    "competencias": [
+    competencias: [
       "HTML semântico e CSS (Flexbox, Grid e design responsivo)",
       "JavaScript e, com frequência, TypeScript",
       "Um framework de componentes, como React ou Vue",
       "Acessibilidade web (diretrizes WCAG)",
       "Noções de UX/UI e leitura de protótipos",
       "Versionamento com Git",
-      "Desempenho web (Core Web Vitals)"
+      "Desempenho web (Core Web Vitals)",
     ],
-    "ferramentas": [
+    ferramentas: [
       "Navegador e suas ferramentas de desenvolvedor (DevTools)",
       "VS Code",
       "Git e GitHub",
@@ -36,495 +36,472 @@ const areasData = [
       "Vite ou Next.js",
       "Figma",
       "Vitest, Jest ou Testing Library",
-      "Lighthouse"
+      "Lighthouse",
     ],
-    "comoComecar": [
+    comoComecar: [
       "Aprenda HTML e CSS construindo páginas simples e publicando-as na internet.",
       "Passe para JavaScript manipulando a página (DOM) e consumindo uma API pública.",
       "Só depois escolha um framework, como React ou Vue, e reconstrua nele um projeto que você já fez.",
-      "Pense em acessibilidade desde o primeiro projeto, e não como etapa final."
+      "Pense em acessibilidade desde o primeiro projeto, e não como etapa final.",
     ],
-    "cards": [
+    cards: [
       {
-        "categoria": "frontend",
-        "icon": "FaReact",
-        "title": "Frontend",
-        "description": "Construa interfaces rápidas, responsivas e acessíveis, organizadas em componentes.",
-        "color": "purple"
+        categoria: "frontend",
+        icon: "FaReact",
+        title: "Frontend",
+        description: "Construa interfaces rápidas, responsivas e acessíveis, organizadas em componentes.",
+        color: "purple",
       },
       {
-        "categoria": "web",
-        "icon": "FaHtml5",
-        "title": "Web",
-        "description": "Entenda como a web funciona e domine HTML, CSS e JavaScript, a base de qualquer site.",
-        "color": "sky"
+        categoria: "web",
+        icon: "FaHtml5",
+        title: "Web",
+        description: "Entenda como a web funciona e domine HTML, CSS e JavaScript, a base de qualquer site.",
+        color: "sky",
       },
       {
-        "categoria": "ux-ui",
-        "icon": "FaFigma",
-        "title": "UX/UI",
-        "description": "Desenhe experiências claras e fáceis de usar antes de escrever a primeira linha de código.",
-        "color": "pink"
-      }
+        categoria: "ux-ui",
+        icon: "FaFigma",
+        title: "UX/UI",
+        description: "Desenhe experiências claras e fáceis de usar antes de escrever a primeira linha de código.",
+        color: "pink",
+      },
     ],
-    "categorias": [
-      "web",
-      "frontend",
-      "ux-ui",
-      "fundamentos"
+    categorias: ["web", "frontend", "ux-ui", "fundamentos"],
+    closing: null,
+    sources: [
+      {
+        label: "MDN Web Docs — Aprendendo desenvolvimento web",
+        url: "https://developer.mozilla.org/pt-BR/docs/Learn_web_development",
+      },
+      {
+        label: "roadmap.sh — Frontend Developer Roadmap",
+        url: "https://roadmap.sh/frontend",
+      },
+      {
+        label: "W3C WAI — Visão geral dos fundamentos de acessibilidade",
+        url: "https://w3.org/WAI/fundamentals/pt-BR",
+      },
+      {
+        label: "roadmap.sh — UX Design Roadmap",
+        url: "https://roadmap.sh/ux-design",
+      },
     ],
-    "closing": null,
-    "sources": [
-      {
-        "label": "MDN Web Docs — Aprendendo desenvolvimento web",
-        "url": "https://developer.mozilla.org/pt-BR/docs/Learn_web_development"
-      },
-      {
-        "label": "roadmap.sh — Frontend Developer Roadmap",
-        "url": "https://roadmap.sh/frontend"
-      },
-      {
-        "label": "W3C WAI — Visão geral dos fundamentos de acessibilidade",
-        "url": "https://w3.org/WAI/fundamentals/pt-BR"
-      },
-      {
-        "label": "roadmap.sh — UX Design Roadmap",
-        "url": "https://roadmap.sh/ux-design"
-      }
-    ],
-    "updatedAt": "2026-10-28"
+    updatedAt: "2026-10-28",
   },
   {
-    "id": "back",
-    "title": "Técnicas do Back",
-    "subtitle": "O que sustenta por trás",
-    "icon": "FaNode",
-    "paragraphs": [
+    id: "back",
+    title: "Técnicas do Back",
+    subtitle: "O que sustenta por trás",
+    icon: "FaNode",
+    paragraphs: [
       "É o motor que ninguém vê. Onde os dados são guardados, as regras de negócio são aplicadas e as decisões são tomadas antes de qualquer coisa chegar à tela. O back é a diferença entre uma página bonita e um sistema que continua respondendo quando muita gente o usa ao mesmo tempo.",
       "Aqui moram as perguntas que definem se um produto sobrevive ao crescimento: os dados estão seguros? A informação está íntegra? O sistema responde rápido quando o número de usuários dobra? São questões que não aparecem para quem usa — até o dia em que algo quebra e todas elas aparecem de uma vez.",
-      "Esta área junta duas competências inseparáveis: a construção da lógica que sustenta a aplicação e a organização dos dados que essa lógica manipula. Uma não existe sem a outra."
+      "Esta área junta duas competências inseparáveis: a construção da lógica que sustenta a aplicação e a organização dos dados que essa lógica manipula. Uma não existe sem a outra.",
     ],
-    "diaADia": [
+    diaADia: [
       "Criar e manter APIs (por exemplo, REST) consumidas pelo front-end e por outros sistemas.",
       "Implementar regras de negócio, autenticação (quem é o usuário) e autorização (o que ele pode fazer).",
       "Modelar tabelas ou coleções, escrever consultas e cuidar das migrações do banco de dados.",
       "Integrar serviços externos, como meios de pagamento, envio de e-mail e armazenamento de arquivos.",
-      "Acompanhar erros e desempenho em produção e proteger dados pessoais, em linha com a LGPD."
+      "Acompanhar erros e desempenho em produção e proteger dados pessoais, em linha com a LGPD.",
     ],
-    "competencias": [
+    competencias: [
       "Uma linguagem de servidor, como JavaScript/TypeScript (Node.js), Python, Java, C# ou PHP",
       "Protocolo HTTP, APIs REST e o formato JSON",
       "Bancos de dados relacionais e SQL; noções de bancos NoSQL",
       "Modelagem e integridade de dados",
       "Segurança de aplicações (OWASP Top 10)",
       "Testes automatizados",
-      "Git e noções de deploy e containers"
+      "Git e noções de deploy e containers",
     ],
-    "ferramentas": [
+    ferramentas: [
       "Node.js com Express ou Fastify",
       "Python com Django ou FastAPI",
       "PostgreSQL, MySQL ou MongoDB",
       "Postman, Insomnia ou curl",
       "Docker",
       "Git e GitHub",
-      "Serviços de nuvem e hospedagem"
+      "Serviços de nuvem e hospedagem",
     ],
-    "comoComecar": [
+    comoComecar: [
       "Escolha uma linguagem de servidor e fique nela até construir uma API pequena e completa.",
       "Aprenda SQL com um banco relacional, como o PostgreSQL, modelando um problema real, como uma biblioteca ou uma loja.",
       "Acrescente cadastro e login com autenticação básica e trate os erros com cuidado.",
-      "Publique a API e escreva um README explicando como usá-la."
+      "Publique a API e escreva um README explicando como usá-la.",
     ],
-    "cards": [
+    cards: [
       {
-        "categoria": "backend",
-        "icon": "FaNode",
-        "title": "Backend",
-        "description": "Estruture APIs e regras de negócio que sustentam a aplicação e acompanham o crescimento dela.",
-        "color": "indigo"
+        categoria: "backend",
+        icon: "FaNode",
+        title: "Backend",
+        description: "Estruture APIs e regras de negócio que sustentam a aplicação e acompanham o crescimento dela.",
+        color: "indigo",
       },
       {
-        "categoria": "database",
-        "icon": "FaDatabase",
-        "title": "DataBase",
-        "description": "Modele, consulte e proteja dados com segurança e eficiência.",
-        "color": "green"
-      }
+        categoria: "database",
+        icon: "FaDatabase",
+        title: "DataBase",
+        description: "Modele, consulte e proteja dados com segurança e eficiência.",
+        color: "green",
+      },
     ],
-    "categorias": [
-      "backend",
-      "data-base",
-      "fundamentos"
-    ],
-    "closing": null,
-    "sources": [
+    categorias: ["backend", "data-base", "fundamentos"],
+    closing: null,
+    sources: [
       {
-        "label": "roadmap.sh — Backend Developer Roadmap",
-        "url": "https://roadmap.sh/backend"
+        label: "roadmap.sh — Backend Developer Roadmap",
+        url: "https://roadmap.sh/backend",
       },
       {
-        "label": "MDN Web Docs — Primeiros passos programando o site no servidor",
-        "url": "https://developer.mozilla.org/pt-BR/docs/Learn_web_development/Extensions/Server-side/First_steps"
+        label: "MDN Web Docs — Primeiros passos programando o site no servidor",
+        url: "https://developer.mozilla.org/pt-BR/docs/Learn_web_development/Extensions/Server-side/First_steps",
       },
       {
-        "label": "Documentação oficial do PostgreSQL — Getting Started",
-        "url": "https://www.postgresql.org/docs/current/tutorial-start.html"
+        label: "Documentação oficial do PostgreSQL — Getting Started",
+        url: "https://www.postgresql.org/docs/current/tutorial-start.html",
       },
       {
-        "label": "OWASP Foundation — OWASP Top 10",
-        "url": "https://owasp.org/projects/top-ten"
-      }
+        label: "OWASP Foundation — OWASP Top 10",
+        url: "https://owasp.org/projects/top-ten",
+      },
     ],
-    "updatedAt": "2026-10-28"
+    updatedAt: "2026-10-28",
   },
   {
-    "id": "fullstack",
-    "title": "Fullstack",
-    "subtitle": "A visão do sistema inteiro",
-    "icon": "FaLaptopCode",
-    "paragraphs": [
+    id: "fullstack",
+    title: "Fullstack",
+    subtitle: "A visão do sistema inteiro",
+    icon: "FaLaptopCode",
+    paragraphs: [
       "Fullstack não é saber tudo. É a união madura das competências de front e back na mesma pessoa — e, mais do que isso, a capacidade de enxergar o caminho completo de uma ação: do clique do usuário até o banco de dados, e de volta até a tela.",
       "Raramente é o ponto de partida. Existem vagas de fullstack júnior, mas nelas costuma-se esperar profundidade em um dos lados e noções do outro. A visão completa é mais comum em quem já tem experiência e passou a usar a técnica de forma estratégica: além de escrever código, ajuda a decidir arquitetura, pondera trade-offs, escolhe onde a complexidade deve morar e antecipa como cada decisão afeta o sistema como um todo — inclusive as partes em que não está mexendo naquele momento.",
-      "É por isso que o fullstack experiente é tão valorizado. O valor dele não está em conseguir escrever qualquer parte do código, mas em não perder de vista o todo enquanto trabalha em uma parte dele. Ele conecta o que o negócio precisa com o que a tecnologia permite — e sabe quando dizer não a uma solução tecnicamente possível, mas estrategicamente errada."
+      "É por isso que o fullstack experiente é tão valorizado. O valor dele não está em conseguir escrever qualquer parte do código, mas em não perder de vista o todo enquanto trabalha em uma parte dele. Ele conecta o que o negócio precisa com o que a tecnologia permite — e sabe quando dizer não a uma solução tecnicamente possível, mas estrategicamente errada.",
     ],
-    "diaADia": [
+    diaADia: [
       "Entregar uma funcionalidade de ponta a ponta: tela, API, banco de dados e publicação.",
       "Decidir onde cada regra deve ficar (no navegador, no servidor ou no banco) e explicar o porquê.",
       "Investigar defeitos que atravessam camadas, como um dado que é salvo de um jeito e exibido de outro.",
       "Configurar ambientes, variáveis de configuração e o processo automatizado de entrega.",
-      "Conversar com produto, design e outras pessoas desenvolvedoras para alinhar o desenho da solução."
+      "Conversar com produto, design e outras pessoas desenvolvedoras para alinhar o desenho da solução.",
     ],
-    "competencias": [
+    competencias: [
       "Base sólida de front-end e de back-end",
       "Desenho de APIs e contratos entre as camadas",
       "Bancos de dados relacionais e não relacionais",
       "Arquitetura de software e análise de trade-offs",
       "Deploy, containers e noções de nuvem",
-      "Segurança e desempenho de ponta a ponta"
+      "Segurança e desempenho de ponta a ponta",
     ],
-    "ferramentas": [
+    ferramentas: [
       "Frameworks fullstack, como Next.js ou Django",
       "React ou Vue no front-end",
       "Node.js ou Python no back-end",
       "PostgreSQL ou MongoDB",
       "Docker",
-      "Git, GitHub e GitHub Actions (ou outra ferramenta de CI/CD)"
+      "Git, GitHub e GitHub Actions (ou outra ferramenta de CI/CD)",
     ],
-    "comoComecar": [
+    comoComecar: [
       "Comece pelo front-end ou pelo back-end e ganhe profundidade em um dos lados primeiro.",
       "Depois, construa projetos pequenos que atravessem as duas camadas, como uma lista de tarefas com login e banco de dados.",
       "Aumente a complexidade aos poucos: testes, deploy automatizado, cache e monitoramento.",
-      "Registre as decisões de arquitetura que tomou e o motivo de cada uma."
+      "Registre as decisões de arquitetura que tomou e o motivo de cada uma.",
     ],
-    "cards": [
+    cards: [
       {
-        "categoria": "fundamentos",
-        "icon": "FaCode",
-        "title": "Fundamentos",
-        "description": "Lógica, algoritmos e estruturas de dados: a base comum ao front e ao back.",
-        "color": "blue"
-      }
+        categoria: "fundamentos",
+        icon: "FaCode",
+        title: "Fundamentos",
+        description: "Lógica, algoritmos e estruturas de dados: a base comum ao front e ao back.",
+        color: "blue",
+      },
     ],
-    "categorias": [
-      "web",
-      "frontend",
-      "backend",
-      "data-base",
-      "fundamentos"
-    ],
-    "closing": null,
-    "sources": [
+    categorias: ["web", "frontend", "backend", "data-base", "fundamentos"],
+    closing: null,
+    sources: [
       {
-        "label": "roadmap.sh — Full Stack Developer Roadmap",
-        "url": "https://roadmap.sh/full-stack"
+        label: "roadmap.sh — Full Stack Developer Roadmap",
+        url: "https://roadmap.sh/full-stack",
       },
       {
-        "label": "MDN Web Docs — Aprendendo desenvolvimento web",
-        "url": "https://developer.mozilla.org/pt-BR/docs/Learn_web_development"
+        label: "MDN Web Docs — Aprendendo desenvolvimento web",
+        url: "https://developer.mozilla.org/pt-BR/docs/Learn_web_development",
       },
       {
-        "label": "Pro Git (Scott Chacon e Ben Straub), edição em português",
-        "url": "https://git-scm.com/book/pt-br/v2"
-      }
+        label: "Pro Git (Scott Chacon e Ben Straub), edição em português",
+        url: "https://git-scm.com/book/pt-br/v2",
+      },
     ],
-    "updatedAt": "2026-10-28"
+    updatedAt: "2026-10-28",
   },
   {
-    "id": "comportamentais",
-    "title": "Comportamentais e Método",
-    "subtitle": "O que o código não resolve",
-    "icon": "FaUserCheck",
-    "paragraphs": [
+    id: "comportamentais",
+    title: "Comportamentais e Método",
+    subtitle: "O que o código não resolve",
+    icon: "FaUserCheck",
+    paragraphs: [
       "Nenhum sistema relevante é construído por uma pessoa sozinha. E é aqui, e não no código, que muitos dos problemas de verdade acontecem — nas conversas que não aconteceram, nos alinhamentos que ficaram para depois, nas decisões que ninguém registrou.",
-      "Uma pessoa desenvolvedora tecnicamente brilhante que não consegue explicar o que fez, entender o que pediram ou trabalhar junto de outras pessoas tende a entregar menos do que poderia — muitas vezes, menos do que alguém com técnica mediana que domina essas habilidades. É isso que separa quem escreve código de quem constrói produto em equipe. Some a isso o método: a capacidade de organizar o trabalho para que uma boa ideia não morra na desorganização."
+      "Uma pessoa desenvolvedora tecnicamente brilhante que não consegue explicar o que fez, entender o que pediram ou trabalhar junto de outras pessoas tende a entregar menos do que poderia — muitas vezes, menos do que alguém com técnica mediana que domina essas habilidades. É isso que separa quem escreve código de quem constrói produto em equipe. Some a isso o método: a capacidade de organizar o trabalho para que uma boa ideia não morra na desorganização.",
     ],
-    "diaADia": [
+    diaADia: [
       "Participar de reuniões curtas de alinhamento, como a daily, dizendo com clareza o que fez, o que vai fazer e o que está travando.",
       "Fazer perguntas antes de começar uma tarefa para entender o problema, e não só a solução pedida.",
       "Revisar o código de colegas e receber revisões com foco no código, e não na pessoa.",
       "Quebrar trabalhos grandes em entregas pequenas, estimar e manter o quadro de tarefas atualizado.",
-      "Registrar decisões e combinados para que a equipe não dependa da memória de ninguém."
+      "Registrar decisões e combinados para que a equipe não dependa da memória de ninguém.",
     ],
-    "competencias": [
+    competencias: [
       "Comunicação escrita e oral, inclusive com pessoas não técnicas",
       "Escuta ativa, dar e receber feedback",
       "Colaboração e revisão de código",
       "Organização pessoal e priorização",
       "Métodos ágeis, como Scrum e Kanban",
-      "Gestão de projetos e de expectativas"
+      "Gestão de projetos e de expectativas",
     ],
-    "ferramentas": [
+    ferramentas: [
       "Jira, Trello ou GitHub Projects",
       "Git e pull requests",
       "Slack, Discord ou Microsoft Teams",
       "Notion, Confluence ou documentação no próprio repositório",
-      "Quadros Kanban"
+      "Quadros Kanban",
     ],
-    "comoComecar": [
+    comoComecar: [
       "Leia o Guia do Scrum, que é curto, e use um quadro Kanban simples para organizar os seus próprios estudos.",
       "Em projetos pessoais, escreva issues e descrições de pull request como se outra pessoa fosse lê-las.",
       "Participe de um projeto em grupo ou de código aberto para praticar a revisão de código.",
-      "Peça feedback sobre como você se comunica, e não só sobre o seu código."
+      "Peça feedback sobre como você se comunica, e não só sobre o seu código.",
     ],
-    "cards": [
+    cards: [
       {
-        "categoria": "comunicacao",
-        "icon": "BsChatDots",
-        "title": "Comunicação",
-        "description": "Explique decisões, alinhe expectativas e conduza conversas que destravam projetos.",
-        "color": "violet"
+        categoria: "comunicacao",
+        icon: "BsChatDots",
+        title: "Comunicação",
+        description: "Explique decisões, alinhe expectativas e conduza conversas que destravam projetos.",
+        color: "violet",
       },
       {
-        "categoria": null,
-        "icon": "FaHandshake",
-        "title": "Trabalho em equipe",
-        "description": "Código é feito a várias mãos. Colaborar, revisar e ser revisado vale tanto quanto programar.",
-        "color": "fuchsia"
+        categoria: null,
+        icon: "FaHandshake",
+        title: "Trabalho em equipe",
+        description: "Código é feito a várias mãos. Colaborar, revisar e ser revisado vale tanto quanto programar.",
+        color: "fuchsia",
       },
       {
-        "categoria": "gestao",
-        "icon": "LuKanban",
-        "title": "Gestão",
-        "description": "Organize tarefas, prazos e prioridades para entregar com previsibilidade.",
-        "color": "blue"
+        categoria: "gestao",
+        icon: "LuKanban",
+        title: "Gestão",
+        description: "Organize tarefas, prazos e prioridades para entregar com previsibilidade.",
+        color: "blue",
       },
       {
-        "categoria": "projetos",
-        "icon": "FaListCheck",
-        "title": "Projetos",
-        "description": "Planeje, organize e execute projetos de tecnologia com escopo, prazos e riscos visíveis para todos.",
-        "color": "indigo"
-      }
+        categoria: "projetos",
+        icon: "FaListCheck",
+        title: "Projetos",
+        description: "Planeje, organize e execute projetos de tecnologia com escopo, prazos e riscos visíveis para todos.",
+        color: "indigo",
+      },
     ],
-    "categorias": [
-      "projetos",
-      "carreira-soft-skills"
-    ],
-    "closing": "Habilidade técnica te faz escrever código. Habilidade comportamental e método te fazem construir junto e entregar com previsibilidade.",
-    "sources": [
+    categorias: ["projetos", "carreira-soft-skills"],
+    closing:
+      "Habilidade técnica te faz escrever código. Habilidade comportamental e método te fazem construir junto e entregar com previsibilidade.",
+    sources: [
       {
-        "label": "Ken Schwaber e Jeff Sutherland — O Guia do Scrum (2020), em português",
-        "url": "https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-PortugueseBR-3.0.pdf"
+        label: "Ken Schwaber e Jeff Sutherland — O Guia do Scrum (2020), em português",
+        url: "https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-PortugueseBR-3.0.pdf",
       },
       {
-        "label": "Atlassian — Manifesto Ágil para desenvolvimento de software",
-        "url": "https://www.atlassian.com/br/agile/manifesto"
+        label: "Atlassian — Manifesto Ágil para desenvolvimento de software",
+        url: "https://www.atlassian.com/br/agile/manifesto",
       },
       {
-        "label": "Google Engineering Practices — The CL author's guide to getting through code review",
-        "url": "https://google.github.io/eng-practices/review/developer"
-      }
+        label: "Google Engineering Practices — The CL author's guide to getting through code review",
+        url: "https://google.github.io/eng-practices/review/developer",
+      },
     ],
-    "updatedAt": "2026-10-28"
+    updatedAt: "2026-10-28",
   },
   {
-    "id": "diferenciais",
-    "title": "Diferenciais",
-    "subtitle": "O que separa o bom do excepcional",
-    "icon": "FaLightbulb",
-    "paragraphs": [
+    id: "diferenciais",
+    title: "Diferenciais",
+    subtitle: "O que separa o bom do excepcional",
+    icon: "FaLightbulb",
+    paragraphs: [
       "São as camadas que quase nunca aparecem na descrição de uma vaga, mas sempre aparecem no resultado do trabalho. Não são pré-requisito para começar — são o que faz a diferença quando dois profissionais têm a mesma base técnica.",
       "Ler inglês abre a porta para a documentação, os cursos e as comunidades onde o conhecimento costuma aparecer primeiro. Entender de produto transforma quem executa tarefas em quem resolve problemas de negócio. E performance é o que separa “funciona na minha máquina” de “funciona para muita gente, rápido e com custo sob controle”. Junto disso, dominar as ferramentas e plataformas certas amplia o que uma pessoa consegue construir sozinha.",
-      "A inteligência artificial também entrou nessa lista. Na Developer Survey 2025 do Stack Overflow, cerca de 80% das pessoas desenvolvedoras disseram usar ferramentas de IA no trabalho, mas só 29% disseram confiar na precisão do que elas produzem. O diferencial não é usar IA, e sim saber revisar, testar e entender o que ela gera."
+      "A inteligência artificial também entrou nessa lista. Na Developer Survey 2025 do Stack Overflow, cerca de 80% das pessoas desenvolvedoras disseram usar ferramentas de IA no trabalho, mas só 29% disseram confiar na precisão do que elas produzem. O diferencial não é usar IA, e sim saber revisar, testar e entender o que ela gera.",
     ],
-    "diaADia": [
+    diaADia: [
       "Ler documentação oficial, issues e discussões técnicas em inglês.",
       "Questionar o problema de negócio por trás de uma tarefa e propor soluções mais simples quando fizer sentido.",
       "Medir o desempenho (tempo de carregamento, consultas lentas, custo de infraestrutura) antes de otimizar.",
       "Usar assistentes de IA para acelerar tarefas e revisar com atenção o código que eles sugerem.",
-      "Avaliar ferramentas e plataformas novas sem trocar de tecnologia a cada novidade."
+      "Avaliar ferramentas e plataformas novas sem trocar de tecnologia a cada novidade.",
     ],
-    "competencias": [
+    competencias: [
       "Leitura técnica em inglês e, aos poucos, conversação",
       "Visão de produto: problema, usuário, métrica e valor entregue",
       "Medição e otimização de desempenho",
       "Uso crítico de ferramentas de IA",
-      "Escolha de ferramentas e plataformas adequadas ao problema"
+      "Escolha de ferramentas e plataformas adequadas ao problema",
     ],
-    "ferramentas": [
+    ferramentas: [
       "Documentação oficial das tecnologias que você usa, em inglês",
       "Lighthouse e o painel de desempenho do DevTools",
       "PageSpeed Insights",
       "Assistentes de código com IA, como o GitHub Copilot",
-      "Ferramentas de métricas de produto (analytics)"
+      "Ferramentas de métricas de produto (analytics)",
     ],
-    "comoComecar": [
+    comoComecar: [
       "Troque um tutorial em português por um em inglês a cada semana e anote o vocabulário técnico novo.",
       "Em cada projeto, escreva em uma frase qual problema ele resolve e para quem.",
       "Rode o Lighthouse nos seus projetos e corrija um problema de desempenho por vez.",
-      "Ao usar IA, peça explicações e confira o resultado com a documentação e com testes."
+      "Ao usar IA, peça explicações e confira o resultado com a documentação e com testes.",
     ],
-    "cards": [
+    cards: [
       {
-        "categoria": "english",
-        "icon": "MdOutlineTranslate",
-        "title": "English",
-        "description": "Leia documentação, participe de comunidades e trabalhe com equipes de outros países.",
-        "color": "amber"
+        categoria: "english",
+        icon: "MdOutlineTranslate",
+        title: "English",
+        description: "Leia documentação, participe de comunidades e trabalhe com equipes de outros países.",
+        color: "amber",
       },
       {
-        "categoria": "produtos-digitais",
-        "icon": "AiFillProduct",
-        "title": "Produtos Digitais",
-        "description": "Transforme ideias em soluções digitais úteis, validadas com usuários e métricas.",
-        "color": "rose"
+        categoria: "produtos-digitais",
+        icon: "AiFillProduct",
+        title: "Produtos Digitais",
+        description: "Transforme ideias em soluções digitais úteis, validadas com usuários e métricas.",
+        color: "rose",
       },
       {
-        "categoria": "tecnologia",
-        "icon": "HiOutlineChip",
-        "title": "Tecnologia",
-        "description": "Ferramentas e plataformas que ampliam o que é possível construir e entregar.",
-        "color": "teal"
+        categoria: "tecnologia",
+        icon: "HiOutlineChip",
+        title: "Tecnologia",
+        description: "Ferramentas e plataformas que ampliam o que é possível construir e entregar.",
+        color: "teal",
       },
       {
-        "categoria": null,
-        "icon": "FaMagnifyingGlass",
-        "title": "Performance",
-        "description": "Fazer funcionar é o mínimo. Fazer funcionar rápido, barato e em escala sustenta um produto de verdade.",
-        "color": "sky"
+        categoria: null,
+        icon: "FaMagnifyingGlass",
+        title: "Performance",
+        description: "Fazer funcionar é o mínimo. Fazer funcionar rápido, barato e em escala sustenta um produto de verdade.",
+        color: "sky",
       },
       {
-        "categoria": null,
-        "icon": "FaBrain",
-        "title": "IA",
-        "description": "Use a inteligência artificial como apoio, sem abrir mão de entender e revisar o código.",
-        "color": "violet"
-      }
+        categoria: null,
+        icon: "FaBrain",
+        title: "IA",
+        description: "Use a inteligência artificial como apoio, sem abrir mão de entender e revisar o código.",
+        color: "violet",
+      },
     ],
-    "categorias": [
-      "english",
-      "produtos-digitais",
-      "ia",
-      "marketing-crm"
+    categorias: ["english", "produtos-digitais", "ia", "marketing-crm"],
+    closing: null,
+    sources: [
+      {
+        label: "British Council — LearnEnglish",
+        url: "https://learnenglish.britishcouncil.org/",
+      },
+      {
+        label: "roadmap.sh — Product Manager Roadmap",
+        url: "https://roadmap.sh/product-manager",
+      },
+      {
+        label: "web.dev — Web Vitals",
+        url: "https://web.dev/articles/vitals",
+      },
+      {
+        label: "Stack Overflow Blog — resultados da Developer Survey 2025",
+        url: "https://stackoverflow.blog/2025/07/29/developers-remain-willing-but-reluctant-to-use-ai-the-2025-developer-survey-results-are-here/",
+      },
     ],
-    "closing": null,
-    "sources": [
-      {
-        "label": "British Council — LearnEnglish",
-        "url": "https://learnenglish.britishcouncil.org/"
-      },
-      {
-        "label": "roadmap.sh — Product Manager Roadmap",
-        "url": "https://roadmap.sh/product-manager"
-      },
-      {
-        "label": "web.dev — Web Vitals",
-        "url": "https://web.dev/articles/vitals"
-      },
-      {
-        "label": "Stack Overflow Blog — resultados da Developer Survey 2025",
-        "url": "https://stackoverflow.blog/2025/07/29/developers-remain-willing-but-reluctant-to-use-ai-the-2025-developer-survey-results-are-here/"
-      }
-    ],
-    "updatedAt": "2026-10-28"
+    updatedAt: "2026-10-28",
   },
   {
-    "id": "marketing-tech",
-    "title": "Marketing Tech e CRM",
-    "subtitle": "Quem junta dados, canais e código para a empresa conversar com cada cliente na hora certa",
-    "icon": "FaHandshake",
-    "paragraphs": [
+    id: "marketing-tech",
+    title: "Marketing Tech e CRM",
+    subtitle: "Quem junta dados, canais e código para a empresa conversar com cada cliente na hora certa",
+    icon: "FaHandshake",
+    paragraphs: [
       "Marketing tech é a parte do marketing que se programa. Analistas de CRM, desenvolvedores de e-mail e landing pages e profissionais de growth montam jornadas que disparam sozinhas, réguas que acompanham o cliente da primeira visita à recompra, páginas que captam e registram consentimento e painéis que mostram o que funcionou. O trabalho mistura plataforma (Salesforce Marketing Cloud, RD Station, HubSpot), código (HTML para e-mail, AMPscript, SQL, JavaScript) e negócio: cada mensagem precisa de público, gatilho, base legal e métrica.",
       "Há espaço porque a maioria das empresas ainda improvisa. No Panoramas RD Station 2026, que ouviu cerca de 3 mil profissionais de marketing e vendas e foi divulgado em junho de 2026, 54% das empresas diziam operar sem CRM, 62% não acompanhavam as taxas de conversão do funil e 57% não usavam a API oficial do WhatsApp, embora 75% das equipes de vendas usassem o aplicativo no primeiro contato com o cliente. Quem sabe organizar base, canal e medição resolve um problema que quase todo mundo tem.",
-      "Para quem contrata, o perfil valorizado é híbrido: técnico o bastante para configurar uma jornada, escrever uma consulta de segmentação e corrigir um template, e próximo do negócio o bastante para ligar uma régua a uma meta e explicar o resultado para a diretoria. A demanda por quem gera e qualifica demanda aparece nos rankings: o relatório Empregos em Alta 2025 do LinkedIn, divulgado em janeiro de 2025, colocou o especialista em geração de leads entre os cargos que mais cresceram no Brasil, com e-mail marketing, campanhas segmentadas e análise de métricas entre as habilidades citadas. Para quem trabalha, a rotina é de ciclos curtos, muitas áreas pedindo ao mesmo tempo e responsabilidade real: um disparo errado chega a milhares de pessoas."
+      "Para quem contrata, o perfil valorizado é híbrido: técnico o bastante para configurar uma jornada, escrever uma consulta de segmentação e corrigir um template, e próximo do negócio o bastante para ligar uma régua a uma meta e explicar o resultado para a diretoria. A demanda por quem gera e qualifica demanda aparece nos rankings: o relatório Empregos em Alta 2025 do LinkedIn, divulgado em janeiro de 2025, colocou o especialista em geração de leads entre os cargos que mais cresceram no Brasil, com e-mail marketing, campanhas segmentadas e análise de métricas entre as habilidades citadas. Para quem trabalha, a rotina é de ciclos curtos, muitas áreas pedindo ao mesmo tempo e responsabilidade real: um disparo errado chega a milhares de pessoas.",
     ],
-    "diaADia": [
+    diaADia: [
       "Abrir a semana com o planejamento dos disparos e jornadas e validar cada peça com quem pediu antes de publicar.",
       "Montar e testar jornadas transacionais e réguas de relacionamento em e-mail e WhatsApp.",
       "Escrever consultas SQL para segmentar públicos e manter as bases limpas, sem duplicados e com opt-out respeitado.",
       "Codificar e-mails e landing pages em HTML, com personalização (como AMPscript) e formulários integrados ao CRM.",
       "Atender pedidos de outras áreas (vendas, e-commerce, expansão, jurídico) e registrar tudo em chamados ou no quadro do time.",
-      "Acompanhar resultados em painéis e transformar números em decisões no relatório semanal ou nos OKRs."
+      "Acompanhar resultados em painéis e transformar números em decisões no relatório semanal ou nos OKRs.",
     ],
-    "competencias": [
+    competencias: [
       "Desenho de jornadas e réguas: gatilho, público, intervalo, mensagem e métrica",
       "HTML e CSS para e-mail (tabelas, compatibilidade entre clientes) e landing pages",
       "SQL para segmentação e linguagem de personalização da plataforma (AMPscript, Liquid ou similar)",
       "Operação de WhatsApp Business: templates aprovados, opt-in e números oficiais",
       "LGPD aplicada a comunicações: base legal, consentimento, descadastro e registro",
       "Leitura de métricas e relato para gestão (funil, conversão, OKR)",
-      "Organização de demandas em ciclos curtos e comunicação com áreas de negócio"
+      "Organização de demandas em ciclos curtos e comunicação com áreas de negócio",
     ],
-    "ferramentas": [
+    ferramentas: [
       "Salesforce Marketing Cloud (Journey Builder, Automation Studio, CloudPages)",
       "RD Station Marketing ou HubSpot",
       "Zenvia, Blip ou outro provedor da API do WhatsApp Business",
       "Plataformas de e-commerce, como Wake Commerce ou VTEX",
       "Constant Contact ou Mailchimp para e-mail marketing",
       "Excel ou Google Planilhas e Looker Studio para bases e painéis",
-      "Litmus ou Mailtrap para testar e-mails antes do envio"
+      "Litmus ou Mailtrap para testar e-mails antes do envio",
     ],
-    "comoComecar": [
+    comoComecar: [
       "Escolha um negócio fictício e desenhe três réguas no papel: boas-vindas, carrinho ou orçamento abandonado e pós-compra.",
       "Codifique um e-mail responsivo em HTML com tabelas e teste em mais de um cliente de e-mail.",
       "Crie uma conta gratuita no Trailhead e faça as trilhas de Journey Builder e AMPscript num ambiente de prática.",
       "Publique uma landing page com formulário e texto de consentimento claro, e documente onde o dado vai parar.",
-      "Monte um painel com números de exemplo e escreva, em um parágrafo, o que você recomendaria fazer na semana seguinte."
+      "Monte um painel com números de exemplo e escreva, em um parágrafo, o que você recomendaria fazer na semana seguinte.",
     ],
-    "cards": [
+    cards: [
       {
-        "categoria": "marketing-crm",
-        "icon": "FaHandshake",
-        "title": "Marketing e CRM",
-        "description": "Jornadas, réguas de relacionamento, e-mail e landing pages que conectam a empresa ao cliente.",
-        "color": "rose"
+        categoria: "marketing-crm",
+        icon: "FaHandshake",
+        title: "Marketing e CRM",
+        description: "Jornadas, réguas de relacionamento, e-mail e landing pages que conectam a empresa ao cliente.",
+        color: "rose",
       },
       {
-        "categoria": "produtos-digitais",
-        "icon": "AiFillProduct",
-        "title": "Produtos Digitais",
-        "description": "Funil, métricas e experimentos: a visão de produto que transforma disparos em resultado de negócio.",
-        "color": "amber"
-      }
+        categoria: "produtos-digitais",
+        icon: "AiFillProduct",
+        title: "Produtos Digitais",
+        description: "Funil, métricas e experimentos: a visão de produto que transforma disparos em resultado de negócio.",
+        color: "amber",
+      },
     ],
-    "categorias": [
-      "marketing-crm"
+    categorias: ["marketing-crm"],
+    closing:
+      "Marketing tech não é só apertar o botão de enviar: é decidir quem recebe, quando, com qual permissão e como saber se valeu a pena. Comece por uma régua pequena, bem documentada e medida.",
+    sources: [
+      {
+        label: "Portal Tela: Panoramas RD Station 2026 indicam gestão marcada pelo improviso (01/06/2026)",
+        url: "https://www.portaltela.com/noticias/economia/2026/06/01/panoramas-rd-station-2026-indicam-gestao-marcada-pelo-improviso/",
+      },
+      {
+        label: "Mundo do Marketing: especialista em geração de leads se destaca no Empregos em Alta 2025 do LinkedIn (21/01/2025)",
+        url: "https://mundodomarketing.com.br/carreira-em-marketing-posto-de-especialista-em-geracao-de-leads-se-destaca-em-2025",
+      },
+      {
+        label: "Trailhead: credencial Marketing Cloud Engagement Specialist",
+        url: "https://trailhead.salesforce.com/es-MX/credentials/marketingcloudemailspecialist",
+      },
+      {
+        label: "Trailhead: trilha Code with AMPscript",
+        url: "https://trailhead.salesforce.com/content/learn/trails/code-with-ampscript",
+      },
+      {
+        label: "Trailhead: WhatsApp no Journey Builder",
+        url: "https://trailhead.salesforce.com/content/learn/modules/conversations-using-whatsapp-in-journey-builder/prepare-for-whatsapp",
+      },
     ],
-    "closing": "Marketing tech não é só apertar o botão de enviar: é decidir quem recebe, quando, com qual permissão e como saber se valeu a pena. Comece por uma régua pequena, bem documentada e medida.",
-    "sources": [
-      {
-        "label": "Portal Tela: Panoramas RD Station 2026 indicam gestão marcada pelo improviso (01/06/2026)",
-        "url": "https://www.portaltela.com/noticias/economia/2026/06/01/panoramas-rd-station-2026-indicam-gestao-marcada-pelo-improviso/"
-      },
-      {
-        "label": "Mundo do Marketing: especialista em geração de leads se destaca no Empregos em Alta 2025 do LinkedIn (21/01/2025)",
-        "url": "https://mundodomarketing.com.br/carreira-em-marketing-posto-de-especialista-em-geracao-de-leads-se-destaca-em-2025"
-      },
-      {
-        "label": "Trailhead: credencial Marketing Cloud Engagement Specialist",
-        "url": "https://trailhead.salesforce.com/es-MX/credentials/marketingcloudemailspecialist"
-      },
-      {
-        "label": "Trailhead: trilha Code with AMPscript",
-        "url": "https://trailhead.salesforce.com/content/learn/trails/code-with-ampscript"
-      },
-      {
-        "label": "Trailhead: WhatsApp no Journey Builder",
-        "url": "https://trailhead.salesforce.com/content/learn/modules/conversations-using-whatsapp-in-journey-builder/prepare-for-whatsapp"
-      }
-    ],
-    "updatedAt": "2026-10-31"
-  }
+    updatedAt: "2026-10-31",
+  },
 ];
 
 export default areasData;

@@ -53,7 +53,17 @@ function naReserva(programa) {
 const idsLocais = new Set(programsData.map((p) => p.id));
 /* Campos de card que vêm do catálogo gerado pela API, e não da cópia manual (desatualizada, #144).
    A cópia manual continua dando a mídia local (capa e vídeo), o quiz e o conteúdo dos módulos. */
-export const CAMPOS_DO_CATALOGO = ["title", "duration", "lessons", "level", "category", "categoryFilter", "description", "access", "accessType"];
+export const CAMPOS_DO_CATALOGO = [
+  "title",
+  "duration",
+  "lessons",
+  "level",
+  "category",
+  "categoryFilter",
+  "description",
+  "access",
+  "accessType",
+];
 const catalogoPorId = new Map(programasCatalogo.map((p) => [p.id, p]));
 function comCamposDoCatalogo(p) {
   const c = catalogoPorId.get(p.id);

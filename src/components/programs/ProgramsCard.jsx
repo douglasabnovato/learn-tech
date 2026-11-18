@@ -4,19 +4,7 @@ import { FiClock } from "react-icons/fi";
 import { PiBookOpenTextFill } from "react-icons/pi";
 import PropTypes from "prop-types";
 
-export const ProgramsCard = ({
-  id,
-  image,
-  category,
-  categoryFilter,
-  title,
-  lessons,
-  duration,
-  access,
-  accessType,
-  status,
-  voltarPara,
-}) => {
+export const ProgramsCard = ({ id, image, category, categoryFilter, title, lessons, duration, access, accessType, status, voltarPara }) => {
   const isMembers = accessType === "membros";
   const isNovidade = status === "novidade";
 

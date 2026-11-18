@@ -35,7 +35,13 @@ export function montarTrilha(trilha, programas, artigos) {
       }
       const art = artigos.find((x) => x.id === p.id);
       if (!art) return null;
-      return { ...p, rotulo: "Artigo", titulo: art.title, link: art.blogURL || `/blog/${art.id}`, minutos: minutosDoArtigo(art.readingTime) };
+      return {
+        ...p,
+        rotulo: "Artigo",
+        titulo: art.title,
+        link: art.blogURL || `/blog/${art.id}`,
+        minutos: minutosDoArtigo(art.readingTime),
+      };
     })
     .filter(Boolean);
   const total = passos.reduce((soma, p) => soma + p.minutos, 0);
