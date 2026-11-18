@@ -7,7 +7,6 @@ dist/
 
 # Arquivos de logs
 *.log
-package-lock.json
 
 # Chaves de API e segredos
 .env

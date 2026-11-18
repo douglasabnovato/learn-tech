@@ -44,3 +44,11 @@ Nada foi alterado em conteúdo, textos, dados, regras de negócio, identificaç�
 | PEN-04 | Decidir se versiona `package-lock.json` (L2-01) | Dono |
 | PEN-05 | Conferir a versão publicada (não foi acessível desta sessão) com o roteiro `05-testes-manuais.md` | Dono |
 | PEN-06 | O `dist/` local é de 07/10/2026; `programsData.js` mudou depois. Números de bundle devem ser remedidos | Dono |
+
+## Decisão de 18/11/2026: lockfile e formatação na CI (PEN-04, issue #127)
+
+- **Decisão do autor**, dada no chat em 18/11/2026 ao aprovar o item 9 de `orientacoes-ia.md`: o `package-lock.json` passa a ser versionado e sai do `.gitignore`. A CI instala com `npm ci`.
+- A CI ganha mais dois passos:
+  - `npm run format:check`. Antes do passo, o código foi reformatado num commit só de estilo, para as 140 colunas do `.prettierrc`; as cópias geradas ficam de fora pelo `.prettierignore`.
+  - `npm run orcamento`: o chunk inicial não pode passar de 320 kB. Em 18/11 ele tem 286,4 kB.
+- A PEN-04 está resolvida.
