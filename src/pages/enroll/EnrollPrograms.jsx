@@ -59,9 +59,7 @@ export const EnrollPrograms = () => {
   // Cálculo de progresso agora usa a quantidade real de módulos deste programa,
   // não o número 6 cravado — funciona para qualquer curso, com qualquer contagem.
   const totalModules = program.modules?.length || 1;
-  const progressPercentage = Math.round(
-    ((completedModuleIndex + 1) / totalModules) * 100
-  );
+  const progressPercentage = Math.round(((completedModuleIndex + 1) / totalModules) * 100);
 
   return (
     <div className="w-full min-h-screen flex-col space-y-16 pb-16">
@@ -70,9 +68,7 @@ export const EnrollPrograms = () => {
       <div className="w-full space-y-16 md:px-16 sm:px-10 px-4">
         <div className="w-full grid md:grid-cols-5 grid-cols-1 md:gap-12 gap-10 grid-row-dense items-start">
           <div className="w-full md:col-span-3 col-span-5 space-y-12">
-            {program.video && (
-              <VideoPlayer src={program.video} poster={program.videoPoster} />
-            )}
+            {program.video && <VideoPlayer src={program.video} poster={program.videoPoster} />}
             <Description
               program={program}
               onCompleteModule={handleCompleteModule}
@@ -84,17 +80,11 @@ export const EnrollPrograms = () => {
           <div className="w-full md:col-span-2 col-span-5 space-y-8 sticky top-28">
             <div className="w-full border border-neutral-300 md:p-4 p-3 rounded-xl space-y-8">
               <div className="space-y-2">
-                <h5 className="text-base text-neutral-600 font-medium">
-                  Seu progresso no curso
-                </h5>
+                <h5 className="text-base text-neutral-600 font-medium">Seu progresso no curso</h5>
                 <div className="w-full bg-indigo-500/5 border border-indigo-200 rounded-xl p-4 space-y-2">
                   <div className="w-full flex items-center justify-between">
-                    <p className="text-sm text-neutral-600 font-medium">
-                      Andamento
-                    </p>
-                    <p className="text-sm text-neutral-600 font-medium">
-                      {progressPercentage}% concluído
-                    </p>
+                    <p className="text-sm text-neutral-600 font-medium">Andamento</p>
+                    <p className="text-sm text-neutral-600 font-medium">{progressPercentage}% concluído</p>
                   </div>
                   <div className="relative h-2.5 bg-neutral-300 w-full mb-2 cursor-pointer rounded-full">
                     <div
@@ -105,9 +95,7 @@ export const EnrollPrograms = () => {
                 </div>
               </div>
               <div className="space-y-4">
-                <h5 className="text-base text-neutral-600 font-medium">
-                  {program.curriculum || "Conteúdo do Treinamento"}
-                </h5>
+                <h5 className="text-base text-neutral-600 font-medium">{program.curriculum || "Conteúdo do Treinamento"}</h5>
                 <div className="w-full space-y-2">
                   {program.modules &&
                     program.modules.map((mod, index) => {
@@ -142,18 +130,10 @@ export const EnrollPrograms = () => {
                                     : "bg-neutral-100 text-neutral-400 border-neutral-200"
                               }`}
                             >
-                              {status === "completed" ? (
-                                <FaCheck size={12} />
-                              ) : (
-                                <FaPlay size={10} />
-                              )}
+                              {status === "completed" ? <FaCheck size={12} /> : <FaPlay size={10} />}
                             </div>
                             <span
-                              className={`text-sm font-semibold flex-1 ${
-                                status === "pending"
-                                  ? "text-neutral-600"
-                                  : "text-neutral-800"
-                              }`}
+                              className={`text-sm font-semibold flex-1 ${status === "pending" ? "text-neutral-600" : "text-neutral-800"}`}
                             >
                               {`Módulo ${mod.id}: ${mod.title}`}
                             </span>
@@ -163,11 +143,8 @@ export const EnrollPrograms = () => {
                     })}
                 </div>
               </div>
-            </div> 
-            <Quiz
-              questions={program.quiz}
-              storageKey={`quiz:${program.id}`}
-            />
+            </div>
+            <Quiz questions={program.quiz} storageKey={`quiz:${program.id}`} />
           </div>
         </div>
       </div>

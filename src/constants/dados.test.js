@@ -9,22 +9,33 @@ import programsData from "./programsData";
 // Ícones aceitos pelo ModuleRenderer. Nome fora desta lista cai no padrão em
 // silêncio, então o teste existe para transformar o erro de digitação em falha.
 const ICONES_VALIDOS = [
-  "bolt", "clipboard", "comment", "folder", "gauge", "github", "globe",
-  "grid", "laptop", "list", "mobile", "palette", "rocket", "search",
-  "shield", "sitemap", "sync", "tags", "tasks", "tools",
+  "bolt",
+  "clipboard",
+  "comment",
+  "folder",
+  "gauge",
+  "github",
+  "globe",
+  "grid",
+  "laptop",
+  "list",
+  "mobile",
+  "palette",
+  "rocket",
+  "search",
+  "shield",
+  "sitemap",
+  "sync",
+  "tags",
+  "tasks",
+  "tools",
 ];
 
 // Programas que já têm conteúdo de módulo publicado.
-const comConteudo = programsData.filter(
-  (p) => Array.isArray(p.moduleContents) && p.moduleContents.length > 0
-);
+const comConteudo = programsData.filter((p) => Array.isArray(p.moduleContents) && p.moduleContents.length > 0);
 
 // Soma os passos de todas as seções de um módulo.
-const passosDe = (modulo) =>
-  (modulo.sections || []).reduce(
-    (total, secao) => total + (secao.subsections || []).length,
-    0
-  );
+const passosDe = (modulo) => (modulo.sections || []).reduce((total, secao) => total + (secao.subsections || []).length, 0);
 
 describe("catálogo de programas", () => {
   it("tem pelo menos um programa", () => {
@@ -81,9 +92,7 @@ describe("módulos", () => {
         const conteudo = p.moduleContents.find((c) => c.id === mod.id);
         expect(conteudo.title, `programa ${p.id}, módulo ${mod.id}`).toBe(mod.title);
 
-        const ementa = p.enrollDetails?.moduleOverviews?.find(
-          (o) => o.moduleId === mod.id
-        );
+        const ementa = p.enrollDetails?.moduleOverviews?.find((o) => o.moduleId === mod.id);
         if (ementa) {
           expect(ementa.title, `ementa do módulo ${mod.id}`).toContain(mod.title);
         }
@@ -95,9 +104,7 @@ describe("módulos", () => {
     for (const p of comConteudo) {
       for (const mod of p.modules) {
         const conteudo = p.moduleContents.find((c) => c.id === mod.id);
-        expect(mod.lessonsCount, `programa ${p.id}, módulo ${mod.id}`).toBe(
-          passosDe(conteudo)
-        );
+        expect(mod.lessonsCount, `programa ${p.id}, módulo ${mod.id}`).toBe(passosDe(conteudo));
       }
     }
   });
@@ -105,10 +112,7 @@ describe("módulos", () => {
   it("todo módulo tem os campos que o renderizador usa", () => {
     for (const p of comConteudo) {
       for (const c of p.moduleContents) {
-        for (const campo of [
-          "title", "shortDescription", "introductionText",
-          "closingText", "ctaTitle", "ctaText", "nextButtonText",
-        ]) {
+        for (const campo of ["title", "shortDescription", "introductionText", "closingText", "ctaTitle", "ctaText", "nextButtonText"]) {
           expect(typeof c[campo], `programa ${p.id}, módulo ${c.id}, campo ${campo}`).toBe("string");
           expect(c[campo].trim().length, `${campo} vazio no módulo ${c.id}`).toBeGreaterThan(0);
         }
@@ -121,12 +125,8 @@ describe("módulos", () => {
   it("os passos são numerados de 1 em diante, sem repetir", () => {
     for (const p of comConteudo) {
       for (const c of p.moduleContents) {
-        const numeros = (c.sections || []).flatMap((s) =>
-          (s.subsections || []).map((x) => x.number)
-        );
-        expect(numeros, `módulo ${c.id}`).toEqual(
-          Array.from({ length: numeros.length }, (_, i) => i + 1)
-        );
+        const numeros = (c.sections || []).flatMap((s) => (s.subsections || []).map((x) => x.number));
+        expect(numeros, `módulo ${c.id}`).toEqual(Array.from({ length: numeros.length }, (_, i) => i + 1));
       }
     }
   });

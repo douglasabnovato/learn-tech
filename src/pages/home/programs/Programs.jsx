@@ -6,9 +6,9 @@ import { useProgramas } from "../../../services/conteudo";
 
 export const Programs = () => {
   const programsData = useProgramas();
- 
-  const featuredPrograms = programsData.reduce((acc, current) => { 
-    const x = acc.find(item => item.categoryFilter === current.categoryFilter);
+
+  const featuredPrograms = programsData.reduce((acc, current) => {
+    const x = acc.find((item) => item.categoryFilter === current.categoryFilter);
     if (!x) {
       return acc.concat([current]);
     } else {
@@ -19,9 +19,7 @@ export const Programs = () => {
   return (
     <div id="section-programs" className="w-full md:px-15 sm:px-10 px-4 space-y-8">
       <div className="w-full flex items-center justify-between">
-        <h2 className="text-2xl font-bold text-neutral-800">
-          Programas em destaque 
-        </h2>
+        <h2 className="text-2xl font-bold text-neutral-800">Programas em destaque</h2>
         <div>
           <Link
             to="/programs"

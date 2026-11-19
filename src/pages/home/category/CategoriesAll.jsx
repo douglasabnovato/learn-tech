@@ -39,6 +39,47 @@ const colorMap = {
   teal: "from-teal-500 to-teal-600",
 };
 
+/* "No dia a dia" e "Competências" de uma área, lado a lado no desktop. Cada lista tem o título
+   como rótulo (aria-labelledby). Lista vazia ou ausente não desenha o bloco. */
+const LISTAS = [
+  { campo: "diaADia", titulo: "No dia a dia", marcador: "bg-sky-600" },
+  { campo: "competencias", titulo: "Competências", marcador: "bg-purple-600" },
+];
+
+export const ListasDaArea = ({ area }) => {
+  const listas = LISTAS.filter((l) => Array.isArray(area[l.campo]) && area[l.campo].length > 0);
+  if (!listas.length) return null;
+  return (
+    <div className="grid md:grid-cols-2 grid-cols-1 gap-4 pt-2">
+      {listas.map(({ campo, titulo, marcador }) => {
+        const idTitulo = `${area.id}-${campo}`;
+        return (
+          <section key={campo} aria-labelledby={idTitulo} className="rounded-2xl border border-neutral-200 bg-white p-5 space-y-3">
+            <h3 id={idTitulo} className="text-base font-bold text-neutral-800">
+              {titulo}
+            </h3>
+            <ul aria-labelledby={idTitulo} className="space-y-2">
+              {area[campo].map((item) => (
+                <li key={item} className="flex gap-3 text-neutral-700 leading-relaxed">
+                  <span aria-hidden="true" className={`mt-2 h-2 w-2 shrink-0 rounded-full ${marcador}`} />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        );
+      })}
+    </div>
+  );
+};
+ListasDaArea.propTypes = {
+  area: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    diaADia: PropTypes.arrayOf(PropTypes.string),
+    competencias: PropTypes.arrayOf(PropTypes.string),
+  }).isRequired,
+};
+
 export const CategoriesAll = () => {
   const { dados: sections } = useApi("learn-tech/areas.json", AREAS_LOCAIS, hidratar);
 
@@ -48,7 +89,10 @@ export const CategoriesAll = () => {
 
   return (
     <div className="w-full min-h-screen flex flex-col">
-      <Seo titulo="Categorias" descricao="Áreas de estudo da learnTECH: front-end, back-end, full stack, habilidades comportamentais, diferenciais e marketing tech." />
+      <Seo
+        titulo="Categorias"
+        descricao="Áreas de estudo da learnTECH: front-end, back-end, full stack, habilidades comportamentais, diferenciais e marketing tech."
+      />
       {/* HERO */}
       <div className="w-full bg-gradient-to-tr from-indigo-500/20 via-sky-700/20 via-20% to-purple-700/30 md:px-16 sm:px-10 px-4 md:py-24 py-16">
         <div className="max-w-4xl space-y-6">
@@ -60,22 +104,17 @@ export const CategoriesAll = () => {
             <FaArrowLeft /> Voltar para a Home
           </Link>
 
-          <p className="text-lg md:text-xl font-medium text-neutral-600">
-            O ecossistema da tecnologia
-          </p>
+          <p className="text-lg md:text-xl font-medium text-neutral-600">O ecossistema da tecnologia</p>
           <h1 className="md:text-6xl text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-sky-700 to-purple-700 leading-[1.2]">
             O que forma um desenvolvedor
           </h1>
           <p className="text-lg font-normal text-neutral-800 max-w-3xl">
-            Programar é só o começo. Por trás de cada aplicação que funciona
-            existe um conjunto de habilidades que vai muito além de escrever
-            código — e é esse conjunto que separa quem digita comandos de quem
-            constrói soluções.
+            Programar é só o começo. Por trás de cada aplicação que funciona existe um conjunto de habilidades que vai muito além de
+            escrever código — e é esse conjunto que separa quem digita comandos de quem constrói soluções.
           </p>
           <p className="text-base font-normal text-neutral-600 max-w-3xl">
-            Este é o mapa do território. Cada área abaixo reúne as categorias
-            que compõem o profissional de tecnologia completo — do que o usuário
-            vê ao que sustenta tudo por trás.
+            Este é o mapa do território. Cada área abaixo reúne as categorias que compõem o profissional de tecnologia completo — do que o
+            usuário vê ao que sustenta tudo por trás.
           </p>
         </div>
       </div>
@@ -84,10 +123,7 @@ export const CategoriesAll = () => {
       <div className="w-full md:px-16 sm:px-10 px-4 md:py-20 py-12 space-y-16">
         {sections.map((section, index) => {
           return (
-            <div
-              key={section.id}
-              className="w-full flex md:flex-row flex-col md:gap-12 gap-6 md:items-start items-center"
-            >
+            <div key={section.id} className="w-full flex md:flex-row flex-col md:gap-12 gap-6 md:items-start items-center">
               {/* Coluna do ícone + número */}
               <div className="md:w-1/4 w-full flex md:flex-col flex-row md:items-start items-center gap-4">
                 <div
@@ -98,25 +134,16 @@ export const CategoriesAll = () => {
                   </span>
                 </div>
                 <div className="md:space-y-1">
-                  <span className="text-sm font-semibold text-neutral-400">
-                    0{index + 1}
-                  </span>
-                  <h2 className="text-3xl font-bold text-neutral-800">
-                    {section.title}
-                  </h2>
-                  <p className="text-base font-medium text-neutral-500">
-                    {section.subtitle}
-                  </p>
+                  <span className="text-sm font-semibold text-neutral-400">0{index + 1}</span>
+                  <h2 className="text-3xl font-bold text-neutral-800">{section.title}</h2>
+                  <p className="text-base font-medium text-neutral-500">{section.subtitle}</p>
                 </div>
               </div>
 
               {/* Coluna do conteúdo */}
               <div className="md:w-3/4 w-full space-y-5">
                 {section.paragraphs.map((p, i) => (
-                  <p
-                    key={i}
-                    className="text-lg font-normal text-neutral-700 leading-relaxed"
-                  >
+                  <p key={i} className="text-lg font-normal text-neutral-700 leading-relaxed">
                     {p}
                   </p>
                 ))}
@@ -131,20 +158,17 @@ export const CategoriesAll = () => {
                           className="flex items-start gap-4 rounded-2xl border border-neutral-200 bg-neutral-50 p-4 hover:border-sky-300 hover:shadow-sm transition-all ease-in-out duration-300"
                         >
                           <div
-                            className={`w-12 h-12 shrink-0 flex items-center justify-center rounded-xl bg-gradient-to-tr ${colorMap[card.color] || colorMap.sky
-                              }`}
+                            className={`w-12 h-12 shrink-0 flex items-center justify-center rounded-xl bg-gradient-to-tr ${
+                              colorMap[card.color] || colorMap.sky
+                            }`}
                           >
                             <span className="text-xl text-neutral-50">
                               <Icone icone={card.icon} />
                             </span>
                           </div>
                           <div className="space-y-1">
-                            <h3 className="text-base font-bold text-neutral-800">
-                              {card.title}
-                            </h3>
-                            <p className="text-sm text-neutral-600 leading-relaxed">
-                              {card.description}
-                            </p>
+                            <h3 className="text-base font-bold text-neutral-800">{card.title}</h3>
+                            <p className="text-sm text-neutral-600 leading-relaxed">{card.description}</p>
                           </div>
                         </div>
                       );
@@ -152,11 +176,10 @@ export const CategoriesAll = () => {
                   </div>
                 )}
 
-                {section.closing && (
-                  <p className="text-lg font-medium text-neutral-800 pt-2">
-                    {section.closing}
-                  </p>
-                )}
+                {/* Dia a dia e competências da área (conteúdo da API, #135) */}
+                <ListasDaArea area={section} />
+
+                {section.closing && <p className="text-lg font-medium text-neutral-800 pt-2">{section.closing}</p>}
 
                 {/* Como começar e fontes (conteúdo da API) */}
                 {section.comoComecar?.length > 0 && (
@@ -173,7 +196,10 @@ export const CategoriesAll = () => {
                 {section.ferramentas?.length > 0 && (
                   <div className="flex flex-wrap gap-2 pt-1">
                     {section.ferramentas.map((f) => (
-                      <span key={f} className="text-xs font-medium text-neutral-700 bg-neutral-100 border border-neutral-200 rounded-full px-3 py-1">
+                      <span
+                        key={f}
+                        className="text-xs font-medium text-neutral-700 bg-neutral-100 border border-neutral-200 rounded-full px-3 py-1"
+                      >
                         {f}
                       </span>
                     ))}
@@ -207,9 +233,7 @@ export const CategoriesAll = () => {
           <h2 className="md:text-4xl text-3xl font-bold text-neutral-800 leading-tight">
             O desenvolvedor completo não é quem domina uma dessas áreas.
           </h2>
-          <p className="text-lg font-normal text-neutral-700">
-            É quem entende que todas se conectam — e escolhe por onde começar.
-          </p>
+          <p className="text-lg font-normal text-neutral-700">É quem entende que todas se conectam — e escolhe por onde começar.</p>
           <Link
             to="/programs"
             className="inline-flex items-center gap-2 text-neutral-50 bg-gradient-to-tr from-indigo-500 via-sky-700 via-20% to-purple-700 cursor-pointer py-3 px-8 rounded-full font-semibold ease-in-out duration-300 hover:opacity-90"

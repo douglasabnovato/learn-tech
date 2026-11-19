@@ -50,8 +50,7 @@ const falaaeData = [
   {
     id: 9,
     question: "Posso sugerir um tema ou trilha que eu gostaria de ver aqui?",
-    answer:
-      "Sim — é exatamente para isso que existe esta página. Conta pra gente o que você gostaria de aprender.",
+    answer: "Sim — é exatamente para isso que existe esta página. Conta pra gente o que você gostaria de aprender.",
   },
   {
     id: 10,

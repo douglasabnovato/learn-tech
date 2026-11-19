@@ -4,6 +4,7 @@ import { Stats } from "./stats/Stats";
 import { Category } from "./category/Category";
 import { Programs } from "./programs/Programs";
 import { QuickAccess } from "./quickaccess/QuickAccess";
+import { TrilhasHome } from "./trilhas/TrilhasHome";
 import { Blog } from "./blog/Blog";
 import { Seo } from "../../components/common/Seo";
 
@@ -19,6 +20,7 @@ export const Home = () => {
         <Stats />
       </div>
       <Category />
+      <TrilhasHome />
       <Programs />
       <QuickAccess />
       <Blog />

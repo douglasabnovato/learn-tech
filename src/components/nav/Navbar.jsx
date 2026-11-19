@@ -42,17 +42,12 @@ const Navbar = () => {
     <div
       id="navbar"
       className={`w-full h-[8ch] backdrop-blur-sm flex items-center justify-between md:px-16 sm:px-10 px-4 fixed top-0 transition-all ease-in-out duration-300 z-50 ${
-        isScrolled
-          ? "bg-sky-50/30 border-b border-neutral-200"
-          : "bg-transparent"
+        isScrolled ? "bg-sky-50/30 border-b border-neutral-200" : "bg-transparent"
       }`}
     >
       {/* Logo */}
       <div className="flex items-center gap-2 md:pr-16 pr-0">
-        <Link
-          to="/"
-          className="text-lg font-semibold text-sky-700 flex items-center gap-x-2"
-        >
+        <Link to="/" className="text-lg font-semibold text-sky-700 flex items-center gap-x-2">
           <LearnTechTitle size="text-3xl" color="text-purple-700" />
         </Link>
       </div>
@@ -82,10 +77,7 @@ const Navbar = () => {
         {/* Logo and close icon Inside Toggle Menu */}
         <div className="w-full md:hidden flex items-center justify-between px-4">
           {/* Logo */}
-          <Link
-            to="/"
-            className="text-lg font-semibold text-sky-700 flex items-center gap-x-2"
-          >
+          <Link to="/" className="text-lg font-semibold text-sky-700 flex items-center gap-x-2">
             <LearnTechTitle size="text-3xl" color="text-purple-700" />
           </Link>
 
@@ -125,7 +117,6 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-
         </div>
       </div>
     </div>

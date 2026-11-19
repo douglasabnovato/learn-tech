@@ -6,7 +6,6 @@ import { Seo } from "../../components/common/Seo";
 // Página de erro: o servidor ainda responde 200 (reescrita da SPA no vercel.json), então o
 // `noindex` é o que impede o Google de indexar a rota inexistente.
 export const NotFound = () => {
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -17,14 +16,11 @@ export const NotFound = () => {
       <FaCarCrash size={60} className="text-yellow-500 mb-6" aria-hidden="true" />
       <h1 className="text-4xl font-bold mb-4">Página não encontrada</h1>
       <p className="text-gray-700 mb-6 max-w-xl">
-        O endereço pode ter mudado ou estar digitado errado. Veja os programas disponíveis ou
-        fale com a gente se você chegou aqui por um link do site.
+        O endereço pode ter mudado ou estar digitado errado. Veja os programas disponíveis ou fale com a gente se você chegou aqui por um
+        link do site.
       </p>
       <div className="flex flex-wrap justify-center gap-3">
-        <Link
-          to="/"
-          className="px-6 py-3 bg-sky-700 text-white rounded-full font-semibold hover:bg-sky-800 transition-colors duration-300"
-        >
+        <Link to="/" className="px-6 py-3 bg-sky-700 text-white rounded-full font-semibold hover:bg-sky-800 transition-colors duration-300">
           Voltar para o início
         </Link>
         <Link

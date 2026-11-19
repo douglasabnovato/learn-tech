@@ -24,6 +24,12 @@ const Mentorias = lazy(() =>
   })),
 );
 
+const Trilhas = lazy(() =>
+  import("./pages/trilhas/Trilhas").then((module) => ({
+    default: module.Trilhas,
+  })),
+);
+
 const Programs = lazy(() =>
   import("./pages/programs/Programs").then((module) => ({
     default: module.Programs,
@@ -123,19 +129,16 @@ function App() {
           <Navbar />
 
           {/* Routes */}
-          <Suspense
-            fallback={
-              <div className="flex min-h-[60vh] items-center justify-center">
-                Carregando...
-              </div>
-            }
-          >
+          {/* O fallback ocupa a tela inteira: com 60vh, o rodapé aparecia no meio da tela enquanto a página
+              carregava e era empurrado para baixo quando ela chegava (CLS 0,40 no celular, #142). */}
+          <Suspense fallback={<div className="flex min-h-screen items-center justify-center">Carregando...</div>}>
             <Routes>
               {/* Home */}
               <Route path="/" element={<Home />} />
 
               {/* Pages */}
               <Route path="/programs" element={<Programs />} />
+              <Route path="/trilhas" element={<Trilhas />} />
 
               {/* Institutional Pages */}
               <Route path="/privacy" element={<Privacy />} />
@@ -153,10 +156,7 @@ function App() {
               <Route path="/category" element={<CategoriesAll />} />
 
               {/* Dynamic Program Routes */}
-              <Route
-                path="/program/:category/:id/enroll"
-                element={<EnrollPrograms />}
-              />
+              <Route path="/program/:category/:id/enroll" element={<EnrollPrograms />} />
 
               <Route path="/program/:category/:id" element={<Detail />} />
 

@@ -22,21 +22,14 @@ export const Breadcrumb = () => {
         return (
           <React.Fragment key={index}>
             {isLast ? (
-              <p className="md:text-base text-sm font-normal text-zinc-400">
-                {path.name}
-              </p>
+              <p className="md:text-base text-sm font-normal text-zinc-400">{path.name}</p>
             ) : (
               <>
-                <Link
-                  to={path.link}
-                  className="md:text-base text-sm font-normal text-zinc-300 hover:text-zinc-100"
-                >
+                <Link to={path.link} className="md:text-base text-sm font-normal text-zinc-300 hover:text-zinc-100">
                   {path.name}
                 </Link>
                 {/** separator */}
-                <span className="md:text-base text-sm font-normal text-zinc-200 ml-2">
-                  /
-                </span>
+                <span className="md:text-base text-sm font-normal text-zinc-200 ml-2">/</span>
               </>
             )}
           </React.Fragment>

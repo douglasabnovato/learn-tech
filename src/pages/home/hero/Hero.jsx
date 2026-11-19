@@ -46,35 +46,24 @@ export const Hero = () => {
       <div className="w-full flex-1 flex items-center justify-between md:gap-16 gap-4 md:flex-nowrap flex-wrap md:flex-row flex-col-reverse">
         <div className="pt-[4ch] md:w-[45%] w-full h-auto md:space-y-8 space-y-6">
           <div className="space-y-2">
-            <p className="text-lg md:text-2xl font-medium text-neutral-600">
-              Curadoria e prática, em ordem
-            </p>
+            <p className="text-lg md:text-2xl font-medium text-neutral-600">Curadoria e prática, em ordem</p>
             <h1 className="md:text-[5rem] text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-sky-700 to-purple-700 leading-[1.3]">
               Comece a aprender
             </h1>
           </div>
           <p className="text-lg font-normal text-neutral-800 md:pr-16 pr-0">
-            A internet já tem o conteúdo técnico que você precisa — espalhado,
-            sem ordem, sem prática. Aqui ele vem organizado, comentado e em
-            sequência. Acesso livre e gratuito, sem conta e sem senha.
+            A internet já tem o conteúdo técnico que você precisa — espalhado, sem ordem, sem prática. Aqui ele vem organizado, comentado e
+            em sequência. Acesso livre e gratuito, sem conta e sem senha.
           </p>
           <div className="w-full flex items-center gap-6">
             <button
-              onClick={() =>
-                document
-                  .getElementById("section-programs")
-                  .scrollIntoView({ behavior: "smooth" })
-              }
+              onClick={() => document.getElementById("section-programs").scrollIntoView({ behavior: "smooth" })}
               className="md:w-fit w-1/2 text-neutral-50 bg-gradient-to-tr from-indigo-500 via-sky-700 via-20% to-purple-700 cursor-pointer py-3 px-8 rounded-full font-semibold ease-in-out duration-300"
             >
               Comece Agora
             </button>
             <button
-              onClick={() =>
-                document
-                  .getElementById("section-stats")
-                  .scrollIntoView({ behavior: "smooth" })
-              }
+              onClick={() => document.getElementById("section-stats").scrollIntoView({ behavior: "smooth" })}
               className="md:w-fit w-1/2 border border-neutral-800 cursor-pointer py-3 px-8 text-neutral-800 rounded-full font-semibold ease-in-out duration-300"
             >
               Saiba Mais

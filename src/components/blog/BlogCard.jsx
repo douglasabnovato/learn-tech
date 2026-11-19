@@ -2,10 +2,7 @@ import { Link } from "react-router-dom";
 
 export const BlogCard = ({ blogURL, img, title, tag }) => {
   return (
-    <Link
-      to={blogURL}
-      className="w-full aspect-[16/10] rounded-xl overflow-hidden relative group ease-in-out duration-300"
-    >
+    <Link to={blogURL} className="w-full aspect-[16/10] rounded-xl overflow-hidden relative group ease-in-out duration-300">
       <img
         loading="lazy"
         decoding="async"
@@ -15,13 +12,13 @@ export const BlogCard = ({ blogURL, img, title, tag }) => {
       />
       <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-neutral-900/40 to-transparent flex items-end justify-start p-4">
         <div className="space-y-2">
-          <h3 className="text-lg text-neutral-50 font-semibold line-clamp-2">
-            {title}
-          </h3>
+          <h3 className="text-lg text-neutral-50 font-semibold line-clamp-2">{title}</h3>
         </div>
       </div>
       <div className="absolute top-0 left-0 w-full p-4">
-        <p className="w-fit text-sm font-normal text-sky-500 bg-sky-500/10 border border-sly-400/40 background-blur-md round-full px-3 py-1 inline-block">{tag}</p>
+        <p className="w-fit text-sm font-normal text-sky-500 bg-sky-500/10 border border-sly-400/40 background-blur-md round-full px-3 py-1 inline-block">
+          {tag}
+        </p>
       </div>
     </Link>
   );

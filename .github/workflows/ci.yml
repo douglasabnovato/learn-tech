@@ -1,6 +1,6 @@
 # CI do learn-tech — roda só scripts que já existem no package.json.
-# Observação: package-lock.json está no .gitignore, por isso a instalação usa
-# `npm install` (e não `npm ci`). O .npmrc (legacy-peer-deps) é respeitado.
+# Instalação pelo package-lock.json com `npm ci` (issue #127): a mesma árvore de dependências em todo run.
+# O .npmrc (legacy-peer-deps) é respeitado.
 name: CI
 
 on:
@@ -22,9 +22,16 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: 22
+          cache: npm
 
-      - name: Instalar dependências
-        run: npm install --no-audit --no-fund
+      - name: Instalar dependências (lockfile)
+        run: npm ci --no-audit --no-fund
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Formatação (npm run format:check = prettier --check)
+        run: npm run format:check
 
       - name: Testes (contrato de dados)
         run: npm test
@@ -32,5 +39,5 @@ jobs:
       - name: Build de produção
         run: npm run build
 
-      - name: Lint
-        run: npm run lint
+      - name: Orçamento do chunk inicial (npm run orcamento, limite 320 kB)
+        run: npm run orcamento

@@ -1,4 +1,3 @@
-
 // O tom 600 do ícone não dá contraste 4,5:1 em texto de 12 px sobre o fundo claro do card (axe, 10/11/2026).
 // A etiqueta usa o tom 800 da mesma cor. Classes escritas por inteiro para o Tailwind gerá-las.
 const TEXTO_800 = {
@@ -27,33 +26,19 @@ const TEXTO_800 = {
 };
 const corDoTexto = (iconColor) => TEXTO_800[iconColor] ?? "text-neutral-700";
 
-export const StatsCard = ({
-  icon: Icon,
-  bgColor,
-  borderColor,
-  count,
-  iconColor,
-  description,
-  category,
-}) => {
+export const StatsCard = ({ icon: Icon, bgColor, borderColor, count, iconColor, description, category }) => {
   return (
-    <div
-      className={`w-full min-w-0 md:px-6 md:py-6 px-3 py-4 border rounded-xl ${bgColor} ${borderColor}`}
-    >
+    <div className={`w-full min-w-0 md:px-6 md:py-6 px-3 py-4 border rounded-xl ${bgColor} ${borderColor}`}>
       <div className="flex flex-wrap items-start justify-between gap-2">
         {/* Bloco esquerdo: ícone + count + description */}
         <div className="min-w-0 flex items-center md:justify-start justify-center gap-4 md:flex-nowrap flex-wrap">
-          <div
-            className={`w-14 h-14 ${bgColor} border ${borderColor} rounded-xl flex items-center justify-center`}
-          >
+          <div className={`w-14 h-14 ${bgColor} border ${borderColor} rounded-xl flex items-center justify-center`}>
             <span className={`text-3xl font-bold ${iconColor}`}>
               <Icon aria-hidden="true" />
             </span>
           </div>
           <div className="flex items-center flex-col md:items-start space-y-0.5 md:text-start text-center">
-            <h3 className="text-2xl font-bold text-neutral-800 md:text-start text-center">
-              {count}
-            </h3>
+            <h3 className="text-2xl font-bold text-neutral-800 md:text-start text-center">{count}</h3>
             <p className="text-base text-neutral-600">{description}</p>
           </div>
         </div>

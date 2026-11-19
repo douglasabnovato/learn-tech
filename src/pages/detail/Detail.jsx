@@ -7,8 +7,9 @@ import { usePrograma, API_URL } from "../../services/conteudo";
 import { NotFound } from "./../error/not-found";
 import { ConteudoIndisponivel } from "../../components/common/ConteudoIndisponivel";
 import { Seo } from "../../components/common/Seo";
+import { JsonLd } from "../../components/common/JsonLd";
+import { programaJsonLd } from "../../services/dadosEstruturados";
 import { GaleriaFotos } from "../../components/common/GaleriaFotos";
-
 
 export const Detail = () => {
   const { category, id } = useParams();
@@ -40,6 +41,7 @@ export const Detail = () => {
   return (
     <div className="w-full min-h-screen flex-col space-y-16 pb-16">
       <Seo titulo={program.title} descricao={program.description} caminho={caminho} />
+      <JsonLd dados={programaJsonLd(program)} />
       {/* Page Top Banner section */}
       <PageTopBanner pageTitle={program.title} />
       <div className="w-full space-y-16 md:px-16 sm:px-10 px-4">
@@ -49,9 +51,7 @@ export const Detail = () => {
             {/* title, image */}
             <div className="space-y-8">
               <div className="space-y-3 md:space-y-2">
-                <h2 className="text-xl md:text-2xl font-bold text-neutral-800">
-                  {program.title}
-                </h2>
+                <h2 className="text-xl md:text-2xl font-bold text-neutral-800">{program.title}</h2>
                 <div className="w-full flex items-center gap-x-5 gap-y-2 px-1 flex-wrap">
                   <p className="text-sm text-neutral-800 font-medium flex items-center gap-x-1.5">
                     <FiClock size={16} className="text-neutral-500" />
@@ -59,18 +59,12 @@ export const Detail = () => {
                   </p>
                   <div className="w-1 h-1 rounded-full bg-neutral-400"></div>
                   <p className="text-sm text-neutral-800 font-medium flex items-center gap-x-1.5">
-                    <PiBookOpenTextFill
-                      size={16}
-                      className="text-neutral-500"
-                    />
+                    <PiBookOpenTextFill size={16} className="text-neutral-500" />
                     {program.category}
                   </p>
                   <div className="w-1 h-1 rounded-full bg-neutral-400"></div>
                   <p className="text-sm text-neutral-800 font-medium flex items-center gap-x-1.5">
-                    <PiBookOpenTextFill
-                      size={16}
-                      className="text-neutral-500"
-                    />
+                    <PiBookOpenTextFill size={16} className="text-neutral-500" />
                     {program.lessons}
                     <span className="ml-2 inline-flex items-center bg-sky-100 text-sky-800 text-xs font-medium px-2 py-0.5 rounded-full">
                       {program.level}
@@ -78,11 +72,7 @@ export const Detail = () => {
                   </p>
                 </div>
               </div>
-              <img
-                src={program.image}
-                alt={program.title}
-                className="w-full object-cover aspect-[16/10] rounded-xl"
-              />
+              <img src={program.image} alt={program.title} className="w-full object-cover aspect-[16/10] rounded-xl" />
             </div>
             <GaleriaFotos fotos={program.galeria} titulo="Bastidores do programa" />
             {/* course overview contents */}
@@ -91,23 +81,14 @@ export const Detail = () => {
               {/* bloco 1 */}
               {program.whatYouBuild && (
                 <div className="w-full space-y-4">
-                  <h2 className="text-2xl font-bold text-neutral-800">
-                    {program.whatYouBuild.title}
-                  </h2>
-                  <p className="text-base text-neutral-700 leading-relaxed">
-                    {program.whatYouBuild.description}
-                  </p>
+                  <h2 className="text-2xl font-bold text-neutral-800">{program.whatYouBuild.title}</h2>
+                  <p className="text-base text-neutral-700 leading-relaxed">{program.whatYouBuild.description}</p>
                   {program.whatYouBuild.highlights && (
                     <div className="grid sm:grid-cols-3 grid-cols-1 gap-3 pt-2">
                       {program.whatYouBuild.highlights.map((item, i) => (
-                        <div
-                          key={i}
-                          className="flex items-center gap-2 rounded-xl border border-sky-200 bg-sky-50/50 px-4 py-3"
-                        >
+                        <div key={i} className="flex items-center gap-2 rounded-xl border border-sky-200 bg-sky-50/50 px-4 py-3">
                           <span className="text-sky-700 text-lg">✓</span>
-                          <span className="text-sm font-medium text-neutral-800">
-                            {item}
-                          </span>
+                          <span className="text-sm font-medium text-neutral-800">{item}</span>
                         </div>
                       ))}
                     </div>
@@ -116,27 +97,16 @@ export const Detail = () => {
               )}
               {/* Overview */}
               <div className="space-y-3">
-                <h3 className="text-2xl font-bold text-neutral-800 border-b border-neutral-200 pb-2">
-                  Vamos aprender
-                </h3>
+                <h3 className="text-2xl font-bold text-neutral-800 border-b border-neutral-200 pb-2">Vamos aprender</h3>
                 <div className="space-y-1 5">
-                  <h3 className="text-xl text-neutral-700 font-semibold">
-                    Descrição
-                  </h3>
-                  <p className="text-base text-neutral-600 font-normal">
-                    {program.description}
-                  </p>
+                  <h3 className="text-xl text-neutral-700 font-semibold">Descrição</h3>
+                  <p className="text-base text-neutral-600 font-normal">{program.description}</p>
                 </div>
                 <div className="space-y-1 5">
-                  <h3 className="text-xl text-neutral-700 font-semibold">
-                    O que você vai aprender
-                  </h3>
+                  <h3 className="text-xl text-neutral-700 font-semibold">O que você vai aprender</h3>
                   <ul className="list-disc list-inside px-2">
                     {program.letslearn?.map((item, idx) => (
-                      <li
-                        key={idx}
-                        className="text-neutral-600 text-base font-normal"
-                      >
+                      <li key={idx} className="text-neutral-600 text-base font-normal">
                         {item}
                       </li>
                     ))}
@@ -146,9 +116,7 @@ export const Detail = () => {
                 {/* Bloco 2 */}
                 {program.whyNow && (
                   <div className="w-full space-y-4 rounded-2xl bg-gradient-to-tr from-indigo-500/10 via-sky-700/10 to-purple-700/10 p-6">
-                    <h2 className="text-2xl font-bold text-neutral-800">
-                      {program.whyNow.title}
-                    </h2>
+                    <h2 className="text-2xl font-bold text-neutral-800">{program.whyNow.title}</h2>
                     {program.whyNow.paragraphs.map((p, i) => (
                       <p key={i} className="text-base text-neutral-700 leading-relaxed">
                         {p}
@@ -159,37 +127,22 @@ export const Detail = () => {
               </div>
               {/* Curriculum */}
               <div className="space-y-3">
-                <h3 className="text-2xl font-bold text-neutral-800 border-b border-neutral-200 pb-2">
-                  Currículo
-                </h3>
+                <h3 className="text-2xl font-bold text-neutral-800 border-b border-neutral-200 pb-2">Currículo</h3>
                 <div className="space-y-1 5">
-                  <h3 className="text-xl text-neutral-700 font-semibold">
-                    {program.curriculum}
-                  </h3>
-                  <p className="text-base text-neutral-600 font-normal">
-                    {program.about}
-                  </p>
+                  <h3 className="text-xl text-neutral-700 font-semibold">{program.curriculum}</h3>
+                  <p className="text-base text-neutral-600 font-normal">{program.about}</p>
                 </div>
               </div>
 
               {/* Bloco 3 */}
               {program.appliedIn && (
                 <div className="w-full space-y-4">
-                  <h2 className="text-2xl font-bold text-neutral-800">
-                    {program.appliedIn.title}
-                  </h2>
+                  <h2 className="text-2xl font-bold text-neutral-800">{program.appliedIn.title}</h2>
                   <div className="grid md:grid-cols-3 grid-cols-1 gap-4">
                     {program.appliedIn.items.map((item, i) => (
-                      <div
-                        key={i}
-                        className="rounded-2xl border border-neutral-200 bg-neutral-50 p-5 space-y-2"
-                      >
-                        <h3 className="text-base font-bold text-neutral-800">
-                          {item.label}
-                        </h3>
-                        <p className="text-sm text-neutral-600 leading-relaxed">
-                          {item.description}
-                        </p>
+                      <div key={i} className="rounded-2xl border border-neutral-200 bg-neutral-50 p-5 space-y-2">
+                        <h3 className="text-base font-bold text-neutral-800">{item.label}</h3>
+                        <p className="text-sm text-neutral-600 leading-relaxed">{item.description}</p>
                       </div>
                     ))}
                   </div>
@@ -199,25 +152,16 @@ export const Detail = () => {
               {/* Bloco 4 */}
               {program.forWho && (
                 <div className="w-full space-y-4">
-                  <h2 className="text-2xl font-bold text-neutral-800">
-                    {program.forWho.title}
-                  </h2>
+                  <h2 className="text-2xl font-bold text-neutral-800">{program.forWho.title}</h2>
                   <div className="space-y-3">
                     {program.forWho.profiles.map((profile, i) => (
-                      <div
-                        key={i}
-                        className="flex items-start gap-4 rounded-2xl border border-neutral-200 bg-white p-4"
-                      >
+                      <div key={i} className="flex items-start gap-4 rounded-2xl border border-neutral-200 bg-white p-4">
                         <div className="w-10 h-10 shrink-0 flex items-center justify-center rounded-full bg-gradient-to-tr from-indigo-500 to-purple-600 text-white font-bold">
                           {i + 1}
                         </div>
                         <div className="space-y-1">
-                          <h3 className="text-base font-bold text-neutral-800">
-                            {profile.label}
-                          </h3>
-                          <p className="text-sm text-neutral-600 leading-relaxed">
-                            {profile.description}
-                          </p>
+                          <h3 className="text-base font-bold text-neutral-800">{profile.label}</h3>
+                          <p className="text-sm text-neutral-600 leading-relaxed">{profile.description}</p>
                         </div>
                       </div>
                     ))}
@@ -228,12 +172,8 @@ export const Detail = () => {
               {/*  BLOCO 5 — QUEM USA NO MERCADO     */}
               {program.marketUsage && (
                 <div className="w-full space-y-4">
-                  <h2 className="text-2xl font-bold text-neutral-800">
-                    {program.marketUsage.title}
-                  </h2>
-                  <p className="text-base text-neutral-700 leading-relaxed">
-                    {program.marketUsage.description}
-                  </p>
+                  <h2 className="text-2xl font-bold text-neutral-800">{program.marketUsage.title}</h2>
+                  <p className="text-base text-neutral-700 leading-relaxed">{program.marketUsage.description}</p>
                   {program.marketUsage.companies && (
                     <div className="flex flex-wrap gap-3 pt-2">
                       {program.marketUsage.companies.map((company, i) => (
@@ -252,19 +192,12 @@ export const Detail = () => {
               {/*  BLOCO 6 — FONTES */}
               {program.sources && program.sources.length > 0 && (
                 <div className="w-full space-y-2 pt-4 border-t border-neutral-200">
-                  <p className="text-xs font-semibold text-neutral-500 uppercase tracking-wide">
-                    Fontes
-                  </p>
+                  <p className="text-xs font-semibold text-neutral-500 uppercase tracking-wide">Fontes</p>
                   <ul className="space-y-1">
                     {program.sources.map((source, i) => (
                       <li key={i} className="text-xs text-neutral-600">
                         {source.url && source.url !== "#" ? (
-                          <a
-                            href={source.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:text-sky-700 underline"
-                          >
+                          <a href={source.url} target="_blank" rel="noopener noreferrer" className="hover:text-sky-700 underline">
                             {source.label}
                           </a>
                         ) : (
@@ -277,15 +210,10 @@ export const Detail = () => {
               )}
               {/* Course Materials */}
               <div className="space-y-3">
-                <h3 className="text-2xl font-bold text-neutral-800 border-b border-neutral-200 pb-2">
-                  Materiais
-                </h3>
+                <h3 className="text-2xl font-bold text-neutral-800 border-b border-neutral-200 pb-2">Materiais</h3>
                 <ul className="list-disc list-inside px-2">
                   {program.materials?.map((m, i) => (
-                    <li
-                      key={i}
-                      className="text-neutral-600 text-base font-normal"
-                    >
+                    <li key={i} className="text-neutral-600 text-base font-normal">
                       {m}
                     </li>
                   ))}
@@ -296,22 +224,12 @@ export const Detail = () => {
 
           {/* Right (price, features, buttons)*/}
           <div className="w-full md:col-span-2 col-span-5 border border-neutral-300 p-6 rounded-xl space-y-4 sticky top-28">
-            <h2 className="text-3xl text-neutral-900 font-bold">
-              Este programa é aberto
-            </h2>
+            <h2 className="text-3xl text-neutral-900 font-bold">Este programa é aberto</h2>
             <ul className="space-y-1 w-full list-disc list-inside px-2">
-              <li className="text-neutral-700 text-base font-normal">
-                Sem conta e sem senha: na primeira visita pedimos só nome e e-mail
-              </li>
-              <li className="text-neutral-700 text-base font-normal">
-                Conteúdo em ordem, do primeiro arquivo até a publicação
-              </li>
-              <li className="text-neutral-700 text-base font-normal">
-                Quiz ao final, com explicação de cada resposta
-              </li>
-              <li className="text-neutral-700 text-base font-normal">
-                Seu progresso fica salvo neste navegador
-              </li>
+              <li className="text-neutral-700 text-base font-normal">Sem conta e sem senha: na primeira visita pedimos só nome e e-mail</li>
+              <li className="text-neutral-700 text-base font-normal">Conteúdo em ordem, do primeiro arquivo até a publicação</li>
+              <li className="text-neutral-700 text-base font-normal">Quiz ao final, com explicação de cada resposta</li>
+              <li className="text-neutral-700 text-base font-normal">Seu progresso fica salvo neste navegador</li>
             </ul>
 
             {/* Reserva honesta: sem as aulas na cópia local, "Acessar" levaria a uma página vazia. */}

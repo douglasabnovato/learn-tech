@@ -7,7 +7,10 @@ export const Softskills = () => {
   const { softSkillsData } = usePagina("mentorias", premiosLocal);
   return (
     <>
-      <Seo titulo="Soft skills" descricao="Conversas sobre inteligência emocional, comunicação e resolução de problemas, as habilidades que sustentam uma carreira em tecnologia." />
+      <Seo
+        titulo="Soft skills"
+        descricao="Conversas sobre inteligência emocional, comunicação e resolução de problemas, as habilidades que sustentam uma carreira em tecnologia."
+      />
       <VideoGrid
         eyebrow="Além do código"
         pageTitle="Soft Skills"

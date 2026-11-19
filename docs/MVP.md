@@ -21,7 +21,7 @@ Programas de estudo em ordem, com comentário, prática e quiz, além de artigos
 | 6 | Falhas tratadas | Parcial | Reserva honesta ("Conteúdo indisponível agora" com "Tentar de novo") e `src/services/conteudo.test.js` para a falha da API. Vazio e carregamento sem teste próprio conferido. |
 | 7 | Desempenho aceitável | Não atende | `npm run ux:lighthouse` (móvel) contra a produção em 10/11/2026, 3 execuções. Home: 6,6 s, mediana 6,6 s, TBT 106 ms, CLS 0,13 (1 de 3 rodadas válidas); programa 1104: 4,5 / 5,6 / 3,0 s, mediana 4,5 s, TBT 1222 ms, CLS 0,0; artigo: 5,0 / 3,8 / 4,0 s, mediana 4,0 s, TBT 11 ms, CLS 0. Meta: 2,5 s. Medido antes das mudanças da integração. |
 | 8 | Acessibilidade básica | Parcial | Produção, axe em 10/11/2026: `color-contrast` 38 e `svg-img-alt` 3 na home, `color-contrast` 5 no programa. Na `developer-mvp-2026`, axe local com 0 violações serious em 4 rotas, foco preso no modal e pausa no carrossel ([#130](https://github.com/douglasabnovato/learn-tech/issues/130)). Falta confirmar na produção. |
-| 9 | Segurança e conformidade | Parcial | Sem `package-lock.json`, o `npm audit` não roda ([learn-tech#127](https://github.com/douglasabnovato/learn-tech/issues/127), decisão do autor). Alertas do Dependabot desligados (`gh api .../dependabot/alerts` responde 403 em 10/11/2026; ligar é do autor). Sem segredo no código. Cabeçalhos de segurança no `vercel.json`. |
+| 9 | Segurança e conformidade | Parcial | `package-lock.json` versionado desde o 1ac0020 ([learn-tech#127](https://github.com/douglasabnovato/learn-tech/issues/127)): a CI roda `npm ci`, e o `npm audit` deu 0 vulnerabilidades em 19/11/2026. Alertas do Dependabot desligados (`gh api .../dependabot/alerts` responde 403 em 10/11/2026; ligar é do autor). Sem segredo no código. Cabeçalhos de segurança no `vercel.json`. |
 | 10 | Entrega confiável | Atende | `gh api repos/douglasabnovato/learn-tech/rulesets` em 10/11/2026: ruleset "main protegida" ativo (check `verificar` obrigatório, sem force push, sem apagar a `main`). CI em todo push e PR. |
 | 11 | Testes dos fluxos críticos | Atende | CI da branch `feature/tasks-10-11-2026-b` em 10/11/2026 (run 42852898603): 41 testes passando, nenhum pulado. |
 | 12 | Documentação honesta | Atende | Os 8 comandos `npm run` citados existem; `copias`, `sitemaps` e `validar` são da API e o README diz para rodar lá (conferido em 10/11/2026). |
@@ -30,7 +30,8 @@ Programas de estudo em ordem, com comentário, prática e quiz, além de artigos
 - Domínio próprio e qualquer serviço pago: o ambiente fica gratuito (decisão do autor, 10/11/2026).
 - Identificação opcional: a identificação obrigatória continua ([learntech-content#5](https://github.com/douglasabnovato/learntech-content/issues/5), não autorizada pelo autor em 10/11/2026).
 - Votação de temas nos cards de programa ([learntech-content#4](https://github.com/douglasabnovato/learntech-content/issues/4), aguardando o autor).
-- Progresso do estudo persistente ([#129](https://github.com/douglasabnovato/learn-tech/issues/129)) e trilhas por objetivo ([#132](https://github.com/douglasabnovato/learn-tech/issues/132)): depois do MVP.
+- Trilhas por objetivo ([#132](https://github.com/douglasabnovato/learn-tech/issues/132)) e JSON-LD de artigos e programas ([#131](https://github.com/douglasabnovato/learn-tech/issues/131)): entregues na `developer-mvp-2026` em 12/11/2026 (bd1bd02 e 4366c94). Valem depois do deploy. O 404 real e o Search Console da #131 dependem do autor.
+- Progresso do estudo persistente ([#129](https://github.com/douglasabnovato/learn-tech/issues/129)): depois do MVP.
 
 ## Histórico
 - 10/11/2026: primeira tabela, depois do ciclo de acessibilidade e busca nos quatro sites.

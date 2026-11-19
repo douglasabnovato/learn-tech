@@ -12,16 +12,7 @@ import {
   FaMicrosoft,
   FaGoogle,
 } from "react-icons/fa";
-import {
-  FaGlobe,
-  FaLink,
-  FaFigma,
-  FaLightbulb,
-  FaUserTie,
-  FaMagnifyingGlass,
-  FaMobileScreen,
-  FaChalkboardUser,
-} from "react-icons/fa6";
+import { FaGlobe, FaLink, FaFigma, FaLightbulb, FaUserTie, FaMagnifyingGlass, FaMobileScreen, FaChalkboardUser } from "react-icons/fa6";
 import { SiJira, SiMongodb, SiMysql } from "react-icons/si";
 
 const statsData = [
