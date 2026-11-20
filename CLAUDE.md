@@ -9,7 +9,7 @@ SPA em React 19, Vite e Tailwind 4, publicada na Vercel (`learn-tech-pied.vercel
 
 ## Regras que não mudam
 - **Conteúdo novo entra pela API, nunca por este repositório.** O produtor do learn-tech grava em `learntech-content/content/`, e as cópias chegam aqui por `npm run copias`.
-- **Arquivos gerados, não edite à mão:** `src/constants/blogData.js`, `areasData.js`, `programasCatalogo.js` e `categoriesData.js`; `public/sitemap.xml`.
+- **Arquivos gerados, não edite à mão:** `src/constants/blogData.js` (cards e lide) e `src/constants/blog/<id>.js` (o resto de cada artigo, carregado sob demanda por `src/services/artigos.js`), `areasData.js`, `programasCatalogo.js` e `categoriesData.js`; `public/sitemap.xml`.
 - `src/services/api.js` não importa dados: é o que mantém o chunk inicial pequeno.
 - Toda página nova usa `Seo.jsx` e tem um `<h1>` só.
 - **Privacidade:** nenhum dado pessoal de terceiro, nome de cliente ou link interno de ex-empregador. O Claude não lê nem cadastra segredos.

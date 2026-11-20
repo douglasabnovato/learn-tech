@@ -15,7 +15,7 @@ Guia curto para mudar o site com segurança. O conteúdo novo (programas, artigo
 | `src/components/common/Seo.jsx` | Título, descrição e canonical por rota (use em toda página nova) |
 | `src/components/common/ConteudoIndisponivel.jsx` | Tela quando a API falha e não há reserva |
 | `src/pages/` | Uma pasta por rota (`App.jsx` lista as rotas) |
-| `src/constants/blogData.js`, `areasData.js`, `programasCatalogo.js`, `categoriesData.js` | **Gerados** pela API (`npm run copias` em `learntech-content`). Não edite à mão |
+| `src/constants/blogData.js` (cards e lide), `src/constants/blog/<id>.js` (corpo de cada artigo, sob demanda), `areasData.js`, `programasCatalogo.js`, `categoriesData.js` | **Gerados** pela API (`npm run copias` em `learntech-content`). Não edite à mão |
 | `src/constants/programsData.js`, `quizData.js` | Reserva manual antiga, só para os programas 1, 101 e 801 |
 | `vercel.json` | Reescrita da SPA e cabeçalhos de segurança |
 
