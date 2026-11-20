@@ -1,12 +1,25 @@
 import { useState, useEffect } from "react";
 import { IoMdPause, IoMdPlay } from "react-icons/io";
 
-import DevImg1 from "../../../assets/devs/dev-4.webp";
-import DevImg2 from "../../../assets/devs/dev-5.webp";
-import DevImg3 from "../../../assets/devs/dev-6.webp";
-import DevImg4 from "../../../assets/devs/dev-7.webp";
+import Dev1P from "../../../assets/devs/dev-4-480.webp";
+import Dev1G from "../../../assets/devs/dev-4-800.webp";
+import Dev2P from "../../../assets/devs/dev-5-480.webp";
+import Dev2G from "../../../assets/devs/dev-5-800.webp";
+import Dev3P from "../../../assets/devs/dev-6-480.webp";
+import Dev3G from "../../../assets/devs/dev-6-800.webp";
+import Dev4P from "../../../assets/devs/dev-7-480.webp";
+import Dev4G from "../../../assets/devs/dev-7-800.webp";
 
-const images = [DevImg1, DevImg2, DevImg3, DevImg4];
+/* Imagens quadradas, como aparecem na tela, em 480 e 800 px: o celular baixa a menor.
+   A primeira é o LCP da home e é pré-carregada pelo index.html (plugin preloadDoHero em vite.config.js),
+   com o mesmo srcset e o mesmo sizes daqui. */
+export const TAMANHOS_DO_HERO = "(min-width: 768px) 45vw, 92vw";
+const images = [
+  [Dev1P, Dev1G],
+  [Dev2P, Dev2G],
+  [Dev3P, Dev3G],
+  [Dev4P, Dev4G],
+].map(([p, g]) => ({ src: g, srcSet: `${p} 480w, ${g} 800w` }));
 
 const CONSULTA_MENOS_MOVIMENTO = "(prefers-reduced-motion: reduce)";
 
@@ -76,7 +89,11 @@ export const Hero = () => {
           <img
             fetchPriority={currentIndex === 0 ? "high" : "auto"}
             decoding="async"
-            src={images[currentIndex]}
+            src={images[currentIndex].src}
+            srcSet={images[currentIndex].srcSet}
+            sizes={TAMANHOS_DO_HERO}
+            width="800"
+            height="800"
             alt={`Pessoa desenvolvedora estudando, imagem ${currentIndex + 1} de ${images.length}`}
             className="w-full h-full object-cover shadow-2xl
                        rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] 
