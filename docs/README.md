@@ -23,7 +23,7 @@ Sem `VITE_API_URL`, o site usa só os dados locais e não pede identificação. 
   - `conteudo.js`: programas (`useProgramas`, `usePrograma`, `CATALOGO_LOCAL`, `statusDoPrograma`, `statusDaReserva`). Importa `programsData` e `programasCatalogo`, então só as páginas de programas o carregam.
 - Essa divisão mantém o catálogo e os ícones fora da carga inicial: o Navbar e as páginas institucionais importam só `api.js`. Não importe `conteudo.js` nem `constants/programsData` em componente que aparece em toda página (Navbar, Footer, ScrollToTop).
 - **Cópias de reserva** em `src/constants/`:
-  - `blogData.js`, `areasData.js`, `categoriesData.js` e `programasCatalogo.js` são geradas pelo `npm run copias` da API (`learntech-content/scripts/exportar-copias.mjs`). Não edite à mão;
+  - `blogData.js` (cards e lide), `blog/<id>.js` (corpo de cada artigo), `areasData.js`, `categoriesData.js` e `programasCatalogo.js` são geradas pelo `npm run copias` da API (`learntech-content/scripts/exportar-copias.mjs`). Não edite à mão;
   - `programsData.js` é a cópia manual com conteúdo completo (`moduleContents`) só dos programas 1, 101 e 801; o resto da reserva vem dos cards de `programasCatalogo.js`.
 - **Reserva honesta:** sem API, só mostra "Aprenda" o programa com aulas locais (`statusDaReserva`); os outros cards mostram "Em breve". Detail e Enroll mostram "Conteúdo indisponível agora", com "Tentar de novo", quando a API falha e as aulas não estão na cópia local.
 - Recursos consumidos:

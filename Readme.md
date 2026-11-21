@@ -128,6 +128,7 @@ learn-tech/
 │   │
 │   ├── constants/                    # cópias de reserva e dados fixos de interface
 │   │   ├── blogData.js, areasData.js, categoriesData.js, programasCatalogo.js   # GERADOS pela API (não editar)
+│   │   ├── blog/<id>.js              # GERADO: corpo de cada artigo, carregado sob demanda
 │   │   ├── programsData.js           # cópia manual com conteúdo completo dos programas 1, 101 e 801
 │   │   ├── quizData.js               # quiz do programa 1
 │   │   ├── icones.js                 # registro dos ícones citados por nome no conteúdo

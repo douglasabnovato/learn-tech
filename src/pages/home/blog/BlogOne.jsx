@@ -8,6 +8,7 @@ import { Seo } from "../../../components/common/Seo";
 import { JsonLd } from "../../../components/common/JsonLd";
 import { artigoJsonLd } from "../../../services/dadosEstruturados";
 import { GaleriaFotos } from "../../../components/common/GaleriaFotos";
+import { useArtigo } from "../../../services/artigos";
 
 export const BlogOne = () => {
   const { itens: blogData } = usePagina("blog", { itens: blogLocal });
@@ -17,10 +18,13 @@ export const BlogOne = () => {
     window.scrollTo(0, 0);
   }, [id]);
 
-  const post = blogData.find((p) => p.id === id);
+  /* O card (título, capa e lide) desenha o topo na hora; o corpo do artigo chega sob demanda (D20). */
+  const card = blogData.find((p) => p.id === id);
+  const { artigo: post, carregando } = useArtigo(card);
   if (!post) return <NotFound />;
 
   const hasFullContent = Boolean(post.lead && post.body);
+  const emPreparacao = !carregando && !hasFullContent;
 
   /* Continue lendo: primeiro os artigos do mesmo tema (tag), depois os demais, até 3. */
   const outros = blogData.filter((p) => p.id !== post.id);
@@ -54,7 +58,7 @@ export const BlogOne = () => {
               {post.tag}
             </span>
             <h1 className="text-2xl md:text-4xl font-bold text-white leading-tight">{post.title}</h1>
-            {hasFullContent && (
+            {!emPreparacao && (
               <div className="flex items-center gap-4 text-sm text-neutral-300">
                 <span className="flex items-center gap-1.5">
                   <FaUser size={12} /> {post.author}
@@ -69,7 +73,7 @@ export const BlogOne = () => {
         </div>
       </div>
 
-      {!hasFullContent ? (
+      {emPreparacao ? (
         /* Estado para os posts que ainda não têm conteúdo completo */
         <div className="w-full md:px-16 sm:px-10 px-4 py-20 text-center space-y-4">
           <h2 className="text-xl font-bold text-neutral-800">Este conteúdo está em preparação.</h2>
@@ -89,7 +93,7 @@ export const BlogOne = () => {
 
           {/* CORPO PRINCIPAL — 1 coluna, largura de leitura confortável */}
           <div className="max-w-2xl mx-auto space-y-5">
-            {post.body.map((paragraph, idx) => (
+            {post.body?.map((paragraph, idx) => (
               <p key={idx} className="text-base text-neutral-600 leading-relaxed">
                 {paragraph}
               </p>

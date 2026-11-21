@@ -15,7 +15,7 @@ Guia curto para mudar o site com segurança. O conteúdo novo (programas, artigo
 | `src/components/common/Seo.jsx` | Título, descrição e canonical por rota (use em toda página nova) |
 | `src/components/common/ConteudoIndisponivel.jsx` | Tela quando a API falha e não há reserva |
 | `src/pages/` | Uma pasta por rota (`App.jsx` lista as rotas) |
-| `src/constants/blogData.js`, `areasData.js`, `programasCatalogo.js`, `categoriesData.js` | **Gerados** pela API (`npm run copias` em `learntech-content`). Não edite à mão |
+| `src/constants/blogData.js` (cards e lide), `src/constants/blog/<id>.js` (corpo de cada artigo, sob demanda), `areasData.js`, `programasCatalogo.js`, `categoriesData.js` | **Gerados** pela API (`npm run copias` em `learntech-content`). Não edite à mão |
 | `src/constants/programsData.js`, `quizData.js` | Reserva manual antiga, só para os programas 1, 101 e 801 |
 | `vercel.json` | Reescrita da SPA e cabeçalhos de segurança |
 
@@ -46,6 +46,8 @@ Guia curto para mudar o site com segurança. O conteúdo novo (programas, artigo
 - [ ] CI verde na branch; feature → `developer-mvp-2026` → `main` (`../learntech-content/docs/processo/fluxo-git.md`).
 - [ ] Deploy da Vercel em "Production" com o commit da `main`.
 - [ ] `npm run e2e` em `learntech-content` sem falha nos testes do learn-tech.
+- [ ] Mexeu na home, no programa ou no artigo? Meça o LCP antes e depois no `npm run preview`: `npm run ux:lcp -- http://localhost:4173/` em `learntech-content` (celular, cache frio, mediana de 3).
+- [ ] Imagem acima da dobra: `srcset` com tamanhos reais da tela, nada de imagem de milhares de pixels. O pré-carregamento por rota (`preloadPorRota` em `vite.config.js`) usa o mesmo `srcset` e `sizes` do componente.
 
 ## 7. Documentos
 - `Readme.md`: visão geral. `docs/README.md`: engenharia.
