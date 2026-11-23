@@ -25,5 +25,5 @@ SPA em React 19, Vite e Tailwind 4, publicada na Vercel (`learn-tech-pied.vercel
 |---|---|
 | `npm test` | Vitest |
 | `npm run lint` | ESLint (zero problemas, obrigatório na CI) |
-| `npm run build` | build de produção; o chunk inicial fica abaixo de 300 kB |
+| `npm run build` | build de produção; o chunk inicial fica abaixo de 285 kB (teto da CI em `npm run orcamento`; meta 270 kB, learn-tech#152) |
 | `npm run e2e` (em `learntech-content`) | fluxos e acessibilidade deste site contra a produção |

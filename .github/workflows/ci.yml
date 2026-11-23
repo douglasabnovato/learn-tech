@@ -39,5 +39,5 @@ jobs:
       - name: Build de produção
         run: npm run build
 
-      - name: Orçamento do chunk inicial (npm run orcamento, limite 320 kB)
+      - name: Orçamento do chunk inicial (npm run orcamento, teto 285 kB, meta 270 kB)
         run: npm run orcamento
