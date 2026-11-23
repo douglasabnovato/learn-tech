@@ -3,6 +3,12 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import svgr from "vite-plugin-svgr";
 import { visualizer } from "rollup-plugin-visualizer";
+import { fileURLToPath } from "node:url";
+
+/* react-router 7: o "exports" do pacote aponta todas as condições para dist/development, e o build levava a versão de
+   desenvolvimento (com 33 avisos). O alias usa a versão de produção (learn-tech#148 A2 e #152). Ao atualizar o
+   react-router, confira se os dois arquivos ainda existem: se sumirem, o build quebra, que é o lado seguro. */
+const routerProducao = (arquivo) => fileURLToPath(new URL(`./node_modules/react-router/dist/production/${arquivo}`, import.meta.url));
 
 /* Pré-carregamento por rota (D19, 20/11/2026). Todas as rotas usam o mesmo index.html, então um script curto no
    head olha o caminho e cria os <link>: o pedaço de JavaScript da página (e o que ele importa), para não esperar
@@ -57,6 +63,12 @@ export default defineConfig({
       brotliSize: true,
     }),
   ],
+  resolve: {
+    alias: [
+      { find: /^react-router$/, replacement: routerProducao("index.mjs") },
+      { find: /^react-router\/dom$/, replacement: routerProducao("dom-export.mjs") },
+    ],
+  },
   server: {
     port: 3000,
   },

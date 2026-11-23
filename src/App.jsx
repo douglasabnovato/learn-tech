@@ -2,7 +2,6 @@ import { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/nav/Navbar";
-import Footer from "./components/footer/Footer";
 import { ScrollToTop } from "./components/common/ScrollToTop";
 
 // Páginas carregadas sob demanda
@@ -53,6 +52,10 @@ const EnrollPrograms = lazy(() =>
     default: module.EnrollPrograms,
   })),
 );
+
+/* Rodapé sob demanda (learn-tech#152): ele fica abaixo da dobra, então sai da entrada e chega logo depois.
+   Sem fallback: entra no fim da página e não empurra nada que já está na tela. */
+const Footer = lazy(() => import("./components/footer/Footer"));
 
 const NotFound = lazy(() =>
   import("./pages/error/not-found").then((module) => ({
@@ -166,7 +169,9 @@ function App() {
           </Suspense>
 
           {/* Footer Section */}
-          <Footer />
+          <Suspense fallback={null}>
+            <Footer />
+          </Suspense>
 
           {/* Button ToTop */}
           <ScrollToTop />
