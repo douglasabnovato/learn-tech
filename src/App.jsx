@@ -1,8 +1,16 @@
 import { lazy, Suspense } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 
 import Navbar from "./components/nav/Navbar";
 import { ScrollToTop } from "./components/common/ScrollToTop";
+import { LimiteDeErro } from "./components/common/LimiteDeErro";
+
+/* As páginas carregam sob demanda. Se o pedaço de uma delas não baixar, o LimiteDeErro mostra "Recarregar" em vez
+   da tela branca, e o erro é esquecido quando a pessoa navega para outro caminho (revisão R19, #154-2). */
+function LimiteDasPaginas({ children }) {
+  const { pathname } = useLocation();
+  return <LimiteDeErro chave={pathname}>{children}</LimiteDeErro>;
+}
 
 // Páginas carregadas sob demanda
 const Home = lazy(() =>
@@ -134,44 +142,48 @@ function App() {
           {/* Routes */}
           {/* O fallback ocupa a tela inteira: com 60vh, o rodapé aparecia no meio da tela enquanto a página
               carregava e era empurrado para baixo quando ela chegava (CLS 0,40 no celular, #142). */}
-          <Suspense fallback={<div className="flex min-h-screen items-center justify-center">Carregando...</div>}>
-            <Routes>
-              {/* Home */}
-              <Route path="/" element={<Home />} />
+          <LimiteDasPaginas>
+            <Suspense fallback={<div className="flex min-h-screen items-center justify-center">Carregando...</div>}>
+              <Routes>
+                {/* Home */}
+                <Route path="/" element={<Home />} />
 
-              {/* Pages */}
-              <Route path="/programs" element={<Programs />} />
-              <Route path="/trilhas" element={<Trilhas />} />
+                {/* Pages */}
+                <Route path="/programs" element={<Programs />} />
+                <Route path="/trilhas" element={<Trilhas />} />
 
-              {/* Institutional Pages */}
-              <Route path="/privacy" element={<Privacy />} />
-              <Route path="/terms" element={<Termos />} />
-              <Route path="/careers" element={<Carreiras />} />
-              <Route path="/aprender" element={<Aprender />} />
-              <Route path="/blogs" element={<Blogs />} />
-              <Route path="/blog/:id" element={<BlogOne />} />
-              <Route path="/softskills" element={<Softskills />} />
-              <Route path="/mentorias" element={<Mentorias />} />
-              <Route path="/resources" element={<Recursos />} />
-              <Route path="/conheca" element={<Conheca />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/falaae" element={<FalaAe />} />
-              <Route path="/category" element={<CategoriesAll />} />
+                {/* Institutional Pages */}
+                <Route path="/privacy" element={<Privacy />} />
+                <Route path="/terms" element={<Termos />} />
+                <Route path="/careers" element={<Carreiras />} />
+                <Route path="/aprender" element={<Aprender />} />
+                <Route path="/blogs" element={<Blogs />} />
+                <Route path="/blog/:id" element={<BlogOne />} />
+                <Route path="/softskills" element={<Softskills />} />
+                <Route path="/mentorias" element={<Mentorias />} />
+                <Route path="/resources" element={<Recursos />} />
+                <Route path="/conheca" element={<Conheca />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/falaae" element={<FalaAe />} />
+                <Route path="/category" element={<CategoriesAll />} />
 
-              {/* Dynamic Program Routes */}
-              <Route path="/program/:category/:id/enroll" element={<EnrollPrograms />} />
+                {/* Dynamic Program Routes */}
+                <Route path="/program/:category/:id/enroll" element={<EnrollPrograms />} />
 
-              <Route path="/program/:category/:id" element={<Detail />} />
+                <Route path="/program/:category/:id" element={<Detail />} />
 
-              {/* Fallback Route */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Suspense>
+                {/* Fallback Route */}
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Suspense>
+          </LimiteDasPaginas>
 
-          {/* Footer Section */}
-          <Suspense fallback={null}>
-            <Footer />
-          </Suspense>
+          {/* Footer Section: se o pedaço do rodapé não baixar, a página segue sem ele (revisão R19, #154-1). */}
+          <LimiteDeErro silencioso>
+            <Suspense fallback={null}>
+              <Footer />
+            </Suspense>
+          </LimiteDeErro>
 
           {/* Button ToTop */}
           <ScrollToTop />

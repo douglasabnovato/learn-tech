@@ -23,15 +23,6 @@ export function statusDoPrograma(p, local) {
   return local?.status ?? "novidade";
 }
 
-/*
- * Status na reserva (API fora do ar): só é "lancado" o programa cujo conteúdo completo
- * (moduleContents) está na cópia local. `modulesCount` do catálogo gerado não basta,
- * porque o Enroll não teria o que mostrar.
- */
-export function statusDaReserva(p) {
-  return p?.moduleContents?.length > 0 ? "lancado" : "novidade";
-}
-
 /* Mantém o vídeo local quando a API não publica vídeo e completa o status que a API não tem. */
 function comMidiaLocal(programa) {
   const p = hidratar(programa);
@@ -60,6 +51,9 @@ export const CAMPOS_DO_CATALOGO = [
 
 /* Reserva das listas: o catálogo gerado pela API, com a mídia local (capa e vídeo de programsMidia.js) por cima.
    Sem API, todos os cards continuam aparecendo, mas só os que têm aulas locais mostram "Aprenda".
+   A regra de status na reserva é uma só: IDS_COM_CONTEUDO_LOCAL. O `modulesCount` do catálogo gerado não basta,
+   porque o Enroll não teria o que mostrar. O dados.test.js confere que a lista bate com os programas com aulas em
+   programsData.
    A ordem é a de antes: primeiro os programas da cópia local, depois os que só existem no catálogo gerado. */
 const naReserva = (p) => {
   const midia = Object.fromEntries(Object.entries(MIDIA_LOCAL[p.id] ?? {}).filter(([campo]) => campo !== "status"));
@@ -76,20 +70,23 @@ export function carregarProgramaLocal(id) {
   return import("../constants/programsData").then((m) => m.default.find((p) => p.id === id) ?? null);
 }
 
-/* Enquanto `precisa` for verdadeiro, busca o conteúdo local do programa. Devolve undefined enquanto carrega. */
-function useProgramaLocal(id, precisa) {
-  const [estado, setEstado] = useState({ id: null, dados: undefined });
+/* Enquanto `precisa` for verdadeiro, busca o conteúdo local do programa. Devolve undefined enquanto carrega.
+   Cada valor novo de `tentativa` repete o import(): se a rede caiu, o "Tentar de novo" baixa a reserva outra vez,
+   em vez de ficar preso no null do erro (revisão R19, #153-1). */
+function useProgramaLocal(id, precisa, tentativa) {
+  const [estado, setEstado] = useState({ chave: null, dados: undefined });
+  const chave = `${id}:${tentativa}`;
   useEffect(() => {
     if (!precisa) return undefined;
     let ativo = true;
     carregarProgramaLocal(id)
-      .then((dados) => ativo && setEstado({ id, dados }))
-      .catch(() => ativo && setEstado({ id, dados: null }));
+      .then((dados) => ativo && setEstado({ chave, dados }))
+      .catch(() => ativo && setEstado({ chave, dados: null }));
     return () => {
       ativo = false;
     };
-  }, [id, precisa]);
-  return estado.id === id ? estado.dados : undefined;
+  }, [id, precisa, chave]);
+  return estado.chave === chave ? estado.dados : undefined;
 }
 
 /* Catálogo de programas para listas e cards. */
@@ -102,19 +99,24 @@ export function useProgramas() {
  * gerado, para o Detail mostrar ao menos título e descrição.
  * - `carregando` evita mostrar "não encontrado" antes da resposta da API;
  * - `indisponivel` diz que a API falhou e o conteúdo completo (moduleContents) não está na reserva;
- * - `tentarDeNovo` repete a busca.
+ * - `tentarDeNovo` repete a busca na API e o import() da reserva.
  */
 export function usePrograma(id) {
   const card = CATALOGO_LOCAL.find((p) => p.id === id);
   const api = useApi(`learn-tech/programas/${id}.json`, card, comMidiaLocal);
+  const [tentativa, setTentativa] = useState(0);
   const naoExiste = api.erro?.status === 404;
   /* A API falhou: o conteúdo completo vem da cópia local, se houver, sem pesar no carregamento normal. */
   const precisaDaReserva = Boolean(api.erro) && !naoExiste && IDS_COM_CONTEUDO_LOCAL.has(id);
-  const completo = useProgramaLocal(id, precisaDaReserva);
+  const completo = useProgramaLocal(id, precisaDaReserva, tentativa);
+  const tentarDeNovo = () => {
+    setTentativa((n) => n + 1);
+    api.tentarDeNovo();
+  };
   const dados = precisaDaReserva && completo ? { ...completo, ...card } : api.dados;
   const carregando = api.carregando || (precisaDaReserva && completo === undefined);
   const indisponivel = Boolean(api.erro) && !naoExiste && !carregando && !(dados?.moduleContents?.length > 0);
-  return { programa: naoExiste ? undefined : dados, carregando, indisponivel, tentarDeNovo: api.tentarDeNovo };
+  return { programa: naoExiste ? undefined : dados, carregando, indisponivel, tentarDeNovo };
 }
 
 /* Fim de conteudo.js */
