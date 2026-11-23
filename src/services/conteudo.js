@@ -1,7 +1,10 @@
 /* conteudo.js — dados de programas do learn-tech: catálogo e programa completo, vindos da API learntech-content,
-   com a cópia local (programsData + programasCatalogo) como reserva. A camada de rede fica em api.js. */
-import programsData from "../constants/programsData";
+   com a cópia local como reserva. A camada de rede fica em api.js.
+   Reserva em duas partes (Decisão LIDER D121, learn-tech#148 A1): programsMidia.js, leve, vai junto com a página;
+   programsData.js (módulos, quiz e textos do Detail) só é baixado quando a API falha num programa que tem aulas locais. */
+import { useEffect, useState } from "react";
 import programasCatalogo from "../constants/programasCatalogo";
+import { MIDIA_LOCAL, IDS_COM_CONTEUDO_LOCAL } from "../constants/programsMidia";
 import { useApi } from "./api";
 import { hidratar } from "./hidratar";
 
@@ -32,7 +35,7 @@ export function statusDaReserva(p) {
 /* Mantém o vídeo local quando a API não publica vídeo e completa o status que a API não tem. */
 function comMidiaLocal(programa) {
   const p = hidratar(programa);
-  const local = programsData.find((x) => x.id === p.id);
+  const local = MIDIA_LOCAL[p.id];
   return {
     ...p,
     video: p.video || local?.video,
@@ -42,17 +45,7 @@ function comMidiaLocal(programa) {
   };
 }
 
-/* Card do catálogo gerado como reserva: mesma mídia local, mas status pela regra da reserva. */
-function naReserva(programa) {
-  return { ...comMidiaLocal(programa), status: statusDaReserva(programa) };
-}
-
-/* Reserva das listas: a cópia manual (com capa, vídeo e quiz locais) mais os programas que só existem
-   no catálogo gerado pela API (programasCatalogo.js). Sem API, todos os cards continuam aparecendo,
-   mas só os que têm conteúdo local mostram "Aprenda". */
-const idsLocais = new Set(programsData.map((p) => p.id));
-/* Campos de card que vêm do catálogo gerado pela API, e não da cópia manual (desatualizada, #144).
-   A cópia manual continua dando a mídia local (capa e vídeo), o quiz e o conteúdo dos módulos. */
+/* Campos de card que vêm do catálogo gerado pela API (programasCatalogo.js), e não da cópia manual (desatualizada, #144). */
 export const CAMPOS_DO_CATALOGO = [
   "title",
   "duration",
@@ -64,16 +57,40 @@ export const CAMPOS_DO_CATALOGO = [
   "access",
   "accessType",
 ];
-const catalogoPorId = new Map(programasCatalogo.map((p) => [p.id, p]));
-function comCamposDoCatalogo(p) {
-  const c = catalogoPorId.get(p.id);
-  if (!c) return p;
-  return { ...p, ...Object.fromEntries(CAMPOS_DO_CATALOGO.filter((k) => c[k] !== undefined).map((k) => [k, c[k]])) };
-}
+
+/* Reserva das listas: o catálogo gerado pela API, com a mídia local (capa e vídeo de programsMidia.js) por cima.
+   Sem API, todos os cards continuam aparecendo, mas só os que têm aulas locais mostram "Aprenda".
+   A ordem é a de antes: primeiro os programas da cópia local, depois os que só existem no catálogo gerado. */
+const naReserva = (p) => {
+  const midia = Object.fromEntries(Object.entries(MIDIA_LOCAL[p.id] ?? {}).filter(([campo]) => campo !== "status"));
+  return { ...hidratar(p), ...midia, status: IDS_COM_CONTEUDO_LOCAL.has(p.id) ? "lancado" : "novidade" };
+};
 export const CATALOGO_LOCAL = [
-  ...programsData.map((p) => ({ ...comCamposDoCatalogo(p), status: statusDaReserva(p) })),
-  ...programasCatalogo.filter((p) => !idsLocais.has(p.id)).map(naReserva),
-];
+  ...programasCatalogo.filter((p) => p.id in MIDIA_LOCAL),
+  ...programasCatalogo.filter((p) => !(p.id in MIDIA_LOCAL)),
+].map(naReserva);
+
+/* Conteúdo completo da cópia local de um programa (módulos, quiz e textos do Detail), baixado sob demanda. */
+export function carregarProgramaLocal(id) {
+  if (!IDS_COM_CONTEUDO_LOCAL.has(id)) return Promise.resolve(null);
+  return import("../constants/programsData").then((m) => m.default.find((p) => p.id === id) ?? null);
+}
+
+/* Enquanto `precisa` for verdadeiro, busca o conteúdo local do programa. Devolve undefined enquanto carrega. */
+function useProgramaLocal(id, precisa) {
+  const [estado, setEstado] = useState({ id: null, dados: undefined });
+  useEffect(() => {
+    if (!precisa) return undefined;
+    let ativo = true;
+    carregarProgramaLocal(id)
+      .then((dados) => ativo && setEstado({ id, dados }))
+      .catch(() => ativo && setEstado({ id, dados: null }));
+    return () => {
+      ativo = false;
+    };
+  }, [id, precisa]);
+  return estado.id === id ? estado.dados : undefined;
+}
 
 /* Catálogo de programas para listas e cards. */
 export function useProgramas() {
@@ -88,11 +105,16 @@ export function useProgramas() {
  * - `tentarDeNovo` repete a busca.
  */
 export function usePrograma(id) {
-  const local = CATALOGO_LOCAL.find((p) => p.id === id);
-  const { dados, carregando, erro, tentarDeNovo } = useApi(`learn-tech/programas/${id}.json`, local, comMidiaLocal);
-  const naoExiste = erro?.status === 404;
-  const indisponivel = Boolean(erro) && !naoExiste && !carregando && !(dados?.moduleContents?.length > 0);
-  return { programa: naoExiste ? undefined : dados, carregando, indisponivel, tentarDeNovo };
+  const card = CATALOGO_LOCAL.find((p) => p.id === id);
+  const api = useApi(`learn-tech/programas/${id}.json`, card, comMidiaLocal);
+  const naoExiste = api.erro?.status === 404;
+  /* A API falhou: o conteúdo completo vem da cópia local, se houver, sem pesar no carregamento normal. */
+  const precisaDaReserva = Boolean(api.erro) && !naoExiste && IDS_COM_CONTEUDO_LOCAL.has(id);
+  const completo = useProgramaLocal(id, precisaDaReserva);
+  const dados = precisaDaReserva && completo ? { ...completo, ...card } : api.dados;
+  const carregando = api.carregando || (precisaDaReserva && completo === undefined);
+  const indisponivel = Boolean(api.erro) && !naoExiste && !carregando && !(dados?.moduleContents?.length > 0);
+  return { programa: naoExiste ? undefined : dados, carregando, indisponivel, tentarDeNovo: api.tentarDeNovo };
 }
 
 /* Fim de conteudo.js */
