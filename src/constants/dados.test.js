@@ -5,6 +5,7 @@
 
 import { describe, it, expect } from "vitest";
 import programsData from "./programsData";
+import { MIDIA_LOCAL, IDS_COM_CONTEUDO_LOCAL } from "./programsMidia";
 
 // Ícones aceitos pelo ModuleRenderer. Nome fora desta lista cai no padrão em
 // silêncio, então o teste existe para transformar o erro de digitação em falha.
@@ -189,3 +190,18 @@ describe("quiz", () => {
 describe.todo("lessons derivado da soma dos passos");
 
 // Fim de dados.test.js
+
+// programsMidia.js é a parte leve da reserva (D121): a mídia e o status precisam ser os mesmos de programsData.js.
+describe("programsMidia igual a programsData", () => {
+  it("mesmos ids, capa, vídeo, pôster e status", () => {
+    expect(Object.keys(MIDIA_LOCAL).map(Number)).toEqual(programsData.map((p) => p.id));
+    for (const p of programsData) {
+      const m = MIDIA_LOCAL[p.id];
+      expect([m.image, m.video, m.videoPoster, m.status], String(p.id)).toEqual([p.image, p.video, p.videoPoster, p.status]);
+    }
+  });
+
+  it("IDS_COM_CONTEUDO_LOCAL são os programas com aulas na cópia local", () => {
+    expect([...IDS_COM_CONTEUDO_LOCAL]).toEqual(comConteudo.map((p) => p.id));
+  });
+});

@@ -1,6 +1,7 @@
 /* conteudo.test.js — regra de status dos programas (API e reserva local) e o adaptador da camada de rede. */
 import { describe, it, expect } from "vitest";
-import { statusDoPrograma, statusDaReserva, CATALOGO_LOCAL, CAMPOS_DO_CATALOGO } from "./conteudo";
+import { statusDoPrograma, statusDaReserva, CATALOGO_LOCAL, CAMPOS_DO_CATALOGO, carregarProgramaLocal } from "./conteudo";
+import { IDS_COM_CONTEUDO_LOCAL } from "../constants/programsMidia";
 import programasCatalogo from "../constants/programasCatalogo";
 import programsData from "../constants/programsData";
 import { criarHidratar, buscarRecurso, API_URL } from "./api";
@@ -39,7 +40,8 @@ describe("statusDaReserva e CATALOGO_LOCAL", () => {
   it("na reserva, 'Aprenda' aparece só para os programas com aulas locais", () => {
     const lancados = CATALOGO_LOCAL.filter((p) => p.status === "lancado");
     expect(lancados.length).toBeGreaterThan(0);
-    for (const p of lancados) expect(p.moduleContents?.length, String(p.id)).toBeGreaterThan(0);
+    const comAulas = new Set(programsData.filter((p) => p.moduleContents?.length > 0).map((p) => p.id));
+    for (const p of lancados) expect(comAulas.has(p.id), String(p.id)).toBe(true);
     expect(CATALOGO_LOCAL.find((p) => p.id === 1001)?.status).toBe("novidade");
   });
 });
@@ -54,13 +56,23 @@ describe("reserva igual à API nos campos de card (#144)", () => {
     expect(diferentes).toEqual([]);
   });
 
-  it("a cópia manual continua dando capa, quiz e conteúdo dos módulos", () => {
+  it("a cópia manual continua dando a capa e o vídeo dos cards", () => {
     for (const m of programsData) {
       const p = CATALOGO_LOCAL.find((x) => x.id === m.id);
       expect(p.image).toBe(m.image);
-      expect(p.quiz).toBe(m.quiz);
-      expect(p.moduleContents).toBe(m.moduleContents);
+      expect(p.video).toBe(m.video);
     }
+  });
+
+  it("os cards da reserva não carregam módulos nem quiz (D121): o conteúdo completo vem sob demanda", async () => {
+    expect(CATALOGO_LOCAL.some((p) => p.moduleContents || p.quiz)).toBe(false);
+    for (const id of IDS_COM_CONTEUDO_LOCAL) {
+      const completo = await carregarProgramaLocal(id);
+      const m = programsData.find((p) => p.id === id);
+      expect(completo.moduleContents).toBe(m.moduleContents);
+      expect(completo.quiz).toBe(m.quiz);
+    }
+    expect(await carregarProgramaLocal(1001)).toBeNull();
   });
 });
 
