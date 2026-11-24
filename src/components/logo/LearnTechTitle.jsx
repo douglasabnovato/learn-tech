@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import LogoIcon from "./assets/logo192.svg"; // importar como imagem
 
 const LearnTechTitle = ({
@@ -21,12 +20,5 @@ const LearnTechTitle = ({
   );
 };
 
-LearnTechTitle.propTypes = {
-  size: PropTypes.string,
-  className: PropTypes.string,
-  showIcon: PropTypes.bool,
-  iconSize: PropTypes.string,
-  gradient: PropTypes.bool,
-};
 
 export default LearnTechTitle;

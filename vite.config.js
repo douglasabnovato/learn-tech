@@ -69,6 +69,11 @@ export default defineConfig({
       { find: /^react-router\/dom$/, replacement: routerProducao("dom-export.mjs") },
     ],
   },
+  /* Sem o polyfill de modulepreload: os navegadores atuais já o suportam (Safari desde o 17), e nos antigos o
+     preload só deixa de adiantar o download, sem quebrar nada. O script de preload-por-rota também não o usa. */
+  build: {
+    modulePreload: { polyfill: false },
+  },
   server: {
     port: 3000,
   },

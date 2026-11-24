@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { IoMdClose, IoMdMenu } from "react-icons/io";
+import { IconeFechar, IconeMenu } from "../common/IconesDaEntrada";
 import navLocal from "../../constants/navbarData";
 import { usePagina } from "../../services/api";
 import LearnTechTitle from "../logo/LearnTechTitle";
@@ -63,7 +63,7 @@ const Navbar = () => {
           aria-controls="menu-principal"
           className="text-neutral-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 rounded"
         >
-          <IoMdMenu size={28} />
+          <IconeMenu size={28} />
         </button>
       </div>
 
@@ -90,7 +90,7 @@ const Navbar = () => {
               aria-controls="menu-principal"
               className="text-red-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 rounded"
             >
-              <IoMdClose size={28} />
+              <IconeFechar size={28} />
             </button>
           </div>
         </div>
