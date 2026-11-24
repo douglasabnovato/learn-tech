@@ -61,7 +61,7 @@ const Navbar = () => {
           aria-label="Abrir menu"
           aria-expanded={isOpen}
           aria-controls="menu-principal"
-          className="text-neutral-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 rounded"
+          className="text-neutral-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-700 rounded"
         >
           <IoMdMenu size={28} />
         </button>
@@ -88,7 +88,7 @@ const Navbar = () => {
               onClick={closeNavbar}
               aria-label="Fechar menu"
               aria-controls="menu-principal"
-              className="text-red-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 rounded"
+              className="text-red-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-700 rounded"
             >
               <IoMdClose size={28} />
             </button>

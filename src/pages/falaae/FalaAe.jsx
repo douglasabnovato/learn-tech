@@ -268,7 +268,7 @@ export const FalaAe = () => {
                       value={formData.mensagem}
                       onChange={(e) => setFormData({ ...formData, mensagem: e.target.value })}
                       placeholder={selectedMotivo?.placeholder || "Conte o que você precisa."}
-                      className="w-full rounded-xl border border-neutral-300 p-4 text-sm text-neutral-800 focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:border-indigo-400 resize-none"
+                      className="w-full rounded-xl border border-neutral-300 p-4 text-sm text-neutral-800 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 resize-none"
                     />
                   </div>
                 )}
@@ -290,7 +290,7 @@ export const FalaAe = () => {
                           value={formData.nome}
                           onChange={(e) => setFormData({ ...formData, nome: e.target.value })}
                           placeholder="Seu nome completo"
-                          className="w-full rounded-xl border border-neutral-300 p-3 text-sm text-neutral-800 focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:border-indigo-400"
+                          className="w-full rounded-xl border border-neutral-300 p-3 text-sm text-neutral-800 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600"
                         />
                       </div>
                       <div className="space-y-1">
@@ -305,7 +305,7 @@ export const FalaAe = () => {
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           placeholder="seu@email.com"
-                          className="w-full rounded-xl border border-neutral-300 p-3 text-sm text-neutral-800 focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:border-indigo-400"
+                          className="w-full rounded-xl border border-neutral-300 p-3 text-sm text-neutral-800 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600"
                         />
                       </div>
                     </div>

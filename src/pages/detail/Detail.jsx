@@ -240,7 +240,7 @@ export const Detail = () => {
                 <Link
                   to={`/program/${program.categoryFilter}/${program.id}/enroll`}
                   aria-label="Acessar este programa"
-                  className="md:w-1/2 w-full h-10 bg-sky-800 text-white text-sm font-medium rounded-lg flex items-center justify-center gap-2 hover:bg-sky-700 transition focus:outline-none focus:ring-2 focus:ring-sky-300"
+                  className="md:w-1/2 w-full h-11 bg-sky-800 text-white text-sm font-medium rounded-lg flex items-center justify-center gap-2 hover:bg-sky-700 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-700 focus-visible:ring-offset-2"
                 >
                   Acessar
                 </Link>
@@ -248,7 +248,7 @@ export const Detail = () => {
               <Link
                 to={voltarPara}
                 aria-label="Ver outros programas"
-                className="md:w-1/2 w-full h-10 border border-neutral-300 text-neutral-800 text-sm font-medium rounded-lg flex items-center justify-center gap-2 hover:bg-neutral-50 transition focus:outline-none focus:ring-2 focus:ring-sky-100"
+                className="md:w-1/2 w-full h-11 border border-neutral-300 text-neutral-800 text-sm font-medium rounded-lg flex items-center justify-center gap-2 hover:bg-neutral-50 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-700 focus-visible:ring-offset-2"
               >
                 Programas
               </Link>

@@ -3,10 +3,11 @@
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 import { LimiteDeErro } from "./LimiteDeErro";
+import { ehErroDeCarga } from "./erroDeCarga";
 
-const comErro = (props) => {
+const comErro = (props, erro = new Error("Failed to fetch dynamically imported module")) => {
   const limite = new LimiteDeErro({ children: <p>página</p>, ...props });
-  limite.state = LimiteDeErro.getDerivedStateFromError(new Error("Failed to fetch dynamically imported module"));
+  limite.state = LimiteDeErro.getDerivedStateFromError(erro);
   return limite;
 };
 
@@ -36,5 +37,21 @@ describe("LimiteDeErro", () => {
     novo = undefined;
     limite.componentDidUpdate({ chave: "/novo" });
     expect(novo).toBeUndefined();
+  });
+
+  it("fala em conexão só no erro de carga; num bug de renderização, a frase é genérica", () => {
+    expect(renderToStaticMarkup(comErro({}).render())).toContain("Pode ser a conexão");
+    const html = renderToStaticMarkup(comErro({}, new TypeError("x is undefined")).render());
+    expect(html).not.toContain("conexão");
+    expect(html).toContain("Recarregar");
+  });
+
+  it("reconhece o erro de carga do Chrome, do Firefox, do Safari e o ChunkLoadError", () => {
+    expect(ehErroDeCarga(new TypeError("Failed to fetch dynamically imported module: /assets/Home.js"))).toBe(true);
+    expect(ehErroDeCarga(new TypeError("error loading dynamically imported module"))).toBe(true);
+    expect(ehErroDeCarga(new TypeError("Importing a module script failed."))).toBe(true);
+    expect(ehErroDeCarga(Object.assign(new Error("Loading chunk 3 failed"), { name: "ChunkLoadError" }))).toBe(true);
+    expect(ehErroDeCarga(new TypeError("Cannot read properties of undefined"))).toBe(false);
+    expect(ehErroDeCarga(undefined)).toBe(false);
   });
 });
