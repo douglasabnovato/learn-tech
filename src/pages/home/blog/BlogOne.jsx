@@ -85,7 +85,12 @@ export const BlogOne = () => {
           </Link>
         </div>
       ) : (
-        <article className="w-full md:px-16 sm:px-10 px-4 md:py-16 py-10 space-y-14">
+        /* Enquanto o corpo chega (D20), o artigo reserva a altura da tela: sem isso, o "Continue lendo" aparecia na tela
+           e era empurrado quando o corpo chegava (CLS 0,105 a 360 px, learn-tech#171). */
+        <article
+          className={`w-full md:px-16 sm:px-10 px-4 md:py-16 py-10 space-y-14 ${carregando ? "min-h-screen" : ""}`}
+          aria-busy={carregando || undefined}
+        >
           {/* LIDE — 1 coluna, texto de abertura maior */}
           <div className="max-w-2xl mx-auto">
             <p className="text-xl font-medium text-neutral-700 leading-relaxed">{post.lead}</p>
