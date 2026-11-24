@@ -73,10 +73,17 @@ export default defineConfig(({ command }) => ({
           ]
         : [],
   },
-  /* Sem o polyfill de modulepreload: os navegadores atuais já o suportam (Safari desde o 17), e nos antigos o
-     preload só deixa de adiantar o download, sem quebrar nada. O script de preload-por-rota também não o usa. */
+  /* Entrada de 279,6 para 269,9 kB (learn-tech#152, meta 270), sem trocar React nem roteador:
+     - modulePreload: false tira o helper de preload do Vite (e o polyfill). O pré-carregamento que importa já vem
+       do preload-por-rota acima (página e dependências de /, /program/... e /blog/...); nas outras rotas, os pedaços
+       comuns já estão em cache depois da primeira página. LCP no celular simulado igual antes e depois (#152).
+     - terser (2 passadas, módulo ES) no lugar do esbuild: cerca de 5 kB a menos, sobretudo no react-dom.
+     - SVG fora do JS: o logo (1,4 kB) virava base64 na entrada; agora é um arquivo com hash, em cache. */
   build: {
-    modulePreload: { polyfill: false },
+    modulePreload: false,
+    minify: "terser",
+    terserOptions: { module: true, ecma: 2020, compress: { passes: 2 } },
+    assetsInlineLimit: (arquivo) => (arquivo.endsWith(".svg") ? false : undefined),
   },
   server: {
     port: 3000,

@@ -2,7 +2,6 @@ import { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 
 import Navbar from "./components/nav/Navbar";
-import { ScrollToTop } from "./components/common/ScrollToTop";
 import { LimiteDeErro } from "./components/common/LimiteDeErro";
 
 /* As páginas carregam sob demanda. Se o pedaço de uma delas não baixar, o LimiteDeErro mostra "Recarregar" em vez
@@ -13,123 +12,52 @@ function LimiteDasPaginas({ children }) {
 }
 
 // Páginas carregadas sob demanda
-const Home = lazy(() =>
-  import("./pages/home/Home").then((module) => ({
-    default: module.Home,
-  })),
-);
+/* O botão "Voltar ao topo" só aparece depois de rolar: ele sai da entrada e chega junto com a página. */
+const ScrollToTop = lazy(() => import("./components/common/ScrollToTop").then((m) => ({ default: m.ScrollToTop })));
+/* Uma página sob demanda: o import() do pedaço e o export nomeado que vira o default do lazy(). */
+const pagina = (carregar, nome) => lazy(() => carregar().then((modulo) => ({ default: modulo[nome] })));
 
-const Softskills = lazy(() =>
-  import("./pages/home/quickaccess/softskills/Softskills").then((module) => ({
-    default: module.Softskills,
-  })),
-);
+const Home = pagina(() => import("./pages/home/Home"), "Home");
 
-const Mentorias = lazy(() =>
-  import("./pages/home/quickaccess/mentorias/Mentorias").then((module) => ({
-    default: module.Mentorias,
-  })),
-);
+const Softskills = pagina(() => import("./pages/home/quickaccess/softskills/Softskills"), "Softskills");
 
-const Trilhas = lazy(() =>
-  import("./pages/trilhas/Trilhas").then((module) => ({
-    default: module.Trilhas,
-  })),
-);
+const Mentorias = pagina(() => import("./pages/home/quickaccess/mentorias/Mentorias"), "Mentorias");
 
-const Programs = lazy(() =>
-  import("./pages/programs/Programs").then((module) => ({
-    default: module.Programs,
-  })),
-);
+const Trilhas = pagina(() => import("./pages/trilhas/Trilhas"), "Trilhas");
 
-const Detail = lazy(() =>
-  import("./pages/detail/Detail").then((module) => ({
-    default: module.Detail,
-  })),
-);
+const Programs = pagina(() => import("./pages/programs/Programs"), "Programs");
 
-const CategoriesAll = lazy(() =>
-  import("./pages/home/category/CategoriesAll").then((module) => ({
-    default: module.CategoriesAll,
-  })),
-);
+const Detail = pagina(() => import("./pages/detail/Detail"), "Detail");
 
-const EnrollPrograms = lazy(() =>
-  import("./pages/enroll/EnrollPrograms").then((module) => ({
-    default: module.EnrollPrograms,
-  })),
-);
+const CategoriesAll = pagina(() => import("./pages/home/category/CategoriesAll"), "CategoriesAll");
+
+const EnrollPrograms = pagina(() => import("./pages/enroll/EnrollPrograms"), "EnrollPrograms");
 
 /* Rodapé sob demanda (learn-tech#152): ele fica abaixo da dobra, então sai da entrada e chega logo depois.
    Sem fallback: entra no fim da página e não empurra nada que já está na tela. */
 const Footer = lazy(() => import("./components/footer/Footer"));
 
-const NotFound = lazy(() =>
-  import("./pages/error/not-found").then((module) => ({
-    default: module.NotFound,
-  })),
-);
+const NotFound = pagina(() => import("./pages/error/not-found"), "NotFound");
 
-const Recursos = lazy(() =>
-  import("./pages/recursos/Recursos").then((module) => ({
-    default: module.Recursos,
-  })),
-);
+const Recursos = pagina(() => import("./pages/recursos/Recursos"), "Recursos");
 
-const Conheca = lazy(() =>
-  import("./pages/conheca/Conheca").then((module) => ({
-    default: module.Conheca,
-  })),
-);
+const Conheca = pagina(() => import("./pages/conheca/Conheca"), "Conheca");
 
-const About = lazy(() =>
-  import("./pages/about/About").then((module) => ({
-    default: module.About,
-  })),
-);
+const About = pagina(() => import("./pages/about/About"), "About");
 
-const Blogs = lazy(() =>
-  import("./pages/home/blog/Blogs").then((module) => ({
-    default: module.Blogs,
-  })),
-);
+const Blogs = pagina(() => import("./pages/home/blog/Blogs"), "Blogs");
 
-const BlogOne = lazy(() =>
-  import("./pages/home/blog/BlogOne").then((module) => ({
-    default: module.BlogOne,
-  })),
-);
+const BlogOne = pagina(() => import("./pages/home/blog/BlogOne"), "BlogOne");
 
-const FalaAe = lazy(() =>
-  import("./pages/falaae/FalaAe").then((module) => ({
-    default: module.FalaAe,
-  })),
-);
+const FalaAe = pagina(() => import("./pages/falaae/FalaAe"), "FalaAe");
 
-const Aprender = lazy(() =>
-  import("./pages/aprender/Aprender").then((module) => ({
-    default: module.Aprender,
-  })),
-);
+const Aprender = pagina(() => import("./pages/aprender/Aprender"), "Aprender");
 
-const Carreiras = lazy(() =>
-  import("./pages/career/Career").then((module) => ({
-    default: module.Carreiras,
-  })),
-);
+const Carreiras = pagina(() => import("./pages/career/Career"), "Carreiras");
 
-const Termos = lazy(() =>
-  import("./pages/docs/Termos").then((module) => ({
-    default: module.Termos,
-  })),
-);
+const Termos = pagina(() => import("./pages/docs/Termos"), "Termos");
 
-const Privacy = lazy(() =>
-  import("./pages/docs/Privacidade").then((module) => ({
-    default: module.Privacy,
-  })),
-);
+const Privacy = pagina(() => import("./pages/docs/Privacidade"), "Privacy");
 
 function App() {
   return (
@@ -186,7 +114,9 @@ function App() {
           </LimiteDeErro>
 
           {/* Button ToTop */}
-          <ScrollToTop />
+          <Suspense fallback={null}>
+            <ScrollToTop />
+          </Suspense>
         </main>
       </Router>
     </>
