@@ -75,18 +75,32 @@ export const BlogOne = () => {
 
       {erro ? (
         /* O corpo não baixou: é falha de conexão, e não artigo em preparação (learn-tech#173, Nielsen 9). O mesmo texto
-           do FalhaDeCarga; o título e o lide continuam acima. Ocupa a mesma altura reservada durante a carga (#171), para o
-           "Continue lendo" não subir quando o erro aparece. */
-        <div className="w-full min-h-screen md:px-16 sm:px-10 px-4 py-20 text-center space-y-4" role="alert">
-          <h2 className="text-xl font-bold text-neutral-800">Uma parte do artigo não chegou</h2>
-          <p className="text-neutral-700 max-w-md mx-auto">Pode ser a conexão, ou o site acabou de ganhar uma versão nova.</p>
-          <button
-            type="button"
-            onClick={() => window.location.reload()}
-            className="h-11 px-5 bg-sky-800 text-white text-sm font-medium rounded-lg hover:bg-sky-700 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-700 focus-visible:ring-offset-2"
-          >
-            Recarregar
-          </button>
+           do FalhaDeCarga. O bloco usa o mesmo contêiner do <article> (o lide no mesmo lugar e a altura reservada durante
+           a carga, #171), para nada se mover quando o erro aparece; o lide fica visível, e "Ver outros artigos" dá uma
+           saída sem recarregar (R19 do #174, notas 1). */
+        <div className="w-full min-h-screen md:px-16 sm:px-10 px-4 md:py-16 py-10 space-y-14" data-estado="erro-de-carga">
+          <div className="max-w-2xl mx-auto">
+            <p className="text-xl font-medium text-neutral-700 leading-relaxed">{post.lead}</p>
+          </div>
+          <div className="max-w-2xl mx-auto text-center space-y-4" role="alert">
+            <h2 className="text-xl font-bold text-neutral-800">Uma parte do artigo não chegou</h2>
+            <p className="text-neutral-700 max-w-md mx-auto">Pode ser a conexão, ou o site acabou de ganhar uma versão nova.</p>
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              <button
+                type="button"
+                onClick={() => window.location.reload()}
+                className="h-11 px-5 bg-sky-800 text-white text-sm font-medium rounded-lg hover:bg-sky-700 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-700 focus-visible:ring-offset-2"
+              >
+                Recarregar
+              </button>
+              <Link
+                to="/blogs"
+                className="h-11 px-5 inline-flex items-center gap-2 border border-neutral-300 text-neutral-800 text-sm font-medium rounded-lg hover:bg-neutral-50 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-700 focus-visible:ring-offset-2"
+              >
+                Ver outros artigos <FaAnglesRight aria-hidden="true" />
+              </Link>
+            </div>
+          </div>
         </div>
       ) : emPreparacao ? (
         /* Estado para os posts que ainda não têm conteúdo completo */
