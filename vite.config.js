@@ -45,7 +45,17 @@ const preloadPorRota = () => ({
         return `if(${r.teste}){${corpo}}`;
       });
       const script = `(function(){var p=location.pathname;function m(hs){hs.forEach(function(h){var e=document.createElement("link");e.rel="modulepreload";e.href=h;document.head.appendChild(e)})}${partes.join("else ")}})()`;
-      return { html, tags: [{ tag: "script", children: script, injectTo: "head-prepend" }] };
+      /* O logo do cabeçalho é um arquivo à parte (fora do JS, #170): o preload o pede junto com a entrada, em todas
+         as rotas, para o ícone não chegar depois do texto "Learn TECH" (R19 do #170, nota 1). */
+      const logo = asset("logo192.svg");
+      if (!logo) throw new Error("preload-por-rota: logo192.svg não encontrado no bundle");
+      return {
+        html,
+        tags: [
+          { tag: "script", children: script, injectTo: "head-prepend" },
+          { tag: "link", attrs: { rel: "preload", as: "image", href: "/" + logo, type: "image/svg+xml" }, injectTo: "head" },
+        ],
+      };
     },
   },
 });
@@ -78,7 +88,9 @@ export default defineConfig(({ command }) => ({
        do preload-por-rota acima (página e dependências de /, /program/... e /blog/...); nas outras rotas, os pedaços
        comuns já estão em cache depois da primeira página. LCP no celular simulado igual antes e depois (#152).
      - terser (2 passadas, módulo ES) no lugar do esbuild: cerca de 5 kB a menos, sobretudo no react-dom.
-     - SVG fora do JS: o logo (1,4 kB) virava base64 na entrada; agora é um arquivo com hash, em cache. */
+     - SVG fora do JS: o logo (1,4 kB) virava base64 na entrada; agora é um arquivo com hash, em cache, com preload.
+     Atenção: o corte do modulePreload vale enquanto o CSS for um só (Tailwind). Se uma página sob demanda passar a
+     importar CSS próprio, confira na documentação do Vite se o carregamento desse CSS ainda funciona (R19, nota 5). */
   build: {
     modulePreload: false,
     minify: "terser",

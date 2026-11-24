@@ -113,10 +113,13 @@ function App() {
             </Suspense>
           </LimiteDeErro>
 
-          {/* Button ToTop */}
-          <Suspense fallback={null}>
-            <ScrollToTop />
-          </Suspense>
+          {/* Button ToTop: sob demanda e, como o rodapé, dentro de um LimiteDeErro silencioso. Se o pedaço dele não
+              baixar, só o botão some; sem o limite, o erro desmontava o app inteiro (R19 do #170, nota 3). */}
+          <LimiteDeErro silencioso>
+            <Suspense fallback={null}>
+              <ScrollToTop />
+            </Suspense>
+          </LimiteDeErro>
         </main>
       </Router>
     </>
