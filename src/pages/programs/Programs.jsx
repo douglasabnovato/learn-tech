@@ -75,7 +75,14 @@ export const Programs = () => {
           {/* Cabeçalho + contador */}
           <div className="flex items-center gap-3">
             <h2 className="text-xl font-semibold text-neutral-900">Programas</h2>
-            <span className="px-3 py-1 text-sm font-medium rounded-full bg-sky-100 text-sky-700 border border-sky-300">
+            {/* A contagem é a mensagem de status da busca e do filtro (WCAG 4.1.3): o leitor de tela anuncia só ela, e não a
+                lista (a mesma solução do career#48; o bootcamps e o tools já fazem assim). */}
+            <span
+              role="status"
+              aria-live="polite"
+              aria-atomic="true"
+              className="px-3 py-1 text-sm font-medium rounded-full bg-sky-100 text-sky-700 border border-sky-300"
+            >
               {filteredPrograms.length} {filteredPrograms.length === 1 ? "treinamento" : "treinamentos"}
             </span>
           </div>
