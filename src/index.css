@@ -1,6 +1,12 @@
 /*  */
 @import "tailwindcss";
 
+/* Altura do cabeçalho fixo (Navbar) e o espaço que o hero reserva para ele, em rem e não em ch: o ch depende do
+   "0" da fonte e mudava quando a Inter chegava (CLS 0,051, learn-tech#166 e #167). Gera h-cabecalho e pt-cabecalho. */
+@theme {
+  --spacing-cabecalho: 5.03rem;
+}
+
 
 * {
   box-sizing: border-box;

@@ -41,7 +41,7 @@ const Navbar = () => {
   return (
     <div
       id="navbar"
-      className={`w-full h-[5.03rem] backdrop-blur-sm flex items-center justify-between md:px-16 sm:px-10 px-4 fixed top-0 transition-all ease-in-out duration-300 z-50 ${
+      className={`w-full h-cabecalho backdrop-blur-sm flex items-center justify-between md:px-16 sm:px-10 px-4 fixed top-0 transition-all ease-in-out duration-300 z-50 ${
         isScrolled ? "bg-sky-50/30 border-b border-neutral-200" : "bg-transparent"
       }`}
     >
