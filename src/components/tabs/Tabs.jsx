@@ -66,7 +66,7 @@ export const Tabs = ({ tabs = [], activeIndex, onChange }) => {
               aria-controls={idPainel(tab)}
               tabIndex={ativa ? 0 : -1}
               onClick={() => selecionar(i)}
-              className={`px-4 py-2 text-base font-semibold border-b-2 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-700 ${
+              className={`min-h-11 px-4 py-2 text-base font-semibold border-b-2 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-700 ${
                 ativa
                   ? "border-sky-600 text-sky-700 bg-sky-600/10 rounded-t-lg"
                   : "text-neutral-600 border-neutral-100 hover:text-neutral-900"
