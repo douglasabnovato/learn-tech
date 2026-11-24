@@ -26,14 +26,14 @@ export const ConteudoIndisponivel = ({ onTentarDeNovo, compacto = false }) => {
           <button
             type="button"
             onClick={onTentarDeNovo}
-            className="h-10 px-5 bg-sky-800 text-white text-sm font-medium rounded-lg hover:bg-sky-700 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300"
+            className="h-11 px-5 bg-sky-800 text-white text-sm font-medium rounded-lg hover:bg-sky-700 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-700 focus-visible:ring-offset-2"
           >
             Tentar de novo
           </button>
         )}
         <Link
           to="/programs"
-          className="h-10 px-5 border border-neutral-300 text-neutral-800 text-sm font-medium rounded-lg flex items-center hover:bg-neutral-50 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300"
+          className="h-11 px-5 border border-neutral-300 text-neutral-800 text-sm font-medium rounded-lg flex items-center hover:bg-neutral-50 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-700 focus-visible:ring-offset-2"
         >
           Ver todos os programas
         </Link>
