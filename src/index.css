@@ -7,6 +7,11 @@
   --spacing-cabecalho: 5.03rem;
 }
 
+/* O foco pelo teclado e as âncoras param abaixo do cabeçalho fixo, também com o texto ampliado (W-2.4.11, #168). */
+html {
+  scroll-padding-top: var(--spacing-cabecalho);
+}
+
 
 * {
   box-sizing: border-box;

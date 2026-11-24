@@ -1,15 +1,22 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { IconeFechar, IconeMenu } from "../common/IconesDaEntrada";
 import navLocal from "../../constants/navbarData";
 import { usePagina } from "../../services/api";
 import LearnTechTitle from "../logo/LearnTechTitle";
+import { deveRecolher } from "./recolher";
 
 const Navbar = () => {
   const { itens: navItems } = usePagina("navegacao", { itens: navLocal });
   const [isOpen, setIsOpen] = useState(false);
 
   const [isScrolled, setIsScrolled] = useState(false);
+  // Com fonte grande, o cabeçalho se recolhe ao rolar para baixo e volta ao rolar para cima (learn-tech#168).
+  const [recolhido, setRecolhido] = useState(false);
+  const cabecalho = useRef(null);
+  const yAnterior = useRef(0);
+  const menuAberto = useRef(false);
+  menuAberto.current = isOpen;
 
   const location = useLocation(); // Rota atual, para destacar o item ativo
 
@@ -28,6 +35,18 @@ const Navbar = () => {
     } else {
       setIsScrolled(false);
     }
+    const y = window.scrollY;
+    setRecolhido((antes) =>
+      deveRecolher({
+        alturaCabecalho: cabecalho.current?.offsetHeight ?? 0,
+        alturaTela: window.innerHeight,
+        y,
+        yAnterior: yAnterior.current,
+        menuAberto: menuAberto.current,
+        recolhidoAntes: antes,
+      }),
+    );
+    yAnterior.current = y;
   };
 
   // Adding event listener on mount and removing on unmount
@@ -41,9 +60,12 @@ const Navbar = () => {
   return (
     <div
       id="navbar"
+      ref={cabecalho}
+      // O foco pelo teclado no menu traz o cabeçalho de volta.
+      onFocus={() => setRecolhido(false)}
       className={`w-full h-cabecalho backdrop-blur-sm flex items-center justify-between md:px-16 sm:px-10 px-4 fixed top-0 transition-all ease-in-out duration-300 z-50 ${
         isScrolled ? "bg-sky-50/30 border-b border-neutral-200" : "bg-transparent"
-      }`}
+      } ${recolhido ? "-translate-y-full" : ""}`}
     >
       {/* Logo */}
       <div className="flex items-center gap-2 md:pr-16 pr-0">
