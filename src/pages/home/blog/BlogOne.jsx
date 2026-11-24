@@ -20,11 +20,11 @@ export const BlogOne = () => {
 
   /* O card (título, capa e lide) desenha o topo na hora; o corpo do artigo chega sob demanda (D20). */
   const card = blogData.find((p) => p.id === id);
-  const { artigo: post, carregando } = useArtigo(card);
+  const { artigo: post, carregando, erro } = useArtigo(card);
   if (!post) return <NotFound />;
 
   const hasFullContent = Boolean(post.lead && post.body);
-  const emPreparacao = !carregando && !hasFullContent;
+  const emPreparacao = !carregando && !erro && !hasFullContent;
 
   /* Continue lendo: primeiro os artigos do mesmo tema (tag), depois os demais, até 3. */
   const outros = blogData.filter((p) => p.id !== post.id);
@@ -73,7 +73,22 @@ export const BlogOne = () => {
         </div>
       </div>
 
-      {emPreparacao ? (
+      {erro ? (
+        /* O corpo não baixou: é falha de conexão, e não artigo em preparação (learn-tech#173, Nielsen 9). O mesmo texto
+           do FalhaDeCarga; o título e o lide continuam acima. Ocupa a mesma altura reservada durante a carga (#171), para o
+           "Continue lendo" não subir quando o erro aparece. */
+        <div className="w-full min-h-screen md:px-16 sm:px-10 px-4 py-20 text-center space-y-4" role="alert">
+          <h2 className="text-xl font-bold text-neutral-800">Uma parte do artigo não chegou</h2>
+          <p className="text-neutral-700 max-w-md mx-auto">Pode ser a conexão, ou o site acabou de ganhar uma versão nova.</p>
+          <button
+            type="button"
+            onClick={() => window.location.reload()}
+            className="h-11 px-5 bg-sky-800 text-white text-sm font-medium rounded-lg hover:bg-sky-700 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-700 focus-visible:ring-offset-2"
+          >
+            Recarregar
+          </button>
+        </div>
+      ) : emPreparacao ? (
         /* Estado para os posts que ainda não têm conteúdo completo */
         <div className="w-full md:px-16 sm:px-10 px-4 py-20 text-center space-y-4">
           <h2 className="text-xl font-bold text-neutral-800">Este conteúdo está em preparação.</h2>
