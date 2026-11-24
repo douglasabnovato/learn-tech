@@ -20,5 +20,4 @@ const LearnTechTitle = ({
   );
 };
 
-
 export default LearnTechTitle;
