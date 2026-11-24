@@ -4,7 +4,7 @@ import { IconeFechar, IconeMenu } from "../common/IconesDaEntrada";
 import navLocal from "../../constants/navbarData";
 import { usePagina } from "../../services/api";
 import LearnTechTitle from "../logo/LearnTechTitle";
-import { deveRecolher } from "./recolher";
+import { deveRecolher, LIMIAR_PX } from "./recolher";
 
 const Navbar = () => {
   const { itens: navItems } = usePagina("navegacao", { itens: navLocal });
@@ -43,10 +43,12 @@ const Navbar = () => {
         y,
         yAnterior: yAnterior.current,
         menuAberto: menuAberto.current,
+        focoDentro: Boolean(cabecalho.current?.contains(document.activeElement)),
         recolhidoAntes: antes,
       }),
     );
-    yAnterior.current = y;
+    // O y de referência só anda quando o movimento passa do limiar: rolagens lentas somam até mudar o estado.
+    if (Math.abs(y - yAnterior.current) >= LIMIAR_PX || y <= 0) yAnterior.current = y;
   };
 
   // Adding event listener on mount and removing on unmount
@@ -63,7 +65,7 @@ const Navbar = () => {
       ref={cabecalho}
       // O foco pelo teclado no menu traz o cabeçalho de volta.
       onFocus={() => setRecolhido(false)}
-      className={`w-full h-cabecalho backdrop-blur-sm flex items-center justify-between md:px-16 sm:px-10 px-4 fixed top-0 transition-all ease-in-out duration-300 z-50 ${
+      className={`w-full h-cabecalho backdrop-blur-sm flex items-center justify-between md:px-16 sm:px-10 px-4 fixed top-0 transition-all ease-in-out duration-300 motion-reduce:transition-none z-50 ${
         isScrolled ? "bg-sky-50/30 border-b border-neutral-200" : "bg-transparent"
       } ${recolhido ? "-translate-y-full" : ""}`}
     >

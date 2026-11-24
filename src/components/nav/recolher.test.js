@@ -1,6 +1,6 @@
 /* recolher.test.js: quando o cabeçalho fixo se recolhe (learn-tech#168). */
 import { describe, expect, it } from "vitest";
-import { deveRecolher, LIMITE } from "./recolher";
+import { deveRecolher, LIMITE, LIMIAR_PX } from "./recolher";
 
 const base = { alturaTela: 800, yAnterior: 500, y: 600, menuAberto: false };
 
@@ -25,6 +25,17 @@ describe("deveRecolher", () => {
   it("sem rolar (o mesmo y), mantém o estado anterior", () => {
     expect(deveRecolher({ ...base, alturaCabecalho: 161, y: 500, recolhidoAntes: true })).toBe(true);
     expect(deveRecolher({ ...base, alturaCabecalho: 161, y: 500, recolhidoAntes: false })).toBe(false);
+  });
+
+  it("com o foco num link do cabeçalho, não recolhe (o foco não some)", () => {
+    expect(deveRecolher({ ...base, alturaCabecalho: 161, focoDentro: true })).toBe(false);
+  });
+
+  it("movimentos menores que o limiar mantêm o estado (sem piscar)", () => {
+    expect(LIMIAR_PX).toBe(8);
+    expect(deveRecolher({ ...base, alturaCabecalho: 161, y: 505, recolhidoAntes: false })).toBe(false);
+    expect(deveRecolher({ ...base, alturaCabecalho: 161, y: 495, recolhidoAntes: true })).toBe(true);
+    expect(deveRecolher({ ...base, alturaCabecalho: 161, y: 508 })).toBe(true);
   });
 
   it("o limite fica em 15% da altura da tela", () => {
