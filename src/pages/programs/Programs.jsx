@@ -44,8 +44,9 @@ export const Programs = () => {
       <PageTopBanner pageTitle={"Programas"} />
       {/* Programs contends */}
       <div className="space-y-8 w-full md:px-16 sm:px-10 px-4">
-        {/* Programs search and filter section */}
-        <div className="w-full flex items-center gap-6">
+        {/* Busca e filtro (learn-tech#175, nota 1): abaixo de sm, cada um na largura toda, um por linha, para o texto de
+            exemplo caber a 320 e 360 px. A borda neutral-500 dá 4,5:1 contra o fundo (WCAG 1.4.11); a neutral-300 dava 1,4:1. */}
+        <div className="w-full flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
           {/* Search section */}
           <input
             ref={campoBusca}
@@ -54,7 +55,7 @@ export const Programs = () => {
             aria-label="Buscar programas pelo título ou categoria"
             value={searchTerm} // ✅ valor controlado
             onChange={(e) => setSearchTerm(e.target.value)} // ✅ atualiza estado
-            className="max-w-sm w-full rounded-lg px-3 h-12 bg-transparent focus:bg-sky-500/5 border border-neutral-300 focus:border-sky-500 outline-none ease-in-out duration-300"
+            className="w-full sm:max-w-sm rounded-lg px-3 h-12 bg-transparent focus:bg-sky-500/5 border border-neutral-500 focus:border-sky-700 outline-none focus-visible:ring-2 focus-visible:ring-sky-700 focus-visible:ring-offset-2 ease-in-out duration-300"
           />
 
           {/* Filter or sort section */}
@@ -62,7 +63,7 @@ export const Programs = () => {
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
             aria-label="Filtrar programas por categoria"
-            className="max-w-sm w-fit rounded-lg px-3 h-12 bg-transparent focus:bg-sky-500/5 focus:border-sky-500 outline-none ease-in-out duration-300"
+            className="w-full sm:w-fit sm:max-w-sm rounded-lg px-3 h-12 bg-transparent focus:bg-sky-500/5 border border-neutral-500 focus:border-sky-700 outline-none focus-visible:ring-2 focus-visible:ring-sky-700 focus-visible:ring-offset-2 ease-in-out duration-300"
           >
             <option value="all">Todas Categorias</option>
             {categorias.map(([valor, nome]) => (
