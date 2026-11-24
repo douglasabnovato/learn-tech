@@ -26,3 +26,15 @@ export const recorteParaQuery = (categoria, termo) => {
   const query = params.toString();
   return query ? `?${query}` : "";
 };
+
+/* Texto do status da lista de programas (a região viva, learn-tech#175): a palavra é a da página ("programas"); com 0,
+   diz também a saída, porque o botão "Limpar busca e filtro" aparece na lista, que não é anunciada. */
+export const LIMPAR_BUSCA = "Limpar busca e filtro";
+/* A contagem curta, a que aparece na pílula ("0 programas" também, para a pílula não virar um bloco de 3 linhas a 360 px). */
+export function contagemProgramas(total) {
+  return `${total} ${total === 1 ? "programa" : "programas"}`;
+}
+export function textoStatusProgramas(total) {
+  if (total === 0) return `Nenhum programa com esta busca e filtro. Use ${LIMPAR_BUSCA}`;
+  return contagemProgramas(total);
+}

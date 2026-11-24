@@ -1,16 +1,17 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { useSearchParams } from "react-router-dom";
 import { PageTopBanner } from "../../components/pageTop/PageTopBanner";
 import { ProgramsCard } from "../../components/programs/ProgramsCard";
 import { useProgramas } from "../../services/conteudo";
 import { Seo } from "../../components/common/Seo";
-import { filtrarProgramas, recorteParaQuery } from "../../services/busca";
+import { filtrarProgramas, recorteParaQuery, textoStatusProgramas, contagemProgramas, LIMPAR_BUSCA } from "../../services/busca";
 
 export const Programs = () => {
   const programsData = useProgramas();
   const categorias = useMemo(() => [...new Map(programsData.map((p) => [p.categoryFilter, p.category])).entries()], [programsData]);
   // O recorte (categoria e termo) mora na URL: ?categoria=web&q=react. Dá para compartilhar e o "voltar" o mantém.
   const [searchParams, setSearchParams] = useSearchParams();
+  const campoBusca = useRef(null);
   const searchTerm = searchParams.get("q") ?? "";
   const selectedCategory = searchParams.get("categoria") || "all";
   const atualizarRecorte = (categoria, termo) => {
@@ -47,6 +48,7 @@ export const Programs = () => {
         <div className="w-full flex items-center gap-6">
           {/* Search section */}
           <input
+            ref={campoBusca}
             type="text"
             placeholder="Buscar programas..."
             aria-label="Buscar programas pelo título ou categoria"
@@ -83,7 +85,15 @@ export const Programs = () => {
               aria-atomic="true"
               className="px-3 py-1 text-sm font-medium rounded-full bg-sky-100 text-sky-700 border border-sky-300"
             >
-              {filteredPrograms.length} {filteredPrograms.length === 1 ? "treinamento" : "treinamentos"}
+              {/* Com 0, a pílula mostra a contagem curta e o leitor de tela ouve o texto com a saída. */}
+              {filteredPrograms.length === 0 ? (
+                <>
+                  <span aria-hidden="true">{contagemProgramas(0)}</span>
+                  <span className="sr-only">{textoStatusProgramas(0)}</span>
+                </>
+              ) : (
+                textoStatusProgramas(filteredPrograms.length)
+              )}
             </span>
           </div>
 
@@ -94,7 +104,21 @@ export const Programs = () => {
                 <ProgramsCard key={program.id} {...program} voltarPara={`/programs${recorteParaQuery(selectedCategory, searchTerm)}`} />
               ))
             ) : (
-              <p className="text-gray-500 text-center col-span-full">Nenhum programa encontrado.</p>
+              /* Com 0, uma saída na tela: limpa a busca e o filtro de uma vez (o status diz o nome do botão). */
+              <div className="col-span-full flex flex-col items-center gap-4 py-6 text-center">
+                <p className="text-neutral-700">Nenhum programa encontrado.</p>
+                <button
+                  type="button"
+                  onClick={() => {
+                    atualizarRecorte("all", "");
+                    /* O botão some com a lista cheia: o foco vai ao campo de busca, e não ao body. */
+                    campoBusca.current?.focus();
+                  }}
+                  className="h-11 px-5 border border-neutral-300 text-neutral-800 text-sm font-medium rounded-lg hover:bg-neutral-50 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-700 focus-visible:ring-offset-2"
+                >
+                  {LIMPAR_BUSCA}
+                </button>
+              </div>
             )}
           </div>
         </section>
