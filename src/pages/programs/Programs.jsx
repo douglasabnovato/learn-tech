@@ -47,7 +47,7 @@ export const Programs = () => {
         {/* Busca e filtro (learn-tech#175, nota 1): abaixo de sm, cada um na largura toda, um por linha, para o texto de
             exemplo caber a 320 e 360 px. A borda neutral-500 dá 4,5:1 contra o fundo (WCAG 1.4.11); a neutral-300 dava 1,4:1.
             Rótulo visível e texto legível (learn-tech#179): o texto de exemplo some ao digitar, então cada campo tem um
-            rótulo na tela (WCAG 3.3.2), que é o começo do nome acessível (2.5.3). Sobre o fundo do foco (sky-500/5), o
+            rótulo na tela (WCAG 3.3.2), que é o começo do nome acessível (2.5.3: "Buscar programas…" e "Categoria dos programas"). Sobre o fundo do foco (sky-500/5), o
             texto de exemplo neutral-600 dá 7,4:1 e o digitado neutral-800 mais que isso; o neutral-500 dava 4,3:1 e o
             exemplo com 50% de alfa, 1,9:1 (WCAG 1.4.3). O digitado fica mais escuro que o exemplo para os dois não se confundirem. */}
         <div className="w-full flex flex-col sm:flex-row sm:items-end gap-3 sm:gap-6">
@@ -71,7 +71,7 @@ export const Programs = () => {
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              aria-label="Filtrar programas por categoria"
+              aria-label="Categoria dos programas"
               className="w-full rounded-lg px-3 h-12 bg-transparent focus:bg-sky-500/5 text-neutral-800 border border-neutral-500 focus:border-sky-700 outline-none focus-visible:ring-2 focus-visible:ring-sky-700 focus-visible:ring-offset-2 ease-in-out duration-300"
             >
               <option value="all">Todas as categorias</option>
