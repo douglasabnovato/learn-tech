@@ -45,33 +45,43 @@ export const Programs = () => {
       {/* Programs contends */}
       <div className="space-y-8 w-full md:px-16 sm:px-10 px-4">
         {/* Busca e filtro (learn-tech#175, nota 1): abaixo de sm, cada um na largura toda, um por linha, para o texto de
-            exemplo caber a 320 e 360 px. A borda neutral-500 dá 4,5:1 contra o fundo (WCAG 1.4.11); a neutral-300 dava 1,4:1. */}
-        <div className="w-full flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
+            exemplo caber a 320 e 360 px. A borda neutral-500 dá 4,5:1 contra o fundo (WCAG 1.4.11); a neutral-300 dava 1,4:1.
+            Rótulo visível e texto legível (learn-tech#179): o texto de exemplo some ao digitar, então cada campo tem um
+            rótulo na tela (WCAG 3.3.2), que é o começo do nome acessível (2.5.3). Sobre o fundo do foco (sky-500/5), o
+            texto de exemplo neutral-600 dá 7,4:1 e o digitado neutral-800 mais que isso; o neutral-500 dava 4,3:1 e o
+            exemplo com 50% de alfa, 1,9:1 (WCAG 1.4.3). O digitado fica mais escuro que o exemplo para os dois não se confundirem. */}
+        <div className="w-full flex flex-col sm:flex-row sm:items-end gap-3 sm:gap-6">
           {/* Search section */}
-          <input
-            ref={campoBusca}
-            type="text"
-            placeholder="Buscar programas..."
-            aria-label="Buscar programas pelo título ou categoria"
-            value={searchTerm} // ✅ valor controlado
-            onChange={(e) => setSearchTerm(e.target.value)} // ✅ atualiza estado
-            className="w-full sm:max-w-sm rounded-lg px-3 h-12 bg-transparent focus:bg-sky-500/5 border border-neutral-500 focus:border-sky-700 outline-none focus-visible:ring-2 focus-visible:ring-sky-700 focus-visible:ring-offset-2 ease-in-out duration-300"
-          />
+          <label className="w-full sm:max-w-sm flex flex-col gap-1">
+            <span className="text-sm font-medium text-neutral-700">Buscar</span>
+            <input
+              ref={campoBusca}
+              type="text"
+              placeholder="Buscar programas..."
+              aria-label="Buscar programas pelo título ou categoria"
+              value={searchTerm} // ✅ valor controlado
+              onChange={(e) => setSearchTerm(e.target.value)} // ✅ atualiza estado
+              className="w-full rounded-lg px-3 h-12 bg-transparent focus:bg-sky-500/5 text-neutral-800 placeholder:text-neutral-600 border border-neutral-500 focus:border-sky-700 outline-none focus-visible:ring-2 focus-visible:ring-sky-700 focus-visible:ring-offset-2 ease-in-out duration-300"
+            />
+          </label>
 
           {/* Filter or sort section */}
-          <select
-            value={selectedCategory}
-            onChange={(e) => setSelectedCategory(e.target.value)}
-            aria-label="Filtrar programas por categoria"
-            className="w-full sm:w-fit sm:max-w-sm rounded-lg px-3 h-12 bg-transparent focus:bg-sky-500/5 border border-neutral-500 focus:border-sky-700 outline-none focus-visible:ring-2 focus-visible:ring-sky-700 focus-visible:ring-offset-2 ease-in-out duration-300"
-          >
-            <option value="all">Todas Categorias</option>
-            {categorias.map(([valor, nome]) => (
-              <option key={valor} value={valor}>
-                {nome}
-              </option>
-            ))}
-          </select>
+          <label className="w-full sm:w-fit sm:max-w-sm flex flex-col gap-1">
+            <span className="text-sm font-medium text-neutral-700">Categoria</span>
+            <select
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value)}
+              aria-label="Filtrar programas por categoria"
+              className="w-full rounded-lg px-3 h-12 bg-transparent focus:bg-sky-500/5 text-neutral-800 border border-neutral-500 focus:border-sky-700 outline-none focus-visible:ring-2 focus-visible:ring-sky-700 focus-visible:ring-offset-2 ease-in-out duration-300"
+            >
+              <option value="all">Todas as categorias</option>
+              {categorias.map(([valor, nome]) => (
+                <option key={valor} value={valor}>
+                  {nome}
+                </option>
+              ))}
+            </select>
+          </label>
         </div>
         {/* Programs data */}
         <section className="space-y-4">
