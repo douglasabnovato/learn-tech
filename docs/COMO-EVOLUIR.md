@@ -39,6 +39,15 @@ Guia curto para mudar o site com segurança. O conteúdo novo (programas, artigo
 | `npm test` | Vitest (41 testes em 10/11/2026) |
 | `npm run build` | Build. Confira o tamanho de `dist/assets/index-*.js` (284 kB em 05/11/2026; meta ≤ 300 kB) |
 | `npm run preview` | Serve o build para conferir no navegador |
+| `npm run analyze` | Build com o visualizer (`ANALYZE=1`): gera `dist/stats.html` com o peso de cada módulo. Não vai para o deploy (seção abaixo) |
+
+### Medida por módulo (o painel)
+O painel do orquestrador lê o `dist/stats.html` deste clone (`scripts/bundle.mjs`, medida `bundle-modulos`) para saber quanto cada módulo pesa, como o `programsData.js` (30,8 kB gzip em 25/11/2026). Desde o L2-08 (#181), o `npm run build` não gera mais esse arquivo, para ele não ir ao ar. **Como pedir a medida:**
+1. Neste clone, rode `CI=1 npm run analyze` no Git Bash, ou `$env:CI=1; npm run analyze` no PowerShell. O `CI=1` evita que o relatório abra no navegador.
+2. Logo depois, rode o `bundle.mjs`. **Qualquer `npm run build` posterior apaga o `dist/` e o `stats.html` com ele**, e aí a medida volta vazia. Por isso a ordem é sempre esta: primeiro o analyze, depois a leitura.
+3. Confira a idade da medida. O campo `build` de cada linha é a hora do `stats.html`, e tem que ser depois do último commit do clone (`git log -1 --format=%ci`).
+
+O visualizer só fica ligado com o `ANALYZE=1`, e o `/stats.html` do site no ar tem que dar 404.
 
 ## 6. Estabilidade: antes de dar por pronto
 - [ ] Lint, testes e build verdes; chunk inicial ≤ 300 kB.
