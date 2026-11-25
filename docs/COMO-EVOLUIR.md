@@ -43,11 +43,11 @@ Guia curto para mudar o site com segurança. O conteúdo novo (programas, artigo
 
 ### Medida por módulo (o painel)
 O painel do orquestrador lê o `dist/stats.html` deste clone (`scripts/bundle.mjs`, medida `bundle-modulos`) para saber quanto cada módulo pesa, como o `programsData.js` (30,8 kB gzip em 25/11/2026). Desde o L2-08 (#181), o `npm run build` não gera mais esse arquivo, para ele não ir ao ar. **Como pedir a medida:**
-1. Neste clone, rode `CI=1 npm run analyze` no Git Bash, ou `$env:CI=1; npm run analyze` no PowerShell. O `CI=1` evita que o relatório abra no navegador.
-2. Logo depois, rode o `bundle.mjs`. **Qualquer `npm run build` posterior apaga o `dist/` e o `stats.html` com ele**, e aí a medida volta vazia. Por isso a ordem é sempre esta: primeiro o analyze, depois a leitura.
-3. Confira a idade da medida. O campo `build` de cada linha é a hora do `stats.html`, e tem que ser depois do último commit do clone (`git log -1 --format=%ci`).
+1. **Gere a medida.** Neste clone, rode no Git Bash `CI=1 npm run analyze`, ou no PowerShell `$env:CI=1; npm run analyze; Remove-Item Env:CI`. O `CI=1` evita que o relatório abra no navegador. No PowerShell, o `Remove-Item` tira o `CI` da janela, para o próximo `npm run build` ou `npm test` não rodar como se fosse CI.
+2. **Leia na mesma sessão.** Rode o `bundle.mjs` logo depois do analyze, sempre na mesma sessão. **Qualquer `npm run build` posterior apaga o `dist/` e o `stats.html` com ele**, e aí a medida volta vazia. Um `git checkout` ou uma alteração sem commit entre os dois também deixa a medida diferente do código.
+3. **Confira a idade da medida** (é uma verificação extra). O campo `build` de cada linha é a hora do `stats.html` **em UTC**, 3 h à frente de Brasília: por exemplo, `2026-11-25 19:46`. A hora do último commit do clone, no mesmo formato e em UTC, sai no Git Bash com `TZ=UTC git log -1 --date=format-local:'%Y-%m-%d %H:%M' --format=%cd`. O `build` tem que vir depois dela. Não compare com o `git log -1 --format=%ci`: ele sai na hora local (`-0300`), e a medida velha pareceria 3 h mais nova.
 
-O visualizer só fica ligado com o `ANALYZE=1`, e o `/stats.html` do site no ar tem que dar 404.
+O visualizer só fica ligado com o `ANALYZE=1`, e o `/stats.html` do site no ar tem que dar 404. Para conferir: `curl -s -o /dev/null -w "%{http_code}" https://learn-tech-pied.vercel.app/stats.html`.
 
 ## 6. Estabilidade: antes de dar por pronto
 - [ ] Lint, testes e build verdes; chunk inicial ≤ 300 kB.
