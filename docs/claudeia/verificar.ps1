@@ -72,7 +72,7 @@ Etapa "2" "Testes (npm test)" "Vitest roda o contrato de dados em src/constants/
 Rodar "npm test" "testes"
 
 # 3. Build
-Etapa "3" "Build de producao (npm run build)" "Vite gera dist/. CI=true evita que o relatorio do visualizer abra o navegador."
+Etapa "3" "Build de producao (npm run build)" "Vite gera dist/ (sem o stats.html; o relatorio so sai com npm run analyze, L2-08)."
 $env:CI = "true"
 try {
   Rodar "npm run build" "build"

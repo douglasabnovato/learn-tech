@@ -151,7 +151,7 @@ Todas as tarefas cabem neste repositório e não precisam de segredo. Depois de 
   - deixar em `src/services/conteudo.js` só `hidratar`, `CATALOGO_LOCAL`, `useProgramas`, `usePrograma` e `statusDoPrograma`, reexportando os de `api.js`;
   - `Navbar.jsx:6`, `services/mensagens.js:2`, `services/identificacao.js:2` passam a importar de `./api`.
 - **Detalhe:** `hidratar` precisa de `ICONES`. Recebe-o por injeção (`usePagina(nome, local, adaptar)`) ou move-se `icones` para um chunk que só as páginas que exibem ícones importam.
-- **Pronto quando:** o `npm run build` mostra `index-*.js` com ≤ 300 kB (≤ 100 kB gzip); `dist/stats.html` não mostra `programsData.js` nem `programasCatalogo.js` no chunk `index`; `/privacy` não baixa o chunk do catálogo (aba Rede); os 24 testes passam.
+- **Pronto quando:** o `npm run build` mostra `index-*.js` com ≤ 300 kB (≤ 100 kB gzip); `dist/stats.html` (desde o L2-08, gerado só pelo `npm run analyze`) não mostra `programsData.js` nem `programasCatalogo.js` no chunk `index`; `/privacy` não baixa o chunk do catálogo (aba Rede); os 24 testes passam.
 - **Risco:** médio. A ordem de inicialização do cache compartilhado muda, e há o risco de dependência circular entre `api.js` e `conteudo.js`. Mitigação: `api.js` não importa `conteudo.js`.
 
 ### T2. Reserva honesta: só mostrar "Aprenda" quando há conteúdo disponível
@@ -255,7 +255,7 @@ Todas as tarefas cabem neste repositório e não precisam de segredo. Depois de 
 - **Contexto:** `Navbar.jsx:6` importa `services/conteudo.js`, que importa estaticamente `programsData` (127 kB), `programasCatalogo` (40 kB) e os ícones (80 kB). Por isso o chunk inicial tem 496 kB (160 kB gzip) em qualquer rota. Separar `api.js` de `conteudo.js` tira os dados da carga inicial.
 - **Critérios:**
   - [ ] `index-*.js` ≤ 300 kB no `npm run build`;
-  - [ ] `dist/stats.html` sem `programsData.js` no chunk `index`;
+  - [ ] `dist/stats.html` (desde o L2-08: `npm run analyze`) sem `programsData.js` no chunk `index`;
   - [ ] `/privacy` não baixa o chunk do catálogo;
   - [ ] CI com limite de tamanho do chunk principal.
 - **Labels:** `performance`, `engenharia`, `mvp`

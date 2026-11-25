@@ -66,9 +66,9 @@ export default defineConfig(({ command }) => ({
     tailwindcss(),
     svgr(),
     preloadPorRota(),
-    /* O relatório da composição dos pedaços só sob pedido (L2-08): `npm run analyze` (ANALYZE=1) gera o
+    /* O relatório da composição dos pedaços só sob pedido (L2-08): `npm run analyze` (ANALYZE=1, só esse valor) gera o
        dist/stats.html. O build padrão não o gera, então ele não vai para o deploy nem abre o navegador. */
-    ...(globalThis.process?.env?.ANALYZE
+    ...(globalThis.process?.env?.ANALYZE === "1"
       ? [
           visualizer({
             filename: "dist/stats.html",
