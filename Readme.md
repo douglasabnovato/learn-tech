@@ -174,7 +174,7 @@ learn-tech/
 ├── index.html                        # lang="pt-BR", Open Graph, fonte Inter por <link>
 ├── package.json
 ├── vercel.json                       # reescrita de SPA e cabeçalhos de segurança
-└── vite.config.js                    # porta 3000, svgr, tailwind, visualizer (dist/stats.html)
+└── vite.config.js                    # porta 3000, svgr, tailwind, visualizer só com `npm run analyze` (dist/stats.html)
 ```
 
 ## 🧭 Como a estrutura funciona

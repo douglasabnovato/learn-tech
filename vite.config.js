@@ -66,13 +66,19 @@ export default defineConfig(({ command }) => ({
     tailwindcss(),
     svgr(),
     preloadPorRota(),
-    visualizer({
-      filename: "dist/stats.html",
-      // Abre o relatório só na máquina local; em CI (CI=true) não há navegador.
-      open: !globalThis.process?.env?.CI,
-      gzipSize: true,
-      brotliSize: true,
-    }),
+    /* O relatório da composição dos pedaços só sob pedido (L2-08): `npm run analyze` (ANALYZE=1) gera o
+       dist/stats.html. O build padrão não o gera, então ele não vai para o deploy nem abre o navegador. */
+    ...(globalThis.process?.env?.ANALYZE
+      ? [
+          visualizer({
+            filename: "dist/stats.html",
+            // Abre o relatório só na máquina local; em CI (CI=true) não há navegador.
+            open: !globalThis.process?.env?.CI,
+            gzipSize: true,
+            brotliSize: true,
+          }),
+        ]
+      : []),
   ],
   resolve: {
     alias:

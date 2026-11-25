@@ -79,7 +79,7 @@ Legenda de esforço: P (< 1 h), M (1–4 h), G (> 4 h) — **estimativa**.
 | L2-05 | Remover código e assets órfãos | ~1,5 MB e 5 arquivos sem uso | ver relatório 2.3/2.5 | `npm run build` igual; nenhum import quebrado | P | Baixo | Não | Proposta (exige apagar — aprovar) |
 | L2-06 | Atualizar README (vídeo, branches, `services/`, contagem de rotas, persistência real) | Documentação divergente | `Readme.md`, `conteudo.js:83` | README bate com o código | P | Nenhum | Não | Proposta |
 | L2-07 | `aria-label` nos botões do menu móvel ("Abrir menu"/"Fechar menu") | Acessibilidade | `Navbar.jsx:65,91` | Leitor de tela anuncia o botão | P | Nenhum | Não visual | Proposta |
-| L2-08 | Não publicar `dist/stats.html` (gerar só com variável, ex.: `ANALYZE=1`) | Artefato interno no deploy | `vite.config.js` | `dist/` sem `stats.html` no build padrão | P | Baixo | Não | Proposta |
+| L2-08 | Não publicar `dist/stats.html` (gerar só com variável, ex.: `ANALYZE=1`) | Artefato interno no deploy | `vite.config.js` | `dist/` sem `stats.html` no build padrão | P | Baixo | Não | Feito (25/11/2026: `npm run analyze`) |
 | L2-09 | Cabeçalhos de segurança (CSP permitindo API, YouTube, Google Fonts) | Endurecimento | `vercel.json` | Site funciona com CSP ativa | M | Médio | Não | Proposta |
 
 ### Lote 3 — decisões de produto (só com aprovação)
