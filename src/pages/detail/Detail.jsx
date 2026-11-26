@@ -22,8 +22,10 @@ export const Detail = () => {
 
   if (!program) {
     if (carregando) {
+      /* min-h-screen, como o NotFound e o fallback do Suspense: com 60vh, o rodapé subia a 60% da tela e descia quando
+         a resposta chegava (CLS de 0,16 num id que não existe, learn-tech#189). */
       return (
-        <div className="w-full min-h-[60vh] flex items-center justify-center text-neutral-500" role="status">
+        <div className="w-full min-h-screen flex items-center justify-center text-neutral-500" role="status">
           Carregando programa…
         </div>
       );
