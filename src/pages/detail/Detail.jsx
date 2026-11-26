@@ -35,7 +35,15 @@ export const Detail = () => {
   // Uma URL por programa: categoria errada (ex.: /program/qualquer/1) vai para a canônica.
   const caminho = `/program/${program.categoryFilter}/${program.id}`;
   if (program.categoryFilter && category !== program.categoryFilter) {
-    return <Navigate to={caminho} replace state={state} />;
+    /* O <Navigate> sozinho não desenha nada: a página ficava vazia, o rodapé subia ao topo da tela e voltava a descer
+       quando a rota certa montava (CLS de 1,0 na URL antiga, learn-tech#187). Um bloco com a altura da tela segura o
+       rodapé no lugar, como o fallback do Suspense em App.jsx. */
+    return (
+      <>
+        <div className="w-full min-h-screen" aria-hidden="true" />
+        <Navigate to={caminho} replace state={state} />
+      </>
+    );
   }
 
   return (
