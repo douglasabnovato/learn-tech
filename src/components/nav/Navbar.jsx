@@ -92,10 +92,13 @@ const Navbar = () => {
       </div>
 
       {/* Navbar items and buttons */}
+      {/* Fechado no celular, o menu fica fora da tela e invisível: sem isso, o Tab passava por 8 links que não se veem
+          (WCAG 2.4.7). Ao fechar, a visibilidade entra na transição e o menu some só no fim do deslize; ao abrir,
+          fica visível na hora, para o Tab logo depois do Enter já entrar nele. */}
       <div
         id="menu-principal"
-        className={`fixed md:static top-0 right-0 h-screen md:h-auto w-full md:w-auto bg-sky-50 border-l md:border-none border-neutral-300 md:bg-transparent shadow-lg md:shadow-none transition-transform duration-300 ease-in-out transform flex-1 ${
-          isOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed md:static top-0 right-0 h-screen md:h-auto w-full md:w-auto bg-sky-50 border-l md:border-none border-neutral-300 md:bg-transparent shadow-lg md:shadow-none duration-300 ease-in-out transform flex-1 ${
+          isOpen ? "translate-x-0 transition-transform" : "translate-x-full max-md:invisible transition-[transform,visibility]"
         } md:translate-x-0 z-60`}
       >
         {/* Logo and close icon Inside Toggle Menu */}
