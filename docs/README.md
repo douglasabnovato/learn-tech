@@ -14,7 +14,7 @@ npm install
 npm run dev                     # desenvolvimento
 npm test && npm run lint && npm run build
 ```
-Sem `VITE_API_URL`, o site usa só os dados locais e não pede identificação. O `npm run analyze` (o build com `ANALYZE=1`) gera `dist/stats.html` com a composição dos chunks; o `npm run build` não o gera, então ele não vai para o deploy.
+Sem `VITE_API_URL`, o site usa só os dados locais e não pede identificação. O `npm run analyze` (o build com `ANALYZE=1`) gera `relatorios/bundle/stats.html` (e o `stats.json` para o painel) com a composição dos chunks, fora do `dist/`; o `npm run build` não o gera, então ele não vai para o deploy.
 
 ## De onde vêm os dados
 - A fonte é a API **learntech-content** (`/v1/...`). São três módulos em `src/services/`:

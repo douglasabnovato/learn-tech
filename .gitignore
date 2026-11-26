@@ -4,6 +4,8 @@ node_modules/
 # Arquivos de build e distribuição
 build/
 dist/
+# Relatório do bundle do npm run analyze (#185): fica só na máquina
+relatorios/
 
 # Arquivos de logs
 *.log

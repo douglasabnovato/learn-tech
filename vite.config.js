@@ -67,13 +67,20 @@ export default defineConfig(({ command }) => ({
     svgr(),
     preloadPorRota(),
     /* O relatório da composição dos pedaços só sob pedido (L2-08): `npm run analyze` (ANALYZE=1, só esse valor) gera o
-       dist/stats.html. O build padrão não o gera, então ele não vai para o deploy nem abre o navegador. */
+       relatorios/bundle/stats.html, para ler, e o stats.json (raw-data), para o painel do bundle ler por máquina (#185).
+       Os dois ficam fora do dist/, então nem uma publicação manual do dist/ os leva. O build padrão não gera nenhum. */
     ...(globalThis.process?.env?.ANALYZE === "1"
       ? [
           visualizer({
-            filename: "dist/stats.html",
+            filename: "relatorios/bundle/stats.html",
             // Abre o relatório só na máquina local; em CI (CI=true) não há navegador.
             open: !globalThis.process?.env?.CI,
+            gzipSize: true,
+            brotliSize: true,
+          }),
+          visualizer({
+            filename: "relatorios/bundle/stats.json",
+            template: "raw-data",
             gzipSize: true,
             brotliSize: true,
           }),
