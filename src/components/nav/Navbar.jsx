@@ -16,6 +16,7 @@ const Navbar = () => {
   const cabecalho = useRef(null);
   const yAnterior = useRef(0);
   const menuAberto = useRef(false);
+  const botaoAbrir = useRef(null);
   menuAberto.current = isOpen;
 
   const location = useLocation(); // Rota atual, para destacar o item ativo
@@ -27,6 +28,22 @@ const Navbar = () => {
   const closeNavbar = () => {
     setIsOpen(false);
   };
+
+  // Fechar pelo "Fechar menu" ou pelo Escape devolve o foco ao "Abrir menu". Sem isso, o botão focado some
+  // com o painel e o foco cai no body (R19 do learn-tech#184). Ao seguir um link, o foco fica com a navegação.
+  const fecharEVoltar = () => {
+    setIsOpen(false);
+    botaoAbrir.current?.focus();
+  };
+
+  useEffect(() => {
+    if (!isOpen) return undefined;
+    const aoTeclar = (e) => {
+      if (e.key === "Escape") fecharEVoltar();
+    };
+    document.addEventListener("keydown", aoTeclar);
+    return () => document.removeEventListener("keydown", aoTeclar);
+  }, [isOpen]);
 
   // Function to handle scroll event
   const handleScroll = () => {
@@ -80,6 +97,7 @@ const Navbar = () => {
 
       <div className="md:hidden">
         <button
+          ref={botaoAbrir}
           type="button"
           onClick={toggleNavbar}
           aria-label="Abrir menu"
@@ -112,7 +130,7 @@ const Navbar = () => {
           <div className="md:hidden flex justify-end py-6">
             <button
               type="button"
-              onClick={closeNavbar}
+              onClick={fecharEVoltar}
               aria-label="Fechar menu"
               aria-controls="menu-principal"
               className="p-2 -m-2 text-red-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-700 rounded"
