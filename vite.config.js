@@ -60,6 +60,15 @@ const preloadPorRota = () => ({
   },
 });
 
+/* A raiz do projeto, para o relatório do analyze gravar os módulos com caminho relativo (R19 do #186): sem o caminho da
+   máquina, nem o nome de usuário. O padrão do visualizer é o process.cwd(), que no Windows vem com "\", enquanto os ids
+   dos módulos vêm com "/", e então nada era cortado. A expressão aceita as 2 barras e ignora a caixa da letra do disco. */
+const raizDoProjeto = () => {
+  const partes = (globalThis.process?.cwd?.() ?? "").split(/[\\/]/).filter(Boolean);
+  const raiz = partes.map((p) => p.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("[\\\\/]");
+  return new RegExp(`(^|[\\\\/])?${raiz}[\\\\/]`, "gi");
+};
+
 export default defineConfig(({ command }) => ({
   plugins: [
     react(),
@@ -75,12 +84,14 @@ export default defineConfig(({ command }) => ({
             filename: "relatorios/bundle/stats.html",
             // Abre o relatório só na máquina local; em CI (CI=true) não há navegador.
             open: !globalThis.process?.env?.CI,
+            projectRoot: raizDoProjeto(),
             gzipSize: true,
             brotliSize: true,
           }),
           visualizer({
             filename: "relatorios/bundle/stats.json",
             template: "raw-data",
+            projectRoot: raizDoProjeto(),
             gzipSize: true,
             brotliSize: true,
           }),

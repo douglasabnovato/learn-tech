@@ -5,7 +5,7 @@
 | Script (`package.json`) | Comando | O que faz | Bloqueia o CI? |
 | --- | --- | --- | --- |
 | `test` | `npm test` → `vitest run` | Contrato de dados em `src/constants/dados.test.js` (ids, módulos × conteúdos, títulos, `lessonsCount`, ícones, quiz, ausência de `rating`/`students`) | Sim |
-| `build` | `npm run build` → `vite build` | Build de produção em `dist/`, sem relatório do visualizer (só o `npm run analyze` o gera, em `relatorios/bundle/`, L2-08 e #185) | Sim |
+| `build` | `npm run build` → `vite build` | Build de produção em `dist/`, sem relatório do visualizer (só o `CI=1 npm run analyze` o gera, em `relatorios/bundle/`, L2-08 e #185) | Sim |
 | `lint` | `npm run lint` → `eslint .` | Padrão de código | Não (informativo, ver abaixo) |
 | `test:watch` | `npm run test:watch` | Vitest em modo observação | — (uso local) |
 | `dev` / `preview` | `npm run dev` / `npm run preview` | Servidor local (porta 3000) / prévia do build | — (uso manual) |

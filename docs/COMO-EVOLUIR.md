@@ -39,13 +39,13 @@ Guia curto para mudar o site com segurança. O conteúdo novo (programas, artigo
 | `npm test` | Vitest (41 testes em 10/11/2026) |
 | `npm run build` | Build. Confira o tamanho de `dist/assets/index-*.js` (284 kB em 05/11/2026; meta ≤ 300 kB) |
 | `npm run preview` | Serve o build para conferir no navegador |
-| `npm run analyze` | Build com o visualizer (`ANALYZE=1`): gera `dist/stats.html` com o peso de cada módulo. Não vai para o deploy (seção abaixo) |
+| `CI=1 npm run analyze` | Build com o visualizer (`ANALYZE=1`): grava `relatorios/bundle/stats.html` e `stats.json`, fora do `dist/`, com o peso de cada módulo em caminho relativo ao projeto. Não vai para o deploy (seção abaixo). Sem o `CI=1`, o relatório abre no navegador |
 
 ### Medida por módulo (o painel)
-O painel do orquestrador lê o `dist/stats.html` deste clone (`scripts/bundle.mjs`, medida `bundle-modulos`) para saber quanto cada módulo pesa, como o `programsData.js` (30,8 kB gzip em 25/11/2026). Desde o L2-08 (#181), o `npm run build` não gera mais esse arquivo, para ele não ir ao ar. **Como pedir a medida:**
+O painel do orquestrador lê o `relatorios/bundle/stats.json` deste clone (`scripts/bundle.mjs`, medida `bundle-modulos`) para saber quanto cada módulo pesa, como o `programsData.js` (30,8 kB gzip em 26/11/2026). O `npm run build` não gera relatório (L2-08, #181); o `CI=1 npm run analyze` grava o `stats.html` e o `stats.json` fora do `dist/` (#185), com os módulos em caminho relativo ao projeto, sem o caminho da máquina. **Como pedir a medida:**
 1. **Gere a medida.** Neste clone, rode no Git Bash `CI=1 npm run analyze`, ou no PowerShell `$env:CI=1; npm run analyze; Remove-Item Env:CI`. O `CI=1` evita que o relatório abra no navegador. No PowerShell, o `Remove-Item` tira o `CI` da janela, para o próximo `npm run build` ou `npm test` não rodar como se fosse CI.
-2. **Leia na mesma sessão.** Rode o `bundle.mjs` logo depois do analyze, sempre na mesma sessão. **Qualquer `npm run build` posterior apaga o `dist/` e o `stats.html` com ele**, e aí a medida volta vazia. Um `git checkout` ou uma alteração sem commit entre os dois também deixa a medida diferente do código.
-3. **Confira a idade da medida** (é uma verificação extra). O campo `build` de cada linha é a hora do `stats.html` **em UTC**, 3 h à frente de Brasília: por exemplo, `2026-11-25 19:46`. A hora do último commit do clone, no mesmo formato e em UTC, sai no Git Bash com `TZ=UTC git log -1 --date=format-local:'%Y-%m-%d %H:%M' --format=%cd`. O `build` tem que vir depois dela. Não compare com o `git log -1 --format=%ci`: ele sai na hora local (`-0300`), e a medida velha pareceria 3 h mais nova.
+2. **O painel pede sozinho.** O `bundle.mjs` roda o `CI=1 npm run analyze` neste clone quando o `stats.json` falta ou é mais velho que o último commit. Um `npm run build` não apaga mais a medida, porque ela fica em `relatorios/`. Mas uma alteração sem commit, ou outra branch aberta no clone, deixa a medida diferente da `main`: o painel mede a branch que está aberta.
+3. **Confira a idade da medida** (é uma verificação extra; o painel já faz). O campo `build` de cada linha é a hora do `stats.json` na hora de Brasília, por exemplo `2026-11-26 17:21`. Ela tem que vir depois do último commit do clone, que sai na hora local com `git log -1 --date=format-local:'%Y-%m-%d %H:%M' --format=%cd`.
 
 O visualizer só fica ligado com o `ANALYZE=1`, e o `/stats.html` do site no ar tem que dar 404. Para conferir: `curl -s -o /dev/null -w "%{http_code}" https://learn-tech-pied.vercel.app/stats.html`.
 
