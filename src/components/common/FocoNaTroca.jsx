@@ -6,7 +6,8 @@
      clique, no Enter ou no "Voltar", e não no commit da nova rota. Se, depois disso, o foco estiver em outro
      lugar que não a origem nem o body (o Tab no cabeçalho enquanto o pedaço baixa), nada muda.
    - No "Voltar" e no "Avançar" (POP), o foco volta ao link que abriu a página de onde se saiu, como o card na
-     lista de programas (nota 2). Se ele não aparecer em 2 s, o foco vai para o h1.
+     lista de programas (nota 2). Se ele não aparecer em 2 s, ou não aceitar o foco, o foco vai para o h1. O link
+     do cabeçalho (#navbar) não conta (R19 do #197).
    - O NotFound já põe o foco no próprio h1; pela regra acima, nada muda. */
 import { useEffect, useRef } from "react";
 import { useLocation, useNavigationType } from "react-router-dom";
@@ -30,7 +31,11 @@ export function FocoNaTroca() {
       const link = evento.target.closest?.("a[href]");
       if (evento.type === "keydown" && evento.key !== "Enter") return;
       origem.current = link ?? document.activeElement;
-      if (link) linkSeguido.current.set(chaveAtual.current, link.getAttribute("href"));
+      if (!link) return;
+      /* O link do cabeçalho não é guardado para o "Voltar" (R19 do #197, nota 2): na mesa, o foco voltaria ao menu,
+         e não ao conteúdo; no celular, o menu fechado está invisible, e o foco cairia no body. Na volta, vai o h1. */
+      if (link.closest("#navbar")) linkSeguido.current.delete(chaveAtual.current);
+      else linkSeguido.current.set(chaveAtual.current, link.getAttribute("href"));
     };
     const noVoltar = () => {
       origem.current = document.activeElement;
@@ -75,10 +80,14 @@ export function FocoNaTroca() {
       }
       const alvo = (procurarLink && escolherLink(document.querySelectorAll("main a[href]"), hrefDeVolta)) || null;
       if (alvo) {
-        parar();
         /* Sem o preventScroll: o card de origem aparece na tela, para a pessoa seguir a lista de onde parou. */
         alvo.focus();
-        return true;
+        if (document.activeElement === alvo) {
+          parar();
+          return true;
+        }
+        /* O focus() falha calado num link que não pode receber o foco (invisible, por exemplo): vai o h1. */
+        procurarLink = false;
       }
       if (procurarLink) return false;
       const titulo = escolherTitulo(document.querySelectorAll("main h1"));
