@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from "react-route
 
 import Navbar from "./components/nav/Navbar";
 import { LimiteDeErro } from "./components/common/LimiteDeErro";
+import { FocoNaTroca } from "./components/common/FocoNaTroca";
 
 /* As páginas carregam sob demanda. Se o pedaço de uma delas não baixar, o LimiteDeErro mostra "Recarregar" em vez
    da tela branca, e o erro é esquecido quando a pessoa navega para outro caminho (revisão R19, #154-2). */
@@ -63,6 +64,8 @@ function App() {
   return (
     <>
       <Router>
+        {/* A cada troca de rota, o foco vai para o h1 da nova página, e o leitor de tela anuncia a troca (#194). */}
+        <FocoNaTroca />
         <main className="w-full bg-neutral-50 flex min-h-screen flex-col text-neutral-500">
           {/* Navbar section */}
           <Navbar />
