@@ -1,6 +1,6 @@
-/* tituloDaRota.test.js: qual h1 recebe o foco na troca de rota (learn-tech#194). Roda sem DOM, com h1 falsos. */
+/* tituloDaRota.test.js: o que recebe o foco na troca de rota (learn-tech#194 e #196). Roda sem DOM, com h1 falsos. */
 import { describe, expect, it } from "vitest";
-import { escolherTitulo, tituloVisivel } from "./tituloDaRota";
+import { escolherLink, escolherTitulo, focoDaPessoa, tituloVisivel } from "./tituloDaRota";
 
 const h1 = ({ naTela = true, escondidoEm = null, nome = "t" } = {}) => ({
   nome,
@@ -20,6 +20,37 @@ describe("escolherTitulo", () => {
     expect(escolherTitulo([h1({ naTela: false })])).toBeNull();
     expect(escolherTitulo([])).toBeNull();
     expect(escolherTitulo(undefined)).toBeNull();
+  });
+});
+
+const link = (href, opcoes) => ({ ...h1(opcoes), getAttribute: (nome) => (nome === "href" ? href : null) });
+
+describe("escolherLink (o card de origem no Voltar)", () => {
+  it("pega o 1º link visível com o mesmo href e pula o escondido", () => {
+    const lista = [
+      link("/program/web/2"),
+      link("/program/web/1", { naTela: false, nome: "oculto" }),
+      link("/program/web/1", { nome: "card" }),
+    ];
+    expect(escolherLink(lista, "/program/web/1").nome).toBe("card");
+  });
+  it("devolve null sem href guardado ou sem o link na página", () => {
+    expect(escolherLink([link("/a")], null)).toBeNull();
+    expect(escolherLink([link("/a")], "/b")).toBeNull();
+  });
+});
+
+describe("focoDaPessoa", () => {
+  const body = { nome: "body" };
+  const origem = { nome: "link do menu" };
+  it("o body e a origem da navegação não contam: o foco ainda pode ir para o título", () => {
+    expect(focoDaPessoa(body, origem, body)).toBe(false);
+    expect(focoDaPessoa(origem, origem, body)).toBe(false);
+    expect(focoDaPessoa(null, origem, body)).toBe(false);
+  });
+  it("qualquer outro elemento é o foco da pessoa (o Tab no cabeçalho, ou o h1 que o NotFound já focou)", () => {
+    expect(focoDaPessoa({ nome: "cabeçalho" }, origem, body)).toBe(true);
+    expect(focoDaPessoa({ nome: "h1" }, null, body)).toBe(true);
   });
 });
 
