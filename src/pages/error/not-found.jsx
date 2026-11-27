@@ -1,20 +1,27 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { FaCarCrash } from "react-icons/fa";
 import { Seo } from "../../components/common/Seo";
 
 // Página de erro: o servidor ainda responde 200 (reescrita da SPA no vercel.json), então o
 // `noindex` é o que impede o Google de indexar a rota inexistente.
+// Ao montar, o foco vai para o título: a troca de página não é anunciada sozinha, e quem usa leitor
+// de tela ouve "Página não encontrada" (learn-tech#191). O título não é interativo, então não ganha anel.
 export const NotFound = () => {
+  const titulo = useRef(null);
+
   useEffect(() => {
     window.scrollTo(0, 0);
+    titulo.current?.focus({ preventScroll: true });
   }, []);
 
   return (
     <div className="w-full min-h-screen flex flex-col items-center justify-center bg-gray-50 text-center p-6">
       <Seo titulo="Página não encontrada" descricao="O endereço acessado não existe na learnTECH." noindex />
       <FaCarCrash size={60} className="text-yellow-500 mb-6" aria-hidden="true" />
-      <h1 className="text-4xl font-bold mb-4">Página não encontrada</h1>
+      <h1 ref={titulo} tabIndex={-1} className="text-4xl font-bold mb-4 focus:outline-none">
+        Página não encontrada
+      </h1>
       <p className="text-gray-700 mb-6 max-w-xl">
         O endereço pode ter mudado ou estar digitado errado. Veja os programas disponíveis ou fale com a gente se você chegou aqui por um
         link do site.
