@@ -37,9 +37,11 @@ export const EnrollPrograms = () => {
 
   const { programa: program, carregando, indisponivel, tentarDeNovo } = usePrograma(programId);
 
+  /* min-h-screen, como o Detail (#190): com 60vh, o rodapé subia a 60% da tela e descia quando as aulas chegavam
+     (CLS de 0,400 na inscrição, learn-tech#192). */
   if (carregando && !program?.moduleContents) {
     return (
-      <div className="w-full min-h-[60vh] flex items-center justify-center text-neutral-500" role="status">
+      <div className="w-full min-h-screen flex items-center justify-center text-neutral-500" role="status">
         Carregando programa…
       </div>
     );

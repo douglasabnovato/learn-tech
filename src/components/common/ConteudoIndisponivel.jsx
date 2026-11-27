@@ -3,11 +3,12 @@ import { Seo } from "./Seo";
 
 // Aviso da reserva honesta: a API não respondeu e o conteúdo pedido não está na cópia local.
 // `compacto` é a versão em caixa, para o Detail mostrar abaixo do título e da descrição do programa;
-// sem ele, ocupa a página inteira (Enroll, ou Detail sem nenhum dado do programa).
+// sem ele, ocupa a página inteira (Enroll, ou Detail sem nenhum dado do programa), com min-h-screen: com 60vh, o
+// rodapé subia a 60% da tela depois do "Carregando programa…" (CLS de 0,160 num id fora da cópia, learn-tech#192).
 export const ConteudoIndisponivel = ({ onTentarDeNovo, compacto = false }) => {
   const caixa = compacto
     ? "w-full rounded-xl border border-amber-300 bg-amber-50 p-5 space-y-3"
-    : "w-full min-h-[60vh] flex flex-col items-center justify-center text-center gap-4 p-6";
+    : "w-full min-h-screen flex flex-col items-center justify-center text-center gap-4 p-6";
 
   return (
     <div className={caixa} role="status">
